@@ -1,8 +1,8 @@
 {
-    "name": "demo",
+    "name": "flyer-ui",
     "file": "flyer",
     "version": "0.1.0",
-    "description": "demo",
+    "description": "flyer-ui",
     "license": "MIT",
     "devDependencies": {
         "forever": "^0.15.3",
