@@ -1,0 +1,193 @@
+@import "flyer-base";
+//by chengyang 2017-05-013
+.flyer-nav {
+    padding: 0 20px;
+    background-color: $color-black;
+    width: 100%;
+    height: 60px;
+    list-style-type: none;
+    &-item {
+        height: $head-height;
+        color: $color-light;
+        font-size: $font-size-base;
+        line-height: $head-height;
+        display: inline-block;
+        box-sizing: border-box;
+        position: relative;
+        margin: 0 20px;
+        a {
+            display: inline-block;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        &:hover {
+            .flyer-nav-child {
+                display: block;
+            }
+        }
+        .fa {
+            float: right;
+            margin-top: 16px;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+    }
+    &-itemd,
+    &-item:hover {
+        border-bottom: 4px solid $color-brand;
+        background-color: $color-black;
+    }
+    &-child {
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 65px;
+        width: 100%;
+        line-height: 36px;
+        padding: 5px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+        border: 1px solid $d2;
+        background-color: #fff;
+        z-index: 100;
+        border-radius: 2px;
+        white-space: nowrap;
+        dd {
+            position: relative;
+            text-align: center;
+            border-bottom: 1px solid $d2;
+            &:last-child {
+                border-bottom: none;
+            }
+            &:hover {
+                color: #fff;
+            }
+        }
+        a {
+            color: $color-font-bace;
+        }
+    }
+    &-tree {
+        width: 200px;
+        padding: 0;
+        height: inherit;
+        .flyer-nav {
+            &-item {
+                border-bottom: none;
+                width: 200px;
+                margin: 0;
+                line-height: 45px;
+                height: inherit;
+                position: inherit;
+                .fa {
+                    margin-top: 10px;
+                }
+                a {
+                    background: $bgHead;
+                    width: 100%;
+                    border-left: 4px solid $bgHead;
+                    &:hover {
+                        border-left: 4px solid $color-brand;
+                        background-color: $bgCommonLight;
+                    }
+                }
+                dd {
+                    background-color: $color-font-bace;
+                    border-bottom: none;
+                    text-align: left;
+                    a {
+                        border-left: none;
+                        color: $c2;
+                        &:hover {
+                            border-left: none;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+            &-child {
+                display: none;
+                border: none;
+                padding: 0;
+                position: inherit;
+            }
+            &-itemed {
+                a {
+                    background: $color-black;
+                    color: $f2;
+                    &:hover {
+                        background: $color-black;
+                    }
+                }
+                .fa {
+                    margin-top: 14px;
+                    transform: rotate(180deg);
+                }
+                .flyer-nav-child {
+                    display: block;
+                    a {
+                        background: $bgHead;
+                        &:hover {
+                            border-left: none;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-side {
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        overflow-x: hidden;
+        z-index: 999;
+        .flyer-nav {
+            &-item {
+                position: relative;
+            }
+            &-child {
+                top: 0;
+            }
+        }
+    }
+}
+
+//breadcrumb
+.flyer-breadcrumb {
+    visibility: visible;
+    a {
+        line-height: 22px;
+        font-size: 14px;
+        color: $color-font-bace!important;
+        &+a:before {
+            color: #a6b0b7;
+            content: ">\00a0";
+            padding: 0 3px;
+        }
+        span {
+            padding-left: 8px;
+            font-family: Sim sun;
+        }
+        cite,
+        span {
+            color: $color-primary;
+            cursor: text;
+            font-style: normal;
+        }
+        cite {
+            color: $color-brand;
+        }
+    }
+    &.flyer-separator-line {
+        a+a:before {
+            content: "-\00a0";
+        }
+    }
+    &.flyer-separator-verticalLine {
+        a+a:before {
+            content: "|\00a0";
+        }
+    }
+}

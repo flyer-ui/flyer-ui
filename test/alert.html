@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../dist/css/flyer.all.min.css" rel="stylesheet">
+    <link type="text/css" href="../dist/plugins/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/js/flyer.all.min.js"></script>
+</head>
+
+<body>
+    <div class="flyer-layout-section">
+        <div class="flyer-layout-title"><span>提示框 (flyer.alert) 示例</span>
+            <div></div>
+        </div>
+        <div class="flyer-layout-text"><br>
+            <p><button class="flyer-btn flyer-btn-default" id="alert1">简单提示</button> <button class="flyer-btn flyer-btn-gray" id="alert2">定制标题</button> <button class="flyer-btn flyer-btn-blue" id="alert3">来个有图标的</button> <button class="flyer-btn flyer-btn-warning"
+                    id="alert4">警告框看看</button> <button class="flyer-btn flyer-btn-info" id="alert5">固定宽高</button> <button class="flyer-btn flyer-btn-danger" id="alert6">想不想看我霸屏</button> <button class="flyer-btn flyer-btn-pink" id="alert7">固定位置</button>
+                <button class="flyer-btn flyer-btn-purBlue" id="alert8">换皮肤</button>
+            </p><pre class="codes"><button class="flyer-btn flyer-btn-default" id="alert1">简单提示</button>
+<button class="flyer-btn flyer-btn-gray" id="alert2">定制标题</button>
+<button class="flyer-btn flyer-btn-blue" id="alert3">来个有图标的</button>
+<button class="flyer-btn flyer-btn-warning" id="alert4">警告框看看</button>
+<button class="flyer-btn flyer-btn-info" id="alert5">固定宽高</button>
+<button class="flyer-btn flyer-btn-danger" id="alert6">想不想看我霸屏</button>
+<button class="flyer-btn flyer-btn-pink" id="alert7">固定位置</button>
+<button class="flyer-btn flyer-btn-purBlue" id="alert8">换皮肤</button></pre><pre class="codes">
+    //简单提示
+    $("#alert1").on("click ", function() {
+        flyer.alert("Hi,你今天笑了吗?");
+    });
+
+    //定制标题
+    $("#alert2").on("click ", function() {
+        flyer.alert("你看到标题发生变化了吗?", {
+            title: "标题由我作主"
+        });
+    });
+
+    //来个有图标的
+    $("#alert3").on("click ", function() {
+        flyer.alert("&#60;i class='fa fa-phone'>&#60;/i>哇，左边黑色图标不是我文本类的，它怎么来的?", {
+            title: "look 有个黑色的电话图标"
+        });
+    });
+
+    //警告框看看
+    $("#alert4").on("click ", function() {
+
+        //太长的建议还是声明一个变量接受，这样代码的可读性就高了一些。
+        var strText = "&#60;i class=\"fa fa-exclamation flyer-icons flyer-warning\">&#60;/i>我是有个原则的按钮，不是随便可以点的!";
+        flyer.alert(strText, {
+            title: "预警",
+            btns: [{
+                text: "知道了",
+                skin: "flyer-btn-gray",
+                click: function() {
+                    flyer.alert("相信你也看到了，按钮的文本变了，颜色也变了，点击还弹出了我.", {
+                        btns: [{
+                            text: "这次你点我肯定关掉"
+                        }]
+                    });
+                    //记得这里要点击关闭;
+                    this.close();
+                }
+            }]
+        });
+    });
+
+    //固定宽度
+    $("#alert5").on("click", function() {
+        var strText = "这是一个可以固定宽度的,因为你不固定宽度我是自适应的,不过为了美，我在样式里设置了最小宽度是300px，你可以去样式名为&#60;span style='color:#009688'>flyer-dialog-alert&#60;/span>&nbsp;里修改哦 -_-";
+        flyer.alert(strText, {
+            area: [300, 120],
+            btns: [{
+                text: "我造了,表啰嗦.",
+                skin: "flyer-btn-default"
+            }]
+        });
+    });
+
+    //想不想看我霸屏
+    $("#alert6").on("click", function() {
+        var strText = "霸屏的我就是这么任性，你怎么着!&#60;span style='color:#009688'>设置属性中的&#60;span style='color:red'>modalClose&#60;/span>可以点击灰色的层关闭我&#60;/span>";
+        flyer.alert(strText, {
+            isModal: true,
+            modalClose: true,
+            area: [300, 120],
+            btns: [{
+                text: "表打我",
+                skin: "flyer-btn-default"
+            }]
+        });
+    });
+
+    //固定位置
+    $("#alert7").on("click", function() {
+        var strText = "设置offset属性可以改变我出现的位置哦.";
+        flyer.alert(strText, {
+            offset: [0, 0],
+            area: [300, 80],
+            btns: [{
+                text: "再来一个试试",
+                skin: "flyer-btn-info",
+                click: function() {
+                    flyer.alert("设置属性中的&#60;span style='color:red'>isMove&#60;/span>可以选择是否可以移动我.", {
+                        offset: [100, 300],
+                        area: [300, 80],
+                        title: "&#60;i class='fa fa-exclamation-triangle flyer-blue'>&#60;/i>&#60;span>我不可以移动&#60;/span>",
+                        isMove: false,
+                        btns: [{
+                            text: "&#60;i class='fa fa-meh-o'>&#60;/i>&#60;span>再来一个试试&#60;/span>",
+                            skin: "flyer-btn-blue",
+                            click: function() {
+                                flyer.alert("设置btnAlign，按钮排列位置,可选值为 l 左对齐，c 居中对齐(默认值), r 右对齐!", {
+                                    offset: [200, 600],
+                                    area: [300, 80],
+                                    btnAlign: "r",
+                                    btns: [{
+                                        text: "&#60;i class='fa fa-commenting'>&#60;/i>&#60;span>给我全关了，我受够了!&#60;/span>",
+                                        skin: "flyer-btn-danger",
+                                        click: function() {
+                                            flyer.closeAll();
+                                        }
+                                    }]
+                                });
+                            }
+                        }]
+                    });
+                }
+            }]
+        });
+    });
+
+    //换皮肤
+    $("#alert8").on("click", function() {
+        var strText = "在skin属性中设置你写好的新皮肤，就可以了，实现原理是利用样式的优先级复盖，这方面需要你有一些样式功底的呢.";
+        flyer.alert(strText, {
+            area: [300, 120],
+            skin: "flyer-skin-gray",
+            btns: [{
+                text: "好的,棒棒哒."
+            }]
+        });
+    });</pre></div>
+    </div>
+    <script type="text/javascript">
+        flyer.codes($(".codes"));
+
+        //简单提示
+        $("#alert1").on("click ", function() {
+            flyer.alert("Hi,你今天笑了吗?");
+        });
+
+        //定制标题
+        $("#alert2").on("click ", function() {
+            flyer.alert("你看到标题发生变化了吗?", {
+                title: "标题由我作主"
+            });
+        });
+
+        //来个有图标的
+        $("#alert3").on("click ", function() {
+            flyer.alert("<i class='fa fa-phone flyer-icons'></i>哇，左边黑色图标不是我文本类的，它怎么来的?", {
+                title: "look 有个黑色的电话图标"
+            });
+        });
+
+        //警告框看看
+        $("#alert4").on("click ", function() {
+
+            //太长的建议还是声明一个变量接受，这样代码的可读性就高了一些。
+            var strText = "<i class=\"fa fa-exclamation flyer-icons flyer-warning\"></i>我是有个原则的按钮，不是随便可以点的!";
+            flyer.alert(strText, {
+                title: "预警",
+                btns: [{
+                    text: "知道了",
+                    skin: "flyer-btn-gray",
+                    click: function() {
+                        flyer.alert("相信你也看到了，按钮的文本变了，颜色也变了，点击还弹出了我.", {
+                            btns: [{
+                                text: "这次你点我肯定关掉"
+                            }]
+                        });
+                        //记得这里要点击关闭;
+                        this.close();
+                    }
+                }]
+            });
+        });
+
+        //固定宽度
+        $("#alert5").on("click", function() {
+            var strText = "这是一个可以固定宽度的,因为你不固定宽度我是自适应的,不过为了美，我在样式里设置了最小宽度是300px，你可以去样式名为<span style='color:#009688'>flyer-dialog-alert</span>&nbsp;里修改哦 -_-";
+            flyer.alert(strText, {
+                area: [300, 120],
+                btns: [{
+                    text: "我造了,表啰嗦.",
+                    skin: "flyer-btn-default"
+                }]
+            });
+        });
+
+        //想不想看我霸屏
+        $("#alert6").on("click", function() {
+            var strText = "霸屏的我就是这么任性，你怎么着!<span style='color:#009688'>设置属性中的<span style='color:red'>modalClose</span>可以点击灰色的层关闭我</span>";
+            flyer.alert(strText, {
+                isModal: true,
+                modalClose: true,
+                area: [300, 120],
+                btns: [{
+                    text: "表打我",
+                    skin: "flyer-btn-default"
+                }]
+            });
+        });
+
+        //固定位置
+        $("#alert7").on("click", function() {
+            var strText = "设置offset属性可以改变我出现的位置哦.";
+            flyer.alert(strText, {
+                offset: [0, 0],
+                area: [300, 80],
+                btns: [{
+                    text: "再来一个试试",
+                    skin: "flyer-btn-info",
+                    click: function() {
+                        flyer.alert("设置属性中的<span style='color:red'>isMove</span>可以选择是否可以移动我.", {
+                            offset: [100, 300],
+                            area: [300, 80],
+                            title: "<i class='fa fa-exclamation-triangle flyer-icons flyer-blue'></i><span>我不可以移动</span>",
+                            isMove: false,
+                            btns: [{
+                                text: "<i class='fa fa-meh-o'></i><span>再来一个试试</span>",
+                                skin: "flyer-btn-blue",
+                                click: function() {
+                                    flyer.alert("设置btnAlign，按钮排列位置,可选值为 l 左对齐，c 居中对齐(默认值), r 右对齐!", {
+                                        offset: [200, 600],
+                                        area: [300, 80],
+                                        btnAlign: "r",
+                                        btns: [{
+                                            text: "<i class='fa fa-commenting'></i><span>给我全关了，我受够了!</span>",
+                                            skin: "flyer-btn-danger",
+                                            click: function() {
+                                                flyer.closeAll();
+                                            }
+                                        }]
+                                    });
+                                }
+                            }]
+                        });
+                    }
+                }]
+            });
+        });
+
+        //换皮肤
+        $("#alert8").on("click", function() {
+            var strText = "在skin属性中设置你写好的新皮肤，就可以了，实现原理是利用样式的优先级复盖，这方面需要你有一些样式功底的呢.";
+            flyer.alert(strText, {
+                area: [300, 120],
+                skin: "flyer-skin-gray",
+                btns: [{
+                    text: "好的,棒棒哒."
+                }]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

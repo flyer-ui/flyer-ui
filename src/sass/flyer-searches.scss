@@ -1,0 +1,127 @@
+@import "flyer-base";
+.flyer-searches {
+    position: relative;
+    div.keywords {
+        position: absolute;
+        z-index: 1;
+        font-size: 0px;
+        -webkit-text-size-adjust: none;
+    }
+    div.keywords>span {
+        display: inline-block;
+        line-height: 28px;
+        height: 28px;
+        color: #424242;
+        padding: 0px 10px;
+        font-size: 14px;
+        position: relative;
+        box-sizing: border-box;
+    }
+    div.keywords>span i {
+        position: absolute;
+        z-index: 1;
+        height: 16px;
+        width: 16px;
+        opacity: .8;
+        font-size: 14px;
+        right: 0px;
+        display: none;
+        text-align: center;
+    }
+    div.keywords>span i:hover {
+        background-color: #F7B824;
+        color: #fff;
+    }
+    div.keywords>span:hover {
+        background-color: #dedede;
+        cursor: pointer;
+        opacity: .5;
+    }
+    div.keywords>span:hover>i {
+        display: inherit;
+    }
+}
+
+.flyer-seraches-input {
+    border: 1px solid #ccc;
+    line-height: 28px;
+    height: 28px;
+    width: 100%;
+    vertical-align: super;
+    padding: 0px 10px;
+    outline: none;
+    box-sizing: border-box;
+    input[type='text'] {
+        border: 0px;
+        padding: 0px 10px;
+        height: 28px;
+        line-height: 28px;
+        vertical-align: baseline;
+        font-size: 14px;
+        width: 100%;
+        display: inline-block;
+        outline: none;
+    }
+}
+
+.flyer-combobox-items {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 100%;
+    z-index: 99;
+    border-top: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+    &:after {
+        content: "";
+        clear: both;
+    }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
+}
+
+.flyer-combobox-items>ul>li {
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    cursor: pointer;
+    max-height: 200px;
+}
+
+.flyer-combobox-items>ul>li .disabled {
+    color: #eee;
+    cursor: not-allowed;
+}
+
+.flyer-combobox-items>ul>li input[type='text'] {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 1px 0;
+    padding: 4px 20px 4px 5px;
+    margin-top: 5px;
+    width: 100%;
+    height: auto;
+    outline: 0;
+    border: 1px solid #eee;
+    border-width: 1px 0px 1px 0px;
+    background: white url('imgs/chosen-sprite.png') no-repeat 100% -20px;
+    background: url('imgs/chosen-sprite.png') no-repeat 100% -20px;
+    font-size: 1em;
+    font-family: sans-serif;
+    line-height: normal;
+    border-radius: 0;
+}
+
+.flyer-combobox-items>ul>li>div:hover,
+.hover {
+    background-color: #4ab8f9;
+    color: #fff;
+}
+
+.flyer-combobox-items>ul>li div {
+    padding: 0px 10px;
+    line-height: 28px;
+}

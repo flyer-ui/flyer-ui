@@ -1,0 +1,64 @@
+@import "flyer-base";
+.flyer-alert {
+    padding: 18px 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: $font-size-base;
+    b,
+    strong {
+        font-weight: 700;
+    }
+}
+
+.flyer-alert-success {
+    color: $alert-color-success;
+    background-color: $alert-bg-success;
+    border-color: $alert-bord-success;
+}
+
+.flyer-alert-info {
+    color: $alert-color-info;
+    background-color: $alert-bg-info;
+    border-color: $alert-bord-info;
+}
+
+.flyer-alert-warning {
+    color: $alert-color-warning;
+    background-color: $alert-bg-warning;
+    border-color: $alert-bord-warning;
+}
+
+.flyer-alert-danger {
+    color: $alert-color-danger;
+    background-color: $alert-bg-danger;
+    border-color: $alert-bord-danger;
+}
+
+.flyer-alert-close {
+    float: right;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 0.7;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    filter: alpha(opacity=20);
+    opacity: .2;
+}
+
+.flyer-alert-close:focus,
+.flyer-alert-close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    filter: alpha(opacity=50);
+    opacity: .5;
+}
+
+button.flyer-alert-close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+}

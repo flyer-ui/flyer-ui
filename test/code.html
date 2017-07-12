@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../dist/css/flyer.all.min.css" rel="stylesheet">
+    <link type="text/css" href="../dist/plugins/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/js/flyer.all.min.js"></script>
+</head>
+
+<body>
+    <div class="flyer-layout-section">
+        <div class="flyer-layout-title"><span>使用</span>
+            <div></div>
+        </div>
+        <div class="flyer-layout-text">
+            <p>code模块的使用非常简单，请直接看代码，假设你在页面有这样一段pre标签：</p><pre class="codes">
+<pre class="codes">
+//代码区域 
+var a = 'hello flyerui';   
+</pre>
+            </pre>
+            <p>那么你只需要经过下面的方式：</p><pre class="codes">
+flyer.codes($(".codes"));
+        </pre>
+            <p>就可以将那段pre区块显示成你现在看到的这个样子：</p><pre class="codes">
+ var a = 'hello flyerui';  
+        </pre></div>
+    </div>
+    <script type="text/javascript">
+        flyer.codes($(".codes"));
+    </script>
+</body>
+
+</html>

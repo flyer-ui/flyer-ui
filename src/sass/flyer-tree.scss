@@ -1,0 +1,50 @@
+@import "flyer-base";
+.flyer-tree {
+    position: relative;
+    li {
+        line-height: 24px;
+        >i {
+            min-width: 16px;
+            font-size: 16px !important;
+            vertical-align: 0px;
+            cursor: pointer;
+            text-align: center;
+        }
+        >i.fa-folder-o,
+        >i.fa-folder-open-o,
+        >i.fa-file-o {
+            margin-right: 5px;
+            font-size: 14px !important;
+        }
+        a {
+            cursor: pointer;
+            user-select: none;
+            -ms-user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+        a[target]:hover {
+            opacity: .8;
+            text-decoration: underline;
+        }
+    }
+    &-root {
+        margin: 0px;
+        padding: 0px;
+    }
+    &-node {
+        margin-left: 20px;
+        display: none;
+    }
+    &-show {
+        display: block;
+    }
+    &-hide {
+        display: none;
+    }
+    ul:first-child {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+    }
+}

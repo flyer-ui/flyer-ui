@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../dist/css/flyer.all.min.css" rel="stylesheet">
+    <link type="text/css" href="../dist/plugins/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/js/flyer.all.min.js"></script>
+</head>
+
+<body>
+    <div class="flyer-layout-section">
+        <div class="flyer-layout-title"><span>模态框 (flyer.open) 示例</span>
+            <div></div>
+        </div>
+        <div class="flyer-layout-text"><br>
+            <p><button class="flyer-btn flyer-btn-default" id="open1">显示内容为Html的</button> <button class="flyer-btn flyer-btn-blue" id="open2">显示引用页面的</button> <button class="flyer-btn flyer-btn-gray" id="open3">来个自定义位置的</button> <button class="flyer-btn flyer-btn-danger"
+                    id="open4">换皮肤</button></p><pre class="codes">
+$("#open1").on("click ", function() {
+    flyer.open({
+        content: "<div><i class="fa fa-exclamation-circle flyer-icons"></i>这里的用法和其它示例是一样的，作者就不在这里再过多去展示，使用者可以自已参考前面的加上属性表里的属性拓展哦.</div>",
+        title: "一个展现html结构的模态框",
+        area: [400, 500]
+    });
+});
+$("#open2").on("click ", function() {
+    flyer.open({
+        pageUrl: "tab.html",
+        isModal: true,
+        area: [400, 500],
+        title: "显示颜色元素"
+    });
+});
+$("#open3").on("click ", function() {
+    flyer.open({
+        pageUrl: "tab.html",
+        isModal: true,
+        area: [400, 500],
+        offset: [10, 400],
+        title: "显示颜色元素"
+    });
+});
+$("#open4").on("click ", function() {
+    flyer.open({
+        pageUrl: "tab.html",
+        skin: "flyer-skin-gray",
+        isModal: true,
+        area: [400, 500],
+        title: "我换新衣服了"
+    });
+});
+        </pre></div>
+    </div>
+    <script type="text/javascript">
+        flyer.codes($(".codes"), {
+            tagName: "div"
+        });
+
+        $("#open1").on("click ", function() {
+            flyer.open({
+                content: "<div><i class='fa fa-exclamation-circle flyer-icons'></i>这里的用法和其它示例是一样的，作者就不在这里再过多去展示，使用者可以自已参考前面的加上属性表里的属性拓展哦.</div>",
+                title: "一个展现html结构的模态框",
+                area: [400, 500]
+            });
+        });
+        $("#open2").on("click ", function() {
+            flyer.open({
+                pageUrl: "tab.html",
+                isModal: true,
+                area: [400, 500],
+                title: "显示颜色元素"
+            });
+        });
+        $("#open3").on("click ", function() {
+            flyer.open({
+                pageUrl: "tab.html",
+                isModal: true,
+                area: [400, 500],
+                offset: [10, 400],
+                title: "显示颜色元素"
+            });
+        });
+        $("#open4").on("click ", function() {
+            flyer.open({
+                pageUrl: "tab.html",
+                skin: "flyer-skin-gray",
+                isModal: true,
+                area: [400, 500],
+                title: "我换新衣服了"
+            });
+        });
+    </script>
+</body>
+
+</html>

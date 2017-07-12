@@ -1,0 +1,29 @@
+/*** Parameters ***/
+.flyer-pager-wrapper {
+  position: relative; }
+  .flyer-pager-wrapper:after {
+    content: "";
+    clear: both;
+    display: block; }
+
+.flyer-pager-view ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px; }
+  .flyer-pager-view ul li {
+    float: left;
+    display: inline-block;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    border: 1px solid #ccc;
+    border-right: 0px;
+    text-align: center;
+    padding: 0px 5px 0px 5px;
+    cursor: pointer; }
+.flyer-pager-view .next {
+  border-right: 1px solid #ccc; }
+.flyer-pager-view .active {
+  color: coral; }
+
+/*# sourceMappingURL=flyer-page.css.map */

@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,oBAAoB",
+"sources": ["../sass/flyer-base.scss"],
+"names": [],
+"file": "flyer-base.css"
+}

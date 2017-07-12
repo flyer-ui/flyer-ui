@@ -1,0 +1,135 @@
+@import "flyer-base";
+.flyer-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: $font-size-small;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: $borderRadius;
+    transition: background-color .3s ease;
+    -webkit-transition: background-color .3s ease;
+    -moz-transition: background-color .3s ease;
+    -ms-transition: background-color .3s ease;
+    -o-transition: background-color .3s ease;
+    outline: 0px;
+    >i {
+        font-size: 18px;
+        vertical-align: -1px;
+        font-weight: normal;
+    }
+    >span {
+        margin-left: 5px;
+    }
+}
+
+.flyer-btn-big {
+    font-size: 18px;
+    padding: 8px 18px;
+}
+
+.flyer-btn-small {
+    font-size: 12px;
+    padding: 6px 10px;
+}
+
+.flyer-btn-mini {
+    font-size: 8px;
+    padding: 3px 6px;
+}
+
+.flyer-btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.flyer-btn-success {
+    background: #2cc3a9;
+    border: 1px solid #2cc3a9;
+    color: #fff;
+}
+
+.flyer-btn-info {
+    background: #a37de9;
+    border: 1px solid #a37db9;
+    color: #fff;
+}
+
+.flyer-btn-pink {
+    background: #fd81a5;
+    border: 1px solid #fd81a5;
+    color: #fff;
+}
+
+.flyer-btn-purBlue {
+    background: #8591e8;
+    border: 1px solid #8591e8;
+    color: #fff;
+}
+
+.flyer-btn-blue {
+    background: #4cabf2;
+    border: 1px solid #4cabf2;
+    color: #fff;
+}
+
+.flyer-btn-warning {
+    background-color: #ffc246;
+    border: 1px solid #ffc246;
+    color: #fff;
+}
+
+.flyer-btn-danger {
+    background: #f27068;
+    border: 1px solid #f27068;
+    color: #fff;
+}
+
+.flyer-btn-gray {
+    background: #8c9ba7;
+    border: 1px solid #8c9ba7;
+    color: #fff;
+}
+
+.flyer-btn-disabled {
+    border: 1px solid #e6e6e6;
+    background-color: #FBFBFB;
+    color: #C9C9C9;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.flyer-btn-close {
+    background-color: transparent;
+    border: none;
+    color: $color-font-bace;
+    opacity: 0.5;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.flyer-btn:hover,
+.flyer-btn-gray:hover,
+.flyer-btn-danger:hover,
+.flyer-btn-warning:hover,
+.flyer-btn-blue:hover,
+.flyer-btn-purBlue:hover,
+.flyer-btn-pink:hover,
+.flyer-btn-info:hover,
+.flyer-btn-success:hover,
+.flyer-btn-default:hover {
+    opacity: $hoverOpacity;
+}

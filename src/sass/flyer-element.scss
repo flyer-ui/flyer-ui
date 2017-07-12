@@ -1,0 +1,52 @@
+@import "flyer-base";
+//by chengyang 2017-05-16 
+.flyer-element {
+    &-tips {
+        margin-bottom: 10px;
+        padding: 15px;
+        line-height: 22px;
+        border-left: 5px solid $color-brand;
+        background-color: #f2f2f2;
+        p {
+            font-size: $font-size-base;
+            padding-bottom: 0;
+        }
+    }
+    &-alert {
+        padding: 8px 35px 8px 14px;
+        margin-bottom: 20px;
+        text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+        background-color: $color-orange;
+        border: 1px solid $color-orange;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-size: 14px;
+        line-height: 26px;
+        clear: both;
+        strong {
+            font-weight: bold;
+        }
+        .flyer-btn-close {
+            opacity: 0.3;
+            font-size: 18px;
+            float: right;
+            margin-right: -20px;
+        }
+    }
+    &-alertError {
+        background-color: $color-red-opacity;
+        border: 1px solid $color-red;
+        color: $color-red;
+    }
+    &-alertInfo {
+        background-color: $color-blue-opacity;
+        border: 1px solid $color-blue;
+        color: $color-blue;
+    }
+    &-alertSuccess {
+        background-color: $color-green-opacity;
+        border: 1px solid $color-green;
+        color: $color-green;
+    }
+}

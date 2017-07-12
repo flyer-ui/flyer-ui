@@ -1,0 +1,11 @@
+/*** Parameters ***/
+.flyer-upload {
+  display: inline-block;
+  position: relative; }
+  .flyer-upload-file {
+    display: none; }
+
+#flyer_upload_iframe {
+  display: none; }
+
+/*# sourceMappingURL=flyer-upload.css.map */

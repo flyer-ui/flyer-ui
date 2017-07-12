@@ -1,0 +1,55 @@
+@import "flyer-base";
+//by chengyang 2017-05-16 
+
+/*collapse*/
+
+.flyer-collapse {
+    border: 1px solid #e2e2e2;
+    border-radius: 2px;
+    margin: 4px 0 20px 0;
+    .flyer-collapse {
+        &-item {
+            border-top: 1px solid #e2e2e2;
+        }
+        &-title {
+            position: relative;
+            height: 42px;
+            line-height: 42px;
+            padding: 0 15px 0 35px;
+            color: #333;
+            background-color: $f2;
+            cursor: pointer;
+            .fa {
+                position: absolute;
+                left: 15px;
+                top: 8px;
+                font-size: 20px;
+            }
+        }
+        &-content {
+            display: none;
+            padding: 10px 15px;
+            line-height: 22px;
+            border-top: 1px solid #e2e2e2;
+            color: #666;
+            p {
+                margin-bottom: 10px;
+                line-height: 22px;
+            }
+        }
+        &-show {
+            .flyer-collapse-content {
+                display: block;
+                padding: 10px 15px;
+                line-height: 22px;
+                border-top: 1px solid #e2e2e2;
+                color: #666;
+            }
+            .flyer-collapse-title {
+                .fa {
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}

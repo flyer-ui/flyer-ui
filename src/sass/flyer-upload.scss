@@ -1,0 +1,12 @@
+@import "flyer-base";
+.flyer-upload {
+    display: inline-block;
+    position: relative;
+    &-file {
+        display: none;
+    }
+}
+
+#flyer_upload_iframe {
+    display: none;
+}

@@ -1,0 +1,58 @@
+@import "flyer-base";
+//by chengyang 2017-05-18
+.flyer-table {
+    width: 100%;
+    margin: 10px 0;
+    thead {
+        background-color: #f2f2f2;
+    }
+    th,
+    td {
+        padding: 6px 15px;
+        min-height: 20px;
+        line-height: 20px;
+        border: 1px solid #ddd;
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center
+    }
+    th:hover {
+        background: #fbfbfb;
+    }
+}
+
+.flyer-table-bg {
+    tr:nth-child(even) {
+        background: #fbfbfb;
+    }
+}
+
+.user-select-none {
+    user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.flyer-rgrips {
+    height: 0px;
+    position: relative;
+    // .flyer-rgrip {
+    //     margin-left: -5px;
+    //     position: absolute;
+    //     z-index: 5;
+    //     cursor: e-resize;
+    // }
+    .flyer-rgrips-resizer {
+        position: absolute;
+        background-color: transparent;
+        filter: alpha(opacity=1);
+        opacity: 1;
+        width: 10px;
+        height: 100%;
+        cursor: e-resize;
+        top: 0px;
+    }
+    .flyer-rgrips-drag {
+        border-left: 1px dashed $color-font-bace;
+    }
+}

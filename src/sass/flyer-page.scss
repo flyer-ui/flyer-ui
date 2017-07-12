@@ -1,0 +1,35 @@
+@import "flyer-base";
+.flyer-pager-wrapper {
+    position: relative;
+    &:after {
+        content: "";
+        clear: both;
+        display: block;
+    }
+}
+
+.flyer-pager-view {
+    ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+        li {
+            float: left;
+            display: inline-block;
+            line-height: 24px;
+            height: 24px;
+            width: 24px;
+            border: 1px solid #ccc;
+            border-right: 0px;
+            text-align: center;
+            padding: 0px 5px 0px 5px;
+            cursor: pointer;
+        }
+    }
+    .next {
+        border-right: 1px solid #ccc;
+    }
+    .active {
+        color: coral;
+    }
+}

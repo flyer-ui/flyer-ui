@@ -1,0 +1,41 @@
+/*** Parameters ***/
+.flyer-tree {
+  position: relative; }
+  .flyer-tree li {
+    line-height: 24px; }
+    .flyer-tree li > i {
+      min-width: 16px;
+      font-size: 16px !important;
+      vertical-align: 0px;
+      cursor: pointer;
+      text-align: center; }
+    .flyer-tree li > i.fa-folder-o,
+    .flyer-tree li > i.fa-folder-open-o,
+    .flyer-tree li > i.fa-file-o {
+      margin-right: 5px;
+      font-size: 14px !important; }
+    .flyer-tree li a {
+      cursor: pointer;
+      user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none; }
+    .flyer-tree li a[target]:hover {
+      opacity: .8;
+      text-decoration: underline; }
+  .flyer-tree-root {
+    margin: 0px;
+    padding: 0px; }
+  .flyer-tree-node {
+    margin-left: 20px;
+    display: none; }
+  .flyer-tree-show {
+    display: block; }
+  .flyer-tree-hide {
+    display: none; }
+  .flyer-tree ul:first-child {
+    margin: 0px;
+    padding: 0px;
+    display: block; }
+
+/*# sourceMappingURL=flyer-tree.css.map */

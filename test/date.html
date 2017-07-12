@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../dist/css/flyer.all.min.css" rel="stylesheet">
+    <link type="text/css" href="../dist/plugins/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/js/flyer.all.min.js"></script>
+</head>
+
+<body>
+
+    <div class="flyer-layout-section">
+        <div class="flyer-layout-title"><span>使用案例</span>
+            <div></div>
+        </div>
+        <div class="flyer-layout-text">
+            <p>备注：时间范围选择，这里拿了一个复杂的案例来展示，这个需求是开始时间为今天（昨天的不可以选择),结束时间又是到2017年8月30日，这是一个允许的范围，设置在代码中可以看到start时间组件里设置了minDate=new Date()，end时间组件里设置了maxDate="2017/08/30"，然后在这个范围内你选择起如时间假如是2017/07/07,那到结束时间就只能选择2017/07/07至2017/08/30日之间的时间。</p>
+            <form class="flyer-form">
+                <div class="flyer-form-item"><label class="flyer-form-label" for="txtStart">开始日期</label>
+                    <div class="flyer-input-inline"><input id="txtStart" type="text" class="flyer-input"></div><label class="flyer-form-label" for="txtEnd">结束日期</label>
+                    <div class="flyer-input-inline"><input id="txtEnd" type="text" class="flyer-input"></div><label class="flyer-form-label" for="txtFormat">自定义格式</label>
+                    <div class="flyer-input-inline"><input id="txtFormat" type="text" class="flyer-input"></div><label class="flyer-form-label" for="txtNoTime">不要时分秒</label>
+                    <div class="flyer-input-inline"><input id="txtNoTime" type="text" class="flyer-input"></div>
+                </div>
+            </form><pre class="flyer-codes">
+ <form class="flyer-form">
+    <div class="flyer-form-item">
+        <label class="flyer-form-label" for="txtStart">开始日期</label>
+        <div class="flyer-input-inline">
+            <input id="txtStart" type="text" class="flyer-input">
+        </div>
+        <label class="flyer-form-label" for="txtEnd">结束日期</label>
+        <div class="flyer-input-inline">
+            <input id="txtEnd" type="text" class="flyer-input">
+        </div>
+        <label class="flyer-form-label" for="txtFormat">自定义格式</label>
+        <div class="flyer-input-inline">
+            <input id="txtFormat" type="text" class="flyer-input">
+        </div>
+        <label class="flyer-form-label" for="txtNoTime">不要时分秒</label>
+        <div class="flyer-input-inline">
+            <input id="txtNoTime" type="text" class="flyer-input">
+        </div>
+    </div>
+</form>            
+<script type="text/javascript">
+    var start = flyer.date($("#txtStart"),{
+        //最小允许选择的时间范围
+        minDate:"2016/06/01",
+        //最大允许选择的时间范围
+        maxDate:"2017/08/30",
+        //选择之后
+        choose:function(date,obj){
+            //设置结束时间选择器的最大值
+            end.setMinDate(date);
+        }
+    }),
+    end = flyer.date($("#txtEnd"),{
+        //最大允许选择的时间范围
+        maxDate:"2017/08/30",
+        //选择之后
+        choose:function(date,obj){
+            debugger;
+            //设置开始时间选择器的最大值
+            start.setMaxDate(date);
+        }
+    }),
+    format = flyer.date($("#txtFormat"),{
+        format:"yyyy/mm/dd"
+    }),
+    noTime = flyer.date($("#txtNoTime"),{
+        isTime:false,
+        format:"yyyy/mm/dd",
+        click:function(date,obj){
+            flyer.msg("点击:"+date);
+        }
+    });
+</script>
+        </pre>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        flyer.codes($(".flyer-codes"), {
+            tagName: "div"
+        });
+    </script>
+</body>
+
+</html>

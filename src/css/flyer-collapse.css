@@ -1,0 +1,40 @@
+/*** Parameters ***/
+/*collapse*/
+.flyer-collapse {
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  margin: 4px 0 20px 0; }
+  .flyer-collapse .flyer-collapse-item {
+    border-top: 1px solid #e2e2e2; }
+  .flyer-collapse .flyer-collapse-title {
+    position: relative;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 15px 0 35px;
+    color: #333;
+    background-color: #f2f2f2;
+    cursor: pointer; }
+    .flyer-collapse .flyer-collapse-title .fa {
+      position: absolute;
+      left: 15px;
+      top: 8px;
+      font-size: 20px; }
+  .flyer-collapse .flyer-collapse-content {
+    display: none;
+    padding: 10px 15px;
+    line-height: 22px;
+    border-top: 1px solid #e2e2e2;
+    color: #666; }
+    .flyer-collapse .flyer-collapse-content p {
+      margin-bottom: 10px;
+      line-height: 22px; }
+  .flyer-collapse .flyer-collapse-show .flyer-collapse-content {
+    display: block;
+    padding: 10px 15px;
+    line-height: 22px;
+    border-top: 1px solid #e2e2e2;
+    color: #666; }
+  .flyer-collapse .flyer-collapse-show .flyer-collapse-title .fa {
+    transform: rotate(90deg); }
+
+/*# sourceMappingURL=flyer-collapse.css.map */

@@ -1,0 +1,140 @@
+@import "flyer-base";
+.flyer-dialog {
+    position: absolute;
+    z-index: 10001;
+    margin: 0px auto;
+    box-shadow: $box-shadow;
+    min-width: 100px;
+    background-color: #fff;
+    .flyer-dialog-title {
+        border-bottom: $border;
+        padding: $common-padding;
+        padding-right: 10px;
+    }
+    .flyer-dialog-title:after {
+        content: "";
+        clear: both;
+    }
+    .flyer-dialog-content {
+        position: relative;
+        padding: $common-padding;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+    .flyer-dialog-footer {
+        position: relative;
+        padding: $common-padding;
+        text-align: center;
+        .flyer-btn {
+            margin-left: 10px;
+        }
+    }
+    .flyer-dialog-toolbar {
+        float: right;
+        font-size: $font-size-base;
+        font-weight: 800;
+        color: #000;
+        text-shadow: 0 1px 0 #fff;
+        filter: alpha(opacity=30);
+        opacity: .3;
+        position: absolute;
+        margin-top: -3px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        top: 15px;
+        right: 8px;
+        z-index: 1;
+        .flyer-close {
+            cursor: pointer;
+            padding: 2px 5px 5px 5px;
+            display: inline-block;
+        }
+        .flyer-close:hover {
+            background-color: $c2;
+        }
+    }
+}
+
+.flyer-modal {
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    z-index: 10000;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+    position: fixed;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+
+.flyer-dialog-move {
+    border: 2px dashed rgba(0, 0, 0, 0.3);
+    background-color: $d2;
+    border-radius: 2px;
+    z-index: 100000001;
+    position: absolute;
+    cursor: move;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+
+.flyer-move {
+    cursor: move;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.flyer-dialog-msg {
+    background-color: $color-black;
+    color: #fff !important;
+    max-width: 300px;
+    opacity: .8;
+    border-color: $color-black;
+    word-break: break-word;
+    border-radius: $borderRadius;
+    .flyer-dialog-content {
+        padding-right: 10px;
+    }
+    .flyer-dialog-toolbar {
+        color: #fff;
+        opacity: .8;
+        top: 2px;
+        right: 0px;
+    }
+}
+
+.flyer-dialog-tip {
+    max-width: inherit;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+}
+
+.flyer-dialog-msgError {
+    background-color: rgba(255, 87, 34, 0.2);
+    border: 1px solid #FF5722;
+    color: #FF5722;
+    max-width: inherit;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    .flyer-dialog-toolbar {
+        color: #fff;
+    }
+}
+
+.flyer-dialog-alert {
+    min-width: 300px;
+}
+
+.flyer-dialog-open {
+    min-width: 400px;
+}

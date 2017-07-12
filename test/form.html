@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="../dist/css/flyer.all.min.css" rel="stylesheet">
+    <link type="text/css" href="../dist/plugins/css/font-awesome.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../dist/plugins/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../dist/js/flyer.all.min.js"></script>
+</head>
+
+<body>
+
+    <div class="flyer-layout-section">
+        <div class="flyer-layout-title"><span>小睹为快</span>
+            <div></div>
+        </div>
+        <div class="flyer-layout-borderBox">
+            <form class="flyer-form" id="form" action="">
+                <div class="flyer-form-item"><label class="flyer-form-label">输入框</label>
+                    <div class="flyer-input-block"><input type="text" name="title" required="true" placeholder="请输入标题" autocomplete="off" class="flyer-input"></div>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">密码框</label>
+                    <div class="flyer-input-inline"><input type="password" name="password" required="true" minlength="6" placeholder="请输入密码" autocomplete="off" class="flyer-input"></div>
+                    <div class="flyer-form-wordAux">辅助文字</div>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">确认密码框</label>
+                    <div class="flyer-input-inline"><input type="password" name="password_confirm" required="true" maxlength="8" equalto="password" placeholder="请再次输入密码" autocomplete="off" class="flyer-input"></div>
+                    <div class="flyer-form-wordAux">辅助文字</div>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">选择框</label>
+                    <div class="flyer-input-block" id="slDropDown"></div>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">复选框</label><label class="flyer-onswitch"><input type="checkbox" name="ckLike" required="true"> <i>写作</i></label><label class="flyer-onswitch"><input type="checkbox" name="ckLike" required="true"> <i>阅读</i></label>
+                    <label class="flyer-onswitch"><input type="checkbox" name="ckLike" required="true"> <i>唱歌</i></label>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">开关</label>
+                    <div class="flyer-input-block"><label class="flyer-checkbox"><input type="checkbox" name="ckSwitch" required="true"> <i></i></label></div>
+                </div>
+                <div class="flyer-form-item"><label class="flyer-form-label">单选框</label><label class="flyer-radio"><input type="radio" name="sex" required="true" value="女" title="女"> <i></i></label><span>女</span><label class="flyer-radio"><input type="radio" name="sex" required="true" value="男" title="男"> <i></i></label><span>男</span></div>
+                <div class="flyer-form-item flyer-layout-text"><label class="flyer-layout-label">文本域</label>
+                    <div class="flyer-input-block"><textarea name="desc" placeholder="请输入内容" class="flyer-textarea"></textarea></div>
+                </div>
+                <div class="flyer-form-item">
+                    <div class="flyer-input-block"><button class="flyer-btn submit">立即提交</button> <button type="reset" class="flyer-btn flyer-btn-blue">重置</button></div>
+                </div>
+            </form>
+        </div>
+        <div class="flyer-element-tips">
+            <p>通过上述的小小演示，你已经大致了解了一波AukeyUI的表单模块， 你可能会觉得她还算不错，但并不太过瘾？譬如你希望看到日期选择、 图片上传等等。然而你必须认识到，本篇文档核心介绍的是表单元素， 对于日期、上传等更多丰富的元素，其实也是可以很方便地穿插在内的。</p>
+        </div>
+        <div class="flyer-layout-text">
+            <p>下述是【小睹为快】的HTML结构：</p><pre class="flyer-codes">
+<form class="flyer-form" id="form" action="">
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">输入框</label>
+                <div class="flyer-input-block">
+                    <input type="text" name="title" required="true" placeholder="请输入标题" autocomplete="off" class="flyer-input">
+                </div>
+            </div>
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">密码框</label>
+                <div class="flyer-input-inline">
+                    <input type="password" name="password" required="true" minlength="6" placeholder="请输入密码" autocomplete="off" class="flyer-input">
+                </div>
+                <div class="flyer-form-wordAux">辅助文字</div>
+            </div>
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">确认密码框</label>
+                <div class="flyer-input-inline">
+                    <input type="password" name="password_confirm" required="true" maxlength="8" equalto="password" placeholder="请再次输入密码" autocomplete="off" class="flyer-input">
+                </div>
+                <div class="flyer-form-wordAux">辅助文字</div>
+            </div>
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">选择框</label>
+                <div class="flyer-input-block" id="slDropDown">
+
+                </div>
+            </div>
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">复选框</label>
+                <label class="flyer-onswitch">
+                    <input type="checkbox" name="ckLike" required="true">
+                    <i>写作</i>
+                </label>
+                <label class="flyer-onswitch">
+                    <input type="checkbox" name="ckLike" required="true">
+                    <i>阅读</i>
+                </label>
+                <label class="flyer-onswitch">
+                    <input type="checkbox" name="ckLike" required="true">
+                    <i>唱歌</i>
+                </label>
+            </div>
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">开关</label>
+                <div class="flyer-input-block">
+                    <label class="flyer-checkbox">
+                        <input type="checkbox" name="ckSwitch" required="true">
+                        <i></i>
+                    </label>
+                </div>
+            </div>
+
+            <div class="flyer-form-item">
+                <label class="flyer-form-label">单选框</label>
+                <label class="flyer-radio">
+                    <input type="radio" name="sex" required="true" value="女" title="女">
+                    <i></i>
+                </label>
+                <span>女</span>
+                <label class="flyer-radio">
+                    <input type="radio" name="sex" required="true" value="男" title="男">
+                    <i></i>
+                </label>
+                <span>男</span>
+            </div>
+
+            <div class="flyer-form-item flyer-layout-text">
+                <label class="flyer-layout-label">文本域</label>
+                <div class="flyer-input-block">
+                    <textarea name="desc" placeholder="请输入内容" class="flyer-textarea"></textarea>
+                </div>
+            </div>
+            <div class="flyer-form-item">
+                <div class="flyer-input-block">
+                    <button class="flyer-btn submit">立即提交</button>
+                    <button type="reset" class="flyer-btn flyer-btn-blue">重置</button>
+                </div>
+            </div>
+        </form>
+
+    <script type="text/javascript">
+        flyer.codes($(".flyer-codes"), {
+            tagName: "div"
+        });
+        var flyerComboBox = flyer.combobox($("#slDropDown"), {
+            fieldKey: "id",
+            fieldValue: "text",
+            allowSearch: false,
+            placeholder: "请选择你城市",
+            isMulti: true,
+            data: [{
+                "id": "1",
+                "text": "北京"
+            }, {
+                "id": "2",
+                "text": "上海"
+            }, {
+                "id": "3",
+                "text": "广州"
+            }],
+            //url: "http://172.16.26.61:3000/status"
+        });
+
+        var form = flyer.form($("#form"), {}, function() {
+            flyer.msg(JSON.stringify(this.getData()));
+        });
+    </script>
+            </pre>
+
+        </div>
+    </div>
+</body>
+
+</html>

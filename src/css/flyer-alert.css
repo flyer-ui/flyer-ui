@@ -1,0 +1,57 @@
+/*** Parameters ***/
+.flyer-alert {
+  padding: 18px 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 14px; }
+  .flyer-alert b,
+  .flyer-alert strong {
+    font-weight: 700; }
+
+.flyer-alert-success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6; }
+
+.flyer-alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1; }
+
+.flyer-alert-warning {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc; }
+
+.flyer-alert-danger {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1; }
+
+.flyer-alert-close {
+  float: right;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 0.7;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  filter: alpha(opacity=20);
+  opacity: .2; }
+
+.flyer-alert-close:focus,
+.flyer-alert-close:hover {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+  filter: alpha(opacity=50);
+  opacity: .5; }
+
+button.flyer-alert-close {
+  -webkit-appearance: none;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0; }
+
+/*# sourceMappingURL=flyer-alert.css.map */
