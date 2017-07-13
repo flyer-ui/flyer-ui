@@ -1,29 +1,12 @@
 /*
- *@Name : flyer 分页组件
+ *@Name : flyer v0.1.1 分页组件
  *@Author : Ken( 郑鹏飞 )
  *@Date : 2016 / 07 / 19
  *@Site : http://www.flyerui.com
  *@License : LGPL
  */
-(function(global, $, factory) {
+flyer.define("page", function(elm, opts) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     //定义一个分页组件
     // elm 分页组件完成后要装入的容器
     // opts 分页组件时要定制的属性
@@ -300,19 +283,5 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.pager = function(opts) {
-        return this.each(function() {
-            this.pager = new pager(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("page", function(elm, opts) {
-            return new pager(elm, opts);
-        });
-    }
-
+    return new pager(elm, opts);
 });

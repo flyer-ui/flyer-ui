@@ -1,165 +1,19 @@
-/*! demo - v0.1.0 - 2017-07-11 */
-(function(win) {
-    "use strick"
-
-    //声明一个载体
-    var fly = function() {
-            this.vision = "flyer 0.1";
-        },
-        slice = Array.prototype.slice,
-        loca = win.location;
-
-    fly.fn = fly.prototype = {
-
-        //对字符串进行占位符格式化,例如 format("{1},{2}","a","b");
-        format: function() {
-            var args = slice.call(arguments),
-                str, len = args.length;
-            if (len > 0) {
-                for (var i = 1, str = args[0]; i < len; i++) {
-                    str = str.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
-                }
-                return str;
-            } else {
-                return this;
-            }
-        },
-
-        //格式化日期,format是格式化的格式，date是要格式化的日期
-        formatDate: function(format, date) {
-            if (!(format instanceof String)) {
-                flyer.log("error", "format参数未定义...");
-                return false;
-            }
-            date = this.getDate(date);
-            return format
-                .replace(/yyyy/ig, date.year)
-                .replace(/mm/, this.fullTime(date.month))
-                .replace(/dd/ig, this.fullTime(date.day))
-                .replace(/hh/ig, this.fullTime(date.hours))
-                .replace(/MM/, this.fullTime(date.minutes))
-                .replace(/ss/ig, this.fullTime(date.seconds));
-        },
-
-        //根据参数返回年月日时分秒对象,为空则返回当前时间
-        getDate: function(date) {
-            date = date || new Date();
-            return {
-                year: date.getFullYear(),
-                month: date.getMonth() + 1,
-                day: date.getDate(),
-                hours: date.getHours(),
-                minutes: date.getMinutes(),
-                seconds: date.getSeconds()
-            }
-        },
-
-        //填充时间,判断时间是否是十位数，不是则前位补0
-        fullTime: function(time) {
-            return time >= 10 ? time : ("0" + time);
-        },
-
-        //根据参数名称获取到URL的参数值
-        getQueryString: function(name) {
-            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-            var r = loca.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]);
-            return null;
-        },
-
-        //HTML字符串编码（可用于防止XSS攻击)
-        escapeHTML: function(text) {
-            if (typeof text === 'string' && text.length > 0) {
-                return text
-                    .replace(/&/g, "&amp;")
-                    .replace(/</g, "&lt;")
-                    .replace(/>/g, "&gt;")
-                    .replace(/\"/g, "&quot;")
-                    .replace(/\'/g, "&#39;")
-                    .replace(/ /g, "&nbsp;")
-                    .replace(/\n/g, "<br/>")
-            }
-            return text;
-        },
-
-        //HTML字符串解码（可用于防止XSS攻击)
-        unescapeHTML: function(text) {
-            if (typeof text === 'string' && text.length > 0) {
-                return text
-                    .replace(/&amp;/g, "&")
-                    .replace(/&lt;/g, "<")
-                    .replace(/&gt;/g, ">")
-                    .replace(/&quot;/g, "\"")
-                    .replace(/&#39;/g, "\'")
-                    .replace(/&nbsp;/g, " ")
-                    .replace(/<br\/>/g, "\n")
-            }
-            return text;
-        },
-
-        //获取到当天时间
-        today: function() {
-            return new Date().toISOString().replace(/T.+/, "");
-        },
-
-        //判断一个对象是否为空
-        isEmptyObject: function(o) {
-            var i;
-            for (i in o)
-                return false;
-            return true;
-        },
-
-        //得到当前函数的名称
-        getFnName: function(fn) {
-            return (/^[\s\(]*function(?:\s+([\w$_][\w\d$_]*))?\(/).exec(fn.toString())[1] || '';
-        },
-
-        //判断是否是无效的空值
-        isEmpty: function(value) {
-            var comparable = [null, "undefined", undefined, "N/A", "0", 0, "null", false, "false"];
-            return comparable.indexOf(value) > 0 ? false : true;
-        },
-
-        //在控制台输入信息，可自定义打印消息类型
-        log: function(type, msg) {
-            if (typeof console) {
-                var args = slice.call(arguments);
-                if (args.length === 1) {
-                    msg = type;
-                    console.log(msg);
-                } else if (args.length > 1) {
-                    console[type](msg);
-                }
-            }
-        }
-    }
-
-    //定义一个开放接口
-    fly.fn.define = function(name, callback) {
-        fly.fn[name] = callback;
-    }
-
-    //提供一个拓展的方法接口
-    fly.fn.extend = function(options) {
-        for (var o in options) {
-            this[o] = options[o];
-        }
-        return this;
-    }
-
-    //实例化给并挂在 window 对象下
-    window.flyer = new fly();
-})(window);
+/*
+name:flyer-ui v 0.1.1类库
+Author: Ken (郑鹏飞)
+Site : http://www.flyerui.com
+License：MIT
+打包时间:2017-07-13
+*/
 (function(global, $, factory) {
 
     if (typeof module === "object" && typeof module.exports === "object") {
 
         module.exports = global.document ? factory(global, true) : function(w) {
             if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
+                throw new Error("The plug-in needs to be on the support document rendering environment.");
             } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+                throw new Error("The plug-in needs to be on the support jQuery rendering environment.");
             }
             return factory(w);
         };
@@ -170,6 +24,358 @@
 
 })(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
     "use strick"
+
+    //声明一个载体
+    var fly = function() {
+            this.vision = "0.1.1";
+        },
+        win = window,
+        slice = Array.prototype.slice,
+        loca = win.location,
+        fn = fly.fn = fly.prototype = {
+            /**
+             * 
+             * 对字符串进行占位符格式化,例如 format("{1},{2}","a","b");
+             * @returns str
+             */
+            format: function() {
+                var args = slice.call(arguments),
+                    str, len = args.length;
+                if (len > 0) {
+                    for (var i = 1, str = args[0]; i < len; i++) {
+                        str = str.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
+                    }
+                    return str;
+                } else {
+                    return this;
+                }
+            },
+            /**
+             * 格式化日期,format是格式化的格式，date是要格式化的日期
+             * @param {any} format 
+             * @param {any} date 
+             * @returns 
+             */
+            formatDate: function(format, date) {
+                if (!(format instanceof String)) {
+                    flyer.log("error", "format参数未定义...");
+                    return false;
+                }
+                date = this.getDate(date);
+                return format
+                    .replace(/yyyy/ig, date.year)
+                    .replace(/mm/, this.fullTime(date.month))
+                    .replace(/dd/ig, this.fullTime(date.day))
+                    .replace(/hh/ig, this.fullTime(date.hours))
+                    .replace(/MM/, this.fullTime(date.minutes))
+                    .replace(/ss/ig, this.fullTime(date.seconds));
+            },
+            /**
+             * 根据参数返回年月日时分秒对象,为空则返回当前时间
+             * @param {any} date 
+             * @returns 
+             */
+            getDate: function(date) {
+                date = date || new Date();
+                return {
+                    year: date.getFullYear(),
+                    month: date.getMonth() + 1,
+                    day: date.getDate(),
+                    hours: date.getHours(),
+                    minutes: date.getMinutes(),
+                    seconds: date.getSeconds()
+                }
+            },
+            /**
+             * 
+             * 填充时间,判断时间是否是十位数，不是则前位补0
+             * @param {any} time 
+             * @returns 
+             */
+            fullTime: function(time) {
+                return time >= 10 ? time : ("0" + time);
+            },
+            /**
+             * 
+             * 根据参数名称获取到URL的参数值
+             * @param {any} name 
+             * @returns 
+             */
+            getQueryString: function(name) {
+                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                var r = loca.search.substr(1).match(reg);
+                if (r != null) return unescape(r[2]);
+                return null;
+            },
+            /**
+             * 
+             * HTML字符串编码（可用于防止XSS攻击)
+             * @param {any} text 
+             * @returns 
+             */
+            escapeHTML: function(text) {
+                if (typeof text === 'string' && text.length > 0) {
+                    return text
+                        .replace(/&/g, "&amp;")
+                        .replace(/</g, "&lt;")
+                        .replace(/>/g, "&gt;")
+                        .replace(/\"/g, "&quot;")
+                        .replace(/\'/g, "&#39;")
+                        .replace(/ /g, "&nbsp;")
+                        .replace(/\n/g, "<br/>")
+                }
+                return text;
+            },
+            /**
+             * 
+             * HTML字符串解码（可用于防止XSS攻击)
+             * @param {any} text 
+             * @returns 
+             */
+            unescapeHTML: function(text) {
+                if (typeof text === 'string' && text.length > 0) {
+                    return text
+                        .replace(/&amp;/g, "&")
+                        .replace(/&lt;/g, "<")
+                        .replace(/&gt;/g, ">")
+                        .replace(/&quot;/g, "\"")
+                        .replace(/&#39;/g, "\'")
+                        .replace(/&nbsp;/g, " ")
+                        .replace(/<br\/>/g, "\n")
+                }
+                return text;
+            },
+            /**
+             * 获取到当天时间
+             * 
+             * @returns 
+             */
+            today: function() {
+                return new Date().toISOString().replace(/T.+/, "");
+            },
+            /**
+             * 判断一个对象是否为空
+             * 
+             * @param {any} o 
+             * @returns 
+             */
+            isEmptyObject: function(o) {
+                var i;
+                for (i in o)
+                    return false;
+                return true;
+            },
+            /**
+             * 阻止冒炮事件
+             * 
+             * @param {any} e 
+             */
+            stop: function(e) {
+                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+            },
+            /**
+             * 
+             * 得到当前函数的名称
+             * @param {any} fn 
+             * @returns 
+             */
+            getFnName: function(fn) {
+                return (/^[\s\(]*function(?:\s+([\w$_][\w\d$_]*))?\(/).exec(fn.toString())[1] || '';
+            },
+            /**
+             * 
+             * 判断是否是无效的空值
+             * @param {any} value 
+             * @returns 
+             */
+            isEmpty: function(value) {
+                var comparable = [null, "undefined", undefined, "N/A", "0", 0, "null", false, "false"];
+                return comparable.indexOf(value) > 0 ? false : true;
+            },
+            /**
+             * 
+             * 判断是否是 Object 对象
+             * @param {any} obj 
+             * @returns 
+             */
+            isObject: function(obj) {
+                return typeof obj === "object";
+            },
+            /**
+             * 
+             * 判断是否是 function 对象
+             * @param {any} obj 
+             * @returns 
+             */
+            isFunction: function(obj) {
+                return typeof obj === "function";
+            },
+            /**
+             * 
+             * 判断是否是 string 对象
+             * @param {any} obj 
+             * @returns 
+             */
+            isString: function(obj) {
+                return typeof obj === "string";
+            },
+            /**
+             * 判断是否是 jQuery 对象
+             * 
+             * @param {any} obj 
+             * @returns 
+             */
+            isjQuery: function(obj) {
+                return obj instanceof jQuery;
+            },
+            /**
+             * 判断是否是 undefined 对象
+             * 
+             * @param {any} obj 
+             * @returns 
+             */
+            isUndefined: function(obj) {
+                return typeof obj === "undefined";
+            },
+            /**
+             * 在控制台输入信息，可自定义打印消息类型
+             * 
+             * @param {any} type 
+             * @param {any} msg 
+             */
+            log: function(type, msg) {
+                if (typeof console) {
+                    var args = slice.call(arguments);
+                    if (args.length === 1) {
+                        msg = type;
+                        console.log(msg);
+                    } else if (args.length > 1) {
+                        console[type](msg);
+                    }
+                }
+            }
+        }
+
+    /**
+     * 定义一个开放接口
+     * 
+     * @param {String} name 
+     * @param {Object} callback 
+     */
+    fn.define = function(name, callback) {
+        fn[name] = callback;
+    }
+
+    /**
+     * 提供一个拓展的方法接口
+     * 
+     * @param {String | Object} namespace 
+     * @param {Object} options 
+     * @returns 
+     */
+    fn.extend = function(namespace, options) {
+        var nspace = {},
+            o;
+
+        if (fn.isObject(namespace)) {
+            options = namespace;
+        } else if (fn.isFunction(namespace)) {
+            options = namespace;
+            options = options.call(this);
+        }
+
+        //如果存在包名 namespace ，则装载在包名下面
+        if (fn.isString(namespace)) {
+            for (o in options) {
+                nspace[o] = options[o];
+            }
+            this[namespace] = nspace;
+        } else {
+            for (o in options) {
+                this[o] = options[o];
+            }
+        }
+
+        return this;
+    }
+
+    //实例化给并挂在 window 对象下
+    window.flyer = new fly();
+});
+//定义成 flyer 内置模块
+
+flyer.extend("store", function() {
+    var regKey = /^[0-9A-Za-z_@-]*$/,
+        store;
+
+    //转换对象
+    function init() {
+        if (typeof store === "undefined") {
+            store = window.localStorage;
+        }
+        return true;
+    }
+
+    //判断 localStorage 的 Key 值是否合法
+    function isValidKey(key) {
+        if (typeof key != "string") {
+            return false;
+        }
+        return regKey.test(key);
+    }
+
+    return {
+
+        //设置 localStorage 单条记录
+        set: function(key, value) {
+            var success = false;
+            if (isValidKey(key) && init()) {
+                try {
+                    value += "";
+                    store.setItem(key, value);
+                    success = true;
+                } catch (e) {}
+            }
+            return success;
+        },
+
+        //读取 localStorage 单条记录
+        get: function(key) {
+            if (isValidKey(key) && init()) {
+                try {
+                    return store.getItem(key);
+                } catch (e) {}
+            }
+            return null;
+        },
+
+        //移除 localStorage 单条记录
+        remove: function(key) {
+            if (isValidKey(key) && init()) {
+                try {
+                    store.removeItem(key);
+                    return true;
+                } catch (e) {}
+            }
+            return false;
+        },
+
+        //清除 localStorage 所有记录
+        clear: function() {
+            if (init()) {
+                try {
+                    for (var key in store) {
+                        store.removeItem(key);
+                    }
+                    return true;
+                } catch (e) {}
+                return false;
+            }
+        }
+    }
+});
+flyer.define("combobox", function(selector, options) {
+
     /*
      *   功能说明：1、单选 2、多选 3、添加值 4、获取值
      */
@@ -375,7 +581,7 @@
                     _this.$itemContainer.addClass(styles[8]);
                     _this.$contents.find("i").removeClass(styles[9]).addClass(styles[10]);
                 }
-                _this.stop(e);
+                flyer.stop(e);
             });
 
             _this.$items.each(function() {
@@ -411,7 +617,7 @@
                     if (_this.allowAllItem()) {
                         _this.checkSelectAll();
                     }
-                    _this.stop(e);
+                    flyer.stop(e);
 
                 });
             });
@@ -419,7 +625,7 @@
             $(document).on("click", function(e) {
                 //$("." + styles[4]).removeClass(styles[8]);
                 _this.hideItems();
-                _this.stop(e);
+                flyer.stop(e);
             });
 
         },
@@ -428,11 +634,6 @@
         allowAllItem: function() {
             var opts = this.options;
             return opts.selectAll && opts.isMulti && opts.data.length > 1;
-        },
-
-        //阻止冒炮事件
-        stop: function(e) {
-            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
         },
 
         //将选中的值显示在内容区域
@@ -586,41 +787,10 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.combobox = function(opts) {
-        return this.each(function() {
-            this.ComboBox = new ComboBox(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("combobox", function(selector, options) {
-            return new ComboBox(selector, options);
-        });
-    }
-
+    return new ComboBox(selector, options);
 });
-(function(global, $, factory) {
+flyer.define("page", function(elm, opts) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     //定义一个分页组件
     // elm 分页组件完成后要装入的容器
     // opts 分页组件时要定制的属性
@@ -897,41 +1067,9 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.pager = function(opts) {
-        return this.each(function() {
-            this.pager = new pager(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("page", function(elm, opts) {
-            return new pager(elm, opts);
-        });
-    }
-
+    return new pager(elm, opts);
 });
-(function(global, $, factory) {
-
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
+flyer.extend(function(selector, options) {
     //定义一个样式数组集合
     var styles = ["flyer-modal", "flyer-dialog", "flyer-dialog-title", "flyer-dialog-toolbar", "flyer-close", "flyer-dialog-content", "flyer-dialog-footer", "flyer-btn", "flyer-dialog-move"],
         body = document.body,
@@ -939,7 +1077,7 @@
         loca = location,
         win = window;
 
-    //定义一个 对方框组件
+    //定义一个弹框组件
     // selector 分页组件完成后要装入的容器
     // options 分页组件时要定制的属性
     var dialog = function(options) {
@@ -1051,7 +1189,7 @@
             this.$btnClose.on("click", function(e) {
                 opts.cancel.call(this);
                 _this.close();
-                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+                flyer.stop(e);
             })
             for (var i = 0, optsBtns = opts.btns, btns = _this.$btns, len = this.$btns.length; i < len; i++) {
                 (function(elm, evnt) {
@@ -1257,7 +1395,7 @@
     }
 
     //制作一些快捷弹框方法
-    var ui = {
+    return {
 
         //提示框
         alert: function(text, options) {
@@ -1387,32 +1525,9 @@
             }
         }
     }
-
-    //拓展到 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.extend === "function") {
-        flyer.extend(ui);
-    }
-
-});
-(function(global, $, factory) {
-
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
+})
+//定义成 flyer 内置模块
+flyer.define("edit", function(selector, options) {
     /*
      * 在这里写要实例插件的代码
      */
@@ -1435,41 +1550,10 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.edit = function(opts) {
-        return this.each(function() {
-            this.Edit = new Edit(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("edit", function(selector, options) {
-            return new Edit(selector, options);
-        });
-    }
-
+    return new Edit(selector, options);
 });
-(function(global, $, factory) {
+flyer.define("date", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -1526,7 +1610,7 @@
         init: function(selector, options) {
             this.options = $.extend(true, {}, Datepicker.DEFAULTS, options);
             this.selector = this.isJQuery(selector) ? selector : $(selector);
-            this._date = this.getYMD(this.selector.val());
+            this._date = this.getYMD(this.selector.val().replace(/-/ig, "/"));
             // this.template();
             this.initEvent();
         },
@@ -1905,11 +1989,6 @@
                 .replace(/ss/ig, this._date.second);
         },
 
-        //阻止冒炮事件
-        stop: function(e) {
-            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
-        },
-
         //关闭日期选择面板
         close: function() {
             this.container.css({
@@ -1958,7 +2037,7 @@
                     left: offset.left + "px",
                     display: "block"
                 });
-                _this.stop(e);
+                flyer.stop(e);
             });
         },
 
@@ -2107,7 +2186,7 @@
             });
 
             $(this.container).on("click", function(e) {
-                _this.stop(e);
+                flyer.stop(e);
             })
 
             $(document).on("click", function(e) {
@@ -2117,52 +2196,11 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.date = function(opts) {
-        return this.each(function() {
-            this.Datepicker = new Datepicker(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("date", function(selector, options) {
-            return new Datepicker(selector, options);
-        });
-    }
-
+    return new Datepicker(selector, options);
 });
-// flyer.open({
-//     content: "<div><input type='text' id='txtFault'/></div>",
-//     title: "一个展现html结构的模态框"
-// });
-// flyer.open({
-//     pageUrl: "tab.html",
-//     isModal: true,
-//     offset: [10, 400],
-//     area: [400, 500],
-//     title: "显示颜色元素"
-// });
-(function(global, $, factory) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
+flyer.define("form", function(selector, options, callback) {
 
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -2557,48 +2595,15 @@
 
     }
 
-    //定义成 jQuery 组件
-    $.fn.form = function(opts, callback) {
-        return this.each(function() {
-            this.Form = new Form(this, opts, callback);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("form", function(selector, options, callback) {
-            return new Form(selector, options, callback);
-        });
-    }
-
+    return new Form(selector, options, callback);
 });
-(function(global, $, factory) {
+flyer.define("searches", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
-    //定义一个Tab 页签组件
-    // selector 分页组件完成后要装入的容器
-    // options 分页组件时要定制的属性
     function Searches(selector, options) {
         return this.init(selector, options);
     }
-    //定义 Tab 页签的样式集合
+
+    //定义 检索框 的样式集合
     var styles = ["flyer-searches", "keywords", "flyer-seraches-input", "fa fa-close", "flyer-combobox-items", "hover"];
 
     //默认的定制属性集合
@@ -2784,7 +2789,7 @@
 
             $(document).on("click", function(e) {
                 _this.$items.parent().hide();
-                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+                flyer.stop(e);
             });
 
         },
@@ -2926,40 +2931,10 @@
             }
         }
     }
-
-    //定义成 jQuery 组件
-    $.fn.searches = function(opts) {
-        return this.each(function() {
-            this.searches = new Searches(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    flyer.define("searches", function(selector, options) {
-        return new Searches(selector, options);
-    })
-
+    return new Searches(selector, options);
 });
-(function(global, $, factory) {
+flyer.define("tab", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     //定义一个Tab 页签组件
     // selector 分页组件完成后要装入的容器
     // options 分页组件时要定制的属性
@@ -3166,48 +3141,16 @@
             $item.addClass(styles[5]);
         }
     }
-
-    //定义成 jQuery 组件
-    $.fn.tab = function(opts) {
-        return this.each(function() {
-            this.tab = new Tab(this, opts);
-            return this;
-        });
-    }
-
-    //定义到 flyer 的内置模块
-    flyer.define("tab", function(selector, options) {
-        return new Tab(selector, options);
-    });
-
+    return new Tab(selector, options);
 });
-(function(global, $, factory) {
+flyer.define("table", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
     var Table = function(selector, options) {
         return this.init(selector, options);
     }
-
-
 
     Table.DEFAULTS = {
 
@@ -3463,42 +3406,11 @@
             this.columnResizer();
         }
     }
-
-    //定义成 jQuery 组件
-    $.fn.table = function(opts) {
-        return this.each(function() {
-            this.Table = new Table(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("table", function(selector, options) {
-            return new Table(selector, options);
-        });
-    }
-
+    return new Table(selector, options);
 });
-(function(global, $, factory) {
+//定义成 flyer 内置模块
+flyer.define("tree", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -3615,16 +3527,12 @@
                         _this.changeIcon(e.target, true);
                     }
                 }
-                _this.stop(e);
+                flyer.stop(e);
             });
             this.selector.find(classs[0]).off("click", "a");
             this.selector.find(classs[0]).on("click", "a", function(e) {
                 _this.options.click.call(this, e.target, _this.getData(e.target.getAttribute("_index")));
             });
-        },
-
-        stop: function(e) {
-            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
         },
 
         //通过形成的拓扑数据结构查找JSON对象里的值
@@ -3639,41 +3547,10 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.tree = function(opts) {
-        return this.each(function() {
-            this.tree = new Tree(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("tree", function(selector, options) {
-            return new Tree(selector, options);
-        });
-    }
-
+    return new Tree(selector, options);
 });
-(function(global, $, factory) {
+flyer.define("upload", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -3690,7 +3567,7 @@
         text: "",
 
         //类型: String ,上传文件的地址
-        url: "http://172.16.24.243:8081/upload",
+        url: "",
 
         //类型: String ,设置http类型，如：post、get。默认post。
         method: "post",
@@ -3798,41 +3675,11 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.upload = function(opts) {
-        return this.each(function() {
-            this.Upload = new Upload(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("upload", function(selector, options) {
-            return new Upload(selector, options);
-        });
-    }
-
+    return new Upload(selector, options);
 });
-(function(global, $, factory) {
+//定义成 flyer 内置模块
+flyer.define("codes", function(elm, opts) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      *  定义一个代码修饰器的构造函数
      */
@@ -3898,7 +3745,7 @@
 
             for (var i = 0, len = arryText.length; i < len; i++) {
                 if (this.options.encode) {
-                    arryText[i] = arryText[i].replace(/</g, '&lt;').replace(/>/g, '&gt').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+                    arryText[i] = flyer.escapeHTML(arryText[i]);
                 }
                 arryHtmls.push("<li>" + arryText[i] + "</li>");
             }
@@ -3906,18 +3753,16 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.codes = function(opts) {
-        return this.each(function() {
-            this.codes = new Codes(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("codes", function(elm, opts) {
-            return new Codes(elm, opts);
-        });
-    }
+    return new Codes(elm, opts);
 });
+(function($, fly) {
+    for (var o in fly) {
+        (function(o, $) {
+            $.fn[o] = function(options) {
+                return this.each(function() {
+                    return fly[o](this, options);
+                });
+            }
+        })(o, $)
+    }
+})(jQuery, flyer)
