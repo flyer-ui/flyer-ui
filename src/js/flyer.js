@@ -10,7 +10,7 @@
 
     //声明一个载体
     var fly = function() {
-            this.vision = "flyer 0.1";
+            this.vision = "flyer 0.1.1";
         },
         slice = Array.prototype.slice,
         loca = win.location;
