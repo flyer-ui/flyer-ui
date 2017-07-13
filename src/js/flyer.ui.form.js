@@ -3,7 +3,7 @@
  *@Author: Ken(郑鹏飞)
  *@License：MIT
  ***/
-(function(global, $, factory) {
+flyer.define("form", function(selector, options, callback) {
 
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
