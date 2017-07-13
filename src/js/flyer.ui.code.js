@@ -1,12 +1,28 @@
 /***
- *@Name: fiyer v0.1.1 代码修饰器
+ *@Name: fiyer v1.0 代码修饰器
  *@Author: Ken (郑鹏飞)
- *@Site : http://www.flyerui.com
- *@License：MIT
+ *@Site : http://www.15ae.com
+ *@License：LGPL
  ***/
-//定义成 flyer 内置模块
-flyer.define("codes", function(elm, opts) {
+(function(global, $, factory) {
 
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     /*
      *  定义一个代码修饰器的构造函数
      */
@@ -72,7 +88,7 @@ flyer.define("codes", function(elm, opts) {
 
             for (var i = 0, len = arryText.length; i < len; i++) {
                 if (this.options.encode) {
-                    arryText[i] = flyer.escapeHTML(arryText[i]);
+                    arryText[i] = arryText[i].replace(/</g, '&lt;').replace(/>/g, '&gt').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
                 }
                 arryHtmls.push("<li>" + arryText[i] + "</li>");
             }
@@ -80,5 +96,18 @@ flyer.define("codes", function(elm, opts) {
         }
     }
 
-    return new Codes(elm, opts);
+    //定义成 jQuery 组件
+    $.fn.codes = function(opts) {
+        return this.each(function() {
+            this.codes = new Codes(this, opts);
+            return this;
+        });
+    }
+
+    //定义成 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.define === "function") {
+        flyer.define("codes", function(elm, opts) {
+            return new Codes(elm, opts);
+        });
+    }
 });

@@ -11,12 +11,12 @@ module.exports = function(grunt) {
         concat: {
             options: {
                 stripBanners: true,
-                banner: '/*\nname:<%= pkg.name %> v <%= pkg.version %>类库\nAuthor: Ken (郑鹏飞)\nSite : http://www.flyerui.com\nLicense：MIT\n打包时间:<%= grunt.template.today("yyyy-mm-dd") %>\n*/\n'
+                banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+                    '<%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             dist: {
                 src: [
-                    'src/js/flyer.core.js',
-                    'src/js/flyer.store.js',
+                    'src/js/flyer.js',
                     'src/js/flyer.ui.comboBox.js',
                     'src/js/flyer.ui.page.js',
                     'src/js/flyer.ui.dialog.js',
@@ -30,8 +30,7 @@ module.exports = function(grunt) {
                     'src/js/flyer.ui.table.js',
                     'src/js/flyer.ui.tree.js',
                     'src/js/flyer.ui.upload.js',
-                    'src/js/flyer.ui.code.js',
-                    'src/js/flyer.jquery.js'
+                    'src/js/flyer.ui.code.js'
                 ],
                 dest: 'dist/js/flyer.all.js'
             },
@@ -64,7 +63,7 @@ module.exports = function(grunt) {
         },
         uglify: {
             options: {
-                banner: '/*\nname:<%= pkg.name %> v <%= pkg.version %>类库\nAuthor: Ken (郑鹏飞)\nSite : http://www.flyerui.com\nLicense：MIT\n打包时间:<%= grunt.template.today("yyyy-mm-dd") %>\n*/\n'
+                banner: '/*! <%= pkg.file %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
                 src: "dist/js/flyer.all.js",
@@ -86,15 +85,6 @@ module.exports = function(grunt) {
                     cwd: 'src/sass/',
                     src: ['*.scss'],
                     dest: 'src/css/',
-                    ext: '.css'
-                }]
-            },
-            aukey: {
-                files: [{
-                    expand: true,
-                    cwd: 'src/sass/aukey/',
-                    src: ['*.scss'],
-                    dest: 'src/css/aukey/',
                     ext: '.css'
                 }]
             }

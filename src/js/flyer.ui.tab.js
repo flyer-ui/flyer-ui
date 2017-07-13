@@ -1,12 +1,30 @@
 /***
- *@Name: fiyer v0.1.1 tab 组件
+ *@Name: fiyer v1.0 tab 组件
  *@Author: Ken (郑鹏飞)
  *创建于日期：2017/04/24
  *@Site : http://www.flyerui.com
- *@License：MIT
+ *@License：LGPL
  ***/
-flyer.define("tab", function(selector, options) {
 
+(function(global, $, factory) {
+
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     //定义一个Tab 页签组件
     // selector 分页组件完成后要装入的容器
     // options 分页组件时要定制的属性
@@ -213,5 +231,18 @@ flyer.define("tab", function(selector, options) {
             $item.addClass(styles[5]);
         }
     }
-    return new Tab(selector, options);
+
+    //定义成 jQuery 组件
+    $.fn.tab = function(opts) {
+        return this.each(function() {
+            this.tab = new Tab(this, opts);
+            return this;
+        });
+    }
+
+    //定义到 flyer 的内置模块
+    flyer.define("tab", function(selector, options) {
+        return new Tab(selector, options);
+    });
+
 });

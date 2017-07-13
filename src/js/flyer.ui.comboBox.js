@@ -1,11 +1,29 @@
 /***
- *@Name: fiyer v0.1.1 下拉组件
+ *@Name: fiyer v1.0 下拉组件
  *@Author: Ken (郑鹏飞)
+ *创建于日期：2016/03/30
  *@Site : http://www.flyerui.com
- *@License：MIT
+ *@License：LGPL
  ***/
-flyer.define("combobox", function(selector, options) {
+(function(global, $, factory) {
 
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     /*
      *   功能说明：1、单选 2、多选 3、添加值 4、获取值
      */
@@ -211,7 +229,7 @@ flyer.define("combobox", function(selector, options) {
                     _this.$itemContainer.addClass(styles[8]);
                     _this.$contents.find("i").removeClass(styles[9]).addClass(styles[10]);
                 }
-                flyer.stop(e);
+                _this.stop(e);
             });
 
             _this.$items.each(function() {
@@ -247,7 +265,7 @@ flyer.define("combobox", function(selector, options) {
                     if (_this.allowAllItem()) {
                         _this.checkSelectAll();
                     }
-                    flyer.stop(e);
+                    _this.stop(e);
 
                 });
             });
@@ -255,7 +273,7 @@ flyer.define("combobox", function(selector, options) {
             $(document).on("click", function(e) {
                 //$("." + styles[4]).removeClass(styles[8]);
                 _this.hideItems();
-                flyer.stop(e);
+                _this.stop(e);
             });
 
         },
@@ -264,6 +282,11 @@ flyer.define("combobox", function(selector, options) {
         allowAllItem: function() {
             var opts = this.options;
             return opts.selectAll && opts.isMulti && opts.data.length > 1;
+        },
+
+        //阻止冒炮事件
+        stop: function(e) {
+            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
         },
 
         //将选中的值显示在内容区域
@@ -417,5 +440,19 @@ flyer.define("combobox", function(selector, options) {
         }
     }
 
-    return new ComboBox(selector, options);
+    //定义成 jQuery 组件
+    $.fn.combobox = function(opts) {
+        return this.each(function() {
+            this.ComboBox = new ComboBox(this, opts);
+            return this;
+        });
+    }
+
+    //定义成 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.define === "function") {
+        flyer.define("combobox", function(selector, options) {
+            return new ComboBox(selector, options);
+        });
+    }
+
 });

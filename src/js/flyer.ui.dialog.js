@@ -1,10 +1,42 @@
 /***
- *@Name: fiyer v0.1.1 弹层组件
+ *@Name: fiyer v1.0 弹层组件
  *@Author: Ken (郑鹏飞)
  *@Site : http://www.flyerui.com
- *@License：MIT
+ *@License：LGPL
+ <div class="flyer-modal">
+</div>
+<div class="flyer-dialog">
+    <div class="flyer-dialog-title">
+        <div class="flyer-dialog-toolbar">
+            <i class="flyer-close">x</i>
+        </div>
+        <h4>Title</h4>
+    </div>
+    <div class="flyer-dialog-content">Content</div>
+    <div class="flyer-dialog-footer">
+        <button class="flyer-btn">Button</button>
+    </div>
+</div>
  ***/
-flyer.extend(function(selector, options) {
+(function(global, $, factory) {
+
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     //定义一个样式数组集合
     var styles = ["flyer-modal", "flyer-dialog", "flyer-dialog-title", "flyer-dialog-toolbar", "flyer-close", "flyer-dialog-content", "flyer-dialog-footer", "flyer-btn", "flyer-dialog-move"],
         body = document.body,
@@ -12,7 +44,7 @@ flyer.extend(function(selector, options) {
         loca = location,
         win = window;
 
-    //定义一个弹框组件
+    //定义一个 对方框组件
     // selector 分页组件完成后要装入的容器
     // options 分页组件时要定制的属性
     var dialog = function(options) {
@@ -124,7 +156,7 @@ flyer.extend(function(selector, options) {
             this.$btnClose.on("click", function(e) {
                 opts.cancel.call(this);
                 _this.close();
-                flyer.stop(e);
+                e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
             })
             for (var i = 0, optsBtns = opts.btns, btns = _this.$btns, len = this.$btns.length; i < len; i++) {
                 (function(elm, evnt) {
@@ -330,7 +362,7 @@ flyer.extend(function(selector, options) {
     }
 
     //制作一些快捷弹框方法
-    return {
+    var ui = {
 
         //提示框
         alert: function(text, options) {
@@ -460,4 +492,10 @@ flyer.extend(function(selector, options) {
             }
         }
     }
-})
+
+    //拓展到 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.extend === "function") {
+        flyer.extend(ui);
+    }
+
+});

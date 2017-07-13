@@ -1,10 +1,27 @@
 /***
- *@Name: fiyer v0.1.1 表单组件
- *@Author: Ken(郑鹏飞)
- *@License：MIT
+ *@Name: fiyer v1.0 表单组件
+ *@Author: Ken
+ *@License：LGPL
  ***/
 flyer.define("form", function(selector, options, callback) {
 
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w, $);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -399,5 +416,19 @@ flyer.define("form", function(selector, options, callback) {
 
     }
 
-    return new Form(selector, options, callback);
+    //定义成 jQuery 组件
+    $.fn.form = function(opts, callback) {
+        return this.each(function() {
+            this.Form = new Form(this, opts, callback);
+            return this;
+        });
+    }
+
+    //定义成 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.define === "function") {
+        flyer.define("form", function(selector, options, callback) {
+            return new Form(selector, options, callback);
+        });
+    }
+
 });

@@ -1,11 +1,37 @@
 /***
- *@Name: fiyer v0.1.1 上传控件
+ *@Name: fiyer v1.0 上传控件
  *@Author: Ken(郑鹏飞)
- *@License：MIT
+ *@License：LGPL
  *
+ * <div class="flyer-upload">
+        <form enctype="multipart/form-data">
+            <input type="file" class="flyer-upload-file" value="上传图片" />
+        </form>
+        <button class="flyer-btn flyer-btn-default">
+            <i class="fa fa-plus-square-o"></i>
+            <span>上传图片</span>
+        </button>
+    </div>
  ***/
-flyer.define("upload", function(selector, options) {
+(function(global, $, factory) {
 
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w, $);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -22,7 +48,7 @@ flyer.define("upload", function(selector, options) {
         text: "",
 
         //类型: String ,上传文件的地址
-        url: "",
+        url: "http://172.16.24.243:8081/upload",
 
         //类型: String ,设置http类型，如：post、get。默认post。
         method: "post",
@@ -130,5 +156,19 @@ flyer.define("upload", function(selector, options) {
         }
     }
 
-    return new Upload(selector, options);
+    //定义成 jQuery 组件
+    $.fn.upload = function(opts) {
+        return this.each(function() {
+            this.Upload = new Upload(this, opts);
+            return this;
+        });
+    }
+
+    //定义成 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.define === "function") {
+        flyer.define("upload", function(selector, options) {
+            return new Upload(selector, options);
+        });
+    }
+
 });

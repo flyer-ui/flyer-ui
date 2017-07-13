@@ -1,10 +1,27 @@
 /***
- *@Name: fiyer v0.1.1 日期控件
+ *@Name: fiyer v1.0 日期控件
  *@Author: Ken（郑鹏飞)
- *@License：MIT
+ *@License：LGPL
  ***/
-flyer.define("date", function(selector, options) {
+(function(global, $, factory) {
 
+    if (typeof module === "object" && typeof module.exports === "object") {
+
+        module.exports = global.document ? factory(global, true) : function(w) {
+            if (!w.document) {
+                throw new Error("该插件需要在支持document的渲染环境上.");
+            } else if (!$) {
+                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
+            }
+            return factory(w, $);
+        };
+
+    } else {
+        factory(global, $);
+    }
+
+})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
+    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -440,6 +457,11 @@ flyer.define("date", function(selector, options) {
                 .replace(/ss/ig, this._date.second);
         },
 
+        //阻止冒炮事件
+        stop: function(e) {
+            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+        },
+
         //关闭日期选择面板
         close: function() {
             this.container.css({
@@ -488,7 +510,7 @@ flyer.define("date", function(selector, options) {
                     left: offset.left + "px",
                     display: "block"
                 });
-                flyer.stop(e);
+                _this.stop(e);
             });
         },
 
@@ -637,7 +659,7 @@ flyer.define("date", function(selector, options) {
             });
 
             $(this.container).on("click", function(e) {
-                flyer.stop(e);
+                _this.stop(e);
             })
 
             $(document).on("click", function(e) {
@@ -647,5 +669,19 @@ flyer.define("date", function(selector, options) {
         }
     }
 
-    return new Datepicker(selector, options);
+    //定义成 jQuery 组件
+    $.fn.date = function(opts) {
+        return this.each(function() {
+            this.Datepicker = new Datepicker(this, opts);
+            return this;
+        });
+    }
+
+    //定义成 flyer 内置模块
+    if (typeof flyer === "object" && typeof flyer.define === "function") {
+        flyer.define("date", function(selector, options) {
+            return new Datepicker(selector, options);
+        });
+    }
+
 });
