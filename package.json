@@ -1,7 +1,7 @@
 {
     "name": "flyer-ui",
     "file": "flyer",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "flyer-ui",
     "license": "MIT",
     "devDependencies": {
@@ -21,7 +21,8 @@
         "grunt-contrib-watch": "^1.0.0",
         "grunt-git": "^1.0.4",
         "grunt-strip": "~0.2.1",
-        "jquery": "^3.2.1"
+        "jquery": "^3.2.1",
+        "layui": "0.0.1"
     },
     "dependencies": {
         "express": "3.x"

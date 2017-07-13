@@ -1,69 +1,12 @@
 /***
- *@Name: fiyer v1.0 树形菜单控件
+ *@Name: fiyer v0.1.1 树形菜单控件
  *@Author: Ken（郑鹏飞）
- *@License：LGPL
+ *@License： MIT
  *备注:关于 flyer  插件拓展的使用说明及规范范本.
-  <div class="flyer-tree">
-    <ul class="flyer-tree-root">
-        <li><i class="fa fa-caret-right"></i><a><i class="fa fa-folder-o"></i>Tree1</a>
-            <ul class="flyer-tree-node">
-                <li>
-                    <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree1.1</a>
-                </li>
-                <li>
-                    <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree1.2</a>
-                </li>
-                <li>
-                    <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree1.3</a>
-                </li>
-            </ul>
-        </li>
-        <li><i class="fa fa-caret-right"></i><a><i class="fa fa-folder-o"></i>Tree2</a>
-            <ul class="flyer-tree-node">
-                <ul>
-                    <li>
-                        <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree2.1</a>
-                    </li>
-                    <li>
-                        <i class="fa fa-caret-right"></i><a><i class="fa fa-folder-o"></i>Tree2.2</a>
-                        <ul class="flyer-tree-node">
-                            <ul>
-                                <li>
-                                    <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree2.2.1</a>
-                                </li>
-                                <li>
-                                    <i class="fa"></i><a><i class="fa fa-file-o"></i>Tree2.2.2</a>
-                                </li>
-                            </ul>
-                        </ul>
-                    </li>
-                </ul>
-            </ul>
-        </li>
-        <li><i class="fa"></i><a><i class="fa fa-file-o"></i>Tree3</a></li>
-        <li><i class="fa"></i><a><i class="fa fa-file-o"></i>Tree4</a></li>
-    </ul>
-</div>
- ***/
-(function(global, $, factory) {
+ */
+//定义成 flyer 内置模块
+flyer.define("tree", function(selector, options) {
 
-    if (typeof module === "object" && typeof module.exports === "object") {
-
-        module.exports = global.document ? factory(global, true) : function(w) {
-            if (!w.document) {
-                throw new Error("该插件需要在支持document的渲染环境上.");
-            } else if (!$) {
-                throw new Error("该插件需要在支持加载了jQuery类库的渲染环境上.");
-            }
-            return factory(w, $);
-        };
-
-    } else {
-        factory(global, $);
-    }
-
-})(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
     /*
      * 在这里写要实例插件的代码,定义的变量名以实际组件的名称为准
      */
@@ -180,16 +123,12 @@
                         _this.changeIcon(e.target, true);
                     }
                 }
-                _this.stop(e);
+                flyer.stop(e);
             });
             this.selector.find(classs[0]).off("click", "a");
             this.selector.find(classs[0]).on("click", "a", function(e) {
                 _this.options.click.call(this, e.target, _this.getData(e.target.getAttribute("_index")));
             });
-        },
-
-        stop: function(e) {
-            e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
         },
 
         //通过形成的拓扑数据结构查找JSON对象里的值
@@ -204,19 +143,5 @@
         }
     }
 
-    //定义成 jQuery 组件
-    $.fn.tree = function(opts) {
-        return this.each(function() {
-            this.tree = new Tree(this, opts);
-            return this;
-        });
-    }
-
-    //定义成 flyer 内置模块
-    if (typeof flyer === "object" && typeof flyer.define === "function") {
-        flyer.define("tree", function(selector, options) {
-            return new Tree(selector, options);
-        });
-    }
-
+    return new Tree(selector, options);
 });
