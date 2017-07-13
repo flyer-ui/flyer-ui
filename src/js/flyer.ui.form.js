@@ -3,7 +3,7 @@
  *@Author: Ken
  *@License：LGPL
  ***/
-flyer.define("form", function(selector, options, callback) {
+(function(global, $, factory) {
 
     if (typeof module === "object" && typeof module.exports === "object") {
 
