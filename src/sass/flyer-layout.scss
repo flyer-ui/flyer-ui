@@ -417,6 +417,9 @@ $gray-font-color:#fff;
                 margin: 0 12px;
                 display: inline-block
             }
+            iframe {
+                vertical-align: -5px;
+            }
         }
     }
     &-site {
@@ -452,4 +455,12 @@ $gray-font-color:#fff;
         margin-right: 4px;
         float: left;
     }
+}
+
+.github-big {
+    font-size: 32px !important;
+}
+
+.github-common {
+    font-size: 22px !important;
 }

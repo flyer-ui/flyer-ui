@@ -70,17 +70,6 @@
   .flyer-combobox-items input[type="checkbox"] {
     margin-right: 5px; }
 
-.flyer-combobox-items > ul > li {
-  width: 100%;
-  overflow: hidden;
-  font-size: 14px;
-  cursor: pointer;
-  max-height: 200px; }
-
-.flyer-combobox-items > ul > li .disabled {
-  color: #eee;
-  cursor: not-allowed; }
-
 .flyer-combobox-items > ul > li input[type='text'] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

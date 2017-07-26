@@ -67,6 +67,15 @@ flyer.define("combobox", function(selector, options) {
         //类型：Boolean ,点击全选是否选中所有的值
         allowSelectAll: true,
 
+        //类型: String ,下拉选项“全部”的显示文本
+        allText: "All",
+
+        //类型：String ,下拉选项“全部”显示的对应值
+        allValue: "-1",
+
+        //类型: String ,初始化默认选中的值
+        defaultValue: "",
+
         //类型：Function ,开放一个数据结构处理的方法
         fnDataProcessing: function() {
             this.data = this.data.rows;
@@ -98,6 +107,7 @@ flyer.define("combobox", function(selector, options) {
             this[0] = $(selector);
             this._data = {};
             this.requestData();
+            this.initDefaultValue();
         },
 
         //加载模板
@@ -115,7 +125,7 @@ flyer.define("combobox", function(selector, options) {
                 '<div class="flyer-combobox-items">',
                 opts.allowSearch ? '<div class="flyer-combobox-search"><input placeholder="' + opts.searchPlaceholder + '" type="text"><i class="fa fa-search"></i></div>' : "",
                 '<ul>',
-                _this.allowAllItem() ? "<li data-index='-1' data-key='-1' data-value='全部'><div>全部</div></li>" : "",
+                _this.allowAllItem() ? ("<li data-index='-1' data-key='" + opts.allValue + "' data-value='" + opts.allText + "'><div>" + opts.allText + "</div></li>") : "",
                 _this.readerItems(),
                 '</ul>',
                 '</div>',
@@ -224,7 +234,7 @@ flyer.define("combobox", function(selector, options) {
                         fieldKey: $this.data("key"),
                         fieldValue: $this.data("value")
                     }
-                    if (item.fieldKey == "-1" && item.fieldValue == "全部") {
+                    if (item.fieldKey == "-1" && item.fieldValue == opts.allValue) {
                         _this.empty();
                     } else {
                         _this.unselectAll();
@@ -364,12 +374,22 @@ flyer.define("combobox", function(selector, options) {
 
         //得到选中的值
         getSelectedValue: function() {
-            return this._data.fieldKey;
+            return this.clearLastSeparator(this._data.fieldKey);
         },
 
         //得到选中的文本
         getSelectedText: function() {
-            return this._data.fieldValue;
+            return this.clearLastSeparator(this._data.fieldValue);
+        },
+
+        //修正输出值,去掉最后的追加符
+        clearLastSeparator: function(value) {
+            value = String(value);
+            var lastIndexOf = value.lastIndexOf(this.options.multipleSeparator);
+            if (lastIndexOf + 1 === value.length) {
+                return value.substring(0, lastIndexOf);
+            }
+            return value;
         },
 
         //给对象赋值
@@ -380,8 +400,8 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: data.fieldKey,
                 fieldValue: data.fieldValue || $selectedItem.data("value")
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
             $selectedItem.addClass(styles[7]);
         },
 
@@ -401,8 +421,8 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: keys,
                 fieldValue: values
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
         },
 
         //清空选中的值
@@ -411,9 +431,18 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: "",
                 fieldValue: ""
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.options.defaultValue="";
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
             this.$items.removeClass(styles[7]);
+        },
+
+        //初始化组件时同事初始化一个默认值
+        initDefaultValue: function() {
+            var defaultValue = this.options.defaultValue;
+            if (flyer.isString(defaultValue) && defaultValue.length > 0) {
+                this.setValue({ fieldKey: defaultValue });
+            }
         }
     }
 

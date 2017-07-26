@@ -307,6 +307,8 @@
     font-size: 14px;
     margin: 0 12px;
     display: inline-block; }
+  .flyer-layout-bgImg .flyer-layout-version iframe {
+    vertical-align: -5px; }
 .flyer-layout-site {
   overflow: hidden;
   margin: 60px auto; }
@@ -333,5 +335,11 @@
 .flyer-form .flyer-checkbox {
   margin-right: 4px;
   float: left; }
+
+.github-big {
+  font-size: 32px !important; }
+
+.github-common {
+  font-size: 22px !important; }
 
 /*# sourceMappingURL=flyer-layout.css.map */

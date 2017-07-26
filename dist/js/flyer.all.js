@@ -3,7 +3,7 @@ name:flyer-ui v 0.1.2类库
 Author: Ken (郑鹏飞)
 Site : http://www.flyerui.com
 License：MIT
-打包时间:2017-07-13
+打包时间:2017-07-26
 */
 (function(global, $, factory) {
 
@@ -23,7 +23,7 @@ License：MIT
     }
 
 })(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
+    "use strick";
 
     //声明一个载体
     var fly = function() {
@@ -58,7 +58,7 @@ License：MIT
              */
             formatDate: function(format, date) {
                 if (!(format instanceof String)) {
-                    flyer.log("error", "format参数未定义...");
+                    flyer.log("error", "format is not defined.");
                     return false;
                 }
                 date = this.getDate(date);
@@ -104,7 +104,7 @@ License：MIT
             getQueryString: function(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = loca.search.substr(1).match(reg);
-                if (r != null) return unescape(r[2]);
+                if (r !== null) return unescape(r[2]);
                 return null;
             },
             /**
@@ -210,6 +210,15 @@ License：MIT
             isFunction: function(obj) {
                 return typeof obj === "function";
             },
+
+            /**
+             * 判断是否是 Array 对象
+             * 
+             * @param {any} obj 
+             */
+            isArray: function(obj) {
+                return obj instanceof Array;
+            },
             /**
              * 
              * 判断是否是 string 对象
@@ -281,6 +290,9 @@ License：MIT
             options = namespace;
         } else if (fn.isFunction(namespace)) {
             options = namespace;
+        }
+
+        if (fn.isFunction(options)) {
             options = options.call(this);
         }
 
@@ -437,6 +449,15 @@ flyer.define("combobox", function(selector, options) {
         //类型：Boolean ,点击全选是否选中所有的值
         allowSelectAll: true,
 
+        //类型: String ,下拉选项“全部”的显示文本
+        allText: "All",
+
+        //类型：String ,下拉选项“全部”显示的对应值
+        allValue: "-1",
+
+        //类型: String ,初始化默认选中的值
+        defaultValue: "",
+
         //类型：Function ,开放一个数据结构处理的方法
         fnDataProcessing: function() {
             this.data = this.data.rows;
@@ -468,6 +489,7 @@ flyer.define("combobox", function(selector, options) {
             this[0] = $(selector);
             this._data = {};
             this.requestData();
+            this.initDefaultValue();
         },
 
         //加载模板
@@ -485,7 +507,7 @@ flyer.define("combobox", function(selector, options) {
                 '<div class="flyer-combobox-items">',
                 opts.allowSearch ? '<div class="flyer-combobox-search"><input placeholder="' + opts.searchPlaceholder + '" type="text"><i class="fa fa-search"></i></div>' : "",
                 '<ul>',
-                _this.allowAllItem() ? "<li data-index='-1' data-key='-1' data-value='全部'><div>全部</div></li>" : "",
+                _this.allowAllItem() ? ("<li data-index='-1' data-key='" + opts.allValue + "' data-value='" + opts.allText + "'><div>" + opts.allText + "</div></li>") : "",
                 _this.readerItems(),
                 '</ul>',
                 '</div>',
@@ -594,7 +616,7 @@ flyer.define("combobox", function(selector, options) {
                         fieldKey: $this.data("key"),
                         fieldValue: $this.data("value")
                     }
-                    if (item.fieldKey == "-1" && item.fieldValue == "全部") {
+                    if (item.fieldKey == "-1" && item.fieldValue == opts.allValue) {
                         _this.empty();
                     } else {
                         _this.unselectAll();
@@ -734,12 +756,22 @@ flyer.define("combobox", function(selector, options) {
 
         //得到选中的值
         getSelectedValue: function() {
-            return this._data.fieldKey;
+            return this.clearLastSeparator(this._data.fieldKey);
         },
 
         //得到选中的文本
         getSelectedText: function() {
-            return this._data.fieldValue;
+            return this.clearLastSeparator(this._data.fieldValue);
+        },
+
+        //修正输出值,去掉最后的追加符
+        clearLastSeparator: function(value) {
+            value = String(value);
+            var lastIndexOf = value.lastIndexOf(this.options.multipleSeparator);
+            if (lastIndexOf + 1 === value.length) {
+                return value.substring(0, lastIndexOf);
+            }
+            return value;
         },
 
         //给对象赋值
@@ -750,8 +782,8 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: data.fieldKey,
                 fieldValue: data.fieldValue || $selectedItem.data("value")
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
             $selectedItem.addClass(styles[7]);
         },
 
@@ -771,8 +803,8 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: keys,
                 fieldValue: values
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
         },
 
         //清空选中的值
@@ -781,9 +813,18 @@ flyer.define("combobox", function(selector, options) {
                 fieldKey: "",
                 fieldValue: ""
             }
-            this.$filterOptions.val(this._data.fieldValue);
-            this.$filterOptions.data("key", this._data.fieldKey);
+            this.options.defaultValue="";
+            this.$filterOptions.val(this.getSelectedText());
+            this.$filterOptions.data("key", this.getSelectedValue());
             this.$items.removeClass(styles[7]);
+        },
+
+        //初始化组件时同事初始化一个默认值
+        initDefaultValue: function() {
+            var defaultValue = this.options.defaultValue;
+            if (flyer.isString(defaultValue) && defaultValue.length > 0) {
+                this.setValue({ fieldKey: defaultValue });
+            }
         }
     }
 
@@ -1494,7 +1535,7 @@ flyer.extend(function(selector, options) {
             options.skin = options.skin || "flyer-dialog-tip";
             options.anim = options.anim || "bounceInDown";
             options.offset = options.offset || [0, 0];
-            var o = ui.msg(text, options);
+            var o = this.msg(text, options);
 
             return o;
         },
@@ -3161,7 +3202,16 @@ flyer.define("table", function(selector, options) {
         data: [],
 
         //是否可以拖动列宽度
-        resizer: false
+        resizer: false,
+
+        //表格容器的宽度
+        width: "auto",
+
+        //表格容器的高度
+        height: "auto",
+
+        //表头是否固定
+        fixedHeader: true
     }
 
     //内置列的属性
@@ -3192,31 +3242,40 @@ flyer.define("table", function(selector, options) {
 
             //方法实例化代码
             this.template();
-            this.initHeaderThemes();
+            //this.initHeaderThemes();
             this.initEvents();
+
             if (this.options.resizer) {
                 this.initRgrips();
             }
-
         },
 
         //加载表格模版
         template: function() {
 
             var arryHtml = [
-                '<div class="flyer-table-wrapper"><table class="flyer-table">',
+                '<div class="flyer-table" style="width:' + this.options.width + ';height:' + this.options.height + '">',
+                '<div class="flyer-table-toolbar">',
+                '</div>',
+                '<div class="flyer-table-resizer">',
+                '</div>',
+                '<div class="flyer-table-body">',
+                '<table>',
                 '<thead>',
-                '<tr>',
                 this.initHeader(),
-                '</tr>',
                 '</thead>',
                 '<tbody>',
                 this.initBody(),
                 '</tbody>',
                 '<tfoot>',
                 '</tfoot>',
-                '</table></div>'
-            ];
+                '</table>',
+                '</div>',
+                '<div class="flyer-table-page">',
+                '</div>',
+                '</div>'
+            ]
+
             this.selector.html(arryHtml.join(""));
 
             this.$header = this.selector.find("thead");
@@ -3239,26 +3298,23 @@ flyer.define("table", function(selector, options) {
         //加载表头
         initHeader: function() {
             var arryHtml = [];
-            this._flagColumns = {};
+            for (var i = 0, columns = this.options.columns, len = columns.length; i < len; i++) {
+                this.options.columns[i] = $.extend(true, {}, Table.COLUMN_DEFAULTS, columns[i]);
+            }
+            parseColumns(arryHtml, this.options.columns, "th");
+            return arryHtml.join("");
+            //return this.parseHeader();
+        },
 
+        parseHeader: function() {
+            var arryHtml = [];
             for (var i = 0, columns = this.options.columns, len = columns.length; i < len; i++) {
                 this.options.columns[i] = $.extend(true, {}, Table.COLUMN_DEFAULTS, columns[i]);
                 var column = columns[i];
                 column._index = i;
-
                 this._flagColumns[i] = column;
-
-                if (column.visible) {
-                    if (column.checkbox) {
-                        arryHtml.push("<th data-index=" + column._index + "><input name='" + column.field + "' type='checkbox'/></th>");
-                    } else if (column.radio) {
-                        arryHtml.push("<th data-index=" + column._index + "><input name='" + column.field + "' type='radio'/></th>");
-                    } else {
-                        arryHtml.push("<th data-index=" + column._index + ">" + column.title + "</th>");
-                    }
-                }
             }
-
+            parseColumns(arryHtml, this.options.columns, "th");
             return arryHtml.join("");
         },
 
@@ -3304,14 +3360,14 @@ flyer.define("table", function(selector, options) {
                 var ckHead = this;
                 _this.selector.find("input[name='" + ckHead.name + "']").each(function() {
                     this.checked = ckHead.checked;
-                })
+                });
             });
         },
 
         //列拖动
         columnResizer: function(e) {
             var _this = this,
-                $resizerItems = $(".flyer-rgrips").find(".flyer-rgrips-resizer"),
+                $resizerItems = this.selector.find(".flyer-rgrips .flyer-rgrips-resizer"),
                 $table = this.selector.find(".flyer-table"),
                 tableLeft = $table.offset().left,
                 tableWidth = $table.width();
@@ -3357,7 +3413,7 @@ flyer.define("table", function(selector, options) {
             $(document).mouseup(function(e) {
                 document.body.onselectstart = function() {
                     return true;
-                }
+                };
 
                 if (_this.ismove) {
                     _this.ismove = false;
@@ -3377,6 +3433,7 @@ flyer.define("table", function(selector, options) {
                     _this.rgripElm.removeClass("flyer-rgrips-drag");
                     $table.removeClass("user-select-none");
                     //_this._flagColumns[_this.rgripElm.data("index")].styles["width"] =
+                    _this.initRgrips();
                 }
 
             });
@@ -3385,7 +3442,7 @@ flyer.define("table", function(selector, options) {
         //构建可以拖动列宽的结构
         initRgrips: function() {
             var arryRgrips = [],
-                $table = this.selector.find(".flyer-table"),
+                $table = this.selector.find(".flyer-table-body table"),
                 tableWidth = $table.width(),
                 tableHeight = $table.height(),
                 tableLeft = $table.offset().left;
@@ -3402,10 +3459,31 @@ flyer.define("table", function(selector, options) {
             $table.css("width", tableWidth);
 
             arryRgrips.push("</div>");
-            $table.before(arryRgrips.join(""));
+            this.selector.find(".flyer-table-resizer").html(arryRgrips.join(""));
             this.columnResizer();
         }
     }
+
+    function parseColumns(arryHtmls, columns, tagName) {
+
+        var fields = [];
+        arryHtmls.push("<tr>");
+        for (var i = 0, len = columns.length; i < len; i++) {
+
+            arryHtmls.push("<" + tagName + ">" + columns[i].title + "</" + tagName + ">");
+            if (typeof columns[i].field === "object") {
+                fields.push(columns[i].field);
+            }
+        }
+        arryHtmls.push("</tr>");
+        if (fields.length > 0) {
+            for (var j = 0, jLen = fields.length; j < jLen; j++) {
+                parseColumns(arryHtmls, fields[j], tagName);
+            }
+        }
+        return arryHtmls;
+    }
+
     return new Table(selector, options);
 });
 //定义成 flyer 内置模块

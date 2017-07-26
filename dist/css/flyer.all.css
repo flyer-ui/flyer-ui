@@ -3,7 +3,7 @@ name:flyer-ui v 0.1.2类库
 Author: Ken (郑鹏飞)
 Site : http://www.flyerui.com
 License：MIT
-打包时间:2017-07-13
+打包时间:2017-07-26
 */
 /*# sourceMappingURL=flyer-base.css.map */
 
@@ -392,7 +392,7 @@ button.flyer-alert-close {
       right: 0px;
       background-color: #fff;
       display: inline-block;
-      width: 20px;
+      width: 28px;
       text-align: center;
       top: 0px; }
     .flyer-combobox-contents .filter-options {
@@ -402,7 +402,7 @@ button.flyer-alert-close {
       line-height: 36px;
       vertical-align: baseline;
       font-size: 14px;
-      width: 100% !important;
+      width: 100%;
       display: inline-block;
       outline: none;
       user-select: none;
@@ -484,14 +484,14 @@ button.flyer-alert-close {
 
 .flyer-combobox-items > ul {
   border: 1px solid #dedede;
-  border-top: 0px; }
-
-.flyer-combobox-items > ul > li {
+  border-top: 0px;
   width: 100%;
   overflow: hidden;
   font-size: 14px;
-  cursor: pointer;
   max-height: 200px; }
+
+.flyer-combobox-items > ul > li {
+  cursor: pointer; }
 
 .flyer-combobox-items > ul > li .disabled {
   color: #eee;
@@ -526,7 +526,7 @@ button.flyer-alert-close {
 
 .flyer-date {
   position: absolute;
-  z-index: 9;
+  z-index: 99;
   width: 240px;
   border: 1px solid #d2d2d2;
   font-size: 12px;
@@ -1280,7 +1280,7 @@ button.flyer-alert-close {
     display: inline-block;
     box-sizing: border-box;
     position: relative;
-    margin: 0 20px; }
+    margin: 0 10px; }
     .flyer-nav-item a {
       display: inline-block;
       padding: 0 20px;
@@ -1668,17 +1668,6 @@ hr {
   .flyer-combobox-items input[type="checkbox"] {
     margin-right: 5px; }
 
-.flyer-combobox-items > ul > li {
-  width: 100%;
-  overflow: hidden;
-  font-size: 14px;
-  cursor: pointer;
-  max-height: 200px; }
-
-.flyer-combobox-items > ul > li .disabled {
-  color: #eee;
-  cursor: not-allowed; }
-
 .flyer-combobox-items > ul > li input[type='text'] {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1814,6 +1803,7 @@ hr {
 /*# sourceMappingURL=flyer-tab.css.map */
 
 .flyer-table {
+  table-layout: fixed;
   width: 100%;
   margin: 10px 0; }
   .flyer-table thead {
@@ -1826,9 +1816,32 @@ hr {
     border: 1px solid #ddd;
     font-size: 14px;
     font-weight: 400;
-    text-align: center; }
-  .flyer-table th:hover {
-    background: #fbfbfb; }
+    text-align: center;
+    vertical-align: middle; }
+  .flyer-table th {
+    border-bottom: 0px; }
+  .flyer-table tfoot td {
+    border-top: 0px; }
+  .flyer-table table {
+    table-layout: fixed;
+    width: 100%;
+    margin: 10px 0; }
+    .flyer-table table thead {
+      background-color: #f2f2f2; }
+    .flyer-table table th,
+    .flyer-table table td {
+      padding: 6px 15px;
+      min-height: 20px;
+      line-height: 20px;
+      border: 1px solid #ddd;
+      font-size: 14px;
+      font-weight: 400;
+      text-align: center;
+      vertical-align: middle; }
+    .flyer-table table th {
+      border-bottom: 0px; }
+    .flyer-table table tfoot td {
+      border-top: 0px; }
 
 .flyer-table-bg tr:nth-child(even) {
   background: #fbfbfb; }

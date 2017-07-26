@@ -21,7 +21,16 @@ flyer.define("table", function(selector, options) {
         data: [],
 
         //是否可以拖动列宽度
-        resizer: false
+        resizer: false,
+
+        //表格容器的宽度
+        width: "auto",
+
+        //表格容器的高度
+        height: "auto",
+
+        //表头是否固定
+        fixedHeader: true
     }
 
     //内置列的属性
@@ -52,31 +61,40 @@ flyer.define("table", function(selector, options) {
 
             //方法实例化代码
             this.template();
-            this.initHeaderThemes();
+            //this.initHeaderThemes();
             this.initEvents();
+
             if (this.options.resizer) {
                 this.initRgrips();
             }
-
         },
 
         //加载表格模版
         template: function() {
 
             var arryHtml = [
-                '<div class="flyer-table-wrapper"><table class="flyer-table">',
+                '<div class="flyer-table" style="width:' + this.options.width + ';height:' + this.options.height + '">',
+                '<div class="flyer-table-toolbar">',
+                '</div>',
+                '<div class="flyer-table-resizer">',
+                '</div>',
+                '<div class="flyer-table-body">',
+                '<table>',
                 '<thead>',
-                '<tr>',
                 this.initHeader(),
-                '</tr>',
                 '</thead>',
                 '<tbody>',
                 this.initBody(),
                 '</tbody>',
                 '<tfoot>',
                 '</tfoot>',
-                '</table></div>'
-            ];
+                '</table>',
+                '</div>',
+                '<div class="flyer-table-page">',
+                '</div>',
+                '</div>'
+            ]
+
             this.selector.html(arryHtml.join(""));
 
             this.$header = this.selector.find("thead");
@@ -99,26 +117,23 @@ flyer.define("table", function(selector, options) {
         //加载表头
         initHeader: function() {
             var arryHtml = [];
-            this._flagColumns = {};
+            for (var i = 0, columns = this.options.columns, len = columns.length; i < len; i++) {
+                this.options.columns[i] = $.extend(true, {}, Table.COLUMN_DEFAULTS, columns[i]);
+            }
+            parseColumns(arryHtml, this.options.columns, "th");
+            return arryHtml.join("");
+            //return this.parseHeader();
+        },
 
+        parseHeader: function() {
+            var arryHtml = [];
             for (var i = 0, columns = this.options.columns, len = columns.length; i < len; i++) {
                 this.options.columns[i] = $.extend(true, {}, Table.COLUMN_DEFAULTS, columns[i]);
                 var column = columns[i];
                 column._index = i;
-
                 this._flagColumns[i] = column;
-
-                if (column.visible) {
-                    if (column.checkbox) {
-                        arryHtml.push("<th data-index=" + column._index + "><input name='" + column.field + "' type='checkbox'/></th>");
-                    } else if (column.radio) {
-                        arryHtml.push("<th data-index=" + column._index + "><input name='" + column.field + "' type='radio'/></th>");
-                    } else {
-                        arryHtml.push("<th data-index=" + column._index + ">" + column.title + "</th>");
-                    }
-                }
             }
-
+            parseColumns(arryHtml, this.options.columns, "th");
             return arryHtml.join("");
         },
 
@@ -164,14 +179,14 @@ flyer.define("table", function(selector, options) {
                 var ckHead = this;
                 _this.selector.find("input[name='" + ckHead.name + "']").each(function() {
                     this.checked = ckHead.checked;
-                })
+                });
             });
         },
 
         //列拖动
         columnResizer: function(e) {
             var _this = this,
-                $resizerItems = $(".flyer-rgrips").find(".flyer-rgrips-resizer"),
+                $resizerItems = this.selector.find(".flyer-rgrips .flyer-rgrips-resizer"),
                 $table = this.selector.find(".flyer-table"),
                 tableLeft = $table.offset().left,
                 tableWidth = $table.width();
@@ -217,7 +232,7 @@ flyer.define("table", function(selector, options) {
             $(document).mouseup(function(e) {
                 document.body.onselectstart = function() {
                     return true;
-                }
+                };
 
                 if (_this.ismove) {
                     _this.ismove = false;
@@ -237,6 +252,7 @@ flyer.define("table", function(selector, options) {
                     _this.rgripElm.removeClass("flyer-rgrips-drag");
                     $table.removeClass("user-select-none");
                     //_this._flagColumns[_this.rgripElm.data("index")].styles["width"] =
+                    _this.initRgrips();
                 }
 
             });
@@ -245,7 +261,7 @@ flyer.define("table", function(selector, options) {
         //构建可以拖动列宽的结构
         initRgrips: function() {
             var arryRgrips = [],
-                $table = this.selector.find(".flyer-table"),
+                $table = this.selector.find(".flyer-table-body table"),
                 tableWidth = $table.width(),
                 tableHeight = $table.height(),
                 tableLeft = $table.offset().left;
@@ -262,9 +278,30 @@ flyer.define("table", function(selector, options) {
             $table.css("width", tableWidth);
 
             arryRgrips.push("</div>");
-            $table.before(arryRgrips.join(""));
+            this.selector.find(".flyer-table-resizer").html(arryRgrips.join(""));
             this.columnResizer();
         }
     }
+
+    function parseColumns(arryHtmls, columns, tagName) {
+
+        var fields = [];
+        arryHtmls.push("<tr>");
+        for (var i = 0, len = columns.length; i < len; i++) {
+
+            arryHtmls.push("<" + tagName + ">" + columns[i].title + "</" + tagName + ">");
+            if (typeof columns[i].field === "object") {
+                fields.push(columns[i].field);
+            }
+        }
+        arryHtmls.push("</tr>");
+        if (fields.length > 0) {
+            for (var j = 0, jLen = fields.length; j < jLen; j++) {
+                parseColumns(arryHtmls, fields[j], tagName);
+            }
+        }
+        return arryHtmls;
+    }
+
     return new Table(selector, options);
 });

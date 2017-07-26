@@ -429,7 +429,7 @@ flyer.extend(function(selector, options) {
             options.skin = options.skin || "flyer-dialog-tip";
             options.anim = options.anim || "bounceInDown";
             options.offset = options.offset || [0, 0];
-            var o = ui.msg(text, options);
+            var o = this.msg(text, options);
 
             return o;
         },

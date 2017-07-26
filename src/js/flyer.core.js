@@ -22,7 +22,7 @@
     }
 
 })(typeof window !== "undefined" ? window : this, jQuery, function(window, $, noGlobal) {
-    "use strick"
+    "use strick";
 
     //声明一个载体
     var fly = function() {
@@ -57,7 +57,7 @@
              */
             formatDate: function(format, date) {
                 if (!(format instanceof String)) {
-                    flyer.log("error", "format参数未定义...");
+                    flyer.log("error", "format is not defined.");
                     return false;
                 }
                 date = this.getDate(date);
@@ -103,7 +103,7 @@
             getQueryString: function(name) {
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
                 var r = loca.search.substr(1).match(reg);
-                if (r != null) return unescape(r[2]);
+                if (r !== null) return unescape(r[2]);
                 return null;
             },
             /**
@@ -209,6 +209,15 @@
             isFunction: function(obj) {
                 return typeof obj === "function";
             },
+
+            /**
+             * 判断是否是 Array 对象
+             * 
+             * @param {any} obj 
+             */
+            isArray: function(obj) {
+                return obj instanceof Array;
+            },
             /**
              * 
              * 判断是否是 string 对象
@@ -280,6 +289,9 @@
             options = namespace;
         } else if (fn.isFunction(namespace)) {
             options = namespace;
+        }
+
+        if (fn.isFunction(options)) {
             options = options.call(this);
         }
 
