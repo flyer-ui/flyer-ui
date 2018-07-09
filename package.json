@@ -4,6 +4,7 @@
     "version": "0.1.2",
     "description": "flyer-ui",
     "license": "MIT",
+    "author":"Ken Zheng",
     "devDependencies": {
         "forever": "^0.15.3",
         "grunt": "~0.4.1",
@@ -22,7 +23,8 @@
         "grunt-git": "^1.0.4",
         "grunt-strip": "~0.2.1",
         "jquery": "^3.2.1",
-        "layui": "0.0.1"
+        "layui": "0.0.1",
+        "vuepress": "^0.11.0"
     },
     "dependencies": {
         "express": "3.x"
@@ -30,5 +32,9 @@
     "repository": {
         "type": "git",
         "url": "https://github.com/flyerui/flyer-ui.git"
+    },
+    "scripts": {
+        "docs:dev":"vuepress dev docs",
+        "docs:build":"vuepress build docs"
     }
 }
