@@ -131,16 +131,16 @@
         }
     };
 
-    function define(name, deps, fn) {
+    var modules = {
+        define: function (name, deps, fn) {
+            this[name] = fn.call(fn, deps);
+        },
+        require: function (name) {
+            return this[name]
+        }
+    };
 
-    }
-
-    function require(name) {
-
-    }
-
-    flyer.prototype['define'] = define;
-    flyer.prototype['require'] = require;
+    flyer.prototype['modules'] = modules;
     window.flyer = new flyer();
 
 }());

@@ -1,5 +1,4 @@
 import { flyer } from './core.js'
-import { define, require } from './modules.js'
-flyer.prototype['define'] = define;
-flyer.prototype['require'] = require;
+import modules from './modules.js'
+flyer.prototype['modules'] = modules;
 window.flyer = new flyer()
