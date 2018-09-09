@@ -94,8 +94,16 @@ var _table2 = _interopRequireDefault(_table);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var components = [_table2.default];
+var install = function install(Vue) {
+	components.forEach(function (component) {
+		Vue.component(component.name, component);
+	});
+};
 module.exports = {
-	Table: _table2.default
+	version: "1.0.0",
+	Table: _table2.default,
+	install: install
 };
 
 module.exports.default = module.exports;
@@ -108,7 +116,7 @@ module.exports.default = module.exports;
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 
 var _index = __webpack_require__(3);
@@ -116,10 +124,6 @@ var _index = __webpack_require__(3);
 var _index2 = _interopRequireDefault(_index);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_index2.default.install = function (Vue) {
-	Vue.component(_index2.default.name, _index2.default);
-};
 
 exports.default = _index2.default;
 
