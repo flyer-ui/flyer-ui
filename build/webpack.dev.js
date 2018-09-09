@@ -3,6 +3,7 @@ let path = require('path')
 let excludePath = path.resolve(__dirname, 'node_modules')
 let htmlwebpackplugin = require('html-webpack-plugin')
 module.exports = {
+	devtool: 'source-map',
 	entry: path.resolve(__dirname, '../examples/main.js'),
 	output: {
 		filename: 'boundle.js',
