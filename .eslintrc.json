@@ -13,10 +13,6 @@
         "ecmaVersion": 2016,
         "sourceType": "module"
     },
-    "plugins": [
-        "html"
-    ],
-    "parser": "babel-eslint",
     "rules": {
         "indent": [
             "error",
