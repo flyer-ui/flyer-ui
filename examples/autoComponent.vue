@@ -4,5 +4,5 @@
 <script type="text/babel">
 export default {
   name: "AutoComponent"
-};
+}
 </script>

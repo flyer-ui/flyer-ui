@@ -101,7 +101,7 @@ var install = function install(Vue) {
 	});
 };
 module.exports = {
-	version: "1.0.0",
+	version: '1.0.0',
 	Table: _table2.default,
 	install: install
 };

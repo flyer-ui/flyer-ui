@@ -1,8 +1,8 @@
 <template>
     <div>Hello Flyer-UI-Table</div>
 </template>
-<script type="text/babel">
+<script>
 export default {
   name: "FlyTable"
-};
+}
 </script>

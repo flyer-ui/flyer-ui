@@ -12,17 +12,25 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: [/.js$/],
+				test: [/\.js$/],
+				exclude: excludePath,
+				loaders: [
+					'eslint-loader'
+				],
+				enforce: 'pre'
+			},
+			{
+				test: [/\.js$/],
 				exclude: excludePath,
 				use: ['babel-loader']
 			},
 			{
-				test: [/.vue$/],
+				test: [/\.vue$/],
 				exclude: excludePath,
 				use: ['vue-loader']
 			},
 			{
-				test: [/.scss$/],
+				test: [/\.scss$/],
 				exclude: excludePath,
 				use: ['scss-loader', 'css-loader', 'style-loader']
 			}
