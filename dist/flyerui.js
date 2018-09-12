@@ -70,6 +70,32 @@
 "use strict";
 
 
+var cov_x8skizh5s = function () {
+  var path = "C:\\dev\\flyer-ui\\components\\table\\src\\index.vue",
+      hash = "412004b940d074d738684213c82a26ca66290d81",
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = "__coverage__",
+      coverageData = {
+    path: "C:\\dev\\flyer-ui\\components\\table\\src\\index.vue",
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: "d34fc3e6b8297bcde183f5492bcb8fcb36775295"
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -88,24 +114,179 @@ exports.default = {
 "use strict";
 
 
+var cov_1lt2dhqcw3 = function () {
+	var path = 'C:\\dev\\flyer-ui\\src\\index.js',
+	    hash = 'ca6151d05be5fbeee36ad8585c64c029dfed0898',
+	    Function = function () {}.constructor,
+	    global = new Function('return this')(),
+	    gcv = '__coverage__',
+	    coverageData = {
+		path: 'C:\\dev\\flyer-ui\\src\\index.js',
+		statementMap: {
+			'0': {
+				start: {
+					line: 2,
+					column: 19
+				},
+				end: {
+					line: 4,
+					column: 1
+				}
+			},
+			'1': {
+				start: {
+					line: 5,
+					column: 16
+				},
+				end: {
+					line: 9,
+					column: 1
+				}
+			},
+			'2': {
+				start: {
+					line: 6,
+					column: 1
+				},
+				end: {
+					line: 8,
+					column: 3
+				}
+			},
+			'3': {
+				start: {
+					line: 7,
+					column: 2
+				},
+				end: {
+					line: 7,
+					column: 42
+				}
+			},
+			'4': {
+				start: {
+					line: 10,
+					column: 0
+				},
+				end: {
+					line: 14,
+					column: 1
+				}
+			},
+			'5': {
+				start: {
+					line: 16,
+					column: 0
+				},
+				end: {
+					line: 16,
+					column: 39
+				}
+			}
+		},
+		fnMap: {
+			'0': {
+				name: '(anonymous_0)',
+				decl: {
+					start: {
+						line: 5,
+						column: 16
+					},
+					end: {
+						line: 5,
+						column: 17
+					}
+				},
+				loc: {
+					start: {
+						line: 5,
+						column: 25
+					},
+					end: {
+						line: 9,
+						column: 1
+					}
+				},
+				line: 5
+			},
+			'1': {
+				name: '(anonymous_1)',
+				decl: {
+					start: {
+						line: 6,
+						column: 20
+					},
+					end: {
+						line: 6,
+						column: 21
+					}
+				},
+				loc: {
+					start: {
+						line: 6,
+						column: 33
+					},
+					end: {
+						line: 8,
+						column: 2
+					}
+				},
+				line: 6
+			}
+		},
+		branchMap: {},
+		s: {
+			'0': 0,
+			'1': 0,
+			'2': 0,
+			'3': 0,
+			'4': 0,
+			'5': 0
+		},
+		f: {
+			'0': 0,
+			'1': 0
+		},
+		b: {},
+		_coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+	},
+	    coverage = global[gcv] || (global[gcv] = {});
+
+	if (coverage[path] && coverage[path].hash === hash) {
+		return coverage[path];
+	}
+
+	coverageData.hash = hash;
+	return coverage[path] = coverageData;
+}();
+
 var _table = __webpack_require__(2);
 
 var _table2 = _interopRequireDefault(_table);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var components = [_table2.default];
+var components = (cov_1lt2dhqcw3.s[0]++, [_table2.default]);
+cov_1lt2dhqcw3.s[1]++;
 var install = function install(Vue) {
+	cov_1lt2dhqcw3.f[0]++;
+	cov_1lt2dhqcw3.s[2]++;
+
 	components.forEach(function (component) {
+		cov_1lt2dhqcw3.f[1]++;
+		cov_1lt2dhqcw3.s[3]++;
+
 		Vue.component(component.name, component);
 	});
 };
+cov_1lt2dhqcw3.s[4]++;
 module.exports = {
 	version: '1.0.0',
 	Table: _table2.default,
 	install: install
 };
 
+cov_1lt2dhqcw3.s[5]++;
 module.exports.default = module.exports;
 
 /***/ }),
@@ -114,6 +295,32 @@ module.exports.default = module.exports;
 
 "use strict";
 
+
+var cov_bszc259c4 = function () {
+  var path = 'C:\\dev\\flyer-ui\\components\\table\\index.js',
+      hash = '80ad679e47f50fcbb33f26d93c18a20be24203ac',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: 'C:\\dev\\flyer-ui\\components\\table\\index.js',
+    statementMap: {},
+    fnMap: {},
+    branchMap: {},
+    s: {},
+    f: {},
+    b: {},
+    _coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
 
 Object.defineProperty(exports, "__esModule", {
   value: true
