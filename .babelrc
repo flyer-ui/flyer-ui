@@ -3,7 +3,8 @@
         [
             "env",
             {
-                "modules": "commonjs"
+                "modules": "commonjs",
+                "browser": true
             }
         ],
         "flow"

@@ -12,7 +12,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: [/\.js$/],
+				test: [/\.js$|\.vue$/],
 				exclude: excludePath,
 				loaders: [
 					'eslint-loader'
@@ -32,7 +32,7 @@ module.exports = {
 			{
 				test: [/\.scss$/],
 				exclude: excludePath,
-				use: ['scss-loader', 'css-loader', 'style-loader']
+				use: ['sass-loader', 'css-loader', 'style-loader']
 			}
 		]
 	},

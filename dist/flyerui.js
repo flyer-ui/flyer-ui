@@ -70,19 +70,128 @@
 "use strict";
 
 
-var cov_x8skizh5s = function () {
-  var path = "C:\\dev\\flyer-ui\\components\\table\\src\\index.vue",
-      hash = "412004b940d074d738684213c82a26ca66290d81",
+var cov_1fo8tqzulf = function () {
+  var path = "C:\\dev\\flyer-ui\\components\\table\\src\\main.vue",
+      hash = "c208de5d457df44317ac44be6889ea67a818dbb9",
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = "__coverage__",
       coverageData = {
-    path: "C:\\dev\\flyer-ui\\components\\table\\src\\index.vue",
-    statementMap: {},
-    fnMap: {},
+    path: "C:\\dev\\flyer-ui\\components\\table\\src\\main.vue",
+    statementMap: {
+      "0": {
+        start: {
+          line: 30,
+          column: 4
+        },
+        end: {
+          line: 32,
+          column: 6
+        }
+      },
+      "1": {
+        start: {
+          line: 36,
+          column: 17
+        },
+        end: {
+          line: 36,
+          column: 19
+        }
+      },
+      "2": {
+        start: {
+          line: 37,
+          column: 6
+        },
+        end: {
+          line: 41,
+          column: 7
+        }
+      },
+      "3": {
+        start: {
+          line: 38,
+          column: 8
+        },
+        end: {
+          line: 40,
+          column: 11
+        }
+      },
+      "4": {
+        start: {
+          line: 42,
+          column: 6
+        },
+        end: {
+          line: 42,
+          column: 18
+        }
+      }
+    },
+    fnMap: {
+      "0": {
+        name: "(anonymous_0)",
+        decl: {
+          start: {
+            line: 29,
+            column: 2
+          },
+          end: {
+            line: 29,
+            column: 3
+          }
+        },
+        loc: {
+          start: {
+            line: 29,
+            column: 9
+          },
+          end: {
+            line: 33,
+            column: 3
+          }
+        },
+        line: 29
+      },
+      "1": {
+        name: "(anonymous_1)",
+        decl: {
+          start: {
+            line: 35,
+            column: 4
+          },
+          end: {
+            line: 35,
+            column: 5
+          }
+        },
+        loc: {
+          start: {
+            line: 35,
+            column: 18
+          },
+          end: {
+            line: 43,
+            column: 5
+          }
+        },
+        line: 35
+      }
+    },
     branchMap: {},
-    s: {},
-    f: {},
+    s: {
+      "0": 0,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0
+    },
+    f: {
+      "0": 0,
+      "1": 0
+    },
     b: {},
     _coverageSchema: "d34fc3e6b8297bcde183f5492bcb8fcb36775295"
   },
@@ -102,9 +211,57 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
-  name: "FlyTable"
+  name: "FlyTable",
+  data: function data() {
+    cov_1fo8tqzulf.f[0]++;
+    cov_1fo8tqzulf.s[0]++;
+
+    return {
+      columns: []
+    };
+  },
+
+  computed: {
+    richColumns: function richColumns() {
+      cov_1fo8tqzulf.f[1]++;
+
+      var cols = (cov_1fo8tqzulf.s[1]++, []);
+      cov_1fo8tqzulf.s[2]++;
+      for (var i = 0; i < 10; i++) {
+        cov_1fo8tqzulf.s[3]++;
+
+        cols.push({
+          title: "\u6807\u9898" + i
+        });
+      }
+      cov_1fo8tqzulf.s[4]++;
+      return cols;
+    }
+  }
 };
 
 /***/ }),
@@ -326,13 +483,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _index = __webpack_require__(3);
+var _main = __webpack_require__(3);
 
-var _index2 = _interopRequireDefault(_index);
+var _main2 = _interopRequireDefault(_main);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _index2.default;
+exports.default = _main2.default;
 
 /***/ }),
 /* 3 */
@@ -340,10 +497,10 @@ exports.default = _index2.default;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue__);
-/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_74c04a94_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_index_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
 var disposed = false
 /* script */
@@ -361,15 +518,15 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_index_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_74c04a94_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_index_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_74c04a94_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_index_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "components\\table\\src\\index.vue"
+Component.options.__file = "components\\table\\src\\main.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -378,9 +535,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-74c04a94", Component.options)
+    hotAPI.createRecord("data-v-04c05e67", Component.options)
   } else {
-    hotAPI.reload("data-v-74c04a94", Component.options)
+    hotAPI.reload("data-v-04c05e67", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -401,7 +558,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("Hello Flyer-UI-Table")])
+  return _c("transition", [
+    _c("div", { staticClass: "fly-table" }, [
+      _c("div", { staticClass: "fly-table-toolbar" }),
+      _vm._v(" "),
+      _c("div", { staticClass: "fly-table-header" }, [
+        _c("table", [
+          _c(
+            "thead",
+            _vm._l(_vm.richColumns, function(column, index) {
+              return _c("th", { key: index }, [_vm._v(_vm._s(column.title))])
+            })
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "fly-table-body" }, [
+        _c("table", [
+          _c("tbody", [
+            _c(
+              "tr",
+              _vm._l(_vm.richColumns, function(column, index) {
+                return _c("td", { key: index }, [_vm._v(_vm._s(column.title))])
+              })
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "fly-table-footer" })
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -409,7 +596,7 @@ render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-74c04a94", { render: render, staticRenderFns: staticRenderFns })
+    require("vue-hot-reload-api")      .rerender("data-v-04c05e67", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 

@@ -1,8 +1,6 @@
 <template>
    <div>
      <h1>Hello Flyer-UI</h1>
-     <AutoComponent></AutoComponent>
-     <auto-component></auto-component>
      <fly-table></fly-table>
    </div>
 </template>
@@ -15,3 +13,6 @@ export default {
   }
 }
 </script>
+<style lang='scss'>
+@import "../style/index.scss";
+</style>
