@@ -70,143 +70,143 @@
 "use strict";
 
 
-var cov_1fo8tqzulf = function () {
-  var path = "C:\\dev\\flyer-ui\\components\\table\\src\\main.vue",
-      hash = "c208de5d457df44317ac44be6889ea67a818dbb9",
-      Function = function () {}.constructor,
-      global = new Function('return this')(),
-      gcv = "__coverage__",
-      coverageData = {
-    path: "C:\\dev\\flyer-ui\\components\\table\\src\\main.vue",
-    statementMap: {
-      "0": {
-        start: {
-          line: 30,
-          column: 4
-        },
-        end: {
-          line: 32,
-          column: 6
-        }
-      },
-      "1": {
-        start: {
-          line: 36,
-          column: 17
-        },
-        end: {
-          line: 36,
-          column: 19
-        }
-      },
-      "2": {
-        start: {
-          line: 37,
-          column: 6
-        },
-        end: {
-          line: 41,
-          column: 7
-        }
-      },
-      "3": {
-        start: {
-          line: 38,
-          column: 8
-        },
-        end: {
-          line: 40,
-          column: 11
-        }
-      },
-      "4": {
-        start: {
-          line: 42,
-          column: 6
-        },
-        end: {
-          line: 42,
-          column: 18
-        }
-      }
-    },
-    fnMap: {
-      "0": {
-        name: "(anonymous_0)",
-        decl: {
-          start: {
-            line: 29,
-            column: 2
-          },
-          end: {
-            line: 29,
-            column: 3
-          }
-        },
-        loc: {
-          start: {
-            line: 29,
-            column: 9
-          },
-          end: {
-            line: 33,
-            column: 3
-          }
-        },
-        line: 29
-      },
-      "1": {
-        name: "(anonymous_1)",
-        decl: {
-          start: {
-            line: 35,
-            column: 4
-          },
-          end: {
-            line: 35,
-            column: 5
-          }
-        },
-        loc: {
-          start: {
-            line: 35,
-            column: 18
-          },
-          end: {
-            line: 43,
-            column: 5
-          }
-        },
-        line: 35
-      }
-    },
-    branchMap: {},
-    s: {
-      "0": 0,
-      "1": 0,
-      "2": 0,
-      "3": 0,
-      "4": 0
-    },
-    f: {
-      "0": 0,
-      "1": 0
-    },
-    b: {},
-    _coverageSchema: "d34fc3e6b8297bcde183f5492bcb8fcb36775295"
-  },
-      coverage = global[gcv] || (global[gcv] = {});
+var cov_154ijpz809 = function () {
+	var path = '/Volumes/files/dev files/Flyer-UI/Flyer-UI/components/table/src/main.vue',
+	    hash = '97bc312791ef637bf1477c7aac91ab0e811eb8a5',
+	    Function = function () {}.constructor,
+	    global = new Function('return this')(),
+	    gcv = '__coverage__',
+	    coverageData = {
+		path: '/Volumes/files/dev files/Flyer-UI/Flyer-UI/components/table/src/main.vue',
+		statementMap: {
+			'0': {
+				start: {
+					line: 30,
+					column: 2
+				},
+				end: {
+					line: 32,
+					column: 3
+				}
+			},
+			'1': {
+				start: {
+					line: 36,
+					column: 14
+				},
+				end: {
+					line: 36,
+					column: 16
+				}
+			},
+			'2': {
+				start: {
+					line: 37,
+					column: 6
+				},
+				end: {
+					line: 41,
+					column: 7
+				}
+			},
+			'3': {
+				start: {
+					line: 38,
+					column: 4
+				},
+				end: {
+					line: 40,
+					column: 6
+				}
+			},
+			'4': {
+				start: {
+					line: 42,
+					column: 3
+				},
+				end: {
+					line: 42,
+					column: 14
+				}
+			}
+		},
+		fnMap: {
+			'0': {
+				name: '(anonymous_0)',
+				decl: {
+					start: {
+						line: 29,
+						column: 1
+					},
+					end: {
+						line: 29,
+						column: 2
+					}
+				},
+				loc: {
+					start: {
+						line: 29,
+						column: 9
+					},
+					end: {
+						line: 33,
+						column: 3
+					}
+				},
+				line: 29
+			},
+			'1': {
+				name: '(anonymous_1)',
+				decl: {
+					start: {
+						line: 35,
+						column: 2
+					},
+					end: {
+						line: 35,
+						column: 3
+					}
+				},
+				loc: {
+					start: {
+						line: 35,
+						column: 17
+					},
+					end: {
+						line: 43,
+						column: 5
+					}
+				},
+				line: 35
+			}
+		},
+		branchMap: {},
+		s: {
+			'0': 0,
+			'1': 0,
+			'2': 0,
+			'3': 0,
+			'4': 0
+		},
+		f: {
+			'0': 0,
+			'1': 0
+		},
+		b: {},
+		_coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+	},
+	    coverage = global[gcv] || (global[gcv] = {});
 
-  if (coverage[path] && coverage[path].hash === hash) {
-    return coverage[path];
-  }
+	if (coverage[path] && coverage[path].hash === hash) {
+		return coverage[path];
+	}
 
-  coverageData.hash = hash;
-  return coverage[path] = coverageData;
+	coverageData.hash = hash;
+	return coverage[path] = coverageData;
 }();
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+	value: true
 });
 //
 //
@@ -235,33 +235,33 @@ Object.defineProperty(exports, "__esModule", {
 //
 
 exports.default = {
-  name: "FlyTable",
-  data: function data() {
-    cov_1fo8tqzulf.f[0]++;
-    cov_1fo8tqzulf.s[0]++;
+	name: 'FlyTable',
+	data: function data() {
+		cov_154ijpz809.f[0]++;
+		cov_154ijpz809.s[0]++;
 
-    return {
-      columns: []
-    };
-  },
+		return {
+			columns: []
+		};
+	},
 
-  computed: {
-    richColumns: function richColumns() {
-      cov_1fo8tqzulf.f[1]++;
+	computed: {
+		richColumns: function richColumns() {
+			cov_154ijpz809.f[1]++;
 
-      var cols = (cov_1fo8tqzulf.s[1]++, []);
-      cov_1fo8tqzulf.s[2]++;
-      for (var i = 0; i < 10; i++) {
-        cov_1fo8tqzulf.s[3]++;
+			var cols = (cov_154ijpz809.s[1]++, []);
+			cov_154ijpz809.s[2]++;
+			for (var i = 0; i < 10; i++) {
+				cov_154ijpz809.s[3]++;
 
-        cols.push({
-          title: "\u6807\u9898" + i
-        });
-      }
-      cov_1fo8tqzulf.s[4]++;
-      return cols;
-    }
-  }
+				cols.push({
+					title: '\u6807\u9898' + i
+				});
+			}
+			cov_154ijpz809.s[4]++;
+			return cols;
+		}
+	}
 };
 
 /***/ }),
@@ -271,14 +271,14 @@ exports.default = {
 "use strict";
 
 
-var cov_1lt2dhqcw3 = function () {
-	var path = 'C:\\dev\\flyer-ui\\src\\index.js',
-	    hash = 'ca6151d05be5fbeee36ad8585c64c029dfed0898',
+var cov_1g5dcjmxmw = function () {
+	var path = '/Volumes/files/dev files/Flyer-UI/Flyer-UI/src/index.js',
+	    hash = '73c75d3c96d3e5cd5d3f8d46065370edc4a6a019',
 	    Function = function () {}.constructor,
 	    global = new Function('return this')(),
 	    gcv = '__coverage__',
 	    coverageData = {
-		path: 'C:\\dev\\flyer-ui\\src\\index.js',
+		path: '/Volumes/files/dev files/Flyer-UI/Flyer-UI/src/index.js',
 		statementMap: {
 			'0': {
 				start: {
@@ -423,27 +423,27 @@ var _table2 = _interopRequireDefault(_table);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var components = (cov_1lt2dhqcw3.s[0]++, [_table2.default]);
-cov_1lt2dhqcw3.s[1]++;
+var components = (cov_1g5dcjmxmw.s[0]++, [_table2.default]);
+cov_1g5dcjmxmw.s[1]++;
 var install = function install(Vue) {
-	cov_1lt2dhqcw3.f[0]++;
-	cov_1lt2dhqcw3.s[2]++;
+	cov_1g5dcjmxmw.f[0]++;
+	cov_1g5dcjmxmw.s[2]++;
 
 	components.forEach(function (component) {
-		cov_1lt2dhqcw3.f[1]++;
-		cov_1lt2dhqcw3.s[3]++;
+		cov_1g5dcjmxmw.f[1]++;
+		cov_1g5dcjmxmw.s[3]++;
 
 		Vue.component(component.name, component);
 	});
 };
-cov_1lt2dhqcw3.s[4]++;
+cov_1g5dcjmxmw.s[4]++;
 module.exports = {
 	version: '1.0.0',
 	Table: _table2.default,
 	install: install
 };
 
-cov_1lt2dhqcw3.s[5]++;
+cov_1g5dcjmxmw.s[5]++;
 module.exports.default = module.exports;
 
 /***/ }),
@@ -453,14 +453,14 @@ module.exports.default = module.exports;
 "use strict";
 
 
-var cov_bszc259c4 = function () {
-  var path = 'C:\\dev\\flyer-ui\\components\\table\\index.js',
-      hash = '80ad679e47f50fcbb33f26d93c18a20be24203ac',
+var cov_12xxwciz8f = function () {
+  var path = '/Volumes/files/dev files/Flyer-UI/Flyer-UI/components/table/index.js',
+      hash = '61649e988cb0ca5af392740540b7774c7de8b2ac',
       Function = function () {}.constructor,
       global = new Function('return this')(),
       gcv = '__coverage__',
       coverageData = {
-    path: 'C:\\dev\\flyer-ui\\components\\table\\index.js',
+    path: '/Volumes/files/dev files/Flyer-UI/Flyer-UI/components/table/index.js',
     statementMap: {},
     fnMap: {},
     branchMap: {},
@@ -500,7 +500,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e84f0c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
 var disposed = false
 /* script */
@@ -519,14 +519,14 @@ var __vue_module_identifier__ = null
 
 var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["b" /* staticRenderFns */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e84f0c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e84f0c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__["b" /* staticRenderFns */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "components\\table\\src\\main.vue"
+Component.options.__file = "components/table/src/main.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -535,9 +535,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-04c05e67", Component.options)
+    hotAPI.createRecord("data-v-3e84f0c0", Component.options)
   } else {
-    hotAPI.reload("data-v-04c05e67", Component.options)
+    hotAPI.reload("data-v-3e84f0c0", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -596,7 +596,7 @@ render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-04c05e67", { render: render, staticRenderFns: staticRenderFns })
+    require("vue-hot-reload-api")      .rerender("data-v-3e84f0c0", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 

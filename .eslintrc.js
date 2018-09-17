@@ -1,7 +1,6 @@
-{
+module.exports = {
     "env": {
         "browser": true,
-        "node": true,
         "commonjs": true,
         "es6": true
     },
@@ -10,17 +9,17 @@
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 2016,
-        "sourceType": "module"
+        "sourceType": "module",
+        "parser":"babel-eslint"
     },
     "rules": {
         "indent": [
             "error",
-            "tab"
+            4
         ],
         "linebreak-style": [
             "error",
-            "windows"
+            "unix"
         ],
         "quotes": [
             "error",
@@ -30,9 +29,5 @@
             "error",
             "never"
         ]
-    },
-    "plugins": [
-        "vue",
-        "eslint-plugin-vue"
-    ]
-}
+    }
+};

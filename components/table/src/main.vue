@@ -25,22 +25,22 @@
 </template>
 <script>
 export default {
-  name: "FlyTable",
-  data() {
-    return {
-      columns: []
-    };
-  },
-  computed: {
-    richColumns() {
-      let cols = [];
-      for (let i = 0; i < 10; i++) {
-        cols.push({
-          title: `标题${i}`
-        });
-      }
-      return cols;
+    name: 'FlyTable',
+    data() {
+        return {
+            columns: []
+        }
+    },
+    computed: {
+        richColumns() {
+            let cols = []
+            for (let i = 0; i < 10; i++) {
+                cols.push({
+                    title: `标题${i}`
+                })
+            }
+            return cols
+        }
     }
-  }
-};
+}
 </script>

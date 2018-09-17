@@ -5,12 +5,12 @@
    </div>
 </template>
 <script type="text/babel">
-import AutoComponent from "./autoComponent.vue";
+import AutoComponent from './autoComponent.vue'
 export default {
-  name: "App",
-  components: {
-    AutoComponent
-  }
+    name: 'App',
+    components: {
+        AutoComponent
+    }
 }
 </script>
 <style lang='scss'>

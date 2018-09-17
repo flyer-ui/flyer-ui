@@ -1,8 +1,8 @@
 <template>
    <div>Auto Component</div>
 </template>
-<script type="text/babel">
+<script>
 export default {
-  name: "AutoComponent"
-};
+    name: 'AutoComponent'
+}
 </script>
