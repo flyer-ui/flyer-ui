@@ -1,0 +1,15 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "modules": "commonjs",
+                "browser": true
+            }
+        ],
+        "flow"
+    ],
+    "plugins": [
+        "istanbul"
+    ]
+}

@@ -1,0 +1,58 @@
+@import "base.scss";
+@mixin clearFix() {
+    clear: both;
+    content:"";
+    display: block;
+}
+@mixin unfilled(){
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+@mixin table(){
+    @include unfilled();
+    border-collapse: collapse;
+    td,th{
+        @include unfilled();
+        border-left:1px solid #ccc;
+        border-bottom:1px solid #ccc;
+        border-top:1px solid #ccc;
+        line-height: 24px;
+        padding:8px;
+    }
+    :last-child{
+        border-right:1px solid #ccc;
+    }
+    th{
+        border-bottom: 0px;
+    }
+}
+.fly-table {
+    &-toolbar{
+        @include unfilled();
+        &::after{
+            @include clearFix();
+        }
+    }
+    &-header{
+        @include unfilled();
+        &::after{
+            @include clearFix();
+        }
+        table{
+            @include table()
+        }
+    }
+    &-body{
+        @include unfilled();
+        &::after{
+            @include clearFix();
+        }
+        table{
+            @include table()
+        }
+    }
+    &-footer{
+        @include clearFix();
+    }
+}
