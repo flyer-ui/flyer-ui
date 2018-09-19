@@ -4,7 +4,7 @@ module.exports = {
         "commonjs": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended","plugin:vue/recommended"],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -12,6 +12,7 @@ module.exports = {
         "sourceType": "module",
         "parser":"babel-eslint"
     },
+    "plugins":["flowtype","html","vue"],
     "rules": {
         "indent": [
             "error",
