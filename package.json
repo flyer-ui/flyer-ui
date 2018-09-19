@@ -42,6 +42,8 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^4.7.1",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.80.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-cssmin": "^0.2.0",
@@ -70,7 +72,7 @@
   "scripts": {
     "build": "webpack --config build/webpack.build.js",
     "build:scss": "gulp --gulpfile style/gulpfile.js",
-    "flow": "flow",
+    "flow:test": "flow",
     "karma": "karma start test/karma.conf.js",
     "karma:test": "karma start",
     "karma:init": "karma init",

@@ -1,10 +1,9 @@
+// @flow
 function test(x:number):number{
     if(x){
         return x * 2
     }
-    return 'default'
+    return x
 }
 
-export default{
-    test
-}
+export default test
