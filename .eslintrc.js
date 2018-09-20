@@ -1,10 +1,15 @@
 module.exports = {
     "env": {
         "browser": true,
+        "node":true,
         "commonjs": true,
         "es6": true
     },
-    "extends": ["eslint:recommended","plugin:vue/recommended"],
+    "extends": [
+        "eslint:recommended",
+        // "plugin:vue/recommended",
+        "plugin:flowtype/recommended"
+    ],
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
@@ -12,7 +17,7 @@ module.exports = {
         "sourceType": "module",
         "parser":"babel-eslint"
     },
-    "plugins":["flowtype","html","vue"],
+    "plugins":["flowtype","html"],
     "rules": {
         "indent": [
             "error",
@@ -20,7 +25,7 @@ module.exports = {
         ],
         "linebreak-style": [
             "error",
-            "unix"
+            "windows"
         ],
         "quotes": [
             "error",

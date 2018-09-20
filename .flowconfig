@@ -1,5 +1,5 @@
 [ignore]
-package-lock.json
+.*/node_modules/.*
 [include]
 
 [libs]

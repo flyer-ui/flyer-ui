@@ -41,7 +41,6 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^4.7.1",
     "flow": "^0.2.3",
     "flow-bin": "^0.80.0",
     "gulp": "^3.9.1",
@@ -77,5 +76,6 @@
     "karma:test": "karma start",
     "karma:init": "karma init",
     "dev": "npm run build & webpack-dev-server --content-base examples/ --open --inline --hot --compress --port 9090 --host 127.0.0.1 --config build/webpack.dev.js"
-  }
+  },
+  "dependencies": {}
 }
