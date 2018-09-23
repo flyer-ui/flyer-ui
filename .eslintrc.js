@@ -1,7 +1,7 @@
 module.exports = {
     "env": {
         "browser": true,
-        "node":true,
+        "node": true,
         "commonjs": true,
         "es6": true
     },
@@ -15,9 +15,9 @@ module.exports = {
             "jsx": true
         },
         "sourceType": "module",
-        "parser":"babel-eslint"
+        "parser": "babel-eslint"
     },
-    "plugins":["flowtype","html"],
+    "plugins": ["flowtype", "html"],
     "rules": {
         "indent": [
             "error",
@@ -34,6 +34,7 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "no-debugger": process.env.NODE_ENV === 'production' ? 0 : 1
     }
 };

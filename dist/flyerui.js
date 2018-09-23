@@ -72,7 +72,7 @@
 
 var cov_1fo8tqzulf = function () {
     var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\main.vue',
-        hash = '3899f2df3a640a28202af1d18a9eb673e4a8fc0e',
+        hash = '2d955abaaf0fac9ea224825b330e830a8d4ca77e',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -81,51 +81,51 @@ var cov_1fo8tqzulf = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 30,
+                    line: 38,
                     column: 8
                 },
                 end: {
-                    line: 32,
+                    line: 40,
                     column: 9
                 }
             },
             '1': {
                 start: {
-                    line: 36,
+                    line: 44,
                     column: 23
                 },
                 end: {
-                    line: 36,
+                    line: 44,
                     column: 25
                 }
             },
             '2': {
                 start: {
-                    line: 37,
+                    line: 45,
                     column: 12
                 },
                 end: {
-                    line: 41,
+                    line: 49,
                     column: 13
                 }
             },
             '3': {
                 start: {
-                    line: 38,
+                    line: 46,
                     column: 16
                 },
                 end: {
-                    line: 40,
+                    line: 48,
                     column: 18
                 }
             },
             '4': {
                 start: {
-                    line: 42,
+                    line: 50,
                     column: 12
                 },
                 end: {
-                    line: 42,
+                    line: 50,
                     column: 23
                 }
             }
@@ -135,49 +135,49 @@ var cov_1fo8tqzulf = function () {
                 name: '(anonymous_0)',
                 decl: {
                     start: {
-                        line: 29,
+                        line: 37,
                         column: 4
                     },
                     end: {
-                        line: 29,
+                        line: 37,
                         column: 5
                     }
                 },
                 loc: {
                     start: {
-                        line: 29,
+                        line: 37,
                         column: 11
                     },
                     end: {
-                        line: 33,
+                        line: 41,
                         column: 5
                     }
                 },
-                line: 29
+                line: 37
             },
             '1': {
                 name: '(anonymous_1)',
                 decl: {
                     start: {
-                        line: 35,
+                        line: 43,
                         column: 8
-                    },
-                    end: {
-                        line: 35,
-                        column: 9
-                    }
-                },
-                loc: {
-                    start: {
-                        line: 35,
-                        column: 22
                     },
                     end: {
                         line: 43,
                         column: 9
                     }
                 },
-                line: 35
+                loc: {
+                    start: {
+                        line: 43,
+                        column: 22
+                    },
+                    end: {
+                        line: 51,
+                        column: 9
+                    }
+                },
+                line: 43
             }
         },
         branchMap: {},
@@ -203,39 +203,51 @@ var cov_1fo8tqzulf = function () {
 
     coverageData.hash = hash;
     return coverage[path] = coverageData;
-}();
+}(); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+var _tableColumn = __webpack_require__(4);
+
+var _tableColumn2 = _interopRequireDefault(_tableColumn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     name: 'FlyTable',
+    components: {
+        TableColumn: _tableColumn2.default
+    },
     data: function data() {
         cov_1fo8tqzulf.f[0]++;
         cov_1fo8tqzulf.s[0]++;
@@ -255,7 +267,7 @@ exports.default = {
                 cov_1fo8tqzulf.s[3]++;
 
                 cols.push({
-                    title: '\u6807\u9898' + i
+                    title: '' + ['标题', 'title'][Math.round(Math.random())] + i
                 });
             }
             cov_1fo8tqzulf.s[4]++;
@@ -500,8 +512,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_04c05e67_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(6);
 var disposed = false
 /* script */
 
@@ -549,6 +561,160 @@ if (false) {(function () {
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var cov_1cspwl5thk = function () {
+    var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\table-column.js',
+        hash = '1b129e392f75001aa77b72ba5ae913c6f44cea60',
+        Function = function () {}.constructor,
+        global = new Function('return this')(),
+        gcv = '__coverage__',
+        coverageData = {
+        path: 'C:\\dev\\flyer-ui\\components\\table\\src\\table-column.js',
+        statementMap: {
+            '0': {
+                start: {
+                    line: 29,
+                    column: 8
+                },
+                end: {
+                    line: 29,
+                    column: 29
+                }
+            },
+            '1': {
+                start: {
+                    line: 32,
+                    column: 8
+                },
+                end: {
+                    line: 32,
+                    column: 55
+                }
+            }
+        },
+        fnMap: {
+            '0': {
+                name: '(anonymous_0)',
+                decl: {
+                    start: {
+                        line: 28,
+                        column: 4
+                    },
+                    end: {
+                        line: 28,
+                        column: 5
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 28,
+                        column: 12
+                    },
+                    end: {
+                        line: 30,
+                        column: 5
+                    }
+                },
+                line: 28
+            },
+            '1': {
+                name: '(anonymous_1)',
+                decl: {
+                    start: {
+                        line: 31,
+                        column: 4
+                    },
+                    end: {
+                        line: 31,
+                        column: 5
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 31,
+                        column: 22
+                    },
+                    end: {
+                        line: 33,
+                        column: 5
+                    }
+                },
+                line: 31
+            }
+        },
+        branchMap: {},
+        s: {
+            '0': 0,
+            '1': 0
+        },
+        f: {
+            '0': 0,
+            '1': 0
+        },
+        b: {},
+        _coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+    },
+        coverage = global[gcv] || (global[gcv] = {});
+
+    if (coverage[path] && coverage[path].hash === hash) {
+        return coverage[path];
+    }
+
+    coverageData.hash = hash;
+    return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'FlyTableName',
+    props: {
+        type: {
+            type: String,
+            default: 'default' // radio || checkout || default || expand
+        },
+        prop: String,
+        label: String,
+        labelClassName: String,
+        className: String,
+        colspan: Number,
+        rowspan: Number,
+        headerAlign: String,
+        align: String,
+        formatter: Function,
+        minWidth: String,
+        width: String,
+        columnKey: String,
+        sortable: Boolean,
+        sortBy: String,
+        sortOrders: String,
+        sortMehtod: Function,
+        filters: Array,
+        filterMultiple: Boolean,
+        filterMehtod: Function
+    },
+    render: function render() {
+        var h = arguments[0];
+        cov_1cspwl5thk.f[0]++;
+        cov_1cspwl5thk.s[0]++;
+
+        return h('div', ['1']);
+    },
+    renderError: function renderError(h, err) {
+        cov_1cspwl5thk.f[1]++;
+        cov_1cspwl5thk.s[1]++;
+
+        return h('pre', { style: { color: 'red' } }, err.stack);
+    }
+};
+
+/***/ }),
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -567,7 +733,7 @@ var render = function() {
           _c(
             "thead",
             _vm._l(_vm.richColumns, function(column, index) {
-              return _c("th", { key: index }, [_vm._v(_vm._s(column.title))])
+              return _c("td", { key: index }, [_vm._v(_vm._s(column.title))])
             })
           )
         ])
@@ -579,9 +745,13 @@ var render = function() {
             _c(
               "tr",
               _vm._l(_vm.richColumns, function(column, index) {
-                return _c("td", { key: index }, [_vm._v(_vm._s(column.title))])
+                return _c("table-column", { key: index }, [
+                  _vm._v(_vm._s(column.title) + ">")
+                ])
               })
-            )
+            ),
+            _vm._v(" "),
+            _c("tr", [_c("td", { attrs: { colspan: "10" } }, [_vm._v("ad")])])
           ])
         ])
       ]),
@@ -601,7 +771,7 @@ if (false) {
 }
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

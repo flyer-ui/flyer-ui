@@ -8,6 +8,7 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
+    table-layout: fixed;
 }
 @mixin table(){
     @include unfilled();
@@ -15,16 +16,13 @@
     td,th{
         @include unfilled();
         border-left:1px solid #ccc;
-        border-bottom:1px solid #ccc;
+        border-bottom:0px;
         border-top:1px solid #ccc;
         line-height: 24px;
         padding:8px;
     }
-    :last-child{
+    td:last-child{
         border-right:1px solid #ccc;
-    }
-    th{
-        border-bottom: 0px;
     }
 }
 .fly-table {
@@ -49,7 +47,8 @@
             @include clearFix();
         }
         table{
-            @include table()
+            @include table();
+            border-bottom:1px solid #ccc;
         }
     }
     &-footer{

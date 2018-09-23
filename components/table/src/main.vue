@@ -4,17 +4,21 @@
         <div class='fly-table-toolbar'>
         </div>
         <div class='fly-table-header'>
-           <table>
+           <table style="width:600px;">
             <thead>
-              <th v-for='(column,index) in richColumns' :key='index'>{{column.title}}</th>
+              <td v-for='(column,index) in richColumns' :key='index'>{{column.title}}</td>
             </thead>
           </table>
         </div>
         <div class='fly-table-body'>
-           <table>
+           <table style="width:600px;">
             <tbody>
              <tr>
-                <td v-for='(column,index) in richColumns' :key='index'>{{column.title}}</td>
+                <!-- <td v-for='(column,index) in richColumns' :key='index'>{{column.title}}></td> -->
+                <table-column v-for='(column,index) in richColumns' :key='index'>{{column.title}}></table-column>
+             </tr>
+             <tr>
+                 <td colspan="10">ad</td>
              </tr>
             </tbody>
            </table>
@@ -24,8 +28,12 @@
     </transition>
 </template>
 <script>
+import TableColumn from './table-column'
 export default {
     name: 'FlyTable',
+    components:{
+        TableColumn
+    },
     data() {
         return {
             columns: []
@@ -36,7 +44,7 @@ export default {
             let cols = []
             for (let i = 0; i < 10; i++) {
                 cols.push({
-                    title: `标题${i}`
+                    title: `${['标题','title'][Math.round(Math.random())]}${i}`
                 })
             }
             return cols

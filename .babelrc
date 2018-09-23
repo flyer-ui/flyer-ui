@@ -10,6 +10,6 @@
         "flow"
     ],
     "plugins": [
-        "istanbul"
+        "istanbul","transform-vue-jsx"
     ]
 }
