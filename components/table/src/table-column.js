@@ -23,12 +23,23 @@ export default {
         sortMehtod:Function,
         filters:Array,
         filterMultiple:Boolean,
-        filterMehtod:Function
+        filterMehtod:Function,
+        row:Object
+    },
+    created(){
+        
     },
     render(){
-        return (<td>
-            <div>test</div>
-        </td>)
+
+        return typeof this.formatter === 'function'?
+            (
+                <td>{this.formatter.call(this,this.row,this.prop,this.label)}</td>
+            ):
+            (
+                <td>
+                    <div>{this.row[this.prop]}</div>
+                </td>
+            )
     },
     renderError(h,err){
         return h('pre',{style:{color:'red'}},err.stack)

@@ -3,25 +3,32 @@
       <div class='fly-table'>
         <div class='fly-table-toolbar'>
         </div>
-        <div class='fly-table-header'>
-           <table style="width:600px;">
+        <div class='fly-table-header' :class="getClass()" v-if="showHeader">
+           <table :style="getStyle()">
             <thead>
-              <td v-for='(column,index) in richColumns' :key='index'>{{column.title}}</td>
+              <th v-for='(column,index) in columns' :key='index'>{{column.label}}</th>
             </thead>
           </table>
         </div>
-        <div class='fly-table-body'>
-           <table style="width:600px;">
+        <div class='fly-table-body' :class="getClass()" v-if="data.length>0">
+           <table :style="getStyle()">
             <tbody>
-             <tr>
-                <!-- <td v-for='(column,index) in richColumns' :key='index'>{{column.title}}></td> -->
-                <table-column v-for='(column,index) in richColumns' :key='index'>{{column.title}}></table-column>
-             </tr>
-             <tr>
-                 <td colspan="10">ad</td>
+             <tr v-for="(row,index) in data" :key="index">
+                <table-column :row="row" v-bind="column" v-for='(column,index) in columns' :key='index'></table-column>
              </tr>
             </tbody>
            </table>
+        </div>
+        <div class='fly-table-empty' :class="getClass()" v-else>
+            <table :style="getStyle()">
+                <tbody>
+                    <tr>
+                        <td>
+                          <div>{{this.emptyText}}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class='fly-table-footer'></div>
       </div>
@@ -34,20 +41,50 @@ export default {
     components:{
         TableColumn
     },
-    data() {
-        return {
-            columns: []
+    props:{
+        columns:{
+            type:Array,
+            required:true
+        },
+        data:{
+            type:Array,
+            required:true
+        },
+        width:{
+            type:String,
+            default:'auto'
+        },
+        height:{
+            type:String,
+            default:'auto'
+        },
+        maxHeight:{
+            type:String,
+            default:'auto'
+        },
+        showHeader:{
+            type:Boolean,
+            default:true
+        },
+        emptyText:{
+            type:String,
+            default:'The data in the table is empty.'
+        },
+        border:{
+            type:Boolean,
+            default:true
         }
     },
-    computed: {
-        richColumns() {
-            let cols = []
-            for (let i = 0; i < 10; i++) {
-                cols.push({
-                    title: `${['标题','title'][Math.round(Math.random())]}${i}`
-                })
+    methods:{
+        getStyle(){
+            return {
+                width:this.width
             }
-            return cols
+        },
+        getClass(){
+            return {
+                'fly-table-noBorder':!this.border
+            }
         }
     }
 }

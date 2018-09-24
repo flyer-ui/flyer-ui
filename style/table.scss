@@ -20,8 +20,9 @@
         border-top:1px solid #ccc;
         line-height: 24px;
         padding:8px;
+        text-align: left;
     }
-    td:last-child{
+    td:last-child,th:last-child{
         border-right:1px solid #ccc;
     }
 }
@@ -53,5 +54,23 @@
     }
     &-footer{
         @include clearFix();
+    }
+    &-empty{
+        @include unfilled();
+        table{
+            @include table();
+            border-bottom:1px solid #ccc;
+        }
+    }
+    &-noBorder{
+        table {
+            td,th{
+                border-left:0px;
+            }
+            td:first-child,th:first-child{
+                border-left:1px solid #ccc;
+            }
+        }
+        
     }
 }

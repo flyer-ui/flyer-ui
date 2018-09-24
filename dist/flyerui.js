@@ -568,7 +568,7 @@ if (false) {(function () {
 
 var cov_1cspwl5thk = function () {
     var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\table-column.js',
-        hash = '1b129e392f75001aa77b72ba5ae913c6f44cea60',
+        hash = 'c122d7ad6142d0fad6722bb6ff810582d08b14bc',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -581,17 +581,17 @@ var cov_1cspwl5thk = function () {
                     column: 8
                 },
                 end: {
-                    line: 29,
-                    column: 29
+                    line: 31,
+                    column: 14
                 }
             },
             '1': {
                 start: {
-                    line: 32,
+                    line: 34,
                     column: 8
                 },
                 end: {
-                    line: 32,
+                    line: 34,
                     column: 55
                 }
             }
@@ -615,7 +615,7 @@ var cov_1cspwl5thk = function () {
                         column: 12
                     },
                     end: {
-                        line: 30,
+                        line: 32,
                         column: 5
                     }
                 },
@@ -625,25 +625,25 @@ var cov_1cspwl5thk = function () {
                 name: '(anonymous_1)',
                 decl: {
                     start: {
-                        line: 31,
+                        line: 33,
                         column: 4
-                    },
-                    end: {
-                        line: 31,
-                        column: 5
-                    }
-                },
-                loc: {
-                    start: {
-                        line: 31,
-                        column: 22
                     },
                     end: {
                         line: 33,
                         column: 5
                     }
                 },
-                line: 31
+                loc: {
+                    start: {
+                        line: 33,
+                        column: 22
+                    },
+                    end: {
+                        line: 35,
+                        column: 5
+                    }
+                },
+                line: 33
             }
         },
         branchMap: {},
@@ -703,7 +703,7 @@ exports.default = {
         cov_1cspwl5thk.f[0]++;
         cov_1cspwl5thk.s[0]++;
 
-        return h('div', ['1']);
+        return h('td', [h('div', ['test'])]);
     },
     renderError: function renderError(h, err) {
         cov_1cspwl5thk.f[1]++;
@@ -729,7 +729,7 @@ var render = function() {
       _c("div", { staticClass: "fly-table-toolbar" }),
       _vm._v(" "),
       _c("div", { staticClass: "fly-table-header" }, [
-        _c("table", [
+        _c("table", { staticStyle: { width: "600px" } }, [
           _c(
             "thead",
             _vm._l(_vm.richColumns, function(column, index) {
@@ -740,7 +740,7 @@ var render = function() {
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "fly-table-body" }, [
-        _c("table", [
+        _c("table", { staticStyle: { width: "600px" } }, [
           _c("tbody", [
             _c(
               "tr",
