@@ -35,7 +35,7 @@ export default {
                     label:'地址',
                     formatter(row,prop){
                         return (
-                            <a href="http://www.baidu.com">{row[prop]}</a>
+                            <div><i class="icon-filter"></i><a href="http://www.baidu.com">{row[prop]}</a></div>
                         )
                     }
                 }
@@ -60,5 +60,8 @@ export default {
 }
 </script>
 <style lang='scss'>
-@import "../style/index.scss";
+    @import "../style/index.scss";
+</style>
+<style lang="css">
+    @import url("../style/icon.css");
 </style>

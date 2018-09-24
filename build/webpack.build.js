@@ -23,6 +23,17 @@ module.exports = {
                 test: [/\.scss$/],
                 exclude: excludePath,
                 use: ['scss-loader', 'css-loader', 'style-loader']
+            },
+            {
+                test:/\.(eot|svg|ttf|woff)$/i,
+                use:[
+                    {
+                        loader:'url-loader',
+                        options:{
+                            limit:8192
+                        }
+                    }
+                ]
             }
         ]
     }

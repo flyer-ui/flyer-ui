@@ -72,7 +72,7 @@
 
 var cov_1fo8tqzulf = function () {
     var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\main.vue',
-        hash = '2d955abaaf0fac9ea224825b330e830a8d4ca77e',
+        hash = '073f9e50e9de0356b91c7c44ccf2469e9802fcf5',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -81,52 +81,22 @@ var cov_1fo8tqzulf = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 38,
-                    column: 8
+                    line: 82,
+                    column: 12
                 },
                 end: {
-                    line: 40,
-                    column: 9
+                    line: 84,
+                    column: 13
                 }
             },
             '1': {
                 start: {
-                    line: 44,
-                    column: 23
-                },
-                end: {
-                    line: 44,
-                    column: 25
-                }
-            },
-            '2': {
-                start: {
-                    line: 45,
+                    line: 87,
                     column: 12
                 },
                 end: {
-                    line: 49,
+                    line: 89,
                     column: 13
-                }
-            },
-            '3': {
-                start: {
-                    line: 46,
-                    column: 16
-                },
-                end: {
-                    line: 48,
-                    column: 18
-                }
-            },
-            '4': {
-                start: {
-                    line: 50,
-                    column: 12
-                },
-                end: {
-                    line: 50,
-                    column: 23
                 }
             }
         },
@@ -135,58 +105,55 @@ var cov_1fo8tqzulf = function () {
                 name: '(anonymous_0)',
                 decl: {
                     start: {
-                        line: 37,
-                        column: 4
+                        line: 81,
+                        column: 8
                     },
                     end: {
-                        line: 37,
-                        column: 5
+                        line: 81,
+                        column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 37,
-                        column: 11
+                        line: 81,
+                        column: 18
                     },
                     end: {
-                        line: 41,
-                        column: 5
+                        line: 85,
+                        column: 9
                     }
                 },
-                line: 37
+                line: 81
             },
             '1': {
                 name: '(anonymous_1)',
                 decl: {
                     start: {
-                        line: 43,
+                        line: 86,
                         column: 8
                     },
                     end: {
-                        line: 43,
+                        line: 86,
                         column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 43,
-                        column: 22
+                        line: 86,
+                        column: 18
                     },
                     end: {
-                        line: 51,
+                        line: 90,
                         column: 9
                     }
                 },
-                line: 43
+                line: 86
             }
         },
         branchMap: {},
         s: {
             '0': 0,
-            '1': 0,
-            '2': 0,
-            '3': 0,
-            '4': 0
+            '1': 0
         },
         f: {
             '0': 0,
@@ -232,6 +199,15 @@ var cov_1fo8tqzulf = function () {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -248,30 +224,56 @@ exports.default = {
     components: {
         TableColumn: _tableColumn2.default
     },
-    data: function data() {
-        cov_1fo8tqzulf.f[0]++;
-        cov_1fo8tqzulf.s[0]++;
-
-        return {
-            columns: []
-        };
+    props: {
+        columns: {
+            type: Array,
+            required: true
+        },
+        data: {
+            type: Array,
+            required: true
+        },
+        width: {
+            type: String,
+            default: 'auto'
+        },
+        height: {
+            type: String,
+            default: 'auto'
+        },
+        maxHeight: {
+            type: String,
+            default: 'auto'
+        },
+        showHeader: {
+            type: Boolean,
+            default: true
+        },
+        emptyText: {
+            type: String,
+            default: 'The data in the table is empty.'
+        },
+        border: {
+            type: Boolean,
+            default: true
+        }
     },
+    methods: {
+        getStyle: function getStyle() {
+            cov_1fo8tqzulf.f[0]++;
+            cov_1fo8tqzulf.s[0]++;
 
-    computed: {
-        richColumns: function richColumns() {
+            return {
+                width: this.width
+            };
+        },
+        getClass: function getClass() {
             cov_1fo8tqzulf.f[1]++;
+            cov_1fo8tqzulf.s[1]++;
 
-            var cols = (cov_1fo8tqzulf.s[1]++, []);
-            cov_1fo8tqzulf.s[2]++;
-            for (var i = 0; i < 10; i++) {
-                cov_1fo8tqzulf.s[3]++;
-
-                cols.push({
-                    title: '' + ['标题', 'title'][Math.round(Math.random())] + i
-                });
-            }
-            cov_1fo8tqzulf.s[4]++;
-            return cols;
+            return {
+                'fly-table-noBorder': !this.border
+            };
         }
     }
 };
@@ -568,7 +570,7 @@ if (false) {(function () {
 
 var cov_1cspwl5thk = function () {
     var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\table-column.js',
-        hash = 'c122d7ad6142d0fad6722bb6ff810582d08b14bc',
+        hash = '4e11929dfae696c87dd1a09c098175dd2e2d0afe',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -577,21 +579,21 @@ var cov_1cspwl5thk = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 29,
+                    line: 34,
                     column: 8
                 },
                 end: {
-                    line: 31,
-                    column: 14
+                    line: 40,
+                    column: 13
                 }
             },
             '1': {
                 start: {
-                    line: 34,
+                    line: 43,
                     column: 8
                 },
                 end: {
-                    line: 34,
+                    line: 43,
                     column: 55
                 }
             }
@@ -601,61 +603,122 @@ var cov_1cspwl5thk = function () {
                 name: '(anonymous_0)',
                 decl: {
                     start: {
-                        line: 28,
+                        line: 29,
                         column: 4
                     },
                     end: {
-                        line: 28,
+                        line: 29,
                         column: 5
                     }
                 },
                 loc: {
                     start: {
-                        line: 28,
-                        column: 12
+                        line: 29,
+                        column: 13
+                    },
+                    end: {
+                        line: 31,
+                        column: 5
+                    }
+                },
+                line: 29
+            },
+            '1': {
+                name: '(anonymous_1)',
+                decl: {
+                    start: {
+                        line: 32,
+                        column: 4
                     },
                     end: {
                         line: 32,
                         column: 5
                     }
                 },
-                line: 28
+                loc: {
+                    start: {
+                        line: 32,
+                        column: 12
+                    },
+                    end: {
+                        line: 41,
+                        column: 5
+                    }
+                },
+                line: 32
             },
-            '1': {
-                name: '(anonymous_1)',
+            '2': {
+                name: '(anonymous_2)',
                 decl: {
                     start: {
-                        line: 33,
+                        line: 42,
                         column: 4
                     },
                     end: {
-                        line: 33,
+                        line: 42,
                         column: 5
                     }
                 },
                 loc: {
                     start: {
-                        line: 33,
+                        line: 42,
                         column: 22
                     },
                     end: {
-                        line: 35,
+                        line: 44,
                         column: 5
                     }
                 },
-                line: 33
+                line: 42
             }
         },
-        branchMap: {},
+        branchMap: {
+            '0': {
+                loc: {
+                    start: {
+                        line: 34,
+                        column: 15
+                    },
+                    end: {
+                        line: 40,
+                        column: 13
+                    }
+                },
+                type: 'cond-expr',
+                locations: [{
+                    start: {
+                        line: 36,
+                        column: 16
+                    },
+                    end: {
+                        line: 36,
+                        column: 71
+                    }
+                }, {
+                    start: {
+                        line: 39,
+                        column: 16
+                    },
+                    end: {
+                        line: 39,
+                        column: 48
+                    }
+                }],
+                line: 34
+            }
+        },
         s: {
             '0': 0,
             '1': 0
         },
         f: {
             '0': 0,
-            '1': 0
+            '1': 0,
+            '2': 0
         },
-        b: {},
+        b: {
+            '0': [0, 0]
+        },
         _coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
     },
         coverage = global[gcv] || (global[gcv] = {});
@@ -696,17 +759,22 @@ exports.default = {
         sortMehtod: Function,
         filters: Array,
         filterMultiple: Boolean,
-        filterMehtod: Function
+        filterMehtod: Function,
+        row: Object
+    },
+    created: function created() {
+        cov_1cspwl5thk.f[0]++;
     },
     render: function render() {
         var h = arguments[0];
-        cov_1cspwl5thk.f[0]++;
+        cov_1cspwl5thk.f[1]++;
         cov_1cspwl5thk.s[0]++;
 
-        return h('td', [h('div', ['test'])]);
+
+        return typeof this.formatter === 'function' ? (cov_1cspwl5thk.b[0][0]++, this.formatter.call(this, this.row, this.prop, this.label)) : (cov_1cspwl5thk.b[0][1]++, h('div', [this.row[this.prop]]));
     },
     renderError: function renderError(h, err) {
-        cov_1cspwl5thk.f[1]++;
+        cov_1cspwl5thk.f[2]++;
         cov_1cspwl5thk.s[1]++;
 
         return h('pre', { style: { color: 'red' } }, err.stack);
@@ -728,33 +796,66 @@ var render = function() {
     _c("div", { staticClass: "fly-table" }, [
       _c("div", { staticClass: "fly-table-toolbar" }),
       _vm._v(" "),
-      _c("div", { staticClass: "fly-table-header" }, [
-        _c("table", { staticStyle: { width: "600px" } }, [
-          _c(
-            "thead",
-            _vm._l(_vm.richColumns, function(column, index) {
-              return _c("td", { key: index }, [_vm._v(_vm._s(column.title))])
-            })
+      _vm.showHeader
+        ? _c(
+            "div",
+            { staticClass: "fly-table-header", class: _vm.getClass() },
+            [
+              _c("table", { style: _vm.getStyle() }, [
+                _c(
+                  "thead",
+                  _vm._l(_vm.columns, function(column, index) {
+                    return _c("th", { key: index }, [
+                      _vm._v(_vm._s(column.label))
+                    ])
+                  })
+                )
+              ])
+            ]
           )
-        ])
-      ]),
+        : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "fly-table-body" }, [
-        _c("table", { staticStyle: { width: "600px" } }, [
-          _c("tbody", [
-            _c(
-              "tr",
-              _vm._l(_vm.richColumns, function(column, index) {
-                return _c("table-column", { key: index }, [
-                  _vm._v(_vm._s(column.title) + ">")
-                ])
-              })
-            ),
-            _vm._v(" "),
-            _c("tr", [_c("td", { attrs: { colspan: "10" } }, [_vm._v("ad")])])
+      _vm.data.length > 0
+        ? _c("div", { staticClass: "fly-table-body", class: _vm.getClass() }, [
+            _c("table", { style: _vm.getStyle() }, [
+              _c(
+                "tbody",
+                _vm._l(_vm.data, function(row, index) {
+                  return _c(
+                    "tr",
+                    { key: index },
+                    _vm._l(_vm.columns, function(column, index) {
+                      return _c(
+                        "td",
+                        { key: index },
+                        [
+                          _c(
+                            "table-column",
+                            _vm._b(
+                              { attrs: { row: row } },
+                              "table-column",
+                              column,
+                              false
+                            )
+                          )
+                        ],
+                        1
+                      )
+                    })
+                  )
+                })
+              )
+            ])
           ])
-        ])
-      ]),
+        : _c("div", { staticClass: "fly-table-empty", class: _vm.getClass() }, [
+            _c("table", { style: _vm.getStyle() }, [
+              _c("tbody", [
+                _c("tr", [
+                  _c("td", [_c("div", [_vm._v(_vm._s(this.emptyText))])])
+                ])
+              ])
+            ])
+          ]),
       _vm._v(" "),
       _c("div", { staticClass: "fly-table-footer" })
     ])

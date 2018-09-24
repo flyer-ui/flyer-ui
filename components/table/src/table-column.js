@@ -33,12 +33,10 @@ export default {
 
         return typeof this.formatter === 'function'?
             (
-                <td>{this.formatter.call(this,this.row,this.prop,this.label)}</td>
+                this.formatter.call(this,this.row,this.prop,this.label)
             ):
             (
-                <td>
-                    <div>{this.row[this.prop]}</div>
-                </td>
+                <div>{this.row[this.prop]}</div>
             )
     },
     renderError(h,err){

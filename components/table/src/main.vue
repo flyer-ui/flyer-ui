@@ -14,7 +14,9 @@
            <table :style="getStyle()">
             <tbody>
              <tr v-for="(row,index) in data" :key="index">
-                <table-column :row="row" v-bind="column" v-for='(column,index) in columns' :key='index'></table-column>
+                <td v-for='(column,index) in columns' :key='index'>
+                    <table-column :row="row" v-bind="column"></table-column>
+                </td>
              </tr>
             </tbody>
            </table>
