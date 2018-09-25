@@ -72,7 +72,7 @@
 
 var cov_1fo8tqzulf = function () {
     var path = 'C:\\dev\\flyer-ui\\components\\table\\src\\main.vue',
-        hash = '073f9e50e9de0356b91c7c44ccf2469e9802fcf5',
+        hash = '81df0f417034b288e94b3398c25c43ec7e6d3f47',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -81,21 +81,21 @@ var cov_1fo8tqzulf = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 82,
+                    line: 93,
                     column: 12
                 },
                 end: {
-                    line: 84,
+                    line: 95,
                     column: 13
                 }
             },
             '1': {
                 start: {
-                    line: 87,
+                    line: 98,
                     column: 12
                 },
                 end: {
-                    line: 89,
+                    line: 100,
                     column: 13
                 }
             }
@@ -105,49 +105,49 @@ var cov_1fo8tqzulf = function () {
                 name: '(anonymous_0)',
                 decl: {
                     start: {
-                        line: 81,
+                        line: 92,
                         column: 8
                     },
                     end: {
-                        line: 81,
+                        line: 92,
                         column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 81,
+                        line: 92,
                         column: 18
                     },
                     end: {
-                        line: 85,
+                        line: 96,
                         column: 9
                     }
                 },
-                line: 81
+                line: 92
             },
             '1': {
                 name: '(anonymous_1)',
                 decl: {
                     start: {
-                        line: 86,
+                        line: 97,
                         column: 8
                     },
                     end: {
-                        line: 86,
+                        line: 97,
                         column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 86,
+                        line: 97,
                         column: 18
                     },
                     end: {
-                        line: 90,
+                        line: 101,
                         column: 9
                     }
                 },
-                line: 86
+                line: 97
             }
         },
         branchMap: {},
@@ -171,6 +171,17 @@ var cov_1fo8tqzulf = function () {
     coverageData.hash = hash;
     return coverage[path] = coverageData;
 }(); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -272,7 +283,7 @@ exports.default = {
             cov_1fo8tqzulf.s[1]++;
 
             return {
-                'fly-table-noBorder': !this.border
+                'fly-table-no_border': !this.border
             };
         }
     }
@@ -806,7 +817,25 @@ var render = function() {
                   "thead",
                   _vm._l(_vm.columns, function(column, index) {
                     return _c("th", { key: index }, [
-                      _vm._v(_vm._s(column.label))
+                      _c("div", [_vm._v(_vm._s(column.label))]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "fly-table-header_querying" }, [
+                        _c(
+                          "div",
+                          { staticClass: "fly-table-header_querying_filter" },
+                          [_c("i", { staticClass: "icon-filter" })]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "fly-table-header_querying_sortable" },
+                          [
+                            _c("i", { staticClass: "icon-chevron-up" }),
+                            _vm._v(" "),
+                            _c("i", { staticClass: "icon-chevron-down" })
+                          ]
+                        )
+                      ])
                     ])
                   })
                 )

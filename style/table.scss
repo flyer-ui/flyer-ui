@@ -39,7 +39,25 @@
             @include clearFix();
         }
         table{
-            @include table()
+            @include table();
+            th{
+                position:relative;
+            }
+        }
+        &_querying{
+            position: absolute;
+            z-index:1;
+            top:0px;
+            right:0px;
+            bottom:0px;
+            &_filter{
+                top:5px;
+                display:inline-block;
+            }
+            &_sortable{
+                top:5px;
+                display:inline-block;
+            }
         }
     }
     &-body{
@@ -62,7 +80,7 @@
             border-bottom:1px solid #ccc;
         }
     }
-    &-noBorder{
+    &-no_border{
         table {
             td,th{
                 border-left:0px;

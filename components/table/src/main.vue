@@ -6,7 +6,18 @@
         <div class='fly-table-header' :class="getClass()" v-if="showHeader">
            <table :style="getStyle()">
             <thead>
-              <th v-for='(column,index) in columns' :key='index'>{{column.label}}</th>
+              <th v-for='(column,index) in columns' :key='index'>
+                  <div>{{column.label}}</div>
+                  <div class="fly-table-header_querying">
+                      <div class="fly-table-header_querying_filter">
+                        <i class="icon-filter"></i>
+                      </div>
+                      <div class="fly-table-header_querying_sortable">
+                           <i class="icon-chevron-up"></i>
+                           <i class="icon-chevron-down"></i>
+                      </div>
+                  </div>
+              </th>
             </thead>
           </table>
         </div>
@@ -85,7 +96,7 @@ export default {
         },
         getClass(){
             return {
-                'fly-table-noBorder':!this.border
+                'fly-table-no_border':!this.border
             }
         }
     }

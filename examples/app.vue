@@ -6,6 +6,8 @@
      <fly-table width="500px" :showHeader="false" :columns="columns" :data="data"></fly-table> 
      <h1>Hello Flyer-UI 空数据</h1>
      <fly-table width="500px" :showHeader="true" :columns="columns" :data="[]"></fly-table>
+      <h1>Hello Flyer-UI 有边框</h1>
+     <fly-table width="500px" :showHeader="true" :columns="columns" :data="data"></fly-table>
    </div>
 </template>
 <script type="text/babel">
@@ -35,7 +37,7 @@ export default {
                     label:'地址',
                     formatter(row,prop){
                         return (
-                            <div><i class="icon-filter"></i><a href="http://www.baidu.com">{row[prop]}</a></div>
+                            <div><a href="http://www.baidu.com">{row[prop]}</a></div>
                         )
                     }
                 }
