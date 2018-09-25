@@ -10,11 +10,11 @@
                   <div>{{column.label}}</div>
                   <div class="fly-table-header_querying">
                       <div class="fly-table-header_querying_filter">
-                        <i class="icon-filter"></i>
+                        <i class="fly-icon icon-filter"></i>
                       </div>
                       <div class="fly-table-header_querying_sortable">
-                           <i class="icon-chevron-up"></i>
-                           <i class="icon-chevron-down"></i>
+                           <i class="fly-icon icon-chevron-up"></i>
+                           <i class="fly-icon icon-chevron-down"></i>
                       </div>
                   </div>
               </th>
@@ -22,37 +22,23 @@
           </table>
         </div>
         <div class='fly-table-body' :class="getClass()" v-if="data.length>0">
-           <table :style="getStyle()">
-            <tbody>
-             <tr v-for="(row,index) in data" :key="index">
-                <td v-for='(column,index) in columns' :key='index'>
-                    <table-column :row="row" v-bind="column"></table-column>
-                </td>
-             </tr>
-            </tbody>
-           </table>
+           <table-body :style="getStyle()" :data="data" :columsn="columns"></table-body>
         </div>
         <div class='fly-table-empty' :class="getClass()" v-else>
-            <table :style="getStyle()">
-                <tbody>
-                    <tr>
-                        <td>
-                          <div>{{this.emptyText}}</div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <table-empty :style="getStyle()" :empty-text="emptyText"></table-empty>
         </div>
         <div class='fly-table-footer'></div>
       </div>
     </transition>
 </template>
 <script>
-import TableColumn from './table-column'
+import TableEmpty from './table-empty'
+import TableBody from './table-body.vue'
 export default {
     name: 'FlyTable',
     components:{
-        TableColumn
+        TableEmpty,
+        TableBody
     },
     props:{
         columns:{

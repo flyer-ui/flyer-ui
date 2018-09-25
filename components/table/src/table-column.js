@@ -30,7 +30,6 @@ export default {
         
     },
     render(){
-
         return typeof this.formatter === 'function'?
             (
                 this.formatter.call(this,this.row,this.prop,this.label)

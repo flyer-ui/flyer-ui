@@ -8,22 +8,37 @@
     margin:0px;
     padding:0px;
     box-sizing:border-box;
-    table-layout: fixed;
+}
+@mixin querying() {
+    float:left;
+    height:100%;
+    position: relative;
+    min-width:16px;
+    width:16px;
+}
+@mixin icon-common(){
+    position:absolute;
+    z-index: 1;
+    cursor: pointer;
+    &:hover{
+        background: $main-color;
+    }
 }
 @mixin table(){
     @include unfilled();
+    table-layout: fixed;
     border-collapse: collapse;
     td,th{
         @include unfilled();
-        border-left:1px solid #ccc;
+        border-left:1px solid $main-color;
         border-bottom:0px;
-        border-top:1px solid #ccc;
+        border-top:1px solid $main-color;
         line-height: 24px;
         padding:8px;
         text-align: left;
     }
     td:last-child,th:last-child{
-        border-right:1px solid #ccc;
+        border-right:1px solid $main-color;
     }
 }
 .fly-table {
@@ -46,17 +61,27 @@
         }
         &_querying{
             position: absolute;
-            z-index:1;
             top:0px;
             right:0px;
             bottom:0px;
+            z-index:1;
             &_filter{
-                top:5px;
-                display:inline-block;
+                @include querying();
+                .icon-filter{
+                    top:10px;
+                    @include icon-common();
+                }
             }
             &_sortable{
-                top:5px;
-                display:inline-block;
+                @include querying();
+                .icon-chevron-up{
+                    top:5px;
+                    @include icon-common();
+                }
+                .icon-chevron-down{
+                    bottom:5px;
+                    @include icon-common();
+                }
             }
         }
     }
