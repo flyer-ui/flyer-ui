@@ -8,6 +8,7 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         // "plugin:vue/recommended",
+        "plugin:jasmine/recommended",
         "plugin:flowtype/recommended"
     ],
     "parserOptions": {

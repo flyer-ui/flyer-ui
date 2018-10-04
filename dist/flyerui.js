@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,7 +72,7 @@
 
 var cov_mmxxw0030 = function () {
     var path = '/Volumes/files/dev files/Flyer-UI/components/table/src/main.vue',
-        hash = '169360e4653237456bbb0d9855d3c33494d743d9',
+        hash = '214fab3841668a2e80fe254e98df3c15addc2f3c',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -81,21 +81,21 @@ var cov_mmxxw0030 = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 93,
+                    line: 79,
                     column: 12
                 },
                 end: {
-                    line: 95,
+                    line: 81,
                     column: 13
                 }
             },
             '1': {
                 start: {
-                    line: 98,
+                    line: 84,
                     column: 12
                 },
                 end: {
-                    line: 100,
+                    line: 86,
                     column: 13
                 }
             }
@@ -105,49 +105,49 @@ var cov_mmxxw0030 = function () {
                 name: '(anonymous_0)',
                 decl: {
                     start: {
-                        line: 92,
+                        line: 78,
                         column: 8
                     },
                     end: {
-                        line: 92,
+                        line: 78,
                         column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 92,
+                        line: 78,
                         column: 18
                     },
                     end: {
-                        line: 96,
+                        line: 82,
                         column: 9
                     }
                 },
-                line: 92
+                line: 78
             },
             '1': {
                 name: '(anonymous_1)',
                 decl: {
                     start: {
-                        line: 97,
+                        line: 83,
                         column: 8
                     },
                     end: {
-                        line: 97,
+                        line: 83,
                         column: 9
                     }
                 },
                 loc: {
                     start: {
-                        line: 97,
+                        line: 83,
                         column: 18
                     },
                     end: {
-                        line: 101,
+                        line: 87,
                         column: 9
                     }
                 },
-                line: 97
+                line: 83
             }
         },
         branchMap: {},
@@ -203,37 +203,26 @@ var cov_mmxxw0030 = function () {
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _tableColumn = __webpack_require__(4);
+var _tableEmpty = __webpack_require__(6);
 
-var _tableColumn2 = _interopRequireDefault(_tableColumn);
+var _tableEmpty2 = _interopRequireDefault(_tableEmpty);
+
+var _tableBody = __webpack_require__(7);
+
+var _tableBody2 = _interopRequireDefault(_tableBody);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
     name: 'FlyTable',
     components: {
-        TableColumn: _tableColumn2.default
+        TableEmpty: _tableEmpty2.default,
+        TableBody: _tableBody2.default
     },
     props: {
         columns: {
@@ -291,6 +280,226 @@ exports.default = {
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var cov_2ep3amh0um = function () {
+    var path = '/Volumes/files/dev files/Flyer-UI/components/table/src/table-body.vue',
+        hash = '582297fd0bf9b407a450d6c36cb052da8b8aa5ed',
+        Function = function () {}.constructor,
+        global = new Function('return this')(),
+        gcv = '__coverage__',
+        coverageData = {
+        path: '/Volumes/files/dev files/Flyer-UI/components/table/src/table-body.vue',
+        statementMap: {
+            '0': {
+                start: {
+                    line: 25,
+                    column: 8
+                },
+                end: {
+                    line: 25,
+                    column: 16
+                }
+            }
+        },
+        fnMap: {
+            '0': {
+                name: '(anonymous_0)',
+                decl: {
+                    start: {
+                        line: 24,
+                        column: 4
+                    },
+                    end: {
+                        line: 24,
+                        column: 5
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 24,
+                        column: 13
+                    },
+                    end: {
+                        line: 26,
+                        column: 5
+                    }
+                },
+                line: 24
+            }
+        },
+        branchMap: {},
+        s: {
+            '0': 0
+        },
+        f: {
+            '0': 0
+        },
+        b: {},
+        _coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+    },
+        coverage = global[gcv] || (global[gcv] = {});
+
+    if (coverage[path] && coverage[path].hash === hash) {
+        return coverage[path];
+    }
+
+    coverageData.hash = hash;
+    return coverage[path] = coverageData;
+}(); //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _tableColumn = __webpack_require__(8);
+
+var _tableColumn2 = _interopRequireDefault(_tableColumn);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    name: 'FlyTableBody',
+    components: {
+        TableColumn: _tableColumn2.default
+    },
+    props: {
+        data: Array,
+        columns: Array,
+        style: Object
+    },
+    created: function created() {
+        cov_2ep3amh0um.f[0]++;
+        cov_2ep3amh0um.s[0]++;
+
+        debugger;
+    }
+};
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = normalizeComponent;
+/* globals __VUE_SSR_CONTEXT__ */
+
+// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
+// This module is a runtime utility for cleaner component module output and will
+// be included in the final webpack user bundle.
+
+function normalizeComponent (
+  scriptExports,
+  render,
+  staticRenderFns,
+  functionalTemplate,
+  injectStyles,
+  scopeId,
+  moduleIdentifier, /* server only */
+  shadowMode /* vue-cli only */
+) {
+  scriptExports = scriptExports || {}
+
+  // ES6 modules interop
+  var type = typeof scriptExports.default
+  if (type === 'object' || type === 'function') {
+    scriptExports = scriptExports.default
+  }
+
+  // Vue.extend constructor export interop
+  var options = typeof scriptExports === 'function'
+    ? scriptExports.options
+    : scriptExports
+
+  // render functions
+  if (render) {
+    options.render = render
+    options.staticRenderFns = staticRenderFns
+    options._compiled = true
+  }
+
+  // functional template
+  if (functionalTemplate) {
+    options.functional = true
+  }
+
+  // scopedId
+  if (scopeId) {
+    options._scopeId = scopeId
+  }
+
+  var hook
+  if (moduleIdentifier) { // server build
+    hook = function (context) {
+      // 2.3 injection
+      context =
+        context || // cached call
+        (this.$vnode && this.$vnode.ssrContext) || // stateful
+        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
+      // 2.2 with runInNewContext: true
+      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
+        context = __VUE_SSR_CONTEXT__
+      }
+      // inject component styles
+      if (injectStyles) {
+        injectStyles.call(this, context)
+      }
+      // register component module identifier for async chunk inferrence
+      if (context && context._registeredComponents) {
+        context._registeredComponents.add(moduleIdentifier)
+      }
+    }
+    // used by ssr in case component is cached and beforeCreate
+    // never gets called
+    options._ssrRegister = hook
+  } else if (injectStyles) {
+    hook = shadowMode
+      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
+      : injectStyles
+  }
+
+  if (hook) {
+    if (options.functional) {
+      // for template-only hot-reload because in that case the render fn doesn't
+      // go through the normalizer
+      options._injectStyles = hook
+      // register for functioal component in vue file
+      var originalRender = options.render
+      options.render = function renderWithStyleInjection (h, context) {
+        hook.call(context)
+        return originalRender(h, context)
+      }
+    } else {
+      // inject component registration as beforeCreate hook
+      var existing = options.beforeCreate
+      options.beforeCreate = existing
+        ? [].concat(existing, hook)
+        : [hook]
+    }
+  }
+
+  return {
+    exports: scriptExports,
+    options: options
+  }
+}
+
+
+/***/ }),
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -442,7 +651,7 @@ var cov_1bpyoye1nc = function () {
     return coverage[path] = coverageData;
 }();
 
-var _table = __webpack_require__(2);
+var _table = __webpack_require__(4);
 
 var _table2 = _interopRequireDefault(_table);
 
@@ -472,7 +681,7 @@ cov_1bpyoye1nc.s[5]++;
 module.exports.default = module.exports;
 
 /***/ }),
-/* 2 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -508,7 +717,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _main = __webpack_require__(3);
+var _main = __webpack_require__(5);
 
 var _main2 = _interopRequireDefault(_main);
 
@@ -517,7 +726,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = _main2.default;
 
 /***/ }),
-/* 3 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -525,8 +734,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_main_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e84f0c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e84f0c0_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_main_vue__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
 var disposed = false
 /* script */
 
@@ -573,7 +782,158 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 4 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var cov_av86eq9n = function () {
+    var path = '/Volumes/files/dev files/Flyer-UI/components/table/src/table-empty.js',
+        hash = '78a8eb5fbf7d302f59ff254f843e1ba828c5727c',
+        Function = function () {}.constructor,
+        global = new Function('return this')(),
+        gcv = '__coverage__',
+        coverageData = {
+        path: '/Volumes/files/dev files/Flyer-UI/components/table/src/table-empty.js',
+        statementMap: {
+            '0': {
+                start: {
+                    line: 8,
+                    column: 8
+                },
+                end: {
+                    line: 18,
+                    column: 9
+                }
+            }
+        },
+        fnMap: {
+            '0': {
+                name: '(anonymous_0)',
+                decl: {
+                    start: {
+                        line: 7,
+                        column: 4
+                    },
+                    end: {
+                        line: 7,
+                        column: 5
+                    }
+                },
+                loc: {
+                    start: {
+                        line: 7,
+                        column: 12
+                    },
+                    end: {
+                        line: 19,
+                        column: 5
+                    }
+                },
+                line: 7
+            }
+        },
+        branchMap: {},
+        s: {
+            '0': 0
+        },
+        f: {
+            '0': 0
+        },
+        b: {},
+        _coverageSchema: 'd34fc3e6b8297bcde183f5492bcb8fcb36775295'
+    },
+        coverage = global[gcv] || (global[gcv] = {});
+
+    if (coverage[path] && coverage[path].hash === hash) {
+        return coverage[path];
+    }
+
+    coverageData.hash = hash;
+    return coverage[path] = coverageData;
+}();
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = {
+    name: 'FlyTableEmpty',
+    props: {
+        style: Object,
+        emptyText: String
+    },
+    render: function render() {
+        var h = arguments[0];
+        cov_av86eq9n.f[0]++;
+        cov_av86eq9n.s[0]++;
+
+        return h(
+            'table',
+            { style: this.style },
+            [h('tbody', [h('tr', [h('td', [h('div', [this.emptyText])])])])]
+        );
+    }
+};
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_267cf6e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_table_body_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(2);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_table_body_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_267cf6e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_table_body_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_267cf6e8_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_table_body_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "components/table/src/table-body.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-267cf6e8", Component.options)
+  } else {
+    hotAPI.reload("data-v-267cf6e8", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -581,7 +941,7 @@ if (false) {(function () {
 
 var cov_2o74qwuxmo = function () {
     var path = '/Volumes/files/dev files/Flyer-UI/components/table/src/table-column.js',
-        hash = '087ea89c13136941b1818b600b747a7dc764c776',
+        hash = 'acd64fd83eea85dfbc61b22ff31235449a6ef558',
         Function = function () {}.constructor,
         global = new Function('return this')(),
         gcv = '__coverage__',
@@ -590,21 +950,21 @@ var cov_2o74qwuxmo = function () {
         statementMap: {
             '0': {
                 start: {
-                    line: 34,
+                    line: 33,
                     column: 8
                 },
                 end: {
-                    line: 40,
+                    line: 39,
                     column: 13
                 }
             },
             '1': {
                 start: {
-                    line: 43,
+                    line: 42,
                     column: 8
                 },
                 end: {
-                    line: 43,
+                    line: 42,
                     column: 55
                 }
             }
@@ -652,7 +1012,7 @@ var cov_2o74qwuxmo = function () {
                         column: 12
                     },
                     end: {
-                        line: 41,
+                        line: 40,
                         column: 5
                     }
                 },
@@ -662,60 +1022,60 @@ var cov_2o74qwuxmo = function () {
                 name: '(anonymous_2)',
                 decl: {
                     start: {
-                        line: 42,
+                        line: 41,
                         column: 4
                     },
                     end: {
-                        line: 42,
+                        line: 41,
                         column: 5
                     }
                 },
                 loc: {
                     start: {
-                        line: 42,
+                        line: 41,
                         column: 22
                     },
                     end: {
-                        line: 44,
+                        line: 43,
                         column: 5
                     }
                 },
-                line: 42
+                line: 41
             }
         },
         branchMap: {
             '0': {
                 loc: {
                     start: {
-                        line: 34,
+                        line: 33,
                         column: 15
                     },
                     end: {
-                        line: 40,
+                        line: 39,
                         column: 13
                     }
                 },
                 type: 'cond-expr',
                 locations: [{
                     start: {
-                        line: 36,
+                        line: 35,
                         column: 16
                     },
                     end: {
-                        line: 36,
+                        line: 35,
                         column: 71
                     }
                 }, {
                     start: {
-                        line: 39,
+                        line: 38,
                         column: 16
                     },
                     end: {
-                        line: 39,
+                        line: 38,
                         column: 48
                     }
                 }],
-                line: 34
+                line: 33
             }
         },
         s: {
@@ -781,7 +1141,6 @@ exports.default = {
         cov_2o74qwuxmo.f[1]++;
         cov_2o74qwuxmo.s[0]++;
 
-
         return typeof this.formatter === 'function' ? (cov_2o74qwuxmo.b[0][0]++, this.formatter.call(this, this.row, this.prop, this.label)) : (cov_2o74qwuxmo.b[0][1]++, h('div', [this.row[this.prop]]));
     },
     renderError: function renderError(h, err) {
@@ -793,7 +1152,53 @@ exports.default = {
 };
 
 /***/ }),
-/* 5 */
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("table", { style: _vm.style }, [
+    _c(
+      "tbody",
+      _vm._l(_vm.data, function(row, index) {
+        return _c(
+          "tr",
+          { key: index },
+          _vm._l(_vm.columns, function(column, index) {
+            return _c(
+              "td",
+              { key: index },
+              [
+                _c(
+                  "table-column",
+                  _vm._b({ attrs: { row: row } }, "table-column", column, false)
+                )
+              ],
+              1
+            )
+          })
+        )
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-267cf6e8", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+
+/***/ }),
+/* 10 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -823,16 +1228,20 @@ var render = function() {
                         _c(
                           "div",
                           { staticClass: "fly-table-header_querying_filter" },
-                          [_c("i", { staticClass: "icon-filter" })]
+                          [_c("i", { staticClass: "fly-icon icon-filter" })]
                         ),
                         _vm._v(" "),
                         _c(
                           "div",
                           { staticClass: "fly-table-header_querying_sortable" },
                           [
-                            _c("i", { staticClass: "icon-chevron-up" }),
+                            _c("i", {
+                              staticClass: "fly-icon icon-chevron-up"
+                            }),
                             _vm._v(" "),
-                            _c("i", { staticClass: "icon-chevron-down" })
+                            _c("i", {
+                              staticClass: "fly-icon icon-chevron-down"
+                            })
                           ]
                         )
                       ])
@@ -845,46 +1254,28 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm.data.length > 0
-        ? _c("div", { staticClass: "fly-table-body", class: _vm.getClass() }, [
-            _c("table", { style: _vm.getStyle() }, [
-              _c(
-                "tbody",
-                _vm._l(_vm.data, function(row, index) {
-                  return _c(
-                    "tr",
-                    { key: index },
-                    _vm._l(_vm.columns, function(column, index) {
-                      return _c(
-                        "td",
-                        { key: index },
-                        [
-                          _c(
-                            "table-column",
-                            _vm._b(
-                              { attrs: { row: row } },
-                              "table-column",
-                              column,
-                              false
-                            )
-                          )
-                        ],
-                        1
-                      )
-                    })
-                  )
-                })
-              )
-            ])
-          ])
-        : _c("div", { staticClass: "fly-table-empty", class: _vm.getClass() }, [
-            _c("table", { style: _vm.getStyle() }, [
-              _c("tbody", [
-                _c("tr", [
-                  _c("td", [_c("div", [_vm._v(_vm._s(this.emptyText))])])
-                ])
-              ])
-            ])
-          ]),
+        ? _c(
+            "div",
+            { staticClass: "fly-table-body", class: _vm.getClass() },
+            [
+              _c("table-body", {
+                style: _vm.getStyle(),
+                attrs: { data: _vm.data, columsn: _vm.columns }
+              })
+            ],
+            1
+          )
+        : _c(
+            "div",
+            { staticClass: "fly-table-empty", class: _vm.getClass() },
+            [
+              _c("table-empty", {
+                style: _vm.getStyle(),
+                attrs: { "empty-text": _vm.emptyText }
+              })
+            ],
+            1
+          ),
       _vm._v(" "),
       _c("div", { staticClass: "fly-table-footer" })
     ])
@@ -899,115 +1290,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-3e84f0c0", { render: render, staticRenderFns: staticRenderFns })
   }
 }
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = normalizeComponent;
-/* globals __VUE_SSR_CONTEXT__ */
-
-// IMPORTANT: Do NOT use ES2015 features in this file (except for modules).
-// This module is a runtime utility for cleaner component module output and will
-// be included in the final webpack user bundle.
-
-function normalizeComponent (
-  scriptExports,
-  render,
-  staticRenderFns,
-  functionalTemplate,
-  injectStyles,
-  scopeId,
-  moduleIdentifier, /* server only */
-  shadowMode /* vue-cli only */
-) {
-  scriptExports = scriptExports || {}
-
-  // ES6 modules interop
-  var type = typeof scriptExports.default
-  if (type === 'object' || type === 'function') {
-    scriptExports = scriptExports.default
-  }
-
-  // Vue.extend constructor export interop
-  var options = typeof scriptExports === 'function'
-    ? scriptExports.options
-    : scriptExports
-
-  // render functions
-  if (render) {
-    options.render = render
-    options.staticRenderFns = staticRenderFns
-    options._compiled = true
-  }
-
-  // functional template
-  if (functionalTemplate) {
-    options.functional = true
-  }
-
-  // scopedId
-  if (scopeId) {
-    options._scopeId = scopeId
-  }
-
-  var hook
-  if (moduleIdentifier) { // server build
-    hook = function (context) {
-      // 2.3 injection
-      context =
-        context || // cached call
-        (this.$vnode && this.$vnode.ssrContext) || // stateful
-        (this.parent && this.parent.$vnode && this.parent.$vnode.ssrContext) // functional
-      // 2.2 with runInNewContext: true
-      if (!context && typeof __VUE_SSR_CONTEXT__ !== 'undefined') {
-        context = __VUE_SSR_CONTEXT__
-      }
-      // inject component styles
-      if (injectStyles) {
-        injectStyles.call(this, context)
-      }
-      // register component module identifier for async chunk inferrence
-      if (context && context._registeredComponents) {
-        context._registeredComponents.add(moduleIdentifier)
-      }
-    }
-    // used by ssr in case component is cached and beforeCreate
-    // never gets called
-    options._ssrRegister = hook
-  } else if (injectStyles) {
-    hook = shadowMode
-      ? function () { injectStyles.call(this, this.$root.$options.shadowRoot) }
-      : injectStyles
-  }
-
-  if (hook) {
-    if (options.functional) {
-      // for template-only hot-reload because in that case the render fn doesn't
-      // go through the normalizer
-      options._injectStyles = hook
-      // register for functioal component in vue file
-      var originalRender = options.render
-      options.render = function renderWithStyleInjection (h, context) {
-        hook.call(context)
-        return originalRender(h, context)
-      }
-    } else {
-      // inject component registration as beforeCreate hook
-      var existing = options.beforeCreate
-      options.beforeCreate = existing
-        ? [].concat(existing, hook)
-        : [hook]
-    }
-  }
-
-  return {
-    exports: scriptExports,
-    options: options
-  }
-}
-
 
 /***/ })
 /******/ ]);
