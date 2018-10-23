@@ -4,7 +4,7 @@
         <div class='fly-table-toolbar'>
         </div>
         <div class='fly-table-header' :class="getClass()" v-if="showHeader">
-           <table :style="getStyle()">
+           <table>
             <thead>
               <th v-for='(column,index) in columns' :key='index'>
                   <div>{{column.label}}</div>
@@ -22,10 +22,10 @@
           </table>
         </div>
         <div class='fly-table-body' :class="getClass()" v-if="data.length>0">
-           <table-body :style="getStyle()" :data="data" :columsn="columns"></table-body>
+           <table-body :data="data" :columsn="columns"></table-body>
         </div>
         <div class='fly-table-empty' :class="getClass()" v-else>
-            <table-empty :style="getStyle()" :empty-text="emptyText"></table-empty>
+            <table-empty :empty-text="emptyText"></table-empty>
         </div>
         <div class='fly-table-footer'></div>
       </div>

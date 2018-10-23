@@ -1,119 +1,70 @@
-@import "base.scss";
-@mixin clearFix() {
-    clear: both;
-    content:"";
-    display: block;
-}
-@mixin unfilled(){
-    margin:0px;
-    padding:0px;
-    box-sizing:border-box;
-}
-@mixin querying() {
-    float:left;
-    height:100%;
-    position: relative;
-    min-width:16px;
-    width:16px;
-}
-@mixin icon-common(){
-    position:absolute;
-    z-index: 1;
-    cursor: pointer;
-    &:hover{
-        background: $main-color;
+@import './base.scss';
+
+.fly-table{
+    @extend .profile;
+    .table{
+        border-collapse: collapse;
+        table-layout:fixed;
     }
-}
-@mixin table(){
-    @include unfilled();
-    table-layout: fixed;
-    border-collapse: collapse;
-    td,th{
-        @include unfilled();
-        border-left:1px solid $main-color;
-        border-bottom:0px;
+    .td,.th{
+        border-left: 1px solid $main-color;
         border-top:1px solid $main-color;
-        line-height: 24px;
-        padding:8px;
+        border-right:0px;
+        border-bottom:0px;
         text-align: left;
+        padding:8px;
+        color:#000;
+        position: relative;
     }
-    td:last-child,th:last-child{
+    .td:last-child,.th:last-child{
         border-right:1px solid $main-color;
     }
-}
-.fly-table {
     &-toolbar{
-        @include unfilled();
-        &::after{
-            @include clearFix();
-        }
+
     }
     &-header{
-        @include unfilled();
-        &::after{
-            @include clearFix();
-        }
         table{
-            @include table();
-            th{
-                position:relative;
-            }
+            @extend .table;
         }
-        &_querying{
-            position: absolute;
-            top:0px;
-            right:0px;
-            bottom:0px;
-            z-index:1;
-            &_filter{
-                @include querying();
-                .icon-filter{
-                    top:10px;
-                    @include icon-common();
-                }
-            }
-            &_sortable{
-                @include querying();
-                .icon-chevron-up{
-                    top:5px;
-                    @include icon-common();
-                }
-                .icon-chevron-down{
-                    bottom:5px;
-                    @include icon-common();
-                }
-            }
+        th{
+            @extend .td;
         }
     }
     &-body{
-        @include unfilled();
-        &::after{
-            @include clearFix();
-        }
         table{
-            @include table();
-            border-bottom:1px solid #ccc;
+            @extend .table;
+        }
+        td{
+            @extend .td;
+        }
+        tr:last-child{
+            border-bottom:1px solid $main-color;
         }
     }
     &-footer{
-        @include clearFix();
+
     }
     &-empty{
-        @include unfilled();
-        table{
-            @include table();
-            border-bottom:1px solid #ccc;
-        }
+
     }
-    &-no_border{
-        table {
-            td,th{
-                border-left:0px;
-            }
-            td:first-child,th:first-child{
-                border-left:1px solid #ccc;
-            }
-        }
-        
+    &-order{
+       width:20px;
+       position: absolute;
+       right:0px;
+       top:0px;
+       bottom:0px;
+       z-index: 1;
+       background-color: #fff;
+       padding-top:2px;
+    }
+    &-filter{
+        width:20px;
+        position: absolute;
+        top:0px;
+        right:20px;
+        bottom:0px;
+        z-index: 1;
+        background-color: #fff;
+        padding-top:10px;
     }
 }

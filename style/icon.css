@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?8l472w');
-  src:  url('fonts/icomoon.eot?8l472w#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?8l472w') format('truetype'),
-    url('fonts/icomoon.woff?8l472w') format('woff'),
-    url('fonts/icomoon.svg?8l472w#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?ktpojl');
+  src:  url('fonts/icomoon.eot?ktpojl#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ktpojl') format('truetype'),
+    url('fonts/icomoon.woff?ktpojl') format('woff'),
+    url('fonts/icomoon.svg?ktpojl#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -27,8 +27,17 @@
 .icon-alert-circle:before {
   content: "\e900";
 }
+.icon-check:before {
+  content: "\e906";
+}
 .icon-chevron-down:before {
   content: "\e901";
+}
+.icon-chevron-left:before {
+  content: "\e904";
+}
+.icon-chevron-right:before {
+  content: "\e905";
 }
 .icon-chevron-up:before {
   content: "\e902";

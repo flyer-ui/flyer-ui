@@ -18,7 +18,7 @@ module.exports = {
         "sourceType": "module",
         "parser": "babel-eslint"
     },
-    "plugins": ["flowtype", "html"],
+    "plugins": ["flowtype", "html","jasmine"],
     "rules": {
         "indent": [
             "error",

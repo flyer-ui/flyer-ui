@@ -1,12 +1,11 @@
 export default {
     name:'FlyTableEmpty',
     props:{
-        style:Object,
         emptyText:String
     },
     render(){
         return (
-            <table style={this.style}>
+            <table>
                 <tbody>
                     <tr>
                         <td>

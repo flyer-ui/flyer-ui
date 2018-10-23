@@ -1,5 +1,5 @@
 <template>
-    <table :style="style">
+    <table>
         <tbody>
             <tr v-for="(row,index) in data" :key="index">
                 <td v-for='(column,index) in columns' :key='index'>
@@ -18,11 +18,9 @@ export default {
     },
     props:{
         data:Array,
-        columns:Array,
-        style:Object
+        columns:Array
     },
     created(){
-        debugger
     }
 }
 </script>
