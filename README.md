@@ -1,4 +1,4 @@
-# my-project
+# flyer-ui
 
 > A Vue.js project
 
