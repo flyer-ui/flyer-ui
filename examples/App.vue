@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <fly-header></fly-header>
-    <fly-button>Click</fly-button>
+    <fly-container></fly-container>
+    <fly-footer></fly-footer>
   </div>
 </template>
 
@@ -9,22 +10,22 @@
 import FlyHeader from '@/components/header'
 import FlyMenu from '@/components/menu'
 import FlyFooter from '@/components/footer'
+import FlyContainer from '@/components/container'
 
 export default {
   components: {
     FlyHeader,
     FlyMenu,
-    FlyFooter
+    FlyFooter,
+    FlyContainer
   },
   data () {
     return {
-      // 问我怎么用函数的方式返回，而不是直接赋值，这样不好。
     }
   },
   props: {
     num: {
       type: String
-      // 让我在这里就验证好
     }
   },
   created () {
@@ -36,3 +37,8 @@ export default {
   name: 'App'
 }
 </script>
+<style lang='scss'>
+html,body,#app{
+  height:100%;
+}
+</style>
