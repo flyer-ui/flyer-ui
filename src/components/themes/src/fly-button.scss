@@ -1,0 +1,15 @@
+
+/* 主要字体颜色 */
+$fly-primary-color:#666;
+
+/* 主要边框颜色 */
+$fly-first-border-color:#e4eaec;
+.fly-button{
+    padding:10px;
+    outline: none;
+    cursor: pointer;
+    &-default{
+        color:$fly-primary-color;
+        border: 1px solid $fly-first-border-color;
+    }
+}

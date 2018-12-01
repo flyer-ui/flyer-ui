@@ -16,6 +16,17 @@ export default {
     FlyMenu,
     FlyFooter
   },
+  data () {
+    return {
+      // 问我怎么用函数的方式返回，而不是直接赋值，这样不好。
+    }
+  },
+  props: {
+    num: {
+      type: String
+      // 让我在这里就验证好
+    }
+  },
   created () {
     console.log(this)
   },
@@ -25,16 +36,3 @@ export default {
   name: 'App'
 }
 </script>
-<style lang='scss'>
-@import url('../src/components/themes/index.scss');
-</style>
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import FlyerUI from '../src/main.js'
+import '../src/components/themes/src/index.scss'
 
 Vue.config.productionTip = false
 Vue.use(FlyerUI)
