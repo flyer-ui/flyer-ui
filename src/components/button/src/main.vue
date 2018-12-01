@@ -5,15 +5,18 @@
 export default {
   name: 'FlyButton',
   props: {
-    size: {
-      type: String
-    },
     type: {
       type: String
     },
-    palin: {
+    nativeType: {
+      type: String
+    },
+    disabled: {
       type: Boolean,
       default: false
+    },
+    icon: {
+      type: String
     },
     round: {
       type: Boolean,
@@ -23,15 +26,12 @@ export default {
       type: Boolean,
       default: false
     },
+    size: {
+      type: String
+    },
     loadding: {
       type: Boolean,
       default: false
-    },
-    icon: {
-      type: String
-    },
-    nativeType: {
-      type: String
     }
   }
 }

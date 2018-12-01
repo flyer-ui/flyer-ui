@@ -12,4 +12,33 @@ $fly-first-border-color:#e4eaec;
         color:$fly-primary-color;
         border: 1px solid $fly-first-border-color;
     }
+    &-primary{
+
+    }
+    &-secondary{
+        background-color:#6c757d;
+        color:#fff;
+    }
+    &-warning{
+        background-color:#f2a654;
+        color:#fff;
+    }
+    &-danger{
+
+    }
+    &-success{
+
+    }
+    &-info{
+
+    }
+    &-dark{
+
+    }
+    &-light{
+
+    }
+    &-inverse{
+
+    }
 }
