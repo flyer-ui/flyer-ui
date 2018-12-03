@@ -1,9 +1,10 @@
 <template>
-    <button class='fly-button'
+    <button
     :type='nativeType'
-    :class='[{
-
-    }]'><slot></slot></button>
+    :class='[
+    "fly-button",
+    `fly-button-${type}`
+    ]'><slot></slot></button>
 </template>
 <script>
 export default {

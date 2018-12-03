@@ -1,11 +1,27 @@
 import Vue from 'vue'
 import FlyButton from '~/components/button/src/main'
 
-describe('测试FlyButton组件', () => {
+let id = 0
+function createElm () {
+  let div = document.createElement('div')
+  div.id = 'app' + ++id
+  document.body.appendChild(div)
+  return div
+}
+
+describe('Button', () => {
   let constructor = Vue.extend(FlyButton)
-  let vm = new constructor().$mount()
-  it('测试是否可以正确引用', () => {
+  it('create done', () => {
+    let vm = new constructor().$mount()
     expect(vm.$el.tagName).to.equal('BUTTON')
-    expect(vm.$el.className).to.equal('fly-button')
+    expect(vm.$el.classList.contains('fly-button')).equal(true)
+  })
+  it('native-type done', () => {
+    let vm = new constructor({
+      propsData: {
+        nativeType: 'submit'
+      }
+    }).$mount(createElm())
+    expect(vm.$el.type).to.equal('submit')
   })
 })
