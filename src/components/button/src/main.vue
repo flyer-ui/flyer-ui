@@ -1,15 +1,21 @@
 <template>
-    <button class='fly-button fly-button-default'><slot></slot></button>
+    <button class='fly-button'
+    :type='nativeType'
+    :class='[{
+
+    }]'><slot></slot></button>
 </template>
 <script>
 export default {
   name: 'FlyButton',
   props: {
     type: {
-      type: String
+      type: String,
+      default: 'default'
     },
     nativeType: {
-      type: String
+      type: String,
+      default: 'button'
     },
     disabled: {
       type: Boolean,

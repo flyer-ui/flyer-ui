@@ -1,6 +1,7 @@
 <template>
     <div class='fly-demo-content'>
         内容
+        <fly-button plain>默认按钮</fly-button>
     </div>
 </template>
 <script>
