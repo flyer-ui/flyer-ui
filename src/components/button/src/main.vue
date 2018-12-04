@@ -1,10 +1,17 @@
 <template>
     <button
     :type='nativeType'
+    :disabled='disabled'
     :class='[
     "fly-button",
-    `fly-button-${type}`
-    ]'><slot></slot></button>
+    `fly-button-${type}`,
+    {
+      "fly-is-disabled":disabled,
+      "fly-is-plain":plain,
+      "fly-is-circle":circle,
+      "fly-is-round":round
+    }
+    ]'><i v-if='loading' class='fly-is-loading'></i><slot></slot></button>
 </template>
 <script>
 export default {
@@ -36,9 +43,12 @@ export default {
     size: {
       type: String
     },
-    loadding: {
+    loading: {
       type: Boolean,
       default: false
+    },
+    plain: {
+      type: Boolean
     }
   }
 }

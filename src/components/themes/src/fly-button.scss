@@ -1,44 +1,29 @@
 
-/* 主要字体颜色 */
-$fly-primary-color:#666;
-
-/* 主要边框颜色 */
-$fly-first-border-color:#e4eaec;
+@import './minixs/fly-base.scss';
 .fly-button{
     padding:10px;
     outline: none;
+    border:0px;
+    border-radius:$fly-round-default-size;
     cursor: pointer;
+    color:$fly-common-white;
     &-default{
-        color:$fly-primary-color;
-        border: 1px solid $fly-first-border-color;
+        border: 1px solid $fly-four-border-color;
+        color:$font-color-common;
     }
     &-primary{
-
-    }
-    &-secondary{
-        background-color:#6c757d;
-        color:#fff;
+        background-color:$fly-primary-color;
     }
     &-warning{
-        background-color:#f2a654;
-        color:#fff;
+        background-color:$fly-warning-color;
     }
     &-danger{
-
+        background-color:$fly-danger-color;
     }
     &-success{
-
+        background-color:$fly-success-color;
     }
     &-info{
-
-    }
-    &-dark{
-
-    }
-    &-light{
-
-    }
-    &-inverse{
-
+        background-color:$fly-info-color;
     }
 }

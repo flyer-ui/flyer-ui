@@ -28,10 +28,10 @@ $header_height:60px;
   flex-wrap:nowrap;
   min-height:$header_height;
   height:$header_height;
-  background-color:#76838F;
+  // background-color:#76838F;
   &_logo{
     width:$logo_width;
-    background-color:#CCC5DE;
+    // background-color:#CCC5DE;
   }
   &_items{
     width:$items_width;

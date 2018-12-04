@@ -1,6 +1,28 @@
 
 /* 主要字体颜色 */
-$fly-primary-color:#666;
+$fly-primary-color:#62a8ea;
+
+/* 辅助色 */
+$fly-success-color:#46be8a;
+$fly-info-color:#57c7d4;
+$fly-warning-color:#f2a654;
+$fly-danger-color:#f96868;
+
+/* 中性色 */
+$font-color-title:#37474f;
+$font-color-common:#526069;
+$font-color-secondary:#76838F;
+$font-color-placeholder:#CCD5DB;
+
 
 /* 主要边框颜色 */
-$fly-first-border-color:#e4eaec;
+$fly-first-border-color:#37474f;
+$fly-second-border-color:#526069;
+$fly-third-border-color:#76838f;
+$fly-four-border-color:#ccd5db;
+
+/*通用白色*/
+$fly-common-white:#fff;
+
+/*默认圆角大小*/
+$fly-round-default-size:2px;
