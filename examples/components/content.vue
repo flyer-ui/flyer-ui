@@ -4,7 +4,7 @@
         <fly-button>默认按钮</fly-button>
         <fly-button nativeType='submit' type='primary'>默认按钮</fly-button>
         <fly-button type='success'>成功按钮</fly-button>
-        <fly-button type='warning'>警告按钮</fly-button>
+        <fly-button type='warning' loading>警告按钮</fly-button>
         <fly-button nativeType='reset' type='info'>信息按钮</fly-button>
         <fly-button nativeType='reset' circle type='info'>信息按钮</fly-button>
     </div>

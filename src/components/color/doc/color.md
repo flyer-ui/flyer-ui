@@ -6,19 +6,19 @@
         width:200px;
     }
     .primary{
-        background-color:#62a8ea;
+        background-color:#3e8ef7;
     }
     .success{
-        background-color:#46be8a;
+        background-color:#11c26d;
     }
     .info{
-        background-color:#57c7d4;
+        background-color:#0bb2d4;
     }
     .warning{
-        background-color:#f2a654;
+        background-color:#eb6709;
     }
     .danger{
-        background-color:#f96868;
+        background-color:#ff4c52;
     }
     .font-color-title{
         background-color:#37474F;
@@ -54,26 +54,26 @@
 整站的主要风格颜色  
 <div class='block primary'>
 Primary<br/>
-#62a8ea
+#3e8ef7
 </div>  
 
 **辅助色**  
 常用于提示类的颜色，比如成功、失败、警告之类的场景中会使用到。 
 <div class='block success'>
 Success</br>
-#46be8a
+#11c26d
 </div>
 <div class='block info'>
 Info</br>
-#57c7d4
+#0bb2d4
 </div>
 <div class='block warning'>
 Warning</br>
-#f2a654
+#eb6709
 </div>
 <div class='block danger'>
 Danger</br>
-#f96868
+#ff4c52
 </div>
   
 **中性色**  

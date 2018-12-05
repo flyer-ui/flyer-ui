@@ -11,7 +11,7 @@
       "fly-is-circle":circle,
       "fly-is-round":round
     }
-    ]'><i v-if='loading' class='fly-is-loading'></i><slot></slot></button>
+    ]'><i v-if='loading' class=' fly-icon-loader fly-is-loading'></i><slot></slot></button>
 </template>
 <script>
 export default {

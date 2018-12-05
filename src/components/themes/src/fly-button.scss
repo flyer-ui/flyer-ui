@@ -6,6 +6,7 @@
     border:0px;
     border-radius:$fly-round-default-size;
     cursor: pointer;
+    box-sizing:border-box;
     color:$fly-common-white;
     &-default{
         border: 1px solid $fly-four-border-color;

@@ -20,7 +20,6 @@ describe('util', () => {
   })
   it('destroy done', () => {
     destroy(vm)
-    console.log(document.body)
     expect(document.body.querySelector('.fly-button').tagName).to.equal('BUTTON')
   })
 })
