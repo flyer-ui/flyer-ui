@@ -1,7 +1,9 @@
 import Button from './components/button/index'
+import Icon from './components/icon/index'
 
 const components = [
-  Button
+  Button,
+  Icon
 ]
 
 const install = function (Vue) {
@@ -13,5 +15,6 @@ const install = function (Vue) {
 export default {
   version: '1.0.0',
   install,
-  Button
+  Button,
+  Icon
 }

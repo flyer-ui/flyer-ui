@@ -1,5 +1,7 @@
 
 @import './minixs/fly-base.scss';
+@import './minixs/util.scss';
+
 .fly-button{
     padding:10px;
     outline: none;
@@ -7,24 +9,36 @@
     border-radius:$fly-round-default-size;
     cursor: pointer;
     box-sizing:border-box;
+    vertical-align:middle;
     color:$fly-common-white;
+    @mixin hover {
+        &:hover{
+            opacity: .8;
+        }
+    }
     &-default{
         border: 1px solid $fly-four-border-color;
         color:$font-color-common;
+        @include hover()
     }
     &-primary{
         background-color:$fly-primary-color;
+        @include hover()
     }
     &-warning{
         background-color:$fly-warning-color;
+        @include hover()
     }
     &-danger{
         background-color:$fly-danger-color;
+        @include hover()
     }
     &-success{
         background-color:$fly-success-color;
+        @include hover()
     }
     &-info{
         background-color:$fly-info-color;
+        @include hover()
     }
 }

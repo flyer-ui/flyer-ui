@@ -7,6 +7,7 @@
         <fly-button type='warning' loading>警告按钮</fly-button>
         <fly-button nativeType='reset' type='info'>信息按钮</fly-button>
         <fly-button nativeType='reset' circle type='info'>信息按钮</fly-button>
+        <span><fly-icon name='loader' class='fly-is-loading'></fly-icon></span>
     </div>
 </template>
 <script>

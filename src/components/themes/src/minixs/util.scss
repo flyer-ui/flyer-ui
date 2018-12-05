@@ -1,0 +1,12 @@
+@keyframes loop{
+    0%{transform: rotate(360deg)}
+    100%{transform: rotate(0deg)}
+}
+.fly-is-disabled{
+    cursor:not-allowed;
+}
+.fly-is-loading{
+    position: absolute;
+    z-index:1;
+    animation: loop 1s linear infinite;
+}

@@ -57,10 +57,10 @@ describe('Button', () => {
     })
     expect(vm.$el.getAttribute('disabled')).to.equal('disabled')
   })
-  it('icon done', () => {
-    vm = createTest(FlyButton, {
-      icon: 'true'
-    })
-    expect(vm.$el.getAttribute('disabled')).to.equal('disabled')
-  })
+  // it('icon done', () => {
+  //   vm = createTest(FlyButton, {
+  //     icon: 'true'
+  //   })
+  //   expect(vm.$el.getAttribute('disabled')).to.equal('disabled')
+  // })
 })
