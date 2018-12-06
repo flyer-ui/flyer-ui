@@ -2,11 +2,11 @@
     0%{transform: rotate(360deg)}
     100%{transform: rotate(0deg)}
 }
-.fly-is-disabled{
-    cursor:not-allowed;
+[class^="fly-icon-"], [class*=" fly-icon-"] {
+    display:inline-block;
+    vertical-align:baseline;
 }
-.fly-is-loading{
-    position: absolute;
-    z-index:1;
-    animation: loop 1s linear infinite;
+.fly-icon-loader{
+    animation:loop 1.5s linear infinite;
+    margin-right:.428rem;
 }

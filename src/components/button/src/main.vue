@@ -7,11 +7,16 @@
     `fly-button-${type}`,
     {
       "fly-is-disabled":disabled,
+      "fly-is-loading":loading,
       "fly-is-plain":plain,
       "fly-is-circle":circle,
       "fly-is-round":round
     }
-    ]'><i v-if='loading' class=' fly-icon-loader fly-is-loading'></i><slot></slot></button>
+    ]'>
+      <i v-if='loading' class='fly-icon-loader'></i>
+      <i v-if='icon' :class='icon'></i>
+      <slot></slot>
+    </button>
 </template>
 <script>
 export default {

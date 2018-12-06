@@ -1,13 +1,27 @@
 <template>
     <div class='fly-demo-content'>
-        内容
-        <fly-button>默认按钮</fly-button>
-        <fly-button nativeType='submit' type='primary'>默认按钮</fly-button>
-        <fly-button type='success'>成功按钮</fly-button>
-        <fly-button type='warning' loading>警告按钮</fly-button>
-        <fly-button nativeType='reset' type='info'>信息按钮</fly-button>
-        <fly-button nativeType='reset' circle type='info'>信息按钮</fly-button>
-        <span><fly-icon name='loader' class='fly-is-loading'></fly-icon></span>
+        <h3>Button类型</h3>
+        <p>
+            <fly-button>Default</fly-button>
+            <fly-button type='primary'>Primary</fly-button>
+            <fly-button type='warning'>Warning</fly-button>
+            <fly-button type='danger'>Danger</fly-button>
+            <fly-button type='success'>Success</fly-button>
+            <fly-button type='info'>Info</fly-button>
+        </p>
+        <h3>Button特性</h3>
+        <p>
+            <fly-button native-type='button'>Button</fly-button>
+            <fly-button native-type='submit'>Submit</fly-button>
+            <fly-button native-type='reset'>Reset</fly-button>
+            <fly-button disabled>Disabled</fly-button>
+            <fly-button loading>Loading...</fly-button>
+        </p>
+        <h3>Icon Button</h3>
+        <p>
+            <fly-button icon='fly-icon-help-circle'></fly-button>
+            <fly-button icon='fly-icon-map-pin' circle></fly-button>
+        </p>
     </div>
 </template>
 <script>
