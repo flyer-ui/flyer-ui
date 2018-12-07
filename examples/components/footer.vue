@@ -16,6 +16,5 @@ $footer_height:60px;
     flex-wrap:nowrap;
     justify-content: center;
     height:$footer_height;
-    // background-color:beige;
 }
 </style>

@@ -10,9 +10,9 @@ export default {
 $width:15%;
 .fly-demo-menus{
     width:$width;
-    // background-color: #CCD5DB;
     min-width:160px;
     box-sizing:border-box;
-    height:100%;
+    border-right:1px solid #dedede;
+    padding:10px;
 }
 </style>

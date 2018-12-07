@@ -21,7 +21,6 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    margin-top:60px;
     height:100%;
 }
 </style>

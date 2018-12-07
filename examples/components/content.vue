@@ -31,7 +31,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 .fly-demo-content{
-    // background-color:#1CD5FB;
+    padding:10px;
     box-sizing: border-box;
     width: 95%;
     height:100%;
