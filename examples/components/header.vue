@@ -4,10 +4,7 @@
      <img src='../assets/imgs/logo.png'/>
    </div>
    <div class='fly-demo-header_items'>
-     <ul>
-       <li>组件</li>
-       <li>组件</li>
-     </ul>
+
    </div>
  </div>
 </template>
@@ -29,9 +26,25 @@ $header_height:60px;
   border-bottom:1px solid #dedede;
   &_logo{
     width:$logo_width;
+    position: relative;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    min-width: 200px;
+    &:after{
+      content:'';
+      position:absolute;
+      z-index: 1;
+      right:0px;
+      height:40px;
+      vertical-align: middle;
+      background-color:#dedede;
+      width:1px;
+    }
   }
   &_items{
     width:$items_width;
+    text-align:right;
   }
 }
 </style>

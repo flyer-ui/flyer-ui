@@ -1,7 +1,9 @@
 <template>
     <div class='fly-demo-container'>
        <fly-menu></fly-menu>
-       <fly-content></fly-content>
+        <div class='fly-demo-content'>
+          <router-view></router-view>
+        </div>
     </div>
 </template>
 <script>
@@ -21,6 +23,12 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
+    height:100%;
+}
+.fly-demo-content{
+    padding:10px;
+    box-sizing: border-box;
+    width: 95%;
     height:100%;
 }
 </style>

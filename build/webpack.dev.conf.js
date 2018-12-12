@@ -65,6 +65,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: './examples/index.ejs',
+      favicon:'./examples/favicon.ico',
       inject: true
     })
   ]
