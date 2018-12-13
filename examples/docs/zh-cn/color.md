@@ -1,54 +1,3 @@
-<style>
-    .block{
-        padding:10px;
-        display:inline-block;
-        color:#fff;
-        width:200px;
-    }
-    .primary{
-        background-color:#3e8ef7;
-    }
-    .success{
-        background-color:#11c26d;
-    }
-    .info{
-        background-color:#0bb2d4;
-    }
-    .warning{
-        background-color:#eb6709;
-    }
-    .danger{
-        background-color:#ff4c52;
-    }
-    .font-color-title{
-        background-color:#37474F;
-    }
-    .font-color-common{
-        background-color:#526069;s
-    }
-    .font-color-secondary{
-        background-color:#76838F;
-    }
-    .font-color-placeholder{
-        background-color:#CCD5DB;
-    }
-    .border-color-first{
-        background-color:#A3AFB7;
-        color:#526069;
-    }
-    .border-color-second{
-        background-color:#CCD5DB;
-        color:#526069;
-    }
-    .border-color-third{
-        background-color:#E4EAEC;
-        color:#526069;
-    }
-    .border-color-four{
-        background-color:#F3F7F9;
-        color:#526069;
-    }
-</style>
 
 **主色**  
 整站的主要风格颜色  
@@ -111,3 +60,54 @@ Danger</br>
 #CCD5DB
 </div>
     
+<style lang='scss' scoped>
+    .block{
+        padding:10px;
+        display:inline-block;
+        color:#fff;
+        width:200px;
+    }
+    .primary{
+        background-color:#3e8ef7;
+    }
+    .success{
+        background-color:#11c26d;
+    }
+    .info{
+        background-color:#0bb2d4;
+    }
+    .warning{
+        background-color:#eb6709;
+    }
+    .danger{
+        background-color:#ff4c52;
+    }
+    .font-color-title{
+        background-color:#37474F;
+    }
+    .font-color-common{
+        background-color:#526069;
+    }
+    .font-color-secondary{
+        background-color:#76838F;
+    }
+    .font-color-placeholder{
+        background-color:#CCD5DB;
+    }
+    .border-color-first{
+        background-color:#A3AFB7;
+        color:#526069;
+    }
+    .border-color-second{
+        background-color:#CCD5DB;
+        color:#526069;
+    }
+    .border-color-third{
+        background-color:#E4EAEC;
+        color:#526069;
+    }
+    .border-color-four{
+        background-color:#F3F7F9;
+        color:#526069;
+    }
+</style>

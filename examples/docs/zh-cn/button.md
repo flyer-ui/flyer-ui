@@ -36,7 +36,7 @@ size  |  String  | -  | default/small/mini  | 按钮大小
 loading | Boolean | - | - | 是否显示在加载中 |  
 plain | Boolean | - | - | 是否是简约风格的按钮 |  
   
-<style lang='scss'>
+<style lang='scss' scoped>
 table{
     width:100%;
     border:1px solid #dedede;

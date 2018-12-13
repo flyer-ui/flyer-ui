@@ -1,7 +1,7 @@
 <template>
  <div class='fly-demo-header'>
    <div class='fly-demo-header_logo'>
-     <img src='../assets/imgs/logo.png'/>
+     <h3>Flyer-UI</h3>
    </div>
    <div class='fly-demo-header_items'>
 

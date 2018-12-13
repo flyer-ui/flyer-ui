@@ -49,6 +49,15 @@ export default {
         text: 'Button 按钮',
         type: 'item',
         to: 'button'
+      }, {
+        text: 'font 字体',
+        type: 'item',
+        to: 'font'
+      },
+      {
+        text: 'color 颜色',
+        type: 'item',
+        to: 'color'
       }]
       this.items = data
     }
