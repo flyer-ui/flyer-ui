@@ -17,6 +17,7 @@ export default {
     }
   },
   created () {
+    console.log('lang:', this.$route.params.lang)
     this.initData()
   },
   methods: {
