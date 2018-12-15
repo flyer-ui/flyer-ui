@@ -31,17 +31,17 @@
             "path": "/"
         },
         {
-            "text": "font 字体",
+            "text": "Font 字体",
             "type": "item",
             "path": "font"
         },
         {
-            "text": "color 颜色",
+            "text": "Color 颜色",
             "type": "item",
             "path": "color"
         },
         {
-            "text": "button 按钮",
+            "text": "Button 按钮",
             "type": "item",
             "path": "button"
         }

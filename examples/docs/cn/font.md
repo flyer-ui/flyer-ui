@@ -32,10 +32,30 @@
     .al{
         font-family:'Arial';
     }
+    table{
+    width:100%;
+    border:1px solid #dedede;
+    border-bottom:0px;
+    margin:0px;
+    padding:0px;
+    border-collapse:collapse;
+    th{
+        background-color:#fafafa;
+    }
+    td,th{
+        text-align:left;
+        border:0px;
+        padding:10px 15px;
+        box-sizing:border-box;
+        border-spacing:0px;
+        border-bottom:1px solid #dedede;
+    }
+}
 </style>
 
-**页面字体规格**  
-中文字体  
+<h1>页面字体规格</h1>  
+
+**中文字体**   
 <div class='block'>
     <div class='block-primary ps'>
         顺风顺水
@@ -61,7 +81,7 @@
     </div>
 </div>
   
-英文/数字字体  
+**英文/数字字体**  
 
 <div class='block'>
     <div class='block-primary hn'>
@@ -88,3 +108,16 @@
     </div>
 </div>
 
+**引用代码**  
+`font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;`
+
+**字体大小规格**  
+
+ 场景 | 大小 | 效果
+---------|----------|---------
+ 主标题 | 20px | <span style='font-size:20px'>主标题 / Big title</span>
+ 标题 | 18px | <span style='font-size:18px'>标题 / Title</span>
+ 标题（小） | 16px | <span style='font-size:16px'>小标题 / Mini title</span>
+ 正文 | 14px | <span style='font-size:14px'>正文 / Text</span>
+ 正文 (小) | 13px | <span style='font-size:13px'>小正文 / Mini text</span>
+ 辅助文字 | 12px | <span style='font-size:12px'>辅助文字 / Assist text</span>

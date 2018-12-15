@@ -49,7 +49,7 @@ $header_height:60px;
       content:'';
       position:absolute;
       z-index: 1;
-      right:-1px;
+      right:0px;
       top:10px;
       height:40px;
       vertical-align: middle;
