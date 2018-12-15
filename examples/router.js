@@ -1,4 +1,4 @@
-import nav from './router.config.json'
+import navs from './router.config.json'
 const defaultLang = 'cn'
 const currentLang = defaultLang
 const LOAD_MAP = {
@@ -6,6 +6,11 @@ const LOAD_MAP = {
     return () => require.ensure([], () => {
       return require(`./docs/cn/${path}.md`)
     }, 'cn')
+  },
+  'en': (path) => {
+    return () => require.ensure([], () => {
+      return require(`./docs/en/${path}.md`)
+    })
   }
 }
 const load = (path) => {
@@ -13,19 +18,21 @@ const load = (path) => {
 }
 const routes = [{
   path: '/',
+  redirect: '/cn'
+}, {
+  path: '/:lang',
   name: 'home',
-  component: load('test')
+  component: load('installation')
 }]
-nav[currentLang].forEach((n) => {
-  if (n.type === 'item') {
-    let component = load(n.path)
+navs[currentLang].forEach((nav) => {
+  if (nav.type === 'item') {
+    let component = load(nav.path)
     let route = {
-      path: `/${n.path}`,
-      name: Math.random().toString(),
+      path: `/:lang/${nav.path}`,
+      name: nav.path,
       component: component.default || component
     }
     routes.push(route)
   }
 })
-
 export default routes

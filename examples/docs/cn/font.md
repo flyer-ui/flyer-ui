@@ -1,9 +1,7 @@
 <style lang='scss' scoped>
-    .font{
-        font-family:"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
-    }
+    @import '~/components/themes/src/minixs/fly-base.scss';
     .block{
-        border:1px solid #76838F;
+        border:1px solid $fly-four-border-color;
         display:inline-block;
         width:200px;
     }
@@ -14,7 +12,7 @@
     }
     .block-second{
         padding:10px 20px;
-        border-top:1px solid #76838F;
+        border-top:1px solid $fly-four-border-color;
     }
     .ps{
         font-family:'PingFang SC';

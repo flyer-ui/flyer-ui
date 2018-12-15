@@ -9,6 +9,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+@import '~/components/themes/src/minixs/fly-base.scss';
 $footer_height:60px;
 .fly-demo-footer{
     display: flex;

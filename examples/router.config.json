@@ -3,32 +3,32 @@
         {
             "text": "开发指南",
             "type": "header",
-            "path": "test"
+            "path": "/"
         },
         {
             "text": "安装",
             "type": "item",
-            "path": "test"
+            "path": "installation"
         },
         {
             "text": "快速上手",
             "type": "item",
-            "path": "test"
+            "path": "get-started"
         },
         {
             "text": "国际化",
             "type": "item",
-            "path": "test"
+            "path": "i18n"
         },
         {
             "text": "自定义主题",
             "type": "item",
-            "path": "test"
+            "path": "custom-theme"
         },
         {
             "text": "组件",
             "type": "header",
-            "path": "test"
+            "path": "/"
         },
         {
             "text": "font 字体",

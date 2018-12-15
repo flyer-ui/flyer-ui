@@ -1,7 +1,8 @@
 <template>
  <div class='fly-demo-header'>
    <div class='fly-demo-header_logo'>
-     <h3>Flyer-UI</h3>
+     <img src='../assets/imgs/logo.png' alt=''/>
+     <h2>Flyer-UI</h2>
    </div>
    <div class='fly-demo-header_items'>
 
@@ -14,6 +15,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
+@import '~/components/themes/src/minixs/fly-base.scss';
 $logo_width:15%;
 $items_width:95%;
 $header_height:60px;
@@ -23,24 +25,35 @@ $header_height:60px;
   flex-wrap:nowrap;
   min-height:$header_height;
   height:$header_height;
-  border-bottom:1px solid #dedede;
+  border-bottom:1px solid $fly-four-border-color;
   &_logo{
     width:$logo_width;
     position: relative;
-    padding: 10px 20px;
     box-sizing: border-box;
     position: relative;
     min-width: 200px;
+    img{
+      width:50px;
+      position: absolute;
+      z-index: 1;
+      left:10px;
+      top:5px;
+    }
+    h2{
+      position:absolute;
+      z-index:1;
+      left:70px;
+      color:$fly-primary-color;
+    }
     &:after{
       content:'';
       position:absolute;
       z-index: 1;
-      right:1px;
+      right:-1px;
       top:10px;
       height:40px;
       vertical-align: middle;
-      background-color:#dedede;
-      width:1px;
+      border-right:1px solid $fly-four-border-color;
     }
   }
   &_items{

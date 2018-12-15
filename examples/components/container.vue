@@ -18,13 +18,11 @@ export default {
     navData () {
       return routes['cn']
     }
-  },
-  created () {
-    console.log(this.$route)
   }
 }
 </script>
 <style lang='scss' scoped>
+@import '~/components/themes/src/minixs/fly-base.scss';
 .fly-demo-container{
     display:flex;
     flex-direction: row;
