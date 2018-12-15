@@ -28,12 +28,6 @@ export default {
       type: String
     }
   },
-  created () {
-    console.log(this)
-  },
-  mounted () {
-    // console.log(this)
-  },
   name: 'App'
 }
 </script>

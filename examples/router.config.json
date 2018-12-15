@@ -3,37 +3,32 @@
         {
             "text": "开发指南",
             "type": "header",
-            "path": "/"
+            "path": "test"
         },
         {
             "text": "安装",
             "type": "item",
-            "path": "/"
+            "path": "test"
         },
         {
             "text": "快速上手",
             "type": "item",
-            "path": "/"
+            "path": "test"
         },
         {
             "text": "国际化",
             "type": "item",
-            "path": "/"
+            "path": "test"
         },
         {
             "text": "自定义主题",
             "type": "item",
-            "path": "/"
+            "path": "test"
         },
         {
             "text": "组件",
             "type": "header",
-            "path": "/"
-        },
-        {
-            "text": "butpathn 按钮",
-            "type": "item",
-            "path": "butpathnn"
+            "path": "test"
         },
         {
             "text": "font 字体",
@@ -44,6 +39,11 @@
             "text": "color 颜色",
             "type": "item",
             "path": "color"
+        },
+        {
+            "text": "button 按钮",
+            "type": "item",
+            "path": "button"
         }
     ]
 }

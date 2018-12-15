@@ -1,6 +1,6 @@
 <template>
     <div class='fly-demo-container'>
-       <fly-menu></fly-menu>
+       <fly-menu :data='navData'></fly-menu>
         <div class='fly-demo-content'>
           <router-view></router-view>
         </div>
@@ -8,12 +8,19 @@
 </template>
 <script>
 import FlyMenu from './menu'
-import FlyContent from './content'
+import routes from '../router.config.json'
 export default {
   name: 'FlyContainer',
   components: {
-    FlyMenu,
-    FlyContent
+    FlyMenu
+  },
+  computed: {
+    navData () {
+      return routes['cn']
+    }
+  },
+  created () {
+    console.log(this.$route)
   }
 }
 </script>
