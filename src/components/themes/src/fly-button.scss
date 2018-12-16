@@ -3,15 +3,15 @@
 @import './minixs/util.scss';
 
 .fly-button{
-    padding:.428rem .875rem;
+    padding:7px 14px;
     outline: none;
     user-select: none;
-    border:.0875rem solid transparent;
+    border:1px solid transparent;
     border-radius:$fly-round-default-size;
     cursor: pointer;
     box-sizing:border-box;
     display: inline-block;
-    vertical-align:baseline;
+    vertical-align:bottom;
     color:$fly-common-white;
     @mixin hover {
         &:hover{
@@ -24,10 +24,27 @@
         color:$font-color-common;
         @include hover()
     }
+    &-large{
+        padding:10px 20px;
+        font-size:$fly-font-title-size;
+    } 
+    &-medium{
+        padding:7px 14px;
+        font-size:$fly-font-text-size;
+    }
+    &-small{
+        padding:5px 10px;
+        font-size:$fly-font-mini_text-size;
+    }
+    &-mini{
+        padding:3px 6px;
+        font-size:$fly-font-assist_text-size;
+    }
     &-primary{
         background-color:$fly-primary-color;
         @include hover()
     }
+    
     &-warning{
         background-color:$fly-warning-color;
         @include hover()
@@ -53,7 +70,12 @@ button{
         position: relative;
         pointer-events:none;
     }
-    &.fly-is-circle{
+    &.fly-is-round{
         border-radius:20px;
+    }
+    &.fly-is-circle{
+        border-radius:1000px;
+        padding:7px;
+        line-height:10px;
     }
 }

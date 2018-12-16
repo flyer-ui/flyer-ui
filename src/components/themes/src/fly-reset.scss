@@ -9,7 +9,7 @@
  */
 @import './minixs/fly-base.scss';
  html {
-    font-size:87.5%;
+    font-size:$fly-font-text-size;
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
     font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
@@ -40,7 +40,7 @@
    */
   
   h1 {
-    font-size: 2rem;
+    font-size: $fly-font-big-size;
     margin: 0.67rem 0;
   }
   
@@ -65,7 +65,7 @@
   
   pre {
     font-family: monospace, monospace; /* 1 */
-    font-size: 1rem; /* 2 */
+    font-size: $fly-font-text-size; /* 2 */
   }
   
   /* Text-level sremantics

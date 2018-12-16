@@ -19,7 +19,24 @@
 <h3>Icon Button</h3>
 <p>
     <fly-button icon='fly-icon-help-circle'></fly-button>
-    <fly-button icon='fly-icon-map-pin' circle></fly-button>
+    <fly-button icon='fly-icon-map-pin' round></fly-button>
+    <fly-button icon='fly-icon-chevrons-right' type='info' circle></fly-button>
+</p>
+<h3>Button 大小规格</h3>
+<p>
+   <fly-button size='large'>大号按钮 / Large</fly-button>
+   <fly-button size='medium'>中等按钮 / medium</fly-button>
+   <fly-button size='small'>小按钮 / small</fly-button>
+   <fly-button size='mini'>迷你按钮 / mini</fly-button>
+</p>
+<h3>Plain Button</h3>
+<p>
+    <fly-button plain>Default</fly-button>
+    <fly-button plain type='primary'>Primary</fly-button>
+    <fly-button plain type='warning'>Warning</fly-button>
+    <fly-button plain type='danger'>Danger</fly-button>
+    <fly-button plain type='success'>Success</fly-button>
+    <fly-button plain type='info'>Info</fly-button>
 </p>
 
 **可定制属性**  
@@ -32,7 +49,7 @@ disabled | Boolean | false  | - | 是否设置为禁用  |
 icon | String | -  | - | 字体图标的样式名称  |
 round  |  Boolean  | -  | -  | 是否设有圆角  |
 circle  |  Boolean  | -  | -  | 是否设为圆形  |
-size  |  String  | -  | default/small/mini  | 按钮大小
+size  |  String  | medium  | large/medium/small/mini  | 按钮大小
 loading | Boolean | - | - | 是否显示在加载中 |  
 plain | Boolean | - | - | 是否是简约风格的按钮 |  
   

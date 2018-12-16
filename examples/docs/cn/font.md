@@ -32,6 +32,12 @@
     .al{
         font-family:'Arial';
     }
+    code{
+        background-color:$fly-four-border-color;
+        margin:10px;
+        padding:20px;
+        display:inline-block;
+    }
     table{
     width:100%;
     border:1px solid #dedede;

@@ -5,6 +5,7 @@
     :class='[
     "fly-button",
     `fly-button-${type}`,
+    `fly-button-${size}`,
     {
       "fly-is-disabled":disabled,
       "fly-is-loading":loading,
@@ -46,7 +47,8 @@ export default {
       default: false
     },
     size: {
-      type: String
+      type: String,
+      default: 'medium'
     },
     loading: {
       type: Boolean,
