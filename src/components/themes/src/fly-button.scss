@@ -1,81 +1,121 @@
-
 @import './minixs/fly-base.scss';
 @import './minixs/util.scss';
 
-.fly-button{
-    padding:7px 14px;
+@mixin button($color) {
+    padding: 7px 14px;
     outline: none;
     user-select: none;
-    border:1px solid transparent;
-    border-radius:$fly-round-default-size;
+    border: 1px solid transparent;
+    border-radius: $fly-round-default-size;
     cursor: pointer;
-    box-sizing:border-box;
+    box-sizing: border-box;
     display: inline-block;
-    vertical-align:bottom;
-    color:$fly-common-white;
+    vertical-align: bottom;
+    color: $fly-common-white;
+    &-large {
+        padding: 10px 20px;
+        font-size: $fly-font-title-size;
+    }
+    &-medium {
+        padding: 7px 14px;
+        font-size: $fly-font-text-size;
+    }
+    &-small {
+        padding: 5px 10px;
+        font-size: $fly-font-mini_text-size;
+    }
+    &-mini {
+        padding: 3px 6px;
+        font-size: $fly-font-assist_text-size;
+    }
+    &.fly-is-disabled {
+        cursor: not-allowed;
+    }
+    &.fly-is-loading {
+        position: relative;
+        pointer-events: none;
+    }
+    &.fly-is-round {
+        border-radius: 20px;
+    }
+    &.fly-is-circle {
+        border-radius: 1000px;
+        padding: 7px;
+        line-height: 10px;
+    }
+}
+
+.fly-button {
+    padding: 7px 14px;
+    outline: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: $fly-round-default-size;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: bottom;
+    color: $fly-common-white;
     @mixin hover {
-        &:hover{
+        &:hover {
             opacity: .8;
         }
     }
-    &-default{
+    &-default {
         border: 1px solid $fly-four-border-color;
         background: $fly-common-white;
-        color:$font-color-common;
+        color: $font-color-common;
         @include hover()
     }
-    &-large{
-        padding:10px 20px;
-        font-size:$fly-font-title-size;
-    } 
-    &-medium{
-        padding:7px 14px;
-        font-size:$fly-font-text-size;
+    &-large {
+        padding: 10px 20px;
+        font-size: $fly-font-title-size;
     }
-    &-small{
-        padding:5px 10px;
-        font-size:$fly-font-mini_text-size;
+    &-medium {
+        padding: 7px 14px;
+        font-size: $fly-font-text-size;
     }
-    &-mini{
-        padding:3px 6px;
-        font-size:$fly-font-assist_text-size;
+    &-small {
+        padding: 5px 10px;
+        font-size: $fly-font-mini_text-size;
     }
-    &-primary{
-        background-color:$fly-primary-color;
+    &-mini {
+        padding: 3px 6px;
+        font-size: $fly-font-assist_text-size;
+    }
+    &-primary {
+        background-color: $fly-primary-color;
         @include hover()
     }
-    
-    &-warning{
-        background-color:$fly-warning-color;
+    &-warning {
+        background-color: $fly-warning-color;
         @include hover()
     }
-    &-danger{
-        background-color:$fly-danger-color;
+    &-danger {
+        background-color: $fly-danger-color;
         @include hover()
     }
-    &-success{
-        background-color:$fly-success-color;
+    &-success {
+        background-color: $fly-success-color;
         @include hover()
     }
-    &-info{
-        background-color:$fly-info-color;
+    &-info {
+        background-color: $fly-info-color;
         @include hover()
     }
-}
-button{
-    &.fly-is-disabled{
-        cursor:not-allowed;
+    &.fly-is-disabled {
+        cursor: not-allowed;
     }
-    &.fly-is-loading{
+    &.fly-is-loading {
         position: relative;
-        pointer-events:none;
+        pointer-events: none;
     }
-    &.fly-is-round{
-        border-radius:20px;
+    &.fly-is-round {
+        border-radius: 20px;
     }
-    &.fly-is-circle{
-        border-radius:1000px;
-        padding:7px;
-        line-height:10px;
+    &.fly-is-circle {
+        border-radius: 1000px;
+        padding: 7px;
+        line-height: 10px;
     }
 }
