@@ -22,7 +22,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-@import '~/components/themes/src/minixs/fly-base.scss';
+@import '~/components/themes/src/base/fly-common.scss';
 .fly-demo-container{
     display:flex;
     flex-direction: row;

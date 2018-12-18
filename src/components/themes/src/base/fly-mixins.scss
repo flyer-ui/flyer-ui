@@ -1,0 +1,24 @@
+@import './fly-config.scss';
+/* BEM start */
+// example:.namespace-block-element-modifier_child_child_child
+@mixin b($block) {
+    $B: $namespace + $selector-separate + $block !global;
+    .#{$B} {
+        @content;
+    }
+}
+
+@mixin m($modifier) {
+    $current-selector: '';
+    @each $unit in $modifier {
+        $current-selector:#{$current-selector + & + $selector-separate + $unit + ','}
+    }
+    @at-root #{$current-selector} {
+        @content;
+    }
+}
+
+@mixin has($state){
+    @at-root .#{$selector + $namespace}{}
+}
+/* BEM end */

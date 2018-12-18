@@ -15,7 +15,7 @@ export default {
 }
 </script>
 <style lang='scss' scoped>
-@import '~/components/themes/src/minixs/fly-base.scss';
+@import '~/components/themes/src/base/fly-common.scss';
 $logo_width:15%;
 $items_width:95%;
 $header_height:60px;

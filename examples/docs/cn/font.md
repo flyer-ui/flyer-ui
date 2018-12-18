@@ -1,5 +1,5 @@
 <style lang='scss' scoped>
-    @import '~/components/themes/src/minixs/fly-base.scss';
+    @import '~/components/themes/src/base/fly-common.scss';
     .block{
         border:1px solid $fly-four-border-color;
         display:inline-block;
