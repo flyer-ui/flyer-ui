@@ -1,6 +1,9 @@
 @import './fly-config.scss';
 /* BEM start */
-// example:.namespace-block-element-modifier_child_child_child
+// 命名空间与模块之间的分隔符：- 
+// 模块与元素之间的分隔符:__
+// 模块之间的修饰符:--
+// 模块下面的子元素:.名称
 @mixin b($block) {
     $B: $namespace + $selector-separate + $block !global;
     .#{$B} {
