@@ -25,7 +25,7 @@ $header_height:60px;
   flex-wrap:nowrap;
   min-height:$header_height;
   height:$header_height;
-  border-bottom:1px solid $fly-four-border-color;
+  border-bottom:1px solid $fly-border-color;
   &_logo{
     width:$logo_width;
     position: relative;
@@ -53,7 +53,7 @@ $header_height:60px;
       top:10px;
       height:40px;
       vertical-align: middle;
-      border-right:1px solid $fly-four-border-color;
+      border-right:1px solid $fly-border-color;
     }
   }
   &_items{

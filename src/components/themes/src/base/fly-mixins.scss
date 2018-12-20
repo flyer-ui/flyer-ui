@@ -1,9 +1,5 @@
 @import './fly-config.scss';
-/* BEM start */
-// 命名空间与模块之间的分隔符：- 
-// 模块与元素之间的分隔符:__
-// 模块之间的修饰符:--
-// 模块下面的子元素:.名称
+//BEM start
 @mixin b($block) {
     $B: $namespace + $selector-separate + $block !global;
     .#{$B} {
@@ -11,17 +7,30 @@
     }
 }
 
-@mixin m($modifier) {
+@mixin e($element) {
     $current-selector: '';
-    @each $unit in $modifier {
-        $current-selector:#{$current-selector + & + $selector-separate + $unit + ','}
+    @each $unit in $element {
+        $current-selector:#{$current-selector + & + $element-separate + $unit + ','}
     }
     @at-root #{$current-selector} {
         @content;
     }
 }
 
-@mixin has($state){
-    @at-root .#{$selector + $namespace}{}
+@mixin m($modifier) {
+    $current-selector: '';
+    @each $unit in $modifier {
+        $current-selector:#{$current-selector + & + $modifier-separate + $unit + ','}
+    }
+    @at-root #{$current-selector} {
+        @content;
+    }
 }
-/* BEM end */
+
+@mixin has($state) {
+    @at-root &.#{$property-prefix+$state} {
+        @content;
+    }
+}
+
+// BEM end

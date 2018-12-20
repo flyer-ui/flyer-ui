@@ -29,6 +29,12 @@
    <fly-button size='small'>小按钮 / small</fly-button>
    <fly-button size='mini'>迷你按钮 / mini</fly-button>
 </p>
+<p>
+   <fly-button ci size='large'>大号按钮 / Large</fly-button>
+   <fly-button size='medium'>中等按钮 / medium</fly-button>
+   <fly-button size='small'>小按钮 / small</fly-button>
+   <fly-button size='mini'>迷你按钮 / mini</fly-button>
+</p>
 <h3>Plain Button</h3>
 <p>
     <fly-button plain>Default</fly-button>

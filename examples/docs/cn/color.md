@@ -45,21 +45,9 @@ Danger</br>
 #CCD5DB
 </div>
 <br/>
-<div class='block border-color-first'>
-一级边框颜色</br>
-#37474F
-</div>
-<div class='block border-color-second'>
-二级边框颜色</br>
-#526069
-</div>
-<div class='block border-color-third'>
-三级边框颜色</br>
-#76838F
-</div>
-<div class='block border-color-four'>
-四级边框颜色</br>
-#CCD5DB
+<div class='block border-color'>
+边框颜色</br>
+#E4EAEC
 </div>
     
 <style lang='scss' scoped>
@@ -95,6 +83,10 @@ Danger</br>
     }
     .font-color-placeholder{
         background-color:#CCD5DB;
+    }
+    .border-color{
+        background-color:#E4EAEC;
+        color:#526069;
     }
     .border-color-first{
         background-color:#A3AFB7;

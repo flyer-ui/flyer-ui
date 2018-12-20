@@ -1,7 +1,7 @@
 <style lang='scss' scoped>
     @import '~/components/themes/src/base/fly-common.scss';
     .block{
-        border:1px solid $fly-four-border-color;
+        border:1px solid $fly-border-color;
         display:inline-block;
         width:200px;
     }
@@ -12,7 +12,7 @@
     }
     .block-second{
         padding:10px 20px;
-        border-top:1px solid $fly-four-border-color;
+        border-top:1px solid $fly-border-color;
     }
     .ps{
         font-family:'PingFang SC';
@@ -33,7 +33,7 @@
         font-family:'Arial';
     }
     code{
-        background-color:$fly-four-border-color;
+        background-color:$fly-border-color;
         margin:10px;
         padding:20px;
         display:inline-block;

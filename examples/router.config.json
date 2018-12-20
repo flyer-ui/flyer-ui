@@ -44,6 +44,11 @@
             "text": "Button 按钮",
             "type": "item",
             "path": "button"
+        },
+        {
+            "text": "Icon 图标",
+            "type": "item",
+            "path": "icon"
         }
     ]
 }

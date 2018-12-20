@@ -4,14 +4,14 @@
     :disabled='disabled'
     :class='[
     "fly-button",
-    `fly-button-${type}`,
-    `fly-button-${size}`,
+    `fly-button--${type}`,
+    `fly-button--${size}`,
     {
-      "fly-is-disabled":disabled,
-      "fly-is-loading":loading,
-      "fly-is-plain":plain,
-      "fly-is-circle":circle,
-      "fly-is-round":round
+      "has-disabled":disabled,
+      "has-loading":loading,
+      "has-plain":plain,
+      "has-circle":circle,
+      "has-round":round
     }
     ]'>
       <i v-if='loading' class='fly-icon-loader'></i>

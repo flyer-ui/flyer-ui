@@ -1,27 +1,24 @@
 
-/* 主要字体颜色 */
+//主要颜色
 $fly-primary-color:#3e8ef7;
 
-/* 辅助色 */
+//辅助色
 $fly-success-color:#11c26d;
 $fly-info-color:#0bb2d4;
 $fly-warning-color:#eb6709;
 $fly-danger-color:#ff4c52;
 
-/* 中性色 */
-$font-color-title:#37474f;
-$font-color-common:#526069;
-$font-color-secondary:#76838F;
+//中性色(文本颜色)
+$font-color-title:#37474F;
+$font-color-subtitle:#526069;
+$font-color-text:#76838F;
 $font-color-placeholder:#CCD5DB;
 
 
-/* 主要边框颜色 */
-$fly-first-border-color:#37474f;
-$fly-second-border-color:#526069;
-$fly-third-border-color:#76838f;
-$fly-four-border-color:#ccd5db;
+//主要边框颜色
+$fly-border-color:#E4EAEC;
 
-/*字体大小规格*/
+//字体大小规格
 $fly-font-big-size:20px;
 $fly-font-title-size:18px;
 $fly-font-mini_title-size:16px;
@@ -29,8 +26,8 @@ $fly-font-text-size:14px;
 $fly-font-mini_text-size:13px;
 $fly-font-assist_text-size:12px;
 
-/*通用白色*/
+//通用白色
 $fly-common-white:#fff;
 
-/*默认圆角大小*/
+//默认圆角大小
 $fly-round-default-size:2px;

@@ -57,7 +57,7 @@ $width:15%;
       top:10px;
       right:1px;
       bottom:10px;
-      border-right:1px solid $fly-four-border-color;
+      border-right:1px solid $fly-border-color;
     }
 }
 </style>

@@ -1,142 +1,103 @@
 @import './base/fly-common.scss';
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
+@mixin button-plain($color) {
+    background-color: $fly-common-white;
+    color: $color;
+    border-color: $color;
+    &:hover,
+    &:focus {
+        background-color: $color;
+        color: $fly-common-white;
+        opacity: .6;
+    }
+    &:active {
+        opacity: 1;
+    }
+}
+
+@mixin button-variant($color, $border-color, $background-color) {
+    background-color: $background-color;
+    color: $color;
+    border-color: $border-color;
+    &:hover,
+    &:focus {
+        opacity: .6;
+    }
+    &:active {
+        opacity: 1;
+    }
+    @include has(plain) {
+        @include button-plain($background-color);
+    }
+}
 
 @include b(button) {
     padding: 7px 14px;
     outline: none;
     user-select: none;
-    border: 1px solid transparent;
+    border: 1px solid $fly-border-color;
     border-radius: $fly-round-default-size;
     cursor: pointer;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: bottom;
-    color: $fly-common-white;
-    @include m(default){
-        border: 1px solid $fly-four-border-color;
-        background: $fly-common-white;
-        color: $font-color-common;
+    color: $font-color-text;
+    background-color: $fly-common-white;
+    &:hover,
+    &:focus {
+        opacity: .6;
     }
-    @include m(primary){
-        background-color: $fly-primary-color;
+    &:active {
+        opacity: 1;
     }
-    @include m(warning){
-        background-color: $fly-warning-color;
+    @include has(plain) {
+        @include button-plain($font-color-text);
     }
-    @include m(danger){
-        background-color: $fly-danger-color;
+    @include m(primary) {
+        @include button-variant($fly-common-white, $fly-primary-color, $fly-primary-color);
     }
-    @include m(success){
-        background-color: $fly-success-color;
+    @include m(warning) {
+        @include button-variant($fly-common-white, $fly-warning-color, $fly-warning-color);
     }
-    @include m(info){
-        background-color: $fly-info-color;
+    @include m(danger) {
+        @include button-variant($fly-common-white, $fly-danger-color, $fly-danger-color);
     }
-    &-large {
+    @include m(success) {
+        @include button-variant($fly-common-white, $fly-success-color, $fly-success-color);
+    }
+    @include m(info) {
+        @include button-variant($fly-common-white, $fly-info-color, $fly-info-color);
+    }
+    @include m(large) {
         padding: 10px 20px;
         font-size: $fly-font-title-size;
     }
-    &-medium {
+    @include m(medium) {
         padding: 7px 14px;
         font-size: $fly-font-text-size;
     }
-    &-small {
+    @include m(small) {
         padding: 5px 10px;
         font-size: $fly-font-mini_text-size;
     }
-    &-mini {
+    @include m(mini) {
         padding: 3px 6px;
         font-size: $fly-font-assist_text-size;
     }
-    &.fly-is-disabled {
+    @include has(disabled) {
         cursor: not-allowed;
     }
-    &.fly-is-loading {
+    @include has(loading) {
         position: relative;
         pointer-events: none;
     }
-    &.fly-is-round {
+    @include has(round) {
         border-radius: 20px;
     }
-    &.fly-is-circle {
-        border-radius: 1000px;
+    @include has(circle) {
+        border-radius: 50%;
         padding: 7px;
         line-height: 10px;
     }
 }
-
-// .fly-button {
-//     padding: 7px 14px;
-//     outline: none;
-//     user-select: none;
-//     border: 1px solid transparent;
-//     border-radius: $fly-round-default-size;
-//     cursor: pointer;
-//     box-sizing: border-box;
-//     display: inline-block;
-//     vertical-align: bottom;
-//     color: $fly-common-white;
-//     @mixin hover {
-//         &:hover {
-//             opacity: .8;
-//         }
-//     }
-//     &-default {
-//         border: 1px solid $fly-four-border-color;
-//         background: $fly-common-white;
-//         color: $font-color-common;
-//         @include hover()
-//     }
-//     &-large {
-//         padding: 10px 20px;
-//         font-size: $fly-font-title-size;
-//     }
-//     &-medium {
-//         padding: 7px 14px;
-//         font-size: $fly-font-text-size;
-//     }
-//     &-small {
-//         padding: 5px 10px;
-//         font-size: $fly-font-mini_text-size;
-//     }
-//     &-mini {
-//         padding: 3px 6px;
-//         font-size: $fly-font-assist_text-size;
-//     }
-//     &-primary {
-//         background-color: $fly-primary-color;
-//         @include hover()
-//     }
-//     &-warning {
-//         background-color: $fly-warning-color;
-//         @include hover()
-//     }
-//     &-danger {
-//         background-color: $fly-danger-color;
-//         @include hover()
-//     }
-//     &-success {
-//         background-color: $fly-success-color;
-//         @include hover()
-//     }
-//     &-info {
-//         background-color: $fly-info-color;
-//         @include hover()
-//     }
-//     &.fly-is-disabled {
-//         cursor: not-allowed;
-//     }
-//     &.fly-is-loading {
-//         position: relative;
-//         pointer-events: none;
-//     }
-//     &.fly-is-round {
-//         border-radius: 20px;
-//     }
-//     &.fly-is-circle {
-//         border-radius: 1000px;
-//         padding: 7px;
-//         line-height: 10px;
-//     }
-// }
