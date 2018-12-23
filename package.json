@@ -1,9 +1,14 @@
 {
   "name": "flyer-ui",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
+  "version": "1.0.2",
+  "description": "一款基于Vue框架的UI库",
   "author": "pfzhengd",
-  "private": true,
+  "license": "MIT",
+  "main":"lib/flyer-ui.common.js",
+  "files": [
+    "src",
+    "lib"
+  ],
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -11,7 +16,9 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js",
+    "build": "webpack --config build/webpack.common.conf.js",
+    "build:component": "webpack --config build/webpack.component.conf.js",
+    "build:umd": "webpack --config build/webpack.umd.conf.js",
     "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js"
   },
   "dependencies": {
@@ -78,6 +85,7 @@
     "postcss-import": "^11.0.0",
     "postcss-loader": "^2.0.8",
     "postcss-url": "^7.2.1",
+    "progress-bar-webpack-plugin": "^1.11.0",
     "rimraf": "^2.6.0",
     "sass-loader": "^7.1.0",
     "selenium-server": "^3.0.1",

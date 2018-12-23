@@ -6,6 +6,11 @@
             "path": "/"
         },
         {
+            "text": "更新日志",
+            "type": "item",
+            "path": "logs"
+        },
+        {
             "text": "安装",
             "type": "item",
             "path": "installation"
@@ -49,6 +54,26 @@
             "text": "Icon 图标",
             "type": "item",
             "path": "icon"
+        },
+        {
+            "text": "Input 输入框",
+            "type": "item",
+            "path": "input"
+        },
+        {
+            "text": "Checkob 多选框",
+            "type": "item",
+            "path": "checkbox"
+        },
+        {
+            "text": "Radio 单选框",
+            "type": "item",
+            "path": "radio"
+        },
+        {
+            "text": "Dialog 对话框",
+            "type": "item",
+            "path": "dialog"
         }
     ]
 }

@@ -1,11 +1,19 @@
 import Button from './components/button/index'
 import ButtonGroup from './components/button-group/index'
 import Icon from './components/icon/index'
+import Input from './components/input/index'
+import Checkbox from './components/checkbox/index'
+import Radio from './components/radio/index'
+import Dialog from './components/dialog/index'
 
 const components = [
   Button,
   ButtonGroup,
-  Icon
+  Icon,
+  Input,
+  Checkbox,
+  Radio,
+  Dialog
 ]
 
 const install = function (Vue) {
@@ -19,5 +27,9 @@ export default {
   install,
   Button,
   ButtonGroup,
-  Icon
+  Icon,
+  Input,
+  Checkbox,
+  Radio,
+  Dialog
 }
