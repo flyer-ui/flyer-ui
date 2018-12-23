@@ -1,6 +1,23 @@
 @import './base/fly-common.scss';
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
+// default 
+$fly-button-font-size:$fly-font-text-size !default;
+$fly-button-border-radius:$fly-round-default-size !default;
+$fly-button-padding-vertical:7px !default;
+$fly-button-padding-horizontal:14px !default;
+//large
+$fly-button-large-padding-vertical:10px !default;
+$fly-button-large-padding-horizontal:20px !default;
+// meidum
+$fly-button-meidum-padding-vertical:7px !default;
+$fly-button-meidum-padding-horizontal:14px !default;
+// small
+$fly-button-small-padding-vertical:5px !default;
+$fly-button-small-padding-horizontal:10px !default;
+// mini
+$fly-button-mini-padding-vertical:3px !default;
+$fly-button-mini-padding-horizontal:6px !default;
 @mixin button-plain($color) {
     background-color: $fly-common-white;
     color: $color;
@@ -33,17 +50,20 @@
 }
 
 @include b(button) {
-    padding: 7px 14px;
+    padding: $fly-button-padding-vertical $fly-button-padding-horizontal;
     outline: none;
     user-select: none;
     border: 1px solid $fly-border-color;
-    border-radius: $fly-round-default-size;
+    border-radius: $fly-button-border-radius;
     cursor: pointer;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: bottom;
     color: $font-color-text;
     background-color: $fly-common-white;
+    &+& {
+        margin-left: 10px;
+    }
     &:hover,
     &:focus {
         opacity: .6;
@@ -53,6 +73,76 @@
     }
     @include has(plain) {
         @include button-plain($font-color-text);
+    }
+    @include has(disabled) {
+        cursor: not-allowed;
+        opacity: .6;
+        &:hover,
+        &:focus {
+            opacity: .6;
+        }
+    }
+    @include has(loading) {
+        position: relative;
+        pointer-events: none;
+    }
+    @include has(round) {
+        border-radius: 20px;
+    }
+    @include has(circle) {
+        border-radius: 50%;
+        padding: 14px;
+        line-height: 12px;
+    } //开始添加modifier
+    @include m(large) {
+        padding: $fly-button-large-padding-vertical $fly-button-large-padding-horizontal;
+        font-size: $fly-font-title-size;
+        @include has(round) {
+            border-radius: 30px;
+        }
+        @include has(circle) {
+            border-radius: 50%;
+            padding: 16px;
+            line-height: 14px;
+        }
+    }
+    @include m(medium) {
+        padding: $fly-button-meidum-padding-vertical $fly-button-meidum-padding-horizontal;
+        font-size: $fly-font-text-size;
+        @include has(round) {
+            border-radius: 20px;
+        }
+        @include has(circle) {
+            border-radius: 50%;
+            padding: 14px;
+            line-height: 12px;
+        }
+    }
+    @include m(small) {
+        padding: $fly-button-small-padding-vertical $fly-button-small-padding-horizontal;
+        font-size: $fly-font-mini_text-size;
+        @include has(round) {
+            border-radius: 16px;
+        }
+        @include has(circle) {
+            border-radius: 50%;
+            padding: 12px;
+            line-height: 10px;
+            font-size: 12px;
+        }
+    }
+    @include m(mini) {
+        padding: $fly-button-mini-padding-vertical $fly-button-mini-padding-horizontal;
+        font-size: $fly-font-assist_text-size;
+        @include has(round) {
+            border-radius: 12px;
+        }
+        @include has(circle) {
+            border-radius: 50%;
+            padding: 10px;
+            line-height: 8px;
+            font-size: 10px;
+        }
     }
     @include m(primary) {
         @include button-variant($fly-common-white, $fly-primary-color, $fly-primary-color);
@@ -69,35 +159,23 @@
     @include m(info) {
         @include button-variant($fly-common-white, $fly-info-color, $fly-info-color);
     }
-    @include m(large) {
-        padding: 10px 20px;
-        font-size: $fly-font-title-size;
-    }
-    @include m(medium) {
-        padding: 7px 14px;
-        font-size: $fly-font-text-size;
-    }
-    @include m(small) {
-        padding: 5px 10px;
-        font-size: $fly-font-mini_text-size;
-    }
-    @include m(mini) {
-        padding: 3px 6px;
-        font-size: $fly-font-assist_text-size;
-    }
-    @include has(disabled) {
-        cursor: not-allowed;
-    }
-    @include has(loading) {
-        position: relative;
-        pointer-events: none;
-    }
-    @include has(round) {
-        border-radius: 20px;
-    }
-    @include has(circle) {
-        border-radius: 50%;
-        padding: 7px;
-        line-height: 10px;
+}
+
+@include b(button-group) {
+    display: flex;
+    flex-direction: row;
+    @include b(button) {
+        margin-left: 0px;
+        border-radius: 0px;
+        border-right:0px;
+        &:first-child{
+            border-top-left-radius:4px;
+            border-bottom-left-radius:4px;
+        }
+        &:last-child{
+            border-top-right-radius:4px;
+            border-bottom-right-radius:4px;
+            border-right:1px solid;
+        }
     }
 }
