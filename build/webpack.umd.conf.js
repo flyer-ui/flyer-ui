@@ -4,7 +4,7 @@ const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 module.exports = {
@@ -16,8 +16,11 @@ module.exports = {
     publicPath: '/dist',
     filename: 'index.js',
     chunkFilename: '[id].js',
-    libraryTarget: 'umd'
-  }, resolve: {
+    library: "flyer-ui",
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  }, 
+  resolve: {
     extensions: ['.js', '.vue', '.json', '.scss'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
@@ -25,6 +28,14 @@ module.exports = {
       '~': resolve('src')
     }
   },
+  externals: {
+    vue: {
+        root: 'Vue',
+        commonjs: 'vue',
+        commonjs2: 'vue',
+        amd: 'vue'
+    }
+},
   module: {
     rules: [
       {
