@@ -28,7 +28,7 @@
 }
 
 @mixin has($state) {
-    @at-root &.#{$property-prefix+$state} {
+    @at-root &.#{$state-prefix+$state} {
         @content;
     }
 }

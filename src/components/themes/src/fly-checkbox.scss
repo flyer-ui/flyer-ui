@@ -1,0 +1,28 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+$fly-checkbox-border-radius:$fly-round-default-size !default;
+@include b(checkbox) {
+    &+& {
+        margin-left: 10px;
+    }
+    @include e(input-native) {
+        display: none;
+    }
+    @include e(input) {
+        border: 1px solid #ccc;
+        width: 14px;
+        height: 14px;
+        background-color: #fff;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        font-family: 'fly-icons';
+        border-radius: $fly-checkbox-border-radius;
+        @include has(checked) {
+            &::after {
+                content: '\e917';
+            }
+        }
+    }
+}
