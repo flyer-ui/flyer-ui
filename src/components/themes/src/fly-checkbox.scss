@@ -1,8 +1,13 @@
 @import './base/fly-common.scss';
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
+
 $fly-checkbox-border-radius:$fly-round-default-size !default;
+$fly-checkbox-width:14px !default;
+$fly-checkbox-height:14px !default;
+
 @include b(checkbox) {
+    cursor: pointer;
     &+& {
         margin-left: 10px;
     }
@@ -10,19 +15,36 @@ $fly-checkbox-border-radius:$fly-round-default-size !default;
         display: none;
     }
     @include e(input) {
-        border: 1px solid #ccc;
-        width: 14px;
-        height: 14px;
-        background-color: #fff;
+        border: 1px solid $fly-border-color;
+        width: $fly-checkbox-width;
+        height: $fly-checkbox-height;
+        background-color: $fly-common-white;
         display: inline-block;
         vertical-align: middle;
         position: relative;
         font-family: 'fly-icons';
         border-radius: $fly-checkbox-border-radius;
+        &:hover,&:focus{
+            border-color:$fly-primary-color;
+        }
         @include has(checked) {
             &::after {
                 content: '\e917';
             }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
+        }
+        @include has(disabled){
+            color:$font-color-text;
+            background:$font-color-placeholder;
+            border-color:$font-color-placeholder;
+            cursor:not-allowed;
+        }
+    }
+    @include e(label){
+        @include has(disabled){
+            cursor: not-allowed;
         }
     }
 }

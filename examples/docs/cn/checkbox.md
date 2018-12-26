@@ -7,4 +7,10 @@
     <fly-checkbox :checked='true'>
         复选框2
     </fly-checkbox>
+    <fly-checkbox checked disabled>
+        禁选状态
+    </fly-checkbox>
+    <fly-checkbox disabled>
+        禁选状态2
+    </fly-checkbox>
 </p>
