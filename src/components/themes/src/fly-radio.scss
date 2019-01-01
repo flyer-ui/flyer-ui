@@ -1,0 +1,51 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+$fly-radio-border-radius:50% !default;
+$fly-radio-width:14px !default;
+$fly-radio-height:14px !default;
+
+@include b(radio) {
+    cursor: pointer;
+    &+& {
+        margin-left: 10px;
+    }
+    @include e(input-native) {
+        display: inline-block;
+    }
+    @include e(input) {
+        border: 1px solid $fly-border-color;
+        width: $fly-radio-width;
+        height: $fly-radio-height;
+        background-color: $fly-common-white;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        font-family: 'fly-icons';
+        border-radius: $fly-radio-border-radius;
+        display: none;
+        &:hover,&:focus{
+            border-color:$fly-primary-color;
+        }
+        @include has(checked) {
+            &::after {
+                content: '\e917';
+            }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
+        }
+        @include has(disabled){
+            color:$font-color-text;
+            background:$font-color-placeholder;
+            border-color:$font-color-placeholder;
+            cursor:not-allowed;
+        }
+    }
+    @include e(label){
+        @include has(disabled){
+            cursor: not-allowed;
+        }
+    }
+}

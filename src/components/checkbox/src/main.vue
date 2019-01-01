@@ -11,6 +11,7 @@
           v-model="checked"
           :disabled="disabled"
           :value='label'
+          :name='name'
           type="checkbox" />
     </label>
 </template>
@@ -18,7 +19,10 @@
 export default{
   name: 'FlyCheckbox',
   props: {
-    label: String,
+    label: {
+      type: String,
+      default: ''
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -26,6 +30,10 @@ export default{
     checked: {
       type: Boolean,
       default: false
+    },
+    name: {
+      type: String,
+      default: ''
     }
   }
 }
