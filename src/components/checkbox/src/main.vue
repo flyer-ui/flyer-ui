@@ -8,7 +8,7 @@
           <slot></slot>
         </span>
         <input class='fly-checkbox__input-native'
-          v-model="checked"
+          v-model="model"
           :disabled="disabled"
           :value='label'
           :name='name'
@@ -34,6 +34,16 @@ export default{
     name: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    model: {
+      get () {
+        return true
+      },
+      set () {
+
+      }
     }
   }
 }
