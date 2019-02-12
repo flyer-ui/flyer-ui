@@ -12,7 +12,7 @@ $fly-radio-height:14px !default;
         margin-left: 10px;
     }
     @include e(input-native) {
-        display: none;
+        display: inline-block;
     }
     @include e(input) {
         border: 1px solid $fly-border-color;

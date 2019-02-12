@@ -1,15 +1,16 @@
 <template>
     <label class='fly-radio'>
         <span :class='["fly-radio__input",{
-          "has-checked":checked,
+          "has-checked":model,
           "has-disabled":disabled
         }]'></span>
         <span class='fly-radio__label'>
           <slot></slot>
         </span>
         <input class='fly-radio__input-native'
-          v-model="checked"
+          v-model="model"
           :disabled="disabled"
+          :checked='model'
           :value='label'
           :name='name'
           type="radio" />
@@ -18,6 +19,11 @@
 <script>
 export default{
   name: 'FlyRadio',
+  data () {
+    return {
+      value: undefined
+    }
+  },
   props: {
     label: {
       type: String,
@@ -34,6 +40,16 @@ export default{
     name: {
       type: String,
       default: ''
+    }
+  },
+  computed: {
+    model: {
+      get () {
+        return typeof this.value === 'undefined' ? this.checked : true
+      },
+      set (newValue) {
+        this.value = newValue
+      }
     }
   }
 }
