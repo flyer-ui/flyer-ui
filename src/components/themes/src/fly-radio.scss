@@ -28,7 +28,7 @@ $fly-radio-height:14px !default;
         &:hover,&:focus{
             border-color:$fly-primary-color;
         }
-        @include has(checked) {
+        @include when(checked) {
             &::after {
                 content: '\e917';
             }
@@ -36,7 +36,7 @@ $fly-radio-height:14px !default;
             background: $fly-primary-color;
             border-color:$fly-primary-color;
         }
-        @include has(disabled){
+        @include when(disabled){
             color:$font-color-text;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
@@ -44,7 +44,7 @@ $fly-radio-height:14px !default;
         }
     }
     @include e(label){
-        @include has(disabled){
+        @include when(disabled){
             cursor: not-allowed;
         }
     }

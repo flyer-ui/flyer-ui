@@ -8,27 +8,32 @@
         {
             "text": "更新日志",
             "type": "item",
-            "path": "logs"
+            "path": "logs",
+            "pending":true
         },
         {
             "text": "安装",
             "type": "item",
-            "path": "installation"
+            "path": "installation",
+            "pending":true
         },
         {
             "text": "快速上手",
             "type": "item",
-            "path": "get-started"
+            "path": "get-started",
+            "pending":true
         },
         {
             "text": "国际化",
             "type": "item",
-            "path": "i18n"
+            "path": "i18n",
+            "pending":true
         },
         {
             "text": "自定义主题",
             "type": "item",
-            "path": "custom-theme"
+            "path": "custom-theme",
+            "pending":true
         },
         {
             "text": "组件",
@@ -38,42 +43,50 @@
         {
             "text": "Font 字体",
             "type": "item",
-            "path": "font"
+            "path": "font",
+            "pending":false
         },
         {
             "text": "Color 颜色",
             "type": "item",
-            "path": "color"
+            "path": "color",
+            "pending":false
         },
         {
             "text": "Button 按钮",
             "type": "item",
-            "path": "button"
+            "path": "button",
+            "pending":false
         },
         {
             "text": "Icon 图标",
             "type": "item",
-            "path": "icon"
+            "path": "icon",
+            "pending":true
         },
         {
             "text": "Input 输入框",
             "type": "item",
-            "path": "input"
+            "path": "input",
+            "pending":true
         },
         {
             "text": "Checkob 多选框",
             "type": "item",
-            "path": "checkbox"
+            "path": "checkbox",
+            "pending":true
         },
         {
             "text": "Radio 单选框",
             "type": "item",
-            "path": "radio"
+            "path": "radio",
+            "pending":true
         },
         {
             "text": "Dialog 对话框",
             "type": "item",
-            "path": "dialog"
+            "path": "dialog",
+            "pending":true
         }
     ]
 }

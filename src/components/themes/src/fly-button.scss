@@ -44,7 +44,7 @@ $fly-button-mini-padding-horizontal:6px !default;
     &:active {
         opacity: 1;
     }
-    @include has(plain) {
+    @include when(plain) {
         @include button-plain($background-color);
     }
 }
@@ -71,10 +71,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     &:active {
         opacity: 1;
     }
-    @include has(plain) {
+    @include when(plain) {
         @include button-plain($font-color-text);
     }
-    @include has(disabled) {
+    @include when(disabled) {
         cursor: not-allowed;
         opacity: .6;
         &:hover,
@@ -82,14 +82,14 @@ $fly-button-mini-padding-horizontal:6px !default;
             opacity: .6;
         }
     }
-    @include has(loading) {
+    @include when(loading) {
         position: relative;
         pointer-events: none;
     }
-    @include has(round) {
+    @include when(round) {
         border-radius: 20px;
     }
-    @include has(circle) {
+    @include when(circle) {
         border-radius: 50%;
         padding: 14px;
         line-height: 12px;
@@ -97,10 +97,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     @include m(large) {
         padding: $fly-button-large-padding-vertical $fly-button-large-padding-horizontal;
         font-size: $fly-font-title-size;
-        @include has(round) {
+        @include when(round) {
             border-radius: 30px;
         }
-        @include has(circle) {
+        @include when(circle) {
             border-radius: 50%;
             padding: 16px;
             line-height: 14px;
@@ -109,10 +109,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     @include m(medium) {
         padding: $fly-button-meidum-padding-vertical $fly-button-meidum-padding-horizontal;
         font-size: $fly-font-text-size;
-        @include has(round) {
+        @include when(round) {
             border-radius: 20px;
         }
-        @include has(circle) {
+        @include when(circle) {
             border-radius: 50%;
             padding: 14px;
             line-height: 12px;
@@ -121,10 +121,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     @include m(small) {
         padding: $fly-button-small-padding-vertical $fly-button-small-padding-horizontal;
         font-size: $fly-font-mini_text-size;
-        @include has(round) {
+        @include when(round) {
             border-radius: 16px;
         }
-        @include has(circle) {
+        @include when(circle) {
             border-radius: 50%;
             padding: 12px;
             line-height: 10px;
@@ -134,10 +134,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     @include m(mini) {
         padding: $fly-button-mini-padding-vertical $fly-button-mini-padding-horizontal;
         font-size: $fly-font-assist_text-size;
-        @include has(round) {
+        @include when(round) {
             border-radius: 12px;
         }
-        @include has(circle) {
+        @include when(circle) {
             border-radius: 50%;
             padding: 10px;
             line-height: 8px;

@@ -4,7 +4,7 @@
   "description": "一款基于Vue框架的UI库",
   "author": "pfzhengd",
   "license": "MIT",
-  "main":"lib/flyer-ui.common.js",
+  "main": "lib/flyer-ui.common.js",
   "files": [
     "src",
     "lib"

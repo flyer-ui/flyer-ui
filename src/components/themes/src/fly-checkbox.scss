@@ -12,7 +12,7 @@ $fly-checkbox-height:14px !default;
         margin-left: 10px;
     }
     @include e(input-native) {
-        display: none;
+        display: inline-blockd;
     }
     @include e(input) {
         border: 1px solid $fly-border-color;
@@ -27,7 +27,7 @@ $fly-checkbox-height:14px !default;
         &:hover,&:focus{
             border-color:$fly-primary-color;
         }
-        @include has(checked) {
+        @include when(checked) {
             &::after {
                 content: '\e917';
             }
@@ -35,7 +35,7 @@ $fly-checkbox-height:14px !default;
             background: $fly-primary-color;
             border-color:$fly-primary-color;
         }
-        @include has(disabled){
+        @include when(disabled){
             color:$font-color-text;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
@@ -43,7 +43,7 @@ $fly-checkbox-height:14px !default;
         }
     }
     @include e(label){
-        @include has(disabled){
+        @include when(disabled){
             cursor: not-allowed;
         }
     }

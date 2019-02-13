@@ -1,9 +1,11 @@
 <template>
    <div class='fly-demo-menus'>
-     <ul class='fly-demo-menus_list'>
-       <li v-for='(item,index) in data' :key='index' :class='`fly-demo-menus_list_${item.type}`'>
+     <ul class='fly-demo-menus__list'>
+       <li v-for='(item,index) in data' :key='index' :class='`fly-demo-menus__${item.type}`'>
          <h3 v-if='item.type==="header"'>{{item.text}}</h3>
-        <span v-if='item.type==="item"'><router-link :to='getPath(item)'>{{item.text}}</router-link></span>
+        <span v-if='item.type==="item"'>
+          <router-link :to='getPath(item)' :class='{"is-pending":item.pending}'>{{item.text}}</router-link>
+        </span>
        </li>
      </ul>
    </div>
@@ -23,22 +25,33 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-$width:15%;
-.fly-demo-menus{
-    width:$width;
+@import '~/components/themes/src/base/fly-mixins.scss';
+
+@include b('demo-menus'){
+    width:15%;
     min-width:200px;
     box-sizing:border-box;
     padding:10px;
     position:relative;
-    &_list{
+    &:after{
+      content:'';
+      position: absolute;
+      z-index:1;
+      top:10px;
+      right:1px;
+      bottom:10px;
+      border-right:1px solid $fly-border-color;
+    }
+    @include e('list'){
       list-style-type:none;
       margin:0px;
       padding:0px;
       box-sizing:border-box;
-      &_header{
+    }
+    @include e('header'){
 
-      }
-      &_item{
+    }
+    @include e('item'){
         line-height:36px;
         padding-left:10px;
         cursor:pointer;
@@ -48,16 +61,9 @@ $width:15%;
         a.router-link-active{
           color:$fly-primary-color;
         }
-      }
-    }
-    &:after{
-      content:'';
-      position: absolute;
-      z-index:1;
-      top:10px;
-      right:1px;
-      bottom:10px;
-      border-right:1px solid $fly-border-color;
+        .is-pending{
+          color:$font-color-placeholder;
+        }
     }
 }
 </style>

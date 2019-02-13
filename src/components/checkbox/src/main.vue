@@ -1,7 +1,7 @@
 <template>
     <label class='fly-checkbox'>
         <span :class='["fly-checkbox__input",{
-          "has-checked":model,
+          "has-checked":isChecked,
           "has-disabled":disabled
         }]'></span>
         <span class='fly-checkbox__label'>
@@ -18,11 +18,6 @@
 <script>
 export default{
   name: 'FlyCheckbox',
-  data () {
-    return {
-      value: undefined
-    }
-  },
   props: {
     label: {
       type: String,
@@ -36,9 +31,24 @@ export default{
       type: Boolean,
       default: false
     },
+    trueLabel: {
+      type: [String, Number]
+    },
+    falseLabel: {
+      type: [String, Number]
+    },
+    indeterminate: {
+      type: Boolean,
+      default: false
+    },
     name: {
       type: String,
       default: ''
+    }
+  },
+  data () {
+    return {
+      value: undefined
     }
   },
   computed: {
@@ -48,6 +58,14 @@ export default{
       },
       set (newValue) {
         this.value = newValue
+      }
+    },
+    isChecked: {
+      get () {
+        return false
+      },
+      set (newValue) {
+
       }
     }
   }

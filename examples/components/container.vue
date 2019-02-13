@@ -37,3 +37,24 @@ export default {
     height:100%;
 }
 </style>
+<style lang='scss'>
+table{
+    width:100%;
+    border:1px solid #dedede;
+    border-bottom:0px;
+    margin:0px;
+    padding:0px;
+    border-collapse:collapse;
+    th{
+        background-color:#fafafa;
+    }
+    td,th{
+        text-align:left;
+        border:0px;
+        padding:10px 15px;
+        box-sizing:border-box;
+        border-spacing:0px;
+        border-bottom:1px solid #dedede;
+    }
+}
+</style>
