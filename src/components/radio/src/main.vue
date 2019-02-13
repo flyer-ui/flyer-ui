@@ -1,8 +1,8 @@
 <template>
     <label class='fly-radio'>
         <span :class='["fly-radio__input",{
-          "has-checked":model,
-          "has-disabled":disabled
+          "is-checked":model,
+          "is-disabled":disabled
         }]'></span>
         <span class='fly-radio__label'>
           <slot></slot>

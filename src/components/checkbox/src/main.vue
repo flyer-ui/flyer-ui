@@ -1,8 +1,8 @@
 <template>
     <label class='fly-checkbox'>
         <span :class='["fly-checkbox__input",{
-          "has-checked":isChecked,
-          "has-disabled":disabled
+          "is-checked":isChecked,
+          "is-disabled":disabled
         }]'></span>
         <span class='fly-checkbox__label'>
           <slot></slot>

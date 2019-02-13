@@ -7,11 +7,11 @@
     `fly-button--${type}`,
     `fly-button--${size}`,
     {
-      "has-disabled":disabled,
-      "has-loading":loading,
-      "has-plain":plain,
-      "has-circle":circle,
-      "has-round":round
+      "is-disabled":disabled,
+      "is-loading":loading,
+      "is-plain":plain,
+      "is-circle":circle,
+      "is-round":round
     }
     ]'>
       <i v-if='loading' class='fly-icon-loader'></i>
