@@ -1,6 +1,6 @@
 <template>
   <div class='fly-demo-footer'>
-      footer
+
   </div>
 </template>
 <script>
@@ -10,12 +10,13 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-$footer_height:60px;
-.fly-demo-footer{
+@import '~/components/themes/src/base/fly-mixins.scss';
+@include b('demo-footer'){
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
     justify-content: center;
-    height:$footer_height;
+    height:60px;
+    background-color:$fly-border-color;
 }
 </style>

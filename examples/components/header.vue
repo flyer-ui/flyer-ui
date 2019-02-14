@@ -1,10 +1,10 @@
 <template>
  <div class='fly-demo-header'>
-   <div class='fly-demo-header_logo'>
+   <div class='fly-demo-header__logo'>
      <img src='../assets/imgs/logo.png' alt=''/>
      <h2>Flyer-UI</h2>
    </div>
-   <div class='fly-demo-header_items'>
+   <div class='fly-demo-header__items'>
 
    </div>
  </div>
@@ -16,17 +16,18 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
+@import '~/components/themes/src/base/fly-mixins.scss';
 $logo_width:15%;
 $items_width:95%;
 $header_height:60px;
-.fly-demo-header{
+@include b('demo-header'){
   display:flex;
   flex-direction: row;
   flex-wrap:nowrap;
   min-height:$header_height;
   height:$header_height;
   border-bottom:1px solid $fly-border-color;
-  &_logo{
+  @include e('logo'){
     width:$logo_width;
     position: relative;
     box-sizing: border-box;
@@ -56,7 +57,7 @@ $header_height:60px;
       border-right:1px solid $fly-border-color;
     }
   }
-  &_items{
+  @include e('items'){
     width:$items_width;
     text-align:right;
   }

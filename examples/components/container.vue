@@ -1,7 +1,7 @@
 <template>
     <div class='fly-demo-container'>
        <fly-menu :data='navData'></fly-menu>
-        <div class='fly-demo-content'>
+        <div class='fly-demo-container__content'>
           <router-view></router-view>
         </div>
     </div>
@@ -23,19 +23,21 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-.fly-demo-container{
+@import '~/components/themes/src/base/fly-mixins.scss';
+@include b('demo-container'){
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
     height:100%;
+    @include e('content'){
+        padding:10px;
+        box-sizing: border-box;
+        width: 95%;
+        height:100%;
+    }
 }
-.fly-demo-content{
-    padding:10px;
-    box-sizing: border-box;
-    width: 95%;
-    height:100%;
-}
+
 </style>
 <style lang='scss'>
 table{
