@@ -1,6 +1,6 @@
-**Checkbox 多选框**
+## Checkbox 多选框
+```html
 <template>
-<div></div>
 <p>
     <fly-checkbox name='demo' label='复选框'>
         复选框
@@ -16,8 +16,8 @@
     </fly-checkbox>
 </p>
 </template>
-
-**可定制属性**  
+```
+### 可定制属性
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
 ---------|----------|---------|---------|--------|

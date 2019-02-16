@@ -6,10 +6,12 @@ import FlyerUI from '../src/main.js'
 import Routers from './router'
 import VueRouter from 'vue-router'
 import '../src/components/themes/src/index.scss'
+import FlyDemoBlock from '@/components/demo-block'
 
 Vue.config.productionTip = false
 Vue.use(FlyerUI)
 Vue.use(VueRouter)
+Vue.component('fly-demo-block', FlyDemoBlock)
 
 const router = new VueRouter({
   mode: 'history',

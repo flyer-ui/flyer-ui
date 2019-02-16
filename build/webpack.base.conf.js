@@ -72,9 +72,18 @@ module.exports = {
         options:{
           preset:'default',
           breaks:true,
-          preprocess:(markdownIt,source)=>{
-            return source
-          }
+          use:[
+            require('markdown-it-container','demo',{
+              validate:function(params){
+                console.log(params)
+                return true
+              },
+              render:function(tokens,idx){
+                console.log(tokens)
+                console.log('idx',idx)
+              }
+            })
+          ]
         }
       }
     ]

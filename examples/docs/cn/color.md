@@ -1,55 +1,67 @@
-<h1>Color 颜色风格</h1>
+## Color 颜色风格
 
-**主色**  
+### 主色  
 整站的主要风格颜色  
-<div class='block primary'>
-Primary<br/>
-#3e8ef7
-</div>  
 
-**辅助色**  
-常用于提示类的颜色，比如成功、失败、警告之类的场景中会使用到。 
-<div class='block success'>
-Success</br>
-#11c26d
+<template>
+<div class='block primary'>
+    Primary<br/>
+    #3e8ef7
+</div>  
+</template>
+
+### 辅助色  
+常用于提示类的颜色，比如成功、失败、警告之类的场景中会使用到。   
+<template>
+<div>
+    <div class='block success'>
+        Success</br>
+        #11c26d
+    </div>
+    <div class='block info'>
+        Info</br>
+        #0bb2d4
+    </div>
+    <div class='block warning'>
+        Warning</br>
+        #eb6709
+    </div>
+    <div class='block danger'>
+        Danger</br>
+        #ff4c52
+    </div>
 </div>
-<div class='block info'>
-Info</br>
-#0bb2d4
+</template>
+
+### 中性色  
+中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。  
+
+<template>
+<div>
+    <div class='block font-color-title'>
+        标题字体颜色</br>
+        #37474F
+    </div>
+    <div class='block font-color-common'>
+        常规字体颜色</br>
+        #526069
+    </div>
+    <div class='block font-color-secondary'>
+        次要字体颜色</br>
+        #76838F
+    </div>
+    <div class='block font-color-placeholder'>
+        占位字体颜色</br>
+        #CCD5DB
+    </div>
+    <br/>
+    <div class='block border-color'>
+        边框颜色</br>
+        #E4EAEC
+    </div>
 </div>
-<div class='block warning'>
-Warning</br>
-#eb6709
-</div>
-<div class='block danger'>
-Danger</br>
-#ff4c52
-</div>
-  
-**中性色**  
-中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
-<div class='block font-color-title'>
-标题字体颜色</br>
-#37474F
-</div>
-<div class='block font-color-common'>
-常规字体颜色</br>
-#526069
-</div>
-<div class='block font-color-secondary'>
-次要字体颜色</br>
-#76838F
-</div>
-<div class='block font-color-placeholder'>
-占位字体颜色</br>
-#CCD5DB
-</div>
-<br/>
-<div class='block border-color'>
-边框颜色</br>
-#E4EAEC
-</div>
-    
+</template>
+
 <style lang='scss' scoped>
     .block{
         padding:10px;

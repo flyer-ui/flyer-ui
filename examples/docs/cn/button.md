@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 <div>
     <h1>Flyer-UI - Button</h1>
     <h3>按钮类型</h3>
@@ -95,9 +95,28 @@
         </fly-button-group>
     </p>
 </div>
-</template>
+</template> -->
 
-**可定制属性**  
+## Flyer-UI - Button  
+
+### 按钮类型
+::: warning
+*here be dragons*
+:::
+<fly-demo-block>
+</fly-demo-block>
+``` html
+<p>
+    <fly-button>默认按钮</fly-button>
+    <fly-button type='primary'>主要按钮</fly-button>
+    <fly-button type='warning'>警告按钮</fly-button>
+    <fly-button type='danger'>危险按钮</fly-button>
+    <fly-button type='success'>成功按钮</fly-button>
+    <fly-button type='info'>信息按钮</fly-button>
+</p>
+```
+
+### 可定制属性  
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
 ---------|----------|---------|---------|--------|
