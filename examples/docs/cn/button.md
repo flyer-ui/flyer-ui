@@ -100,21 +100,25 @@
 ## Flyer-UI - Button  
 
 ### 按钮类型
-::: warning
-*here be dragons*
-:::
 <fly-demo-block>
+    <div slot='effect'>
+        <fly-button>默认按钮</fly-button>
+        <fly-button type='primary'>主要按钮</fly-button>
+        <fly-button type='warning'>警告按钮</fly-button>
+        <fly-button type='danger'>危险按钮</fly-button>
+        <fly-button type='success'>成功按钮</fly-button>
+        <fly-button type='info'>信息按钮</fly-button>
+    </div>
+    <div slot='code'>
+        <fly-button>默认按钮</fly-button>
+        <fly-button type='primary'>主要按钮</fly-button>
+        <fly-button type='warning'>警告按钮</fly-button>
+        <fly-button type='danger'>危险按钮</fly-button>
+        <fly-button type='success'>成功按钮</fly-button>
+        <fly-button type='info'>信息按钮</fly-button>
+    </div>
 </fly-demo-block>
-``` html
-<p>
-    <fly-button>默认按钮</fly-button>
-    <fly-button type='primary'>主要按钮</fly-button>
-    <fly-button type='warning'>警告按钮</fly-button>
-    <fly-button type='danger'>危险按钮</fly-button>
-    <fly-button type='success'>成功按钮</fly-button>
-    <fly-button type='info'>信息按钮</fly-button>
-</p>
-```
+
 
 ### 可定制属性  
 

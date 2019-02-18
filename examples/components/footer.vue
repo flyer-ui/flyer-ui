@@ -17,6 +17,6 @@ export default {
     flex-wrap:nowrap;
     justify-content: center;
     height:60px;
-    background-color:$fly-border-color;
+    background-color:#fafafa;
 }
 </style>
