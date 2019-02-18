@@ -2,6 +2,7 @@
     <button
     :type='nativeType'
     :disabled='disabled'
+    @click="handleClick"
     :class='[
     "fly-button",
     `fly-button--${type}`,
@@ -56,6 +57,11 @@ export default {
     },
     plain: {
       type: Boolean
+    }
+  },
+  methods: {
+    handleClick (evt) {
+      this.$emit('click', evt)
     }
   }
 }
