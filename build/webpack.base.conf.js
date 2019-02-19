@@ -70,10 +70,8 @@ module.exports = {
         test:/\.md$/,
         loader:'vue-markdown-loader',
         options:{
-          preset:'default',
-          breaks:true,
           use:[
-            require('markdown-it-container','demo',{
+            [require('markdown-it-container','demo',{
               validate:function(params){
                 console.log(params)
                 return true
@@ -82,7 +80,7 @@ module.exports = {
                 console.log(tokens)
                 console.log('idx',idx)
               }
-            })
+            })]
           ]
         }
       }
