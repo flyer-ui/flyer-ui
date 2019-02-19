@@ -3,6 +3,7 @@ const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
+const md = require('markdown-it')()
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -67,21 +68,41 @@ module.exports = {
         }
       },
       {
-        test:/\.md$/,
-        loader:'vue-markdown-loader',
-        options:{
-          use:[
-            [require('markdown-it-container','demo',{
-              validate:function(params){
-                console.log(params)
-                return true
+        test: /\.md$/,
+        loader: 'vue-markdown-loader',
+        options: {
+          use: [
+            [require('markdown-it-container'), 'demo', {
+              validate: function(params) {
+                return params.trim().match(/^demo\s*(.*)$/);
               },
-              render:function(tokens,idx){
-                console.log(tokens)
-                console.log('idx',idx)
+
+              render: function(tokens, idx) {
+                console.log(`-------------------------------------------------`)
+                console.log(JSON.stringify(tokens))
+              
+                const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
+                if(tokens[idx].nesting===1){
+      
+                  let desc = `<div class="fly-demo-block__desc">${m[1]}</div>`
+                  let content = tokens[idx+1].content;
+    
+                  return `<fly-demo-block>
+                            <div slot='effect'>${content}</div>
+                            <div slot='code'>${desc}${content}</div>
+                        `
+                }else{
+                  return `</fly-demo-block>`
+                }
               }
-            })]
-          ]
+            }]
+          ],
+          preprocess: function(MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function() {
+              return '<table class="fly-demo-table">';
+            };
+            return source;
+          }
         }
       }
     ]

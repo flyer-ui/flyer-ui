@@ -40,7 +40,8 @@ export default {
 
 </style>
 <style lang='scss'>
-table{
+@import '~/components/themes/src/base/fly-mixins.scss';
+@include b('demo-table'){
     width:100%;
     border:1px solid #dedede;
     border-bottom:0px;

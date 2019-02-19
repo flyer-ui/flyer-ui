@@ -7,7 +7,8 @@ md.use(require('markdown-it-container'), 'demo', {
   },
 
   render: function (tokens, idx) {
-
+    console.log(`${idx}-------`)
+    console.log(JSON.stringify(tokens))
     var m = tokens[idx].info.trim().match(/^demo\s+(.*)$/);
 
     if (tokens[idx].nesting === 1) {
@@ -20,9 +21,8 @@ md.use(require('markdown-it-container'), 'demo', {
     }
   }
 });
-console.log(md.render(`:::demo 测试webpack打包按钮
-<code>
-<fly-button>默认按钮</fly-button>
-</code>`
+console.log(md.render(`:::demo click
+  *here be dragons*\n
+  :::\ndsd`
 ))
-// console.log(md.render('::: demo click me  ```html <h1></h1>```'));
+// console.log(md.render(':::demo click me\n*content*\n:::\n'));
