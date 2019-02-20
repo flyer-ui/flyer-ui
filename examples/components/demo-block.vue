@@ -7,7 +7,10 @@
             <slot name='code'></slot>
         </div>
         <div class='fly-demo-block__buttons'>
-            <i class='fly-icon-chevron-down' @click='handleOpenCode'></i>
+            <i :class='{
+                "fly-icon-chevron-down":!isOpen,
+                "fly-icon-chevron-up":isOpen
+            }' @click='handleOpenCode'></i>
         </div>
     </div>
 </template>
@@ -46,7 +49,7 @@ export default {
         }
     }
     @include e('buttons'){
-        padding:20px;
+        padding:10px;
         text-align: center;
         [class^='fly-icon-']{
             cursor: pointer;

@@ -5,7 +5,7 @@ const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const md = require('markdown-it')()
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -23,11 +23,11 @@ const createLintingRule = () => ({
 module.exports = {
   context: path.resolve(__dirname, '../'),
   resolve: {
-    extensions: ['.js', '.vue', '.json','.scss'],
+    extensions: ['.js', '.vue', '.json', '.scss'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('examples'),
-      '~':resolve('src')
+      '~': resolve('src')
     }
   },
   module: {
@@ -73,32 +73,29 @@ module.exports = {
         options: {
           use: [
             [require('markdown-it-container'), 'demo', {
-              validate: function(params) {
+              validate: function (params) {
                 return params.trim().match(/^demo\s*(.*)$/);
               },
 
-              render: function(tokens, idx) {
-                console.log(`-------------------------------------------------`)
-                console.log(JSON.stringify(tokens))
-              
+              render: function (tokens, idx) {
                 const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
-                if(tokens[idx].nesting===1){
-      
-                  let desc = `<div class="fly-demo-block__desc">${m[1]}</div>`
-                  let content = tokens[idx+1].content;
-    
+                if (tokens[idx].nesting === 1) {
+
+                  let desc = m[1].length > 0 ? `<div class="fly-demo-block__desc">${m[1]}</div>` : ``
+                  let content = tokens[idx + 1].content;
+
                   return `<fly-demo-block>
                             <div slot='effect'>${content}</div>
-                            <div slot='code'>${desc}${content}</div>
+                            <div slot='code'>${desc}
                         `
-                }else{
-                  return `</fly-demo-block>`
+                } else {
+                  return `</div></fly-demo-block>`
                 }
               }
             }]
           ],
-          preprocess: function(MarkdownIt, source) {
-            MarkdownIt.renderer.rules.table_open = function() {
+          preprocess: function (MarkdownIt, source) {
+            MarkdownIt.renderer.rules.table_open = function () {
               return '<table class="fly-demo-table">';
             };
             return source;
