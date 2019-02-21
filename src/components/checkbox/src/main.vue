@@ -10,7 +10,6 @@
         <input class='fly-checkbox__input-native'
           v-model="model"
           :disabled="disabled"
-          :value='label'
           :name='name'
           type="checkbox" />
     </label>
@@ -19,6 +18,10 @@
 export default{
   name: 'FlyCheckbox',
   props: {
+    value: {
+      type: [String, Boolean, Number],
+      default: ''
+    },
     label: {
       type: String,
       default: ''
@@ -46,21 +49,16 @@ export default{
       default: ''
     }
   },
-  data () {
-    return {
-      value: undefined
-    }
-  },
   created () {
 
   },
   computed: {
     model: {
       get () {
-        return typeof this.value === 'undefined' ? this.checked : this.value
+        return this.value
       },
       set (newValue) {
-        this.value = newValue
+        this.$emit('input', newValue)
       }
     },
     isChecked: {
