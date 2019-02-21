@@ -51,6 +51,9 @@ export default{
       value: undefined
     }
   },
+  created () {
+
+  },
   computed: {
     model: {
       get () {
@@ -62,10 +65,7 @@ export default{
     },
     isChecked: {
       get () {
-        return false
-      },
-      set (newValue) {
-
+        return this.model
       }
     }
   }
