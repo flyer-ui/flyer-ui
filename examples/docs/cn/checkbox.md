@@ -10,6 +10,7 @@
     <div>{{test}}</div>
 <script>
     export default {
+        name:"test1",
         data(){
             return {
                 test:false
@@ -26,6 +27,25 @@
 ```html
 <fly-checkbox disabled>禁用状态</fly-checkbox>
 <fly-checkbox checked disabled>已选禁用状态</fly-checkbox>
+```
+:::
+
+### 指定选中状态的值
+::: demo
+```html
+<fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox>
+<!-- <fly-checkbox v-model='citys' label='深圳'>深圳</fly-checkbox>
+<fly-checkbox v-model='citys' label='上海'>上海</fly-checkbox> -->
+<script>
+    export default {
+        name:"test2",
+        data(){
+            return {
+                citys:[]
+            }
+        }
+    }
+</script>
 ```
 :::
 
