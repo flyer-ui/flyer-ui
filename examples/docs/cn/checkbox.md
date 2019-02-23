@@ -4,16 +4,21 @@
 ::: demo
 ```html
 <p>
-    <fly-checkbox v-model='test' name='demo' label='复选框'>
+    <fly-checkbox v-model='test' name='demo'>
         复选框
     </fly-checkbox>
+    <fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox>
+    <input v-model='citys' type='checkbox' value='东莞'>东莞
+    <input v-model='citys' type='checkbox' value='深圳'>深圳
     <div>{{test}}</div>
+    <div>citys:{{citys}}</div>
 <script>
     export default {
         name:"test1",
         data(){
             return {
-                test:false
+                test:true,
+                citys:[]
             }
         }
     }
@@ -33,9 +38,10 @@
 ### 指定选中状态的值
 ::: demo
 ```html
-<fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox>
+<!-- <fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox> -->
 <!-- <fly-checkbox v-model='citys' label='深圳'>深圳</fly-checkbox>
 <fly-checkbox v-model='citys' label='上海'>上海</fly-checkbox> -->
+<!-- <input v-model='citys' type='checkbox' value='东莞'> -->
 <script>
     export default {
         name:"test2",

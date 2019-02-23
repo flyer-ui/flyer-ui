@@ -59,12 +59,12 @@ export default{
         return this.value || this.checked
       },
       set (newValue) {
-        console.log(newValue)
         this.$emit('input', newValue)
       }
     },
     isChecked: {
       get () {
+        console.log(this.model)
         return this.model
       }
     }
