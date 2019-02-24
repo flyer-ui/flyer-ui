@@ -1,16 +1,19 @@
-.hljs-name{
+.hljs-name,.hljs-keyword{
     color:#7b1865;
-    line-height: 24px;
+    line-height: 22px;
 }
 .hljs-tag{
     color:#484a45;
-    line-height: 24px;
+    line-height: 22px;
 }
 .hljs-attr{
     color:#bb9609;
-    line-height: 24px;
+    line-height: 22px;
 }
 .hljs-string{
     color:#2f5b71;
-    line-height: 24px;
+    line-height: 22px;
+}
+.hljs-built_in{
+    color:#3d89af;
 }

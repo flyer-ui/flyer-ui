@@ -1,16 +1,22 @@
-::: demo This is demo.
+### Test
+::: demo
 ```html
-<fly-button>test</fly-button>
-<fly-input v-model='test'></fly-input>
-<div>test:{{test}}</div>
+<template>
+    <fly-checkbox checked disabled>已选禁用状态</fly-checkbox>
+    <!-- <fly-checkbox-group v-model='citys'>
+        <fly-checkbox label='深圳'>深圳</fly-checkbox>
+        <fly-checkbox label='东莞' checked>东莞</fly-checkbox>
+    </fly-checkbox-group> -->
+    {{citys}}
+</template>
 <script>
-export default{
-    data(){
-        return{
-            test:''
+    export default{
+        data(){
+            return {
+                citys:[]
+            }
         }
     }
-}
 </script>
 ```
 :::

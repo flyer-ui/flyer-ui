@@ -1,53 +1,69 @@
+<script>
+export default {
+    data(){
+        return{
+            checked:true,
+            city:'',
+            value:'',
+            citys:['东莞']
+        }
+    },
+    methods:{
+        handleChange(value){
+            console.log(value)
+        },
+        handleChangeGroup(value){
+            console.log(value)
+        }
+    }
+}
+</script>
+
 ## Checkbox 多选框
 
 ### 基础用例
 ::: demo
 ```html
-<p>
-    <fly-checkbox v-model='test' name='demo'>
-        复选框
+<template>
+    <fly-checkbox v-model='checked' name='checked'>
+        是否选中
     </fly-checkbox>
-    <fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox>
-    <input v-model='citys' type='checkbox' value='东莞'>东莞
-    <input v-model='citys' type='checkbox' value='深圳'>深圳
-    <div>{{test}}</div>
-    <div>citys:{{citys}}</div>
+    <div>{{checked}}</div>
+</template>
 <script>
     export default {
-        name:"test1",
         data(){
             return {
-                test:true,
-                citys:[]
+                checked:true
             }
         }
     }
 </script>
-</p>
 ```
 :::
 
 ### 禁用状态
 ::: demo 
 ```html
-<fly-checkbox disabled>禁用状态</fly-checkbox>
-<fly-checkbox checked disabled>已选禁用状态</fly-checkbox>
+<template>
+    <fly-checkbox disabled>禁用状态</fly-checkbox>
+    <fly-checkbox checked disabled>已选禁用状态</fly-checkbox>
+</template>
 ```
 :::
 
-### 指定选中状态的值
+### 绑定复选框值
 ::: demo
 ```html
-<!-- <fly-checkbox v-model='citys' label='东莞'>东莞</fly-checkbox> -->
-<!-- <fly-checkbox v-model='citys' label='深圳'>深圳</fly-checkbox>
-<fly-checkbox v-model='citys' label='上海'>上海</fly-checkbox> -->
-<!-- <input v-model='citys' type='checkbox' value='东莞'> -->
+<template>
+    <fly-checkbox v-model='city' true-value='深圳' false-value=''>深圳</fly-checkbox>
+    <div>{{city}}</div>
+</template>
 <script>
     export default {
-        name:"test2",
         data(){
             return {
-                citys:[]
+                city:''
             }
         }
     }
@@ -55,13 +71,66 @@
 ```
 :::
 
+### 点击变更选项状态事件
+::: demo
+``` html
+<template>
+    <fly-checkbox v-model='value' @on-change='handleChange' true-value='东莞' false-value=''>东莞</fly-checkbox>
+    <div>{{`console.log(${value})`}}</div>
+</template>
+<script>
+    export default {
+        data(){
+            return {
+                value:''
+            }
+        },
+        methods:{
+            handleChange(value){
+                console.log(value)
+            }
+        }
+    }
+</script>
+```
+:::
 
-### 可定制属性
+### 复选框组
+::: demo
+```html
+<template>
+    <fly-checkbox-group v-model='citys' @on-change='handleChangeGroup'>
+        <fly-checkbox label='北京'>北京</fly-checkbox>
+        <fly-checkbox label='深圳'>深圳</fly-checkbox>
+        <fly-checkbox label='东莞'>东莞</fly-checkbox>
+        <fly-checkbox label='上海' checked>上海</fly-checkbox>
+        <fly-checkbox label='杭州' disabled>杭州</fly-checkbox>
+    </fly-checkbox-group>
+    <div>citys:{{citys}}</div>
+</template>
+<script>
+    export default {
+        data(){
+            return {
+                citys:[]
+            }
+        },
+        methods:{
+            handleChangeGroup(newValue){
+                console.log(newValue)
+            }
+        }
+    }
+</script>
+```
+:::
+
+### 复选框 - 可定制属性
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
 ---------|----------|---------|---------|--------|
 value / v-model | String / Number / Boolean | - | - | 绑定的值
-label | String / Number / Boolean  | - | - | 选中状态的值（只有在checkbox-group 或者绑定对象类型为数组时有效  |
+label | String / Number / Boolean  | - | - | 选中状态的值（只有在checkbox-group 或者绑定对象类型为数组时有效）  |
 disabled | Boolean | false  | - | 是否设置为禁用  |
 true-label | String / Number | -  | - | 选中时的值  |
 false-label  |  String / Number  | -  | -  | 没有选中时的值  |
@@ -69,3 +138,20 @@ name  |  String  | -  | -  | 原生 name 属性  |
 checked  |  Boolean  | false  | -  | 当前是否勾选
 indeterminate | Boolean | - | - | 设置 indeterminate 状态，只负责样式控制 |  
 
+### 复选框 - 可定制的事件
+
+事件名称 | 返回值 | 说明
+---------|----------|---------
+ on-change | 更新后的值 | 在点击选项状态变更时触发。
+
+ ### 复选框组 - 可定制属性
+
+属性名称 | 类型 | 默认值  | 可选值  | 说明  |
+---------|----------|---------|---------|--------|
+value / v-model | Array | - | - | 绑定的值
+
+ ### 复选框组 - 可定制事件
+
+事件名称 | 返回值 | 说明
+---------|----------|---------
+ on-change | [...] | 在点击选项状态变更时触发。

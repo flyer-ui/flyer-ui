@@ -7,12 +7,11 @@ $fly-checkbox-width:14px !default;
 $fly-checkbox-height:14px !default;
 
 @include b(checkbox) {
-    cursor: pointer;
     &+& {
         margin-left: 10px;
     }
     @include e(input-native) {
-        display: inline-blockd;
+        display: none;
     }
     @include e(input) {
         border: 1px solid $fly-border-color;
@@ -24,6 +23,8 @@ $fly-checkbox-height:14px !default;
         position: relative;
         font-family: 'fly-icons';
         border-radius: $fly-checkbox-border-radius;
+        user-select: none;
+        cursor: pointer;
         &:hover,&:focus{
             border-color:$fly-primary-color;
         }

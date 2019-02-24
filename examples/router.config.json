@@ -71,10 +71,10 @@
             "pending":true
         },
         {
-            "text": "Checkob 多选框",
+            "text": "Checkbox 多选框",
             "type": "item",
             "path": "checkbox",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Radio 单选框",

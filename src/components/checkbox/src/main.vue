@@ -7,24 +7,34 @@
         <span class='fly-checkbox__label'>
           <slot></slot>
         </span>
-        <input class='fly-checkbox__input-native'
+        <input class='fly-checkbox__input-native' v-if="trueValue || falseValue"
           v-model="model"
           :disabled="disabled"
           :value="label"
           :name='name'
+          :true-value="trueValue"
+          :false-value="falseValue"
+          v-on:change='handleChange'
+          type="checkbox" />
+        <input class='fly-checkbox__input-native' v-else
+          v-model="model"
+          :disabled="disabled"
+          :value="label"
+          :name='name'
+          v-on:change='handleChange'
           type="checkbox" />
     </label>
 </template>
 <script>
+import {findParentByName} from '~/util/util'
+import emitter from '~/mixins/emitter'
 export default{
   name: 'FlyCheckbox',
+  mixins: [emitter],
   props: {
-    value: {
-      type: [String, Boolean, Number, Array],
-      default: ''
-    },
+    value: [String, Number, Boolean],
     label: {
-      type: String,
+      type: [String, Number, Boolean],
       default: ''
     },
     disabled: {
@@ -35,10 +45,10 @@ export default{
       type: Boolean,
       default: false
     },
-    trueLabel: {
+    trueValue: {
       type: [String, Number]
     },
-    falseLabel: {
+    falseValue: {
       type: [String, Number]
     },
     indeterminate: {
@@ -50,22 +60,49 @@ export default{
       default: ''
     }
   },
-  created () {
-
+  data () {
+    return {
+      selfModel: undefined
+    }
   },
   computed: {
     model: {
       get () {
-        return this.value || this.checked
+        return this.isGroup ? this.parent.value : this.selfModel || this.value || this.checked
       },
       set (newValue) {
-        this.$emit('input', newValue)
+        if (this.isGroup) {
+          this.dispatch('FlyCheckboxGroup', 'input', [newValue])
+        } else {
+          this.$emit('input', newValue)
+          this.selfModel = newValue
+        }
       }
     },
     isChecked: {
       get () {
-        console.log(this.model)
-        return this.model
+        return this.isGroup ? this.parent.value.indexOf(this.label) > -1 : typeof this.model === 'boolean' ? this.model : this.model === this.trueValue
+      }
+    },
+    isGroup: {
+      get () {
+        return !!this.parent
+      }
+    },
+    parent: {
+      get () {
+        return findParentByName('FlyCheckboxGroup', this)
+      }
+    }
+  },
+  methods: {
+    handleChange ($event) {
+      if (this.isGroup) {
+        this.$nextTick(() => {
+          this.dispatch('FlyCheckboxGroup', 'on-change', [this.parent.value])
+        })
+      } else {
+        this.$emit('on-change', this.model)
       }
     }
   }

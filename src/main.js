@@ -3,6 +3,7 @@ import ButtonGroup from './components/button-group/index'
 import Icon from './components/icon/index'
 import Input from './components/input/index'
 import Checkbox from './components/checkbox/index'
+import CheckboxGroup from './components/checkbox-group/index'
 import Radio from './components/radio/index'
 import Dialog from './components/dialog/index'
 
@@ -12,6 +13,7 @@ const components = [
   Icon,
   Input,
   Checkbox,
+  CheckboxGroup,
   Radio,
   Dialog
 ]
@@ -33,6 +35,7 @@ export default {
   Icon,
   Input,
   Checkbox,
+  CheckboxGroup,
   Radio,
   Dialog
 }
