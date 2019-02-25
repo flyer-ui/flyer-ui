@@ -97,13 +97,13 @@ export default{
   },
   methods: {
     handleChange ($event) {
-      if (this.isGroup) {
-        this.$nextTick(() => {
+      this.$nextTick(() => {
+        if (this.isGroup) {
           this.dispatch('FlyCheckboxGroup', 'on-change', [this.parent.value])
-        })
-      } else {
-        this.$emit('on-change', this.model)
-      }
+        } else {
+          this.$emit('on-change', this.model)
+        }
+      })
     }
   }
 }

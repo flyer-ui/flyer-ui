@@ -1,11 +1,28 @@
 <script>
+let allCityValue=[0,1,2,3]
 export default {
     data(){
         return{
             checked:true,
             city:'',
             value:'',
-            citys:['东莞']
+            citys:['东莞'],
+            selectedItems:[],
+            selecteAll:false,
+            indeterminate:false,
+            options:[{
+                    label:'北京',
+                    value:0
+                },{
+                    label:'深圳',
+                    value:1
+                },{
+                    label:'东莞',
+                    value:2
+                },{
+                    label:'杭州',
+                    value:3
+                }]
         }
     },
     methods:{
@@ -14,6 +31,11 @@ export default {
         },
         handleChangeGroup(value){
             console.log(value)
+        },
+        handleSelectAll(value){
+            console.log(value)
+            this.indeterminate = value
+            this.selectedItems = value ? allCityValue : []
         }
     }
 }
@@ -101,9 +123,9 @@ export default {
 <template>
     <fly-checkbox-group v-model='citys' @on-change='handleChangeGroup'>
         <fly-checkbox label='北京'>北京</fly-checkbox>
-        <fly-checkbox label='深圳'>深圳</fly-checkbox>
+        <fly-checkbox label='深圳' checked>深圳</fly-checkbox>
         <fly-checkbox label='东莞'>东莞</fly-checkbox>
-        <fly-checkbox label='上海' checked>上海</fly-checkbox>
+        <fly-checkbox label='上海' disabled checked>上海</fly-checkbox>
         <fly-checkbox label='杭州' disabled>杭州</fly-checkbox>
     </fly-checkbox-group>
     <div>citys:{{citys}}</div>
@@ -118,6 +140,53 @@ export default {
         methods:{
             handleChangeGroup(newValue){
                 console.log(newValue)
+            }
+        }
+    }
+</script>
+```
+:::
+
+### 复选框组 indeterminate 状态
+::: demo
+```html
+<template>
+    <fly-checkbox  @on-change='handleSelectAll' v-model='selecteAll'>全选</fly-checkbox>
+    <fly-checkbox-group v-model='selectedItems'>
+        <fly-checkbox v-for='(city,index) in options' :key='index' :label='city.value'>{{city.label}}</fly-checkbox>
+    </fly-checkbox-group>
+    <div>citys:{{selectedItems}}</div>
+</template>
+<script>
+    let allCityValue=[0,1,2,3]
+    export default {
+        data(){
+            return {
+                selectedItems:[],
+                selecteAll:false,
+                indeterminate:false,
+                options:[{
+                    label:'北京',
+                    value:0
+                },{
+                    label:'深圳',
+                    value:1
+                },{
+                    label:'东莞',
+                    value:2
+                },{
+                    label:'杭州',
+                    value:3
+                }]
+            }
+        },
+        methods:{
+            handleChangeGroup(newValue){
+                console.log(newValue)
+            }，
+            handleSelectAll(newValue){
+                this.indeterminate = newValue
+                this.selectedItems = allCityValue
             }
         }
     }
