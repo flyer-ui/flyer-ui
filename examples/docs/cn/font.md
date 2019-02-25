@@ -111,7 +111,7 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
         font-family:'Arial';
     }
     code{
-        background-color:$fly-border-color;
+        background-color:#fafafa;
         margin:0px;
         padding:20px;
         display:inline-block;

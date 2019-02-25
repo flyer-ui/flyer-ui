@@ -36,6 +36,11 @@ export default {
             console.log(value)
             this.indeterminate = value
             this.selectedItems = value ? allCityValue : []
+            this.indeterminate = false
+        },
+        handleChangeCheckboxGroup(values){
+            this.selecteAll = values.length === this.options.length
+            this.indeterminate = values.length < this.options.length
         }
     }
 }
@@ -151,8 +156,8 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-checkbox  @on-change='handleSelectAll' v-model='selecteAll'>全选</fly-checkbox>
-    <fly-checkbox-group v-model='selectedItems'>
+    <fly-checkbox :indeterminate='indeterminate' @on-change='handleSelectAll' v-model='selecteAll'>全选</fly-checkbox>
+    <fly-checkbox-group v-model='selectedItems' @on-change='handleChangeCheckboxGroup'>
         <fly-checkbox v-for='(city,index) in options' :key='index' :label='city.value'>{{city.label}}</fly-checkbox>
     </fly-checkbox-group>
     <div>citys:{{selectedItems}}</div>
@@ -187,6 +192,10 @@ export default {
             handleSelectAll(newValue){
                 this.indeterminate = newValue
                 this.selectedItems = allCityValue
+            },
+            handleChangeCheckboxGroup(values){
+                this.selecteAll = values.length === this.options.length
+                this.indeterminate = values.length < this.options.length
             }
         }
     }
@@ -204,7 +213,7 @@ disabled | Boolean | false  | - | 是否设置为禁用  |
 true-label | String / Number | -  | - | 选中时的值  |
 false-label  |  String / Number  | -  | -  | 没有选中时的值  |
 name  |  String  | -  | -  | 原生 name 属性  |
-checked  |  Boolean  | false  | -  | 当前是否勾选
+checked  |  Boolean  | false  | -  | 当前是否勾选(只有在单独使用checkbox时有效)
 indeterminate | Boolean | - | - | 设置 indeterminate 状态，只负责样式控制 |  
 
 ### 复选框 - 可定制的事件

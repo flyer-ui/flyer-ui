@@ -7,6 +7,7 @@ $fly-checkbox-width:14px !default;
 $fly-checkbox-height:14px !default;
 
 @include b(checkbox) {
+    user-select: none;
     &+& {
         margin-left: 10px;
     }
@@ -23,7 +24,6 @@ $fly-checkbox-height:14px !default;
         position: relative;
         font-family: 'fly-icons';
         border-radius: $fly-checkbox-border-radius;
-        user-select: none;
         cursor: pointer;
         &:hover,&:focus{
             border-color:$fly-primary-color;
@@ -41,6 +41,14 @@ $fly-checkbox-height:14px !default;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
             cursor:not-allowed;
+        }
+        @include when(indeterminate){
+            &::after{
+                content:'\e932'
+            }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
         }
     }
     @include e(label){

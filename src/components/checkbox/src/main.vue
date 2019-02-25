@@ -2,7 +2,8 @@
     <label class='fly-checkbox'>
         <span :class='["fly-checkbox__input",{
           "is-checked":isChecked,
-          "is-disabled":disabled
+          "is-disabled":disabled,
+          "is-indeterminate":indeterminate
         }]'></span>
         <span class='fly-checkbox__label'>
           <slot></slot>
