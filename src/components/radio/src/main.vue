@@ -19,14 +19,13 @@
 <script>
 export default{
   name: 'FlyRadio',
-  data () {
-    return {
-      value: undefined
-    }
-  },
   props: {
+    value: {
+      type: [String, Number, Boolean],
+      default: ''
+    },
     label: {
-      type: String,
+      type: [String, Number, Boolean],
       default: ''
     },
     disabled: {
