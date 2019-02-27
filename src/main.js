@@ -5,6 +5,7 @@ import Input from './components/input/index'
 import Checkbox from './components/checkbox/index'
 import CheckboxGroup from './components/checkbox-group/index'
 import Radio from './components/radio/index'
+import RadioGroup from './components/radio-group/index'
 import Dialog from './components/dialog/index'
 
 const components = [
@@ -15,6 +16,7 @@ const components = [
   Checkbox,
   CheckboxGroup,
   Radio,
+  RadioGroup,
   Dialog
 ]
 
@@ -37,5 +39,6 @@ export default {
   Checkbox,
   CheckboxGroup,
   Radio,
+  RadioGroup,
   Dialog
 }

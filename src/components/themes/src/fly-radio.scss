@@ -3,16 +3,17 @@
 @import './base/fly-mixins.scss';
 
 $fly-radio-border-radius:50% !default;
-$fly-radio-width:14px !default;
-$fly-radio-height:14px !default;
-
+$fly-radio-width:16px !default;
+$fly-radio-height:16px !default;
+$fly-radio-point-area:5px;
+$fly-radio-padding-area:5px;
 @include b(radio) {
     cursor: pointer;
     &+& {
         margin-left: 10px;
     }
     @include e(input-native) {
-        display: inline-block;
+        display: none;
     }
     @include e(input) {
         border: 1px solid $fly-border-color;
@@ -30,7 +31,15 @@ $fly-radio-height:14px !default;
         }
         @include when(checked) {
             &::after {
-                content: '\e917';
+                content: '';
+                width:$fly-radio-point-area;
+                height:$fly-radio-point-area;
+                background-color: #fff;
+                position:absolute;
+                border-radius: $fly-radio-border-radius;
+                left:$fly-radio-padding-area;
+                top:$fly-radio-padding-area;
+                z-index:1;
             }
             color:$fly-common-white;
             background: $fly-primary-color;

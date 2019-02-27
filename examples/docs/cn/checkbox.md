@@ -40,7 +40,7 @@ export default {
         },
         handleChangeCheckboxGroup(values){
             this.selecteAll = values.length === this.options.length
-            this.indeterminate = values.length < this.options.length
+            this.indeterminate = values.length > 0 && values.length < this.options.length
         }
     }
 }
@@ -195,7 +195,7 @@ export default {
             },
             handleChangeCheckboxGroup(values){
                 this.selecteAll = values.length === this.options.length
-                this.indeterminate = values.length < this.options.length
+                this.indeterminate = values.length > 0 && values.length < this.options.length
             }
         }
     }
