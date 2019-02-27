@@ -34,11 +34,11 @@ $header_height:60px;
     position: relative;
     min-width: 200px;
     img{
-      width:50px;
+      width:30px;
       position: absolute;
       z-index: 1;
-      left:10px;
-      top:5px;
+      left:20px;
+      top:15px;
     }
     h2{
       position:absolute;
