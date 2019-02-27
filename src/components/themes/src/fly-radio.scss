@@ -9,6 +9,7 @@ $fly-radio-point-area:5px;
 $fly-radio-padding-area:5px;
 @include b(radio) {
     cursor: pointer;
+    user-select: none;
     &+& {
         margin-left: 10px;
     }

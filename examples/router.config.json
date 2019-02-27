@@ -80,7 +80,7 @@
             "text": "Radio 单选框",
             "type": "item",
             "path": "radio",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Dialog 对话框",

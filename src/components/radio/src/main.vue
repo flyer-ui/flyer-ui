@@ -11,6 +11,7 @@
           v-model="model"
           :disabled="disabled"
           :value='label'
+          @change="handleChange"
           :name='name'
           type="radio" />
     </label>
@@ -65,6 +66,17 @@ export default{
       get () {
         return findParentByName('FlyRadioGroup', this)
       }
+    }
+  },
+  methods: {
+    handleChange ($event) {
+      this.$nextTick(() => {
+        if (this.isGroup) {
+          this.dispatch('FlyRadioGroup', 'on-change', [this.parent.value])
+        } else {
+          this.$emit('on-change', this.model)
+        }
+      })
     }
   }
 }
