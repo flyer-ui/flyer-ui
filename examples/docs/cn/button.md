@@ -129,10 +129,10 @@
 ---------|----------|---------|---------|--------|
 type | String | default  | default/primary/warning/danger/success/info/white  | 定义按钮的类型  |
 native-type | String | button  | button/submit/reset | 原生的type属性  |
-disabled | Boolean | false  | - | 是否设置为禁用  |
+disabled | Boolean | false  | true / false | 是否设置为禁用  |
 icon | String | -  | - | 字体图标的样式名称  |
-round  |  Boolean  | -  | -  | 是否设有圆角  |
-circle  |  Boolean  | -  | -  | 是否设为圆形  |
+round  |  Boolean  | -  | true / false  | 是否设有圆角  |
+circle  |  Boolean  | -  | true / false  | 是否设为圆形  |
 size  |  String  | medium  | large/medium/small/mini  | 按钮大小
-loading | Boolean | - | - | 是否显示在加载中 |  
-plain | Boolean | - | - | 是否是简约风格的按钮 |  
+loading | Boolean | - | true / false | 是否显示在加载中 |  
+plain | Boolean | - | true / false | 是否是简约风格的按钮 |  

@@ -1,0 +1,50 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+$fly-input-clear-area:16px !default;
+$fly-input-clear-padding:10px !default;
+
+@include b('input'){
+    position: relative;
+    @include e('native'){
+        padding:10px;
+        outline: none;
+        border:1px solid $fly-border-color;
+        width:100%;
+        border-radius: $fly-round-default-size;
+        box-sizing: border-box;
+        &:focus{
+            border-color:$fly-primary-color;
+        }
+        @include when(disabled){
+            color:$font-color-text;
+            background:$font-color-placeholder;
+            border-color:$font-color-placeholder;
+            cursor:not-allowed;
+        }
+    }
+    @include e('clear'){
+        position: absolute;
+        display: block;
+        z-index: 99;
+        border-radius: 50%;
+        width: $fly-input-clear-area;
+        height: $fly-input-clear-area;
+        background-color: #ccc;
+        right: $fly-input-clear-padding;
+        top: $fly-input-clear-padding;
+        cursor: pointer;
+        font-family: 'fly-icons';
+        font-style:inherit;
+        color:#fff;
+        text-align: center;
+        opacity: .6;
+        &:after{
+            content:'\e941'
+        }
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

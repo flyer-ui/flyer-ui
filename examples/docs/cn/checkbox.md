@@ -209,12 +209,12 @@ export default {
 ---------|----------|---------|---------|--------|
 value / v-model | String / Number / Boolean | - | - | 绑定的值
 label | String / Number / Boolean  | - | - | 选中状态的值（只有在checkbox-group 或者绑定对象类型为数组时有效）  |
-disabled | Boolean | false  | - | 是否设置为禁用  |
+disabled | Boolean | false  | true / false | 是否设置为禁用  |
 true-label | String / Number | -  | - | 选中时的值  |
 false-label  |  String / Number  | -  | -  | 没有选中时的值  |
 name  |  String  | -  | -  | 原生 name 属性  |
-checked  |  Boolean  | false  | -  | 当前是否勾选(只有在单独使用checkbox时有效)
-indeterminate | Boolean | - | - | 设置 indeterminate 状态，只负责样式控制 |  
+checked  |  Boolean  | false  | true / false | 当前是否勾选(只有在单独使用checkbox时有效)
+indeterminate | Boolean | false | true / false | 设置 indeterminate 状态，只负责样式控制 |  
 
 ### 复选框 - 可定制的事件
 

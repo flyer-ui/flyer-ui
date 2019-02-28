@@ -149,7 +149,7 @@ export default {
 ---------|----------|---------|---------|--------|
 value / v-model | String / Number / Boolean | - | - | 绑定的值
 label | String / Number / Boolean  | - | - | 选中状态的值  |
-disabled | Boolean | false  | - | 是否设置为禁用  |
+disabled | Boolean | false  | true / false | 是否设置为禁用  |
 name  |  String  | -  | -  | 原生 name 属性  |
 
 ### 单选框 - 可定制的事件
