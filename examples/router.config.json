@@ -87,6 +87,30 @@
             "type": "item",
             "path": "dialog",
             "pending":true
+        },
+        {
+            "text": "Card 卡片",
+            "type": "item",
+            "path": "card",
+            "pending":true
+        },
+        {
+            "text": "Upload 上传",
+            "type": "item",
+            "path": "upload",
+            "pending":true
+        },
+        {
+            "text": "Transfer 穿梭框",
+            "type": "item",
+            "path": "transfer",
+            "pending":true
+        },
+        {
+            "text": "Tab 选项卡",
+            "type": "item",
+            "path": "tab",
+            "pending":true
         }
     ]
 }
