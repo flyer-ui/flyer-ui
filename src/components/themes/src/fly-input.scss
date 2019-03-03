@@ -40,6 +40,7 @@ $fly-input-clear-padding:10px !default;
         color:#fff;
         text-align: center;
         opacity: .6;
+        pointer-events:all;
         &:after{
             content:'\e941'
         }

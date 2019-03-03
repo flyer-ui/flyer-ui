@@ -1,7 +1,8 @@
 <template>
-    <div class='fly-input'>
+    <div class='fly-input' @mouseover="hovering=true">
        <slot></slot>
        <input
+       ref='input'
        :class='{
          "is-disabled":disabled
        }'
@@ -34,10 +35,16 @@ export default {
     maxLength: Number,
     minLength: Number
   },
+  data () {
+    return {
+      focused: false,
+      hovering: false
+    }
+  },
   computed: {
     isShowClear: {
       get () {
-        return true
+        return this.value.length > 0 && (this.focused || this.hovering)
       }
     }
   },
@@ -47,16 +54,23 @@ export default {
     },
     handleClear ($event) {
       this.$emit('input', '')
+      this.$emit('change', '')
       this.$emit('on-clear', '')
+      this.focus()
     },
     handleBlur ($event) {
       this.$emit('on-blur', $event)
+      this.focused = false
     },
     handleFocus ($event) {
+      this.focused = true
       this.$emit('on-focus', $event)
     },
     handleChange ($event) {
       this.$emit('on-change', $event.target.value)
+    },
+    focus () {
+      this.$refs.input.focus()
     }
   }
 }

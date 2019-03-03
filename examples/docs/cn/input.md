@@ -4,7 +4,8 @@ export default {
         return {
             value:'',
             value2:'不可输入',
-            value3:''
+            value3:'',
+            value4:''
         }
     }
 }
@@ -74,7 +75,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-input placeholder='请输入内容' max-length='10' min-length='5' v-model='value4'></fly-input>
+    <fly-input placeholder='请输入内容' :max-length='10' :min-length='5' v-model='value4'></fly-input>
     <div>value4:{{value4}}</div>
 </template>
 <script>
