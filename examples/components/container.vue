@@ -60,4 +60,10 @@ export default {
         border-bottom:1px solid #dedede;
     }
 }
+@include b('demo-icon'){
+    [class^="fly-icon-"]{
+        font-size:1.5em;
+        margin:0 15px;
+    }
+}
 </style>

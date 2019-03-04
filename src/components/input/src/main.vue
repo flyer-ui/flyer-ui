@@ -1,6 +1,6 @@
 <template>
     <div class='fly-input' @mouseover="hovering=true">
-       <slot></slot>
+       <slot name='prepend'></slot>
        <input
        ref='input'
        :class='{
@@ -15,6 +15,7 @@
        @focus="handleFocus"
        @change="handleChange"
        class='fly-input__native' v-on:input='handleInput'>
+       <slot name='append'></slot>
        <i v-if='clearable' v-show="isShowClear" @click="handleClear" class='fly-input__clear'></i>
     </div>
 </template>
