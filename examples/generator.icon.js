@@ -46,6 +46,14 @@ fly-icon-bluetooth
 
 fly-icon-bold
 
+fly-icon-book-open
+
+fly-icon-calendar
+
+fly-icon-camera
+
+fly-icon-camera-off
+
 fly-icon-check
 
 fly-icon-chevron-down
@@ -70,11 +78,63 @@ fly-icon-clock
 
 fly-icon-cloud
 
+fly-icon-cloud-lightning
+
+fly-icon-cloud-off
+
+fly-icon-cloud-rain
+
+fly-icon-cloud-snow
+
+fly-icon-code
+
 fly-icon-command
+
+fly-icon-copy
+
+fly-icon-corner-down-left
+
+fly-icon-corner-down-right
+
+fly-icon-corner-left-down
+
+fly-icon-corner-left-up
+
+fly-icon-corner-right-down
+
+fly-icon-corner-right-up
+
+fly-icon-corner-up-left
+
+fly-icon-corner-up-right
 
 fly-icon-credit-card
 
+fly-icon-crop
+
+fly-icon-crosshair
+
 fly-icon-dollar-sign
+
+fly-icon-download
+
+fly-icon-download-cloud
+
+fly-icon-edit-2
+
+fly-icon-edit-3
+
+fly-icon-external-link
+
+fly-icon-eye
+
+fly-icon-eye-off
+
+fly-icon-facebook
+
+fly-icon-fast-forward
+
+fly-icon-feather
 
 fly-icon-file
 
@@ -84,6 +144,8 @@ fly-icon-file-plus
 
 fly-icon-file-text
 
+fly-icon-film
+
 fly-icon-flag
 
 fly-icon-folder
@@ -92,7 +154,23 @@ fly-icon-folder-minus
 
 fly-icon-folder-plus
 
+fly-icon-gift
+
+fly-icon-git-branch
+
+fly-icon-git-commit
+
+fly-icon-git-merge
+
+fly-icon-git-pull-request
+
 fly-icon-github
+
+fly-icon-grid
+
+fly-icon-hash
+
+fly-icon-headphones
 
 fly-icon-heart
 
@@ -102,7 +180,19 @@ fly-icon-image
 
 fly-icon-info
 
+fly-icon-instagram
+
+fly-icon-italic
+
+fly-icon-layers
+
+fly-icon-layout
+
+fly-icon-link
+
 fly-icon-loader
+
+fly-icon-lock
 
 fly-icon-mail
 
@@ -124,6 +214,51 @@ fly-icon-pause
 
 fly-icon-plus
 
+fly-icon-power
+
+fly-icon-search
+
+fly-icon-settings
+
+fly-icon-share-2
+
+fly-icon-sidebar
+
+fly-icon-skip-back
+
+fly-icon-skip-forward
+
+fly-icon-trash-2
+
+fly-icon-trending-down
+
+fly-icon-trending-up
+
+fly-icon-triangle
+
+fly-icon-truck
+
+fly-icon-twitter
+
+fly-icon-upload-cloud
+
+fly-icon-user
+
+fly-icon-volume
+
+fly-icon-volume-1
+
+fly-icon-volume-2
+
+fly-icon-volume-x
+
+fly-icon-x
+
+fly-icon-x-circle
+
+fly-icon-zoom-in
+
+fly-icon-zoom-out
 `
 
 let items = data.split(/[\s\n]/ig).filter((item) => {

@@ -62,7 +62,7 @@
             "text": "Icon 图标",
             "type": "item",
             "path": "icon",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Input 输入框",

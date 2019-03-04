@@ -40,6 +40,7 @@ export default {
 
 </style>
 <style lang='scss'>
+@import '~/components/themes/src/base/fly-common.scss';
 @import '~/components/themes/src/base/fly-mixins.scss';
 @include b('demo-table'){
     width:100%;
@@ -62,8 +63,34 @@ export default {
 }
 @include b('demo-icon'){
     [class^="fly-icon-"]{
-        font-size:1.5em;
+        font-size:2em;
         margin:0 15px;
+    }
+
+    ul{
+      list-style-type:none;
+      margin:0px;
+      padding:0px;
+      border-top:1px solid $fly-border-color;
+      border-left:1px solid $fly-border-color;
+      &:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+    }
+    li{
+      float:left;
+      width:16.66%;
+      text-align:center;
+      padding:10px 0px;
+      box-sizing:border-box;
+      border-right:1px solid $fly-border-color;
+      border-bottom:1px solid $fly-border-color;
+      div{
+        color:$font-color-text;
+        margin:10px 0px;
+      }
     }
 }
 </style>

@@ -27,7 +27,12 @@ export default {
 
 ### 图标集合
 <template>
-<ul>
-    <li v-for="(item,index) in items" :key='index'>{{item}}</li>
-</ul>
+<div class='fly-demo-icon'>
+    <ul>
+        <li v-for="(item,index) in items" :key='index'>
+            <i :class='item'></i>
+            <div>{{item}}</div>
+        </li>
+    </ul>
+</div>
 </template>

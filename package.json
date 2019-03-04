@@ -10,13 +10,14 @@
     "lib"
   ],
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
+    "dev": "npm run build:icon && webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "webpack --config build/webpack.common.conf.js",
+    "build:icon":"node examples/generator.icon.js",
     "build:component": "webpack --config build/webpack.component.conf.js",
     "build:umd": "webpack --config build/webpack.umd.conf.js",
     "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js"
