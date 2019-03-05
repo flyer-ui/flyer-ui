@@ -117,12 +117,23 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-input>
-        <span slot='prepend'>http://</span>
-    </fly-input>
-    <fly-input>
-        <span slot='append'>.com</span>
-    </fly-input>
+    <div>
+        <fly-input>
+            <span slot='prepend'>http://</span>
+        </fly-input>
+        <fly-input>
+            <span slot='append'>.com</span>
+        </fly-input>
+    </div>
+    <div>
+        <fly-input>
+            <span slot='prepend'><fly-checkbox label='选中'>选中</fly-checkbox></span>
+        </fly-input>
+        <fly-input>
+            <span slot='append'><fly-icon name='calendar'></fly-icon></span>
+        </fly-input>
+        
+    </div>
 </template>
 <script>
     export default{
@@ -158,3 +169,12 @@ on-blur | (event: Event) | 在 Input 失去焦点时触发 |
 on-focus | (event: Event) | 在 Input 获得焦点时触发 |
 on-change | (value: string / number) | 在 Input 值改变时触发 |
 on-clear | - | 在点击由 clearable 属性生成的清空按钮时触发 |
+
+### Input - Slot
+
+事件名称 | 说明
+---------|----------|
+prefix | 输入框头部内容，只对 type="text" 有效 |
+suffix | 输入框尾部内容，只对 type="text" 有效 |
+prepend | 输入框前置内容，只对 type="text" 有效 |
+append | 输入框后置内容，只对 type="text" 有效 |

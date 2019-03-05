@@ -5,7 +5,7 @@
        </span>
        <span class='fly-input__prefix' v-if='isShowPrefix'>
           <slot name='prefix-icon'>
-            <i :class='prefixIcon'></i>
+            <i :class='prefix'></i>
           </slot>
        </span>
        <input
@@ -14,7 +14,9 @@
        :class='{
          "is-disabled":disabled,
          "is-prefix":isShowPrefix,
-         "is-suffix":isShowSuffix
+         "is-suffix":isShowSuffix,
+         "is-prepend":$slots.prepend,
+         "is-append":$slots.append
        }'
        :value='value'
        :disabled="disabled"
@@ -27,7 +29,7 @@
        class='fly-input__native' v-on:input='handleInput'>
        <span class='fly-input__suffix' v-if='isShowSuffix'>
           <slot name='suffix-icon'>
-            <i :class='suffixIcon'></i>
+            <i :class='suffix'></i>
           </slot>
        </span>
        <span class='fly-input__append' v-if='$slots.append'>
@@ -56,8 +58,8 @@ export default {
     },
     maxLength: Number,
     minLength: Number,
-    prefixIcon: String,
-    suffixIcon: String
+    prefix: String,
+    suffix: String
   },
   data () {
     return {
@@ -73,12 +75,12 @@ export default {
     },
     isShowPrefix: {
       get () {
-        return this.prefixIcon || this.$slots['prefix-icon']
+        return this.prefix || this.$slots['prefix']
       }
     },
     isShowSuffix: {
       get () {
-        return this.suffixIcon || this.$slots['suffix-icon']
+        return this.suffix || this.$slots['suffix']
       }
     }
   },

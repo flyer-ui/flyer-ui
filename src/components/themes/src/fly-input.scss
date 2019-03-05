@@ -7,16 +7,19 @@ $fly-input-clear-padding:10px !default;
 
 @include b('input'){
     position: relative;
-    display: inline-block;
+    display: inline-table;
     .fix{
         position: absolute;
         z-index:99;
         padding:$fly-input-clear-padding;
+        top:0px;
+        bottom: 0px;
     }
     .adorn{
-        background: $font-color-placeholder;
+        background: $fly-border-color;
+        border:1px solid $fly-border-color;
         padding:$fly-input-clear-padding;
-        display: inline-block;
+        display: inline-table;
     }
     @include e('native'){
         padding:$fly-input-clear-padding;
@@ -38,6 +41,14 @@ $fly-input-clear-padding:10px !default;
         }
         @include when(prefix){
             padding-left:$fly-input-clear-padding * 2 + 16px;
+        }
+        @include when(prepend){
+            border-top-left-radius:0px;
+            border-bottom-left-radius: 0px;
+        }
+        @include when(append){
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
     }
     @include e('clear'){
