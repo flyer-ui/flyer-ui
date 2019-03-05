@@ -1,15 +1,10 @@
-**更新日志**
+## 更新日志
 
-**粗体**
-_斜体_
-~~波浪符~~
-[超链接](http://www.baidu.com)
-```
-html
-```
-* asdf
-
+### 测试
+::: demo
 ```html
-<template>
-</templae>
+<fly-input type='text'>
+    <fly-icon slot='prefix-icon' name='search'></fly-icon>
+</fly-input>
 ```
+:::

@@ -1,10 +1,20 @@
 <template>
     <div class='fly-input' @mouseover="hovering=true">
-       <slot name='prepend'></slot>
+       <span class='fly-input__prepend' v-if='$slots.prepend'>
+         <slot name='prepend'></slot>
+       </span>
+       <span class='fly-input__prefix' v-if='isShowPrefix'>
+          <slot name='prefix-icon'>
+            <i :class='prefixIcon'></i>
+          </slot>
+       </span>
        <input
+       :type='type'
        ref='input'
        :class='{
-         "is-disabled":disabled
+         "is-disabled":disabled,
+         "is-prefix":isShowPrefix,
+         "is-suffix":isShowSuffix
        }'
        :value='value'
        :disabled="disabled"
@@ -15,7 +25,14 @@
        @focus="handleFocus"
        @change="handleChange"
        class='fly-input__native' v-on:input='handleInput'>
-       <slot name='append'></slot>
+       <span class='fly-input__suffix' v-if='isShowSuffix'>
+          <slot name='suffix-icon'>
+            <i :class='suffixIcon'></i>
+          </slot>
+       </span>
+       <span class='fly-input__append' v-if='$slots.append'>
+         <slot name='append'></slot>
+       </span>
        <i v-if='clearable' v-show="isShowClear" @click="handleClear" class='fly-input__clear'></i>
     </div>
 </template>
@@ -24,6 +41,10 @@ export default {
   name: 'FlyInput',
   props: {
     value: String,
+    type: {
+      type: String,
+      default: 'text'
+    },
     placeholder: String,
     disabled: {
       type: Boolean,
@@ -34,7 +55,9 @@ export default {
       default: false
     },
     maxLength: Number,
-    minLength: Number
+    minLength: Number,
+    prefixIcon: String,
+    suffixIcon: String
   },
   data () {
     return {
@@ -46,6 +69,16 @@ export default {
     isShowClear: {
       get () {
         return this.value.length > 0 && (this.focused || this.hovering)
+      }
+    },
+    isShowPrefix: {
+      get () {
+        return this.prefixIcon || this.$slots['prefix-icon']
+      }
+    },
+    isShowSuffix: {
+      get () {
+        return this.suffixIcon || this.$slots['suffix-icon']
       }
     }
   },

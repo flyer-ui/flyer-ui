@@ -11,6 +11,7 @@ export default {
 }
 </script>
 
+
 ## Input 输入框
 
 ### 基础用例
@@ -90,6 +91,51 @@ export default {
 ```
 :::
 
+### 带 icon 图标的输入框
+::: demo
+```html
+<template>
+    <div>
+        <label class='fly-demo-block__label'>属性方式：</label>
+        <fly-input type='text' prefix-icon='fly-icon-search'></fly-input>
+        <fly-input type='text' suffix-icon='fly-icon-edit-3'></fly-input>
+    </div>
+    <div>
+        <label class='fly-demo-block__label'>Slot方式：</label>
+        <fly-input type='text'>
+            <fly-icon slot='prefix-icon' name='search'></fly-icon>
+        </fly-input>
+        <fly-input type='text'>
+            <fly-icon slot='suffix-icon' name='edit-3'></fly-icon>
+        </fly-input>
+    </div>
+</template>
+```
+:::
+
+### 复合型输入框
+::: demo
+```html
+<template>
+    <fly-input>
+        <span slot='prepend'>http://</span>
+    </fly-input>
+    <fly-input>
+        <span slot='append'>.com</span>
+    </fly-input>
+</template>
+<script>
+    export default{
+        data(){
+            return {
+                value3:'不可输入'
+            }
+        }
+    }
+</script>
+```
+:::
+
 ### Input - 可定制属性
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
@@ -101,6 +147,8 @@ disabled | Boolean | false  | true / false | 是否设置为禁用  |
 clearable | Boolean | flase | true / false | 是否设置为可清除 |
 max-length | Number | - | - | 最大输入长度限制 |
 min-length | Number | - | - | 最小输入长度限制 |
+prefix-icon | String | - | - | 输入框头部图标 |
+suffix-icon | String | - | - | 输入框尾部图标 |
 
 ### Input - 可定制的事件
 

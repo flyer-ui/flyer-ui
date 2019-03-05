@@ -7,11 +7,21 @@ $fly-input-clear-padding:10px !default;
 
 @include b('input'){
     position: relative;
+    display: inline-block;
+    .fix{
+        position: absolute;
+        z-index:99;
+        padding:$fly-input-clear-padding;
+    }
+    .adorn{
+        background: $font-color-placeholder;
+        padding:$fly-input-clear-padding;
+        display: inline-block;
+    }
     @include e('native'){
-        padding:10px;
+        padding:$fly-input-clear-padding;
         outline: none;
         border:1px solid $fly-border-color;
-        width:100%;
         border-radius: $fly-round-default-size;
         box-sizing: border-box;
         &:focus{
@@ -22,6 +32,12 @@ $fly-input-clear-padding:10px !default;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
             cursor:not-allowed;
+        }
+        @include when(suffix){
+            padding-right:$fly-input-clear-padding * 2 + 16px;
+        }
+        @include when(prefix){
+            padding-left:$fly-input-clear-padding * 2 + 16px;
         }
     }
     @include e('clear'){
@@ -47,5 +63,19 @@ $fly-input-clear-padding:10px !default;
         &:hover{
             opacity: 1;
         }
+    }
+    @include e('prefix'){
+        @extend .fix;
+    }
+    @include e('suffix'){
+        @extend .fix;
+        right:0px;
+        top:0px;
+    }
+    @include e('prepend'){
+        @extend .adorn;
+    }
+    @include e('append'){
+        @extend .adorn;
     }
 }

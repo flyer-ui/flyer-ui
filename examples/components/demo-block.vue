@@ -38,6 +38,18 @@ export default {
     @include e('effect'){
         padding:20px;
         border-bottom:1px solid $fly-border-color;
+        >div{
+            div{
+                margin:5px 0px;
+            }
+        }
+    }
+    @include e('row'){
+        margin:5px 0px;
+    }
+    @include e('label'){
+        display: inline-block;
+        width:80px;
     }
     @include e('code'){
         padding:20px;
