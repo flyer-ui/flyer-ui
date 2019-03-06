@@ -18,5 +18,14 @@
     <fly-switch v-model='value'></fly-switch>
     <div>{{value}}</div>
 </template>
+<script>
+    export default {
+        data(){
+            return {
+                value:''
+            }
+        }
+    }
+</script>
 ```
 :::
