@@ -1,0 +1,39 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('switch'){
+    position: relative;
+    display:inline-table;
+    border:1px solid #ccc;
+    padding:2px 10px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    cursor: pointer;
+    user-select: none;
+    height:20px;
+    line-height:20px;
+    min-width:40px;
+    &:after{
+        content:'';
+        position: absolute;
+        z-index:99;
+        top:0px;
+        bottom:0px;
+        width:25px;
+        left:0px;
+        right:inherit;
+        background-color:$fly-border-color;
+        border-radius: 1000px;
+    }
+    @include when('checked'){
+        &:after{
+            right:0px;
+            left:inherit;
+            background-color:$fly-primary-color;
+        }
+    }
+    @include e('native'){
+        display:none;
+    }
+}

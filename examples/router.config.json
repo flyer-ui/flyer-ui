@@ -77,6 +77,12 @@
             "pending":false
         },
         {
+            "text": "Switch 开关",
+            "type": "item",
+            "path": "switch",
+            "pending":true
+        },
+        {
             "text": "Radio 单选框",
             "type": "item",
             "path": "radio",

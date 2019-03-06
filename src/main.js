@@ -7,6 +7,7 @@ import CheckboxGroup from './components/checkbox-group/index'
 import Radio from './components/radio/index'
 import RadioGroup from './components/radio-group/index'
 import Dialog from './components/dialog/index'
+import Switch from './components/switch/index'
 
 const components = [
   Button,
@@ -17,7 +18,8 @@ const components = [
   CheckboxGroup,
   Radio,
   RadioGroup,
-  Dialog
+  Dialog,
+  Switch
 ]
 
 const install = function (Vue) {
@@ -40,5 +42,6 @@ export default {
   CheckboxGroup,
   Radio,
   RadioGroup,
-  Dialog
+  Dialog,
+  Switch
 }
