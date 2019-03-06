@@ -4,8 +4,8 @@
          <slot name='prepend'></slot>
        </span>
        <span class='fly-input__prefix' v-if='isShowPrefix'>
-          <slot name='prefix-icon'>
-            <i :class='prefix'></i>
+          <slot name='prefix'>
+            <i :class='prefixIcon'></i>
           </slot>
        </span>
        <input
@@ -28,8 +28,8 @@
        @change="handleChange"
        class='fly-input__native' v-on:input='handleInput'>
        <span class='fly-input__suffix' v-if='isShowSuffix'>
-          <slot name='suffix-icon'>
-            <i :class='suffix'></i>
+          <slot name='suffix'>
+            <i :class='suffixIcon'></i>
           </slot>
        </span>
        <span class='fly-input__append' v-if='$slots.append'>
@@ -58,8 +58,8 @@ export default {
     },
     maxLength: Number,
     minLength: Number,
-    prefix: String,
-    suffix: String
+    prefixIcon: String,
+    suffixIcon: String
   },
   data () {
     return {
@@ -75,12 +75,12 @@ export default {
     },
     isShowPrefix: {
       get () {
-        return this.prefix || this.$slots['prefix']
+        return this.prefixIcon || this.$slots['prefix']
       }
     },
     isShowSuffix: {
       get () {
-        return this.suffix || this.$slots['suffix']
+        return this.suffixIcon || this.$slots['suffix']
       }
     }
   },

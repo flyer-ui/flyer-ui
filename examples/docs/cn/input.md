@@ -103,10 +103,10 @@ export default {
     <div>
         <label class='fly-demo-block__label'>Slot方式：</label>
         <fly-input type='text'>
-            <fly-icon slot='prefix-icon' name='search'></fly-icon>
+            <fly-icon slot='prefix' name='search'></fly-icon>
         </fly-input>
         <fly-input type='text'>
-            <fly-icon slot='suffix-icon' name='edit-3'></fly-icon>
+            <fly-icon slot='suffix' name='edit-3'></fly-icon>
         </fly-input>
     </div>
 </template>
