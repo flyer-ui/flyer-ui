@@ -32,7 +32,7 @@ $fly-input-clear-padding:10px !default;
         }
         @include when(disabled){
             color:$font-color-text;
-            background:$font-color-placeholder;
+            background:$fly-border-color;
             border-color:$font-color-placeholder;
             cursor:not-allowed;
         }
@@ -58,7 +58,7 @@ $fly-input-clear-padding:10px !default;
         border-radius: 50%;
         width: $fly-input-clear-area;
         height: $fly-input-clear-area;
-        background-color: #ccc;
+        background-color: $font-color-text;
         right: $fly-input-clear-padding;
         top: $fly-input-clear-padding;
         cursor: pointer;

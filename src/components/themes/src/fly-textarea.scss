@@ -1,0 +1,17 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('textarea'){
+    display: inline-table;
+    @include e('native'){
+        outline:none;
+        border:0px;
+        overflow-y:auto;
+        border:1px solid $fly-border-color;
+        @include when('disabled'){
+            background: $fly-border-color;
+            cursor:not-allowed;
+        }
+    }
+}

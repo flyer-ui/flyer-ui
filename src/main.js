@@ -8,7 +8,7 @@ import Radio from './components/radio/index'
 import RadioGroup from './components/radio-group/index'
 import Dialog from './components/dialog/index'
 import Switch from './components/switch/index'
-
+import Textarea from './components/textarea/index'
 const components = [
   Button,
   ButtonGroup,
@@ -19,7 +19,8 @@ const components = [
   Radio,
   RadioGroup,
   Dialog,
-  Switch
+  Switch,
+  Textarea
 ]
 
 const install = function (Vue) {
@@ -43,5 +44,6 @@ export default {
   Radio,
   RadioGroup,
   Dialog,
-  Switch
+  Switch,
+  Textarea
 }

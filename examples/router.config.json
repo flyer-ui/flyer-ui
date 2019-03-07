@@ -71,6 +71,12 @@
             "pending":false
         },
         {
+            "text": "Textarea 输入框",
+            "type": "item",
+            "path": "textarea",
+            "pending":false
+        },
+        {
             "text": "Checkbox 多选框",
             "type": "item",
             "path": "checkbox",

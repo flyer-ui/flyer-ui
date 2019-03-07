@@ -153,14 +153,13 @@ export default {
 ---------|----------|---------|---------|--------|
 value / v-model | String / Number | - | - | 绑定的值 |
 type | String | - | text | 原生 input 的 type 值 |
-label | String / Number / Boolean  | - | - | 选中状态的值（只有在checkbox-group 或者绑定对象类型为数组时有效）  |
 disabled | Boolean | false  | true / false | 是否设置为禁用  |
 clearable | Boolean | flase | true / false | 是否设置为可清除 |
 max-length | Number | - | - | 最大输入长度限制 |
 min-length | Number | - | - | 最小输入长度限制 |
 prefix-icon | String | - | - | 输入框头部图标 |
 suffix-icon | String | - | - | 输入框尾部图标 |
-
+placeholder | String | - | - | 输入框占位文本 |
 ### Input - 可定制的事件
 
 事件名称 | 返回值 | 说明
