@@ -80,7 +80,7 @@
             "text": "Switch 开关",
             "type": "item",
             "path": "switch",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Radio 单选框",

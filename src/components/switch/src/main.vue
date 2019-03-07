@@ -1,9 +1,28 @@
 <template>
     <label class='fly-switch' :class='{
-      "is-checked":isChecked
+      "is-checked":isChecked,
+      "is-disabled":disabled
     }'>
-        <input type='checkbox' v-model="model" class='fly-switch__native'/>
-        <span>&nbsp;</span>
+        <input type='checkbox' v-if='activeValue || inactiveValue'
+        :true-value='activeValue'
+        :false-value='inactiveValue'
+        :disabled='disabled'
+        v-model="model"
+        :name='name'
+        @change="handleChange"
+        class='fly-switch__native'/>
+        <input type='checkbox' v-else
+        :disabled='disabled'
+        v-model="model"
+        @change="handleChange"
+        :name='name'
+        class='fly-switch__native'/>
+        <span class='fly-switch__active' v-if='isChecked'>
+          <slot name='active'></slot>
+        </span>
+        <span class='fly-switch__inactive' v-if='!isChecked'>
+          <slot name='inactive'></slot>
+        </span>
     </label>
 </template>
 <script>
@@ -11,7 +30,11 @@ export default {
   name: 'FlySwitch',
   props: {
     value: [String, Boolean, Number],
-    checked: Boolean
+    name: String,
+    checked: Boolean,
+    disabled: Boolean,
+    activeValue: [String, Boolean, Number],
+    inactiveValue: [String, Boolean, Number]
   },
   data () {
     return {
@@ -29,7 +52,14 @@ export default {
       }
     },
     isChecked () {
-      return this.model
+      return typeof this.model === 'boolean' ? this.model : this.model === this.activeValue
+    }
+  },
+  methods: {
+    handleChange ($event) {
+      this.$nextTick(() => {
+        this.$emit('on-change', this.model)
+      })
     }
   }
 }
