@@ -95,6 +95,12 @@
             "pending":false
         },
         {
+            "text": "Tag 标签",
+            "type": "item",
+            "path": "tag",
+            "pending":false
+        },
+        {
             "text": "Dialog 对话框",
             "type": "item",
             "path": "dialog",

@@ -58,7 +58,7 @@ $fly-button-mini-padding-horizontal:6px !default;
     cursor: pointer;
     box-sizing: border-box;
     display: inline-block;
-    vertical-align: bottom;
+    vertical-align: baseline;
     color: $font-color-text;
     background-color: $fly-common-white;
     &+& {

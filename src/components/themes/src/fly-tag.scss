@@ -1,0 +1,46 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('tag'){
+    position: relative;
+    border:1px solid $fly-border-color;
+    padding:5px;
+    border-radius:$fly-round-default-size;
+    &+&{
+        margin-left:10px;
+    }
+    @include e('close'){
+        >i.fly-icon-x{
+            cursor: pointer;
+            &:hover{
+                opacity: .7;
+            }
+        }
+    }
+    @include when('primary'){
+        color:$fly-primary-color;
+        background: rgba($fly-primary-color,0.2);
+        border:1px solid $fly-primary-color;
+    }
+    @include when('success'){
+        color:$fly-success-color;
+        background: rgba($fly-success-color,0.2);
+        border:1px solid $fly-success-color;
+    }
+    @include when('info'){
+        color:$fly-info-color;
+        background: rgba($fly-info-color,0.2);
+        border:1px solid $fly-info-color;
+    }
+    @include when('warning'){
+        color:$fly-warning-color;
+        background: rgba($fly-warning-color,0.2);
+        border:1px solid $fly-warning-color;
+    }
+    @include when('danger'){
+        color:$fly-danger-color;
+        background: rgba($fly-danger-color,0.2);
+        border:1px solid $fly-danger-color;
+    }
+}

@@ -13,6 +13,7 @@
         :minlength='minLength'
         @focus='$emit("on-focus")'
         @blur='$emit("on-blur")'
+        @change='$emit("on-change")'
         v-model='model'></textarea>
     </div>
 </template>
