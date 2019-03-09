@@ -7,6 +7,7 @@
                 num2:0,
                 num3:0,
                 value1:999,
+                value2:0,
                 disabled:false
             }
         },
@@ -17,8 +18,11 @@
             formatter(value){
                 return `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/ig,',')
             },
-            parser(value){
-                return value.replace(/\$\s?|(,*)/ig,'')
+            formatter1(value){
+                return `${value} %`
+            },
+            handleChange(value){
+                console.log(value)
             }
         }
     }
@@ -99,7 +103,7 @@
 ::: demo
 ```html
 <template>
-    <fly-input-number v-model='num2' :step='2'></fly-input-number>
+    <fly-input-number v-model='num2' @on-change='handleChange' :step='2'></fly-input-number>
     <fly-input-number v-model='num3' :precision='2' :step='0.1'></fly-input-number>
 </template>
 <script>
@@ -109,20 +113,25 @@
                num2:0,
                num3:0
             }
+        },
+        methods:{
+            handleChange(value){
+                console.log(value)
+            }
         }
     }
 </script>
 ```
 :::
 
-<!-- ### 指定显示的格式
+### 指定显示的格式
 
 ::: demo
 ```html
 <template>
     <fly-input-number
-     v-model='value1' :formatter='formatter' :parser='parser'></fly-input-number>
-    <fly-input-number v-model='num3' :precision='2' :step='0.1'></fly-input-number>
+     v-model='value1' :formatter='formatter' @on-change='handleChange'></fly-input-number>
+    <fly-input-number v-model='value2' @on-change='handleChange' :formatter='formatter1' :precision='2' :step='0.1'></fly-input-number>
 </template>
 <script>
     export default {
@@ -136,14 +145,17 @@
             formatter(value){
                 return `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/ig,',')
             },
-            parser(value){
-                return value.replace(/\$\s?|(,*)/ig,'')
+            formatter1(value){
+                return `${value} %`
+            },
+            handleChange(value){
+                console.log(value)
             }
         }
     }
 </script>
 ```
-::: -->
+:::
 
 ### InputNumber - 可定制属性
 
@@ -155,9 +167,7 @@ max  |  Number  | -  | -  | 最大值 |
 disabled | Boolean | false  | true / false | 是否设置为禁用  |
 step | Number | 1  | - | 每次改变的步数值,支持小数  |
 precision | Number | 0  | - | 数值精度  |
-
-<!-- formatter | Function | -  | - | 指定输入框显示值的格式  |
-parser | Function | -  | - | 指定从 formatter 里转换回数字的方式，和 formatter 搭配使用  | -->
+formatter | Function | -  | - | 指定输入框显示值的格式  |
 
 ### InputNumber - 可定制的事件
 

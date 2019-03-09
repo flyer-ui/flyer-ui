@@ -7,7 +7,11 @@
             <i class='fly-icon-chevron-up'></i>
           </slot>
         </label>
-        <input v-model='model' @blur='handleBlur' :class='["fly-input-number__native",{
+        <input
+        :value='formatModel'
+        @blur='handleBlur'
+        @change='handleChange'
+        :class='["fly-input-number__native",{
           "is-disabled":disabled
         }]' type='text'>
         <label :class='["fly-input-number__minus",{
@@ -51,13 +55,16 @@ export default {
   },
   data () {
     return {
-      selfModel: undefined
+      selfModel: ''
     }
   },
   computed: {
+    formatModel () {
+      return this._formatter(this.model)
+    },
     model: {
       get () {
-        return this.selfModel || this.precisionDisplay(this.value)
+        return this.precisionDisplay(this.selfModel || this.value)
       },
       set (value) {
         if (typeof value === 'number') {
@@ -68,8 +75,9 @@ export default {
             value = this.max
           }
           this.$emit('input', value)
+          this.$emit('on-change', value)
         }
-        this.selfModel = this.precisionDisplay(value)
+        this.selfModel = value
       }
     },
     disalbedMinus () {
@@ -81,8 +89,10 @@ export default {
   },
   methods: {
     handleBlur () {
-      this.model = this.filterValue(this.model)
-      this.$emit('on-blur')
+      this.$emit('on-blur', this.model)
+    },
+    handleChange (e) {
+      this.model = e.target.value = this.filterValue(e.target.value)
     },
     handlePlus () {
       !this.disabledPlus && (this.model = preciseAddition(this.model, this.step))
@@ -108,9 +118,6 @@ export default {
     },
     _formatter (value) {
       return typeof this.formatter === 'function' ? this.formatter(value) : value
-    },
-    _parser (value) {
-      return typeof this.parser === 'function' ? Number(this.parser(value)) : value
     }
   }
 }
