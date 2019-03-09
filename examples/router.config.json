@@ -101,6 +101,12 @@
             "pending":false
         },
         {
+            "text": "Input Number 输入框",
+            "type": "item",
+            "path": "input-number",
+            "pending":false
+        },
+        {
             "text": "Dialog 对话框",
             "type": "item",
             "path": "dialog",

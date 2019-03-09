@@ -10,6 +10,7 @@ import Dialog from './components/dialog/index'
 import Switch from './components/switch/index'
 import Textarea from './components/textarea/index'
 import Tag from './components/tag/index'
+import InputNumber from './components/input-number/index'
 const components = [
   Button,
   ButtonGroup,
@@ -22,7 +23,8 @@ const components = [
   Dialog,
   Switch,
   Textarea,
-  Tag
+  Tag,
+  InputNumber
 ]
 
 const install = function (Vue) {
@@ -48,5 +50,6 @@ export default {
   Dialog,
   Switch,
   Textarea,
-  Tag
+  Tag,
+  InputNumber
 }
