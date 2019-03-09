@@ -1,2 +1,2 @@
-import FlySwitch from './src/main.vue'
-export default FlySwitch
+import Switch from './src/main.vue'
+export default Switch

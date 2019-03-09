@@ -1,0 +1,20 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('card'){
+    position: relative;
+    border-radius: $fly-round-default-size;
+    border:1px solid $fly-border-color;
+    padding:10px;
+    box-sizing: border-box;
+    @include e('header'){
+        border-bottom: 1px solid $fly-border-color;
+    }
+    @include e('body'){
+
+    }
+    @include e('footer'){
+        border-top: 1px solid $fly-border-color;
+    }
+}

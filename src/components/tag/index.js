@@ -1,2 +1,2 @@
-import FlyTag from './src/main.vue'
-export default FlyTag
+import Tag from './src/main.vue'
+export default Tag

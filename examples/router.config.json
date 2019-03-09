@@ -116,7 +116,7 @@
             "text": "Card 卡片",
             "type": "item",
             "path": "card",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Upload 上传",

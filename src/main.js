@@ -11,6 +11,7 @@ import Switch from './components/switch/index'
 import Textarea from './components/textarea/index'
 import Tag from './components/tag/index'
 import InputNumber from './components/input-number/index'
+import Card from './components/card/index'
 const components = [
   Button,
   ButtonGroup,
@@ -24,7 +25,8 @@ const components = [
   Switch,
   Textarea,
   Tag,
-  InputNumber
+  InputNumber,
+  Card
 ]
 
 const install = function (Vue) {
@@ -51,5 +53,6 @@ export default {
   Switch,
   Textarea,
   Tag,
-  InputNumber
+  InputNumber,
+  Card
 }

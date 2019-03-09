@@ -1,2 +1,2 @@
-import FlyInputNumer from './src/main.vue'
-export default FlyInputNumer
+import InputNumer from './src/main.vue'
+export default InputNumer
