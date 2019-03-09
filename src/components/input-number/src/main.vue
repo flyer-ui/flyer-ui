@@ -94,6 +94,9 @@ export default {
       return Number.parseFloat(String(value).replace(/[^\d\\.-]*/ig, '')) || 0
     },
     precisionDisplay (value) {
+      if (typeof value === 'undefined') {
+        return ''
+      }
       if (this.getMantissaLength(this.step) > this.precision) {
         console.error(`The value of 'precision' must be a non-negative integer 
         and cannot be less than the number of decimal places for 'step'.`)
@@ -102,6 +105,12 @@ export default {
     },
     getMantissaLength (value) {
       return (value.toString().split('.')[1] || '').length
+    },
+    _formatter (value) {
+      return typeof this.formatter === 'function' ? this.formatter(value) : value
+    },
+    _parser (value) {
+      return typeof this.parser === 'function' ? Number(this.parser(value)) : value
     }
   }
 }
