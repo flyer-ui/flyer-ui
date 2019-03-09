@@ -32,7 +32,7 @@ $fly-input-clear-padding:10px !default;
         }
         @include when(disabled){
             color:$font-color-text;
-            background:$fly-border-color;
+            background: rgba($fly-border-color,0.5);
             border-color:$font-color-placeholder;
             cursor:not-allowed;
         }

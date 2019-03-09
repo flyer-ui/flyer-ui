@@ -7,6 +7,7 @@
     border:1px solid $fly-border-color;
     padding:5px;
     border-radius:$fly-round-default-size;
+    user-select: none;
     &+&{
         margin-left:10px;
     }

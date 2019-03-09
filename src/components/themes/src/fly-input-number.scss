@@ -13,6 +13,10 @@
         border:1px solid $fly-border-color;
         box-sizing: border-box;
         border-radius: $fly-round-default-size;
+        @include when('disabled'){
+            background: rgba($fly-border-color,0.5);
+            cursor:not-allowed;
+        }
     }
     .label-extend{
         cursor: pointer;
@@ -22,6 +26,10 @@
         border-left:1px solid $fly-border-color;
         &:hover{
             background: $fly-border-color;
+        }
+        @include when('disabled'){
+            background: rgba($fly-border-color,0.5);
+            cursor:not-allowed;
         }
     }
     @include e('plus'){
