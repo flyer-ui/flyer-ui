@@ -95,12 +95,12 @@ export default {
 ::: demo
 ```html
 <template>
-    <div>
+    <div class='fly-demo-block__row'>
         <label class='fly-demo-block__label'>属性方式：</label>
         <fly-input type='text' prefix-icon='fly-icon-search'></fly-input>
         <fly-input type='text' suffix-icon='fly-icon-edit-3'></fly-input>
     </div>
-    <div>
+    <div class='fly-demo-block__row'>
         <label class='fly-demo-block__label'>Slot方式：</label>
         <fly-input type='text'>
             <fly-icon slot='prefix' name='search'></fly-icon>
@@ -117,7 +117,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <div>
+    <div class='fly-demo-block__row'>
         <fly-input>
             <span slot='prepend'>http://</span>
         </fly-input>
@@ -125,7 +125,7 @@ export default {
             <span slot='append'>.com</span>
         </fly-input>
     </div>
-    <div>
+    <div class='fly-demo-block__row'>
         <fly-input>
             <span slot='prepend'><fly-checkbox label='选中'>选中</fly-checkbox></span>
         </fly-input>

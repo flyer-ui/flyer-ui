@@ -1,0 +1,70 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+$fly-modal-zindex:9999999;
+$fly-modal-padding:10px;
+$fly-modal-min-width:500px;
+@include b('modal'){
+    .box{
+        box-sizing: border-box;
+        padding:$fly-modal-padding;
+        position: relative;
+        background: #fff;
+    }
+    .cover{
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+        z-index: $fly-modal-zindex;
+        position:fixed;
+    }
+    @include when('dialog'){
+        top:0px;
+        right:0px;
+        bottom:0px;
+        left:0px;
+        z-index: $fly-modal-zindex;
+        position:fixed;
+        background: rgba($fly-border-color,0.5);   
+    }
+    @include e('content'){  
+        z-index: $fly-modal-zindex + 1;
+        border:1px solid $fly-border-color;
+        border-radius:$fly-round-default-size;
+        min-width: $fly-modal-min-width;
+        width:$fly-modal-min-width;
+        margin:0px auto;
+        margin-top: 5%;
+    }
+    @include e('header'){
+        @extend .box;
+        border-bottom:1px solid $fly-border-color;
+        border-top-right-radius: $fly-round-default-size;
+        border-top-left-radius: $fly-round-default-size;
+    }
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        right:0px;
+        top:0px;
+        bottom:0px;
+        padding:$fly-modal-padding;
+        cursor: pointer;
+        &:hover{
+            background: rgba($fly-border-color,0.5);
+        }
+    }
+    @include e('body'){
+        @extend .box;
+    }
+    @include e('footer'){
+        @extend .box;
+        text-align:right;
+        border-top:1px solid $fly-border-color;
+        border-bottom-right-radius: $fly-round-default-size;
+        border-bottom-left-radius: $fly-round-default-size;
+    }
+
+}

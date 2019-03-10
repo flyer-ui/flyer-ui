@@ -6,7 +6,7 @@ import Checkbox from './components/checkbox/index'
 import CheckboxGroup from './components/checkbox-group/index'
 import Radio from './components/radio/index'
 import RadioGroup from './components/radio-group/index'
-import Dialog from './components/dialog/index'
+import Modal from './components/modal/index'
 import Switch from './components/switch/index'
 import Textarea from './components/textarea/index'
 import Tag from './components/tag/index'
@@ -21,7 +21,7 @@ const components = [
   CheckboxGroup,
   Radio,
   RadioGroup,
-  Dialog,
+  Modal,
   Switch,
   Textarea,
   Tag,
@@ -49,7 +49,7 @@ export default {
   CheckboxGroup,
   Radio,
   RadioGroup,
-  Dialog,
+  Modal,
   Switch,
   Textarea,
   Tag,

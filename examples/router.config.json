@@ -107,9 +107,9 @@
             "pending":false
         },
         {
-            "text": "Dialog 对话框",
+            "text": "Modal 模态框",
             "type": "item",
-            "path": "dialog",
+            "path": "modal",
             "pending":true
         },
         {
