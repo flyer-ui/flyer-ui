@@ -12,6 +12,8 @@ import Textarea from './components/textarea/index'
 import Tag from './components/tag/index'
 import InputNumber from './components/input-number/index'
 import Card from './components/card/index'
+import Alert from './components/alert/index'
+import Message from './components/message/index'
 const components = [
   Button,
   ButtonGroup,
@@ -26,7 +28,9 @@ const components = [
   Textarea,
   Tag,
   InputNumber,
-  Card
+  Card,
+  Alert,
+  Message
 ]
 
 const install = function (Vue) {
@@ -39,7 +43,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 export default {
-  version: '1.0.0',
+  version: '1.0.3',
   install,
   Button,
   ButtonGroup,
@@ -54,5 +58,7 @@ export default {
   Textarea,
   Tag,
   InputNumber,
-  Card
+  Card,
+  Alert,
+  Message
 }

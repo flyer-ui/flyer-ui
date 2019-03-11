@@ -71,7 +71,13 @@
             "pending":false
         },
         {
-            "text": "Textarea 输入框",
+            "text": "Input Number 输入框",
+            "type": "item",
+            "path": "input-number",
+            "pending":false
+        },
+        {
+            "text": "Textarea 多行输入框",
             "type": "item",
             "path": "textarea",
             "pending":false
@@ -101,16 +107,16 @@
             "pending":false
         },
         {
-            "text": "Input Number 输入框",
+            "text": "Alert 警告提示框",
             "type": "item",
-            "path": "input-number",
+            "path": "alert",
             "pending":false
         },
         {
             "text": "Modal 模态框",
             "type": "item",
             "path": "modal",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Card 卡片",

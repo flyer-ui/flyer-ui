@@ -160,6 +160,7 @@ min-length | Number | - | - | 最小输入长度限制 |
 prefix-icon | String | - | - | 输入框头部图标 |
 suffix-icon | String | - | - | 输入框尾部图标 |
 placeholder | String | - | - | 输入框占位文本 |
+
 ### Input - 可定制的事件
 
 事件名称 | 返回值 | 说明

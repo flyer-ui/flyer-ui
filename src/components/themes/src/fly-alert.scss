@@ -1,0 +1,33 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('alert'){
+    position: relative;
+    padding:10px;
+    border-radius: $fly-round-default-size;
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        top:$fly-modal-padding;
+        right:$fly-modal-padding;
+        border-radius: 100px;
+        cursor: pointer;
+    }
+    @include when('success'){
+        background: rgba($fly-success-color,0.2);
+        color:$fly-success-color;
+    }
+    @include when('warning'){
+        background: rgba($fly-warning-color,0.2);
+        color:$fly-warning-color;
+    }
+    @include when('info'){
+        background: rgba($fly-info-color,0.2);
+        color:$fly-info-color;
+    }
+    @include when('danger'){
+        background: rgba($fly-danger-color,0.2);
+        color:$fly-danger-color;
+    }
+}
