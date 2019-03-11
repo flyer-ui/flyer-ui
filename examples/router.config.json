@@ -119,6 +119,12 @@
             "pending":false
         },
         {
+            "text": "Message 全局提示",
+            "type": "item",
+            "path": "message",
+            "pending":false
+        },
+        {
             "text": "Card 卡片",
             "type": "item",
             "path": "card",

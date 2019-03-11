@@ -10,11 +10,13 @@
     box-sizing: border-box;
     @include e('header'){
         border-bottom: 1px solid $fly-border-color;
+        padding:$fly-default-padding;
     }
     @include e('body'){
-
+        padding:$fly-default-padding;
     }
     @include e('footer'){
         border-top: 1px solid $fly-border-color;
+        padding:$fly-default-padding;
     }
 }
