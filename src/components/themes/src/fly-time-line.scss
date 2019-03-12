@@ -1,0 +1,30 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('time-line'){
+    position: relative;
+    
+    @include e('item'){
+        position: relative;
+        padding:0px 0px 20px 20px;
+        border-left: 2px solid $fly-border-color;
+        &:last-child{
+            border-left:0px;
+        }
+    }
+    @include e('dot'){
+        position: absolute;
+        z-index: 1;
+        background:#fafafa;
+        border:1px solid $fly-border-color;
+        left:-8px;
+        width:14px;
+        height:14px;
+        font-size: 14px;
+        border-radius:100px;
+    }
+    @include e('body'){
+        
+    }
+}

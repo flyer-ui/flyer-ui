@@ -147,6 +147,12 @@
             "type": "item",
             "path": "tab",
             "pending":true
+        },
+        {
+            "text": "Time Line 时间轴",
+            "type": "item",
+            "path": "time-line",
+            "pending":false
         }
     ]
 }

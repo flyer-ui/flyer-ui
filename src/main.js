@@ -14,6 +14,8 @@ import InputNumber from './components/input-number/index'
 import Card from './components/card/index'
 import Alert from './components/alert/index'
 import Message from './components/message/index'
+import TimeLine from './components/time-line/index'
+import TimeLineItem from './components/time-line-item/index'
 const components = [
   Button,
   ButtonGroup,
@@ -30,7 +32,9 @@ const components = [
   InputNumber,
   Card,
   Alert,
-  Message
+  Message,
+  TimeLine,
+  TimeLineItem
 ]
 
 const install = function (Vue) {
@@ -60,5 +64,7 @@ export default {
   InputNumber,
   Card,
   Alert,
-  Message
+  Message,
+  TimeLine,
+  TimeLineItem
 }
