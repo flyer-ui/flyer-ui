@@ -134,19 +134,19 @@
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Transfer 穿梭框",
             "type": "item",
             "path": "transfer",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Tab 选项卡",
             "type": "item",
             "path": "tab",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Time Line 时间轴",

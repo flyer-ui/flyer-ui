@@ -16,6 +16,13 @@ import Alert from './components/alert/index'
 import Message from './components/message/index'
 import TimeLine from './components/time-line/index'
 import TimeLineItem from './components/time-line-item/index'
+import Tab from './components/tab/index'
+import Transfer from './components/transfer/index'
+import Rate from './components/rate/index'
+import Select from './components/select/index'
+import Upload from './components/upload/index'
+import Slider from './components/slider/index'
+
 const components = [
   Button,
   ButtonGroup,
@@ -34,7 +41,13 @@ const components = [
   Alert,
   Message,
   TimeLine,
-  TimeLineItem
+  TimeLineItem,
+  Tab,
+  Transfer,
+  Rate,
+  Select,
+  Upload,
+  Slider
 ]
 
 const install = function (Vue) {
@@ -66,5 +79,11 @@ export default {
   Alert,
   Message,
   TimeLine,
-  TimeLineItem
+  TimeLineItem,
+  Tab,
+  Transfer,
+  Rate,
+  Select,
+  Upload,
+  Slider
 }
