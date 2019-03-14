@@ -1,10 +1,10 @@
 <template>
-    <div class='fly-time-line'>
+    <div class='fly-timeline'>
         <slot></slot>
     </div>
 </template>
 <script>
 export default {
-  name: 'FlyTimeLine'
+  name: 'FlyTimeline'
 }
 </script>

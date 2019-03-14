@@ -149,9 +149,9 @@
             "pending":false
         },
         {
-            "text": "Time Line 时间轴",
+            "text": "Timeline 时间轴",
             "type": "item",
-            "path": "time-line",
+            "path": "timeline",
             "pending":false
         }
     ]

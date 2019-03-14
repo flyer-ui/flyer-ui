@@ -40,7 +40,8 @@ export default {
         border-bottom:1px solid $fly-border-color;
     }
     @include e('row'){
-        margin:5px 0px;
+        padding:5px 0px;
+        box-sizing: border-box;
     }
     @include e('label'){
         display: inline-block;

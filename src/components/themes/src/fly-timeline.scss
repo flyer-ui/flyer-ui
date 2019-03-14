@@ -4,7 +4,7 @@
 
 $fly-time-line-size-normal:14px;
 $fly-time-line-size-large:18px;
-@include b('time-line'){
+@include b('timeline'){
     position: relative;
     
     @include e('item'){
@@ -20,7 +20,9 @@ $fly-time-line-size-large:18px;
         position: absolute;
         z-index: 1;
         border-radius:100%;
-
+        color:#fff;
+        text-align: center;
+        vertical-align: middle;
         @include when('default'){
             background:rgba($fly-border-color,1);
         }
@@ -44,13 +46,13 @@ $fly-time-line-size-large:18px;
             left:-8px;
             width:$fly-time-line-size-normal;
             height:$fly-time-line-size-normal;
-            font-size: $fly-time-line-size-normal;
+            i{font-size: $fly-time-line-size-normal;}
         }
         @include m('large'){
             left:-10px;
             width:$fly-time-line-size-large;
             height:$fly-time-line-size-large;
-            font-size: $fly-time-line-size-large;
+            i{font-size: $fly-time-line-size-large - 2;}
         }
     }
     @include e('body'){
