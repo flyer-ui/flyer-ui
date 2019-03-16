@@ -153,6 +153,42 @@
             "type": "item",
             "path": "timeline",
             "pending":false
+        },
+        {
+            "text": "Rate 评分",
+            "type": "item",
+            "path": "rate",
+            "pending":false
+        },
+        {
+            "text": "Select 下拉选择框",
+            "type": "item",
+            "path": "select",
+            "pending":false
+        },
+        {
+            "text": "Slider 滑动输入条",
+            "type": "item",
+            "path": "slider",
+            "pending":false
+        },
+        {
+            "text": "Tree 树菜单",
+            "type": "item",
+            "path": "tree",
+            "pending":false
+        },
+        {
+            "text": "Table 表格",
+            "type": "item",
+            "path": "table",
+            "pending":false
+        },
+        {
+            "text": "Form 表单验证",
+            "type": "item",
+            "path": "form",
+            "pending":false
         }
     ]
 }

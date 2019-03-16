@@ -8,7 +8,8 @@
                 open4:false,
                 open5:false,
                 open6:false,
-                open7:false
+                open7:false,
+                open8:false
             }
         },
         methods:{
@@ -40,6 +41,37 @@
             },
             handleCancel5(){
                 this.open5 = false
+            },
+            openConfirm(){
+                this.$modal.confirm({
+                    title:'确认提示',
+                    content:'你确认要这么操作吗?'
+                })
+            },
+            openInfo(){
+                 this.$modal.info({
+                    title:'Info',
+                    content:'语法糖的内容'
+                })
+            },
+             openWarning(){
+                 this.$modal.warning({
+                    title:'Warning',
+                    content:'语法糖的内容',
+                    confirmText:'OK'
+                })
+            },
+             openDanger(){
+                 this.$modal.danger({
+                    title:'Danger',
+                    content:'语法糖的内容'
+                })
+            },
+             openSuccess(){
+                 this.$modal.success({
+                    title:'Success',
+                    content:'语法糖的内容'
+                })
             }
         }
     }
@@ -115,6 +147,11 @@
             <li>点击确定的话，3秒后我会自动关闭</li>
         </ul>
     </fly-modal>
+    <fly-button @on-click='open8=true'>带Icon的Modal框</fly-button>
+    <fly-modal icon='fly-icon-alert-circle' v-model='open8' width='400px' 
+        title='Title8'>
+        标题左边多了一个图标,可以设置icon属性定制适合自已的图标
+    </fly-modal>
 </template>
 <script>
     export default {
@@ -123,7 +160,8 @@
                 open2:false,
                 open3:false,
                 open5:false,
-                open6:false
+                open6:false,
+                open8:false
             }
         },
         methods:{
@@ -201,32 +239,71 @@
 ```
 :::
 
-### 快捷对话框
+### 快捷实例对话框
 ::: demo
 ```html
 <template>
-    <fly-button>标准</fly-button>
+    <fly-button type='primary' @on-click='openConfirm'>Confirm</fly-button>
+    <fly-button type='info' @on-click='openInfo'>Info</fly-button>
+    <fly-button type='warning' @on-click='openWarning'>Warning</fly-button>
+    <fly-button type='danger' @on-click='openDanger'>Danger</fly-button>
+    <fly-button type='success' @on-click='openSuccess'>Success</fly-button>
 </template>
 <script>
     export default {
-        
+        methods:{
+            openConfirm(){
+                this.$modal.confirm({
+                    title:'确认提示',
+                    content:'你确认要这么操作吗?'
+                })
+            },
+            openInfo(){
+                 this.$modal.info({
+                    title:'Info',
+                    content:'语法糖的内容'
+                })
+            },
+             openWarning(){
+                 this.$modal.warning({
+                    title:'Warning',
+                    content:'语法糖的内容',
+                    confirmText:'OK'
+                })
+            },
+             openDanger(){
+                 this.$modal.danger({
+                    title:'Danger',
+                    content:'语法糖的内容'
+                })
+            },
+             openSuccess(){
+                 this.$modal.success({
+                    title:'Success',
+                    content:'语法糖的内容'
+                })
+            }
+        }
     }
 </script>
 ```
 :::
 
-### Input - 可定制属性
+### Modal - 可定制属性
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
 ---------|----------|---------|---------|--------|
 value / v-model | Boolean | - | - | 绑定的值,控制是否显示 |
-type | String | - | text | 原生 input 的 type 值 |
+title | String | - | - | Modal 的显示标题 |
+content | String | - | - | Modal 的显示内容 |
 closable | Boolean | true | true / false | 是否显示右上角的关闭按钮，关闭后 Esc 按键也将关闭 |
 width | String | 50% | - | 模态框的宽度 |
 confirm-loading | Boolean | false | - | 确定按钮点击后呈现loading挂起状态，但需要在挂起状态结束后，手动设置 v-model绑定值关闭modal框 |
 close-closable | Boolean | false | - | 允许点击摭罩层关闭 |
-
-### Input - 可定制的事件
+type | Sting | - | success / confirm / info / warning / danger | 使用语法糖快捷定制modal的类型 |
+confirm-text | Sting | 确认 | - | 确定按钮的显示文本 |
+cancel-text | Sting | 取消 | - | 取消按钮的显示文本 |
+### Modal - 可定制的事件
 
 事件名称 | 返回值 | 说明
 ---------|----------|---------
@@ -234,7 +311,7 @@ on-closed | (event: Event) | 当点击右上角关闭modal后的回调 |
 on-confirm | - | 当点击确定后回调 |
 on-cancel | - | 当点击取消后回调 |
 
-### Input - Slot
+### Modal - Slot
 
 事件名称 | 说明
 ---------|----------|

@@ -23,6 +23,8 @@ import Select from './components/select/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
 
+import $modal from './components/modal/src/main.js'
+
 const components = [
   Button,
   ButtonGroup,
@@ -51,12 +53,14 @@ const components = [
 ]
 
 const install = function (Vue) {
+  Vue.prototype.$modal = $modal
   components.forEach(component => {
     Vue.component(component.name, component)
   })
 }
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
+  window.Vue.prototype.$modal = $modal
   install(window.Vue)
 }
 export default {
