@@ -4,7 +4,6 @@
 
 $fly-modal-zindex:9999999;
 $fly-modal-padding:10px;
-$fly-modal-min-width:500px;
 @include b('modal'){
     .box{
         box-sizing: border-box;
@@ -33,10 +32,9 @@ $fly-modal-min-width:500px;
         z-index: $fly-modal-zindex + 1;
         border:1px solid $fly-border-color;
         border-radius:$fly-round-default-size;
-        min-width: $fly-modal-min-width;
-        width:$fly-modal-min-width;
         margin:0px auto;
         margin-top: 5%;
+        position: relative;
     }
     @include e('header'){
         @extend .box;
@@ -49,7 +47,6 @@ $fly-modal-min-width:500px;
         z-index: 1;
         right:0px;
         top:0px;
-        bottom:0px;
         padding:$fly-modal-padding;
         cursor: pointer;
         &:hover{

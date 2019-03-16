@@ -1,16 +1,16 @@
 <template>
-    <div class='fly-modal is-dialog' v-show="model">
-      <div class='fly-modal__content'>
+    <div class='fly-modal is-dialog' @click='handleModal' v-show="model">
+      <div class='fly-modal__content' :style='{"width":width}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>{{title}}</slot>
-          <i v-if='closable' class='fly-icon-x fly-modal__close' @click='handleClose'></i>
         </div>
+        <i v-if='closable' class='fly-icon-x fly-modal__close' @click='handleClose'></i>
         <div class='fly-modal__body'>
           <slot name='default'></slot>
         </div>
         <div class='fly-modal__footer'>
           <slot name='footer'>
-            <fly-button type='primary' @on-click='handleClose'>确认</fly-button>
+            <fly-button type='primary' :loading='showLoading' @on-click='handleConfrim'>确认</fly-button>
             <fly-button @on-click='handleCancel'>取消</fly-button>
           </slot>
         </div>
@@ -26,11 +26,24 @@ export default{
     closable: {
       type: Boolean,
       default: true
+    },
+    width: {
+      type: String,
+      default: '50%'
+    },
+    confirmLoading: {
+      type: Boolean,
+      default: false
+    },
+    maskClosable: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
     return {
-      selfModel: undefined
+      selfModel: undefined,
+      showLoading: false
     }
   },
   computed: {
@@ -44,16 +57,34 @@ export default{
       }
     }
   },
+  watch: {
+    model (value) {
+      if (!value) {
+        this.showLoading = false
+      }
+    }
+  },
   methods: {
     handleClose ($event) {
       this.model = false
-      this.$emit('on-close', $event)
+      this.$emit('on-closed', $event)
     },
-    handleCancel () {
+    handleCancel ($event) {
       this.model = false
+      this.$emit('on-cancel', $event)
     },
-    handleConfrim () {
-      this.model = false
+    handleConfrim ($event) {
+      if (!this.confirmLoading) {
+        this.model = false
+      } else {
+        this.showLoading = this.confirmLoading
+      }
+      this.$emit('on-confirm', $event)
+    },
+    handleModal ($event) {
+      if (this.maskClosable) {
+        this.model = false
+      }
     }
   }
 }

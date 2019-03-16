@@ -45,11 +45,11 @@
 ```
 :::
 
-### TimeLine - 可定制属性
+<!-- ### TimeLine - 可定制属性
 
 属性名称 | 类型 | 默认值  | 可选值  | 说明  |
 ---------|----------|---------|---------|--------|
-reverse | Boolean | true | true / false | 指定节点排序方向，默认为正序
+reverse | Boolean | true | true / false | 指定节点排序方向，默认为正序 -->
 
 ### TimeLine Item- 可定制属性
 
