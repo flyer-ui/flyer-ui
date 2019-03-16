@@ -1,264 +1,576 @@
 const fs = require('fs')
 let data = `
-fly-icon-activity
+fly-icon-heart1
 
-fly-icon-airplay
+ fly-icon-star
 
-fly-icon-alert-circle
+ fly-icon-star-o
 
-fly-icon-align-center
+ fly-icon-thumbs-o-up
 
-fly-icon-align-justify
+ fly-icon-thumbs-o-down
 
-fly-icon-align-left
+ fly-icon-star-half
 
-fly-icon-align-right
+ fly-icon-heart-o
 
-fly-icon-anchor
+ fly-icon-smile-o
 
-fly-icon-archive
+ fly-icon-frown-o
 
-fly-icon-arrow-down
+ fly-icon-meh-o
 
-fly-icon-arrow-left
+ fly-icon-star-half-empty
 
-fly-icon-arrow-right
+ fly-icon-star-half-full
 
-fly-icon-arrow-up
+ fly-icon-star-half-o
 
-fly-icon-at-sign
+ fly-icon-3d_rotation
 
-fly-icon-award
+ fly-icon-ac_unit
 
-fly-icon-bar-chart
+ fly-icon-schedule
 
-fly-icon-bar-chart-2
+ fly-icon-add
 
-fly-icon-battery
+ fly-icon-add_location
 
-fly-icon-battery-charging
+ fly-icon-exposure_neg_1
 
-fly-icon-bell
+ fly-icon-exposure_plus_1
 
-fly-icon-bell-off
+ fly-icon-activity
 
-fly-icon-bluetooth
+ fly-icon-airplay
 
-fly-icon-bold
+ fly-icon-alert-circle
 
-fly-icon-book-open
+ fly-icon-alert-octagon
 
-fly-icon-calendar
+ fly-icon-alert-triangle
 
-fly-icon-camera
+ fly-icon-align-center
 
-fly-icon-camera-off
+ fly-icon-align-justify
 
-fly-icon-check
+ fly-icon-align-left
 
-fly-icon-chevron-down
+ fly-icon-align-right
 
-fly-icon-chevron-left
+ fly-icon-anchor
 
-fly-icon-chevron-right
+ fly-icon-aperture
 
-fly-icon-chevron-up
+ fly-icon-archive
 
-fly-icon-chevrons-down
+ fly-icon-arrow-down
 
-fly-icon-chevrons-left
+ fly-icon-arrow-down-circle
 
-fly-icon-chevrons-right
+ fly-icon-arrow-down-left
 
-fly-icon-chevrons-up
+ fly-icon-arrow-down-right
 
-fly-icon-chrome
+ fly-icon-arrow-left
 
-fly-icon-clock
+ fly-icon-arrow-left-circle
 
-fly-icon-cloud
+ fly-icon-arrow-right
 
-fly-icon-cloud-lightning
+ fly-icon-arrow-right-circle
 
-fly-icon-cloud-off
+ fly-icon-arrow-up
 
-fly-icon-cloud-rain
+ fly-icon-arrow-up-circle
 
-fly-icon-cloud-snow
+ fly-icon-arrow-up-left
 
-fly-icon-code
+ fly-icon-arrow-up-right
 
-fly-icon-command
+ fly-icon-at-sign
 
-fly-icon-copy
+ fly-icon-award
 
-fly-icon-corner-down-left
+ fly-icon-bar-chart
 
-fly-icon-corner-down-right
+ fly-icon-bar-chart-2
 
-fly-icon-corner-left-down
+ fly-icon-battery
 
-fly-icon-corner-left-up
+ fly-icon-battery-charging
 
-fly-icon-corner-right-down
+ fly-icon-bell
 
-fly-icon-corner-right-up
+ fly-icon-bell-off
 
-fly-icon-corner-up-left
+ fly-icon-bluetooth
 
-fly-icon-corner-up-right
+ fly-icon-bold
 
-fly-icon-credit-card
+ fly-icon-book
 
-fly-icon-crop
+ fly-icon-book-open
 
-fly-icon-crosshair
+ fly-icon-bookmark
 
-fly-icon-dollar-sign
+ fly-icon-box
 
-fly-icon-download
+ fly-icon-briefcase
 
-fly-icon-download-cloud
+ fly-icon-calendar
 
-fly-icon-edit-2
+ fly-icon-camera
 
-fly-icon-edit-3
+ fly-icon-camera-off
 
-fly-icon-external-link
+ fly-icon-cast
 
-fly-icon-eye
+ fly-icon-check
 
-fly-icon-eye-off
+ fly-icon-check-circle
 
-fly-icon-facebook
+ fly-icon-check-square
 
-fly-icon-fast-forward
+ fly-icon-chevron-down
 
-fly-icon-feather
+ fly-icon-chevron-left
 
-fly-icon-file
+ fly-icon-chevron-right
 
-fly-icon-file-minus
+ fly-icon-chevron-up
 
-fly-icon-file-plus
+ fly-icon-chevrons-down
 
-fly-icon-file-text
+ fly-icon-chevrons-left
 
-fly-icon-film
+ fly-icon-chevrons-right
 
-fly-icon-flag
+ fly-icon-chevrons-up
 
-fly-icon-folder
+ fly-icon-chrome
 
-fly-icon-folder-minus
+ fly-icon-circle
 
-fly-icon-folder-plus
+ fly-icon-clipboard
 
-fly-icon-gift
+ fly-icon-clock
 
-fly-icon-git-branch
+ fly-icon-cloud
 
-fly-icon-git-commit
+ fly-icon-cloud-drizzle
 
-fly-icon-git-merge
+ fly-icon-cloud-lightning
 
-fly-icon-git-pull-request
+ fly-icon-cloud-off
 
-fly-icon-github
+ fly-icon-cloud-rain
 
-fly-icon-grid
+ fly-icon-cloud-snow
 
-fly-icon-hash
+ fly-icon-code
 
-fly-icon-headphones
+ fly-icon-codepen
 
-fly-icon-heart
+ fly-icon-command
 
-fly-icon-help-circle
+ fly-icon-compass
 
-fly-icon-image
+ fly-icon-copy
 
-fly-icon-info
+ fly-icon-corner-down-left
 
-fly-icon-instagram
+ fly-icon-corner-down-right
 
-fly-icon-italic
+ fly-icon-corner-left-down
 
-fly-icon-layers
+ fly-icon-corner-left-up
 
-fly-icon-layout
+ fly-icon-corner-right-down
 
-fly-icon-link
+ fly-icon-corner-right-up
 
-fly-icon-loader
+ fly-icon-corner-up-left
 
-fly-icon-lock
+ fly-icon-corner-up-right
 
-fly-icon-mail
+ fly-icon-cpu
 
-fly-icon-map-pin
+ fly-icon-credit-card
 
-fly-icon-minus
+ fly-icon-crop
 
-fly-icon-monitor
+ fly-icon-crosshair
 
-fly-icon-more-horizontal
+ fly-icon-database
 
-fly-icon-more-vertical
+ fly-icon-delete
 
-fly-icon-move
+ fly-icon-disc
 
-fly-icon-paperclip
+ fly-icon-dollar-sign
 
-fly-icon-pause
+ fly-icon-download
 
-fly-icon-plus
+ fly-icon-download-cloud
 
-fly-icon-power
+ fly-icon-droplet
 
-fly-icon-search
+ fly-icon-edit
 
-fly-icon-settings
+ fly-icon-edit-2
 
-fly-icon-share-2
+ fly-icon-edit-3
 
-fly-icon-sidebar
+ fly-icon-external-link
 
-fly-icon-skip-back
+ fly-icon-eye
 
-fly-icon-skip-forward
+ fly-icon-eye-off
 
-fly-icon-trash-2
+ fly-icon-facebook
 
-fly-icon-trending-down
+ fly-icon-fast-forward
 
-fly-icon-trending-up
+ fly-icon-feather
 
-fly-icon-triangle
+ fly-icon-file
 
-fly-icon-truck
+ fly-icon-file-minus
 
-fly-icon-twitter
+ fly-icon-file-plus
 
-fly-icon-upload-cloud
+ fly-icon-file-text
 
-fly-icon-user
+ fly-icon-film
 
-fly-icon-volume
+ fly-icon-filter
 
-fly-icon-volume-1
+ fly-icon-flag
 
-fly-icon-volume-2
+ fly-icon-folder
 
-fly-icon-volume-x
+ fly-icon-folder-minus
 
-fly-icon-x
+ fly-icon-folder-plus
 
-fly-icon-x-circle
+ fly-icon-gift
 
-fly-icon-zoom-in
+ fly-icon-git-branch
 
-fly-icon-zoom-out
+ fly-icon-git-commit
+
+ fly-icon-git-merge
+
+ fly-icon-git-pull-request
+
+ fly-icon-github
+
+ fly-icon-gitlab
+
+ fly-icon-globe
+
+ fly-icon-grid
+
+ fly-icon-hard-drive
+
+ fly-icon-hash
+
+ fly-icon-headphones
+
+ fly-icon-heart
+
+ fly-icon-help-circle
+
+ fly-icon-home
+
+ fly-icon-image
+
+ fly-icon-inbox
+
+ fly-icon-info
+
+ fly-icon-instagram
+
+ fly-icon-italic
+
+ fly-icon-layers
+
+ fly-icon-layout
+
+ fly-icon-life-buoy
+
+ fly-icon-link
+
+ fly-icon-link-2
+
+ fly-icon-linkedin
+
+ fly-icon-list
+
+ fly-icon-loader
+
+ fly-icon-lock
+
+ fly-icon-log-in
+
+ fly-icon-log-out
+
+ fly-icon-mail
+
+ fly-icon-map
+
+ fly-icon-map-pin
+
+ fly-icon-maximize
+
+ fly-icon-maximize-2
+
+ fly-icon-menu
+
+ fly-icon-message-circle
+
+ fly-icon-message-square
+
+ fly-icon-mic
+
+ fly-icon-mic-off
+
+ fly-icon-minimize
+
+ fly-icon-minimize-2
+
+ fly-icon-minus
+
+ fly-icon-minus-circle
+
+ fly-icon-minus-square
+
+ fly-icon-monitor
+
+ fly-icon-moon
+
+ fly-icon-more-horizontal
+
+ fly-icon-more-vertical
+
+ fly-icon-move
+
+ fly-icon-music
+
+ fly-icon-navigation
+
+ fly-icon-navigation-2
+
+ fly-icon-octagon
+
+ fly-icon-package
+
+ fly-icon-paperclip
+
+ fly-icon-pause
+
+ fly-icon-pause-circle
+
+ fly-icon-percent
+
+ fly-icon-phone
+
+ fly-icon-phone-call
+
+ fly-icon-phone-forwarded
+
+ fly-icon-phone-incoming
+
+ fly-icon-phone-missed
+
+ fly-icon-phone-off
+
+ fly-icon-phone-outgoing
+
+ fly-icon-pie-chart
+
+ fly-icon-play
+
+ fly-icon-play-circle
+
+ fly-icon-plus
+
+ fly-icon-plus-circle
+
+ fly-icon-plus-square
+
+ fly-icon-pocket
+
+ fly-icon-power
+
+ fly-icon-printer
+
+ fly-icon-radio
+
+ fly-icon-refresh-ccw
+
+ fly-icon-refresh-cw
+
+ fly-icon-repeat
+
+ fly-icon-rewind
+
+ fly-icon-rotate-ccw
+
+ fly-icon-rotate-cw
+
+ fly-icon-rss
+
+ fly-icon-save
+
+ fly-icon-scissors
+
+ fly-icon-search
+
+ fly-icon-send
+
+ fly-icon-server
+
+ fly-icon-settings
+
+ fly-icon-share
+
+ fly-icon-share-2
+
+ fly-icon-shield
+
+ fly-icon-shield-off
+
+ fly-icon-shopping-bag
+
+ fly-icon-shopping-cart
+
+ fly-icon-shuffle
+
+ fly-icon-sidebar
+
+ fly-icon-skip-back
+
+ fly-icon-skip-forward
+
+ fly-icon-slack
+
+ fly-icon-slash
+
+ fly-icon-sliders
+
+ fly-icon-smartphone
+
+ fly-icon-speaker
+
+ fly-icon-square
+
+ fly-icon-star1
+
+ fly-icon-stop-circle
+
+ fly-icon-sun
+
+ fly-icon-sunrise
+
+ fly-icon-sunset
+
+ fly-icon-tablet
+
+ fly-icon-tag
+
+ fly-icon-target
+
+ fly-icon-terminal
+
+ fly-icon-thermometer
+
+ fly-icon-thumbs-down
+
+ fly-icon-thumbs-up
+
+ fly-icon-toggle-left
+
+ fly-icon-toggle-right
+
+ fly-icon-trash
+
+ fly-icon-trash-2
+
+ fly-icon-trending-down
+
+ fly-icon-trending-up
+
+ fly-icon-triangle
+
+ fly-icon-truck
+
+ fly-icon-tv
+
+ fly-icon-twitter
+
+ fly-icon-type
+
+ fly-icon-umbrella
+
+ fly-icon-underline
+
+ fly-icon-unlock
+
+ fly-icon-upload
+
+ fly-icon-upload-cloud
+
+ fly-icon-user
+
+ fly-icon-user-check
+
+ fly-icon-user-minus
+
+ fly-icon-user-plus
+
+ fly-icon-user-x
+
+ fly-icon-users
+
+ fly-icon-video
+
+ fly-icon-video-off
+
+ fly-icon-voicemail
+
+ fly-icon-volume
+
+ fly-icon-volume-1
+
+ fly-icon-volume-2
+
+ fly-icon-volume-x
+
+ fly-icon-watch
+
+ fly-icon-wifi
+
+ fly-icon-wifi-off
+
+ fly-icon-wind
+
+ fly-icon-x
+
+ fly-icon-x-circle
+
+ fly-icon-x-square
+
+ fly-icon-youtube
+
+ fly-icon-zap
+
+ fly-icon-zap-off
+
+ fly-icon-zoom-in
+
+ fly-icon-zoom-out
 `
 
 let items = data.split(/[\s\n]/ig).filter((item) => {

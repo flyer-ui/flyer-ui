@@ -11,9 +11,15 @@ let Instance = (options) => {
   let vm = new Comp({propsData: options}).$mount(document.createElement('div'))
   vm.$on('on-confirm', () => {
     vm.$set(vm.$props, 'value', false)
+    typeof options.onConfirm === 'function' && options.onConfirm.apply(vm)
   })
   vm.$on('on-cancel', () => {
     vm.$set(vm.$props, 'value', false)
+    typeof options.onCancel === 'function' && options.onCancel.apply(vm)
+  })
+  vm.$on('on-closed', () => {
+    vm.$set(vm.$props, 'value', false)
+    typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })
   document.body.append(vm.$el)
 }

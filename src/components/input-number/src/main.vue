@@ -48,9 +48,6 @@ export default {
     },
     formatter: {
       type: Function
-    },
-    parser: {
-      type: Function
     }
   },
   data () {

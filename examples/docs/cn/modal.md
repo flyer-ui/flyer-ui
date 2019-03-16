@@ -45,7 +45,16 @@
             openConfirm(){
                 this.$modal.confirm({
                     title:'确认提示',
-                    content:'你确认要这么操作吗?'
+                    content:'你确认要这么操作吗?',
+                    onCancel(){
+                        this.$message.info('取消了',3)
+                    },
+                    onConfirm(){
+                        this.$message.info('确认了',4)
+                    },
+                    onClosed(){
+                        this.$message.warning('关闭了',5)
+                    }
                 })
             },
             openInfo(){
@@ -61,10 +70,13 @@
                     confirmText:'OK'
                 })
             },
-             openDanger(){
+            openDanger(){
                  this.$modal.danger({
                     title:'Danger',
-                    content:'语法糖的内容'
+                    content:'语法糖的内容',
+                    onConfirm(){
+                        this.$message.info('我确定你关闭了',2)
+                    }
                 })
             },
              openSuccess(){
@@ -255,7 +267,16 @@
             openConfirm(){
                 this.$modal.confirm({
                     title:'确认提示',
-                    content:'你确认要这么操作吗?'
+                    content:'你确认要这么操作吗?',
+                    onCancel(){
+                        this.$message.info('取消了',3)
+                    },
+                    onConfirm(){
+                        this.$message.info('确认了',4)
+                    },
+                    onClosed(){
+                        this.$message.warning('关闭了',5)
+                    }
                 })
             },
             openInfo(){
@@ -271,10 +292,13 @@
                     confirmText:'OK'
                 })
             },
-             openDanger(){
+            openDanger(){
                  this.$modal.danger({
                     title:'Danger',
-                    content:'语法糖的内容'
+                    content:'语法糖的内容',
+                    onConfirm(){
+                        this.$message.info('我确定你关闭了',2)
+                    }
                 })
             },
              openSuccess(){
