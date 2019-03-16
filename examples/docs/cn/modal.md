@@ -303,6 +303,7 @@ close-closable | Boolean | false | - | 允许点击摭罩层关闭 |
 type | Sting | - | success / confirm / info / warning / danger | 使用语法糖快捷定制modal的类型 |
 confirm-text | Sting | 确认 | - | 确定按钮的显示文本 |
 cancel-text | Sting | 取消 | - | 取消按钮的显示文本 |
+
 ### Modal - 可定制的事件
 
 事件名称 | 返回值 | 说明

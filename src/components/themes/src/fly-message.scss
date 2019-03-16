@@ -2,6 +2,61 @@
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
 
+
 @include b('message'){
-    
+    position: fixed;
+    pointer-events:none;
+    width:100%;
+    background: transparent;
+    text-align: center;
+    top:2%;
+    @include e('notice'){
+        margin-top: 10px;
+    }
+    @include e('content'){
+        background: #fff;
+        display: inline-block;
+        pointer-events: all;
+        padding:10px 30px;
+        border:1px solid $fly-border-color;
+        border-radius:$fly-round-default-size;
+        box-shadow:1px 1px 10px rgba($fly-border-color,0.5);
+        position: relative;
+    }
+    @include e('icon'){
+        position: absolute;
+        z-index: 1;
+        left:10px;
+        top:10px;
+        border-radius: 100%;
+        @include when('info'){
+            color:$fly-primary-color;
+        }
+        @include when('warning'){
+            color:$fly-warning-color;
+        }
+        @include when('success'){
+            color:$fly-success-color;
+            border:1px solid $fly-success-color;
+            border-radius: 100%;
+            font-size:12px !important;
+        }
+        @include when('error'){
+            color:$fly-danger-color;
+            border:1px solid $fly-danger-color;
+            border-radius: 100%;
+            font-size:12px !important;
+        }
+    }
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        right:10px;
+        top:10px;
+        border-radius: 100%;
+        cursor: pointer;
+        &:hover{
+            background: rgba($fly-border-color,0.5);
+        }
+    }
 }

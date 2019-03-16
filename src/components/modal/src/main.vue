@@ -1,5 +1,5 @@
 <template>
-    <div :class='["fly-modal",styles]' @click='handleModal' v-show="model">
+    <div :class='["fly-modal",styles]' @click='handleModal' v-if="model">
       <div class='fly-modal__content' :style='{"width":width}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>

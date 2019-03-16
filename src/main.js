@@ -13,7 +13,6 @@ import Tag from './components/tag/index'
 import InputNumber from './components/input-number/index'
 import Card from './components/card/index'
 import Alert from './components/alert/index'
-import Message from './components/message/index'
 import TimeLine from './components/timeline/index'
 import TimeLineItem from './components/timeline-item/index'
 import Tab from './components/tab/index'
@@ -22,7 +21,7 @@ import Rate from './components/rate/index'
 import Select from './components/select/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
-
+import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
 const components = [
@@ -41,7 +40,6 @@ const components = [
   InputNumber,
   Card,
   Alert,
-  Message,
   TimeLine,
   TimeLineItem,
   Tab,
@@ -54,6 +52,7 @@ const components = [
 
 const install = function (Vue) {
   Vue.prototype.$modal = $modal
+  Vue.prototype.$message = $message
   components.forEach(component => {
     Vue.component(component.name, component)
   })
@@ -61,6 +60,7 @@ const install = function (Vue) {
 /* istanbul ignore if */
 if (typeof window !== 'undefined' && window.Vue) {
   window.Vue.prototype.$modal = $modal
+  window.Vue.prototype.$message = $message
   install(window.Vue)
 }
 export default {
@@ -81,7 +81,6 @@ export default {
   InputNumber,
   Card,
   Alert,
-  Message,
   TimeLine,
   TimeLineItem,
   Tab,

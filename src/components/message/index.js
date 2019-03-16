@@ -1,2 +1,2 @@
-import Message from './src/main.vue'
+import Message from './src/main.js'
 export default Message
