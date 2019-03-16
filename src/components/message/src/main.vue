@@ -2,7 +2,7 @@
     <div class='fly-message__notice' v-if='value'>
         <div class='fly-message__content'>
           <i :class='["fly-message__icon",iconName,`is-${type}`]'></i>{{content}}
-          <i v-if='colsable' @click='handleClose' class='fly-message__close fly-icon-x'></i>
+          <i v-if='closable' @click='handleClose' class='fly-message__close fly-icon-x'></i>
         </div>
     </div>
 </template>
@@ -17,14 +17,14 @@ export default {
       type: Number,
       default: 0
     },
-    colsable: {
+    closable: {
       type: Boolean,
       default: false
     },
     type: {
       type: String,
       validator (value) {
-        return ['success', 'info', 'warning', 'error'].indexOf(value) > -1
+        return ['success', 'info', 'warning', 'error', 'loading'].indexOf(value) > -1
       },
       default: 'info'
     }
@@ -49,6 +49,8 @@ export default {
           return 'fly-icon-check'
         case 'error':
           return 'fly-icon-x'
+        case 'loading':
+          return 'fly-icon-loader'
       }
     }
   },

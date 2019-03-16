@@ -47,3 +47,17 @@ export function preciseReduce (num1 = 0, num2 = 0) {
   const baseNum = Math.pow(10, Math.max(num1Mantissa, num2Mantissa))
   return (num1 * baseNum - num2 * baseNum) / baseNum
 }
+
+/**
+ * 判断对象是否是纯粹的对象类型
+ *
+ * @export
+ * @param {*} obj
+ * @returns
+ */
+export function isPlainObject (obj) {
+  if (Object.prototype.toString.call(obj) === '[object Object]') {
+    return true
+  }
+  return false
+}

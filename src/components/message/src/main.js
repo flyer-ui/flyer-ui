@@ -1,7 +1,8 @@
 import Vue from 'vue'
-import tmplModal from './main.vue'
+import tmpl from './main.vue'
+import {isPlainObject} from '~/util/util'
 
-let Instance = (content, type, duration) => {
+let Instance = (content, type, duration, options) => {
   let container = document.getElementsByClassName('fly-message')
   if (container.length === 0) {
     container = document.createElement('div')
@@ -11,31 +12,42 @@ let Instance = (content, type, duration) => {
     container = container[0]
   }
 
-  let Comp = Vue.extend(tmplModal)
-  let vm = new Comp({propsData: {
+  if (isPlainObject(duration)) {
+    options = duration
+    duration = 0
+  }
+
+  let Comp = Vue.extend(tmpl)
+  options = Object.assign({}, {
     content: content,
     value: true,
     type: type,
-    duration: duration}}).$mount(document.createElement('span'))
+    duration: duration
+  }, options)
+  let vm = new Comp({propsData: options}).$mount(document.createElement('div'))
 
   vm.$on('on-closed', () => {
     vm.$set(vm.$props, 'value', false)
+    typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })
   container.append(vm.$el)
 }
 
 let $Message = {
-  info: (content, duration) => {
-    Instance(content, 'info', duration)
+  info: (content, duration, options) => {
+    Instance(content, 'info', duration, options)
   },
-  success: (content, duration) => {
-    Instance(content, 'success', duration)
+  success: (content, duration, options) => {
+    Instance(content, 'success', duration, options)
   },
-  warning: (content, duration) => {
-    Instance(content, 'warning', duration)
+  warning: (content, duration, options) => {
+    Instance(content, 'warning', duration, options)
   },
-  error: (content, duration) => {
-    Instance(content, 'error', duration)
+  error: (content, duration, options) => {
+    Instance(content, 'error', duration, options)
+  },
+  loading: (content, duration, options) => {
+    Instance(content, 'loading', duration, options)
   }
 }
 
