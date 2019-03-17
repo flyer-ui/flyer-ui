@@ -21,6 +21,7 @@ import Rate from './components/rate/index'
 import Select from './components/select/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
+import Progress from './components/progress/'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -47,7 +48,8 @@ const components = [
   Rate,
   Select,
   Upload,
-  Slider
+  Slider,
+  Progress
 ]
 
 const install = function (Vue) {
@@ -88,5 +90,6 @@ export default {
   Rate,
   Select,
   Upload,
-  Slider
+  Slider,
+  Progress
 }

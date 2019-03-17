@@ -1,0 +1,39 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('progress'){
+    position: relative;
+    padding: 5px 0px;
+    box-sizing: border-box;
+    @include e('bar'){
+        position: relative;
+    }
+    @include e('outer'){
+        min-height:10px;
+        background: $fly-border-color;
+        border-radius:5px;
+        margin-right:60px;
+    }
+    @include e('inner'){
+        position: absolute;
+        min-height: 10px;
+        width:20%;
+        top: 0px;
+        border-radius:5px;
+        z-index: 1;
+        background: $fly-warning-color;
+    }
+    @include e('text'){
+        position: absolute;
+        z-index: 1;
+        top:0px;
+        right:20px;
+    }
+    @include e('status'){
+        position: absolute;
+        z-index: 1;
+        top:0px;
+        right:0px;
+    }
+}

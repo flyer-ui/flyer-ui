@@ -189,6 +189,12 @@
             "type": "item",
             "path": "form",
             "pending":false
+        },
+        {
+            "text": "Progress 进度条",
+            "type": "item",
+            "path": "progress",
+            "pending":false
         }
     ]
 }
