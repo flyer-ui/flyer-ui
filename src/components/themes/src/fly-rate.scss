@@ -3,5 +3,57 @@
 @import './base/fly-mixins.scss';
 
 @include b('rate'){
-    
+    @include e('item'){
+        position: relative;
+        color:$fly-border-color;
+        display: inline-flex;
+        cursor: pointer;
+        & + & {
+            margin-left:10px;
+        }
+        @include when('disabled'){
+            cursor:not-allowed;
+        }
+        @include when('mini'){
+            i{font-size:10px !important;}
+        }
+        @include when('large'){
+            i{font-size:20px !important;}
+        }
+        @include when('full'){
+            .fly-rate__full{
+                color:$fly-warning-color;
+            }
+            .fly-rate__half{
+                color:$fly-warning-color;
+            }
+        }
+        @include when('half'){
+            .fly-rate__half{
+                color:$fly-warning-color;
+            }
+        }
+    }
+    @include e('half'){
+        position: absolute;
+        z-index: 2;
+        left:0px;
+        width:50%;
+        overflow: hidden;
+        font-style:inherit;
+        @include when('active'){
+            color:$fly-warning-color;
+        }
+    }
+    @include e('full'){
+        font-style:inherit;
+        @include when('active'){
+            color:$fly-warning-color;
+        }
+    }
+    @include e('text'){
+        display: inline-flex;
+        margin-left:10px;
+        color:$font-color-text;
+    }
 }
