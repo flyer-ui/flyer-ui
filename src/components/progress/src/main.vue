@@ -2,18 +2,61 @@
     <div class='fly-progress'>
         <div class='fly-progress__bar'>
             <div class='fly-progress__outer'></div>
-            <div class='fly-progress__inner'></div>
+            <div :class='["fly-progress__inner",`is-${status}`]' :style='{"width":`${percentage}%`}'>
+            </div>
         </div>
-        <div class='fly-progress__text'>
-            20%
+        <div v-if='isShowText' class='fly-progress__text'>
+            <slot name='text' v-bind:percentage='percentage'>{{percentage}}%</slot>
         </div>
-        <div class='fly-progress__status'>
-            <fly-icon name='x'></fly-icon>
+        <div v-if='isShowStatus' :class='["fly-progress__status",`is-${status}`]'>
+            <slot name='status' v-bind:status='status'>
+                <fly-icon :name='statusName'></fly-icon>
+            </slot>
         </div>
     </div>
 </template>
 <script>
 export default {
-  name: 'FlyProgress'
+  name: 'FlyProgress',
+  props: {
+    percentage: {
+      type: Number,
+      required: true,
+      default: 0
+    },
+    showText: {
+      type: Boolean,
+      default: false
+    },
+    status: {
+      type: String,
+      validator (value) {
+        return ['normal', 'success', 'error'].indexOf(value) > -1
+      },
+      default: 'normal'
+    }
+  },
+  computed: {
+    statusName: {
+      get () {
+        switch (this.status) {
+          case 'success':
+            return 'check'
+          case 'error':
+            return 'x'
+        }
+      }
+    },
+    isShowStatus: {
+      get () {
+        return status !== 'normal' && this.showText
+      }
+    },
+    isShowText: {
+      get () {
+        return this.showText && this.status === 'normal'
+      }
+    }
+  }
 }
 </script>
