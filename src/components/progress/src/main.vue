@@ -1,18 +1,19 @@
 <template>
     <div class='fly-progress'>
         <div class='fly-progress__bar'>
-            <div class='fly-progress__outer'></div>
-            <div :class='["fly-progress__inner",`is-${status}`]' :style='{"width":`${percentage}%`}'>
+            <div class='fly-progress__outer'>
+                <div :class='["fly-progress__inner",`is-${status}`]' :style='{"width":`${percentage}%`}'>
+                </div>
             </div>
         </div>
-        <div v-if='isShowText' class='fly-progress__text'>
+        <span v-if='isShowText' class='fly-progress__text'>
             <slot name='text' v-bind:percentage='percentage'>{{percentage}}%</slot>
-        </div>
-        <div v-if='isShowStatus' :class='["fly-progress__status",`is-${status}`]'>
+        </span>
+        <span v-if='isShowStatus' :class='["fly-progress__status",`is-${status}`]'>
             <slot name='status' v-bind:status='status'>
                 <fly-icon :name='statusName'></fly-icon>
             </slot>
-        </div>
+        </span>
     </div>
 </template>
 <script>

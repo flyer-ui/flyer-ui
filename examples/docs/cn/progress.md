@@ -13,6 +13,11 @@
                 value9:30
             }
         },
+        computed:{
+            status(){
+                return this.value4 === 100 ? 'success':'normal'
+            }
+        },
         methods:{
             addition(){
                 if(this.value4<100){
@@ -86,7 +91,7 @@
 ```html
 <template>
     <div style='width:400px'>
-        <fly-progress :percentage='value4' show-text></fly-progress>
+        <fly-progress :status='status' :percentage='value4' show-text></fly-progress>
         <br/>
         <fly-button @on-click='addition'>+</fly-button>
         <fly-button @on-click='reduce'>-</fly-button>
@@ -97,6 +102,11 @@
         data(){
             return {
                 value4:10
+            }
+        },
+        computed:{
+            status(){
+                return this.value4 === 100 ? 'success':'normal'
             }
         },
         methods:{

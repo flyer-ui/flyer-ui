@@ -6,17 +6,24 @@
     position: relative;
     padding: 5px 0px;
     box-sizing: border-box;
+    width:100%;
     @include e('bar'){
         position: relative;
+        display: inline-block;
+        width:100%;
+        margin-right:calc(-3em - 10px);
+        padding-right:calc(3em + 10px);
+        box-sizing: border-box;
+
     }
     @include e('outer'){
-        min-height:10px;
+        position: relative;
         background: $fly-border-color;
         border-radius:5px;
-        margin-right:60px;
+        display:inline-block;
+        width:100%;
     }
     @include e('inner'){
-        position: absolute;
         min-height: 10px;
         top: 0px;
         border-radius:5px;
@@ -37,16 +44,10 @@
         }
     }
     @include e('text'){
-        position: absolute;
-        z-index: 1;
-        top:0px;
-        right:20px;
+        display: inline-block;
     }
     @include e('status'){
-        position: absolute;
-        z-index: 1;
-        top:0px;
-        right:0px;
+        display: inline-block;
         font-size:12px;
         border-radius: 100%;
         i{
