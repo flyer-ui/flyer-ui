@@ -3,5 +3,32 @@
 @import './base/fly-mixins.scss';
 
 @include b('tab'){
-    
+    position: relative;
+    @include e('header'){
+        position: relative;
+        border-bottom:2px solid $fly-border-color;
+    }
+    @include e('content'){
+        position: relative;
+    }
+    @include e('pane'){
+        position: relative;
+        padding:10px;
+        display:none;
+        @include when('active'){
+            display: block;
+        }
+    }
+    @include e('nav'){
+        position: relative;
+        display: inline-flex;
+        padding:10px;
+        box-sizing: border-box;
+        @include when('active'){
+            margin-bottom:-3px;
+            color:$fly-primary-color;
+            font-weight: 500;
+            border-bottom:2px solid $fly-primary-color;
+        }
+    }
 }

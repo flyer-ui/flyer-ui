@@ -16,6 +16,7 @@ import Alert from './components/alert/index'
 import TimeLine from './components/timeline/index'
 import TimeLineItem from './components/timeline-item/index'
 import Tab from './components/tab/index'
+import TabPane from './components/tab/src/pane.vue'
 import Transfer from './components/transfer/index'
 import Rate from './components/rate/index'
 import Select from './components/select/index'
@@ -38,6 +39,7 @@ const components = [
   Switch,
   Textarea,
   Tag,
+  TabPane,
   InputNumber,
   Card,
   Alert,
@@ -86,6 +88,7 @@ export default {
   TimeLine,
   TimeLineItem,
   Tab,
+  TabPane,
   Transfer,
   Rate,
   Select,
