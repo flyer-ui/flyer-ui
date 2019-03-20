@@ -22,7 +22,10 @@ import Rate from './components/rate/index'
 import Select from './components/select/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
-import Progress from './components/progress/'
+import Progress from './components/progress/index'
+import Pagination from './components/pagination/index'
+import Popover from './components/popover/index'
+import Tooltip from './components/tooltip/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -51,7 +54,10 @@ const components = [
   Select,
   Upload,
   Slider,
-  Progress
+  Progress,
+  Pagination,
+  Popover,
+  Tooltip
 ]
 
 const install = function (Vue) {
@@ -94,5 +100,8 @@ export default {
   Select,
   Upload,
   Slider,
-  Progress
+  Progress,
+  Pagination,
+  Popover,
+  Tooltip
 }
