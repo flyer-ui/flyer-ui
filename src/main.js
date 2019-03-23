@@ -15,7 +15,7 @@ import Card from './components/card/index'
 import Alert from './components/alert/index'
 import TimeLine from './components/timeline/index'
 import TimeLineItem from './components/timeline-item/index'
-import Tab from './components/tab/index'
+import Tabs from './components/tabs/index'
 import TabPane from './components/tab/src/pane.vue'
 import Transfer from './components/transfer/index'
 import Rate from './components/rate/index'
@@ -48,7 +48,7 @@ const components = [
   Alert,
   TimeLine,
   TimeLineItem,
-  Tab,
+  Tabs,
   Transfer,
   Rate,
   Select,
@@ -93,7 +93,7 @@ export default {
   Alert,
   TimeLine,
   TimeLineItem,
-  Tab,
+  Tabs,
   TabPane,
   Transfer,
   Rate,

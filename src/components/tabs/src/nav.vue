@@ -1,6 +1,7 @@
 <template>
     <div class='fly-tab__nav'>
-        Tab2
+      <slot name='label'></slot>
+      <slot name='default'></slot>
     </div>
 </template>
 <script>

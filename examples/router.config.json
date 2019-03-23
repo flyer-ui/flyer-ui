@@ -143,9 +143,9 @@
             "pending":false
         },
         {
-            "text": "Tab 选项卡",
+            "text": "Tabs 选项卡",
             "type": "item",
-            "path": "tab",
+            "path": "tabs",
             "pending":false
         },
         {

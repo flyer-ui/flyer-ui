@@ -7,7 +7,16 @@
 export default {
   name: 'FlyTabPane',
   props: {
-    label: String
+    label: String,
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    name: String,
+    closable: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>

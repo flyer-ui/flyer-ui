@@ -2,18 +2,76 @@
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
 
+$fly-tab-nav-padding:10px;
+$fly-tab-nav-lineHeight:24px;
+
 @include b('tab'){
     position: relative;
     @include e('header'){
         position: relative;
+        width:100%;
+        padding-right:calc(#{$fly-tab-nav-padding} * 2);
+        padding-left:calc(#{$fly-tab-nav-padding} * 2);
+        box-sizing: border-box;
+        @include when('show-list'){
+            padding-right:calc(#{$fly-tab-nav-padding} * 6)
+        }
+    }
+    .icon-pull{
+        position: absolute;
+        cursor: pointer;
+        top:0px;
         border-bottom:2px solid $fly-border-color;
+        box-sizing: border-box;
+        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
+        padding:calc((#{$fly-tab-nav-padding} * 2 + #{$fly-tab-nav-lineHeight} - 16px - 2px) / 2) 2px;
+    }
+    .icon-hover{
+        [class^="fly-icon-"], [class*=" fly-icon-"] {
+            border-radius: 100%;
+            &:hover{
+                background: rgba($fly-border-color,0.5);
+            }
+        }
+    }
+    @include e('left'){
+        @extend .icon-pull;
+        @extend .icon-hover;
+        left:2px;
+        &:after{
+            content:'';
+            @extend .icon-pull;
+            width:$fly-tab-nav-padding;
+            right:calc(#{-$fly-tab-nav-padding} / 2);
+            opacity:0.9;
+        }
+    }
+    @include e('right'){
+        @extend .icon-pull;
+        @extend .icon-hover;
+        right:2px;
+        &:before{
+            content:'';
+            @extend .icon-pull;
+            width:$fly-tab-nav-padding;
+            background: #fff;
+            left:calc(#{-$fly-tab-nav-padding} / 2);
+            opacity:0.9;
+        }
+    }
+    @include e('navs'){
+        overflow: hidden;
+        display: inline-flex;
+        width:100%;
+        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
+        box-sizing: border-box;
     }
     @include e('content'){
         position: relative;
     }
     @include e('pane'){
         position: relative;
-        padding:10px;
+        padding:$fly-tab-nav-padding;
         display:none;
         @include when('active'){
             display: block;
@@ -22,10 +80,11 @@
     @include e('nav'){
         position: relative;
         display: inline-flex;
-        padding:10px;
+        padding:$fly-tab-nav-padding;
         box-sizing: border-box;
+        line-height: $fly-tab-nav-lineHeight;
+        border-bottom:2px solid $fly-border-color;
         @include when('active'){
-            margin-bottom:-3px;
             color:$fly-primary-color;
             font-weight: 500;
             border-bottom:2px solid $fly-primary-color;
