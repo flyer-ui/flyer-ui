@@ -28,6 +28,29 @@
 ::: demo
 ```html
 <template>
+    <fly-tab v-model='tabName'>
+        <fly-tab-pane>
+            <span slot='label'>选项卡一</span>
+            <div>
+                选项卡内容一
+            </div>
+        </fly-tab-pane>
+        <fly-tab-pane>
+            <span slot='label'>选项卡二</span>
+            <div>
+                选项卡内容二
+            </div>
+        </fly-tab-pane>
+    </fly-tab>
+</template>
+```
+:::
+
+### 动态添加
+
+::: demo
+```html
+<template>
     <div style='width:700px'>
         <fly-tab ref='tabs' v-model='tabName' @on-addition='handleAddition'>
             <fly-tab-pane :key='index' v-for='(tab,index) in tabs' :label='tab.label'>
@@ -72,14 +95,15 @@ value / v-model | String | - | - | 绑定的值
 type |  String  | - | simple | 卡片的风格  |
 closable | Boolean | false  | true / false | tab是否可关闭  |
 addable | Boolean | false  | true / false |  tab是否可增加 |
-show-all-tags | Boolean | true  | true / false | tab多过时是否显示辅助查看列表  |
- fixed-width| String | - | - | 设置tab宽度，有值之后就是固定宽度，不会自动适应宽度  |
+
+<!-- show-all-tags | Boolean | true  | true / false | tab多过时是否显示辅助查看列表  | -->
+ <!-- fixed-width| String | - | - | 设置tab宽度，有值之后就是固定宽度，不会自动适应宽度  | -->
 
 ### Tab - 可定制的事件
 
 事件名称 | 返回值 | 说明
 ---------|----------|---------
- on-addition | - |  添加tab事件
+ on-added | - |  添加tab事件之后
  on-deleted | - | 在删除tab事件之后
  on-changed | - | 切换了tab之后
 

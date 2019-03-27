@@ -6,21 +6,13 @@
          </span>
          <div class='fly-tab__scroll'>
           <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
-            <fly-tab-nav ref='nav' v-for='(nav,index) in navs'
+            <fly-tab-nav ref='nav' v-bind='nav' v-for='(nav,index) in navs'
             :key='index'>
-            {{nav.label}}
             </fly-tab-nav>
           </div>
         </div>
         <span class='fly-tab__right'>
           <i class='fly-icon-chevron-right' v-if='showPullButton' @click='handleRightPull'></i>
-          <i class='fly-icon-add' @click='handleAddition'></i>
-          <i class='fly-icon-more-vertical' v-if='showAllTags' @click='handleShowList'></i>
-          <div class='fly-tab__tab-list' v-show='showList'>
-            <div v-for='(nav,index) in navs' :key='index'>
-              {{nav.label}}
-            </div>
-          </div>
          </span>
       </div>
       <div class='fly-tab__content'>
@@ -46,6 +38,10 @@ export default {
       }
     },
     closable: {
+      type: Boolean,
+      default: false
+    },
+    addable: {
       type: Boolean,
       default: false
     },
@@ -114,7 +110,8 @@ export default {
       })
       this.navs = paneSlots.map(({componentInstance}) => componentInstance)
       this.showPullButton = this.scroll.scrollWidth > this.scroll.offsetWidth
-      console.log(this.scroll.scrollWidth)
+      // console.log(this.scroll.scrollWidth)
+      console.log(this.navs)
     }
   }
 }
