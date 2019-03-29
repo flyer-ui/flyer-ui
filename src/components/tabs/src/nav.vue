@@ -1,18 +1,24 @@
-<template>
-    <div class='fly-tab__nav'>
-      <slot name='label'>{{pane.label}}</slot>
-      <slot name='default'>{{pane.default}}</slot>
-    </div>
-</template>
 <script>
 export default {
   name: 'FlyTagNav',
-  pane: {
-    type: Object,
-    default () {
-      return {}
-    },
-    require: true
+  props: {
+    pane: {
+      type: Object,
+      default () {
+        return {}
+      },
+      require: true
+    }
+  },
+  created () {
+    console.log('pane', this.pane)
+  },
+  render (h) {
+    return (
+      <div class='fly-tab__nav'>
+        {this.pane.$slots.label || this.pane.label}
+      </div>
+    )
   }
 }
 </script>

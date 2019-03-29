@@ -1,18 +1,18 @@
 <template>
     <div class='fly-tab'>
-      <div :class='["fly-tab__header",{"is-show-pull-button":showPullButton}]'>
-         <span v-if='showPullButton' class='fly-tab__left'>
+      <div :class='["fly-tab__header",{"is-sscrollable":scrollable}]'>
+         <span v-if='scrollable' class='fly-tab__left'>
            <i class='fly-icon-chevron-left' @click='handleLeftPull'></i>
          </span>
          <div class='fly-tab__scroll'>
           <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
-            <fly-tab-nav ref='nav' v-bind='nav' v-for='(nav,index) in navs'
+            <fly-tab-nav ref='nav' :pane='nav' v-for='(nav,index) in navs'
             :key='index'>
             </fly-tab-nav>
           </div>
         </div>
         <span class='fly-tab__right'>
-          <i class='fly-icon-chevron-right' v-if='showPullButton' @click='handleRightPull'></i>
+          <i class='fly-icon-chevron-right' v-if='scrollable' @click='handleRightPull'></i>
          </span>
       </div>
       <div class='fly-tab__content'>
@@ -54,7 +54,7 @@ export default {
     return {
       navs: [],
       showList: false,
-      showPullButton: false,
+      scrollable: false,
       currentTranslateX: 0
     }
   },

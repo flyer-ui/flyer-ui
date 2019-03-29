@@ -41,6 +41,11 @@
                 选项卡内容二
             </div>
         </fly-tab-pane>
+        <fly-tab-pane label='选项卡三'>
+            <div>
+                选项卡内容三
+            </div>
+        </fly-tab-pane>
     </fly-tab>
 </template>
 ```
