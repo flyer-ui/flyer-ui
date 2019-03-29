@@ -6,7 +6,7 @@
          </span>
          <div class='fly-tab__scroll'>
           <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
-            <fly-tab-nav ref='nav' :pane='nav' v-for='(nav,index) in navs'
+            <fly-tab-nav ref='nav' :pane='pane' v-for='(pane,index) in panes'
             :key='index'>
             </fly-tab-nav>
           </div>
@@ -24,7 +24,7 @@
 import FlyTabNav from './nav'
 import FlyTabPane from './pane'
 export default {
-  name: 'FlyTab',
+  name: 'FlyTabs',
   components: {
     FlyTabNav,
     FlyTabPane
@@ -40,34 +40,17 @@ export default {
     closable: {
       type: Boolean,
       default: false
-    },
-    addable: {
-      type: Boolean,
-      default: false
-    },
-    showAllTags: {
-      type: Boolean,
-      default: true
     }
   },
   data () {
     return {
-      navs: [],
       showList: false,
       scrollable: false,
-      currentTranslateX: 0
+      currentTranslateX: 0,
+      panes: []
     }
   },
   computed: {
-    scrollWidth () {
-      return this.scroll.scrollWidth - this.navsWidth
-    },
-    navsWidth () {
-      return this.scroll.offsetWidth
-    },
-    scroll () {
-      return document.getElementsByClassName('fly-tab__scroll')[0]
-    },
     translateX: {
       get () {
         return this.currentTranslateX
@@ -77,42 +60,24 @@ export default {
       }
     }
   },
+  methods: {
+    // 收集分析子组件
+    calcPaneInstances () {
+      if (this.$slots.default) {
+        const paneSlots = this.$slots.default.filter((VNode) => {
+          return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
+        })
+        this.panes = paneSlots.map(({componentInstance}) => componentInstance)
+      }
+    }
+  },
   mounted () {
-    this.findPaneInstance()
+    // 收集子组件
+    this.calcPaneInstances()
   },
   updated () {
-    // this.findPaneInstance()
-  },
-  methods: {
-    handleAddition () {
-      this.$emit('on-addition')
-    },
-    handleLeftPull () {
-      if (this.scroll.scrollWidth + this.translateX >= this.scroll.offsetWidth) {
-        this.translateX = this.translateX - this.scroll.offsetWidth
-      } else {
-        this.translateX = this.translateX - (this.scroll.scrollWidth + this.translateX)
-      }
-    },
-    handleRightPull () {
-      if (this.translateX + this.scroll.offsetWidth < 0) {
-        this.translateX = this.translateX + this.scroll.offsetWidth
-      } else {
-        this.translateX = 0
-      }
-    },
-    handleShowList () {
-      this.showList = !this.showList
-    },
-    findPaneInstance () {
-      const paneSlots = this.$slots.default.filter((VNode) => {
-        return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
-      })
-      this.navs = paneSlots.map(({componentInstance}) => componentInstance)
-      this.showPullButton = this.scroll.scrollWidth > this.scroll.offsetWidth
-      // console.log(this.scroll.scrollWidth)
-      console.log(this.navs)
-    }
+    // 收集子组件
+    // this.calcPaneInstances()
   }
 }
 </script>

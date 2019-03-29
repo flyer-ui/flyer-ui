@@ -4,6 +4,7 @@
 
 $fly-tab-nav-padding:10px;
 $fly-tab-nav-lineHeight:24px;
+$fly-bottom-border-size:2px;
 
 @include b('tab'){
     position: relative;
@@ -36,7 +37,7 @@ $fly-tab-nav-lineHeight:24px;
         position: relative;
         width:100%;
         box-sizing: border-box;
-        @include when ('show-pull-button'){
+        @include when ('scrollable'){
             padding-right:calc(#{$fly-tab-nav-padding} * 2);
             padding-left:calc(#{$fly-tab-nav-padding} * 2);
         }
@@ -102,14 +103,14 @@ $fly-tab-nav-lineHeight:24px;
     @include e('nav'){
         position: relative;
         display: inline-flex;
+        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         padding:$fly-tab-nav-padding;
         box-sizing: border-box;
-        line-height: $fly-tab-nav-lineHeight;
+        line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
         @include when('active'){
             color:$fly-primary-color;
             font-weight: 500;
-            border-bottom:2px solid $fly-primary-color;
-            margin-bottom:-2px;
+            border-bottom:$fly-bottom-border-size solid $fly-primary-color;
         }
     }
 }

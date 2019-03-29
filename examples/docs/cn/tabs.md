@@ -3,7 +3,7 @@
         data(){
             return {
                 index:1,
-                tabName:'',
+                tabName:'first',
                 tabs:[{
                     label:'tab1',
                     content:'tab content1'
@@ -28,26 +28,34 @@
 ::: demo
 ```html
 <template>
-    <fly-tab v-model='tabName'>
-        <fly-tab-pane>
+    <fly-tabs v-model='tabName'>
+        <fly-tab-pane name='first'>
             <span slot='label'>选项卡一</span>
             <div>
                 选项卡内容一
             </div>
         </fly-tab-pane>
-        <fly-tab-pane>
-            <span slot='label'>选项卡二</span>
+        <fly-tab-pane name='second' label='选项卡二'>
             <div>
                 选项卡内容二
             </div>
         </fly-tab-pane>
-        <fly-tab-pane label='选项卡三'>
+        <fly-tab-pane name='third' label='选项卡三'>
             <div>
                 选项卡内容三
             </div>
         </fly-tab-pane>
-    </fly-tab>
+    </fly-tabs>
 </template>
+<script>
+    export default {
+        data(){
+            return {
+                tabName:'first'
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -57,11 +65,11 @@
 ```html
 <template>
     <div style='width:700px'>
-        <fly-tab ref='tabs' v-model='tabName' @on-addition='handleAddition'>
+        <fly-tabs ref='tabs' v-model='tabName' @on-addition='handleAddition'>
             <fly-tab-pane :key='index' v-for='(tab,index) in tabs' :label='tab.label'>
                 {{tab.content}}
             </fly-tab-pane>
-        </fly-tab>
+        </fly-tabs>
     </div>
 </template>
 <script>
@@ -99,8 +107,8 @@
 value / v-model | String | - | - | 绑定的值
 type |  String  | - | simple | 卡片的风格  |
 closable | Boolean | false  | true / false | tab是否可关闭  |
-addable | Boolean | false  | true / false |  tab是否可增加 |
 
+<!-- addable | Boolean | false  | true / false |  tab是否可增加 | -->
 <!-- show-all-tags | Boolean | true  | true / false | tab多过时是否显示辅助查看列表  | -->
  <!-- fixed-width| String | - | - | 设置tab宽度，有值之后就是固定宽度，不会自动适应宽度  | -->
 
