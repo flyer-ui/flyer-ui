@@ -36,7 +36,7 @@ $fly-tab-nav-lineHeight:24px;
         position: relative;
         width:100%;
         box-sizing: border-box;
-        @include when ('show-pull-button'){
+        @include when ('scrollable'){
             padding-right:calc(#{$fly-tab-nav-padding} * 2);
             padding-left:calc(#{$fly-tab-nav-padding} * 2);
         }

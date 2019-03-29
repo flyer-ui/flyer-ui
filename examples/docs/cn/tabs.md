@@ -35,8 +35,7 @@
                 选项卡内容一
             </div>
         </fly-tab-pane>
-        <fly-tab-pane>
-            <span slot='label'>选项卡二</span>
+        <fly-tab-pane label='选项卡二'>
             <div>
                 选项卡内容二
             </div>
@@ -94,8 +93,8 @@
 value / v-model | String | - | - | 绑定的值
 type |  String  | - | simple | 卡片的风格  |
 closable | Boolean | false  | true / false | tab是否可关闭  |
-addable | Boolean | false  | true / false |  tab是否可增加 |
 
+<!-- addable | Boolean | false  | true / false |  tab是否可增加 | -->
 <!-- show-all-tags | Boolean | true  | true / false | tab多过时是否显示辅助查看列表  | -->
  <!-- fixed-width| String | - | - | 设置tab宽度，有值之后就是固定宽度，不会自动适应宽度  | -->
 

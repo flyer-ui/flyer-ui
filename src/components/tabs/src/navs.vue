@@ -7,7 +7,7 @@
 <script>
 export default {
   name: 'FlyTagNav',
-  pane: {
+  navs: {
     type: Object,
     default () {
       return {}
