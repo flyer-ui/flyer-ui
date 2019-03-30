@@ -195,6 +195,18 @@
             "type": "item",
             "path": "progress",
             "pending":false
+        },
+        {
+            "text": "Tooltip 文字提示",
+            "type": "item",
+            "path": "tooltip",
+            "pending":false
+        },
+        {
+            "text": "Popover 气泡提示",
+            "type": "item",
+            "path": "popover",
+            "pending":false
         }
     ]
 }
