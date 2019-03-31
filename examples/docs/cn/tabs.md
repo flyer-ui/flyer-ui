@@ -16,7 +16,6 @@
                     label:`tab ${this.index++}`,
                     content:`tab content ${this.index++}`
                 })
-                this.$refs.tabs.findPaneInstance()
             }
         }
     }
@@ -65,8 +64,9 @@
 ```html
 <template>
     <div style='width:700px'>
-        <fly-tabs ref='tabs' v-model='tabName' @on-addition='handleAddition'>
-            <fly-tab-pane :key='index' v-for='(tab,index) in tabs' :label='tab.label'>
+        <fly-button @on-click='handleAddition'>Add Tab</fly-button>
+        <fly-tabs ref='tabs' v-model='index' @on-addition='handleAddition'>
+            <fly-tab-pane :key='index' :name='index' v-for='(tab,index) in tabs' :label='tab.label'>
                 {{tab.content}}
             </fly-tab-pane>
         </fly-tabs>
@@ -91,7 +91,6 @@
                     label:`tab ${num}`,
                     content:`tab content ${num}`
                 })
-                this.$refs.tabs.findPaneInstance()
             }
         }
     }

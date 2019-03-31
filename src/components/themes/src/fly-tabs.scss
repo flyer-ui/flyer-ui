@@ -106,6 +106,7 @@ $fly-bottom-border-size:2px;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         padding:$fly-tab-nav-padding;
         box-sizing: border-box;
+        cursor: default;
         line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
         @include when('active'){
             color:$fly-primary-color;

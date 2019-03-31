@@ -8,17 +8,22 @@ export default {
         return {}
       },
       require: true
-    }
-  },
-  created () {
-    console.log('pane', this.pane)
+    },
+    name: [String, Number],
+    value: [String, Number]
   },
   render (h) {
     return (
-      <div class='fly-tab__nav'>
+      <div on-click={this.handleClick} class={['fly-tab__nav',
+        {'is-active': this.value === this.name}]}>
         {this.pane.$slots.label || this.pane.label}
       </div>
     )
+  },
+  methods: {
+    handleClick ($event) {
+      this.$emit('input', this.name)
+    }
   }
 }
 </script>

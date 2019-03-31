@@ -6,8 +6,12 @@
          </span>
          <div class='fly-tab__scroll'>
           <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
-            <fly-tab-nav ref='nav' :pane='pane' v-for='(pane,index) in panes'
-            :key='index'>
+            <fly-tab-nav ref='nav'
+              v-model='model'
+              :pane='pane'
+              :name='pane.name'
+              v-for='(pane,index) in panes'
+              :key='index'>
             </fly-tab-nav>
           </div>
         </div>
@@ -30,7 +34,7 @@ export default {
     FlyTabPane
   },
   props: {
-    value: [String],
+    value: [String, Number],
     type: {
       type: String,
       validator (value) {
@@ -47,6 +51,7 @@ export default {
       showList: false,
       scrollable: false,
       currentTranslateX: 0,
+      selfModel: '',
       panes: []
     }
   },
@@ -58,6 +63,16 @@ export default {
       set (value) {
         this.currentTranslateX = value
       }
+    },
+    model: {
+      get () {
+        return this.selfModel || this.value
+      },
+      set (value) {
+        this.selfModel = value
+        this.updatePaneName()
+        this.$emit('input', value)
+      }
     }
   },
   methods: {
@@ -68,16 +83,26 @@ export default {
           return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
         })
         this.panes = paneSlots.map(({componentInstance}) => componentInstance)
+      } else if (this.panes.length !== 0) {
+        this.panes = []
       }
+    },
+    updatePaneName () {
+      this.panes.map((pane) => {
+        pane.setActive(this.model)
+      })
     }
   },
   mounted () {
     // 收集子组件
     this.calcPaneInstances()
+    this.updatePaneName()
   },
   updated () {
-    // 收集子组件
-    // this.calcPaneInstances()
+    this.$nextTick(() => {
+      console.log(this.$children)
+      // this.calcPaneInstances()
+    })
   }
 }
 </script>
