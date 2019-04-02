@@ -37,6 +37,8 @@ $fly-bottom-border-size:2px;
         position: relative;
         width:100%;
         box-sizing: border-box;
+        border-bottom:2px solid $fly-border-color;
+        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         @include when ('scrollable'){
             padding-right:calc(#{$fly-tab-nav-padding} * 2);
             padding-left:calc(#{$fly-tab-nav-padding} * 2);
@@ -71,15 +73,14 @@ $fly-bottom-border-size:2px;
     }
     @include e('scroll'){
         overflow: hidden;
+        white-space: nowrap;
     }
     @include e('navs'){
-        white-space: nowrap;
         // width:100%;
         float:left;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         box-sizing: border-box;
         transition:transform 0.3s;
-        border-bottom:2px solid $fly-border-color;
     }
     @include e('tab-list'){
         position: absolute;

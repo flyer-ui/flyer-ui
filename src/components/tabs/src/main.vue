@@ -1,10 +1,10 @@
 <template>
     <div class='fly-tab'>
-      <div :class='["fly-tab__header",{"is-sscrollable":scrollable}]'>
+      <div :class='["fly-tab__header",{"is-scrollable":scrollable}]'>
          <span v-if='scrollable' class='fly-tab__left'>
-           <i class='fly-icon-chevron-left' @click='handleLeftPull'></i>
+           <i class='fly-icon-chevron-left' @click='handlePrev'></i>
          </span>
-         <div class='fly-tab__scroll'>
+         <div ref='scrollBar' class='fly-tab__scroll'>
           <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
             <fly-tab-nav ref='nav'
               v-model='model'
@@ -16,7 +16,7 @@
           </div>
         </div>
         <span class='fly-tab__right'>
-          <i class='fly-icon-chevron-right' v-if='scrollable' @click='handleRightPull'></i>
+          <i class='fly-icon-chevron-right' v-if='scrollable' @click='handleNext'></i>
          </span>
       </div>
       <div class='fly-tab__content'>
@@ -49,35 +49,18 @@ export default {
   data () {
     return {
       showList: false,
-      currentTranslateX: 0,
+      translateX: 0,
       scrollable: false,
       selfModel: '',
       panes: []
     }
   },
   computed: {
-    scrollWidth () {
-      const scroll = document.getElementsByClassName('fly-tab__navs')[0]
-      return scroll.scrollWidth - this.navsWidth
-    },
-    navsWidth () {
-      const scroll = document.getElementsByClassName('fly-tab__navs')[0]
-      return scroll.offsetWidth
-    },
-    translateX: {
-      get () {
-        return this.currentTranslateX
-      },
-      set (value) {
-        this.currentTranslateX = value
-      }
-    },
     model: {
       get () {
         return this.selfModel || this.value || 0
       },
       set (value) {
-        debugger
         this.selfModel = value
         this.updatePaneName()
         this.$emit('input', value)
@@ -100,12 +83,11 @@ export default {
         this.panes = []
       }
 
-      this.$nextTick(() => {
-        const scroll = document.getElementsByClassName('fly-tab__navs')[0]
-        this.scrollable = scroll.scrollWidth > scroll.offsetWidth
-        console.log('scrollWidth', scroll.scrollWidth)
-        console.log('offsetWidth', scroll.offsetWidth)
-      })
+      const scroll = this.$refs.scrollBar
+      // this.scrollable = scroll.scrollWidth > scroll.offsetWidth
+      this.scrollable = true
+      console.log('scrollWidth', scroll.scrollWidth)
+      console.log('offsetWidth', scroll.offsetWidth)
     },
     updatePaneName () {
       this.panes.map((pane) => {
@@ -115,26 +97,15 @@ export default {
     handleAddition () {
       this.$emit('on-addition')
     },
-    handleLeftPull () {
-      if (this.scrollWidth + this.translateX >= this.offsetWidth) {
-        this.translateX = this.translateX - this.offsetWidth
-      } else {
-        this.translateX = this.translateX - (this.scrollWidth + this.translateX)
-      }
+    handlePrev () {
     },
-    handleRightPull () {
-      if (this.translateX + this.offsetWidth < 0) {
-        this.translateX = this.translateX + this.offsetWidth
-      } else {
-        this.translateX = 0
-      }
+    handleNext () {
     },
     handleShowList () {
       this.showList = !this.showList
     }
   },
   mounted () {
-    // 收集子组件
     this.calcPaneInstances()
     this.updatePaneName()
   },

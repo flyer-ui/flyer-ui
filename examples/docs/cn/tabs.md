@@ -13,8 +13,8 @@
         methods:{
             handleAddition(){
                 this.tabs.push({
-                    label:`New Tab`,
-                    content:`tab content`
+                    label:`New Tab ${Date.now()}`,
+                    content:`tab content ${Date.now()}`
                 })
             }
         }
@@ -40,24 +40,6 @@
             </div>
         </fly-tab-pane>
         <fly-tab-pane name='third' label='选项卡三'>
-            <div>
-                选项卡内容三
-            </div>
-        </fly-tab-pane>
-    </fly-tabs>
-     <fly-tabs>
-        <fly-tab-pane>
-            <span slot='label'>选项卡一</span>
-            <div>
-                选项卡内容一
-            </div>
-        </fly-tab-pane>
-        <fly-tab-pane label='选项卡二'>
-            <div>
-                选项卡内容二
-            </div>
-        </fly-tab-pane>
-        <fly-tab-pane label='选项卡三'>
             <div>
                 选项卡内容三
             </div>
@@ -104,8 +86,8 @@
         methods:{
             handleAddition(){
                 this.tabs.push({
-                    label:`New Tab`,
-                    content:`tab content`
+                    label:`New Tab ${Date.now()}`,
+                    content:`tab content ${Date.now()}`
                 })
             }
         }
