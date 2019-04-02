@@ -9,7 +9,7 @@
             <fly-tab-nav ref='nav'
               v-model='model'
               :pane='pane'
-              :name='pane.name'
+              :name='pane.name || index'
               v-for='(pane,index) in panes'
               :key='index'>
             </fly-tab-nav>
@@ -49,13 +49,21 @@ export default {
   data () {
     return {
       showList: false,
-      scrollable: false,
       currentTranslateX: 0,
+      scrollable: false,
       selfModel: '',
       panes: []
     }
   },
   computed: {
+    scrollWidth () {
+      const scroll = document.getElementsByClassName('fly-tab__navs')[0]
+      return scroll.scrollWidth - this.navsWidth
+    },
+    navsWidth () {
+      const scroll = document.getElementsByClassName('fly-tab__navs')[0]
+      return scroll.offsetWidth
+    },
     translateX: {
       get () {
         return this.currentTranslateX
@@ -66,9 +74,10 @@ export default {
     },
     model: {
       get () {
-        return this.selfModel || this.value
+        return this.selfModel || this.value || 0
       },
       set (value) {
+        debugger
         this.selfModel = value
         this.updatePaneName()
         this.$emit('input', value)
@@ -77,20 +86,51 @@ export default {
   },
   methods: {
     // 收集分析子组件
-    calcPaneInstances () {
+    calcPaneInstances (isLabelUpdated = false) {
       if (this.$slots.default) {
         const paneSlots = this.$slots.default.filter((VNode) => {
           return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
         })
-        this.panes = paneSlots.map(({componentInstance}) => componentInstance)
+        const panes = paneSlots.map(({ componentInstance }) => componentInstance)
+        const panesChanged = !(panes.length === this.panes.length && panes.every((pane, index) => pane === this.panes[index]))
+        if (isLabelUpdated || panesChanged) {
+          this.panes = panes
+        }
       } else if (this.panes.length !== 0) {
         this.panes = []
       }
+
+      this.$nextTick(() => {
+        const scroll = document.getElementsByClassName('fly-tab__navs')[0]
+        this.scrollable = scroll.scrollWidth > scroll.offsetWidth
+        console.log('scrollWidth', scroll.scrollWidth)
+        console.log('offsetWidth', scroll.offsetWidth)
+      })
     },
     updatePaneName () {
       this.panes.map((pane) => {
         pane.setActive(this.model)
       })
+    },
+    handleAddition () {
+      this.$emit('on-addition')
+    },
+    handleLeftPull () {
+      if (this.scrollWidth + this.translateX >= this.offsetWidth) {
+        this.translateX = this.translateX - this.offsetWidth
+      } else {
+        this.translateX = this.translateX - (this.scrollWidth + this.translateX)
+      }
+    },
+    handleRightPull () {
+      if (this.translateX + this.offsetWidth < 0) {
+        this.translateX = this.translateX + this.offsetWidth
+      } else {
+        this.translateX = 0
+      }
+    },
+    handleShowList () {
+      this.showList = !this.showList
     }
   },
   mounted () {
@@ -99,10 +139,8 @@ export default {
     this.updatePaneName()
   },
   updated () {
-    this.$nextTick(() => {
-      console.log(this.$children)
-      // this.calcPaneInstances()
-    })
+    this.calcPaneInstances()
+    this.updatePaneName()
   }
 }
 </script>

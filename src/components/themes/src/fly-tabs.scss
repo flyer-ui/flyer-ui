@@ -74,7 +74,8 @@ $fly-bottom-border-size:2px;
     }
     @include e('navs'){
         white-space: nowrap;
-        width:100%;
+        // width:100%;
+        float:left;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         box-sizing: border-box;
         transition:transform 0.3s;

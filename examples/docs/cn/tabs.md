@@ -13,8 +13,8 @@
         methods:{
             handleAddition(){
                 this.tabs.push({
-                    label:`tab ${this.index++}`,
-                    content:`tab content ${this.index++}`
+                    label:`New Tab`,
+                    content:`tab content`
                 })
             }
         }
@@ -45,6 +45,24 @@
             </div>
         </fly-tab-pane>
     </fly-tabs>
+     <fly-tabs>
+        <fly-tab-pane>
+            <span slot='label'>选项卡一</span>
+            <div>
+                选项卡内容一
+            </div>
+        </fly-tab-pane>
+        <fly-tab-pane label='选项卡二'>
+            <div>
+                选项卡内容二
+            </div>
+        </fly-tab-pane>
+        <fly-tab-pane label='选项卡三'>
+            <div>
+                选项卡内容三
+            </div>
+        </fly-tab-pane>
+    </fly-tabs>
 </template>
 <script>
     export default {
@@ -65,7 +83,7 @@
 <template>
     <div style='width:700px'>
         <fly-button @on-click='handleAddition'>Add Tab</fly-button>
-        <fly-tabs ref='tabs' v-model='index' @on-addition='handleAddition'>
+        <fly-tabs ref='tabs' @on-addition='handleAddition'>
             <fly-tab-pane :key='index' :name='index' v-for='(tab,index) in tabs' :label='tab.label'>
                 {{tab.content}}
             </fly-tab-pane>
@@ -76,7 +94,6 @@
     export default {
         data(){
             return {
-                index:1,
                 tabName:'',
                 tabs:[{
                     label:'tab1',
@@ -86,10 +103,9 @@
         },
         methods:{
             handleAddition(){
-                let num = this.index + 1;
                 this.tabs.push({
-                    label:`tab ${num}`,
-                    content:`tab content ${num}`
+                    label:`New Tab`,
+                    content:`tab content`
                 })
             }
         }
