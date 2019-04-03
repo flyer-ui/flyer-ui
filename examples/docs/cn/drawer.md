@@ -16,7 +16,7 @@
                 this.$message.info('点击了确认',3)
             },
             handleClosed(){
-                this.$message.success('我来源于关闭之后的事件')
+                this.$message.success('我来源于关闭之后的事件',3)
             }
         }
     }
@@ -29,7 +29,7 @@
 ```html
 <template>
     <fly-button @on-click='visibleDrawer=true'>Open</fly-button>
-    <fly-drawer v-model='visibleDrawer'>
+    <fly-drawer @on-closed='handleClosed' v-model='visibleDrawer'>
         <div slot='header'>Header</div>
         <div>
             Content
@@ -42,6 +42,12 @@
             return {
                 visibleDrawer:false
             }
+        },
+        methods:{
+            handleClosed(){
+                console.log(this)
+                this.$message.success('我来源于关闭之后的事件',3)
+            }
         }
     }
 </script>
@@ -53,7 +59,7 @@
 ```html
 <template>
     <fly-button @on-click='visibleDrawer2=true'>Open</fly-button>
-    <fly-drawer @on-closed='handleClosed' :show-close='false' :mask-closable='false' v-model='visibleDrawer2'>
+    <fly-drawer :show-close='false' :mask-closable='false' v-model='visibleDrawer2'>
         <div slot='header'>Header</div>
         <div>
             <ul>
@@ -78,14 +84,11 @@
         methods:{
             handleCancel(){
                 this.visibleDrawer2=false
-                this.$message.info('点击了取消')
+                this.$message.info('点击了取消',3)
             },
             handleSave(){
                 this.visibleDrawer2=false
-                this.$message.info('点击了确认')
-            },
-            handleClosed(){
-                this.$message.success('我来源于关闭之后的事件')
+                this.$message.info('点击了确认',3)
             }
         }
     }

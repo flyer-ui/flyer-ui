@@ -27,18 +27,12 @@ export default {
       default: true
     }
   },
-  data () {
-    return {
-      selfModel: false
-    }
-  },
   computed: {
     model: {
       get () {
         return this.value
       },
       set (newValue) {
-        this.value = newValue
         this.$emit('input', newValue)
       }
     }
