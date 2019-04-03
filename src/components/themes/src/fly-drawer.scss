@@ -1,0 +1,46 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('drawer'){
+    position:relative;
+    @include e('mask'){
+        position:fixed;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        background:#000;
+        opacity: 0.5;
+        z-index:9998;
+    }
+    @include e('header'){
+        position:relative;
+        padding:10px 15px;
+        box-sizing:border-box;
+        border-bottom: 1px solid $fly-border-color;
+    }
+    @include e('body'){
+        padding:10px 15px;
+    }
+    @include e('close'){
+        position:absolute;
+        z-index: 1;
+        top:10px;
+        right:15px;
+        cursor: default;
+        border-radius: 100%;
+        &:hover{
+            background-color:rgba($fly-border-color,1)
+        }
+    }
+    @include e('content'){
+        position:fixed;
+        top:0px;
+        right:0px;
+        z-index:9999;
+        bottom:0px;
+        background: #fff;
+        min-width:300px;
+    }
+}

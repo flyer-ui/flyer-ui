@@ -26,6 +26,7 @@ import Progress from './components/progress/index'
 import Pagination from './components/pagination/index'
 import Popover from './components/popover/index'
 import Tooltip from './components/tooltip/index'
+import Drawer from './components/drawer/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -57,7 +58,8 @@ const components = [
   Progress,
   Pagination,
   Popover,
-  Tooltip
+  Tooltip,
+  Drawer
 ]
 
 const install = function (Vue) {
@@ -103,5 +105,6 @@ export default {
   Progress,
   Pagination,
   Popover,
-  Tooltip
+  Tooltip,
+  Drawer
 }

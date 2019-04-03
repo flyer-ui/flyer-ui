@@ -70,5 +70,12 @@ export default {
         margin-bottom:20px;
         border:1px solid $fly-border-color;
     }
+    @include e('drawer-buttons'){
+        position: absolute;
+        z-index:1;
+        bottom:0px;
+        left:0px;
+        right:0px;
+    }
 }
 </style>

@@ -207,6 +207,12 @@
             "type": "item",
             "path": "popover",
             "pending":false
+        },
+        {
+            "text": "Drawer 抽屉",
+            "type": "item",
+            "path": "drawer",
+            "pending":false
         }
     ]
 }
