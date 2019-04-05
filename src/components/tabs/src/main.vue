@@ -5,8 +5,8 @@
            <i class='fly-icon-chevron-left' @click='handlePrev'></i>
          </span>
          <div ref='scrollBar' class='fly-tab__scroll'>
-          <div class='fly-tab__navs' :style='{"transform":`translate(${translateX}px)`}'>
-            <fly-tab-nav ref='nav'
+          <div ref='navs' class='fly-tab__navs' :style='{"transform":`translate(-${movingWidth}px)`}'>
+            <fly-tab-nav
               v-model='model'
               :pane='pane'
               :name='pane.name || index'
@@ -25,10 +25,12 @@
     </div>
 </template>
 <script>
+import pager from '~/mixins/pager'
 import FlyTabNav from './nav'
 import FlyTabPane from './pane'
 export default {
   name: 'FlyTabs',
+  mixins: [pager],
   components: {
     FlyTabNav,
     FlyTabPane
@@ -49,7 +51,6 @@ export default {
   data () {
     return {
       showList: false,
-      translateX: 0,
       scrollable: false,
       selfModel: '',
       panes: []
@@ -78,16 +79,16 @@ export default {
         const panesChanged = !(panes.length === this.panes.length && panes.every((pane, index) => pane === this.panes[index]))
         if (isLabelUpdated || panesChanged) {
           this.panes = panes
+          this.$nextTick(() => {
+            this.currentPage = this.calcScrollBar().totalPage
+            this.calcBalanceWidth()
+            this.scrollable = this.currentPage > 0
+          })
         }
       } else if (this.panes.length !== 0) {
         this.panes = []
       }
-
-      const scroll = this.$refs.scrollBar
-      // this.scrollable = scroll.scrollWidth > scroll.offsetWidth
-      this.scrollable = true
-      console.log('scrollWidth', scroll.scrollWidth)
-      console.log('offsetWidth', scroll.offsetWidth)
+      // this.scrollable = true
     },
     updatePaneName () {
       this.panes.map((pane) => {
@@ -97,10 +98,6 @@ export default {
     handleAddition () {
       this.$emit('on-addition')
     },
-    handlePrev () {
-    },
-    handleNext () {
-    },
     handleShowList () {
       this.showList = !this.showList
     }
@@ -108,10 +105,14 @@ export default {
   mounted () {
     this.calcPaneInstances()
     this.updatePaneName()
+    this.referenceScroll = this.$refs.scrollBar
+    this.referenceNavs = this.$refs.navs
   },
   updated () {
     this.calcPaneInstances()
     this.updatePaneName()
+    this.referenceScroll = this.$refs.scrollBar
+    this.referenceNavs = this.$refs.navs
   }
 }
 </script>

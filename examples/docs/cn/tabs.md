@@ -2,7 +2,7 @@
     export default {
         data(){
             return {
-                index:1,
+                activeName:'',
                 tabName:'first',
                 tabs:[{
                     label:'tab1',
@@ -12,10 +12,13 @@
         },
         methods:{
             handleAddition(){
+                const tabName = Date.now()
                 this.tabs.push({
-                    label:`New Tab ${Date.now()}`,
+                    label:`New Tab`,
+                    name:tabName,
                     content:`tab content ${Date.now()}`
                 })
+                this.activeName = tabName
             }
         }
     }
@@ -65,8 +68,8 @@
 <template>
     <div style='width:700px'>
         <fly-button @on-click='handleAddition'>Add Tab</fly-button>
-        <fly-tabs ref='tabs' @on-addition='handleAddition'>
-            <fly-tab-pane :key='index' :name='index' v-for='(tab,index) in tabs' :label='tab.label'>
+        <fly-tabs ref='tabs' v-model='activeName' @on-addition='handleAddition'>
+            <fly-tab-pane :key='index' :name='tab.name' v-for='(tab,index) in tabs' :label='tab.label'>
                 {{tab.content}}
             </fly-tab-pane>
         </fly-tabs>
@@ -76,7 +79,7 @@
     export default {
         data(){
             return {
-                tabName:'',
+                activeName:'',
                 tabs:[{
                     label:'tab1',
                     content:'tab content1'
@@ -85,10 +88,13 @@
         },
         methods:{
             handleAddition(){
+                const tabName = Date.now()
                 this.tabs.push({
-                    label:`New Tab ${Date.now()}`,
+                    label:`New Tab`,
+                    name:tabName,
                     content:`tab content ${Date.now()}`
                 })
+                this.activeName = tabName
             }
         }
     }
