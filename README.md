@@ -28,7 +28,7 @@ npm install flyer-ui -S
 
 在main.js中写入以下内容
 
-```JS
+```VUE
 import Vue from 'vue'
 import App from './App'
 import FlyerUI from ‘flyer-ui'
