@@ -9,25 +9,25 @@
             "text": "更新日志",
             "type": "item",
             "path": "logs",
-            "pending":true
+            "pending":false
         },
         {
             "text": "安装",
             "type": "item",
             "path": "installation",
-            "pending":true
+            "pending":false
         },
         {
             "text": "快速上手",
             "type": "item",
             "path": "get-started",
-            "pending":true
+            "pending":false
         },
         {
             "text": "国际化",
             "type": "item",
             "path": "i18n",
-            "pending":true
+            "pending":false
         },
         {
             "text": "自定义主题",
@@ -134,13 +134,13 @@
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Transfer 穿梭框",
             "type": "item",
             "path": "transfer",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Tabs 选项卡",
@@ -164,31 +164,31 @@
             "text": "Select 下拉选择框",
             "type": "item",
             "path": "select",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Slider 滑动输入条",
             "type": "item",
             "path": "slider",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Tree 树菜单",
             "type": "item",
             "path": "tree",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Table 表格",
             "type": "item",
             "path": "table",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Form 表单验证",
             "type": "item",
             "path": "form",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Progress 进度条",
@@ -200,13 +200,13 @@
             "text": "Tooltip 文字提示",
             "type": "item",
             "path": "tooltip",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Popover 气泡提示",
             "type": "item",
             "path": "popover",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Drawer 抽屉",

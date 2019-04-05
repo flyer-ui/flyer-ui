@@ -114,6 +114,36 @@ $fly-bottom-border-size:2px;
             color:$fly-primary-color;
             font-weight: 500;
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;
+            .fly-tab__close{
+                display: inline-block !important;
+            }
+        }
+        @include when('closable'){
+            padding-right:24px;
+        }
+        @include when('disabled'){
+            color:$fly-border-color;
+            cursor:not-allowed;
+        }
+        &:hover{
+            .fly-tab__close{
+                display: inline-block !important;
+            }
+        }
+    }
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        right:5px;
+        top:15px;
+        font-size:12px !important;
+        width:12px;
+        height:12px;
+        border-radius: 100%;
+        cursor: pointer;
+        display:none !important;
+        &:hover{
+            background: rgba($fly-border-color,0.5);
         }
     }
 }

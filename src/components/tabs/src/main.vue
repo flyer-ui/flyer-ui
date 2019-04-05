@@ -9,6 +9,9 @@
             <fly-tab-nav
               v-model='model'
               :pane='pane'
+              :closable='closable'
+              :disabled='pane.disabled'
+              @on-remove='handleRemove'
               :name='pane.name || index'
               v-for='(pane,index) in panes'
               :key='index'>
@@ -100,6 +103,11 @@ export default {
     },
     handleShowList () {
       this.showList = !this.showList
+    },
+    handleRemove (name) {
+      if (name) {
+        this.$emit('on-remove', name)
+      }
     }
   },
   mounted () {
@@ -113,6 +121,7 @@ export default {
     this.updatePaneName()
     this.referenceScroll = this.$refs.scrollBar
     this.referenceNavs = this.$refs.navs
+    this.model = this.value
   }
 }
 </script>

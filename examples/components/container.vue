@@ -16,7 +16,7 @@ export default {
   },
   computed: {
     navData () {
-      return routes['cn']
+      return routes['cn'].filter((route) => { return !route.pending })
     }
   }
 }

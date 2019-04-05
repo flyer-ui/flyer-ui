@@ -47,6 +47,9 @@ export default {
         display: inline-block;
         width:80px;
     }
+    @include e('icon'){
+        margin-right:5px;
+    }
     @include e('code'){
         padding:20px;
         background-color:#fafafa;
