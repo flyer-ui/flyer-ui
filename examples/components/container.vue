@@ -93,4 +93,17 @@ export default {
       }
     }
 }
+code{
+    background-color:#fafafa;
+    margin:0px;
+    padding:20px;
+    display:block;
+}
+.fly-logs{
+    margin:10px;
+}
+.fly-logs__items{
+  margin:5px;
+  line-height:24px;
+}
 </style>

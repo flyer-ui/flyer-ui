@@ -110,12 +110,6 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
     .al{
         font-family:'Arial';
     }
-    code{
-        background-color:#fafafa;
-        margin:0px;
-        padding:20px;
-        display:inline-block;
-    }
     table{
     width:100%;
     border:1px solid #dedede;
