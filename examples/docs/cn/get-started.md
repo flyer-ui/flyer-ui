@@ -4,7 +4,7 @@
 
 在main.js中写入以下内容
 
-```JS
+```vue
 import Vue from 'vue'
 import App from './App'
 import FlyerUI from ‘flyer-ui'
