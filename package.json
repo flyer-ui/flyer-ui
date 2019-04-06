@@ -20,7 +20,8 @@
     "build:icon":"node examples/generator.icon.js",
     "build:component": "webpack --config build/webpack.component.conf.js",
     "build:umd": "webpack --config build/webpack.umd.conf.js",
-    "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js"
+    "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js",
+    "build:demo":"npm run build:icon && webpack --config build/webpack.prod.conf.js"
   },
   "dependencies": {
     "node-sass": "^4.10.0",

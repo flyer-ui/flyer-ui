@@ -27,7 +27,7 @@
             "text": "国际化",
             "type": "item",
             "path": "i18n",
-            "pending":false
+            "pending":true
         },
         {
             "text": "自定义主题",
