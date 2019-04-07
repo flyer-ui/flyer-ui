@@ -8,9 +8,10 @@
 }
 
 @mixin e($element) {
-    $current-selector: '';
+    $current-selector: "";
+    $selector:'&';
     @each $unit in $element {
-        $current-selector:#{$current-selector + & + $element-separate + $unit + ','}
+        $current-selector:#{$current-selector + $selector + $element-separate + $unit + ','};
     }
     @at-root #{$current-selector} {
         @content;
@@ -18,9 +19,10 @@
 }
 
 @mixin m($modifier) {
-    $current-selector: '';
+    $current-selector: "";
+    $selector:'&';
     @each $unit in $modifier {
-        $current-selector:#{$current-selector + & + $modifier-separate + $unit + ','}
+        $current-selector:#{$current-selector + $selector + $modifier-separate + $unit + ','};
     }
     @at-root #{$current-selector} {
         @content;

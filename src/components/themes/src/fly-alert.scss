@@ -9,7 +9,7 @@
     @include e('close'){
         position: absolute;
         z-index: 1;
-        top:$fly-modal-padding;
+        top:$fly-default-padding;
         right:$fly-default-padding;
         border-radius: 100px;
         cursor: pointer;

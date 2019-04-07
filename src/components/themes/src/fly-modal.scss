@@ -4,6 +4,7 @@
 
 $fly-modal-zindex:9999999;
 $fly-modal-padding:10px;
+
 @include b('modal'){
     top:0px;
     right:0px;
