@@ -3,7 +3,7 @@
 <template>
     <fly-timeline class='fly-logs'>
         <fly-timeline-item timestamp='2019-04-08' placement='top'>
-            <div class='fly-logs__items'>发布版本1.0.3</div>
+            <div class='fly-logs__items'>发布版本1.0.5</div>
             <div class='fly-logs__items'>发布了以下组件：</div>
             <div class='fly-logs__items'>
                 <ul>
