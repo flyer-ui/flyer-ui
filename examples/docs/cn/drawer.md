@@ -1,5 +1,5 @@
 <script>
-    export default {
+module.exports = {
         data(){
             return {
                 visibleDrawer:false,

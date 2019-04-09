@@ -1,7 +1,7 @@
 ## Icon 图标
 
 <script>
-export default {
+module.exports = {
     data(){
         return {
             items:require('../../icon.json')

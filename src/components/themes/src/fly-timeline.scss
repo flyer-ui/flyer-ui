@@ -2,8 +2,8 @@
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
 
-$fly-time-line-size-normal:14px;
-$fly-time-line-size-large:18px;
+$fly-time-line-size-normal:16px;
+$fly-time-line-size-large:20px;
 @include b('timeline'){
     position: relative;
     
@@ -22,7 +22,7 @@ $fly-time-line-size-large:18px;
         border-radius:100%;
         color:#fff;
         text-align: center;
-        vertical-align: middle;
+        vertical-align: baseline;
         @include when('default'){
             background:rgba($fly-border-color,1);
         }
@@ -46,7 +46,10 @@ $fly-time-line-size-large:18px;
             left:-8px;
             width:$fly-time-line-size-normal;
             height:$fly-time-line-size-normal;
-            i{font-size: $fly-time-line-size-normal;}
+            i{
+                font-size: $fly-time-line-size-normal - 6;
+                vertical-align:baseline;
+            }
         }
         @include m('large'){
             left:-10px;

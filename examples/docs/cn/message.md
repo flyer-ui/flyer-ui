@@ -1,5 +1,5 @@
 <script>
-    export default {
+ module.exports =  {
         methods:{
             openNormal(){
                 this.$message.info('这是一个常用的消息',3)

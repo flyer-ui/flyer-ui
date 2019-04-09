@@ -1,6 +1,6 @@
 <script>
 let allCityValue=[0,1,2,3]
-export default {
+module.exports = {
     data(){
         return{
             checked:true,
@@ -8,7 +8,7 @@ export default {
             value:'',
             citys:['东莞'],
             selectedItems:[],
-            selecteAll:false,
+            selectAll:false,
             indeterminate:false,
             options:[{
                     label:'北京',
@@ -39,8 +39,9 @@ export default {
             this.indeterminate = false
         },
         handleChangeCheckboxGroup(values){
-            this.selecteAll = values.length === this.options.length
+            this.selectAll = values.length === this.options.length && values.length > 0
             this.indeterminate = values.length > 0 && values.length < this.options.length
+            console.log(this.selectAll)
         }
     }
 }
@@ -156,7 +157,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-checkbox :indeterminate='indeterminate' @on-change='handleSelectAll' v-model='selecteAll'>全选</fly-checkbox>
+    <fly-checkbox :indeterminate='indeterminate' @on-change='handleSelectAll' v-model='selectAll'>全选</fly-checkbox>
     <fly-checkbox-group v-model='selectedItems' @on-change='handleChangeCheckboxGroup'>
         <fly-checkbox v-for='(city,index) in options' :key='index' :label='city.value'>{{city.label}}</fly-checkbox>
     </fly-checkbox-group>
@@ -168,7 +169,7 @@ export default {
         data(){
             return {
                 selectedItems:[],
-                selecteAll:false,
+                selectAll:false,
                 indeterminate:false,
                 options:[{
                     label:'北京',
@@ -194,7 +195,7 @@ export default {
                 this.selectedItems = allCityValue
             },
             handleChangeCheckboxGroup(values){
-                this.selecteAll = values.length === this.options.length
+                this.selecteAll = values.length === this.options.length && values.length > 0
                 this.indeterminate = values.length > 0 && values.length < this.options.length
             }
         }
