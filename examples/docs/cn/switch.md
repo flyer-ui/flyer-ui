@@ -46,7 +46,7 @@
 ```html
 <template>
     <fly-switch :disabled='disabled'></fly-switch>
-    <fly-button @on-click='handleClick'>Taggle disabled</fly-button>
+    <fly-checkbox @on-change='handleClick'>Taggle disabled</fly-checkbox>
 </template>
 <script>
     export default {

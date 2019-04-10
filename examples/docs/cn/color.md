@@ -54,8 +54,14 @@
         占位字体颜色</br>
         #CCD5DB
     </div>
-    <br/>
-    <div class='block border-color'>
+</div>
+</template>
+
+### 边框颜色
+
+<template>
+<div>
+   <div class='block border-color'>
         边框颜色</br>
         #E4EAEC
     </div>

@@ -45,7 +45,7 @@ export default {
     @include e('list'){
       list-style-type:none;
       margin:0px;
-      padding:0px;
+      padding:0px 10px;
       box-sizing:border-box;
     }
     @include e('header'){
