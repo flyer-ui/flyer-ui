@@ -21,7 +21,7 @@
     "build:umd": "webpack --config build/webpack.umd.conf.js",
     "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js",
     "build:common": "webpack --config build/webpack.common.conf.js",
-    "build:demo": "npm run build:icon && webpack --config build/webpack.prod.conf.js",
+    "build:demo": "npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.prod.conf.js",
     "build:clear": "rmdir /s/q lib",
     "build": "npm run build:clear && npm run build:scss && npm run build:icon && npm run build:umd && npm run build:common"
   },
