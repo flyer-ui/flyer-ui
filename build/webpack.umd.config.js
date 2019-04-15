@@ -2,27 +2,36 @@
 const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
-const config = require('../config')
 const ProgressBarPlugin = require('progress-bar-webpack-plugin')
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
-}
+
 module.exports = {
+  mode: 'production',
   entry: {
     app: ['./src/main.js']
   },
   output: {
     path: path.resolve(process.cwd(), './lib'),
     publicPath: '/dist',
-    filename: 'flyer-ui.common.js',
+    filename: 'index.js',
     chunkFilename: '[id].js',
-    libraryTarget: 'commonjs2'
-  }, resolve: {
-    extensions: ['.js', '.vue', '.json', '.scss'],
+    library: 'flyer-ui',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
+  },
+  resolve: {
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('examples'),
-      '~': resolve('src')
+      '@': utils.resolve('examples'),
+      '~': utils.resolve('src')
+    }
+  },
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
     }
   },
   module: {
@@ -34,32 +43,24 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
+        include: [utils.resolve('src')]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('img/[name].[hash:7].[ext]')
-        }
-      },
-      {
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: utils.assetsPath('media/[name].[hash:7].[ext]')
+          limit: 10000
+          // name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url-loader',
         options: {
-          limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          limit: 10000
+          // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
+      }
     ]
   },
   plugins: [

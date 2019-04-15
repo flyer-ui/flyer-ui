@@ -5,8 +5,7 @@ const sass = require('gulp-sass')
 const path = require('path')
 const autoprefixer = require('gulp-autoprefixer')
 const cssmin = require('gulp-cssmin')
-const libPath = path.resolve(process.cwd(), '.././../../lib')
-console.log(libPath)
+const libPath = path.resolve(process.cwd(), '../../../lib')
 
 gulp.task('compile', function () {
   return gulp.src('./src/*.scss')
