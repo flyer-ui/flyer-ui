@@ -19,7 +19,7 @@
     "build:umd": "webpack --config build/webpack.umd.config.js",
     "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js",
     "build:common": "webpack --config build/webpack.common.config.js",
-    "build:demo": "rm -rf dist && npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.prod.conf.js",
+    "build:demo": "npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
     "clear": "rm -rf lib",
     "build": "npm run clear && npm run build:scss && npm run build:icon && npm run build:umd && npm run build:common"
   },
