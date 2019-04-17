@@ -5,6 +5,7 @@ import App from './App'
 import FlyerUI from '../src/main.js'
 import Routers from './router'
 import VueRouter from 'vue-router'
+import 'babel-polyfill'
 import '../src/components/themes/src/index.scss'
 import FlyDemoBlock from '@/components/demo-block'
 

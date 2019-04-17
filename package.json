@@ -24,6 +24,7 @@
     "build": "npm run clear && npm run build:scss && npm run build:icon && npm run build:umd && npm run build:common"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "eslint-loader": "^2.1.2",
     "node-sass": "^4.10.0",
     "sass": "^1.15.2",
