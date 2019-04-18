@@ -30,7 +30,7 @@ let Instance = (content, type, duration, options) => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })
-  container.append(vm.$el)
+  container.appendChild(vm.$el)
 }
 
 let $Message = {
