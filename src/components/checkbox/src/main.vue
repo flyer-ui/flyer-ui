@@ -69,14 +69,14 @@ export default{
   computed: {
     model: {
       get () {
-        return this.isGroup ? this.parent.value : this.selfModel || this.value || this.checked
+        return this.isGroup ? this.parent.value : this.value || this.selfModel || this.checked
       },
       set (newValue) {
         if (this.isGroup) {
           this.dispatch('FlyCheckboxGroup', 'input', [newValue])
         } else {
-          this.$emit('input', newValue)
           this.selfModel = newValue
+          this.$emit('input', newValue)
         }
       }
     },
@@ -94,6 +94,11 @@ export default{
       get () {
         return findParentByName('FlyCheckboxGroup', this)
       }
+    }
+  },
+  watch: {
+    value () {
+      this.model = this.value
     }
   },
   methods: {

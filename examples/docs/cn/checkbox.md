@@ -4,6 +4,7 @@ module.exports = {
     data(){
         return{
             checked:true,
+            checked1:true,
             city:'',
             value:'',
             citys:['东莞'],
@@ -27,13 +28,13 @@ module.exports = {
     },
     methods:{
         handleChange(value){
-            console.log(value)
+            console.log('handleChange',value)
         },
         handleChangeGroup(value){
-            console.log(value)
+            console.log('handleChangeGroup',value)
         },
         handleSelectAll(value){
-            console.log(value)
+            console.log('handleSelectAll',value)
             this.indeterminate = value
             this.selectedItems = value ? allCityValue : []
             this.indeterminate = false
@@ -41,7 +42,11 @@ module.exports = {
         handleChangeCheckboxGroup(values){
             this.selectAll = values.length === this.options.length && values.length > 0
             this.indeterminate = values.length > 0 && values.length < this.options.length
-            console.log(this.selectAll)
+            console.log('selectAll',this.selectAll)
+            console.log('indeteminate',this.indeterminate)
+        },
+        handleChecked(){
+            this.checked1 = !this.checked1
         }
     }
 }
@@ -63,6 +68,33 @@ module.exports = {
         data(){
             return {
                 checked:true
+            }
+        }
+    }
+</script>
+```
+:::
+
+### 代码控制是否选中
+::: demo
+```html
+<template>
+    <fly-checkbox v-model='checked1' name='checked1'>
+        是否选中
+    </fly-checkbox>
+    <fly-button @on-click='handleChecked'>控制</fly-button>
+    <div>{{checked}}</div>
+</template>
+<script>
+    export default {
+        data(){
+            return {
+                checked1:true
+            }
+        },
+        methods:{
+            handleChecked(){
+                this.checked1 = !this.checked1
             }
         }
     }
@@ -162,6 +194,7 @@ module.exports = {
         <fly-checkbox v-for='(city,index) in options' :key='index' :label='city.value'>{{city.label}}</fly-checkbox>
     </fly-checkbox-group>
     <div>citys:{{selectedItems}}</div>
+    <div>selectAll:{{selectAll}}</div>
 </template>
 <script>
     let allCityValue=[0,1,2,3]
@@ -193,9 +226,10 @@ module.exports = {
             handleSelectAll(newValue){
                 this.indeterminate = newValue
                 this.selectedItems = allCityValue
+                this.selectAll = true
             },
             handleChangeCheckboxGroup(values){
-                this.selecteAll = values.length === this.options.length && values.length > 0
+                this.selectAll = values.length === this.options.length && values.length > 0
                 this.indeterminate = values.length > 0 && values.length < this.options.length
             }
         }

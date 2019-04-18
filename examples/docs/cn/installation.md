@@ -20,4 +20,4 @@ npm install flyer-ui -S
 <!-- 引入组件库 --> 
 <script src="https://unpkg.com/flyer-ui/lib/index.js"></script>
 ```
-我们建议使用 CDN 引入 Flyer-UI 的用户在链接地址上锁定版本，以免将来 Flyer-UI 升级时受到非兼容性更新的影响。锁定版本的方法请查看 unpkg.com。
+建议使用 CDN 引入 Flyer-UI 的用户在链接地址上锁定版本，以免将来 Flyer-UI 升级时受到非兼容性更新的影响。锁定版本的方法请查看 unpkg.com。
