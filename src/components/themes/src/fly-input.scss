@@ -19,7 +19,7 @@ $fly-input-clear-padding:10px !default;
         background: $fly-border-color;
         border:1px solid $fly-border-color;
         padding:$fly-input-clear-padding;
-        display: inline-table;
+        display: table-cell;
     }
     @include e('native'){
         padding:$fly-input-clear-padding;

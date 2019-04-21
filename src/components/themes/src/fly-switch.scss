@@ -45,11 +45,11 @@
     @include e('active'){
         float:left;
         color:#fff;
-        display: inline-table;
+        display: inline-block;
     }
     @include e('inactive'){
         float:right;
         color:#fff;
-        display: inline-table;
+        display: inline-block;
     }
 }

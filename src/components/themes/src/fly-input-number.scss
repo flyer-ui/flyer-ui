@@ -4,7 +4,7 @@
 
 @include b('input-number'){
     position: relative;
-    display:inline-table;
+    display:inline-block;
     border-radius: $fly-round-default-size;
     @include e('native'){
         outline: none;

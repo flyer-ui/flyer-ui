@@ -27,13 +27,13 @@
             "text": "国际化",
             "type": "item",
             "path": "i18n",
-            "pending":true
+            "pending":false
         },
         {
             "text": "自定义主题",
             "type": "item",
             "path": "custom-theme",
-            "pending":true
+            "pending":false
         },
         {
             "text": "组件",
@@ -134,13 +134,13 @@
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Transfer 穿梭框",
             "type": "item",
             "path": "transfer",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Tabs 选项卡",
@@ -164,31 +164,31 @@
             "text": "Select 下拉选择框",
             "type": "item",
             "path": "select",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Slider 滑动输入条",
             "type": "item",
             "path": "slider",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Tree 树菜单",
             "type": "item",
             "path": "tree",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Table 表格",
             "type": "item",
             "path": "table",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Form 表单验证",
             "type": "item",
             "path": "form",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Progress 进度条",
@@ -200,13 +200,13 @@
             "text": "Tooltip 文字提示",
             "type": "item",
             "path": "tooltip",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Popover 气泡提示",
             "type": "item",
             "path": "popover",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Drawer 抽屉",

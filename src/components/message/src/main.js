@@ -7,7 +7,7 @@ let Instance = (content, type, duration, options) => {
   if (container.length === 0) {
     container = document.createElement('div')
     container.className = 'fly-message'
-    document.body.append(container)
+    document.body.appendChild(container)
   } else {
     container = container[0]
   }

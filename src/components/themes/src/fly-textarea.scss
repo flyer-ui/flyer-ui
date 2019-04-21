@@ -3,7 +3,7 @@
 @import './base/fly-mixins.scss';
 
 @include b('textarea'){
-    display: inline-table;
+    display: inline-block;
     @include e('native'){
         outline:none;
         border:0px;
