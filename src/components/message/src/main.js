@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import tmpl from './main.vue'
-import {isPlainObject} from '~/util/util'
+import {isPlainObject} from '~/utils/util'
 
 let Instance = (content, type, duration, options) => {
   let container = document.getElementsByClassName('fly-message')

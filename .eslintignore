@@ -2,4 +2,5 @@
 /dist/
 /lib/
 /*.js
+src/utils/popper.js
 /test/unit/coverage/

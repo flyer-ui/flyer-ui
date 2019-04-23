@@ -3,5 +3,17 @@
 @import './base/fly-mixins.scss';
 
 @include b('select'){
-    
+    position: relative;
+    .fly-input__native{
+        cursor: pointer;
+    }
+}
+@include b('select-dropdowns'){
+    display: block;
+    border:1px solid $fly-border-color;
+    @include e('list'){
+        list-style:none;
+        padding:0px 10px;
+        margin:0px;
+    }
 }

@@ -20,6 +20,7 @@
        }'
        :value='value'
        :disabled="disabled"
+       :readonly="readonly"
        :maxlength="maxLength"
        :minlength="minLength"
        :placeholder="placeholder"
@@ -49,6 +50,10 @@ export default {
     },
     placeholder: String,
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    readonly: {
       type: Boolean,
       default: false
     },

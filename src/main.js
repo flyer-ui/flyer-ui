@@ -20,6 +20,7 @@ import TabPane from './components/tab-pane/index'
 import Transfer from './components/transfer/index'
 import Rate from './components/rate/index'
 import Select from './components/select/index'
+import Option from './components/option/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
 import Progress from './components/progress/index'
@@ -53,6 +54,7 @@ const components = [
   Transfer,
   Rate,
   Select,
+  Option,
   Upload,
   Slider,
   Progress,
@@ -76,7 +78,6 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 export default {
-  version: '1.0.3',
   install,
   Button,
   ButtonGroup,

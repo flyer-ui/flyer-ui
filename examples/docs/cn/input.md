@@ -154,6 +154,7 @@ module.exports =  {
 value / v-model | String / Number | - | - | 绑定的值 |
 type | String | - | text | 原生 input 的 type 值 |
 disabled | Boolean | false  | true / false | 是否设置为禁用  |
+readonly | Boolean | false  | true / false | 是否设置为只读  |
 clearable | Boolean | flase | true / false | 是否设置为可清除 |
 max-length | Number | - | - | 最大输入长度限制 |
 min-length | Number | - | - | 最小输入长度限制 |
