@@ -2,5 +2,5 @@
 /dist/
 /lib/
 /*.js
-src/utils/popper.js
+src/mixins/popper.js
 /test/unit/coverage/

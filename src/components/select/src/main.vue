@@ -1,19 +1,28 @@
 <template>
-    <div class='fly-select'>
+    <div class='fly-select' ref='select'>
       <fly-input
+      :value='selected'
       :placeholder='placeholder'
       :clearable='clearable'
+      :disabled='disabled'
       readonly
-      suffix-icon='fly-icon-chevron-down'
-      ref='flyInput'
-      @on-focus='handleClick'
+      :suffix-icon='suffixIcon'
+      @mouseup.native='showMenu'
+      ref='reference'
       ></fly-input>
-      <fly-select-dropdowns ref='flyDropdowns' v-model='showPopper' :reference='$refs.flyInput' :popper='$refs.flyDropdowns'></fly-select-dropdowns>
+      <fly-select-dropdowns
+       v-show='visible'
+        ref='popper'>
+        <slot name='default'></slot>
+      </fly-select-dropdowns>
     </div>
 </template>
 <script>
 import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
+import PopperManager from '~/utils/popper-manager'
+import {stop} from '~/utils/dom'
+
 export default {
   name: 'FlySelect',
   components: {
@@ -36,15 +45,34 @@ export default {
     },
     placeholder: String
   },
+  computed: {
+    suffixIcon () {
+      return this.visible ? 'fly-icon-chevron-up' : 'fly-icon-chevron-down'
+    }
+  },
   data () {
     return {
-      showPopper: null
+      visible: false,
+      selected: ''
     }
   },
   methods: {
-    handleClick ($event) {
-      this.showPopper = true
+    showMenu ($event) {
+      stop($event)
+      if (this.disabled) return
+      this.visible = !this.visible
+      if (this.visible) {
+        this.$refs.popper.$emit('updatePopper')
+      }
+    },
+    executeSelected ({label, value}, $event) {
+      this.selected = label
+      this.showMenu($event)
+      this.$emit('input', value)
     }
+  },
+  mounted () {
+    PopperManager.push(this)
   }
 }
 </script>

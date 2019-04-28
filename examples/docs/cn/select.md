@@ -1,23 +1,91 @@
+<script>
+module.exports = {
+    data(){
+        return {
+            selected1:''
+        }
+    }
+}
+</script>
+
 ## Select 下拉框
 
 ### 基本使用
 
 :::demo
 ```html
-<fly-select placeholder='请选择'>
-    <fly-option label='深圳' value='SZ'>
-    </fly-option>
-    <fly-option label='东莞' value='DG'>
-    </fly-option>
-    <fly-option label='广州' value='GZ'>
-    </fly-option>
-    <fly-option label='佛山' value='FS'>
-    </fly-option>
-    <fly-option label='清远' value='QY'>
-    </fly-option>
-    <fly-option label='河源' value='HY'>
-    </fly-option>
-</fly-select>
+<template>
+    <fly-select v-model='selected1' placeholder='请选择'>
+        <fly-option label='深圳' value='SZ'>
+        </fly-option>
+        <fly-option label='东莞' value='DG'>
+        </fly-option>
+        <fly-option label='广州' value='GZ'>
+        </fly-option>
+        <fly-option label='佛山' value='FS'>
+        </fly-option>
+        <fly-option label='清远' value='QY'>
+        </fly-option>
+        <fly-option label='河源' value='HY'>
+        </fly-option>
+    </fly-select>
+    {{selected1}}
+</template>
+<script>
+export default {
+    data(){
+        return {
+            selected1:''
+        }
+    }
+}
+</script>
+```
+:::
+
+### 禁用状态
+
+::: demo
+```html
+<template>
+    <fly-select disabled placeholder='请选择'>
+        <fly-option label='深圳' value='SZ'>
+        </fly-option>
+        <fly-option label='东莞' value='DG'>
+        </fly-option>
+        <fly-option label='广州' value='GZ'>
+        </fly-option>
+        <fly-option label='佛山' value='FS'>
+        </fly-option>
+        <fly-option label='清远' value='QY'>
+        </fly-option>
+        <fly-option label='河源' value='HY'>
+        </fly-option>
+    </fly-select>
+</template>
+```
+:::
+
+### 有禁用选项
+
+::: demo
+```html
+<template>
+    <fly-select  placeholder='请选择'>
+        <fly-option label='深圳' value='SZ'>
+        </fly-option>
+        <fly-option label='东莞' disabled value='DG'>
+        </fly-option>
+        <fly-option label='广州' disabled value='GZ'>
+        </fly-option>
+        <fly-option label='佛山' value='FS'>
+        </fly-option>
+        <fly-option label='清远' value='QY'>
+        </fly-option>
+        <fly-option label='河源' value='HY'>
+        </fly-option>
+    </fly-select>
+</template>
 ```
 :::
 

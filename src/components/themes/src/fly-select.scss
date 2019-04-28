@@ -4,16 +4,46 @@
 
 @include b('select'){
     position: relative;
+    display:inline-block;
     .fly-input__native{
         cursor: pointer;
+    }
+    @include e('option'){
+        padding:5px 10px;
+        box-sizing:border-box;
+        cursor: pointer;
+        &:hover{
+            background:#fafafa;
+        }
+        @include when(disabled){
+            color:$fly-border-color;
+            cursor:not-allowed;
+            &:hover{
+                background:none;
+            }
+        }
     }
 }
 @include b('select-dropdowns'){
     display: block;
     border:1px solid $fly-border-color;
+    z-index: 999;
+    background:#fff;
     @include e('list'){
         list-style:none;
-        padding:0px 10px;
+        padding:0px;
         margin:0px;
+    }
+    &[x-placement="bottom"] .popper__arrow{
+        border: 6px solid $fly-border-color;
+        display: inline-block;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        position: absolute;
+        width: 0px;
+        height: 0px;
+        top: -12px;
+        left: calc(100%/2);
     }
 }

@@ -20,9 +20,6 @@
                         icon 图标
                     </li>
                     <li>
-                        icon 图标
-                    </li>
-                    <li>
                         input 输入框
                     </li>
                     <li>

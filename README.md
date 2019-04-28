@@ -1,3 +1,14 @@
+ <div>
+  <a href="http://img.badgesize.io/https://unpkg.com/flyer-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
+    <img src="http://img.badgesize.io/https://unpkg.com/flyer-ui/lib/index.js?compression=gzip&label=gzip%20size:%20JS">
+  </a>
+  <a href="http://img.badgesize.io/https://unpkg.com/flyer-ui/lib/themes/index.css?compression=gzip&label=gzip%20size:%20CSS">
+    <img src="http://img.badgesize.io/https://unpkg.com/flyer-ui/lib/themes/index.css?compression=gzip&label=gzip%20size:%20CSS">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg">
+  </a>
+</div>
 ### npm 安装
 
 推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用
