@@ -4,6 +4,11 @@ module.exports = {
         return {
             selected1:''
         }
+    },
+    methods:{
+        handleChange({value,label}){
+            this.$message.info(`value:${value},label:${label}`)
+        }
     }
 }
 </script>
@@ -15,7 +20,7 @@ module.exports = {
 :::demo
 ```html
 <template>
-    <fly-select v-model='selected1' placeholder='请选择'>
+    <fly-select @on-change='handleChange' v-model='selected1' placeholder='请选择'>
         <fly-option label='深圳' value='SZ'>
         </fly-option>
         <fly-option label='东莞' value='DG'>
@@ -36,6 +41,11 @@ export default {
     data(){
         return {
             selected1:''
+        }
+    },
+    methods:{
+        handleChange({value,label}){
+            this.$message.info(`value:${value},label:${label}`)
         }
     }
 }
@@ -108,3 +118,9 @@ placeholder | String | - | - | 设置占位提示文本 |
 disabled | Boolean | false  | true / false | 是否设置为禁用  |
 label | String/Number | -  | - | 是否设置为只读  |
 value | String/Number | - | - | 是否设置为可清除 |
+
+
+### Select - 可定制事件
+事件名称 | 返回值 | 说明
+---------|----------|---------
+ on-change | 更新后的值[object:{value,label}] | 在点击选项状态变更时触发。

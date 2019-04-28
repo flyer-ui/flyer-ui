@@ -1,5 +1,5 @@
 <template>
-    <div class='fly-select' ref='select'>
+    <div :class='["fly-select",{"is-disabled":disabled}]' ref='select'>
       <fly-input
       :value='selected'
       :placeholder='placeholder'
@@ -69,6 +69,7 @@ export default {
       this.selected = label
       this.showMenu($event)
       this.$emit('input', value)
+      this.$emit('on-change', {value: value, label: label})
     }
   },
   mounted () {
