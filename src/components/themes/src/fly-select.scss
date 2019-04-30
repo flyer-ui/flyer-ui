@@ -39,29 +39,32 @@
         padding:0px;
         margin:0px;
     }
-    // &[x-placement="bottom"] .popper__arrow{
-    //     border: 8px solid $fly-border-color;
-    //     display: inline-block;
-    //     border-top-color: transparent;
-    //     border-right-color: transparent;
-    //     border-left-color: transparent;
-    //     position: absolute;
-    //     width: 0px;
-    //     height: 0px;
-    //     top: -16px;
-    //     left: calc(100%/2);
-    //     &:after{
-    //         content:'';
-    //         border: 6px solid #fff;
-    //         display: inline-block;
-    //         border-top-color: transparent;
-    //         border-right-color: transparent;
-    //         border-left-color: transparent;
-    //         position: absolute;
-    //         width: 0px;
-    //         height: 0px;
-    //         top: -4px;
-    //         left: calc(100%/2 - 6px);
-    //     }
-    // }
+    &[x-placement="bottom"]{
+        margin-top:10px;
+        .popper__arrow{
+            border: 8px solid $fly-border-color;
+            display: inline-block;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: -16px;
+            left: calc(100%/2);
+            &:after{
+                content:'';
+                border: 6px solid #fff;
+                display: inline-block;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                top: -4px;
+                left: calc(100%/2 - 6px);
+            }
+        }
+    }
 }
