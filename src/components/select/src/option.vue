@@ -1,16 +1,17 @@
 <template>
     <li :class='[
     "fly-select__option",
-    {"is-disabled":disabled}
-    ]' @mouseup='handleClick'>
+    {"is-disabled":disabled},
+    {"is-selected":hasSeleted}
+    ]' @mouseup.stop='handleClick'>
         <slot name='default'>{{label}}</slot>
     </li>
 </template>
 <script>
 import {findParentByName} from '~/utils/util'
-import {stop} from '~/utils/dom'
 export default {
   name: 'FlyOption',
+  inject: ['select'],
   props: {
     disabled: {
       type: Boolean,
@@ -24,11 +25,15 @@ export default {
   computed: {
     parent () {
       return findParentByName('FlySelect', this)
+    },
+    hasSeleted () {
+      return Array.isArray(this.select.value) ? this.select.value.findIndex((value) => {
+        return value === this.value
+      }) > -1 : this.select.value === this.value
     }
   },
   methods: {
     handleClick ($event) {
-      stop($event)
       if (this.disabled) {
         return
       }

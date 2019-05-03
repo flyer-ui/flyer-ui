@@ -4,6 +4,11 @@ module.exports = {
         return {
             selected1:'',
             selected2:'',
+            selected3:'',
+            selected4:'',
+            selected5:'',
+            selected6:'',
+            selectedItems:[],
             citys:[{
                     label:'广州',
                     value:'GZ'
@@ -52,15 +57,19 @@ module.exports = {
             this.$message.info(`value:${value},label:${label}`,3)
         },
         handleFocus($evnet){
-            this.$refs.select.focus()
             console.log('focus',$evnet)
         },
         handleBlur($event){
-            this.$refs.select.blur()
             console.log('blur',$event)
         },
         handleClear($event){
             console.log('clear',$event)
+        },
+        setFocus(){
+            this.$refs.select.focus()
+        },
+        setBlur(){
+            this.$refs.select.blur()
         }
     }
 }
@@ -121,7 +130,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-select disabled placeholder='请选择'>
+    <fly-select disabled v-model='selected2' placeholder='请选择'>
         <fly-option label='深圳' value='SZ'>
         </fly-option>
         <fly-option label='东莞' value='DG'>
@@ -136,6 +145,15 @@ export default {
         </fly-option>
     </fly-select>
 </template>
+<script>
+    export default {
+        data(){
+            return {
+                selected2:''
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -144,7 +162,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-select  placeholder='请选择'>
+    <fly-select v-model='selected3' placeholder='请选择'>
         <fly-option label='深圳' value='SZ'>
         </fly-option>
         <fly-option label='东莞' disabled value='DG'>
@@ -159,6 +177,15 @@ export default {
         </fly-option>
     </fly-select>
 </template>
+<script>
+    export default {
+        data(){
+            return {
+                selected3:''
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -167,7 +194,9 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-select ref='select' 
+    <fly-select
+    ref='select'
+    v-model='selected4'
     clearable 
     @on-clear='handleClear' 
     placeholder='请选择'>
@@ -184,15 +213,26 @@ export default {
         <fly-option label='河源' value='HY'>
         </fly-option>
     </fly-select>
-    <fly-button @on-click='handleFocus'>设置焦点</fly-button>
-    <fly-button @on-click='handleBlur'>去除焦点</fly-button>
+    <fly-button @on-click='setFocus'>设置焦点</fly-button>
+    <fly-button @on-click='setBlur'>去除焦点</fly-button>
 </template>
 <script>
  export default {
-     methods:{
-         handleClear($event){
-            console.log('clear',$event)
+     data(){
+         return {
+             selected4:''
          }
+     },
+     methods:{
+        handleClear($event){
+            console.log('clear',$event)
+        },
+        setFocus(){
+            this.$refs.select.focus()
+        },
+        setBlur(){
+            this.$refs.select.blur()
+        }
      }
  }
 </script>
@@ -204,7 +244,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-select placeholder='请选择一个城市' v-model='selected2'>
+    <fly-select placeholder='请选择一个城市' v-model='selected5'>
         <fly-option v-for='(city,index) in citys' 
         :key='index'
         :label='city.label' 
@@ -219,7 +259,7 @@ export default {
     export default {
         data(){
             return {
-                selected2:'',
+                selected5:'',
                 citys:[{
                     label:'广州',
                     value:'GZ'
@@ -248,7 +288,7 @@ export default {
 ::: demo
 ```html
 <template>
-    <fly-select placeholder='请选择一个城市' v-model='selected2'>
+    <fly-select placeholder='请选择一个城市' v-model='selected6'>
         <fly-option-group :label='group.label' v-for='(group,index) in cityGroups' :key='index'>
             <fly-option v-for='(city,index) in group.citys' 
             :key='index'
@@ -262,6 +302,7 @@ export default {
     export default {
         data(){
             return {
+                selected6:'',
                 cityGroups:[{
                     label:'热门城市',
                     citys:[
@@ -294,6 +335,40 @@ export default {
 ```
 :::
 
+### 基础多选
+
+::: demo
+```html
+<template>
+    <div>
+        <fly-select  placeholder='请选择' multiple v-model='selectedItems'>
+            <fly-option label='深圳' value='SZ'>
+            </fly-option>
+            <fly-option label='东莞' value='DG'>
+            </fly-option>
+            <fly-option label='广州' value='GZ'>
+            </fly-option>
+            <fly-option label='佛山' value='FS'>
+            </fly-option>
+            <fly-option label='清远' value='QY'>
+            </fly-option>
+            <fly-option label='河源' value='HY'>
+            </fly-option>
+        </fly-select>
+        <div>{{selectedItems}}</div>
+    </div>
+</template>
+<script>
+    export default {
+        data(){
+            return {
+                selectedItems:[]
+            }
+        }
+    }
+</script>
+```
+:::
 
 ### Select - 可定制属性
 

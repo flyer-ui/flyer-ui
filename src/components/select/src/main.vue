@@ -3,8 +3,17 @@
     {"is-disabled":disabled},
     {"is-clearable":clearable}]'
     ref='select'>
+      <div class='fly-select__tags' ref='tags' v-if='multiple'>
+        <fly-tag
+        v-for='(item,index) in selected'
+        :key='item'
+        closable
+        @on-close='handleRemoveTag(index)'
+        class='fly-select__tag'
+        >{{item}}</fly-tag>
+      </div>
       <fly-input
-      :value='selected'
+      :value='single'
       :placeholder='placeholder'
       :clearable='clearable'
       :disabled='disabled'
@@ -31,6 +40,11 @@ import {stop} from '~/utils/dom'
 
 export default {
   name: 'FlySelect',
+  provide () {
+    return {
+      select: this
+    }
+  },
   components: {
     FlyInput,
     FlySelectDropdowns
@@ -54,12 +68,16 @@ export default {
   computed: {
     suffixIcon () {
       return this.visible ? 'fly-icon-chevron-up' : 'fly-icon-chevron-down'
+    },
+    single () {
+      return this.multiple ? '' : this.selected
     }
   },
   data () {
     return {
       visible: false,
-      selected: ''
+      selected: '',
+      selectedValues: []
     }
   },
   methods: {
@@ -73,8 +91,16 @@ export default {
       stop($event)
       this.selected = ''
       this.visible = false
+      this.$emit('input', '')
       this.$emit('on-clear', $event)
       this.$emit('on-change', {})
+    },
+    handleRemoveTag (index) {
+      this.selected.splice(index, 1)
+      this.selectedValues.splice(index, 1)
+      this.$nextTick(() => {
+        this.calcInputHeight()
+      })
     },
     showMenu ($event) {
       stop($event)
@@ -85,10 +111,51 @@ export default {
       }
     },
     executeSelected ({label, value}, $event) {
-      this.selected = label
-      this.showMenu($event)
-      this.$emit('input', value)
-      this.$emit('on-change', {value: value, label: label})
+      if (!this.multiple) {
+        this.selected = label
+        this.showMenu($event)
+        this.$emit('input', value)
+        this.$emit('on-change', {value: value, label: label})
+      } else {
+        if (!Array.isArray(this.selected)) {
+          this.selected = []
+        }
+        if (this.hasValue(value)) {
+          this.removeValue(value)
+          this.removeLabel(label)
+        } else {
+          this.selected.push(label)
+          this.selectedValues.push(value)
+        }
+        this.$emit('input', this.selectedValues)
+        this.$nextTick(() => {
+          this.calcInputHeight()
+        })
+      }
+    },
+    findByValue (value) {
+      return this.selectedValues.findIndex(_ => {
+        return _ === value
+      })
+    },
+    findByLabel (label) {
+      return this.selected.findIndex(_ => {
+        return _ === label
+      })
+    },
+    hasValue (value) {
+      return this.findByValue(value) > -1
+    },
+    removeValue (value) {
+      this.selectedValues.splice(this.findByValue(value), 1)
+    },
+    removeLabel (label) {
+      this.selected.splice(this.findByLabel(label), 1)
+    },
+    calcInputHeight () {
+      const th = this.$refs.tags.offsetHeight
+      const input = this.$refs.reference.$el.querySelector('.fly-input__native')
+      input.style.height = th + 'px'
     },
     focus () {
       this.$refs.reference.focus()

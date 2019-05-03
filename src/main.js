@@ -70,7 +70,6 @@ const install = function (Vue) {
   Vue.prototype.$modal = $modal
   Vue.prototype.$message = $message
   components.forEach(component => {
-    if (component.name === 'FlyOptionGroup') debugger
     Vue.component(component.name, component)
   })
 }

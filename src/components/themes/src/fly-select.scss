@@ -31,18 +31,45 @@
         &:hover{
             background:#fafafa;
         }
-        @include when(disabled){
+        @include when('disabled'){
             color:$fly-border-color;
             cursor:not-allowed;
             &:hover{
                 background:none;
             }
         }
+        @include when('selected'){
+            color:$fly-primary-color;
+            font-weight:bold;
+        }
         &:after{
             content:'';
             display:block;
             clear:both;
         }
+    }
+    @include e('tags'){
+        display:flex;
+        flex-wrap:wrap;
+        position: absolute;
+        z-index:2;
+        background-color:#fff;
+        margin:1px 40px 1px 1px;
+        align-items:center;
+        top:50%;
+        transform:translateY(-50%)
+    }
+    @include e('tag'){
+        display:inline-block;
+        margin:2px 5px !important;
+        &+&{
+            margin:0px;
+        }
+    }
+    &:after{
+        content:'';
+        clear:both;
+        display:block;
     }
 }
 @include b('select-dropdowns'){
