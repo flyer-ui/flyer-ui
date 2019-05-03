@@ -179,3 +179,9 @@ prefix | 输入框头部内容，只对 type="text" 有效 |
 suffix | 输入框尾部内容，只对 type="text" 有效 |
 prepend | 输入框前置内容，只对 type="text" 有效 |
 append | 输入框后置内容，只对 type="text" 有效 |
+
+### Select - 可定制方法
+方法名 | 说明 | 参数
+---------|----------|---------
+ focus | 使 input 获取焦点 | -
+ blur | 使 input 失去焦点 | -

@@ -21,6 +21,7 @@ import Transfer from './components/transfer/index'
 import Rate from './components/rate/index'
 import Select from './components/select/index'
 import Option from './components/option/index'
+import OptionGroup from './components/option-group/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
 import Progress from './components/progress/index'
@@ -55,6 +56,7 @@ const components = [
   Rate,
   Select,
   Option,
+  OptionGroup,
   Upload,
   Slider,
   Progress,
@@ -68,6 +70,7 @@ const install = function (Vue) {
   Vue.prototype.$modal = $modal
   Vue.prototype.$message = $message
   components.forEach(component => {
+    if (component.name === 'FlyOptionGroup') debugger
     Vue.component(component.name, component)
   })
 }
@@ -101,6 +104,8 @@ export default {
   Transfer,
   Rate,
   Select,
+  Option,
+  OptionGroup,
   Upload,
   Slider,
   Progress,

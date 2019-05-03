@@ -1,5 +1,8 @@
 <template>
-    <div :class='["fly-select",{"is-disabled":disabled}]' ref='select'>
+    <div :class='["fly-select",
+    {"is-disabled":disabled},
+    {"is-clearable":clearable}]'
+    ref='select'>
       <fly-input
       :value='selected'
       :placeholder='placeholder'
@@ -8,6 +11,9 @@
       readonly
       :suffix-icon='suffixIcon'
       @mouseup.native='showMenu'
+      @on-blur='handleBlur'
+      @on-focus='handleFocus'
+      @on-clear='handleClear'
       ref='reference'
       ></fly-input>
       <fly-select-dropdowns
@@ -57,6 +63,19 @@ export default {
     }
   },
   methods: {
+    handleBlur ($event) {
+      this.$emit('on-blur', $event)
+    },
+    handleFocus ($event) {
+      this.$emit('on-focus', $event)
+    },
+    handleClear ($event) {
+      stop($event)
+      this.selected = ''
+      this.visible = false
+      this.$emit('on-clear', $event)
+      this.$emit('on-change', {})
+    },
     showMenu ($event) {
       stop($event)
       if (this.disabled) return
@@ -70,6 +89,13 @@ export default {
       this.showMenu($event)
       this.$emit('input', value)
       this.$emit('on-change', {value: value, label: label})
+    },
+    focus () {
+      this.$refs.reference.focus()
+    },
+    blur () {
+      this.$refs.reference.blur()
+      this.visible = false
     }
   },
   mounted () {

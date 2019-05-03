@@ -13,6 +13,17 @@
             cursor: not-allowed;
         }
     }
+    @include when('clearable'){
+        .fly-input__clear{
+            display: none;
+        }
+        &:hover{
+            .fly-input__clear{
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
     @include e('option'){
         padding:5px 10px;
         box-sizing:border-box;
@@ -26,6 +37,11 @@
             &:hover{
                 background:none;
             }
+        }
+        &:after{
+            content:'';
+            display:block;
+            clear:both;
         }
     }
 }
@@ -66,5 +82,15 @@
                 left: calc(100%/2 - 6px);
             }
         }
+    }
+}
+@include b('select-group'){
+    list-style:none;
+    padding:0px;
+    margin:0px;
+    @include e('title'){
+        font-weight: bold;
+        padding:5px 10px;
+        box-sizing:border-box;
     }
 }

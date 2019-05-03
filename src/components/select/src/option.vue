@@ -17,7 +17,9 @@ export default {
       default: false
     },
     label: String,
-    value: String
+    value: {
+      required: false
+    }
   },
   computed: {
     parent () {
