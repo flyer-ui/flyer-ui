@@ -53,18 +53,17 @@
         flex-wrap:wrap;
         position: absolute;
         z-index:2;
-        background-color:#fff;
-        margin:1px 40px 1px 1px;
+        margin-right:40px;
         align-items:center;
         top:50%;
-        transform:translateY(-50%)
+        transform:translateY(-50%);
+        .fly-select__tag{
+            display:inline-block;
+            margin:2px 5px;
+            background-color:rgba($fly-border-color,0.5)
+        }
     }
     @include e('tag'){
-        display:inline-block;
-        margin:2px 5px !important;
-        &+&{
-            margin:0px;
-        }
     }
     &:after{
         content:'';

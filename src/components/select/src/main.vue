@@ -13,8 +13,8 @@
         >{{item}}</fly-tag>
       </div>
       <fly-input
-      :value='single'
-      :placeholder='placeholder'
+      :value='singleValue'
+      :placeholder='usablePlaceHolder'
       :clearable='clearable'
       :disabled='disabled'
       readonly
@@ -69,8 +69,11 @@ export default {
     suffixIcon () {
       return this.visible ? 'fly-icon-chevron-up' : 'fly-icon-chevron-down'
     },
-    single () {
+    singleValue () {
       return this.multiple ? '' : this.selected
+    },
+    usablePlaceHolder () {
+      return this.multiple && this.selectedValues.length > 0 ? '' : this.placeholder
     }
   },
   data () {
@@ -155,7 +158,14 @@ export default {
     calcInputHeight () {
       const th = this.$refs.tags.offsetHeight
       const input = this.$refs.reference.$el.querySelector('.fly-input__native')
-      input.style.height = th + 'px'
+      if (!this.nativeHeight) {
+        this.nativeHeight = input.offsetHeight
+      }
+      if (this.nativeHeight < th) {
+        input.style.height = th + 'px'
+      } else {
+        input.style.height = this.nativeHeight + 'px'
+      }
     },
     focus () {
       this.$refs.reference.focus()
