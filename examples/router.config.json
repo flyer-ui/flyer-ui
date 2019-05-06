@@ -213,6 +213,12 @@
             "type": "item",
             "path": "drawer",
             "pending":false
+        },
+        {
+            "text": "Pagination 分页",
+            "type": "item",
+            "path": "pagination",
+            "pending":false
         }
     ]
 }
