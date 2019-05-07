@@ -30,6 +30,12 @@ export default {
       default () {
         return []
       }
+    },
+    props: {
+      type: Object,
+      validator (obj) {
+        return obj.hasOwnProperty('label') && obj.hasOwnProperty('children')
+      }
     }
   }
 }
