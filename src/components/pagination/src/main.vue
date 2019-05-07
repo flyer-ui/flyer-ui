@@ -51,6 +51,10 @@ export default {
       get () {
         if (this.start === this.pageStart) {
           return this.pageStart
+        }else if(this.start === this.max){
+          return this.start - (this.increment === 1 ? this.increment : this.increment * 2)
+        }else if(this.pageCount <= 3){
+          return this.start
         }
         return this.start - this.increment
       },
@@ -71,10 +75,12 @@ export default {
     },
     balanceEnd () {
       let end = 0
-      if (this.currentPage === this.pageStart) {
-        end = this.currentPage + this.balance
+      if (this.balanceStart === this.pageStart) {
+        end = this.balanceStart + this.balance
+      }else if(this.pageCount <=3 ){
+        end = this.balanceStart
       } else {
-        end = this.currentPage + this.increment
+        end = this.balanceStart + this.increment * 2
       }
       return end <= this.max ? end : this.max
     },
@@ -82,7 +88,7 @@ export default {
       return this.currentPage >= this.mini + this.balance
     },
     showMaxLimit () {
-      return this.currentPage <= this.max - this.balance
+      return this.currentPage < this.max - this.balance
     },
     isFirstPage () {
       return this.currentPage === this.mini
