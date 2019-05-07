@@ -170,7 +170,7 @@
             "text": "Slider 滑动输入条",
             "type": "item",
             "path": "slider",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Tree 树菜单",

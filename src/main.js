@@ -18,6 +18,7 @@ import TimeLineItem from './components/timeline-item/index'
 import Tabs from './components/tabs/index'
 import TabPane from './components/tab-pane/index'
 import Transfer from './components/transfer/index'
+import Tree from './components/tree/index'
 import Rate from './components/rate/index'
 import Select from './components/select/index'
 import Option from './components/option/index'
@@ -46,6 +47,7 @@ const components = [
   Textarea,
   Tag,
   TabPane,
+  Tree,
   InputNumber,
   Card,
   Alert,
@@ -98,6 +100,7 @@ export default {
   Alert,
   TimeLine,
   TimeLineItem,
+  Tree,
   Tabs,
   TabPane,
   Transfer,
