@@ -51,9 +51,9 @@ export default {
       get () {
         if (this.start === this.pageStart) {
           return this.pageStart
-        }else if(this.start === this.max){
+        } else if (this.start === this.max) {
           return this.start - (this.increment === 1 ? this.increment : this.increment * 2)
-        }else if(this.pageCount <= 3){
+        } else if (this.pageCount <= 3) {
           return this.start
         }
         return this.start - this.increment
@@ -77,7 +77,7 @@ export default {
       let end = 0
       if (this.balanceStart === this.pageStart) {
         end = this.balanceStart + this.balance
-      }else if(this.pageCount <=3 ){
+      } else if (this.pageCount <= 3) {
         end = this.balanceStart
       } else {
         end = this.balanceStart + this.increment * 2
@@ -110,6 +110,7 @@ export default {
       this.currentPage--
       this.$emit('input', this.currentPage)
       this.$emit('on-change', this.currentPage)
+      this.$emit('on-prev', this.currentPage)
     },
     handleNext () {
       if (this.isLastPage) {
@@ -118,6 +119,7 @@ export default {
       this.currentPage++
       this.$emit('input', this.currentPage)
       this.$emit('on-change', this.currentPage)
+      this.$emit('on-next', this.currentPage)
     },
     showLimt (has) {
       if (!has) { return '' }
