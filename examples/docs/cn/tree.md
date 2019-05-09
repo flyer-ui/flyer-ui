@@ -8,9 +8,24 @@ module.exports={
                     children:[
                         {
                             label:'node 1.1',
-                            childrend:[
+                            children:[
                                 {
-                                    label:'node 1.1.1'
+                                    label:'node 1.1.1',
+                                    children:[]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    label:'node 1',
+                    children:[
+                        {
+                            label:'node 1.1',
+                            children:[
+                                {
+                                    label:'node 1.1.1',
+                                    children:[]
                                 }
                             ]
                         }
@@ -26,7 +41,7 @@ module.exports={
 ::: demo
 ```html
 <template>
-    <fly-tree :data='tree1'>
+    <fly-tree :data='tree1' label='label' show-checkbox>
     </fly-tree>
 </template>
 <script>

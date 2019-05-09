@@ -1,29 +1,20 @@
 <template>
-    <transition-group>
-      <ul class='fly-tree__box fly-tree__root'>
-        <li class='fly-tree__node'>
-          <div>
-              <fly-icon name='minus' class='fly-tree__icon'></fly-icon>
-              <fly-checkbox disabled></fly-checkbox>
-              node1
-          </div>
-          <ul class='fly-tree__box'>
-            <li class='fly-tree__node'>
-              <div><fly-icon name='minus' class='fly-tree__icon'></fly-icon>node1.1</div>
-                <ul class='fly-tree__box'>
-                  <li class='fly-tree__node'>
-                    <div><fly-icon class='fly-tree__icon'></fly-icon>node1.1.1</div>
-                  </li>
-                </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-  </transition-group>
+<li class='fly-tree__node'>
+    <div>
+        <fly-icon name='minus' class='fly-tree__icon'></fly-icon>
+        <fly-checkbox v-if='showCheckbox'></fly-checkbox>
+        <span>{{data[label]}}</span>
+    </div>
+    <ul class='fly-tree__box' v-if='data.children.length>0'>
+        <fly-tree-node v-for="(item,index) in data.children" :key='index' :data='item' :node-key='nodeKey' :props='props' :label='label' :show-checkbox='showCheckbox'>
+        </fly-tree-node>
+    </ul>
+</li>
 </template>
+
 <script>
 export default {
-  name: 'FlyTree',
+  name: 'FlyTreeNode',
   props: {
     data: {
       type: Array,
@@ -32,11 +23,11 @@ export default {
       }
     },
     props: {
-      type: Object,
-      validator (obj) {
-        return obj.hasOwnProperty('label') && obj.hasOwnProperty('children')
-      }
-    }
+      type: Object
+    },
+    nodeKey: String,
+    label: String,
+    showCheckbox: Boolean
   }
 }
 </script>
