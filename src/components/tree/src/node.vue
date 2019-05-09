@@ -40,7 +40,7 @@ export default {
   },
   methods: {
     handleExpand () {
-      this.selfExpand = !this.expand
+      this.selfExpand = !this.selfExpand
     },
     handleNodeClick (label) {
       this.$emit('on-node-click', label)
