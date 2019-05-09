@@ -38,6 +38,8 @@ module.exports={
 </script>
 
 ## Tree 树菜单
+
+### 基础用法
 ::: demo
 ```html
 <template>
@@ -48,9 +50,6 @@ module.exports={
 </script>
 ```
 :::
-
-### 基础用法
-
 
 ### 可选择
 

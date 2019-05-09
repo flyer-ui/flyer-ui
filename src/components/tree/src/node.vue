@@ -1,7 +1,7 @@
 <template>
 <li class='fly-tree__node'>
     <div>
-        <fly-icon name='minus' class='fly-tree__icon'></fly-icon>
+        <fly-icon name='add' class='fly-tree__icon' v-if='data.children.length>0'></fly-icon>
         <fly-checkbox v-if='showCheckbox'></fly-checkbox>
         <span>{{data[label]}}</span>
     </div>
