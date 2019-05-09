@@ -1,7 +1,7 @@
 <template>
 <div class='fly-tree'>
     <ul class='fly-tree__box fly-tree__root'>
-        <fly-tree-node v-for="(item,index) in data" :key='index' :data='item' :node-key='nodeKey' :props='props' :label='label' :show-checkbox='showCheckbox'>
+        <fly-tree-node v-for="(item,index) in data" :key='index' @on-node-click='handleNodeClick' :data='item' :props='props' :show-checkbox='showCheckbox'>
         </fly-tree-node>
     </ul>
 </div>
@@ -21,12 +21,18 @@ export default {
         return []
       }
     },
-    nodeKey: String,
     props: {
-      type: Object
+      type: Object,
+      validator (obj) {
+        return obj.hasOwnProperty('label') && obj.hasOwnProperty('children')
+      }
     },
-    showCheckbox: Boolean,
-    label: String
+    showCheckbox: Boolean
+  },
+  methods: {
+    handleNodeClick (label) {
+      this.$emit('on-node-click', label)
+    }
   }
 }
 </script>
