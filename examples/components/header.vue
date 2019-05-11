@@ -19,7 +19,7 @@ export default {
 @import '~/components/themes/src/base/fly-mixins.scss';
 $logo_width:15%;
 $items_width:95%;
-$header_height:60px;
+$header_height:59px;
 @include b('demo-header'){
   display:flex;
   flex-direction: row;

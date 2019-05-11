@@ -17,10 +17,7 @@ export default {
   name: 'FlyTreeNode',
   props: {
     data: {
-      type: Array,
-      default () {
-        return []
-      }
+      type: Object
     },
     props: {
       type: Object

@@ -15,6 +15,7 @@ Vue.use(VueRouter)
 Vue.component('fly-demo-block', FlyDemoBlock)
 
 const router = new VueRouter({
+  // mode: 'history',
   base: __dirname,
   routes: Routers
 })

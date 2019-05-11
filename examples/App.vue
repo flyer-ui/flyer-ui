@@ -31,6 +31,76 @@ export default {
   name: 'App'
 }
 </script>
+
 <style lang='scss'>
-  @import url('assets/css/common.scss');
+@import '~/components/themes/src/base/fly-common.scss';
+@import '~/components/themes/src/base/fly-mixins.scss';
+@import url('assets/css/common.scss');
+// body,#app{
+//   min-height:100vh;
+// }
+@include b('demo-table'){
+    width:100%;
+    border:1px solid #dedede;
+    border-bottom:0px;
+    margin:0px;
+    padding:0px;
+    border-collapse:collapse;
+    th{
+        background-color:#fafafa;
+    }
+    td,th{
+        text-align:left;
+        border:0px;
+        padding:10px 15px;
+        box-sizing:border-box;
+        border-spacing:0px;
+        border-bottom:1px solid #dedede;
+    }
+}
+@include b('demo-icon'){
+    [class^="fly-icon-"]{
+        font-size:2em;
+        margin:0 15px;
+    }
+
+    ul{
+      list-style-type:none;
+      margin:0px;
+      padding:0px;
+      border-top:1px solid $fly-border-color;
+      border-left:1px solid $fly-border-color;
+      &:after{
+      content:'';
+      display:block;
+      clear:both;
+    }
+    }
+    li{
+      float:left;
+      width:16.66%;
+      text-align:center;
+      padding:10px 0px;
+      box-sizing:border-box;
+      border-right:1px solid $fly-border-color;
+      border-bottom:1px solid $fly-border-color;
+      div{
+        color:$font-color-text;
+        margin:10px 0px;
+      }
+    }
+}
+code{
+    background-color:#fafafa;
+    margin:0px;
+    padding:20px;
+    display:block;
+}
+.fly-logs{
+    margin:10px;
+}
+.fly-logs__items{
+  margin:5px;
+  line-height:24px;
+}
 </style>

@@ -6,12 +6,6 @@
             "path": "/"
         },
         {
-            "text": "更新日志",
-            "type": "item",
-            "path": "logs",
-            "pending":false
-        },
-        {
             "text": "安装",
             "type": "item",
             "path": "installation",
@@ -27,13 +21,13 @@
             "text": "国际化",
             "type": "item",
             "path": "i18n",
-            "pending":false
+            "pending":true
         },
         {
             "text": "自定义主题",
             "type": "item",
             "path": "custom-theme",
-            "pending":false
+            "pending":true
         },
         {
             "text": "组件",
@@ -140,7 +134,7 @@
             "text": "Transfer 穿梭框",
             "type": "item",
             "path": "transfer",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Tabs 选项卡",
@@ -200,13 +194,13 @@
             "text": "Tooltip 文字提示",
             "type": "item",
             "path": "tooltip",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Popover 气泡提示",
             "type": "item",
             "path": "popover",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Drawer 抽屉",
