@@ -26,7 +26,6 @@
 ```html
 <template>
     <fly-switch v-model='value'></fly-switch>
-    <div>{{value}}</div>
 </template>
 <script>
     export default {
@@ -74,9 +73,6 @@
        <span slot='active'>开</span>
        <span slot='inactive'>关</span>
    </fly-switch>
-   <div>
-       {{value2}}
-   </div>
 </template>
 <script>
     export default {

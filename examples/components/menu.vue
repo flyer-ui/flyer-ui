@@ -3,11 +3,16 @@
   <ul class='fly-demo-menus__list'>
     <li v-for='(item,index) in data' :key='index' :class='`fly-demo-menus__${item.type}`'>
       <h3 v-if='item.type==="header"'>
-       <span v-if='item.path==="/"'>
-          {{item.text}}
+        <span v-if='item.path==="/"'>
+         {{item.text}}
        </span>
-        <router-link v-else :to='getPath(item)'>{{item.text}}</router-link>
+        <router-link v-else :to='getPath(item)'>
+          {{item.text}}
+        </router-link>
       </h3>
+      <span v-if='item.type==="notice"' class='fly-demo-menus__notice'>
+          {{item.text}}
+      </span>
       <span v-if='item.type==="item"'>
           <router-link :to='getPath(item)' :class='{"is-pending":item.pending}'>{{item.text}}</router-link>
         </span>
@@ -51,6 +56,10 @@ export default {
     border-right: 1px solid $fly-border-color;
   }
 
+  h3 {
+    font-size: 16px;
+  }
+
   @include e('list') {
     list-style-type: none;
     margin: 0px;
@@ -58,7 +67,15 @@ export default {
     box-sizing: border-box;
   }
 
-  @include e('header') {}
+  @include e('header') {
+    a {
+      color: #000;
+    }
+
+    a.router-link-active {
+      color: $fly-primary-color;
+    }
+  }
 
   @include e('item') {
     line-height: 36px;
@@ -76,6 +93,10 @@ export default {
     .is-pending {
       color: $font-color-placeholder;
     }
+  }
+  @include e('notice'){
+    color:$font-color-placeholder;
+    font-size:$fly-font-assist_text-size;
   }
 }
 </style>

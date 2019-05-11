@@ -47,7 +47,7 @@ $fly-radio-padding-area:5px;
             border-color:$fly-primary-color;
         }
         @include when(disabled){
-            color:$font-color-text;
+            color:$font-color-common;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
             cursor:not-allowed;

@@ -40,10 +40,11 @@
    */
   
   h1 {
-    font-size: $fly-font-big-size;
+    font-size: 2em;
     margin: 0.67rem 0;
-  }
   
+  }
+
   /* Grouping content
      ========================================================================== */
   
@@ -78,7 +79,7 @@
   a {
     background-color: transparent;
     text-decoration:none;
-    color:$font-color-text;
+    color:$font-color-common;
   }
   
   /**

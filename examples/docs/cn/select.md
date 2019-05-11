@@ -100,7 +100,6 @@ module.exports = {
         <fly-option label='河源' value='HY'>
         </fly-option>
     </fly-select>
-    {{selected1}}
 </template>
 <script>
 export default {
@@ -355,7 +354,6 @@ export default {
             <fly-option label='河源' value='HY'>
             </fly-option>
         </fly-select>
-        <div>{{selectedItems}}</div>
     </div>
 </template>
 <script>

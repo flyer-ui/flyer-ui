@@ -4,13 +4,13 @@
 
 推荐使用 npm 的方式安装，它能更好地和 webpack 打包工具配合使用
 
-```JS
+```JavaScript
 npm i flyer-ui -S 
 npm install flyer-ui -S
 ```
 ### CDN 引用方式
 
-目前可以通过 unpkg.com/flyer-ui
+目前可以通过 <a href='https://unpkg.com/flyer-ui' target='_blank'>unpkg.com/flyer-ui</a> 
  获取到最新版本的资源，在页面上引入 js 和 css 文件即可开始使用。
 
 

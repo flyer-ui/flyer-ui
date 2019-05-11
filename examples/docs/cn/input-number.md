@@ -35,9 +35,6 @@
 ```html
 <template>
     <fly-input-number v-model='num'></fly-input-number>
-    <div>
-        {{num}}
-    </div>
 </template>
 <script>
     export default {
@@ -57,9 +54,6 @@
 ```html
 <template>
     <fly-input-number v-model='num1' :min='0' :max='10'></fly-input-number>
-    <div>
-        {{num1}}
-    </div>
 </template>
 <script>
     export default {

@@ -1,7 +1,7 @@
 @import './base/fly-common.scss';
 @import './base/fly-util.scss';
 @import './base/fly-mixins.scss';
-
+$fly-input-clear-padding:10px !default;
 @include b('textarea'){
     display: inline-block;
     @include e('native'){
@@ -9,9 +9,13 @@
         border:0px;
         overflow-y:auto;
         border:1px solid $fly-border-color;
+        padding:$fly-input-clear-padding;
         @include when('disabled'){
             background: rgba($fly-border-color,0.5);
             cursor:not-allowed;
+        }
+        &:focus{
+            border-color:$fly-primary-color;
         }
     }
 }

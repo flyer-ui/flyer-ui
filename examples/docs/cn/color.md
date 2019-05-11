@@ -20,7 +20,7 @@
     </div>
     <div class='block info'>
         Info</br>
-        #0bb2d4
+        #263238
     </div>
     <div class='block warning'>
         Warning</br>
@@ -39,20 +39,20 @@
 <template>
 <div>
     <div class='block font-color-title'>
-        标题字体颜色</br>
-        #37474F
+        主要文字</br>
+        #263238
     </div>
     <div class='block font-color-common'>
-        常规字体颜色</br>
-        #526069
+        常规文字</br>
+        #37474F
     </div>
     <div class='block font-color-secondary'>
-        次要字体颜色</br>
-        #76838F
+        次要文字</br>
+        #526069
     </div>
     <div class='block font-color-placeholder'>
-        占位字体颜色</br>
-        #CCD5DB
+        占位文字</br>
+        #A3AFB7
     </div>
 </div>
 </template>
@@ -91,16 +91,16 @@
         background-color:#ff4c52;
     }
     .font-color-title{
-        background-color:#37474F;
+        background-color:#263238;
     }
     .font-color-common{
-        background-color:#526069;
+        background-color:#37474F;
     }
     .font-color-secondary{
-        background-color:#76838F;
+        background-color:#526069;
     }
     .font-color-placeholder{
-        background-color:#CCD5DB;
+        background-color:#A3AFB7;
     }
     .border-color{
         background-color:#E4EAEC;

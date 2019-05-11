@@ -63,7 +63,7 @@ $fly-time-line-size-large:20px;
     }
     @include e('timestamp'){
         font-size:12px;
-        color:rgba($font-color-text,0.5);
+        color:rgba($font-color-common,0.5);
         @include when('top'){
            box-sizing: border-box;
            padding-bottom: 5px;

@@ -25,7 +25,7 @@ const routes = [{
   component: load('installation')
 }]
 navs[currentLang].forEach((nav) => {
-  if (nav.type === 'item') {
+  if (nav.path !== '/') {
     let component = load(nav.path)
     let route = {
       path: `/:lang/${nav.path}`,

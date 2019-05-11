@@ -4,7 +4,7 @@
 
 在main.js中写入以下内容
 
-```vue
+```JS
 import Vue from 'vue'
 import App from './App'
 import FlyerUI from 'flyer-ui'
@@ -12,8 +12,7 @@ import 'flyer-ui/lib/themes/index.css'
 
 new Vue({
 el: '#app',
-components: { App },
-template: '<App/>'
+render: h=>h(App)
 })
 
 ```

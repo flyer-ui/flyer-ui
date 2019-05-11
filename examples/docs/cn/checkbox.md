@@ -61,7 +61,6 @@ module.exports = {
     <fly-checkbox v-model='checked' name='checked'>
         是否选中
     </fly-checkbox>
-    <div>{{checked}}</div>
 </template>
 <script>
     export default {
@@ -83,7 +82,6 @@ module.exports = {
         是否选中
     </fly-checkbox>
     <fly-button @on-click='handleChecked'>控制</fly-button>
-    <div>{{checked}}</div>
 </template>
 <script>
     export default {
@@ -117,7 +115,6 @@ module.exports = {
 ```html
 <template>
     <fly-checkbox v-model='city' true-value='深圳' false-value=''>深圳</fly-checkbox>
-    <div>{{city}}</div>
 </template>
 <script>
     export default {
@@ -136,7 +133,6 @@ module.exports = {
 ``` html
 <template>
     <fly-checkbox v-model='value' @on-change='handleChange' true-value='东莞' false-value=''>东莞</fly-checkbox>
-    <div>{{`console.log(${value})`}}</div>
 </template>
 <script>
     export default {
@@ -166,7 +162,6 @@ module.exports = {
         <fly-checkbox label='上海' disabled checked>上海</fly-checkbox>
         <fly-checkbox label='杭州' disabled>杭州</fly-checkbox>
     </fly-checkbox-group>
-    <div>citys:{{citys}}</div>
 </template>
 <script>
     export default {
@@ -193,8 +188,6 @@ module.exports = {
     <fly-checkbox-group v-model='selectedItems' @on-change='handleChangeCheckboxGroup'>
         <fly-checkbox v-for='(city,index) in options' :key='index' :label='city.value'>{{city.label}}</fly-checkbox>
     </fly-checkbox-group>
-    <div>citys:{{selectedItems}}</div>
-    <div>selectAll:{{selectAll}}</div>
 </template>
 <script>
     let allCityValue=[0,1,2,3]

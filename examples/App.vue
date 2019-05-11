@@ -36,9 +36,9 @@ export default {
 @import '~/components/themes/src/base/fly-common.scss';
 @import '~/components/themes/src/base/fly-mixins.scss';
 @import url('assets/css/common.scss');
-// body,#app{
-//   min-height:100vh;
-// }
+body,#app{
+  color:$font-color-common;
+}
 @include b('demo-table'){
     width:100%;
     border:1px solid #dedede;
@@ -85,16 +85,23 @@ export default {
       border-right:1px solid $fly-border-color;
       border-bottom:1px solid $fly-border-color;
       div{
-        color:$font-color-text;
+        color:$font-color-common;
         margin:10px 0px;
       }
     }
 }
 code{
     background-color:#fafafa;
-    margin:0px;
-    padding:20px;
-    display:block;
+    margin: 0px;
+    padding: 15px 10px;
+    display: block;
+    font-family: Menlo,Monaco,Consolas,Courier,monospace;
+    font-size: 14px;
+    line-height: 18px;
+}
+pre{
+  border-radius: $fly-round-default-size;
+  border:1px solid $fly-border-color;
 }
 .fly-logs{
     margin:10px;

@@ -32,9 +32,6 @@ module.exports = {
 <template>
     <fly-radio name='demo' v-model='value' label='1'>单选框1</fly-radio>
     <fly-radio name='demo' v-model='value' label='2'>单选框2</fly-radio>
-    <div>
-    value:{{value}}
-    </div>
 </template>
 <script>
 export default {
@@ -75,9 +72,6 @@ export default {
 <template>
     <fly-radio name='demo' @on-change='handleChange' v-model='value4' label='单选框1'>单选框1</fly-radio>
     <fly-radio name='demo' @on-change='handleChange' v-model='value4' label='单选框2'>单选框2</fly-radio>
-    <div>
-        {{`console.log(${selectedValue})`}}
-    </div>
 </template>
 <script>
 export default {
@@ -116,12 +110,6 @@ export default {
             杭州
         </fly-radio>
     </fly-radio-group>
-    <div>
-        value3:{{value3}}
-    </div>
-     <div>
-        {{`console.log(${selectedGroupValue})`}}
-    </div>
 </template>
 <script>
 export default {

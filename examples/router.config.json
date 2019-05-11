@@ -1,5 +1,11 @@
 {
     "cn": [
+        {	
+            "text": "更新日志",	
+            "type": "header",	
+            "path": "logs",	
+            "pending":false	
+        },
         {
             "text": "开发指南",
             "type": "header",
@@ -33,6 +39,12 @@
             "text": "组件",
             "type": "header",
             "path": "/"
+        }, 
+        {
+            "text": "基础",
+            "type": "notice",
+            "path": "font",
+            "pending":false
         },
         {
             "text": "Font 字体",
@@ -56,6 +68,12 @@
             "text": "Icon 图标",
             "type": "item",
             "path": "icon",
+            "pending":false
+        },
+        {
+            "text": "表单",
+            "type": "notice",
+            "path": "font",
             "pending":false
         },
         {
@@ -95,9 +113,57 @@
             "pending":false
         },
         {
+            "text": "Select 下拉选择框",
+            "type": "item",
+            "path": "select",
+            "pending":false
+        },
+        {
+            "text": "Rate 评分",
+            "type": "item",
+            "path": "rate",
+            "pending":false
+        },
+        {
+            "text": "数据",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
             "text": "Tag 标签",
             "type": "item",
             "path": "tag",
+            "pending":false
+        },
+        {
+            "text": "Progress 进度条",
+            "type": "item",
+            "path": "progress",
+            "pending":false
+        },
+        {
+            "text": "Pagination 分页",
+            "type": "item",
+            "path": "pagination",
+            "pending":false
+        },
+        {
+            "text": "Tree 树菜单",
+            "type": "item",
+            "path": "tree",
+            "pending":true
+        },
+        {
+            "text": "Timeline 时间轴",
+            "type": "item",
+            "path": "timeline",
+            "pending":false
+        },
+        {
+            "text": "提示",
+            "type": "notice",
+            "path": "font",
             "pending":false
         },
         {
@@ -119,6 +185,30 @@
             "pending":false
         },
         {
+            "text": "导航",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Tabs 选项卡",
+            "type": "item",
+            "path": "tabs",
+            "pending":false
+        },
+        {
+            "text": "其它",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Drawer 抽屉",
+            "type": "item",
+            "path": "drawer",
+            "pending":false
+        },
+        {
             "text": "Card 卡片",
             "type": "item",
             "path": "card",
@@ -128,7 +218,7 @@
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Transfer 穿梭框",
@@ -137,58 +227,22 @@
             "pending":true
         },
         {
-            "text": "Tabs 选项卡",
-            "type": "item",
-            "path": "tabs",
-            "pending":false
-        },
-        {
-            "text": "Timeline 时间轴",
-            "type": "item",
-            "path": "timeline",
-            "pending":false
-        },
-        {
-            "text": "Rate 评分",
-            "type": "item",
-            "path": "rate",
-            "pending":false
-        },
-        {
-            "text": "Select 下拉选择框",
-            "type": "item",
-            "path": "select",
-            "pending":false
-        },
-        {
             "text": "Slider 滑动输入条",
             "type": "item",
             "path": "slider",
             "pending":true
         },
         {
-            "text": "Tree 树菜单",
-            "type": "item",
-            "path": "tree",
-            "pending":false
-        },
-        {
             "text": "Table 表格",
             "type": "item",
             "path": "table",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Form 表单验证",
             "type": "item",
             "path": "form",
-            "pending":false
-        },
-        {
-            "text": "Progress 进度条",
-            "type": "item",
-            "path": "progress",
-            "pending":false
+            "pending":true
         },
         {
             "text": "Tooltip 文字提示",
@@ -201,18 +255,6 @@
             "type": "item",
             "path": "popover",
             "pending":true
-        },
-        {
-            "text": "Drawer 抽屉",
-            "type": "item",
-            "path": "drawer",
-            "pending":false
-        },
-        {
-            "text": "Pagination 分页",
-            "type": "item",
-            "path": "pagination",
-            "pending":false
         }
     ]
 }

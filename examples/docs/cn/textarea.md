@@ -15,8 +15,6 @@
 ```html
 <template>
     <fly-textarea placeholder='多行输入' v-model='value'></fly-textarea>
-    <pre>value:{{value}}
-    </pre>
 </template>
 <script>
     export default {

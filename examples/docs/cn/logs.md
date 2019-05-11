@@ -2,6 +2,19 @@
 
 <template>
     <fly-timeline class='fly-logs'>
+    <fly-timeline-item timestamp='2019-05-12' placement='top'>
+            <div class='fly-logs__items'>发布版本1.0.6</div>
+            <div class='fly-logs__items'>进新了以下更新</div>
+            <div class='fly-logs__items'>
+                <ul>
+                    <li>新增 Drawer 抽屉组件</li>
+                    <li>新增 Pagination 分页组件</li>
+                    <li>新增 Select 下拉选择框组件</li>
+                    <li>对组件及官网进行了优化</li>
+                </ul>
+            </div>
+           </div> 
+        </fly-timeline-item>
         <fly-timeline-item timestamp='2019-04-08' placement='top'>
             <div class='fly-logs__items'>发布版本1.0.5</div>
             <div class='fly-logs__items'>发布了以下组件：</div>

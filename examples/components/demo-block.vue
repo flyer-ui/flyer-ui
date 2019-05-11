@@ -80,5 +80,12 @@ export default {
         left:0px;
         right:0px;
     }
+    pre{
+        border:0px;
+        margin:0px;
+    }
+    code{
+        padding:0px;
+    }
 }
 </style>

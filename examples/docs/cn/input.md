@@ -19,7 +19,6 @@ module.exports =  {
 ```html
 <template>
     <fly-input placeholder='请输入内容' v-model='value'></fly-input>
-    <div>value:{{value}}</div>
 </template>
 <script>
     export default{
@@ -39,7 +38,6 @@ module.exports =  {
 ```html
 <template>
     <fly-input placeholder='请输入内容' disabled v-model='value2'></fly-input>
-    <div>value2:{{value2}}</div>
 </template>
 <script>
     export default{
@@ -58,7 +56,6 @@ module.exports =  {
 ```html
 <template>
     <fly-input placeholder='请输入内容' clearable v-model='value3'></fly-input>
-    <div>value3:{{value3}}</div>
 </template>
 <script>
     export default{
@@ -77,7 +74,6 @@ module.exports =  {
 ```html
 <template>
     <fly-input placeholder='请输入内容' :max-length='10' :min-length='5' v-model='value4'></fly-input>
-    <div>value4:{{value4}}</div>
 </template>
 <script>
     export default{

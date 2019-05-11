@@ -60,7 +60,7 @@ $fly-button-mini-padding-horizontal:6px !default;
     box-sizing: border-box;
     display: inline-block;
     vertical-align: baseline;
-    color: $font-color-text;
+    color: $font-color-common;
     background-color: $fly-common-white;
     &+& {
         margin-left: 10px;
@@ -73,7 +73,7 @@ $fly-button-mini-padding-horizontal:6px !default;
         opacity: 1;
     }
     @include when(plain) {
-        @include button-plain($font-color-text);
+        @include button-plain($font-color-common);
     }
     @include when(disabled) {
         cursor: not-allowed;

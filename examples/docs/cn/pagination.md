@@ -19,7 +19,6 @@ module.exports = {
 ```html
 <template>
   <fly-pagination v-model='currentPage' :page-size='10' :total="188"></fly-pagination>
-  <div>currentPage:{{currentPage}}</div>
 </template>
 <script>
 export default {
