@@ -1,6 +1,6 @@
  
- <div style='text-align:center;width:160px;height:160px'>
-  <img src='/examples/assets/imgs/logo.svg'>
+ <div style='text-align:center;'>
+  <!-- <img src='/examples/assets/imgs/logo.svg'> -->
  </div>
  <div>
   <a href="https://www.npmjs.com/package/flyer-ui">
