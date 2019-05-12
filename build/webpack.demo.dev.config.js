@@ -29,7 +29,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: file => {
           return /node_modules/.test(file) &&
-              !/\.vue\.js/.test(file)
+            !/\.vue\.js/.test(file)
         }
       },
       {
@@ -79,6 +79,22 @@ module.exports = {
                             `
                 } else {
                   return `</div></fly-demo-block>`
+                }
+              }
+            }],
+            [require('markdown-it-container'), 'log', {
+              validate: function (params) {
+                return params.trim().match(/^log\s*(.*)$/)
+              },
+              render: function (tokens, idx) {
+                const m = tokens[idx].info.trim().match(/^log\s*(.*)$/)
+
+                if (tokens[idx].nesting === 1) {
+                  let desc = m[1].length > 0 ? `<div>${m[1]}</div>` : ``
+                  let content = tokens[idx + 1].content
+                  return `<fly-timeline-item timestamp='${content}'>${desc}`
+                } else {
+                  return `</fly-timeline-item>`
                 }
               }
             }]

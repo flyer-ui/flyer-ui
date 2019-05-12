@@ -1,11 +1,5 @@
 {
     "cn": [
-        {	
-            "text": "更新日志",	
-            "type": "header",	
-            "path": "logs",	
-            "pending":false	
-        },
         {
             "text": "开发指南",
             "type": "header",

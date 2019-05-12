@@ -9,6 +9,7 @@
 <script>
 import FlyMenu from './menu'
 import routes from '../router.config.json'
+import pages from '../pages.config.json'
 export default {
   name: 'FlyContainer',
   components: {
@@ -16,7 +17,9 @@ export default {
   },
   computed: {
     navData () {
-      return routes['cn'].filter((route) => { return !route.pending })
+      const currentLang = this.$route.params.lang || 'cn'
+      const data = [].concat.apply(pages[currentLang], routes[currentLang])
+      return data.filter((route) => { return !route.pending })
     }
   }
 }

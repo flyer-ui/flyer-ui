@@ -1,4 +1,5 @@
 import navs from './router.config.json'
+import pages from './pages.config.json'
 const defaultLang = 'cn'
 const currentLang = defaultLang
 const LOAD_MAP = {
@@ -30,6 +31,17 @@ navs[currentLang].forEach((nav) => {
     let route = {
       path: `/:lang/${nav.path}`,
       name: nav.path,
+      component: component.default || component
+    }
+    routes.push(route)
+  }
+})
+pages[currentLang].forEach((page) => {
+  if (page.path !== '/') {
+    let component = require(`./pages/${page.path}`)
+    let route = {
+      path: `/:lang/${page.path}`,
+      name: page.path,
       component: component.default || component
     }
     routes.push(route)
