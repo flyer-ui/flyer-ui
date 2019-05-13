@@ -97,6 +97,7 @@ export default {
   @include e('notice'){
     color:$font-color-placeholder;
     font-size:$fly-font-assist_text-size;
+    line-height: 36px;
   }
 }
 </style>

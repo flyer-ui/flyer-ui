@@ -145,11 +145,6 @@ export default {
           </li>
           {this.showLimt(this.showMiniLimit)}
           {this._l(this.balanceEnd, (number, index) => {
-            console.log('balanceEnd', this.balanceEnd)
-            console.log('balanceStart', this.balanceStart)
-            console.log('currentPage', this.currentPage)
-            console.log('number', number)
-            console.log('increment', this.increment)
             if (number < this.balanceStart || number === this.mini || number === this.max) { return '' }
             return (<li class={['fly-pagination__number',
               {'is-active': number === this.currentPage}]} on-click={($event) => { this.handleClick(number) }}>

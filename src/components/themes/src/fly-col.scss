@@ -1,0 +1,16 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+$span:24;
+@mixin col($i){
+  position: relative;
+  min-height: 1px;
+  box-sizing:border-box;
+  width:percentage($i / $span)
+}
+@for $i from 1 through $span {
+  @include b(#{'col-'+$i}){
+    @include col($i)
+  }
+}
