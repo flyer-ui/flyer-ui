@@ -42,7 +42,7 @@ export default {
   },
   render (h) {
     return h(this.tagName, {
-      class: ['fly-row', this.type === 'flex' ? 'is-flex' : ''],
+      class: ['fly-row', this.type === 'flex' ? 'fly-row--flex' : ''],
       style: this.style
     }, this.$slots.default)
   }
