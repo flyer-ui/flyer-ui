@@ -4,13 +4,20 @@
 
 $span:24;
 @mixin col($i){
-  position: relative;
-  min-height: 1px;
+  width:percentage($i / $span);
+  float:left;
   box-sizing:border-box;
-  width:percentage($i / $span)
+}
+@mixin offset($i){
+  margin-left:percentage($i / $span);
+  float:left;
+  box-sizing:border-box;
 }
 @for $i from 1 through $span {
   @include b(#{'col-'+$i}){
-    @include col($i)
+    @include col($i);
+  }
+  @include b(#{'col-offset-'+$i}){
+    @include offset($i);
   }
 }

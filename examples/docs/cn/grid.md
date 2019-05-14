@@ -9,21 +9,89 @@
     <fly-col class='bg-col-first'></fly-col>
   </fly-row>
   <fly-row class='bg-row'>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col> <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
   </fly-row>
   <fly-row class='bg-row'>
-      <fly-col :span='8' class='bg-col-first'></fly-col>
-      <fly-col :span='8' class='bg-col-second'></fly-col>
-      <fly-col :span='8' class='bg-col-first'></fly-col>
+      <fly-col :span='8'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='8'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='8'>
+        <div class='bg-col-first'></div>
+      </fly-col>
   </fly-row>
    <fly-row class='bg-row'>
-      <fly-col :span='12' class='bg-col-first'></fly-col>
-      <fly-col :span='12' class='bg-col-second'></fly-col>
+      <fly-col :span='12'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='12'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+  </fly-row>
+</template>
+<style scoped>
+.bg-row{
+  background: #fafafa;
+  margin-bottom:10px;
+}
+.bg-col-first{
+  background:#526069;
+  border-radius: 2px;
+  line-height: 32px;
+  height:32px;
+}
+.bg-col-second{
+  background:#A3AFB7;
+  border-radius: 2px;
+  line-height: 32px;
+  height:32px;
+}
+</style>
+
+```
+:::
+
+### 分栏间隔
+
+::: demo
+```html
+<template>
+  <fly-row class='bg-row' :gutter='20'>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col> <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
   </fly-row>
 </template>
 <style scoped>
@@ -46,18 +114,179 @@
 ```
 :::
 
-### 分栏间隔
+### Flex类型布局
 
 ::: demo
 ```html
 <template>
-  <fly-row class='bg-row' :gutter='20'>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
-      <fly-col :span='4' class='bg-col-first'></fly-col>
-      <fly-col :span='4' class='bg-col-second'></fly-col>
+  <fly-row class='bg-row' type='flex' :gutter='20'>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col> <fly-col :span='4'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='4'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+  </fly-row>
+  <fly-row class='bg-row' type='flex'>
+    <fly-col class='bg-col-first'></fly-col>
+  </fly-row>
+  <fly-row class='bg-row' type='flex'>
+      <fly-col :span='8'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='8'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='8'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+   <fly-row class='bg-row' type='flex'>
+      <fly-col :span='12'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='12'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+  </fly-row>
+</template>
+<style scoped>
+.bg-row{
+  background: #fafafa;
+  line-height: 32px;
+  height:32px;
+  margin-bottom:10px;
+}
+.bg-col-first{
+  background:#526069;
+  border-radius: 2px;
+}
+.bg-col-second{
+  background:#A3AFB7;
+  border-radius: 2px;
+}
+</style>
+
+```
+:::
+
+### 分栏偏移效果
+
+::: demo
+```html
+<template>
+  <fly-row class='bg-row' type='flex' :gutter='20'>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6' :offset='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+  </fly-row>
+  <fly-row class='bg-row' type='flex'>
+      <fly-col :span='6' :offset='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6' :offset='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+  </fly-row>
+   <fly-row class='bg-row'>
+      <fly-col :span='12' :offset='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+</template>
+<style scoped>
+.bg-row{
+  background: #fafafa;
+  line-height: 32px;
+  height:32px;
+  margin-bottom:10px;
+}
+.bg-col-first{
+  background:#526069;
+  border-radius: 2px;
+}
+.bg-col-second{
+  background:#A3AFB7;
+  border-radius: 2px;
+}
+</style>
+
+```
+:::
+
+### 分栏偏移效果
+
+::: demo
+```html
+<template>
+  <fly-row class='bg-row' type='flex'>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+  <fly-row class='bg-row' justify-content='flex-end' type='flex'>
+       <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+   <fly-row class='bg-row' justify-content='center' type='flex'>
+       <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+  <fly-row class='bg-row' justify-content='space-between' type='flex'>
+       <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+  </fly-row>
+  <fly-row class='bg-row' justify-content='space-around' type='flex'>
+       <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-second'></div>
+      </fly-col>
+      <fly-col :span='6'>
+        <div class='bg-col-first'></div>
+      </fly-col>
   </fly-row>
 </template>
 <style scoped>

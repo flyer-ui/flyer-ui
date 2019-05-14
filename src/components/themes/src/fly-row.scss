@@ -3,8 +3,14 @@
 @import './base/fly-mixins.scss';
 
 @include b('row'){
-  display:flex;
-  @include when('float'){
+  display:block;
+  box-sizing:border-box;
+  @include when('flex'){
+    display:flex;
+  }
+  &:after{
+    content:'';
+    clear:both;
     display:block;
   }
 }

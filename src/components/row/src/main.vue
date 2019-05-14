@@ -30,9 +30,19 @@ export default {
       default: 'div'
     }
   },
+  computed: {
+    style () {
+      return {
+        'margin-left': this.gutter > 0 ? `-${this.gutter / 2}px` : '',
+        'margin-right': this.gutter > 0 ? `-${this.gutter / 2}px` : '',
+        'justify-content': this.justifyContent,
+        'align-items': this.alignItems
+      }
+    }
+  },
   render (h) {
     return h(this.tagName, {
-      class: ['fly-row'],
+      class: ['fly-row', this.type === 'flex' ? 'is-flex' : ''],
       style: this.style
     }, this.$slots.default)
   }
