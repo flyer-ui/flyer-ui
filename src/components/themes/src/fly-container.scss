@@ -1,0 +1,14 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('container'){
+  display: flex;
+  flex:1;
+  @include when('horizontal'){
+    flex-direction:column;
+  }
+  @include when('vertical'){
+    flex-direction:row;
+  }
+}

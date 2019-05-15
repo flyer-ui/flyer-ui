@@ -47,6 +47,12 @@
             "pending":false
         },
         {
+            "text": "Container 布局容器",
+            "type": "item",
+            "path": "container",
+            "pending":false
+        },
+        {
             "text": "Font 字体",
             "type": "item",
             "path": "font",

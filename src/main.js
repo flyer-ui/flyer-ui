@@ -32,6 +32,11 @@ import Tooltip from './components/tooltip/index'
 import Drawer from './components/drawer/index'
 import Row from './components/row/index'
 import Col from './components/col/index'
+import Container from './components/container/index'
+import Header from './components/header/index'
+import Main from './components/main/index'
+import Aside from './components/aside/index'
+import Footer from './components/footer/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -69,7 +74,12 @@ const components = [
   Tooltip,
   Drawer,
   Row,
-  Col
+  Col,
+  Container,
+  Header,
+  Main,
+  Footer,
+  Aside
 ]
 
 const install = function (Vue) {
@@ -120,5 +130,10 @@ export default {
   Tooltip,
   Drawer,
   Row,
-  Col
+  Col,
+  Container,
+  Header,
+  Main,
+  Footer,
+  Aside
 }

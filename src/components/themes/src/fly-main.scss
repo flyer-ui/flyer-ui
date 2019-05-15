@@ -1,0 +1,9 @@
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-mixins.scss';
+
+@include b('main'){
+  padding:0px 10px;
+  flex:1;
+  display:block;
+}
