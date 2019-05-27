@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import ChangeLog from '../../CHANGE.cn.md'
+import ChangeLog from '../../CHANGELOG.md'
 export default {
   name: 'FlyChangeLog',
   components: {
