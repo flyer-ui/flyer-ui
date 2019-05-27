@@ -1,8 +1,8 @@
 ## 快速上手
 
-### 引入Flyer-UI
+### 引入 Flyer-UI
 
-在main.js中写入以下内容
+在 main.js 中写入以下内容
 
 ```JS
 import Vue from 'vue'
@@ -16,4 +16,5 @@ render: h=>h(App)
 })
 
 ```
-以上代码便完成了Flyer-UI的引入。需要注意的是，样式文件需要单独引入。
+
+以上代码便完成了 Flyer-UI 的引入。需要注意的是，样式文件需要单独引入。

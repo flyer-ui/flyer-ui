@@ -13,19 +13,22 @@ module.exports = {
 ### 使用方法
 
 ::: demo
+
 ```html
 <template>
-<div class='fly-demo-icon'>
-    <i class='fly-icon-dollar-sign'></i>
-    <i class='fly-icon-map-pin'></i>
-    <i class='fly-icon-mail'></i>
-    <fly-icon name='monitor'></fly-icon>
-</div>
+  <div class="fly-demo-icon">
+    <i class="fly-icon-dollar-sign"></i>
+    <i class="fly-icon-map-pin"></i>
+    <i class="fly-icon-mail"></i>
+    <fly-icon name="monitor"></fly-icon>
+  </div>
 </template>
 ```
+
 :::
 
 ### 图标集合
+
 <template>
 <div class='fly-demo-icon'>
     <ul>
