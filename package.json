@@ -91,7 +91,7 @@
     "postcss-import": "11.1.0",
     "postcss-loader": "2.1.6",
     "postcss-url": "7.3.2",
-    "progress-bar-webpack-plugin": "1.11.0",
+    "progress-bar-webpack-plugin": "1.12.1",
     "rimraf": "2.6.2",
     "sass": "1.15.2",
     "sass-loader": "7.1.0",
