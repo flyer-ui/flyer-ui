@@ -109,7 +109,7 @@
     "vue-router": "3.0.1",
     "vue-style-loader": "3.1.2",
     "vue-template-compiler": "2.5.2",
-    "webpack": "4.30.0",
+    "webpack": "4.33.0",
     "webpack-bundle-analyzer": "3.3.2",
     "webpack-cli": "3.3.0",
     "webpack-dev-server": "3.3.1",
