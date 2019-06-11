@@ -1,6 +1,6 @@
-## 页面字体规格
+# 页面字体规格
 
-### 中文字体
+## 中文字体
 
 <template>
 <div>
@@ -31,7 +31,7 @@
 </div>
 </template>
 
-### 英文/数字字体
+## 英文/数字字体
 
 <template>
     <div class='block'>
@@ -60,13 +60,13 @@
     </div>
 </template>
 
-### 引用代码
+## 引用代码
 
 ```CSS
 font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 ```
 
-### 字体大小规格
+## 字体大小规格
 
 | 场景       | 大小 | 效果                                                       |
 | ---------- | ---- | ---------------------------------------------------------- |

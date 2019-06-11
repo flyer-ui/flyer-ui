@@ -37,6 +37,7 @@ import Header from './components/header/index'
 import Main from './components/main/index'
 import Aside from './components/aside/index'
 import Footer from './components/footer/index'
+import ColorCard from './components/color-card'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -79,7 +80,8 @@ const components = [
   Header,
   Main,
   Footer,
-  Aside
+  Aside,
+  ColorCard
 ]
 
 const install = function (Vue) {
@@ -135,5 +137,6 @@ export default {
   Header,
   Main,
   Footer,
-  Aside
+  Aside,
+  ColorCard
 }

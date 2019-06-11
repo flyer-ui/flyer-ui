@@ -198,8 +198,8 @@ module.exports = {
     <fly-option label="清远" value="QY"> </fly-option>
     <fly-option label="河源" value="HY"> </fly-option>
   </fly-select>
-  <fly-button @on-click="setFocus">设置焦点</fly-button>
-  <fly-button @on-click="setBlur">去除焦点</fly-button>
+  <fly-button type='info' @on-click="setFocus">设置焦点</fly-button>
+  <fly-button type='warning' @on-click="setBlur">去除焦点</fly-button>
 </template>
 <script>
   export default {

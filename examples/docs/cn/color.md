@@ -1,129 +1,140 @@
-## Color 颜色风格
+# Color 配色方案
 
-### 主色
+## 主色
 
 整站的主要风格颜色
 
 <template>
-<div class='block primary'>
-    Primary<br/>
-    #3e8ef7
-</div>  
+    <fly-color-card type='Primary' has-change text='Primary' color='#007BFF'></fly-color-card>
 </template>
 
-### 辅助色
+## 辅助色
 
 常用于提示类的颜色，比如成功、失败、警告之类的场景中会使用到。  
 <template>
 
 <div>
-    <div class='block success'>
-        Success</br>
-        #11c26d
-    </div>
-    <div class='block info'>
-        Info</br>
-        #263238
-    </div>
-    <div class='block warning'>
-        Warning</br>
-        #eb6709
-    </div>
-    <div class='block danger'>
-        Danger</br>
-        #ff4c52
-    </div>
+ <fly-color-card type='Success' has-change text='Success' color='#28A745'></fly-color-card>
+ <fly-color-card type='Info' has-change text='Info' color='#17A2B8'></fly-color-card>
+ <fly-color-card type='Warning' has-change text='Warning' color='#FFC107'></fly-color-card>
+ <fly-color-card type='Danger' has-change text='Danger' color='#DC3545'></fly-color-card>
 </div>
 </template>
 
-### 中性色
+## 文本颜色
 
 中性色用于文本、背景和边框颜色。通过运用不同的中性色，来表现层次结构。
 
 <template>
 <div>
-    <div class='block font-color-title'>
-        主要文字</br>
-        #263238
-    </div>
-    <div class='block font-color-common'>
-        常规文字</br>
-        #37474F
-    </div>
-    <div class='block font-color-secondary'>
-        次要文字</br>
-        #526069
-    </div>
-    <div class='block font-color-placeholder'>
-        占位文字</br>
-        #A3AFB7
-    </div>
+ <fly-color-card text='标题颜色' type='Title' color='#37474F'></fly-color-card>
+ <fly-color-card text='副标题颜色' type='Subtitle' color='#526069'></fly-color-card>
+ <fly-color-card text='文本颜色' type='Text' color='#76838F'></fly-color-card>
+ <fly-color-card text='提示颜色' type='Placeholder' color='#A3AFB7'></fly-color-card>
 </div>
 </template>
 
-### 边框颜色
+## 边框颜色
 
 <template>
 <div>
-   <div class='block border-color'>
-        边框颜色</br>
-        #E4EAEC
-    </div>
+ <fly-color-card text='边框颜色' type='Border' color='#E4EAEC'></fly-color-card>
 </div>
 </template>
 
-<style lang='scss' scoped>
-    .block{
-        padding:10px;
-        display:inline-block;
-        color:#fff;
-        width:200px;
-    }
-    .primary{
-        background-color:#3e8ef7;
-    }
-    .success{
-        background-color:#11c26d;
-    }
-    .info{
-        background-color:#0bb2d4;
-    }
-    .warning{
-        background-color:#eb6709;
-    }
-    .danger{
-        background-color:#ff4c52;
-    }
-    .font-color-title{
-        background-color:#263238;
-    }
-    .font-color-common{
-        background-color:#37474F;
-    }
-    .font-color-secondary{
-        background-color:#526069;
-    }
-    .font-color-placeholder{
-        background-color:#A3AFB7;
-    }
-    .border-color{
-        background-color:#E4EAEC;
-        color:#526069;
-    }
-    .border-color-first{
-        background-color:#A3AFB7;
-        color:#526069;
-    }
-    .border-color-second{
-        background-color:#CCD5DB;
-        color:#526069;
-    }
-    .border-color-third{
-        background-color:#E4EAEC;
-        color:#526069;
-    }
-    .border-color-four{
-        background-color:#F3F7F9;
-        color:#526069;
+## 色卡例子
+
+<template>
+<!--激活颜色-->
+<fly-row :gutter='10'>
+ <fly-col :span="1">激活颜色</fly-col>
+ <fly-col :span="4">
+    <fly-color-card type='Primary' text='800' :grade='8' color='#007BFF'></fly-color-card>
+ </fly-col>
+ <fly-col :span="1">
+    激活颜色
+ </fly-col>
+ <fly-col :span="4">
+ <fly-color-card type='Danger' text='800' :grade='8' color='#DC3545'></fly-color-card>
+ </fly-col>
+</fly-row>
+<!--基础颜色-->
+<fly-row :gutter='10'>
+ <fly-col :span="1">基础颜色</fly-col>
+ <fly-col :span="4">
+    <fly-color-card type='Primary' text='700' :grade='7' color='#007BFF'></fly-color-card>
+ </fly-col>
+ <fly-col :span="1">
+    基础颜色
+ </fly-col>
+ <fly-col :span="4">
+ <fly-color-card type='Danger' text='700' :grade='7' color='#DC3545'></fly-color-card>
+ </fly-col>
+</fly-row>
+<!--鼠标悬停颜色-->
+<fly-row :gutter='10'>
+ <fly-col :span="1">鼠标悬停颜色</fly-col>
+ <fly-col :span="4">
+    <fly-color-card type='Primary' text='500' :grade='5' color='#007BFF'></fly-color-card>
+ </fly-col>
+ <fly-col :span="1">
+    鼠标悬停颜色
+ </fly-col>
+ <fly-col :span="4">
+ <fly-color-card type='Danger' text='500' :grade='5' color='#DC3545'></fly-color-card>
+ </fly-col>
+</fly-row>
+<!--背景颜色-->
+<fly-row :gutter='10'>
+ <fly-col :span="1">背景颜色</fly-col>
+ <fly-col :span="4">
+    <fly-color-card type='Primary' text='100' :grade='1' color='#007BFF'></fly-color-card>
+ </fly-col>
+ <fly-col :span="1">
+    背景颜色
+ </fly-col>
+ <fly-col :span="4">
+ <fly-color-card type='Danger' text='100' :grade='1' color='#DC3545'></fly-color-card>
+ </fly-col>
+</fly-row>
+</template>
+  
+## 图标配色
+
+<template>
+<fly-row>
+    <fly-col :span='1'>
+        <div class='icon-example'>普通</div>
+    </fly-col>
+    <fly-col :span='2'>
+        <div class='icon-example'>
+            <fly-icon name='image' style='opacity:0.6'>60%</fly-icon>
+        </div>
+    </fly-col>
+</fly-row>
+<fly-row>
+    <fly-col :span='1'>
+        <div class='icon-example'>鼠标悬停</div>
+    </fly-col>
+    <fly-col :span='2'>
+        <div class='icon-example'>
+            <fly-icon name='image' style='opacity:0.8'>80%</fly-icon>
+        </div>
+    </fly-col>
+</fly-row>
+<fly-row>
+     <fly-col :span='1'>
+        <div class='icon-example'>激活</div>
+    </fly-col>
+    <fly-col :span='2'>
+        <div class='icon-example'>
+            <fly-icon name='image'>100%</fly-icon>
+        </div>
+    </fly-col>
+</fly-row>
+</template>
+<style type='scss'>
+    .icon-example{
+        line-height:30px;
     }
 </style>

@@ -1,4 +1,4 @@
-## Icon 图标
+# Icon 图标
 
 <script>
 module.exports = {
@@ -10,7 +10,7 @@ module.exports = {
 }
 </script>
 
-### 使用方法
+## 使用方法
 
 ::: demo
 
@@ -27,7 +27,7 @@ module.exports = {
 
 :::
 
-### 图标集合
+## 图标集合
 
 <template>
 <div class='fly-demo-icon'>

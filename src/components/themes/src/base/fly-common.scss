@@ -1,12 +1,38 @@
+@import './fly-mixins.scss';
+
+//定义基色
+$primary:#007BFF;
+$success:#28A745;
+$warning:#FFC107;
+$danger:#DC3545;
+$info:#17A2B8;
 
 //主要颜色
-$fly-primary-color:#3e8ef7;
+$fly-primary-color:getColor($primary,0.7);
+$fly-primary-active-color:getColor($primary,0.8);
+$fly-primary-hover-color:getColor($primary,0.5);
+$fly-primary-bg-color:getColor($primary,0.1);
 
 //辅助色
-$fly-success-color:#11c26d;
-$fly-info-color:#0bb2d4;
-$fly-warning-color:#eb6709;
-$fly-danger-color:#ff4c52;
+$fly-success-color:getColor($success,0.7);
+$fly-success-active-color:getColor($success,0.8);
+$fly-success-hover-color:getColor($success,0.5);
+$fly-success-bg-color:getColor($success,0.1);
+
+$fly-info-color:#0099B8;
+$fly-info-active-color:getColor($info,0.8);
+$fly-info-hover-color:getColor($info,0.5);
+$fly-info-bg-color:getColor($info,0.1);
+
+$fly-warning-color:getColor($warning,0.1);
+$fly-warning-active-color:getColor($warning,0.8);
+$fly-warning-hover-color:getColor($warning,0.5);
+$fly-warning-bg-color:getColor($warning,0.1);
+
+$fly-danger-color:getColor($danger,0.8);
+$fly-info-active-color:getColor($danger,0.8);
+$fly-info-hover-color:getColor($danger,0.5);
+$fly-info-bg-color:getColor($danger,0.1);
 
 //中性色(文本颜色)
 $font-color-title:#263238;
@@ -34,3 +60,4 @@ $fly-round-default-size:2px;
 
 // 默认内填度
 $fly-default-padding:10px;
+

@@ -1,0 +1,54 @@
+@import "./base/fly-common.scss";
+@import "./base/fly-util.scss";
+@import "./base/fly-mixins.scss";
+
+@include b("color-card") {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+  @include e("primary") {
+    display: block;
+    width: 100%;
+    padding: 15px 15px;
+    box-sizing: border-box;
+    text-align: left;
+    color: $fly-common-white;
+    border-radius: $fly-round-default-size;
+    @include when('change'){
+      border-bottom-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    @include when("border") {
+      color: $font-color-common;
+    }
+  }
+  @include e("change") {
+    > ul {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      display: flex;
+      border:0px;
+      flex-direction: row;
+      align-content: space-between;
+    }
+    > ul li {
+      flex: 1;
+      height: 20px;
+      position: relative;
+      @include when('change'){
+        &:first-child {
+          border-bottom-left-radius: $fly-round-default-size;
+        }
+        &:last-child {
+          border-bottom-right-radius: $fly-round-default-size;
+        }
+      }
+    }
+    @include when("border") {
+      > ul {
+        display: none;
+      }
+    }
+  }
+}

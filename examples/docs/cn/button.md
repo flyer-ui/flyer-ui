@@ -1,11 +1,11 @@
-## Flyer-UI - Button
+# Button
 
-### 按钮类型
+## Type
 
 ::: demo 可以通过定制不同的 `type` 得到不同的类型按钮
 
 ```html
-<fly-button>默认按钮</fly-button>
+<fly-button>Default</fly-button>
 <fly-button type="primary">主要按钮</fly-button>
 <fly-button type="warning">警告按钮</fly-button>
 <fly-button type="danger">危险按钮</fly-button>
@@ -15,7 +15,7 @@
 
 :::
 
-### 幽灵按钮
+## Plain
 
 ::: demo 可以通过设置`plain`属性，得到简约的按钮
 
@@ -30,7 +30,7 @@
 
 :::
 
-### 按钮特性
+## Feature
 
 ::: demo
 
@@ -53,7 +53,7 @@
 
 :::
 
-### Icon 按钮
+## Icon button
 
 ::: demo
 
@@ -80,7 +80,7 @@
 
 :::
 
-### 按钮大小规格
+## Size
 
 ::: demo
 
@@ -107,7 +107,7 @@
 
 :::
 
-### 按钮组
+## Group button
 
 ::: demo
 
@@ -137,7 +137,7 @@
 
 :::
 
-### 可定制属性
+## Props
 
 | 属性名称    | 类型    | 默认值  | 可选值                                            | 说明                 |
 | ----------- | ------- | ------- | ------------------------------------------------- | -------------------- |

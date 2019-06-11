@@ -7,6 +7,13 @@
     vertical-align:text-bottom;
     font-weight: 400;
     font-size: 16px;
+    opacity: 0.6;
+    &:hover{
+        opacity: 0.8;
+    }
+    &:active{
+        opacity: 1;
+    }
 }
 .fly-icon-loader{
     animation:loop 1.5s linear infinite;

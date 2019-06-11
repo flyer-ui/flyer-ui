@@ -1,5 +1,7 @@
 <template>
-    <i :class='`fly-icon-${name}`' @click='handleClick'></i>
+  <span class='fly-icon'>
+    <i :class='`fly-icon-${name}`' @click='handleClick'></i><span><slot name='default'></slot></span>
+  </span>
 </template>
 <script>
 export default {

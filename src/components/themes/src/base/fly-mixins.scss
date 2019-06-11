@@ -36,3 +36,7 @@
 }
 
 // BEM end
+
+@function getColor($color,$grade){
+    @return rgba($color,$grade);
+}
