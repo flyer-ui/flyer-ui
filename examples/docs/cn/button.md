@@ -64,12 +64,12 @@
   <fly-button icon="fly-icon-chevrons-right" type="small"></fly-button>
   <fly-button icon="fly-icon-chevrons-right" type="mini"></fly-button>
 </p>
-<p>
+<!-- <p>
   <fly-button icon="fly-icon-help-circle" round size="large"></fly-button>
   <fly-button icon="fly-icon-map-pin" round size="meidum"></fly-button>
   <fly-button icon="fly-icon-chevrons-right" round type="small"></fly-button>
   <fly-button icon="fly-icon-chevrons-right" round type="mini"></fly-button>
-</p>
+</p> -->
 <p>
   <fly-button icon="fly-icon-help-circle" circle size="large"></fly-button>
   <fly-button icon="fly-icon-map-pin" circle size="meidum"></fly-button>

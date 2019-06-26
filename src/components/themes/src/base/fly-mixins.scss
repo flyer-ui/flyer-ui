@@ -35,6 +35,16 @@
     }
 }
 
+@mixin component($name) {
+    @include b($name){
+        @content;
+    }
+}
+@mixin child($name){
+    @include e($name){
+        @content;
+    }
+}
 // BEM end
 
 @function getColor($color,$grade){

@@ -75,69 +75,69 @@ $fly-modal-padding:10px;
     }
 
     @include when('confirm'){
-        .fly-modal__content{
+        @include component('content'){
             box-sizing:border-box;
         }
-        .fly-modal__header{
+        @include component('header'){
           border:0px;
         }
-        .fly-modal__footer{
+        @include component('footer'){
             border:0px;
         }
     }
     @include when('info'){
-        .fly-modal__content{
+        @include component('content'){
             box-sizing:border-box;
         }
-        .fly-modal__header{
+        @include component('header'){
           border:0px;
         }
-        .fly-modal__footer{
+        @include component('footer'){
             border:0px;
         }
-        .fly-modal__icon{
+        @include component('icon'){
             color:$fly-info-color;
         }
     }
     @include when('warning'){
-        .fly-modal__content{
+        @include component('content'){
             box-sizing:border-box;
         }
-        .fly-modal__header{
+        @include component('header'){
           border:0px;
         }
-        .fly-modal__footer{
+        @include component('footer'){
             border:0px;
         }
-        .fly-modal__icon{
+        @include component('icon'){
             color:$fly-warning-color;
         }
     }
     @include when('danger'){
-        .fly-modal__content{
+        @include component('content'){
             box-sizing:border-box;
         }
-        .fly-modal__header{
+        @include component('header'){
           border:0px;
         }
-        .fly-modal__footer{
+        @include component('footer'){
             border:0px;
         }
-       .fly-modal__icon{
+        @include component('icon'){
             color:$fly-danger-color;
         }
     }
     @include when('success'){
-        .fly-modal__content{
+        @include component('content'){
             box-sizing:border-box;
         }
-        .fly-modal__header{
+        @include component('header'){
           border:0px;
         }
-        .fly-modal__footer{
+        @include component('footer'){
             border:0px;
         }
-        .fly-modal__icon{
+        @include component('icon'){
             color:$fly-success-color;
             border:1px solid $fly-success-color;
             border-radius: 100%;

@@ -5,14 +5,14 @@
 // default 
 $fly-button-font-size:$fly-font-text-size !default;
 $fly-button-border-radius:$fly-round-default-size !default;
-$fly-button-padding-vertical:4px !default;
-$fly-button-padding-horizontal:12px !default;
+$fly-button-padding-vertical:5px !default;
+$fly-button-padding-horizontal:10px !default;
 //large
-$fly-button-large-padding-vertical:15px !default;
-$fly-button-large-padding-horizontal:25px !default;
+$fly-button-large-padding-vertical:12px !default;
+$fly-button-large-padding-horizontal:20px !default;
 // meidum
-$fly-button-meidum-padding-vertical:4px !default;
-$fly-button-meidum-padding-horizontal:12px !default;
+$fly-button-meidum-padding-vertical:5px !default;
+$fly-button-meidum-padding-horizontal:10px !default;
 // small
 $fly-button-small-padding-vertical:5px !default;
 $fly-button-small-padding-horizontal:10px !default;
@@ -23,14 +23,13 @@ $fly-button-mini-padding-horizontal:6px !default;
     background-color: $fly-common-white;
     color: $color;
     border-color: $color;
-    &:hover,
-    &:focus {
+    &:hover {
         background-color: $color;
         color: $fly-common-white;
-        opacity: .6;
+        opacity: .5;
     }
-    &:active {
-        opacity: 1;
+    &:active,&:focus {
+        opacity: .8;
     }
 }
 
@@ -38,12 +37,11 @@ $fly-button-mini-padding-horizontal:6px !default;
     background-color: $background-color;
     color: $color;
     border-color: $border-color;
-    &:hover,
-    &:focus {
-        opacity: .6;
+    &:hover {
+        opacity: .5;
     }
-    &:active {
-        opacity: 1;
+    &:active,&:focus {
+        opacity: .8;
     }
     @include when(plain) {
         @include button-plain($background-color);
@@ -65,22 +63,23 @@ $fly-button-mini-padding-horizontal:6px !default;
     &+& {
         margin-left: 10px;
     }
-    &:hover,
-    &:focus {
-        opacity: .6;
+    &:hover {
+        opacity: .5;
     }
-    &:active {
-        opacity: 1;
+    &:active,&:focus {
+        opacity: .8;
     }
     @include when(plain) {
         @include button-plain($font-color-common);
     }
     @include when(disabled) {
         cursor: not-allowed;
-        opacity: .6;
-        &:hover,
-        &:focus {
-            opacity: .6;
+        opacity: .5;
+        &:hover {
+            opacity: .5;
+        }
+        &:active,&:focus {
+            opacity: .8;
         }
     }
     @include when(loading) {
@@ -97,7 +96,7 @@ $fly-button-mini-padding-horizontal:6px !default;
     } //开始添加modifier
     @include m(large) {
         padding: $fly-button-large-padding-vertical $fly-button-large-padding-horizontal;
-        font-size: $fly-font-title-size;
+        font-size: $fly-font-big-size;
         @include when(round) {
             border-radius: 30px;
         }
@@ -165,6 +164,7 @@ $fly-button-mini-padding-horizontal:6px !default;
 @include b(button-group) {
     display: flex;
     flex-direction: row;
+    flex:1;
     @include b(button) {
         margin-left: 0px;
         border-radius: 0px;

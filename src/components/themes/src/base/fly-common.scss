@@ -19,12 +19,12 @@ $fly-success-active-color:getColor($success,0.8);
 $fly-success-hover-color:getColor($success,0.5);
 $fly-success-bg-color:getColor($success,0.1);
 
-$fly-info-color:#0099B8;
+$fly-info-color:getColor($info,0.7);
 $fly-info-active-color:getColor($info,0.8);
 $fly-info-hover-color:getColor($info,0.5);
 $fly-info-bg-color:getColor($info,0.1);
 
-$fly-warning-color:getColor($warning,0.1);
+$fly-warning-color:getColor($warning,0.7);
 $fly-warning-active-color:getColor($warning,0.8);
 $fly-warning-hover-color:getColor($warning,0.5);
 $fly-warning-bg-color:getColor($warning,0.1);
