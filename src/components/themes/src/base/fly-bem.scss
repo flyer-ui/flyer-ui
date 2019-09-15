@@ -1,0 +1,63 @@
+
+$namespace:'fly' !default;
+
+$selector:&;
+
+$selector-separate:'-' !default;
+
+$element-separate:'__' !default;
+
+$modifier-separate:'--' !default;
+
+$state-prefix:'is-' !default;
+
+// @include b('block name')
+@mixin b($block) {
+  $B: $namespace + $selector-separate + $block !global;
+  .#{$B} {
+      @content;
+  }
+}
+
+// @include e('element name')
+@mixin e($element) {
+  $current-selector: "";
+  $selector:'&';
+  @each $unit in $element {
+      $current-selector:#{$current-selector + $selector + $element-separate + $unit + ','};
+  }
+  @at-root #{$current-selector} {
+      @content;
+  }
+}
+
+// @include m('modefier name')
+@mixin m($modifier) {
+  $current-selector: "";
+  $selector:'&';
+  @each $unit in $modifier {
+      $current-selector:#{$current-selector + $selector + $modifier-separate + $unit + ','};
+  }
+  @at-root #{$current-selector} {
+      @content;
+  }
+}
+
+// @include when('state name')
+@mixin when($state) {
+  @at-root &.#{$state-prefix+$state} {
+      @content;
+  }
+}
+
+@mixin component($name) {
+  @include b($name){
+      @content;
+  }
+}
+
+@mixin child($name){
+  @include e($name){
+      @content;
+  }
+}
