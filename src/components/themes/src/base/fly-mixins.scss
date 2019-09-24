@@ -48,5 +48,5 @@
 // BEM end
 
 @function getColor($color,$grade){
-    @return rgba($color,$grade);
+    @return mix(#fff,$color,$grade);
 }

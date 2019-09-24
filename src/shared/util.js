@@ -1,3 +1,8 @@
+const hasOwnProperty = Object.prototype.hasOwnProperty
+const _toString = Object.prototype.toString
+
+const emptyObject = Object.freeze({})
+
 /**
  *  查找自身的父节点为name的组件
  *
@@ -56,8 +61,79 @@ export function preciseReduce (num1 = 0, num2 = 0) {
  * @returns
  */
 export function isPlainObject (obj) {
-  if (Object.prototype.toString.call(obj) === '[object Object]') {
+  if (_toString.call(obj) === '[object Object]') {
     return true
   }
   return false
+}
+
+/**
+ *  检测对象里是否包含有指定属性
+ *
+ * @export
+ * @param {Object} obj
+ * @param {String} key
+ * @returns Boolean
+ */
+export function hasOwn (obj, key) {
+  return hasOwnProperty.call(obj, key)
+}
+
+/**
+ *  混合对象里的属性到指定的对象上
+ *
+ * @export
+ * @param {Object} to
+ * @param {Object} _from
+ * @returns Object
+ */
+export function extend (to, _from) {
+  for (const key in _from) {
+    to[key] = _from[key]
+  }
+  return to
+}
+
+/**
+ * 确保只执行一次函数
+ *
+ * @export
+ * @param {Function} fn
+ * @returns Function
+ */
+export function once (fn) {
+  let called = false
+  return function () {
+    if (!called) {
+      called = true
+      fn.apply(this, arguments)
+    }
+  }
+}
+
+/**
+ * 深度拷贝一个目标
+ *
+ * @export
+ * @param {any} target
+ * @returns any
+ */
+export function deepClone (target) {
+  let value
+  if (isPlainObject(target)) {
+    value = {}
+  } else if (Array.isArray(target)) {
+    value = []
+  } else {
+    return target
+  }
+  for (const key in target) {
+    const dataType = _toString.call(target[key])
+    if (dataType === '[object Object]' || dataType === '[object Array]') {
+      value[key] = deepClone(target[key])
+    } else {
+      value[key] = target
+    }
+  }
+  return value
 }
