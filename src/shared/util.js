@@ -1,7 +1,7 @@
 const hasOwnProperty = Object.prototype.hasOwnProperty
 const _toString = Object.prototype.toString
 
-const emptyObject = Object.freeze({})
+export const emptyObject = Object.freeze({})
 
 /**
  *  查找自身的父节点为name的组件
