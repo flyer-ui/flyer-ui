@@ -1,5 +1,3 @@
-import Vue from 'vue'
-
 const hasOwnProperty = Object.prototype.hasOwnProperty
 const _toString = Object.prototype.toString
 
