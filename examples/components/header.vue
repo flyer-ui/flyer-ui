@@ -16,7 +16,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 $logo_width:15%;
 $items_width:95%;
 $header_height:59px;

@@ -35,8 +35,8 @@
 <script>
 import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
-import PopperManager from '~/utils/popper-manager'
-import {stop} from '~/utils/dom'
+import PopperManager from '~/shared/popper-manager'
+import {stop} from '~/shared/dom'
 
 export default {
   name: 'FlySelect',

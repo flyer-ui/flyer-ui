@@ -37,7 +37,7 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 
 @include b('demo-menus') {
   width: 15%;

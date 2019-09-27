@@ -15,19 +15,19 @@
         cursor: pointer;
     }
     @include when('success'){
-        background: rgba($fly-success-color,0.2);
+        background: $fly-success-color;
         color:$fly-success-color;
     }
     @include when('warning'){
-        background: rgba($fly-warning-color,0.2);
+        background: $fly-warning-color;
         color:$fly-warning-color;
     }
     @include when('info'){
-        background: rgba($fly-info-color,0.2);
+        background: $fly-info-color;
         color:$fly-info-color;
     }
     @include when('danger'){
-        background: rgba($fly-danger-color,0.2);
+        background: $fly-danger-color;
         color:$fly-danger-color;
     }
 }

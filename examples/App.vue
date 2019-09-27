@@ -34,7 +34,7 @@ export default {
 
 <style lang='scss'>
 @import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 @import url('assets/css/common.scss');
 body,#app{
   color:$font-color-common;

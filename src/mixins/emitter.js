@@ -1,4 +1,4 @@
-import {findParentByName} from '~/utils/util'
+import {findParentByName} from '~/shared/util'
 export default {
   methods: {
     dispatch (componentName, eventName, params) {
