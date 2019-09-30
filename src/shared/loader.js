@@ -36,7 +36,7 @@ export function loader (paths, callback) {
     head.appendChild(script)
     script.onload = script.onreadystatechange = function () {
       script.onload = script.onreadystatechange = null
-      loaded()
+      completed()
     }
     cache[path] = true
   }
@@ -48,11 +48,11 @@ export function loader (paths, callback) {
     head.appendChild(link)
     link.onload = link.onreadystatechange = function () {
       link.onload = link.onreadystatechange = null
-      loaded()
+      completed()
     }
     cache[path] = true
   }
-  function loaded () {
+  function completed () {
     index++
     if (index === paths.length) {
       callback.apply(null)
