@@ -1,7 +1,3 @@
-@import './base/fly-common.scss';
-@import './base/fly-util.scss';
-@import './base/fly-bem.scss';
-
 @include b('card'){
     position: relative;
     border-radius: $fly-round-default-size;
