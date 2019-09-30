@@ -32,7 +32,6 @@ export default {
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    // height:calc(100vh - 60px * 2);
     @include e('content'){
         padding:10px;
         box-sizing: border-box;
