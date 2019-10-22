@@ -40,8 +40,7 @@ export default {
 @import '~/components/themes/src/base/fly-bem.scss';
 
 @include b('demo-menus') {
-  width: 15%;
-  min-width: 200px;
+  min-width: 300px;
   box-sizing: border-box;
   padding: 10px;
   position: relative;
