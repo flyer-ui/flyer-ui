@@ -8,7 +8,7 @@
     </li>
 </template>
 <script>
-import {findParentByName} from '~/utils/util'
+import {findParentByName} from '~/shared/util'
 export default {
   name: 'FlyOption',
   inject: ['select'],

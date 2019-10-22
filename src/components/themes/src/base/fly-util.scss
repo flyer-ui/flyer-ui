@@ -18,3 +18,8 @@
 .fly-icon-loader{
     animation:loop 1.5s linear infinite;
 }
+
+// px 转换 rem
+@function pxtorem($px){
+    @return #{$px / 14px + 'rem'}
+}

@@ -1,9 +1,6 @@
-@import './base/fly-common.scss';
-@import './base/fly-util.scss';
-@import './base/fly-bem.scss';
+
 
 @include b('main'){
-  padding:0px 10px;
   flex:1;
   flex-basis: auto;
   box-sizing: border-box;

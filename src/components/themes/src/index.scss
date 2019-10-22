@@ -1,4 +1,8 @@
-@import "./fly-reset.scss";
+
+@import './base/fly-common.scss';
+@import './base/fly-util.scss';
+@import './base/fly-bem.scss';
+@import "./fly-normalize.scss";
 @import './fly-icon.scss';
 @import "./fly-button.scss";
 @import "./fly-checkbox.scss";

@@ -1,4 +1,4 @@
-import { on } from '~/utils/dom'
+import { on } from '~/shared/dom'
 
 const NODE_LIST = []
 

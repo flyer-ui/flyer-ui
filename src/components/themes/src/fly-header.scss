@@ -1,7 +1,3 @@
-@import './base/fly-common.scss';
-@import './base/fly-util.scss';
-@import './base/fly-bem.scss';
-
 @include b('header'){
-  padding:0px 10px;
+  box-sizing: border-box;
 }

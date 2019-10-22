@@ -15,66 +15,68 @@ fly-footer：底栏容器。
 ::: demo
 
 ```html
-<fly-container>
+<fly-container class='fly-container-demo'>
   <fly-header>Header</fly-header>
   <fly-main>Main</fly-main>
   <fly-footer>Footer</fly-footer>
 </fly-container>
-<fly-container>
+<fly-container class='fly-container-demo'>
   <fly-main>Main</fly-main>
   <fly-footer>Footer</fly-footer>
 </fly-container>
-<fly-container direction="vertical">
+<fly-container class='fly-container-demo' direction="vertical">
   <fly-aside>Aside</fly-aside>
   <fly-main>Main</fly-main>
 </fly-container>
-<fly-container>
+<fly-container class='fly-container-demo'>
   <fly-header>Header</fly-header>
-  <fly-container direction="vertical">
+  <fly-container class='fly-container-demo' direction="vertical">
     <fly-aside>Aside</fly-aside>
     <fly-main>Main</fly-main>
   </fly-container>
   <fly-footer>Footer</fly-footer>
 </fly-container>
-<fly-container direction="vertical">
+<fly-container class='fly-container-demo' direction="vertical">
   <fly-aside>Aside</fly-aside>
-  <fly-container>
+  <fly-container class='fly-container-demo'>
     <fly-header>Header</fly-header>
     <fly-main>Main</fly-main>
     <fly-footer>Footer</fly-footer>
   </fly-container>
 </fly-container>
-<fly-container>
+
+<fly-container class='fly-container-demo'>
   <fly-header>Header</fly-header>
-  <fly-container direction="vertical">
+  <fly-container class='fly-container-demo' direction="vertical">
     <fly-aside>Aside</fly-aside>
     <fly-main>Main</fly-main>
   </fly-container>
   <fly-footer>Footer</fly-footer>
 </fly-container>
+
 <style>
-  .fly-container {
+  .fly-container-demo {
     /* margin-bottom:10px; */
   }
-  .fly-container .fly-header {
+  .fly-container-demo .fly-header {
     background: #263238;
     color: #fff;
     text-align: center;
     line-height: 60px;
   }
-  .fly-container .fly-main {
+  .fly-container-demo .fly-main {
     background: #a3afb7;
     color: #fff;
     line-height: 200px;
     text-align: center;
   }
-  .fly-container .fly-footer {
+  .fly-container-demo .fly-footer {
     background: #37474f;
     color: #fff;
     line-height: 60px;
     text-align: center;
   }
-  .fly-container .fly-aside {
+  .fly-container-demo .fly-aside {
     background: #526069;
     color: #fff;
     line-height: 200px;

@@ -27,7 +27,7 @@
     </label>
 </template>
 <script>
-import {findParentByName} from '~/utils/util'
+import {findParentByName} from '~/shared/util'
 import emitter from '~/mixins/emitter'
 export default{
   name: 'FlyCheckbox',

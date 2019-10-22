@@ -13,7 +13,7 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 @include b('demo-footer'){
     display: flex;
     flex-direction: row;

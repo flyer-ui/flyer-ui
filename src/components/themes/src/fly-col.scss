@@ -1,7 +1,3 @@
-@import './base/fly-common.scss';
-@import './base/fly-util.scss';
-@import './base/fly-bem.scss';
-
 $span:24;
 @mixin col($i){
   width:percentage($i / $span);

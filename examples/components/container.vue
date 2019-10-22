@@ -26,13 +26,12 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 @include b('demo-container'){
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
-    // height:calc(100vh - 60px * 2);
     @include e('content'){
         padding:10px;
         box-sizing: border-box;

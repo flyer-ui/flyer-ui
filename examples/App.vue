@@ -1,31 +1,42 @@
 <template>
   <div id="app">
-    <fly-header></fly-header>
-    <fly-container></fly-container>
-    <fly-footer></fly-footer>
+    <fly-container>
+      <fly-header>
+        <fly-head></fly-head>
+      </fly-header>
+      <fly-container direction="vertical">
+        <fly-aside>
+          <fly-menu :data='navData'></fly-menu>
+        </fly-aside>
+        <fly-main>
+          <router-view></router-view>
+        </fly-main>
+      </fly-container>
+      <fly-footer>
+        <fly-bottom></fly-bottom>
+      </fly-footer>
+    </fly-container>
   </div>
 </template>
 
 <script>
-import FlyHeader from '@/components/header'
+import FlyHead from '@/components/header'
 import FlyMenu from '@/components/menu'
-import FlyFooter from '@/components/footer'
-import FlyContainer from '@/components/container'
+import FlyBottom from '@/components/footer'
+import routes from './router.config.json'
+import pages from './pages.config.json'
 
 export default {
   components: {
-    FlyHeader,
+    FlyHead,
     FlyMenu,
-    FlyFooter,
-    FlyContainer
+    FlyBottom
   },
-  data () {
-    return {
-    }
-  },
-  props: {
-    num: {
-      type: String
+  computed: {
+    navData () {
+      const currentLang = this.$route.params.lang || 'cn'
+      const data = [].concat.apply(pages[currentLang], routes[currentLang])
+      return data.filter((route) => { return !route.pending })
     }
   },
   name: 'App'
@@ -33,8 +44,17 @@ export default {
 </script>
 
 <style lang='scss'>
-@import '~/components/themes/src/base/fly-common.scss';
-@import '~/components/themes/src/base/fly-mixins.scss';
+html,body,#app{
+  height:100%;
+}
+ .fly-container {
+    min-height:100%;
+  }
+.fly-main{
+  padding:0px 10px;
+}
+  @import '~/components/themes/src/base/fly-common.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
 @import url('assets/css/common.scss');
 body,#app{
   color:$font-color-common;
@@ -63,7 +83,6 @@ body,#app{
         font-size:2em;
         margin:0 15px;
     }
-
     ul{
       list-style-type:none;
       margin:0px;

@@ -24,7 +24,7 @@
     </div>
 </template>
 <script>
-import {preciseAddition, preciseReduce} from '~/utils/util'
+import {preciseAddition, preciseReduce} from '~/shared/util'
 export default {
   name: 'FlyInputNumber',
   props: {
