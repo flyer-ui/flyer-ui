@@ -145,3 +145,21 @@ export function deepClone (target) {
   }
   return value
 }
+
+/**
+ *  防抖函数，使一个函数在一定期间高频率下只执行一次的办法。
+ *
+ * @export
+ * @param {Function} fn
+ * @param {Number} wait
+ * @returns
+ */
+export function debounce (fn, wait) {
+  let timer = null
+  return () => {
+    if (!timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(fn, wait)
+  }
+}
