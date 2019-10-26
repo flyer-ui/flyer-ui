@@ -34,10 +34,10 @@ $fly-button-mini-padding-horizontal:6px !default;
     color: $color;
     border-color: $border-color;
     &:hover {
-        opacity: .5;
+        background-color: mix($white,$primary,0.6);
     }
     &:active,&:focus {
-        opacity: .8;
+        background-color:$background-color;
     }
     @include when(plain) {
         @include button-plain($background-color);

@@ -53,7 +53,7 @@ html,body,#app{
 .fly-main{
   padding:0px 10px;
 }
-  @import '~/components/themes/src/base/fly-common.scss';
+  @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
 @import url('assets/css/common.scss');
 body,#app{

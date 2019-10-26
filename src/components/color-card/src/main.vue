@@ -1,17 +1,13 @@
 <template>
-<div :class="['fly-color-card',{'is-change':hasChange}]">
-  <div :class="['fly-color-card__primary',
-      {'is-border':type==='Border'},{'is-change':hasChange}]" :style="{'background':color,'opacity':`${grade/10}`}">
-    <div>{{text}}</div>
-      <div>{{color}}</div>
-    </div>
-    <div v-if='hasChange' :class="['fly-color-card__change',
-    {'is-border':type==='Border'}]">
+  <div :class="['fly-color-card','fly-color-'+type]">
+      <div class='fly-color-card__main'>
+          <div>{{text}}</div>
+          <div>{{color}}</div>
+      </div>
       <ul>
-        <li v-for='(change,index) in changeNums' :key="index" :style="{'background':color,'opacity':`${change/10}`}">
-        </li>
+          <li :class="[`fly-color-${type}--default`]"></li>
+          <li :class="[`fly-color-${type}--hover`]"></li>
       </ul>
-    </div>
   </div>
 </template>
 
@@ -23,17 +19,10 @@ export default {
     type: {
       type: String,
       validator (value) {
-        return ['Border', 'Primary', 'Success', 'Info', 'Warning', 'Danger', 'Title', 'Subtitle', 'Text', 'Placeholder'].indexOf(value) > -1
+        return ['border', 'primary', 'success', 'info', 'warning', 'danger', 'title', 'subtitle', 'text', 'placeholder'].indexOf(value) > -1
       }
     },
-    text: String,
-    hasChange: {
-      type: Boolean,
-      default: false
-    },
-    grade: {
-      type: Number
-    }
+    text: String
   },
   data () {
     return {

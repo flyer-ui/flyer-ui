@@ -21,5 +21,9 @@
 
 // px 转换 rem
 @function pxtorem($px){
-    @return #{$px / 14px + 'rem'}
+    @return #{$px / 14px + 'rem'};
+}
+
+@function mixColor($color,$number){
+    @return mix($color,$white,$number);
 }

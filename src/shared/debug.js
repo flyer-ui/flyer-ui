@@ -1,11 +1,32 @@
-export const warn = function (msg) {
-  console.warn(msg)
+export const warn = function (name, msg) {
+  if (window && window.console) {
+    if (arguments.length === 1) {
+      msg = name
+      console.warn(`[Flyer-UI]`, msg)
+    } else {
+      console.warn(`[Flyer-UI.${name}]`, msg)
+    }
+  }
 }
 
-export const error = function (msg) {
-  console.error(msg)
+export const error = function (name, msg) {
+  if (window && window.console) {
+    if (arguments.length === 1) {
+      msg = name
+      console.error(`[Flyer-UI]`, msg)
+    } else {
+      console.error(`[Flyer-UI.${name}]`, msg)
+    }
+  }
 }
 
-export const tip = function (msg) {
-  console.log(msg)
+export const tip = function (name, msg) {
+  if (window && window.console) {
+    if (arguments.length === 1) {
+      msg = name
+      console.log(`[Flyer-UI]`, msg)
+    } else {
+      console.log(`[Flyer-UI.${name}]`, msg)
+    }
+  }
 }

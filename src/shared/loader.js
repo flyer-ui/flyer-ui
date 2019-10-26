@@ -1,5 +1,6 @@
 
 import {noop} from './util'
+import {warn} from './debug'
 
 // 可动态加载JS/CSS的加载器
 export function loader (paths, callback) {
@@ -8,7 +9,7 @@ export function loader (paths, callback) {
   }
 
   if (!Array.isArray(paths)) {
-    console.warn('The type of passed argument must be an Array or String.')
+    warn('loader', 'The type of passed argument must be an Array or String.')
     return false
   }
 

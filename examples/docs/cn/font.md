@@ -78,7 +78,7 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
 | 辅助文字   | 12px | <span style='font-size:12px'>辅助文字 / Assist text</span> |
 
  <style lang='scss' scoped>
-    @import '~/components/themes/src/base/fly-common.scss';
+    @import '~/components/themes/src/base/fly-variable.scss';
     .block{
         border:1px solid $fly-border-color;
         display:inline-block;

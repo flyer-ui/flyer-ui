@@ -30,7 +30,7 @@ export default {
 }
 </script>
 <style lang='scss'>
-@import '~/components/themes/src/base/fly-common.scss';
+@import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
 @include b('demo-block'){
     border:1px solid $fly-border-color;

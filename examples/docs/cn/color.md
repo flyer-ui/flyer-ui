@@ -5,7 +5,7 @@
 整站的主要风格颜色
 
 <template>
-    <fly-color-card type='Primary' has-change text='Primary' color='#007BFF'></fly-color-card>
+   <fly-color-card type='primary' text='Primary' color='#007BFF'></fly-color-card>
 </template>
 
 ## 辅助色
@@ -14,10 +14,10 @@
 <template>
 
 <div>
- <fly-color-card type='Success' has-change text='Success' color='#28A745'></fly-color-card>
- <fly-color-card type='Info' has-change text='Info' color='#17A2B8'></fly-color-card>
- <fly-color-card type='Warning' has-change text='Warning' color='#FFC107'></fly-color-card>
- <fly-color-card type='Danger' has-change text='Danger' color='#DC3545'></fly-color-card>
+ <fly-color-card type='success' text='Success' color='#28A745'></fly-color-card>
+ <fly-color-card type='info'  text='Info' color='#17A2B8'></fly-color-card>
+ <fly-color-card type='warning' text='Warning' color='#FFC107'></fly-color-card>
+ <fly-color-card type='danger' text='Danger' color='#DC3545'></fly-color-card>
 </div>
 </template>
 
