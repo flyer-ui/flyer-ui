@@ -49,10 +49,10 @@
   background-color:$fly-primary-active-color;
   @extend .fly-color-card-border;
 
-  @include when('default'){
+  @include m('default'){
     background-color:$fly-primary-color;
   }
-  @include when('hover'){
+  @include m('hover'){
     background-color:$fly-primary-hover-color;
   }
 }
@@ -61,10 +61,10 @@
   background-color:$fly-success-active-color;
   @extend .fly-color-card-border;
 
-  @include when('default'){
+  @include m('default'){
     background-color:$fly-success-color;
   }
-  @include when('hover'){
+  @include m('hover'){
     background-color:$fly-success-hover-color;
   }
 }
@@ -73,10 +73,10 @@
   background-color:$fly-info-active-color;
   @extend .fly-color-card-border;
 
-  @include when('default'){
+  @include m('default'){
     background-color:$fly-info-color;
   }
-  @include when('hover'){
+  @include m('hover'){
     background-color:$fly-info-hover-color;
   }
 }
@@ -103,4 +103,24 @@
   @include m('hover'){
     background-color:$fly-danger-hover-color;
   }
+}
+
+@include b("color-title") {
+  background-color:$font-color-title;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-common") {
+  background-color:$font-color-common;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-secondary") {
+  background-color:$font-color-secondary;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-placeholder") {
+  background-color:$font-color-placeholder;
+  @extend .fly-color-card-border;
 }

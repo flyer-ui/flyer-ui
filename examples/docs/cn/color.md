@@ -27,10 +27,10 @@
 
 <template>
 <div>
- <fly-color-card text='标题颜色' type='Title' color='#37474F'></fly-color-card>
- <fly-color-card text='副标题颜色' type='Subtitle' color='#526069'></fly-color-card>
- <fly-color-card text='文本颜色' type='Text' color='#76838F'></fly-color-card>
- <fly-color-card text='提示颜色' type='Placeholder' color='#A3AFB7'></fly-color-card>
+ <fly-color-card text='标题颜色' type='title' color='#333333'></fly-color-card>
+ <fly-color-card text='副标题颜色' type='common' color='#666666'></fly-color-card>
+ <fly-color-card text='文本颜色' type='secondary' color='#999999'></fly-color-card>
+ <fly-color-card text='提示颜色' type='placeholder' color='#CECECE'></fly-color-card>
 </div>
 </template>
 
