@@ -2,7 +2,7 @@
 
 @include b('tag'){
     position: relative;
-    border:1px solid $fly-border-color;
+    border:1px solid $fly-color-border;
     padding:5px;
     border-radius:$fly-round-default-size;
     user-select: none;

@@ -124,3 +124,8 @@
   background-color:$font-color-placeholder;
   @extend .fly-color-card-border;
 }
+
+@include b("color-border") {
+  background-color:$font-color-placeholder;
+  @extend .fly-color-card-border;
+}

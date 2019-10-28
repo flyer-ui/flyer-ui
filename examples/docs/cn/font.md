@@ -80,7 +80,7 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
  <style lang='scss' scoped>
     @import '~/components/themes/src/base/fly-variable.scss';
     .block{
-        border:1px solid $fly-border-color;
+        border:1px solid $fly-color-border;
         display:inline-block;
         width:200px;
     }
@@ -91,7 +91,7 @@ font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Micros
     }
     .block-second{
         padding:10px 20px;
-        border-top:1px solid $fly-border-color;
+        border-top:1px solid $fly-color-border;
     }
     .ps{
         font-family:'PingFang SC';

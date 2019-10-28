@@ -12,7 +12,7 @@ $fly-bottom-border-size:2px;
         cursor: pointer;
         top:0px;
         user-select: none;
-        border-bottom:2px solid $fly-border-color;
+        border-bottom:2px solid $fly-color-border;
         box-sizing: border-box;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         padding:calc((#{$fly-tab-nav-padding} * 2 + #{$fly-tab-nav-lineHeight} - 16px - 2px) / 2) 2px;
@@ -21,7 +21,7 @@ $fly-bottom-border-size:2px;
         [class^="fly-icon-"], [class*=" fly-icon-"] {
             border-radius: 100%;
             &:hover{
-                background: rgba($fly-border-color,0.5);
+                background: rgba($fly-color-border,0.5);
             }
         }
     }
@@ -35,7 +35,7 @@ $fly-bottom-border-size:2px;
         position: relative;
         width:100%;
         box-sizing: border-box;
-        border-bottom:2px solid $fly-border-color;
+        border-bottom:2px solid $fly-color-border;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         @include when ('scrollable'){
             padding-right:calc(#{$fly-tab-nav-padding} * 2);
@@ -120,7 +120,7 @@ $fly-bottom-border-size:2px;
             padding-right:24px;
         }
         @include when('disabled'){
-            color:$fly-border-color;
+            color:$fly-color-border;
             cursor:not-allowed;
         }
         &:hover{
@@ -141,7 +141,7 @@ $fly-bottom-border-size:2px;
         cursor: pointer;
         display:none !important;
         &:hover{
-            background: rgba($fly-border-color,0.5);
+            background: rgba($fly-color-border,0.5);
         }
     }
 }

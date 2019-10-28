@@ -33,11 +33,11 @@ export default {
 @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
 @include b('demo-block'){
-    border:1px solid $fly-border-color;
+    border:1px solid $fly-color-border;
     border-radius:$fly-round-default-size;
     @include e('effect'){
         padding:20px;
-        border-bottom:1px solid $fly-border-color;
+        border-bottom:1px solid $fly-color-border;
     }
     @include e('row'){
         padding:5px 0px;
@@ -54,7 +54,7 @@ export default {
         padding:20px;
         background-color:#fafafa;
         display:none;
-        border-bottom:1px solid $fly-border-color;
+        border-bottom:1px solid $fly-color-border;
         @include when('open'){
             display: block;
         }
@@ -71,7 +71,7 @@ export default {
         background-color:#fff;
         padding:20px;
         margin-bottom:20px;
-        border:1px solid $fly-border-color;
+        border:1px solid $fly-color-border;
     }
     @include e('drawer-buttons'){
         position: absolute;

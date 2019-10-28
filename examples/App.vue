@@ -87,8 +87,8 @@ body,#app{
       list-style-type:none;
       margin:0px;
       padding:0px;
-      border-top:1px solid $fly-border-color;
-      border-left:1px solid $fly-border-color;
+      border-top:1px solid $fly-color-border;
+      border-left:1px solid $fly-color-border;
       &:after{
       content:'';
       display:block;
@@ -101,8 +101,8 @@ body,#app{
       text-align:center;
       padding:10px 0px;
       box-sizing:border-box;
-      border-right:1px solid $fly-border-color;
-      border-bottom:1px solid $fly-border-color;
+      border-right:1px solid $fly-color-border;
+      border-bottom:1px solid $fly-color-border;
       div{
         color:$font-color-common;
         margin:10px 0px;
@@ -120,7 +120,7 @@ code{
 }
 pre{
   border-radius: $fly-round-default-size;
-  border:1px solid $fly-border-color;
+  border:1px solid $fly-color-border;
 }
 .fly-logs{
     margin:10px;

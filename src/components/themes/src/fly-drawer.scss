@@ -14,7 +14,7 @@
         position:relative;
         padding:10px 15px;
         box-sizing:border-box;
-        border-bottom: 1px solid $fly-border-color;
+        border-bottom: 1px solid $fly-color-border;
     }
     @include e('body'){
         padding:10px 15px;
@@ -27,7 +27,7 @@
         cursor: default;
         border-radius: 100%;
         &:hover{
-            background-color:rgba($fly-border-color,1)
+            background-color:rgba($fly-color-border,1)
         }
     }
     @include e('content'){

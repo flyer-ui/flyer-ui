@@ -16,7 +16,7 @@
     }
     @include e('outer'){
         position: relative;
-        background: $fly-border-color;
+        background: $fly-color-border;
         border-radius:5px;
         display:inline-block;
         width:100%;

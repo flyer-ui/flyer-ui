@@ -3,7 +3,7 @@
 @include b('rate'){
     @include e('item'){
         position: relative;
-        color:$fly-border-color;
+        color:$fly-color-border;
         display: inline-flex;
         cursor: pointer;
         & + & {

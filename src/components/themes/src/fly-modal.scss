@@ -28,7 +28,7 @@ $fly-modal-padding:10px;
 
     @include e('content'){  
         z-index: $fly-modal-zindex + 1;
-        border:1px solid $fly-border-color;
+        border:1px solid $fly-color-border;
         border-radius:$fly-round-default-size;
         margin:0px auto;
         margin-top: 5%;
@@ -37,7 +37,7 @@ $fly-modal-padding:10px;
         @extend .box;
     }
     @include e('header'){
-        border-bottom:1px solid $fly-border-color;
+        border-bottom:1px solid $fly-color-border;
         border-top-right-radius: $fly-round-default-size;
         border-top-left-radius: $fly-round-default-size;
         padding:15px 20px;
@@ -53,7 +53,7 @@ $fly-modal-padding:10px;
         border-radius: 100%;
         cursor: pointer;
         &:hover{
-            background: rgba($fly-border-color,0.5);
+            background: rgba($fly-color-border,0.5);
         }
     }
     @include e('body'){
@@ -62,7 +62,7 @@ $fly-modal-padding:10px;
     @include e('footer'){
         padding: 10px;
         text-align:right;
-        border-top:1px solid $fly-border-color;
+        border-top:1px solid $fly-color-border;
         border-bottom-right-radius: $fly-round-default-size;
         border-bottom-left-radius: $fly-round-default-size;
     }

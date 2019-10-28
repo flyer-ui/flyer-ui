@@ -52,7 +52,7 @@ export default {
     top: 10px;
     right: 1px;
     bottom: 10px;
-    border-right: 1px solid $fly-border-color;
+    border-right: 1px solid $fly-color-border;
   }
 
   h3 {

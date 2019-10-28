@@ -30,7 +30,7 @@
             background:#fafafa;
         }
         @include when('disabled'){
-            color:$fly-border-color;
+            color:$fly-color-border;
             cursor:not-allowed;
             &:hover{
                 background:none;
@@ -58,7 +58,7 @@
         .fly-select__tag{
             display:inline-block;
             margin:2px 5px;
-            background-color:rgba($fly-border-color,0.5)
+            background-color:rgba($fly-color-border,0.5)
         }
     }
     @include e('tag'){
@@ -71,7 +71,7 @@
 }
 @include b('select-dropdowns'){
     display: block;
-    border:1px solid $fly-border-color;
+    border:1px solid $fly-color-border;
     z-index: 999;
     background:#fff;
     @include e('list'){
@@ -82,7 +82,7 @@
     &[x-placement="bottom"]{
         margin-top:10px;
         .popper__arrow{
-            border: 8px solid $fly-border-color;
+            border: 8px solid $fly-color-border;
             display: inline-block;
             border-top-color: transparent;
             border-right-color: transparent;

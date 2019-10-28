@@ -8,11 +8,11 @@
         outline: none;
         width:100px;
         padding:10px 20px 10px 10px;
-        border:1px solid $fly-border-color;
+        border:1px solid $fly-color-border;
         box-sizing: border-box;
         border-radius: $fly-round-default-size;
         @include when('disabled'){
-            background: rgba($fly-border-color,0.5);
+            background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }
     }
@@ -21,12 +21,12 @@
         position: absolute;
         right:0px;
         width:20px;
-        border-left:1px solid $fly-border-color;
+        border-left:1px solid $fly-color-border;
         &:hover{
-            background: $fly-border-color;
+            background: $fly-color-border;
         }
         @include when('disabled'){
-            background: rgba($fly-border-color,0.5);
+            background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }
     }
@@ -37,6 +37,6 @@
     @include e('minus'){
         @extend .label-extend;
         bottom:0px;
-        border-top:1px solid $fly-border-color;
+        border-top:1px solid $fly-color-border;
     }
 }

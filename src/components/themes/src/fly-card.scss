@@ -1,18 +1,18 @@
 @include b('card'){
     position: relative;
     border-radius: $fly-round-default-size;
-    border:1px solid $fly-border-color;
+    border:1px solid $fly-color-border;
     padding:10px;
     box-sizing: border-box;
     @include e('header'){
-        border-bottom: 1px solid $fly-border-color;
+        border-bottom: 1px solid $fly-color-border;
         padding:$fly-default-padding;
     }
     @include e('body'){
         padding:$fly-default-padding;
     }
     @include e('footer'){
-        border-top: 1px solid $fly-border-color;
+        border-top: 1px solid $fly-color-border;
         padding:$fly-default-padding;
     }
 }

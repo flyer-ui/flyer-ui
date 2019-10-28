@@ -6,10 +6,10 @@ $fly-input-clear-padding:10px !default;
         outline:none;
         border:0px;
         overflow-y:auto;
-        border:1px solid $fly-border-color;
+        border:1px solid $fly-color-border;
         padding:$fly-input-clear-padding;
         @include when('disabled'){
-            background: rgba($fly-border-color,0.5);
+            background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }
         &:focus{

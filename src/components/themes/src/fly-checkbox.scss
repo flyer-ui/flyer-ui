@@ -11,7 +11,7 @@ $fly-checkbox-height:14px !default;
         display: none;
     }
     @include e(input) {
-        border: 1px solid $fly-border-color;
+        border: 1px solid $fly-color-border;
         width: $fly-checkbox-width;
         height: $fly-checkbox-height;
         background-color: $fly-common-white;
