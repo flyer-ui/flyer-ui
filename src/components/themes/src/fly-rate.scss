@@ -9,16 +9,16 @@
         & + & {
             margin-left:10px;
         }
-        @include when('disabled'){
+        @include state('disabled'){
             cursor:not-allowed;
         }
-        @include when('mini'){
+        @include state('mini'){
             i{font-size:10px !important;}
         }
-        @include when('large'){
+        @include state('large'){
             i{font-size:20px !important;}
         }
-        @include when('full'){
+        @include state('full'){
             .fly-rate__full{
                 color:$fly-warning-color;
             }
@@ -26,7 +26,7 @@
                 color:$fly-warning-color;
             }
         }
-        @include when('half'){
+        @include state('half'){
             .fly-rate__half{
                 color:$fly-warning-color;
             }
@@ -39,13 +39,13 @@
         width:50%;
         overflow: hidden;
         font-style:inherit;
-        @include when('active'){
+        @include state('active'){
             color:$fly-warning-color;
         }
     }
     @include e('full'){
         font-style:inherit;
-        @include when('active'){
+        @include state('active'){
             color:$fly-warning-color;
         }
     }

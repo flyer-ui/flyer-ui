@@ -8,7 +8,7 @@ $fly-input-clear-padding:10px !default;
         overflow-y:auto;
         border:1px solid $fly-color-border;
         padding:$fly-input-clear-padding;
-        @include when('disabled'){
+        @include state('disabled'){
             background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }

@@ -28,7 +28,7 @@ $fly-radio-padding-area:5px;
         &:hover,&:focus{
             border-color:$fly-primary-color;
         }
-        @include when(checked) {
+        @include state(checked) {
             &::after {
                 content: '';
                 width:$fly-radio-point-area;
@@ -44,7 +44,7 @@ $fly-radio-padding-area:5px;
             background: $fly-primary-color;
             border-color:$fly-primary-color;
         }
-        @include when(disabled){
+        @include state(disabled){
             color:$font-color-common;
             background:$font-color-placeholder;
             border-color:$font-color-placeholder;
@@ -52,7 +52,7 @@ $fly-radio-padding-area:5px;
         }
     }
     @include e(label){
-        @include when(disabled){
+        @include state(disabled){
             cursor: not-allowed;
         }
     }

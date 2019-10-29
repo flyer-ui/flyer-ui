@@ -25,7 +25,7 @@
         background-color:#fff;
         border-radius: 1000px;
     }
-    @include when('checked'){
+    @include state('checked'){
         background-color:$fly-primary-color;
         border-color:$fly-primary-color;
         &:after{
@@ -33,7 +33,7 @@
             left:inherit;
         }
     }
-    @include when('disabled'){
+    @include state('disabled'){
         opacity: .6;
         cursor:not-allowed;
     }

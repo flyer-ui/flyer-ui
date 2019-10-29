@@ -6,12 +6,12 @@
     .fly-input__native{
         cursor: pointer;
     }
-    @include when('disabled'){
+    @include state('disabled'){
         .fly-input__native{
             cursor: not-allowed;
         }
     }
-    @include when('clearable'){
+    @include state('clearable'){
         .fly-input__clear{
             display: none;
         }
@@ -29,14 +29,14 @@
         &:hover{
             background:#fafafa;
         }
-        @include when('disabled'){
+        @include state('disabled'){
             color:$fly-color-border;
             cursor:not-allowed;
             &:hover{
                 background:none;
             }
         }
-        @include when('selected'){
+        @include state('selected'){
             color:$fly-primary-color;
             font-weight:bold;
         }

@@ -21,22 +21,22 @@ $fly-time-line-size-large:20px;
         color:#fff;
         text-align: center;
         vertical-align: baseline;
-        @include when('default'){
+        @include state('default'){
             background:rgba($fly-color-border,1);
         }
-        @include when('primary'){
+        @include state('primary'){
             background: $fly-primary-color;
         }
-        @include when('warning'){
+        @include state('warning'){
             background: $fly-warning-color;
         }
-        @include when('info'){
+        @include state('info'){
             background: $fly-info-color;
         }
-        @include when('danger'){
+        @include state('danger'){
             background: $fly-danger-color;
         }
-        @include when('success'){
+        @include state('success'){
             background: $fly-success-color;
         }
 
@@ -62,7 +62,7 @@ $fly-time-line-size-large:20px;
     @include e('timestamp'){
         font-size:12px;
         color:rgba($font-color-common,0.5);
-        @include when('top'){
+        @include state('top'){
            box-sizing: border-box;
            padding-bottom: 5px;
         }

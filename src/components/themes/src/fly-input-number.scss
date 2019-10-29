@@ -11,7 +11,7 @@
         border:1px solid $fly-color-border;
         box-sizing: border-box;
         border-radius: $fly-round-default-size;
-        @include when('disabled'){
+        @include state('disabled'){
             background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }
@@ -25,7 +25,7 @@
         &:hover{
             background: $fly-color-border;
         }
-        @include when('disabled'){
+        @include state('disabled'){
             background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
         }

@@ -4,35 +4,40 @@ $success:#28A745;
 $warning:#E88E06;
 $danger:#E72323;
 $info:#17A2B8;
+$default:#666666;
 
 //调和色
 $white:#FFFFFF;
 
 //主要颜色
-$fly-primary-color:mixColor($primary,80%);
+$fly-primary-color:mixColor($primary,90%);
 $fly-primary-active-color:$primary;
-$fly-primary-hover-color:mixColor($primary,60%);
+$fly-primary-hover-color:mixColor($primary,80%);
 
 
 //辅助色
-$fly-success-color:mixColor($success,80%);
+$fly-default-color:mixColor($default,10%);
+$fly-default-active-color:mixColor($default,15%);
+$fly-default-hover-color:mixColor($default,5%);
+
+$fly-success-color:mixColor($success,90%);
 $fly-success-active-color:$success;
-$fly-success-hover-color:mixColor($success,60%);
+$fly-success-hover-color:mixColor($success,80%);
 
 
-$fly-info-color:mixColor($info,80%);
+$fly-info-color:mixColor($info,90%);
 $fly-info-active-color:$info;
-$fly-info-hover-color:mixColor($info,60%);
+$fly-info-hover-color:mixColor($info,80%);
 
 
-$fly-warning-color:mixColor($warning,80%);
+$fly-warning-color:mixColor($warning,90%);
 $fly-warning-active-color:$warning;
-$fly-warning-hover-color:mixColor($warning,60%);
+$fly-warning-hover-color:mixColor($warning,80%);
 
 
-$fly-danger-color:mixColor($danger,80%);
+$fly-danger-color:mixColor($danger,90%);
 $fly-danger-active-color:$danger;
-$fly-danger-hover-color:mixColor($danger,60%);
+$fly-danger-hover-color:mixColor($danger,80%);
 
 
 //中性色(文本颜色)
@@ -57,7 +62,7 @@ $fly-font-assist_text-size:12px;
 $fly-common-white:#fff;
 
 //默认圆角大小
-$fly-round-default-size:2px;
+$fly-round-default-size:3px;
 
 // 默认内填度
 $fly-default-padding:10px;

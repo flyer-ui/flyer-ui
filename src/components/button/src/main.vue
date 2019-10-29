@@ -15,9 +15,8 @@
       "is-round":round
     }
     ]'>
-      <i v-if='loading' class='fly-icon-loader'></i>
-      <i v-if='icon' :class='icon'></i>
-      <slot></slot>
+      <i v-if='hasIcon' :class="['icon','loader']"></i>
+      <slot name='default'></slot>
     </button>
 </template>
 <script>
@@ -49,7 +48,10 @@ export default {
     },
     size: {
       type: String,
-      default: 'medium'
+      default: 'medium',
+      validator (value) {
+        return ['large', 'medium', 'small', 'mini'].indexOf(value) > -1
+      }
     },
     loading: {
       type: Boolean,
@@ -59,9 +61,14 @@ export default {
       type: Boolean
     }
   },
+  compute: {
+    hasIcon () {
+      return this.icon.length > 0 || this.loading
+    }
+  },
   methods: {
     handleClick (evt) {
-      this.$emit('on-click', evt)
+      this.$emit('click', evt)
     }
   }
 }

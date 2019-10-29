@@ -1,178 +1,102 @@
-// default 
-$fly-button-font-size:$fly-font-text-size !default;
-$fly-button-border-radius:$fly-round-default-size !default;
-$fly-button-padding-vertical:5px !default;
-$fly-button-padding-horizontal:10px !default;
-//large
-$fly-button-large-padding-vertical:12px !default;
-$fly-button-large-padding-horizontal:20px !default;
-// meidum
-$fly-button-meidum-padding-vertical:5px !default;
-$fly-button-meidum-padding-horizontal:10px !default;
-// small
-$fly-button-small-padding-vertical:5px !default;
-$fly-button-small-padding-horizontal:10px !default;
-// mini
-$fly-button-mini-padding-vertical:3px !default;
-$fly-button-mini-padding-horizontal:6px !default;
-@mixin button-plain($color) {
-    background-color: $fly-common-white;
-    color: $color;
-    border-color: $color;
-    &:hover {
-        background-color: $color;
-        color: $fly-common-white;
-        opacity: .5;
+
+@mixin button-plain($color,$background-color,$border-color,$varint-color){
+    background-color:$background-color;
+    color:$color;
+    border-color:$border-color;
+    &:hover{
+        color:$varint-color;
     }
     &:active,&:focus {
-        opacity: .8;
+        color:$varint-color;
     }
 }
 
-@mixin button-variant($color, $border-color, $background-color) {
-    background-color: $background-color;
-    color: $color;
-    border-color: $border-color;
-    &:hover {
-        background-color: mix($white,$primary,0.6);
+@mixin button-variant($color,$background-color,$border-color,$hover-color,$active-color){
+    background-color:$background-color;
+    color:$color;
+    border-color:$border-color;
+
+    @include state('plain'){
+        @include button-plain($background-color,$color,$background-color,$color);
+    }
+
+    &:hover{
+        background-color:$hover-color;
+        border-color:$hover-color;
     }
     &:active,&:focus {
-        background-color:$background-color;
-    }
-    @include when(plain) {
-        @include button-plain($background-color);
+        background-color:$active-color;
+        border-color:$active-color;
     }
 }
 
-@include b(button) {
-    padding: $fly-button-padding-vertical $fly-button-padding-horizontal;
+@include b('button'){
     outline: none;
     user-select: none;
     border: 1px solid $fly-color-border;
-    border-radius: $fly-button-border-radius;
+    border-radius: $fly-round-default-size;
     cursor: pointer;
     box-sizing: border-box;
-    display: inline-block;
-    vertical-align: baseline;
+    display: inline-table;
     color: $font-color-common;
     background-color: $fly-common-white;
     &+& {
         margin-left: 10px;
     }
-    &:hover {
-        opacity: .5;
-    }
-    &:active,&:focus {
-        opacity: .8;
-    }
-    @include when(plain) {
-        @include button-plain($font-color-common);
-    }
-    @include when(disabled) {
-        cursor: not-allowed;
-        opacity: .5;
-        &:hover {
-            opacity: .5;
-        }
-        &:active,&:focus {
-            opacity: .8;
-        }
-    }
-    @include when(loading) {
-        position: relative;
-        pointer-events: none;
-    }
-    @include when(round) {
-        border-radius: 20px;
-    }
-    @include when(circle) {
-        border-radius: 50%;
-        padding: 14px;
-        line-height: 12px;
-    } //开始添加modifier
-    @include m(large) {
-        padding: $fly-button-large-padding-vertical $fly-button-large-padding-horizontal;
-        font-size: $fly-font-big-size;
-        @include when(round) {
-            border-radius: 30px;
-        }
-        @include when(circle) {
-            border-radius: 50%;
-            padding: 16px;
-            line-height: 14px;
-        }
-    }
-    @include m(medium) {
-        padding: $fly-button-meidum-padding-vertical $fly-button-meidum-padding-horizontal;
-        font-size: $fly-font-text-size;
-        @include when(round) {
-            border-radius: 20px;
-        }
-        @include when(circle) {
-            border-radius: 50%;
-            padding: 14px;
-            line-height: 12px;
-        }
-    }
-    @include m(small) {
-        padding: $fly-button-small-padding-vertical $fly-button-small-padding-horizontal;
-        font-size: $fly-font-mini_text-size;
-        @include when(round) {
-            border-radius: 16px;
-        }
-        @include when(circle) {
-            border-radius: 50%;
-            padding: 12px;
-            line-height: 10px;
-            font-size: 12px;
-        }
-    }
-    @include m(mini) {
-        padding: $fly-button-mini-padding-vertical $fly-button-mini-padding-horizontal;
-        font-size: $fly-font-assist_text-size;
-        @include when(round) {
-            border-radius: 12px;
-        }
-        @include when(circle) {
-            border-radius: 50%;
-            padding: 10px;
-            line-height: 8px;
-            font-size: 10px;
-        }
-    }
-    @include m(primary) {
-        @include button-variant($fly-common-white, $fly-primary-color, $fly-primary-color);
-    }
-    @include m(warning) {
-        @include button-variant($fly-common-white, $fly-warning-color, $fly-warning-color);
-    }
-    @include m(danger) {
-        @include button-variant($fly-common-white, $fly-danger-color, $fly-danger-color);
-    }
-    @include m(success) {
-        @include button-variant($fly-common-white, $fly-success-color, $fly-success-color);
-    }
-    @include m(info) {
-        @include button-variant($fly-common-white, $fly-info-color, $fly-info-color);
-    }
-}
 
-@include b(button-group) {
-    display: flex;
-    flex-direction: row;
-    flex:1;
-    @include b(button) {
-        margin-left: 0px;
-        border-radius: 0px;
-        border-right:0px;
-        &:first-child{
-            border-top-left-radius:4px;
-            border-bottom-left-radius:4px;
+    @include m('large'){
+        padding:$fly-default-padding * 1.5 $fly-default-padding * 3;
+        font-size:18px;
+    }
+
+    @include m('medium'){
+        padding:$fly-default-padding $fly-default-padding * 2;
+    }
+
+    @include m('small'){
+        padding:$fly-default-padding / 2 $fly-default-padding / 1;
+        font-size:12px;
+    }
+
+    @include m('mini'){
+        padding:$fly-default-padding / 4 $fly-default-padding / 2;
+        font-size:12px;
+    }
+    @include state('disabled'){
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    @include m('default'){
+        @include button-variant($default,$fly-default-color,$fly-default-color,$fly-default-hover-color,$fly-default-active-color);
+        @include state('plain'){
+            @include button-plain($default,$white,$fly-default-active-color,$fly-default-active-color);
+            &:hover{
+                background-color:$fly-default-hover-color;
+                border-color:$fly-default-hover-color;
+                color:$default;
+            }
+            &:active,&:focus {
+                background-color:$fly-default-active-color;
+                border-color:$fly-default-active-color;
+                color:$default;
+            }
         }
-        &:last-child{
-            border-top-right-radius:4px;
-            border-bottom-right-radius:4px;
-            border-right:1px solid;
-        }
+    }
+
+    @include m('primary'){
+        @include button-variant($white,$fly-primary-color,$fly-primary-color,$fly-primary-hover-color,$fly-primary-active-color);
+    }
+    @include m('success'){
+        @include button-variant($white,$fly-success-color,$fly-success-color,$fly-success-hover-color,$fly-success-active-color);
+    }
+    @include m('info'){
+        @include button-variant($white,$fly-info-color,$fly-info-color,$fly-info-hover-color,$fly-info-active-color);
+    }
+    @include m('warning'){
+        @include button-variant($white,$fly-warning-color,$fly-warning-color,$fly-warning-hover-color,$fly-warning-active-color);
+    }
+    @include m('danger'){
+        @include button-variant($white,$fly-danger-color,$fly-danger-color,$fly-danger-hover-color,$fly-danger-active-color);
     }
 }

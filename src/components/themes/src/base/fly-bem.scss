@@ -43,8 +43,8 @@ $state-prefix:'is-' !default;
   }
 }
 
-// @include when('state name')
-@mixin when($state) {
+// @include state('state name')
+@mixin state($state) {
   @at-root &.#{$state-prefix+$state} {
       @content;
   }

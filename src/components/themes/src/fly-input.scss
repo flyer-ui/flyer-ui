@@ -28,23 +28,23 @@ $fly-input-clear-padding:10px !default;
         &:focus{
             border-color:$fly-primary-color;
         }
-        @include when(disabled){
+        @include state(disabled){
             color:$font-color-common;
             background: rgba($fly-color-border,0.5);
             border-color:$font-color-placeholder;
             cursor:not-allowed;
         }
-        @include when(suffix){
+        @include state(suffix){
             padding-right:$fly-input-clear-padding * 2 + 16px;
         }
-        @include when(prefix){
+        @include state(prefix){
             padding-left:$fly-input-clear-padding * 2 + 16px;
         }
-        @include when(prepend){
+        @include state(prepend){
             border-top-left-radius:0px;
             border-bottom-left-radius: 0px;
         }
-        @include when(append){
+        @include state(append){
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
         }

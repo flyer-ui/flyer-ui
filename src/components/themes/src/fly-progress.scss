@@ -28,15 +28,15 @@
         z-index: 1;
         background: $fly-primary-color;
         color:$fly-primary-color;
-        @include when('normal'){
+        @include state('normal'){
             background: $fly-primary-color;
             color:$fly-primary-color;
         }
-        @include when('error'){
+        @include state('error'){
             background: $fly-danger-color;
             color:$fly-danger-color;
         }
-        @include when('success'){
+        @include state('success'){
             background: $fly-success-color;
             color:$fly-success-color;
         }
@@ -51,11 +51,11 @@
         i{
             font-size:12px !important;
         }
-        @include when('error'){
+        @include state('error'){
             color:$fly-danger-color;
             border:1px solid $fly-danger-color;
         }
-        @include when('success'){
+        @include state('success'){
             color:$fly-success-color;
             border:1px solid $fly-success-color;
         }

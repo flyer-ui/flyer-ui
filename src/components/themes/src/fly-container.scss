@@ -5,10 +5,10 @@
   box-sizing: border-box;
   flex-direction: row;
   min-width: 0px;
-  @include when('horizontal'){
+  @include state('horizontal'){
     flex-direction:column;
   }
-  @include when('vertical'){
+  @include state('vertical'){
     flex-direction:row;
   }
 }

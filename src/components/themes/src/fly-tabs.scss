@@ -37,11 +37,11 @@ $fly-bottom-border-size:2px;
         box-sizing: border-box;
         border-bottom:2px solid $fly-color-border;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
-        @include when ('scrollable'){
+        @include state ('scrollable'){
             padding-right:calc(#{$fly-tab-nav-padding} * 2);
             padding-left:calc(#{$fly-tab-nav-padding} * 2);
         }
-        @include when('show-list'){
+        @include state('show-list'){
             padding-right:calc(#{$fly-tab-nav-padding} * 6)
         }
     }
@@ -96,7 +96,7 @@ $fly-bottom-border-size:2px;
         position: relative;
         padding:$fly-tab-nav-padding;
         display:none;
-        @include when('active'){
+        @include state('active'){
             display: block;
         }
     }
@@ -108,7 +108,7 @@ $fly-bottom-border-size:2px;
         box-sizing: border-box;
         cursor: default;
         line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
-        @include when('active'){
+        @include state('active'){
             color:$fly-primary-color;
             font-weight: 500;
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;
@@ -116,10 +116,10 @@ $fly-bottom-border-size:2px;
                 display: inline-block !important;
             }
         }
-        @include when('closable'){
+        @include state('closable'){
             padding-right:24px;
         }
-        @include when('disabled'){
+        @include state('disabled'){
             color:$fly-color-border;
             cursor:not-allowed;
         }

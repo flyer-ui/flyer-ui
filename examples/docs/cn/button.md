@@ -30,108 +30,22 @@
 
 :::
 
-## Feature
-
-::: demo
-
-```html
-<p>
-  <fly-button native-type="button">Button</fly-button>
-  <fly-button native-type="submit">Submit</fly-button>
-  <fly-button native-type="reset">Reset</fly-button>
-  <fly-button disabled>Disabled</fly-button>
-  <fly-button loading>Loading...</fly-button>
-</p>
-<p>
-  <fly-button native-type="button">Button</fly-button>
-  <fly-button native-type="submit">Submit</fly-button>
-  <fly-button native-type="reset">Reset</fly-button>
-  <fly-button disabled type="primary">Disabled</fly-button>
-  <fly-button loading>Loading...</fly-button>
-</p>
-```
-
-:::
-
-## Icon button
-
-::: demo
-
-```html
-<p>
-  <fly-button icon="fly-icon-help-circle" size="large"></fly-button>
-  <fly-button icon="fly-icon-map-pin" size="meidum"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" type="small"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" type="mini"></fly-button>
-</p>
-<!-- <p>
-  <fly-button icon="fly-icon-help-circle" round size="large"></fly-button>
-  <fly-button icon="fly-icon-map-pin" round size="meidum"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" round type="small"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" round type="mini"></fly-button>
-</p> -->
-<p>
-  <fly-button icon="fly-icon-help-circle" circle size="large"></fly-button>
-  <fly-button icon="fly-icon-map-pin" circle size="meidum"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" circle type="small"></fly-button>
-  <fly-button icon="fly-icon-chevrons-right" circle type="mini"></fly-button>
-</p>
-```
-
-:::
-
 ## Size
 
 ::: demo
 
 ```html
 <p>
-  <fly-button size="large">大号按钮</fly-button>
-  <fly-button size="medium">中等按钮</fly-button>
-  <fly-button size="small">小按钮</fly-button>
-  <fly-button size="mini">迷你按钮</fly-button>
+  <fly-button size="large" plain>大号按钮</fly-button>
+  <fly-button size="medium" plain>中等按钮</fly-button>
+  <fly-button size="small" plain>小按钮</fly-button>
+  <fly-button size="mini" plain>迷你按钮</fly-button>
 </p>
 <p>
-  <fly-button ci size="large" loading>大号按钮</fly-button>
-  <fly-button size="medium" loading>中等按钮</fly-button>
-  <fly-button size="small" loading>小按钮</fly-button>
-  <fly-button size="mini" loading>迷你按钮</fly-button>
-</p>
-<p>
-  <fly-button ci size="large" round>大号按钮</fly-button>
-  <fly-button size="medium" round>中等按钮</fly-button>
-  <fly-button size="small" round>小按钮</fly-button>
-  <fly-button size="mini" round>迷你按钮</fly-button>
-</p>
-```
-
-:::
-
-## Group button
-
-::: demo
-
-```html
-<p>
-  <fly-button-group>
-    <fly-button plain>默认按钮</fly-button>
-    <fly-button plain type="primary">主要按钮</fly-button>
-    <fly-button plain type="warning">警告按钮</fly-button>
-    <fly-button plain type="danger">危险按钮</fly-button>
-    <fly-button plain type="success">成功按钮</fly-button>
-    <fly-button plain type="info">信息按钮</fly-button>
-  </fly-button-group>
-</p>
-<p>
-  <fly-button-group>
-    <fly-button type="primary">按钮1</fly-button>
-    <fly-button type="primary">按钮2</fly-button>
-    <fly-button type="primary">按钮3</fly-button>
-    <fly-button type="primary" icon="fly-icon-align-left"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-center"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-right"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-justify"></fly-button>
-  </fly-button-group>
+  <fly-button ci size="large" plain>大号按钮</fly-button>
+  <fly-button size="medium" plain>中等按钮</fly-button>
+  <fly-button size="small" plain>小按钮</fly-button>
+  <fly-button size="mini" plain>迷你按钮</fly-button>
 </p>
 ```
 

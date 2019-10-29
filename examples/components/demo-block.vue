@@ -55,7 +55,7 @@ export default {
         background-color:#fafafa;
         display:none;
         border-bottom:1px solid $fly-color-border;
-        @include when('open'){
+        @include state('open'){
             display: block;
         }
     }

@@ -27,19 +27,19 @@
         left:10px;
         top:10px;
         border-radius: 100%;
-        @include when('info'){
+        @include state('info'){
             color:$fly-primary-color;
         }
-        @include when('warning'){
+        @include state('warning'){
             color:$fly-warning-color;
         }
-        @include when('success'){
+        @include state('success'){
             color:$fly-success-color;
             border:1px solid $fly-success-color;
             border-radius: 100%;
             font-size:12px !important;
         }
-        @include when('error'){
+        @include state('error'){
             color:$fly-danger-color;
             border:1px solid $fly-danger-color;
             border-radius: 100%;

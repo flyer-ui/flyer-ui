@@ -24,7 +24,7 @@
     flex: 1;
     height: 20px;
     position: relative;
-    @include when('change'){
+    @include state('change'){
       &:first-child {
         border-bottom-left-radius: $fly-round-default-size;
       }
@@ -33,7 +33,7 @@
       }
     }
   }
-  @include when("border") {
+  @include state("border") {
     > ul {
       display: none;
     }

@@ -19,10 +19,10 @@
             cursor: pointer;
             color:$fly-primary-color;
         }
-        @include when('active'){
+        @include state('active'){
             color:$fly-primary-color;
         }
-        @include when('disabled'){
+        @include state('disabled'){
             cursor:not-allowed;
             color:$font-color-placeholder;
         }
