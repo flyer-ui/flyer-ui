@@ -16,7 +16,8 @@
     }
     ]'>
       <slot name='default'></slot>
-      <i v-if='hasIcon' :class="[icon,loading?'loader':'']"></i>
+      <i v-if='loading' class='fly-icon-loader'></i>
+      <i v-if='icon' :class='icon'></i>
     </button>
 </template>
 <script>
@@ -59,11 +60,6 @@ export default {
     },
     plain: {
       type: Boolean
-    }
-  },
-  computed: {
-    hasIcon () {
-      return this.icon.length > 0 || this.loading
     }
   },
   methods: {

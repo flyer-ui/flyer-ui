@@ -58,6 +58,7 @@
 <p>
   <fly-button disabled>禁用</fly-button>
   <fly-button type='primary' disabled>禁用</fly-button>
+  <fly-button type='primary' loading>Loading...</fly-button>
 </p>
 
 ```
@@ -73,6 +74,39 @@
   <fly-button icon='fly-icon-help-circle' size='medium' circle></fly-button>
   <fly-button icon='fly-icon-help-circle' size='small' circle></fly-button>
   <fly-button icon='fly-icon-help-circle' size='mini' circle></fly-button>
+  <fly-button icon='fly-icon-thumbs-o-up' type='primary' size='large' circle></fly-button>
+  <fly-button icon='fly-icon-thumbs-o-up' type='warning' size='medium' circle></fly-button>
+  <fly-button icon='fly-icon-thumbs-o-up' type='success' size='small' circle></fly-button>
+  <fly-button icon='fly-icon-thumbs-o-up' type='danger' size='mini' circle></fly-button>
+</p>
+```
+:::
+
+## Group button
+
+::: demo
+```html
+<p>
+  <fly-button-group>
+    <fly-button>Default</fly-button>
+    <fly-button type="primary">主要按钮</fly-button>
+    <fly-button type="warning">警告按钮</fly-button>
+    <fly-button type="danger">危险按钮</fly-button>
+    <fly-button type="success">成功按钮</fly-button>
+    <fly-button type="info">信息按钮</fly-button>
+  </fly-button-group>
+</p>
+<p>
+  <fly-button-group>
+    <fly-button type="primary">主要按钮</fly-button>
+    <fly-button type="warning">警告按钮</fly-button>
+    <fly-button type="danger">危险按钮</fly-button>
+    <fly-button type="success">成功按钮</fly-button>
+    <fly-button type="primary" icon="fly-icon-align-left"></fly-button>
+    <fly-button type="primary" icon="fly-icon-align-center"></fly-button>
+    <fly-button type="primary" icon="fly-icon-align-right"></fly-button>
+    <fly-button type="primary" icon="fly-icon-align-justify"></fly-button>
+  </fly-button-group>
 </p>
 ```
 :::
