@@ -47,20 +47,35 @@
     @include m('large'){
         padding:$fly-default-padding * 1.5 $fly-default-padding * 3;
         font-size:18px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 8;
+        }
+        @include state('circle'){
+            padding:$fly-default-padding * 1.5 $fly-default-padding * 1.5;
+        }
     }
 
     @include m('medium'){
         padding:$fly-default-padding $fly-default-padding * 2;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 6;
+        }
     }
 
     @include m('small'){
         padding:$fly-default-padding / 2 $fly-default-padding / 1;
         font-size:12px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 4;
+        }
     }
 
     @include m('mini'){
         padding:$fly-default-padding / 4 $fly-default-padding / 2;
         font-size:12px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 3;
+        }
     }
     @include state('disabled'){
         opacity: 0.65;

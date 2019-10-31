@@ -42,13 +42,39 @@
   <fly-button size="mini" plain>迷你按钮</fly-button>
 </p>
 <p>
-  <fly-button ci size="large" plain>大号按钮</fly-button>
-  <fly-button size="medium" plain>中等按钮</fly-button>
-  <fly-button size="small" plain>小按钮</fly-button>
-  <fly-button size="mini" plain>迷你按钮</fly-button>
+  <fly-button size="large" round plain>大号按钮</fly-button>
+  <fly-button size="medium" round plain>中等按钮</fly-button>
+  <fly-button size="small" round plain>小按钮</fly-button>
+  <fly-button size="mini" round plain>迷你按钮</fly-button>
 </p>
 ```
+:::
 
+## Feature
+
+::: demo
+
+```html
+<p>
+  <fly-button disabled>禁用</fly-button>
+  <fly-button type='primary' disabled>禁用</fly-button>
+</p>
+
+```
+:::
+
+## Icon button
+
+::: demo
+
+```html
+<p>
+  <fly-button icon='fly-icon-help-circle' size='large' circle></fly-button>
+  <fly-button icon='fly-icon-help-circle' size='medium' circle></fly-button>
+  <fly-button icon='fly-icon-help-circle' size='small' circle></fly-button>
+  <fly-button icon='fly-icon-help-circle' size='mini' circle></fly-button>
+</p>
+```
 :::
 
 ## Props

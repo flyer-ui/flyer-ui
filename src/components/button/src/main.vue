@@ -15,8 +15,8 @@
       "is-round":round
     }
     ]'>
-      <i v-if='hasIcon' :class="['icon','loader']"></i>
       <slot name='default'></slot>
+      <i v-if='hasIcon' :class="[icon,loading?'loader':'']"></i>
     </button>
 </template>
 <script>
@@ -61,7 +61,7 @@ export default {
       type: Boolean
     }
   },
-  compute: {
+  computed: {
     hasIcon () {
       return this.icon.length > 0 || this.loading
     }
