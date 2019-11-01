@@ -152,6 +152,10 @@
     @include m('danger'){
         @include button-variant($white,$fly-danger-color,$fly-danger-color,$fly-danger-hover-color,$fly-danger-active-color);
     }
+
+    @include e('icon'){
+        vertical-align:top;
+    }
 }
 
 @include b('button-group') {

@@ -1,6 +1,6 @@
-# Button
+# Button（按钮）
 
-## Type
+## Type （类型）
 
 ::: demo 可以通过定制不同的 `type` 得到不同的类型按钮
 
@@ -15,7 +15,7 @@
 
 :::
 
-## Plain
+## Plain （素按钮）
 
 ::: demo 可以通过设置`plain`属性，得到简约的按钮
 
@@ -30,7 +30,7 @@
 
 :::
 
-## Size
+## Size（大小）
 
 ::: demo
 
@@ -42,38 +42,50 @@
   <fly-button size="mini" plain>迷你按钮</fly-button>
 </p>
 <p>
-  <fly-button size="large" round plain>大号按钮</fly-button>
-  <fly-button size="medium" round plain>中等按钮</fly-button>
-  <fly-button size="small" round plain>小按钮</fly-button>
-  <fly-button size="mini" round plain>迷你按钮</fly-button>
+  <fly-button type='primary' size="large" round plain>大号按钮</fly-button>
+  <fly-button type='warning' size="medium" round plain>中等按钮</fly-button>
+  <fly-button type='success' size="small" round plain>小按钮</fly-button>
+  <fly-button type='info' size="mini" round plain>迷你按钮</fly-button>
 </p>
+<p>
+  <fly-button type='primary' size="large" icon='fly-icon-upload' >上传</fly-button>
+  <fly-button type='warning' size="medium" icon='fly-icon-download' >下载</fly-button>
+  <fly-button type='success' size="small" icon='fly-icon-edit-3' >编辑</fly-button>
+  <fly-button type='info' size="mini" icon='fly-icon-edit-3' >编辑</fly-button>
+</p>
+<p>
+  <fly-button type='primary' size="large" icon='fly-icon-upload' round plain>上传</fly-button>
+  <fly-button type='warning' size="medium" icon='fly-icon-download' round plain>下载</fly-button>
+  <fly-button type='success' size="small" icon='fly-icon-edit-3' round plain>编辑</fly-button>
+  <fly-button type='info' size="mini" icon='fly-icon-edit-3' round plain>编辑</fly-button>
+<p>
 ```
 :::
 
-## Feature
+## Feature（特性）
 
 ::: demo
 
 ```html
 <p>
-  <fly-button disabled>禁用</fly-button>
-  <fly-button type='primary' disabled>禁用</fly-button>
+  <fly-button disabled icon='fly-icon-frown-o'>禁用</fly-button>
+  <fly-button type='primary' icon='fly-icon-frown-o' disabled>禁用</fly-button>
   <fly-button type='primary' loading>Loading...</fly-button>
 </p>
 
 ```
 :::
 
-## Icon button
+## Icon button（图标按钮）
 
 ::: demo
 
 ```html
 <p>
-  <fly-button icon='fly-icon-help-circle' size='large' circle></fly-button>
-  <fly-button icon='fly-icon-help-circle' size='medium' circle></fly-button>
-  <fly-button icon='fly-icon-help-circle' size='small' circle></fly-button>
-  <fly-button icon='fly-icon-help-circle' size='mini' circle></fly-button>
+  <fly-button icon='fly-icon-mic' size='large' circle></fly-button>
+  <fly-button icon='fly-icon-mic' size='medium' circle></fly-button>
+  <fly-button icon='fly-icon-mic' size='small' circle></fly-button>
+  <fly-button icon='fly-icon-mic' size='mini' circle></fly-button>
   <fly-button icon='fly-icon-thumbs-o-up' type='primary' size='large' circle></fly-button>
   <fly-button icon='fly-icon-thumbs-o-up' type='warning' size='medium' circle></fly-button>
   <fly-button icon='fly-icon-thumbs-o-up' type='success' size='small' circle></fly-button>
@@ -82,7 +94,7 @@
 ```
 :::
 
-## Group button
+## Group button（按钮组）
 
 ::: demo
 ```html
@@ -111,7 +123,7 @@
 ```
 :::
 
-## Props
+## Props（定制属性）
 
 | 属性名称    | 类型    | 默认值  | 可选值                                            | 说明                 |
 | ----------- | ------- | ------- | ------------------------------------------------- | -------------------- |

@@ -110,13 +110,12 @@ body,#app{
     }
 }
 code{
-    background-color:#fafafa;
-    margin: 0px;
-    padding: 15px 10px;
-    display: block;
-    font-family: Menlo,Monaco,Consolas,Courier,monospace;
+    overflow: visible;
+    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
     font-size: 14px;
-    line-height: 18px;
+    color: #24292e;
+    word-wrap: normal;
+    white-space: pre;
 }
 pre{
   border-radius: $fly-round-default-size;
