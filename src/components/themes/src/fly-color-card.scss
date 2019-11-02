@@ -126,6 +126,6 @@
 }
 
 @include b("color-border") {
-  background-color:$font-color-placeholder;
+  background-color:$fly-color-border;
   @extend .fly-color-card-border;
 }

@@ -86,7 +86,7 @@ module.exports = {
   <fly-checkbox v-model="checked1" name="checked1">
     是否选中
   </fly-checkbox>
-  <fly-button type='primary' @on-click="handleChecked">控制</fly-button>
+  <fly-button type='primary' @click="handleChecked">控制</fly-button>
 </template>
 <script>
   export default {
@@ -150,7 +150,7 @@ module.exports = {
 <template>
   <fly-checkbox
     v-model="value"
-    @on-change="handleChange"
+    @change="handleChange"
     true-value="东莞"
     false-value=""
     >东莞</fly-checkbox
@@ -180,7 +180,7 @@ module.exports = {
 
 ```html
 <template>
-  <fly-checkbox-group v-model="citys" @on-change="handleChangeGroup">
+  <fly-checkbox-group v-model="citys" @change="handleChangeGroup">
     <fly-checkbox label="北京">北京</fly-checkbox>
     <fly-checkbox label="深圳" checked>深圳</fly-checkbox>
     <fly-checkbox label="东莞">东莞</fly-checkbox>
@@ -214,13 +214,13 @@ module.exports = {
 <template>
   <fly-checkbox
     :indeterminate="indeterminate"
-    @on-change="handleSelectAll"
+    @change="handleSelectAll"
     v-model="selectAll"
     >全选</fly-checkbox
   >
   <fly-checkbox-group
     v-model="selectedItems"
-    @on-change="handleChangeCheckboxGroup"
+    @change="handleChangeCheckboxGroup"
   >
     <fly-checkbox
       v-for="(city,index) in options"
@@ -290,7 +290,7 @@ module.exports = {
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |
 
 ### 复选框组 - 可定制属性
 
@@ -302,4 +302,4 @@ module.exports = {
 
 | 事件名称  | 返回值 | 说明                       |
 | --------- | ------ | -------------------------- |
-| on-change | [...]  | 在点击选项状态变更时触发。 |
+| change | [...]  | 在点击选项状态变更时触发。 |

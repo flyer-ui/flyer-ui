@@ -4,7 +4,8 @@
           "is-checked":isChecked,
           "is-disabled":disabled,
           "is-indeterminate":indeterminate
-        }]'></span>
+        }]'>
+        </span>
         <span class='fly-checkbox__label'>
           <slot></slot>
         </span>
@@ -105,9 +106,9 @@ export default{
     handleChange ($event) {
       this.$nextTick(() => {
         if (this.isGroup) {
-          this.dispatch('FlyCheckboxGroup', 'on-change', [this.parent.value])
+          this.dispatch('FlyCheckboxGroup', 'change', [this.parent.value])
         } else {
-          this.$emit('on-change', this.model)
+          this.$emit('change', this.model)
         }
       })
     }

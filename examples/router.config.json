@@ -83,6 +83,18 @@
             "pending":false
         },
         {
+            "text": "Checkbox 多选框",
+            "type": "item",
+            "path": "checkbox",
+            "pending":false
+        },
+        {
+            "text": "Radio 单选框",
+            "type": "item",
+            "path": "radio",
+            "pending":false
+        },
+        {
             "text": "Input 输入框",
             "type": "item",
             "path": "input",
@@ -101,21 +113,9 @@
             "pending":false
         },
         {
-            "text": "Checkbox 多选框",
-            "type": "item",
-            "path": "checkbox",
-            "pending":false
-        },
-        {
             "text": "Switch 开关",
             "type": "item",
             "path": "switch",
-            "pending":false
-        },
-        {
-            "text": "Radio 单选框",
-            "type": "item",
-            "path": "radio",
             "pending":false
         },
         {

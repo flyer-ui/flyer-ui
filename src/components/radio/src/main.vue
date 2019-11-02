@@ -72,9 +72,9 @@ export default{
     handleChange ($event) {
       this.$nextTick(() => {
         if (this.isGroup) {
-          this.dispatch('FlyRadioGroup', 'on-change', [this.parent.value])
+          this.dispatch('FlyRadioGroup', 'change', [this.parent.value])
         } else {
-          this.$emit('on-change', this.model)
+          this.$emit('change', this.model)
         }
       })
     }

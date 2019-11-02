@@ -182,10 +182,10 @@ module.exports =  {
 
 | 事件名称  | 返回值                   | 说明                                        |
 | --------- | ------------------------ | ------------------------------------------- |
-| on-blur   | (event: Event)           | 在 Input 失去焦点时触发                     |
-| on-focus  | (event: Event)           | 在 Input 获得焦点时触发                     |
-| on-change | (value: string / number) | 在 Input 值改变时触发                       |
-| on-clear  | -                        | 在点击由 clearable 属性生成的清空按钮时触发 |
+| blur   | (event: Event)           | 在 Input 失去焦点时触发                     |
+| focus  | (event: Event)           | 在 Input 获得焦点时触发                     |
+| change | (value: string / number) | 在 Input 值改变时触发                       |
+| clear  | -                        | 在点击由 clearable 属性生成的清空按钮时触发 |
 
 ### Input - Slot
 

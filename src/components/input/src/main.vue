@@ -96,19 +96,19 @@ export default {
     handleClear ($event) {
       this.$emit('input', '')
       this.$emit('change', '')
-      this.$emit('on-clear', '')
+      this.$emit('clear', '')
       this.focus()
     },
     handleBlur ($event) {
-      this.$emit('on-blur', $event)
+      this.$emit('blur', $event)
       this.focused = false
     },
     handleFocus ($event) {
       this.focused = true
-      this.$emit('on-focus', $event)
+      this.$emit('focus', $event)
     },
     handleChange ($event) {
-      this.$emit('on-change', $event.target.value)
+      this.$emit('change', $event.target.value)
     },
     focus () {
       this.$refs.input.focus()

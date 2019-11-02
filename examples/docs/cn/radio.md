@@ -81,14 +81,14 @@ module.exports = {
 <template>
   <fly-radio
     name="demo"
-    @on-change="handleChange"
+    @change="handleChange"
     v-model="value4"
     label="单选框1"
     >单选框1</fly-radio
   >
   <fly-radio
     name="demo"
-    @on-change="handleChange"
+    @change="handleChange"
     v-model="value4"
     label="单选框2"
     >单选框2</fly-radio
@@ -119,7 +119,7 @@ module.exports = {
 
 ```html
 <template>
-  <fly-radio-group v-model="value3" @on-change="handleChangeGroup">
+  <fly-radio-group v-model="value3" @change="handleChangeGroup">
     <fly-radio label="A">
       北京
     </fly-radio>
@@ -167,7 +167,7 @@ module.exports = {
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |
 
 ### 单选框组 - 可定制属性
 
@@ -179,4 +179,4 @@ module.exports = {
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |
