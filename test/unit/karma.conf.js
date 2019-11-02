@@ -3,7 +3,7 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 
-var webpackConfig = require('../../build/webpack.test.conf')
+var webpackConfig = require('../../build/webpack.test.config')
 
 module.exports = function karmaConfig (config) {
   if (process.env.TRAVIS) {
@@ -23,7 +23,7 @@ module.exports = function karmaConfig (config) {
     },
     frameworks: ['mocha', 'sinon-chai'],
     reporters: ['coverage', 'mocha'],
-    files: ['./index.js'],
+    files: ['../unit/index.js'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
