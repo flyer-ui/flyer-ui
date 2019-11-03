@@ -19,6 +19,7 @@ $fly-checkbox-height:20px !default;
         width: $fly-checkbox-width;
         height: $fly-checkbox-height;
         background-color: $fly-common-white;
+        box-sizing:border-box;
         position: relative;
         font-family: 'fly-icons';
         border-radius: $fly-checkbox-border-radius;

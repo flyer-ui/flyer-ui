@@ -21,6 +21,7 @@ $fly-radio-padding-area:6px;
         border: 1px solid $fly-color-border;
         width: $fly-radio-width;
         height: $fly-radio-height;
+        box-sizing:border-box;
         background-color: $fly-common-white;
         display: inline-block;
         vertical-align: middle;

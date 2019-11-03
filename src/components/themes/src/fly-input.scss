@@ -5,7 +5,8 @@ $fly-input-clear-padding:10px !default;
 
 @include b('input'){
     position: relative;
-    display: inline-table;
+    display: inline-flex;
+    vertical-align: middle;
     .fix{
         position: absolute;
         z-index:99;
@@ -15,9 +16,7 @@ $fly-input-clear-padding:10px !default;
     }
     .adorn{
         background: $fly-color-border;
-        border:1px solid $fly-color-border;
         padding:$fly-input-clear-padding;
-        display: table-cell;
     }
     @include e('native'){
         padding:$fly-input-clear-padding;
@@ -28,23 +27,26 @@ $fly-input-clear-padding:10px !default;
         &:focus{
             border-color:$fly-primary-color;
         }
-        @include state(disabled){
+        >i[class="fly-icon-"]{
+            font-size:16px;
+        }
+        @include state("disabled"){
             color:$font-color-common;
-            background: rgba($fly-color-border,0.5);
+            background: mix($fly-color-border,$white,50%);
             border-color:$font-color-placeholder;
             cursor:not-allowed;
         }
-        @include state(suffix){
+        @include state("suffix"){
             padding-right:$fly-input-clear-padding * 2 + 16px;
         }
-        @include state(prefix){
+        @include state("prefix"){
             padding-left:$fly-input-clear-padding * 2 + 16px;
         }
-        @include state(prepend){
+        @include state("prepend"){
             border-top-left-radius:0px;
             border-bottom-left-radius: 0px;
         }
-        @include state(append){
+        @include state("append"){
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
         }
@@ -62,6 +64,7 @@ $fly-input-clear-padding:10px !default;
         font-family: 'fly-icons';
         font-style:inherit;
         color:$font-color-common;
+        background-color:$fly-color-border;
         text-align: center;
         opacity: .6;
         pointer-events:all;
