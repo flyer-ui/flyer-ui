@@ -1,25 +1,12 @@
 
 
 $fly-input-clear-area:16px !default;
-$fly-input-clear-padding:10px !default;
 
 @include b('input'){
     position: relative;
     display: inline-flex;
     vertical-align: middle;
-    .fix{
-        position: absolute;
-        z-index:99;
-        padding:$fly-input-clear-padding;
-        top:0px;
-        bottom: 0px;
-    }
-    .adorn{
-        background: $fly-color-border;
-        padding:$fly-input-clear-padding;
-    }
     @include e('native'){
-        padding:$fly-input-clear-padding;
         outline: none;
         border:1px solid $fly-color-border;
         border-radius: $fly-round-default-size;
@@ -37,10 +24,10 @@ $fly-input-clear-padding:10px !default;
             cursor:not-allowed;
         }
         @include state("suffix"){
-            padding-right:$fly-input-clear-padding * 2 + 16px;
+            padding-right:$fly-default-padding * 2 + 16px;
         }
         @include state("prefix"){
-            padding-left:$fly-input-clear-padding * 2 + 16px;
+            padding-left:$fly-default-padding * 2 + 16px;
         }
         @include state("prepend"){
             border-top-left-radius:0px;
@@ -50,6 +37,28 @@ $fly-input-clear-padding:10px !default;
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
         }
+        
+        @include m('large'){
+            padding: $fly-default-padding * 1.5;
+            font-size:$fly-font-title-size;
+            @include state('round'){
+                border-radius:$fly-round-default-size * 8;
+            }
+        }
+        @include m('medium'){
+            padding:$fly-default-padding;
+            font-size:$fly-font-text-size;
+            @include state('round'){
+                border-radius:$fly-round-default-size * 6;
+            }
+        }
+        @include m('small'){
+            padding:$fly-default-padding * 0.3;
+            font-size:$fly-font-assist_text-size;
+            @include state('round'){
+                border-radius:$fly-round-default-size * 4;
+            }
+        }
     }
     @include e('clear'){
         position: absolute;
@@ -58,8 +67,8 @@ $fly-input-clear-padding:10px !default;
         border-radius: 50%;
         width: $fly-input-clear-area;
         height: $fly-input-clear-area;
-        right: $fly-input-clear-padding;
-        top: $fly-input-clear-padding;
+        right: $fly-default-padding;
+        top: $fly-default-padding;
         cursor: pointer;
         font-family: 'fly-icons';
         font-style:inherit;
@@ -88,5 +97,20 @@ $fly-input-clear-padding:10px !default;
     }
     @include e('append'){
         @extend .adorn;
+    }
+
+    .fix{
+        position: absolute;
+        z-index:99;
+        padding:$fly-default-padding;
+        top:0px;
+        bottom: 0px;
+        i[class^='fly-icon-']{
+            font-size:18px;
+        }
+    }
+    .adorn{
+        background: $fly-color-border;
+        padding:$fly-default-padding;
     }
 }

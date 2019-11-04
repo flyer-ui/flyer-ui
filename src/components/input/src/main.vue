@@ -11,13 +11,16 @@
        <input
        :type='type'
        ref='input'
-       :class='{
+       :class='["fly-input__native",
+         `fly-input__native--${size}`,
+         {
          "is-disabled":disabled,
          "is-prefix":isShowPrefix,
          "is-suffix":isShowSuffix,
          "is-prepend":$slots.prepend,
-         "is-append":$slots.append
-       }'
+         "is-append":$slots.append,
+         "is-round":round
+       }]'
        :value='value'
        :disabled="disabled"
        :readonly="readonly"
@@ -27,7 +30,7 @@
        @blur="handleBlur"
        @focus="handleFocus"
        @change="handleChange"
-       class='fly-input__native' v-on:input='handleInput'>
+       v-on:input='handleInput'>
        <span class='fly-input__suffix' v-if='isShowSuffix'>
           <slot name='suffix'>
             <i :class='suffixIcon'></i>
@@ -60,6 +63,17 @@ export default {
     clearable: {
       type: Boolean,
       default: false
+    },
+    round: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String,
+      default: 'medium',
+      validator (value) {
+        return ['large', 'medium', 'small'].indexOf(value) > -1
+      }
     },
     maxLength: Number,
     minLength: Number,

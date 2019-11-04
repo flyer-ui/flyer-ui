@@ -20,6 +20,7 @@ module.exports =  {
 ```html
 <template>
   <fly-input placeholder="请输入内容" v-model="value"></fly-input>
+  <fly-input placeholder="请输入内容" round></fly-input>
 </template>
 <script>
   export default {
@@ -163,6 +164,29 @@ module.exports =  {
 
 :::
 
+### Size
+
+::: demo
+
+```html
+<template>
+  <div class="fly-demo-block__row">
+    <p>
+      <fly-input size='large' placeholder='大尺寸'></fly-input>
+      <fly-input size='medium' placeholder='常规'></fly-input>
+      <fly-input size='small' placeholder='小尺寸'></fly-input>
+    </p>
+    <p>
+      <fly-input size='large' round placeholder='大尺寸'></fly-input>
+      <fly-input size='medium' round placeholder='常规'></fly-input>
+      <fly-input size='small' round placeholder='小尺寸'></fly-input>
+    </p>
+  </div>
+</template>
+```
+
+:::
+
 ### Input - 可定制属性
 
 | 属性名称        | 类型            | 默认值 | 可选值       | 说明                  |
@@ -171,6 +195,8 @@ module.exports =  {
 | type            | String          | -      | text         | 原生 input 的 type 值 |
 | disabled        | Boolean         | false  | true / false | 是否设置为禁用        |
 | readonly        | Boolean         | false  | true / false | 是否设置为只读        |
+| round           | Boolean         | false  | true / false | 输入框占位文本        |
+| size            | String         | medium  | large / medium / small | 输入框占位文本        |
 | clearable       | Boolean         | flase  | true / false | 是否设置为可清除      |
 | max-length      | Number          | -      | -            | 最大输入长度限制      |
 | min-length      | Number          | -      | -            | 最小输入长度限制      |
