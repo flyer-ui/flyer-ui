@@ -3,7 +3,9 @@
        <span class='fly-input__prepend' v-if='$slots.prepend'>
          <slot name='prepend'></slot>
        </span>
-       <span class='fly-input__prefix' v-if='isShowPrefix'>
+       <span :class='[
+       "fly-input__prefix",
+       `fly-input__prefix--${size}`]' v-if='isShowPrefix'>
           <slot name='prefix'>
             <i :class='prefixIcon'></i>
           </slot>
@@ -19,7 +21,7 @@
          "is-suffix":isShowSuffix,
          "is-prepend":$slots.prepend,
          "is-append":$slots.append,
-         "is-round":round
+         "is-round":isRound
        }]'
        :value='value'
        :disabled="disabled"
@@ -31,7 +33,9 @@
        @focus="handleFocus"
        @change="handleChange"
        v-on:input='handleInput'>
-       <span class='fly-input__suffix' v-if='isShowSuffix'>
+       <span :class='[
+          "fly-input__suffix",
+          `fly-input__suffix--${size}`]' v-if='isShowSuffix'>
           <slot name='suffix'>
             <i :class='suffixIcon'></i>
           </slot>
@@ -100,6 +104,11 @@ export default {
     isShowSuffix: {
       get () {
         return this.suffixIcon || this.$slots['suffix']
+      }
+    },
+    isRound: {
+      get () {
+        return this.round && (!this.$slots.append && !this.$slots.prepend)
       }
     }
   },

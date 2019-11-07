@@ -42,6 +42,7 @@ module.exports =  {
 ```html
 <template>
   <fly-input placeholder="请输入内容" disabled v-model="value2"></fly-input>
+  <fly-input readonly value='只读状态'></fly-input>
 </template>
 <script>
   export default {
@@ -113,6 +114,7 @@ module.exports =  {
     <label class="fly-demo-block__label">属性方式：</label>
     <fly-input type="text" prefix-icon="fly-icon-search"></fly-input>
     <fly-input type="text" suffix-icon="fly-icon-edit-3"></fly-input>
+    <fly-input type="text" round prefix-icon="fly-icon-search"></fly-input>
   </div>
   <div class="fly-demo-block__row">
     <label class="fly-demo-block__label">Slot方式：</label>
@@ -120,6 +122,9 @@ module.exports =  {
       <fly-icon slot="prefix" name="search"></fly-icon>
     </fly-input>
     <fly-input type="text">
+      <fly-icon slot="suffix" name="edit-3"></fly-icon>
+    </fly-input>
+    <fly-input round type="text">
       <fly-icon slot="suffix" name="edit-3"></fly-icon>
     </fly-input>
   </div>
@@ -135,10 +140,14 @@ module.exports =  {
 ```html
 <template>
   <div class="fly-demo-block__row">
-    <fly-input>
+    <fly-input round type='text'>
       <span slot="prepend">http://</span>
     </fly-input>
     <fly-input>
+      <span slot="append">.com</span>
+    </fly-input>
+    <fly-input>
+      <span slot="prepend">http://</span>
       <span slot="append">.com</span>
     </fly-input>
   </div>
@@ -147,6 +156,10 @@ module.exports =  {
       <span slot="prepend"><fly-checkbox label="选中">选中</fly-checkbox></span>
     </fly-input>
     <fly-input>
+      <span slot="append"><fly-icon name="calendar"></fly-icon></span>
+    </fly-input>
+    <fly-input>
+      <span slot="prepend"><fly-checkbox label="选中">选中</fly-checkbox></span>
       <span slot="append"><fly-icon name="calendar"></fly-icon></span>
     </fly-input>
   </div>
@@ -172,14 +185,24 @@ module.exports =  {
 <template>
   <div class="fly-demo-block__row">
     <p>
+      <fly-input size='large' prefix-icon="fly-icon-search" placeholder='大尺寸'></fly-input>
+      <fly-input size='medium' prefix-icon="fly-icon-search" placeholder='常规'></fly-input>
+      <fly-input size='small' prefix-icon="fly-icon-search" placeholder='小尺寸'></fly-input>
+    </p>
+    <p>
       <fly-input size='large' placeholder='大尺寸'></fly-input>
       <fly-input size='medium' placeholder='常规'></fly-input>
       <fly-input size='small' placeholder='小尺寸'></fly-input>
     </p>
     <p>
-      <fly-input size='large' round placeholder='大尺寸'></fly-input>
-      <fly-input size='medium' round placeholder='常规'></fly-input>
-      <fly-input size='small' round placeholder='小尺寸'></fly-input>
+      <fly-input size='large' round prefix-icon="fly-icon-search" placeholder='大尺寸'></fly-input>
+      <fly-input size='medium' round prefix-icon="fly-icon-search" placeholder='常规'></fly-input>
+      <fly-input size='small' round prefix-icon="fly-icon-search" placeholder='小尺寸'></fly-input>
+    </p>
+    <p>
+      <fly-input size='large' round suffix-icon="fly-icon-search" placeholder='大尺寸'></fly-input>
+      <fly-input size='medium' round suffix-icon="fly-icon-search" placeholder='常规'></fly-input>
+      <fly-input size='small' round suffix-icon="fly-icon-search" placeholder='小尺寸'></fly-input>
     </p>
   </div>
 </template>
@@ -195,7 +218,7 @@ module.exports =  {
 | type            | String          | -      | text         | 原生 input 的 type 值 |
 | disabled        | Boolean         | false  | true / false | 是否设置为禁用        |
 | readonly        | Boolean         | false  | true / false | 是否设置为只读        |
-| round           | Boolean         | false  | true / false | 输入框占位文本        |
+| round           | Boolean         | false  | true / false | 是否是圆角展示（不支持复合型输入框）        |
 | size            | String         | medium  | large / medium / small | 输入框占位文本        |
 | clearable       | Boolean         | flase  | true / false | 是否设置为可清除      |
 | max-length      | Number          | -      | -            | 最大输入长度限制      |
