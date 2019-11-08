@@ -48,7 +48,7 @@
 ```html
 <template>
   <fly-switch :disabled="disabled"></fly-switch>
-  <fly-checkbox @on-change="handleClick">Taggle disabled</fly-checkbox>
+  <fly-checkbox @change="handleClick">Taggle disabled</fly-checkbox>
 </template>
 <script>
   export default {
@@ -75,7 +75,7 @@
 ```html
 <template>
   <fly-switch
-    @on-change="handleChange"
+    @change="handleChange"
     v-model="value2"
     active-value="1"
     inactive-value="0"
@@ -121,4 +121,4 @@
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |

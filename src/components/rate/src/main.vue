@@ -58,9 +58,9 @@ export default {
     },
     size: {
       type: String,
-      default: 'normal',
+      default: 'medium',
       validator (value) {
-        return ['mini', 'normal', 'large'].indexOf(value) > -1
+        return ['small', 'medium', 'large'].indexOf(value) > -1
       }
     },
     showClear: {
@@ -84,7 +84,7 @@ export default {
         if (!this.disabled) {
           this.selfModel = value
           this.$emit('input', value)
-          this.$emit('on-change', value)
+          this.$emit('change', value)
         }
       }
     },

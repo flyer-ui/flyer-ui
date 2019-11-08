@@ -11,9 +11,9 @@
         :placeholder="placeholder"
         :maxlength='maxLength'
         :minlength='minLength'
-        @focus='$emit("on-focus")'
-        @blur='$emit("on-blur")'
-        @change='$emit("on-change")'
+        @focus='$emit("focus")'
+        @blur='$emit("blur")'
+        @change='$emit("change")'
         v-model='model'></textarea>
     </div>
 </template>

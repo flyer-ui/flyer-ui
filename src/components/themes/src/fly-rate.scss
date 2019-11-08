@@ -1,22 +1,30 @@
 
 
 @include b('rate'){
+    display: inline-flex;
+    vertical-align: middle;
+    justify-content: center;
+    line-height:$fly-default-padding * 2;
     @include e('item'){
         position: relative;
         color:$fly-color-border;
         display: inline-flex;
         cursor: pointer;
         & + & {
-            margin-left:10px;
+            margin-left:$fly-default-padding;
         }
+        
         @include state('disabled'){
             cursor:not-allowed;
         }
-        @include state('mini'){
-            i{font-size:10px !important;}
+        @include state('small'){
+            i{font-size:10px;height:10px;}
+        }
+        @include state('medium'){
+            i{font-size:20px;height:20px;}
         }
         @include state('large'){
-            i{font-size:20px !important;}
+            i{font-size:30px;height:30px;}
         }
         @include state('full'){
             .fly-rate__full{

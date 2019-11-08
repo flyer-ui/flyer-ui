@@ -181,14 +181,14 @@ module.exports =  {
 <template>
   <fly-rate
     icon="fly-icon-heart1"
-    size="mini"
+    size="small"
     v-model="value8"
     allow-half
   ></fly-rate>
   <br />
   <fly-rate
     icon="fly-icon-heart1"
-    size="normal"
+    size="medium"
     v-model="value9"
     allow-half
   ></fly-rate>
@@ -284,10 +284,10 @@ module.exports =  {
 | icon            | String  | fly-icon-star | -                    | 自定义图标            |
 | character       | String  | -             | -                    | 用文字代替图标        |
 | show-text       | Boolean | false         | -                    | 显示数值              |
-| size            | String  | normal        | min / normal / large | 显示大小              |
+| size            | String  | normal        | small / medium / large | 显示大小              |
 
 ### Rate - 可定制事件
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |

@@ -79,7 +79,7 @@
 ```html
 <template>
   <fly-input-number :disabled="disabled"></fly-input-number>
-  <fly-button type="primary" @on-click="handleDisabled"
+  <fly-button type="primary" @click="handleDisabled"
     >Toggle disabled</fly-button
   >
 </template>
@@ -109,7 +109,7 @@
 <template>
   <fly-input-number
     v-model="num2"
-    @on-change="handleChange"
+    @change="handleChange"
     :step="2"
   ></fly-input-number>
   <fly-input-number
@@ -146,11 +146,11 @@
   <fly-input-number
     v-model="value1"
     :formatter="formatter"
-    @on-change="handleChange"
+    @change="handleChange"
   ></fly-input-number>
   <fly-input-number
     v-model="value2"
-    @on-change="handleChange"
+    @change="handleChange"
     :formatter="formatter1"
     :precision="2"
     :step="0.1"
@@ -197,4 +197,4 @@
 
 | 事件名称  | 返回值     | 说明                       |
 | --------- | ---------- | -------------------------- |
-| on-change | 更新后的值 | 在点击选项状态变更时触发。 |
+| change | 更新后的值 | 在点击选项状态变更时触发。 |

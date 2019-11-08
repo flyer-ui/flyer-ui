@@ -2,7 +2,7 @@
 
 @include b('switch'){
     position: relative;
-    display:inline-block;
+    display:inline-flex;
     vertical-align:middle;
     border:1px solid $fly-color-border;
     background: $fly-color-border;
@@ -11,19 +11,19 @@
     border-radius: 100px;
     cursor: pointer;
     user-select: none;
-    min-height: 24px;
-    min-width:60px;
+    min-height: 20px;
+    min-width:40px;
     &:after{
         content:'';
         position: absolute;
         z-index:99;
         top:0px;
         bottom:0px;
-        width:25px;
+        width:20px;
         left:0px;
         right:inherit;
         background-color:#fff;
-        border-radius: 1000px;
+        border-radius: 50%;
     }
     @include state('checked'){
         background-color:$fly-primary-color;
@@ -41,12 +41,12 @@
         display:none;
     }
     @include e('active'){
-        float:left;
         color:#fff;
         display: inline-block;
+        padding-right:20px;
     }
     @include e('inactive'){
-        float:right;
+        padding-left:20px;
         color:#fff;
         display: inline-block;
     }

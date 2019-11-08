@@ -72,7 +72,7 @@ export default {
             value = this.max
           }
           this.$emit('input', value)
-          this.$emit('on-change', value)
+          this.$emit('change', value)
         }
         this.selfModel = value
       }
@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     handleBlur () {
-      this.$emit('on-blur', this.model)
+      this.$emit('blur', this.model)
     },
     handleChange (e) {
       this.model = e.target.value = this.filterValue(e.target.value)

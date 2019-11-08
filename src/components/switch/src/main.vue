@@ -58,7 +58,7 @@ export default {
   methods: {
     handleChange ($event) {
       this.$nextTick(() => {
-        this.$emit('on-change', this.model)
+        this.$emit('change', this.model)
       })
     }
   }
