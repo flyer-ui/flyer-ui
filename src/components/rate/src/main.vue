@@ -95,7 +95,6 @@ export default {
   methods: {
     handleFullOver ($event, value) {
       if (this.disabled) return ''
-      this.clearTimer()
       this.hoverValue = value
       this.addClass($event.target, 'is-full')
     },
@@ -105,7 +104,6 @@ export default {
     },
     handleHalfOver ($event, value) {
       if (this.disabled) return ''
-      this.clearTimer()
       this.hoverValue = value
       this.addClass($event.target, 'is-half')
     },
@@ -129,14 +127,7 @@ export default {
       target.parentNode.classList.remove(name)
     },
     initialHoverValue () {
-      this.timer = setTimeout(() => {
-        this.hoverValue = -1
-      }, 500)
-    },
-    clearTimer () {
-      if (this.timer) {
-        clearTimeout(this.timer)
-      }
+      this.hoverValue = -1
     }
   }
 }
