@@ -45,8 +45,10 @@ $state-prefix:'is-' !default;
 
 // @include state('state name')
 @mixin state($state) {
-  @at-root &.#{$state-prefix+$state} {
-      @content;
+  @each $unit in $state{
+    @at-root &.#{$state-prefix+$unit} {
+        @content;
+    }
   }
 }
 

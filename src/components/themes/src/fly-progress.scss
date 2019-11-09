@@ -9,9 +9,11 @@
         position: relative;
         display: inline-block;
         width:100%;
-        margin-right:calc(-3em - 10px);
-        padding-right:calc(3em + 10px);
         box-sizing: border-box;
+        @include state('show-text'){
+            margin-right:calc(-3em - 10px);
+            padding-right:calc(3em + 10px);
+        }
 
     }
     @include e('outer'){
@@ -48,8 +50,9 @@
         display: inline-block;
         font-size:12px;
         border-radius: 100%;
-        i{
-            font-size:12px !important;
+        i[class^="fly-icon-"]{
+            font-size:14px;
+            display: block;
         }
         @include state('error'){
             color:$fly-danger-color;

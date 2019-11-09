@@ -1,6 +1,6 @@
 <template>
     <div class='fly-progress'>
-        <div class='fly-progress__bar'>
+        <div :class='["fly-progress__bar",{"is-show-text":isShowStatus}]'>
             <div class='fly-progress__outer'>
                 <div :class='["fly-progress__inner",`is-${status}`]' :style='{"width":`${percentage}%`}'>
                 </div>
