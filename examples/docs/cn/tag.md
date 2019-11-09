@@ -41,16 +41,16 @@
 ```html
 <template>
   <fly-tag
-    @on-close="handleClose(item)"
+    @close="handleClose(item)"
     closable
     type="primary"
     v-for="(item,index) in items"
     :key="index"
     >{{item}}</fly-tag
   >
-  <fly-button v-show="!showInput" @on-click="handleAdd">New Tag</fly-button>
+  <fly-button v-show="!showInput" @click="handleAdd">New Tag</fly-button>
   <fly-input
-    @on-blur="handleBlur"
+    @blur="handleBlur"
     v-show="showInput"
     v-model="newValue"
   ></fly-input>
@@ -96,4 +96,4 @@
 
 | 事件名称 | 返回值 | 说明             |
 | -------- | ------ | ---------------- |
-| on-close | -      | 关闭标签后的事件 |
+| close | -      | 关闭标签后的事件 |

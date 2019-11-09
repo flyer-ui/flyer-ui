@@ -13,32 +13,33 @@ $white:#FFFFFF;
 $fly-primary-color:mixColor($primary,90%);
 $fly-primary-active-color:$primary;
 $fly-primary-hover-color:mixColor($primary,80%);
-
+$fly-primary-bg-color:mixColor($primary,10%);
 
 //辅助色
 $fly-default-color:mixColor($default,10%);
 $fly-default-active-color:mixColor($default,15%);
 $fly-default-hover-color:mixColor($default,5%);
+$fly-default-bg-color:mixColor($default,10%);
 
 $fly-success-color:mixColor($success,90%);
 $fly-success-active-color:$success;
 $fly-success-hover-color:mixColor($success,80%);
-
+$fly-success-bg-color:mixColor($success,10%);
 
 $fly-info-color:mixColor($info,90%);
 $fly-info-active-color:$info;
 $fly-info-hover-color:mixColor($info,80%);
-
+$fly-info-bg-color:mixColor($info,10%);
 
 $fly-warning-color:mixColor($warning,90%);
 $fly-warning-active-color:$warning;
 $fly-warning-hover-color:mixColor($warning,80%);
-
+$fly-warning-bg-color:mixColor($warning,10%);
 
 $fly-danger-color:mixColor($danger,90%);
 $fly-danger-active-color:$danger;
 $fly-danger-hover-color:mixColor($danger,80%);
-
+$fly-danger-bg-color:mixColor($danger,10%);
 
 //中性色(文本颜色)
 $font-color-title:#333333;

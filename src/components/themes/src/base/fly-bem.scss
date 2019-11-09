@@ -61,3 +61,11 @@ $state-prefix:'is-' !default;
       @content;
   }
 }
+
+@mixin modifier-element($block,$element) {
+  @include b($block){
+    @include e($element){
+      @content;
+    }
+  }
+}

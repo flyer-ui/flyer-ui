@@ -1,45 +1,92 @@
-
-
-@include b('tag'){
-    position: relative;
-    border:1px solid $fly-color-border;
-    padding:5px;
-    border-radius:$fly-round-default-size;
-    user-select: none;
-    &+&{
-        margin-left:10px;
-    }
-    @include e('close'){
-        >i.fly-icon-x{
-            cursor: pointer;
-            &:hover{
-                opacity: .7;
-            }
+@mixin tag-variant($color, $backgroundColor) {
+    display: inline-flex;
+    margin-left: 5px;
+    >i.fly-icon-x {
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        font-size:12px;
+        &:hover {
+            background-color: $backgroundColor;
+            color: $color;
         }
     }
-    @include state('primary'){
-        color:$fly-primary-color;
-        background: $fly-primary-color;
-        border:1px solid $fly-primary-color;
+}
+
+@include b('tag') {
+    position: relative;
+    border: 1px solid $fly-color-border;
+    padding: $fly-default-padding;
+    font-size: 12px;
+    border-radius: $fly-round-default-size;
+    user-select: none;
+    display: inline-flex;
+    height: 32px;
+    box-sizing: border-box;
+    align-items: center;
+
+    &+& {
+        margin-left: 10px;
     }
-    @include state('success'){
-        color:$fly-success-color;
-        background: $fly-success-color;
-        border:1px solid $fly-success-color;
+
+    @include m('default') {
+        color: $default;
+        background: $white;
+        border: 1px solid $fly-color-border;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($white, $fly-color-border);
+        }
     }
-    @include state('info'){
-        color:$fly-info-color;
-        background: $fly-info-color,;
-        border:1px solid $fly-info-color;
+
+    @include m('primary') {
+        color: $fly-primary-color;
+        background: $fly-primary-bg-color;
+        border: 1px solid $fly-primary-color;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($fly-primary-bg-color, $fly-primary-color);
+        }
     }
-    @include state('warning'){
-        color:$fly-warning-color;
-        background: $fly-warning-color;
-        border:1px solid $fly-warning-color;
+
+    @include m('success') {
+        color: $fly-success-hover-color;
+        background: $fly-success-bg-color;
+        border: 1px solid $fly-success-hover-color;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($fly-success-bg-color, $fly-success-color);
+        }
     }
-    @include state('danger'){
-        color:$fly-danger-color;
-        background: $fly-danger-color;
-        border:1px solid $fly-danger-color;
+
+    @include m('info') {
+        color: $fly-info-color;
+        background: $fly-info-bg-color, ;
+        border: 1px solid $fly-info-color;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($fly-info-bg-color, $fly-info-color);
+        }
+    }
+
+    @include m('warning') {
+        color: $fly-warning-color;
+        background: $fly-warning-bg-color;
+        border: 1px solid $fly-warning-color;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($fly-warning-bg-color, $fly-warning-color);
+        }
+    }
+
+    @include m('danger') {
+        color: $fly-danger-color;
+        background: $fly-danger-bg-color;
+        border: 1px solid $fly-danger-color;
+
+        @include modifier-element('tag', 'close') {
+            @include tag-variant($fly-danger-bg-color, $fly-danger-color);
+        }
     }
 }
