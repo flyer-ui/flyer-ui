@@ -10,20 +10,20 @@
         border-radius: 100px;
         cursor: pointer;
     }
-    @include state('success'){
-        background: $fly-success-color;
+    @include m('success'){
+        background: $fly-success-bg-color;
         color:$fly-success-color;
     }
-    @include state('warning'){
-        background: $fly-warning-color;
+    @include m('warning'){
+        background: $fly-warning-bg-color;
         color:$fly-warning-color;
     }
-    @include state('info'){
-        background: $fly-info-color;
+    @include m('info'){
+        background: $fly-info-bg-color;
         color:$fly-info-color;
     }
-    @include state('danger'){
-        background: $fly-danger-color;
+    @include m('danger'){
+        background: $fly-danger-bg-color;
         color:$fly-danger-color;
     }
 }

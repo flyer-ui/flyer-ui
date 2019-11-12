@@ -106,8 +106,8 @@ module.exports =  {
       show-text
     ></fly-progress>
     <br />
-    <fly-button @click="addition">+</fly-button>
-    <fly-button @click="reduce">-</fly-button>
+    <fly-button @click="addition" size='mini'>+</fly-button>
+    <fly-button @click="reduce" size='mini'>-</fly-button>
   </div>
 </template>
 <script>

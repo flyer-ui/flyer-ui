@@ -1,5 +1,5 @@
 <template>
-    <div :class='["fly-alert",`is-${type}`]' v-show="show">
+    <div :class='["fly-alert",`fly-alert--${type}`]' v-show="show">
         <slot name='title'>{{title}}</slot>
         <i v-if='closable' class='fly-icon-x fly-alert__close' @click='handleClose'></i>
     </div>
