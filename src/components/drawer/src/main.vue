@@ -40,12 +40,12 @@ export default {
   methods: {
     handleClose ($event) {
       this.model = false
-      this.$emit('on-closed', $event)
+      this.$emit('closed', $event)
     },
     handleClickMask ($event) {
       if (this.maskClosable) {
         this.model = false
-        this.$emit('on-closed', $event)
+        this.$emit('closed', $event)
       }
     }
   }

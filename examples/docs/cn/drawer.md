@@ -30,8 +30,8 @@ module.exports = {
 
 ```html
 <template>
-  <fly-button @on-click="visibleDrawer=true">Open</fly-button>
-  <fly-drawer @on-closed="handleClosed" v-model="visibleDrawer">
+  <fly-button type='primary' @click="visibleDrawer=true">Open</fly-button>
+  <fly-drawer @closed="handleClosed" v-model="visibleDrawer">
     <div slot="header">Header</div>
     <div>
       Content
@@ -63,7 +63,7 @@ module.exports = {
 
 ```html
 <template>
-  <fly-button @on-click="visibleDrawer2=true">Open</fly-button>
+  <fly-button type='primary' @click="visibleDrawer2=true">Open</fly-button>
   <fly-drawer
     :show-close="false"
     :mask-closable="false"
@@ -78,8 +78,8 @@ module.exports = {
       </ul>
     </div>
     <div class="fly-demo-block__buttons fly-demo-block__drawer-buttons">
-      <fly-button @on-click="handleCancel">取消</fly-button>
-      <fly-button @on-click="handleSave" type="primary">保存</fly-button>
+      <fly-button @click="handleCancel">取消</fly-button>
+      <fly-button @click="handleSave" type="primary">保存</fly-button>
     </div>
   </fly-drawer>
 </template>
@@ -119,4 +119,4 @@ module.exports = {
 
 | 事件名称  | 返回值 | 说明           |
 | --------- | ------ | -------------- |
-| on-closed | -      | 关闭之后的回调 |
+| closed | -      | 关闭之后的回调 |

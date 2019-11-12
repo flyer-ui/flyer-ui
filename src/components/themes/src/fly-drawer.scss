@@ -12,20 +12,21 @@
     }
     @include e('header'){
         position:relative;
-        padding:10px 15px;
+        padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
         box-sizing:border-box;
         border-bottom: 1px solid $fly-color-border;
     }
     @include e('body'){
-        padding:10px 15px;
+        padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
     }
     @include e('close'){
         position:absolute;
         z-index: 1;
-        top:10px;
-        right:15px;
+        top:$fly-default-padding * 1.5;
+        right:$fly-default-padding * 2;
         cursor: default;
         border-radius: 100%;
+        cursor: pointer;
         &:hover{
             background-color:rgba($fly-color-border,1)
         }
