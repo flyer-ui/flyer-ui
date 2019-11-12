@@ -36,12 +36,12 @@
 
 ```html
 <template>
-  <fly-button type="primary" @on-click="openNormal">Normal</fly-button>
-  <fly-button type="success" @on-click="openSuccess">Success</fly-button>
-  <fly-button type="warning" @on-click="openWarning">Warning</fly-button>
-  <fly-button type="danger" @on-click="openError">Error</fly-button>
-  <fly-button type="info" @on-click="openLoading">Loading</fly-button>
-  <fly-button @on-click="openClosable">Closable</fly-button>
+  <fly-button type="primary" @click="openNormal">Normal</fly-button>
+  <fly-button type="success" @click="openSuccess">Success</fly-button>
+  <fly-button type="warning" @click="openWarning">Warning</fly-button>
+  <fly-button type="danger" @click="openError">Error</fly-button>
+  <fly-button type="info" @click="openLoading">Loading</fly-button>
+  <fly-button @click="openClosable">Closable</fly-button>
 </template>
 <script>
   export default {
@@ -91,4 +91,4 @@
 
 | 事件名称  | 返回值 | 说明                 |
 | --------- | ------ | -------------------- |
-| on-closed | -      | 关闭时触发的回调函数 |
+| closed | -      | 关闭时触发的回调函数 |

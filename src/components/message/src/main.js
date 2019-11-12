@@ -26,7 +26,7 @@ let Instance = (content, type, duration, options) => {
   }, options)
   let vm = new Comp({propsData: options}).$mount(document.createElement('div'))
 
-  vm.$on('on-closed', () => {
+  vm.$on('closed', () => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })

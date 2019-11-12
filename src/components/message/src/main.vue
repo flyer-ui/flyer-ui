@@ -56,11 +56,11 @@ export default {
   },
   methods: {
     handleClose () {
-      this.$emit('on-closed')
+      this.$emit('closed')
     },
     startTimer () {
       let timer = setTimeout(() => {
-        this.$emit('on-closed')
+        this.$emit('closed')
         clearTimeout(timer)
       }, this.duration * 1000)
     }
