@@ -9,15 +9,15 @@ let Instance = (options) => {
   }, options)
   let Comp = Vue.extend(tmplModal)
   let vm = new Comp({propsData: options}).$mount(document.createElement('div'))
-  vm.$on('on-confirm', () => {
+  vm.$on('confirm', () => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onConfirm === 'function' && options.onConfirm.apply(vm)
   })
-  vm.$on('on-cancel', () => {
+  vm.$on('cancel', () => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onCancel === 'function' && options.onCancel.apply(vm)
   })
-  vm.$on('on-closed', () => {
+  vm.$on('closed', () => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })

@@ -13,8 +13,8 @@
         </div>
         <div class='fly-modal__footer'>
           <slot name='footer'>
-            <fly-button type='primary' :loading='showLoading' @on-click='handleConfrim'>{{confirmText}}</fly-button>
-            <fly-button v-if='showCancel' @on-click='handleCancel'>{{cancelText}}</fly-button>
+            <fly-button type='primary' :loading='showLoading' @click='handleConfrim'>{{confirmText}}</fly-button>
+            <fly-button v-if='showCancel' @click='handleCancel'>{{cancelText}}</fly-button>
           </slot>
         </div>
       </div>
@@ -92,11 +92,11 @@ export default{
   methods: {
     handleClose ($event) {
       this.model = false
-      this.$emit('on-closed', $event)
+      this.$emit('closed', $event)
     },
     handleCancel ($event) {
       this.model = false
-      this.$emit('on-cancel', $event)
+      this.$emit('cancel', $event)
     },
     handleConfrim ($event) {
       if (!this.confirmLoading) {
@@ -104,7 +104,7 @@ export default{
       } else {
         this.showLoading = this.confirmLoading
       }
-      this.$emit('on-confirm', $event)
+      this.$emit('confirm', $event)
     },
     handleModal ($event) {
       if (this.maskClosable) {

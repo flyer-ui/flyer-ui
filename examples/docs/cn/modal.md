@@ -97,7 +97,7 @@
 
 ```html
 <template>
-  <fly-button @on-click="handleOpen1">基本使用</fly-button>
+  <fly-button type='primary' @click="handleOpen1">基本使用</fly-button>
   <fly-modal v-model="open1" title="Title1">
     <ul>
       <li>Hello Modal!</li>
@@ -129,18 +129,18 @@
 
 ```html
 <template>
-  <fly-button @on-click="handleOpen2">设置closable</fly-button>
+  <fly-button type='primary' @click="handleOpen2">设置closable</fly-button>
   <fly-modal v-model="open2" :closable="false" title="Title2">
     <ul>
       <li>Hello Modal!</li>
       <li>Hello Modal2</li>
     </ul>
   </fly-modal>
-  <fly-button @on-click="handleOpen3">设置宽度300px</fly-button>
+  <fly-button type='primary' @click="handleOpen3">设置宽度300px</fly-button>
   <fly-modal
     v-model="open3"
     width="300px"
-    @on-closed="handleClosed3"
+    @closed="handleClosed3"
     title="Title3"
   >
     <ul>
@@ -148,20 +148,20 @@
       <li>Hello Modal2</li>
     </ul>
   </fly-modal>
-  <fly-button @on-click="open6=true">允许点击摭罩层关闭modal框</fly-button>
+  <fly-button type='primary' @click="open6=true">允许点击摭罩层关闭modal框</fly-button>
   <fly-modal v-model="open6" mask-closable width="300px" title="Title6">
     <ul>
       <li>Hello Modal!</li>
       <li>Hello Modal2</li>
     </ul>
   </fly-modal>
-  <fly-button @on-click="handleOpen5">设置对话框挂起状态</fly-button>
+  <fly-button type='primary' @click="handleOpen5">设置对话框挂起状态</fly-button>
   <fly-modal
     v-model="open5"
     width="400px"
-    @on-closed="handleClosed3"
-    @on-confirm="handleConfirm5"
-    @on-cancel="handleCancel5"
+    @closed="handleClosed3"
+    @confirm="handleConfirm5"
+    @cancel="handleCancel5"
     confirm-loading
     :markClosable="false"
     title="Title5"
@@ -170,7 +170,7 @@
       <li>点击确定的话，3秒后我会自动关闭</li>
     </ul>
   </fly-modal>
-  <fly-button @on-click="open8=true">带Icon的Modal框</fly-button>
+  <fly-button type='primary' @click="open8=true">带Icon的Modal框</fly-button>
   <fly-modal
     icon="fly-icon-alert-circle"
     v-model="open8"
@@ -225,7 +225,7 @@
 
 ```html
 <template>
-  <fly-button @on-click="handleOpen4">自定义Slot</fly-button>
+  <fly-button type='primary' @click="handleOpen4">自定义Slot</fly-button>
   <fly-modal v-model="open4">
     <div slot="header">
       Title4
@@ -236,11 +236,11 @@
       <li>Three</li>
     </ul>
     <div slot="footer">
-      <fly-button type="primary" @on-click="handleClose">确认</fly-button>
-      <fly-button @on-click="handleClose">取消</fly-button>
+      <fly-button type="primary" @click="handleClose">确认</fly-button>
+      <fly-button @click="handleClose">取消</fly-button>
     </div>
   </fly-modal>
-  <fly-button @on-click="open7=true">无标题</fly-button>
+  <fly-button type='primary' @click="open7=true">无标题</fly-button>
   <fly-modal v-model="open7">
     <ul>
       <li>One</li>
@@ -276,11 +276,11 @@
 
 ```html
 <template>
-  <fly-button type="primary" @on-click="openConfirm">Confirm</fly-button>
-  <fly-button type="info" @on-click="openInfo">Info</fly-button>
-  <fly-button type="warning" @on-click="openWarning">Warning</fly-button>
-  <fly-button type="danger" @on-click="openDanger">Danger</fly-button>
-  <fly-button type="success" @on-click="openSuccess">Success</fly-button>
+  <fly-button type="primary" @click="openConfirm">Confirm</fly-button>
+  <fly-button type="info" @click="openInfo">Info</fly-button>
+  <fly-button type="warning" @click="openWarning">Warning</fly-button>
+  <fly-button type="danger" @click="openDanger">Danger</fly-button>
+  <fly-button type="success" @click="openSuccess">Success</fly-button>
 </template>
 <script>
   export default {
@@ -354,9 +354,9 @@
 
 | 事件名称   | 返回值         | 说明                            |
 | ---------- | -------------- | ------------------------------- |
-| on-closed  | (event: Event) | 当点击右上角关闭 modal 后的回调 |
-| on-confirm | -              | 当点击确定后回调                |
-| on-cancel  | -              | 当点击取消后回调                |
+| closed  | (event: Event) | 当点击右上角关闭 modal 后的回调 |
+| confirm | -              | 当点击确定后回调                |
+| cancel  | -              | 当点击取消后回调                |
 
 ### Modal - Slot
 

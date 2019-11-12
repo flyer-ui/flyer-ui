@@ -28,12 +28,10 @@ $fly-modal-padding:10px;
 
     @include e('content'){  
         z-index: $fly-modal-zindex + 1;
-        border:1px solid $fly-color-border;
         border-radius:$fly-round-default-size;
         margin:0px auto;
         margin-top: 5%;
         position: relative;
-        box-shadow: 1px 1px 10px rgba($font-color-common,0.7); 
         @extend .box;
     }
     @include e('header'){
@@ -42,14 +40,18 @@ $fly-modal-padding:10px;
         border-top-left-radius: $fly-round-default-size;
         padding:15px 20px;
         font-weight: 800;
+        font-size:$fly-font-title-size;
+        background-color:mixColor($font-color-placeholder,10%);
     }
     @include e('close'){
         position: absolute;
         z-index: 1;
-        right:10px;
-        top:15px;
+        right:$fly-default-padding * 2 ;
+        top:$fly-default-padding * 2 ;
         width:16px;
         height:16px;
+        line-height:16px;
+        font-size:16px;
         border-radius: 100%;
         cursor: pointer;
         &:hover{
@@ -60,15 +62,13 @@ $fly-modal-padding:10px;
         padding:15px 20px;
     }
     @include e('footer'){
-        padding: 10px;
+        padding: $fly-default-padding * 2;
         text-align:right;
-        border-top:1px solid $fly-color-border;
         border-bottom-right-radius: $fly-round-default-size;
         border-bottom-left-radius: $fly-round-default-size;
     }
     @include e('icon'){
-        font-size:20px !important;
-        vertical-align: -10;
+        vertical-align: top;
         color:$fly-primary-color;
     }
 
