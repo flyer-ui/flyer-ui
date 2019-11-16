@@ -221,6 +221,12 @@
             "pending":false
         },
         {
+            "text": "Popover 弹出层",
+            "type": "item",
+            "path": "popover",
+            "pending":false
+        },
+        {
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",
