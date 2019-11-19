@@ -98,6 +98,7 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 export default {
+  Version: '1.2.1',
   install,
   Button,
   ButtonGroup,
