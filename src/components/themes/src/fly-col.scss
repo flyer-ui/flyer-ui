@@ -1,3 +1,4 @@
+@import "./base/index.scss";
 $span:24;
 @mixin col($i){
   width:percentage($i / $span);

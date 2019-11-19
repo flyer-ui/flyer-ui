@@ -1,3 +1,4 @@
+@import "./base/index.scss";
 @include b('card'){
     position: relative;
     border-radius: $fly-round-default-size;

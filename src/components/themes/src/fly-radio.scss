@@ -1,4 +1,5 @@
 
+@import "./base/index.scss";
 
 $fly-radio-border-radius:50% !default;
 $fly-radio-width:20px !default;
@@ -9,7 +10,7 @@ $fly-radio-padding-area:5px;
     user-select: none;
     display:inline-flex;
     box-sizing:border-box;
-    line-height:$fly-checkbox-height ;
+    line-height:$fly-radio-height ;
     vertical-align:middle;
     &+& {
         margin-left: 10px;

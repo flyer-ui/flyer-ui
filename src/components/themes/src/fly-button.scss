@@ -1,4 +1,4 @@
-
+@import "./base/index.scss";
 @mixin button-plain($color,$background-color,$border-color,$varint-color){
     background-color:$background-color;
     color:$color;

@@ -1,3 +1,4 @@
+@import "./base/index.scss";
 @mixin tag-variant($color, $backgroundColor) {
     display: inline-flex;
     margin-left: 5px;

@@ -1,6 +1,6 @@
 
 
-
+@import "./base/index.scss";
 @include b('message'){
     position: fixed;
     pointer-events:none;

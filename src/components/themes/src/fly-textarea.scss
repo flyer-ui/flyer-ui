@@ -1,4 +1,4 @@
-
+@import "./base/index.scss";
 @include b('textarea'){
     display: inline-block;
     @include e('native'){
