@@ -16,6 +16,7 @@ $fly-modal-padding:10px;
         box-sizing: border-box;
         position: relative;
         background: #fff;
+        color:$font-color-common;
     }
     .cover{
         top:0px;
@@ -32,6 +33,7 @@ $fly-modal-padding:10px;
         margin:0px auto;
         margin-top: 5%;
         position: relative;
+        text-align: left;
         @extend .box;
     }
     @include e('header'){
@@ -42,6 +44,7 @@ $fly-modal-padding:10px;
         font-weight: 800;
         font-size:$fly-font-title-size;
         background-color:mixColor($font-color-placeholder,10%);
+        text-align: left;
     }
     @include e('close'){
         position: absolute;
@@ -60,6 +63,7 @@ $fly-modal-padding:10px;
     }
     @include e('body'){
         padding:15px 20px;
+        overflow: auto;
     }
     @include e('footer'){
         padding: $fly-default-padding * 2;

@@ -114,6 +114,7 @@ module.exports = {
 | width           | String  | 300px(最小宽度) | -      | 设置宽度               |
 | mask-closable   | Boolean | -               | -      | 是否可以点击摭罩层关闭 |
 | show-close      | Boolean | false           | -      | 是否显示关闭图标       |
+| show-mask      | Boolean | true           | -      | 是否显示摭罩层       |
 
 ### Drawer - 可定制的事件
 
