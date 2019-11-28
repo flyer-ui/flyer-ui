@@ -343,7 +343,8 @@
 | title           | String  | -      | -                                           | Modal 的显示标题                                                                                  |
 | content         | String  | -      | -                                           | Modal 的显示内容                                                                                  |
 | closable        | Boolean | true   | true / false                                | 是否显示右上角的关闭按钮，关闭后 Esc 按键也将关闭                                                 |
-| width           | String  | 50%    | -                                           | 模态框的宽度                                                                                      |
+| width           | String  | 50vw    | -                                           | 模态框的宽度   
+| height           | String  | 60vh   | -                                           | 模态框的高度                                                                           |
 | confirm-loading | Boolean | false  | -                                           | 确定按钮点击后呈现 loading 挂起状态，但需要在挂起状态结束后，手动设置 v-model 绑定值关闭 modal 框 |
 | close-closable  | Boolean | false  | -                                           | 允许点击摭罩层关闭                                                                                |
 | type            | Sting   | -      | success / confirm / info / warning / danger | 使用语法糖快捷定制 modal 的类型                                                                   |

@@ -1,6 +1,6 @@
 <template>
     <div :class='["fly-modal",styles]' @click='handleModal' v-if="model">
-      <div class='fly-modal__content' :style='{"width":width}'>
+      <div class='fly-modal__content' :style='{"width":width,"height":height}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>
             <i :class='["fly-modal__icon",icon]'></i>
@@ -33,7 +33,11 @@ export default{
     },
     width: {
       type: String,
-      default: '50%'
+      default: '50vw'
+    },
+    height: {
+      type: String,
+      default: '60vh'
     },
     confirmLoading: {
       type: Boolean,

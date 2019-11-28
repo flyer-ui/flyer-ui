@@ -31,7 +31,7 @@ $fly-modal-padding:10px;
         z-index: $fly-modal-zindex + 1;
         border-radius:$fly-round-default-size;
         margin:0px auto;
-        margin-top: 5%;
+        margin-top: 5vh;
         position: relative;
         text-align: left;
         @extend .box;
@@ -40,9 +40,9 @@ $fly-modal-padding:10px;
         border-bottom:1px solid $fly-color-border;
         border-top-right-radius: $fly-round-default-size;
         border-top-left-radius: $fly-round-default-size;
-        padding:15px 20px;
+        padding:$fly-default-padding * 1.5 $fly-modal-padding * 2;
         font-weight: 800;
-        font-size:$fly-font-title-size;
+        font-size:$fly-font-mini_title-size;
         background-color:mixColor($font-color-placeholder,10%);
         text-align: left;
     }
@@ -66,7 +66,7 @@ $fly-modal-padding:10px;
         overflow: auto;
     }
     @include e('footer'){
-        padding: $fly-default-padding * 2;
+        padding:$fly-default-padding * 1.5 $fly-modal-padding * 2;
         text-align:right;
         border-bottom-right-radius: $fly-round-default-size;
         border-bottom-left-radius: $fly-round-default-size;
