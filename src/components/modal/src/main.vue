@@ -1,6 +1,6 @@
 <template>
     <div :class='["fly-modal",styles]' @click='handleModal' v-if="model">
-      <div class='fly-modal__content' :style='{"width":width}'>
+      <div class='fly-modal__content' :style='{"width":width,"height":height}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>
             <i :class='["fly-modal__icon",icon]'></i>
@@ -13,8 +13,8 @@
         </div>
         <div class='fly-modal__footer'>
           <slot name='footer'>
-            <fly-button type='primary' :loading='showLoading' @click='handleConfrim'>{{confirmText}}</fly-button>
-            <fly-button v-if='showCancel' @click='handleCancel'>{{cancelText}}</fly-button>
+            <fly-button type='primary' size='medium' :loading='showLoading' @click='handleConfrim'>{{confirmText}}</fly-button>
+            <fly-button v-if='showCancel' size='medium' @click='handleCancel'>{{cancelText}}</fly-button>
           </slot>
         </div>
       </div>
@@ -33,7 +33,11 @@ export default{
     },
     width: {
       type: String,
-      default: '50%'
+      default: '80%'
+    },
+    height: {
+      type: String,
+      default: '300px'
     },
     confirmLoading: {
       type: Boolean,

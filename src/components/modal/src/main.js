@@ -21,7 +21,7 @@ let Instance = (options) => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onClosed === 'function' && options.onClosed.apply(vm)
   })
-  document.body.append(vm.$el)
+  document.body.appendChild(vm.$el)
 }
 
 let $Modal = {

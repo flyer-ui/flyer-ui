@@ -1,6 +1,6 @@
 <template>
     <div class='fly-drawer' v-show='model' :style='{"width":width}'>
-        <div class='fly-drawer__mask' @click='handleClickMask'></div>
+        <div class='fly-drawer__mask' v-if='showMask' @click='handleClickMask'></div>
         <div class='fly-drawer__content'>
             <div class='fly-drawer__header'>
                 <slot name='header'></slot>
@@ -21,6 +21,10 @@ export default {
     showClose: {
       type: Boolean,
       default: true
+    },
+    showMask: {
+      type: Boolean,
+      default: false
     },
     maskClosable: {
       type: Boolean,

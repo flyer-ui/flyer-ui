@@ -139,5 +139,7 @@ export default {
   Main,
   Footer,
   Aside,
-  ColorCard
+  ColorCard,
+  $message,
+  $modal
 }

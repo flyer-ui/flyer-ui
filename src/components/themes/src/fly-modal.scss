@@ -16,6 +16,7 @@ $fly-modal-padding:10px;
         box-sizing: border-box;
         position: relative;
         background: #fff;
+        color:$font-color-common;
     }
     .cover{
         top:0px;
@@ -30,24 +31,24 @@ $fly-modal-padding:10px;
         z-index: $fly-modal-zindex + 1;
         border-radius:$fly-round-default-size;
         margin:0px auto;
-        margin-top: 5%;
+        margin-top: 5vh;
         position: relative;
+        text-align: left;
         @extend .box;
     }
     @include e('header'){
-        border-bottom:1px solid $fly-color-border;
         border-top-right-radius: $fly-round-default-size;
         border-top-left-radius: $fly-round-default-size;
-        padding:15px 20px;
+        padding:$fly-default-padding;
         font-weight: 800;
-        font-size:$fly-font-title-size;
-        background-color:mixColor($font-color-placeholder,10%);
+        font-size:$fly-font-mini_title-size;
+        text-align: left;
     }
     @include e('close'){
         position: absolute;
         z-index: 1;
-        right:$fly-default-padding * 2 ;
-        top:$fly-default-padding * 2 ;
+        right:$fly-default-padding * 1 ;
+        top:$fly-default-padding * 1 ;
         width:16px;
         height:16px;
         line-height:16px;
@@ -59,13 +60,22 @@ $fly-modal-padding:10px;
         }
     }
     @include e('body'){
-        padding:15px 20px;
+        padding:$fly-round-default-size;
+        overflow: auto;
+        min-height:80px;
+        margin-bottom: 60px;
     }
     @include e('footer'){
-        padding: $fly-default-padding * 2;
+        padding:$fly-default-padding * 1;
         text-align:right;
         border-bottom-right-radius: $fly-round-default-size;
         border-bottom-left-radius: $fly-round-default-size;
+        position: absolute;
+        z-index:1;
+        text-align: right;
+        width:100%;
+        box-sizing:border-box;
+        bottom:0px;
     }
     @include e('icon'){
         vertical-align: top;
