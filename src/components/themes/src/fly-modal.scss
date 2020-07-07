@@ -60,7 +60,7 @@ $fly-modal-padding:10px;
         }
     }
     @include e('body'){
-        padding:$fly-round-default-size;
+        padding:$fly-default-padding * 1;
         overflow: auto;
         min-height:80px;
         margin-bottom: 60px;
@@ -78,7 +78,7 @@ $fly-modal-padding:10px;
         bottom:0px;
     }
     @include e('icon'){
-        vertical-align: top;
+        vertical-align: inherit;
         color:$fly-primary-color;
     }
 

@@ -36,8 +36,7 @@ export default{
       default: '80%'
     },
     height: {
-      type: String,
-      default: '300px'
+      type: String
     },
     confirmLoading: {
       type: Boolean,
