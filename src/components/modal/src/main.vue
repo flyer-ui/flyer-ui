@@ -13,8 +13,8 @@
         </div>
         <div class='fly-modal__footer'>
           <slot name='footer'>
-            <fly-button type='primary' :loading='showLoading' @click='handleConfrim'>{{confirmText}}</fly-button>
-            <fly-button v-if='showCancel' @click='handleCancel'>{{cancelText}}</fly-button>
+            <fly-button type='primary' size='medium' :loading='showLoading' @click='handleConfrim'>{{confirmText}}</fly-button>
+            <fly-button v-if='showCancel' size='medium' @click='handleCancel'>{{cancelText}}</fly-button>
           </slot>
         </div>
       </div>
@@ -33,11 +33,11 @@ export default{
     },
     width: {
       type: String,
-      default: '50vw'
+      default: '80%'
     },
     height: {
       type: String,
-      default: '60vh'
+      default: '300px'
     },
     confirmLoading: {
       type: Boolean,
