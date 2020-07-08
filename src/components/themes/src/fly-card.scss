@@ -2,9 +2,9 @@
 @include b('card'){
     position: relative;
     border-radius: $fly-round-default-size;
-    border:1px solid $fly-color-border;
     padding:10px;
     box-sizing: border-box;
+    box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
     @include e('header'){
         border-bottom: 1px solid $fly-color-border;
         padding:$fly-default-padding;

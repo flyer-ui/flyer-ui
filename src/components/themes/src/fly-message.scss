@@ -10,7 +10,6 @@
     top:0px;
     @include e('notice'){
         margin-top: 10px;
-        // position: fixed;
     }
     @include e('content'){
         background: #fff;
