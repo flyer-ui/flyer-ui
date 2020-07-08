@@ -28,7 +28,7 @@
     </label>
 </template>
 <script>
-import {findParentByName} from '@flyer-ui/commonality'
+import {findParentByName} from '~/utils'
 import emitter from '~/mixins/emitter'
 export default{
   name: 'FlyCheckbox',

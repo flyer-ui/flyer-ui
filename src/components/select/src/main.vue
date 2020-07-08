@@ -36,7 +36,7 @@
 import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
 import PopperManager from '~/shared/popper-manager'
-import {stop} from '~/shared/dom'
+import {stop} from '@flyer-ui/commonality'
 
 export default {
   name: 'FlySelect',
