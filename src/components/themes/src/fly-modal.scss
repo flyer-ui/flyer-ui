@@ -35,6 +35,11 @@ $fly-modal-padding:10px;
         position: relative;
         text-align: left;
         @extend .box;
+        &:after{
+            content:'';
+            clear:both;
+            display:block;
+        }
     }
     @include e('header'){
         border-top-right-radius: $fly-round-default-size;
@@ -63,7 +68,8 @@ $fly-modal-padding:10px;
         padding:$fly-default-padding * 1;
         overflow: auto;
         min-height:80px;
-        margin-bottom: 60px;
+        padding-bottom: 60px;
+        box-sizing: border-box;
     }
     @include e('footer'){
         padding:$fly-default-padding * 1;

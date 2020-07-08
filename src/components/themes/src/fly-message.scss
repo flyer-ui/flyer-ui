@@ -7,9 +7,10 @@
     width:100%;
     background: transparent;
     text-align: center;
-    top:2%;
+    top:0px;
     @include e('notice'){
         margin-top: 10px;
+        // position: fixed;
     }
     @include e('content'){
         background: #fff;
@@ -58,5 +59,15 @@
         &:hover{
             background: rgba($fly-color-border,0.5);
         }
+    }
+    .fly-message-fade-enter-active {
+        transition: all .2s ease;
+      }
+    .fly-message-fade-leave-active {
+        transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .fly-message-fade-enter, .fly-message-fade-leave-to{
+        transform: translateY(-100%);
+        opacity: 0;
     }
 }

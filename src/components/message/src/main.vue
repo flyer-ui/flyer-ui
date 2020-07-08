@@ -1,10 +1,12 @@
 <template>
+  <transition name='fly-message-fade'>
     <div class='fly-message__notice' v-if='value'>
         <div class='fly-message__content'>
           <i :class='["fly-message__icon",iconName,`is-${type}`]'></i>{{content}}
           <i v-if='closable || duration===0' @click='handleClose' class='fly-message__close fly-icon-x'></i>
         </div>
     </div>
+  </transition>
 </template>
 <script>
 export default {
