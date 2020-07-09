@@ -1,6 +1,6 @@
 {
   "name": "flyer-ui",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "description": "一款基于Vue框架的UI库",
   "author": "pfzhengd",
   "license": "MIT",
@@ -9,8 +9,8 @@
     "src",
     "lib"
   ],
-  "unpkg":"lib/index.js",
-  "style":"lib/themes/index.css",
+  "unpkg": "lib/index.js",
+  "style": "lib/themes/index.css",
   "homepage": "https://github.com/flyer-ui/flyer-ui",
   "bugs": {
     "url": "https://github.com/flyer-ui/flyer-ui/issues"
