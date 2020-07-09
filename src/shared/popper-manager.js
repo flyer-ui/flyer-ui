@@ -1,4 +1,4 @@
-import { on } from '~/shared/dom'
+import { on } from '@flyer-ui/commonality'
 
 const NODE_LIST = []
 

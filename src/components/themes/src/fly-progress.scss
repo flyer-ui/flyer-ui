@@ -30,6 +30,7 @@
         z-index: 1;
         background: $fly-primary-color;
         color:$fly-primary-color;
+        transition:0.5s 0.3s all;
         @include state('normal'){
             background: $fly-primary-color;
             color:$fly-primary-color;

@@ -17,7 +17,7 @@
     </label>
 </template>
 <script>
-import {findParentByName} from '~/shared/util'
+import {findParentByName} from '~/utils'
 import emitter from '~/mixins/emitter'
 export default{
   name: 'FlyRadio',

@@ -28,6 +28,9 @@ module.exports =  {
                 if(this.value4>0){
                     this.value4-=10
                 }
+            },
+            full(){
+              this.value4 = 100
             }
         }
     }
@@ -108,6 +111,7 @@ module.exports =  {
     <br />
     <fly-button @click="addition" size='mini'>+</fly-button>
     <fly-button @click="reduce" size='mini'>-</fly-button>
+    <fly-button @click="full" size='mini'>100</fly-button>
   </div>
 </template>
 <script>

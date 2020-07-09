@@ -1,6 +1,6 @@
 {
   "name": "flyer-ui",
-  "version": "1.2.2",
+  "version": "1.2.6",
   "description": "一款基于Vue框架的UI库",
   "author": "pfzhengd",
   "license": "MIT",
@@ -9,6 +9,16 @@
     "src",
     "lib"
   ],
+  "unpkg":"lib/index.js",
+  "style":"lib/themes/index.css",
+  "homepage": "https://github.com/flyer-ui/flyer-ui",
+  "bugs": {
+    "url": "https://github.com/flyer-ui/flyer-ui/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/flyer-ui/flyer-ui.git"
+  },
   "scripts": {
     "dev": "npm run build:icon && webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
     "start": "npm run dev",
@@ -17,14 +27,15 @@
     "build:icon": "node examples/generator.icon.js",
     "build:component": "webpack --config build/webpack.component.config.js",
     "build:umd": "webpack --config build/webpack.umd.config.js",
-    "build:scss": "gulp build --gulpfile src/components/themes/gulpfile.js",
+    "build:scss": "gulp build --gulpfile ./src/components/themes/gulpfile.js",
     "build:common": "webpack --config build/webpack.common.config.js",
     "build:demo": "npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
-    "clear": "rm -rf lib",
-    "build": "npm run build:scss && npm run build:icon && npm run build:component && npm run build:umd && npm run build:common"
+    "clean": "rm -rf lib",
+    "build": "npm run clean && npm run build:scss && npm run build:icon && npm run build:component && npm run build:umd && npm run build:common",
+    "publish:patch": "npm run build && npm version patch && git push --follow-tags && npm publish"
   },
   "dependencies": {
-    "@flyer-ui/commonality": "0.0.2",
+    "@flyer-ui/commonality": "0.0.7",
     "popper.js": "^1.15.0"
   },
   "peerDependencies": {
@@ -61,10 +72,10 @@
     "eslint-plugin-vue": "4.7.1",
     "file-loader": "1.1.11",
     "friendly-errors-webpack-plugin": "1.7.0",
-    "gulp": "3.9.1",
-    "gulp-autoprefixer": "6.0.0",
-    "gulp-cssmin": "0.2.0",
-    "gulp-sass": "4.0.2",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-sass": "^4.0.2",
     "html-webpack-plugin": "3.2.0",
     "inject-loader": "3.0.1",
     "json-loader": "0.5.7",

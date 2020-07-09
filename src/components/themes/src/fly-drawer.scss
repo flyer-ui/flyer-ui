@@ -15,7 +15,7 @@
         position:relative;
         padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
         box-sizing:border-box;
-        border-bottom: 1px solid $fly-color-border;
+        box-shadow:1px 1px 1px rgba($fly-color-border,0.5);
     }
     @include e('body'){
         padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
@@ -33,6 +33,7 @@
         }
     }
     @include e('content'){
+        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
         position:fixed;
         top:0px;
         right:0px;
@@ -40,7 +41,7 @@
         bottom:0px;
         background: #fff;
         min-width:300px;
-        border-left:1px solid $fly-color-border;
-        border-top:1px solid $fly-color-border;
+        // border-left:1px solid $fly-color-border;
+        // border-top:1px solid $fly-color-border;
     }
 }
