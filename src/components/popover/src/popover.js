@@ -67,8 +67,8 @@ Popover.prototype.getWindowSize = function () {
   }
 }
 
-// test
-
 var selector = document.querySelector('.fly-button')
 var element = document.querySelector('#test')
-var popover = new Popover(element, selector)
+
+/* eslint-disable */
+new Popover(element, selector)

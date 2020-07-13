@@ -5,6 +5,7 @@
     padding:10px;
     box-sizing: border-box;
     box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+    background-color:$fly-common-white;
     @include e('header'){
         border-bottom: 1px solid $fly-color-border;
         padding:$fly-default-padding;
