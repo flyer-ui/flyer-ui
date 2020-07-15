@@ -4,7 +4,7 @@
             return {
                 value:'',
                  disabled:true,
-                 value2:''
+                 value2:"1"
             }
         },
         methods:{

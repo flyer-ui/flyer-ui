@@ -55,6 +55,9 @@ export default {
       return typeof this.model === 'boolean' ? this.model : this.model === this.activeValue
     }
   },
+  created () {
+    this.model = this.value
+  },
   methods: {
     handleChange ($event) {
       this.$nextTick(() => {
