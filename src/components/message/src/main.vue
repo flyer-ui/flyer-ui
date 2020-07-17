@@ -17,7 +17,7 @@ export default {
     icon: String,
     duration: {
       type: Number,
-      default: 0
+      default: 3 // 默认3秒关闭
     },
     closable: {
       type: Boolean,
@@ -37,7 +37,7 @@ export default {
     }
   },
   created () {
-    if (this.duration > 0) {
+    if (this.duration >= 0) {
       this.startTimer()
     }
   },
