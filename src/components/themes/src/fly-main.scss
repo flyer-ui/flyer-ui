@@ -1,0 +1,9 @@
+
+@import "./base/index.scss";
+@include b('main'){
+  flex:1;
+  flex-basis: auto;
+  box-sizing: border-box;
+  flex-direction: row;
+  min-width: 0px;
+}

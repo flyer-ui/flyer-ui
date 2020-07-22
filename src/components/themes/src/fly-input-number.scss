@@ -1,0 +1,45 @@
+@import "./base/index.scss";
+
+@include b('input-number'){
+    position: relative;
+    display:inline-flex;
+    border-radius: $fly-round-default-size;
+    @include e('native'){
+        outline: none;
+        width:100px;
+        padding:10px 20px 10px 10px;
+        border:1px solid $fly-color-border;
+        box-sizing: border-box;
+        border-radius: $fly-round-default-size;
+        @include state('disabled'){
+            background: rgba($fly-color-border,0.5);
+            cursor:not-allowed;
+        }
+    }
+    .label-extend{
+        cursor: pointer;
+        position: absolute;
+        right:0px;
+        width:20px;
+        height:20px;
+        box-sizing:border-box;
+        border-left:1px solid $fly-color-border;
+        user-select: none;
+        &:hover{
+            background: $fly-color-border;
+        }
+        @include state('disabled'){
+            background: rgba($fly-color-border,0.5);
+            cursor:not-allowed;
+        }
+    }
+    @include e('plus'){
+        top:0px;
+        @extend .label-extend;
+    }
+    @include e('minus'){
+        @extend .label-extend;
+        bottom:0px;
+        border-top:1px solid $fly-color-border;
+    }
+}

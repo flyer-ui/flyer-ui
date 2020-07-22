@@ -1,0 +1,31 @@
+@keyframes loop{
+    0%{transform: rotate(360deg)}
+    100%{transform: rotate(0deg)}
+}
+
+[class^="fly-icon-"], [class*=" fly-icon-"] {
+    display:inline-block;
+    // vertical-align:text-bottom;
+    font-weight: 400;
+    // font-size: 16px;
+    opacity: 0.9;
+    &:hover{
+        opacity: 0.6;
+    }
+    &:active{
+        opacity: 1;
+    }
+}
+
+.fly-icon-loader{
+    animation:loop 1.5s linear infinite;
+}
+
+// px 转换 rem
+@function pxtorem($px){
+    @return #{$px / 14px + 'rem'};
+}
+
+@function mixColor($color,$number){
+    @return mix($color,$white,$number);
+}

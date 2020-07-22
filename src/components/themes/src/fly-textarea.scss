@@ -1,0 +1,19 @@
+@import "./base/index.scss";
+@include b('textarea'){
+    display: inline-block;
+    @include e('native'){
+        outline:none;
+        border:0px;
+        overflow-y:auto;
+        border:1px solid $fly-color-border;
+        border-radius: $fly-round-default-size;
+        padding:$fly-default-padding;
+        @include state('disabled'){
+            background: rgba($fly-color-border,0.5);
+            cursor:not-allowed;
+        }
+        &:focus{
+            border-color:$fly-primary-color;
+        }
+    }
+}

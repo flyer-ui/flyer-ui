@@ -1,0 +1,120 @@
+
+@import "./base/index.scss";
+@include b('select'){
+    position: relative;
+    display:inline-block;
+    .fly-input__native{
+        cursor: pointer;
+    }
+    @include state('disabled'){
+        .fly-input__native{
+            cursor: not-allowed;
+        }
+    }
+    @include state('clearable'){
+        .fly-input__clear{
+            display: none;
+        }
+        &:hover{
+            .fly-input__clear{
+                display: block;
+                opacity: 1;
+            }
+        }
+    }
+    @include e('option'){
+        padding:5px 10px;
+        box-sizing:border-box;
+        cursor: pointer;
+        &:hover{
+            background:#fafafa;
+        }
+        @include state('disabled'){
+            color:$fly-color-border;
+            cursor:not-allowed;
+            &:hover{
+                background:none;
+            }
+        }
+        @include state('selected'){
+            color:$fly-primary-color;
+            font-weight:bold;
+        }
+        &:after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+    }
+    @include e('tags'){
+        display:flex;
+        flex-wrap:wrap;
+        position: absolute;
+        z-index:2;
+        margin-right:40px;
+        align-items:center;
+        top:50%;
+        transform:translateY(-50%);
+        .fly-select__tag{
+            display:inline-block;
+            margin:2px 5px;
+            background-color:rgba($fly-color-border,0.5)
+        }
+    }
+    @include e('tag'){
+    }
+    &:after{
+        content:'';
+        clear:both;
+        display:block;
+    }
+}
+@include b('select-dropdowns'){
+    display: block;
+    border:1px solid $fly-color-border;
+    z-index: 999;
+    background:#fff;
+    @include e('list'){
+        list-style:none;
+        padding:0px;
+        margin:0px;
+    }
+    &[x-placement="bottom"]{
+        margin-top:10px;
+        .popper__arrow{
+            border: 8px solid $fly-color-border;
+            display: inline-block;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+            position: absolute;
+            width: 0px;
+            height: 0px;
+            top: -16px;
+            left: calc(100%/2);
+            &:after{
+                content:'';
+                border: 6px solid #fff;
+                display: inline-block;
+                border-top-color: transparent;
+                border-right-color: transparent;
+                border-left-color: transparent;
+                position: absolute;
+                width: 0px;
+                height: 0px;
+                top: -4px;
+                left: calc(100%/2 - 6px);
+            }
+        }
+    }
+}
+@include b('select-group'){
+    list-style:none;
+    padding:0px;
+    margin:0px;
+    @include e('title'){
+        font-weight: bold;
+        padding:5px 10px;
+        box-sizing:border-box;
+    }
+}

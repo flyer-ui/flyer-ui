@@ -1,0 +1,178 @@
+@import "./base/index.scss";
+@mixin button-plain($color,$background-color,$border-color,$varint-color){
+    background-color:$background-color;
+    color:$color;
+    border-color:$border-color;
+    &:hover{
+        color:$varint-color;
+    }
+    &:active,&:focus {
+        color:$varint-color;
+    }
+}
+
+@mixin button-variant($color,$background-color,$border-color,$hover-color,$active-color){
+    background-color:$background-color;
+    color:$color;
+    border-color:$border-color;
+
+    @include state('plain'){
+        @include button-plain($background-color,$color,$background-color,$color);
+    }
+
+    &:hover{
+        background-color:$hover-color;
+        border-color:$hover-color;
+    }
+    &:active,&:focus {
+        background-color:$active-color;
+        border-color:$active-color;
+    }
+}
+
+@include b('button'){
+    outline: none;
+    user-select: none;
+    border: 1px solid $fly-color-border;
+    border-radius: $fly-round-default-size;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: inline-table;
+    color: $font-color-common;
+    background-color: $fly-common-white;
+    line-height:1.3;
+    &+& {
+        margin-left: 10px;
+    }
+
+    @include m('large'){
+        padding:$fly-default-padding * 1.5 $fly-default-padding * 3;
+        font-size:18px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 8;
+        }
+        @include state('circle'){
+            padding:$fly-default-padding * 2;
+            border-radius:50%;
+            font-size:24px;
+            >i{
+                width:24px;
+                height:24px;
+                display: block;
+            }
+        }
+    }
+
+    @include m('medium'){
+        padding:$fly-default-padding $fly-default-padding * 2;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 6;
+        }
+        @include state('circle'){
+            padding:$fly-default-padding * 1.5;
+            border-radius:50%;
+            font-size:18px;
+            >i{
+                width:18px;
+                height:18px;
+                display: block;
+            }
+        }
+    }
+
+    @include m('small'){
+        padding:$fly-default-padding / 2 $fly-default-padding / 1;
+        font-size:12px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 4;
+        }
+        @include state('circle'){
+            padding:$fly-default-padding * 1;
+            border-radius:50%;
+            font-size:14px;
+            >i{
+                width:14px;
+                height:14px;
+                display: block;
+            }
+        }
+    }
+
+    @include m('mini'){
+        padding:$fly-default-padding / 4 $fly-default-padding / 2;
+        font-size:12px;
+        @include state('round'){
+            border-radius:$fly-round-default-size * 3;
+        }
+        @include state('circle'){
+            padding:$fly-default-padding * 0.5;
+            border-radius:50%;
+            font-size:12px;
+            >i{
+                width:12px;
+                height:12px;
+                display: block;
+            }
+        }
+    }
+    @include state('disabled'){
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    @include m('default'){
+        @include button-variant($default,$fly-default-color,$fly-default-color,$fly-default-hover-color,$fly-default-active-color);
+        @include state('plain'){
+            @include button-plain($default,$white,$fly-default-active-color,$fly-default-active-color);
+            &:hover{
+                background-color:$fly-default-hover-color;
+                border-color:$fly-default-hover-color;
+                color:$default;
+            }
+            &:active,&:focus {
+                background-color:$fly-default-active-color;
+                border-color:$fly-default-active-color;
+                color:$default;
+            }
+        }
+    }
+
+    @include m('primary'){
+        @include button-variant($white,$fly-primary-color,$fly-primary-color,$fly-primary-hover-color,$fly-primary-active-color);
+    }
+    @include m('success'){
+        @include button-variant($white,$fly-success-color,$fly-success-color,$fly-success-hover-color,$fly-success-active-color);
+    }
+    @include m('info'){
+        @include button-variant($white,$fly-info-color,$fly-info-color,$fly-info-hover-color,$fly-info-active-color);
+    }
+    @include m('warning'){
+        @include button-variant($white,$fly-warning-color,$fly-warning-color,$fly-warning-hover-color,$fly-warning-active-color);
+    }
+    @include m('danger'){
+        @include button-variant($white,$fly-danger-color,$fly-danger-color,$fly-danger-hover-color,$fly-danger-active-color);
+    }
+
+    @include e('icon'){
+        vertical-align:top;
+    }
+}
+
+@include b('button-group') {
+    display: flex;
+    flex-direction: row;
+    @include b(button) {
+        margin-left: 0px;
+        border-radius: 0px;
+        border-right:0px;
+        &:first-child{
+            border-top-left-radius:4px;
+            border-bottom-left-radius:4px;
+        }
+        &:last-child{
+            border-top-right-radius:4px;
+            border-bottom-right-radius:4px;
+            border-right:1px solid;
+        }
+    }
+}

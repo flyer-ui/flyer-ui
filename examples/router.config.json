@@ -1,0 +1,272 @@
+{
+    "cn": [
+        {
+            "text": "开发指南",
+            "type": "header",
+            "path": "/"
+        },
+        {
+            "text": "安装",
+            "type": "item",
+            "path": "installation",
+            "pending":false
+        },
+        {
+            "text": "快速上手",
+            "type": "item",
+            "path": "get-started",
+            "pending":false
+        },
+        {
+            "text": "国际化",
+            "type": "item",
+            "path": "i18n",
+            "pending":true
+        },
+        {
+            "text": "自定义主题",
+            "type": "item",
+            "path": "custom-theme",
+            "pending":true
+        },
+        {
+            "text": "组件",
+            "type": "header",
+            "path": "/"
+        }, 
+        {
+            "text": "基础",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Grid 栅格",
+            "type": "item",
+            "path": "grid",
+            "pending":false
+        },
+        {
+            "text": "Container 布局容器",
+            "type": "item",
+            "path": "container",
+            "pending":false
+        },
+        {
+            "text": "Font 字体",
+            "type": "item",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Color 颜色",
+            "type": "item",
+            "path": "color",
+            "pending":false
+        },
+        {
+            "text": "Button 按钮",
+            "type": "item",
+            "path": "button",
+            "pending":false
+        },
+        {
+            "text": "Icon 图标",
+            "type": "item",
+            "path": "icon",
+            "pending":false
+        },
+        {
+            "text": "表单",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Checkbox 多选框",
+            "type": "item",
+            "path": "checkbox",
+            "pending":false
+        },
+        {
+            "text": "Radio 单选框",
+            "type": "item",
+            "path": "radio",
+            "pending":false
+        },
+        {
+            "text": "Input 输入框",
+            "type": "item",
+            "path": "input",
+            "pending":false
+        },
+        {
+            "text": "Input Number 输入框",
+            "type": "item",
+            "path": "input-number",
+            "pending":false
+        },
+        {
+            "text": "Textarea 多行输入框",
+            "type": "item",
+            "path": "textarea",
+            "pending":false
+        },
+        {
+            "text": "Switch 开关",
+            "type": "item",
+            "path": "switch",
+            "pending":false
+        },
+        {
+            "text": "Select 下拉选择框",
+            "type": "item",
+            "path": "select",
+            "pending":false
+        },
+        {
+            "text": "Rate 评分",
+            "type": "item",
+            "path": "rate",
+            "pending":false
+        },
+        {
+            "text": "数据",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Tag 标签",
+            "type": "item",
+            "path": "tag",
+            "pending":false
+        },
+        {
+            "text": "Progress 进度条",
+            "type": "item",
+            "path": "progress",
+            "pending":false
+        },
+        {
+            "text": "Pagination 分页",
+            "type": "item",
+            "path": "pagination",
+            "pending":false
+        },
+        {
+            "text": "Tree 树菜单",
+            "type": "item",
+            "path": "tree",
+            "pending":true
+        },
+        {
+            "text": "Timeline 时间轴",
+            "type": "item",
+            "path": "timeline",
+            "pending":false
+        },
+        {
+            "text": "提示",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Alert 警告提示框",
+            "type": "item",
+            "path": "alert",
+            "pending":false
+        },
+        {
+            "text": "Modal 模态框",
+            "type": "item",
+            "path": "modal",
+            "pending":false
+        },
+        {
+            "text": "Message 全局提示",
+            "type": "item",
+            "path": "message",
+            "pending":false
+        },
+        {
+            "text": "导航",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Tabs 选项卡",
+            "type": "item",
+            "path": "tabs",
+            "pending":false
+        },
+        {
+            "text": "其它",
+            "type": "notice",
+            "path": "font",
+            "pending":false
+        },
+        {
+            "text": "Drawer 抽屉",
+            "type": "item",
+            "path": "drawer",
+            "pending":false
+        },
+        {
+            "text": "Card 卡片",
+            "type": "item",
+            "path": "card",
+            "pending":false
+        },
+        {
+            "text": "Popover 弹出层",
+            "type": "item",
+            "path": "popover",
+            "pending":false
+        },
+        {
+            "text": "Upload 上传",
+            "type": "item",
+            "path": "upload",
+            "pending":true
+        },
+        {
+            "text": "Transfer 穿梭框",
+            "type": "item",
+            "path": "transfer",
+            "pending":true
+        },
+        {
+            "text": "Slider 滑动输入条",
+            "type": "item",
+            "path": "slider",
+            "pending":true
+        },
+        {
+            "text": "Table 表格",
+            "type": "item",
+            "path": "table",
+            "pending":true
+        },
+        {
+            "text": "Form 表单验证",
+            "type": "item",
+            "path": "form",
+            "pending":true
+        },
+        {
+            "text": "Tooltip 文字提示",
+            "type": "item",
+            "path": "tooltip",
+            "pending":true
+        },
+        {
+            "text": "Popover 气泡提示",
+            "type": "item",
+            "path": "popover",
+            "pending":true
+        }
+    ]
+}

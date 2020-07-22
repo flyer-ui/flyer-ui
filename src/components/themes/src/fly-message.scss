@@ -1,0 +1,72 @@
+
+
+@import "./base/index.scss";
+@include b('message'){
+    position: fixed;
+    pointer-events:none;
+    width:100%;
+    background: transparent;
+    text-align: center;
+    top:0px;
+    @include e('notice'){
+        margin-top: 10px;
+    }
+    @include e('content'){
+        background: #fff;
+        display: inline-block;
+        pointer-events: all;
+        padding:10px 30px;
+        border:1px solid $fly-color-border;
+        border-radius:$fly-round-default-size;
+        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+        position: relative;
+        min-width: 300px;
+        text-align:left;
+    }
+    @include e('icon'){
+        position: absolute;
+        z-index: 1;
+        left:10px;
+        top:10px;
+        border-radius: 100%;
+        @include state('info'){
+            color:$fly-primary-color;
+        }
+        @include state('warning'){
+            color:$fly-warning-color;
+        }
+        @include state('success'){
+            color:$fly-success-color;
+            border:1px solid $fly-success-color;
+            border-radius: 100%;
+            font-size:12px !important;
+        }
+        @include state('error'){
+            color:$fly-danger-color;
+            border:1px solid $fly-danger-color;
+            border-radius: 100%;
+            font-size:12px !important;
+        }
+    }
+    @include e('close'){
+        position: absolute;
+        z-index: 1;
+        right:10px;
+        top:10px;
+        border-radius: 100%;
+        cursor: pointer;
+        &:hover{
+            background: rgba($fly-color-border,0.5);
+        }
+    }
+    .fly-message-fade-enter-active {
+        transition: all .2s ease;
+      }
+    .fly-message-fade-leave-active {
+        transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .fly-message-fade-enter, .fly-message-fade-leave-to{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+}

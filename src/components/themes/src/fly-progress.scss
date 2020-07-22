@@ -1,0 +1,67 @@
+
+@import "./base/index.scss";
+@include b('progress'){
+    position: relative;
+    padding: 5px 0px;
+    box-sizing: border-box;
+    width:100%;
+    @include e('bar'){
+        position: relative;
+        display: inline-block;
+        width:100%;
+        box-sizing: border-box;
+        @include state('show-text'){
+            margin-right:calc(-3em - 10px);
+            padding-right:calc(3em + 10px);
+        }
+
+    }
+    @include e('outer'){
+        position: relative;
+        background: $fly-color-border;
+        border-radius:5px;
+        display:inline-block;
+        width:100%;
+    }
+    @include e('inner'){
+        min-height: 10px;
+        top: 0px;
+        border-radius:5px;
+        z-index: 1;
+        background: $fly-primary-color;
+        color:$fly-primary-color;
+        transition:0.5s 0.3s all;
+        @include state('normal'){
+            background: $fly-primary-color;
+            color:$fly-primary-color;
+        }
+        @include state('error'){
+            background: $fly-danger-color;
+            color:$fly-danger-color;
+        }
+        @include state('success'){
+            background: $fly-success-color;
+            color:$fly-success-color;
+        }
+    }
+    @include e('text'){
+        display: inline-block;
+    }
+    @include e('status'){
+        display: inline-block;
+        font-size:12px;
+        border-radius: 100%;
+        i[class^="fly-icon-"]{
+            font-size:14px;
+            display: block;
+        }
+        @include state('error'){
+            color:$fly-danger-color;
+            border:1px solid $fly-danger-color;
+        }
+        @include state('success'){
+            color:$fly-success-color;
+            border:1px solid $fly-success-color;
+        }
+    }
+}

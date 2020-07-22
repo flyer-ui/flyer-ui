@@ -1,0 +1,68 @@
+@import "./base/index.scss";
+
+$fly-checkbox-border-radius:$fly-round-default-size !default;
+$fly-checkbox-width:20px !default;
+$fly-checkbox-height:20px !default;
+
+@include b("checkbox") {
+    user-select: none;
+    display:inline-flex;
+    box-sizing:border-box;
+    line-height:$fly-checkbox-height ;
+    vertical-align:middle;
+    &+& {
+        margin-left: 10px;
+    }
+    @include e("input-native") {
+        display: none;
+    }
+    @include e("input") {
+        border: 1px solid $fly-color-border;
+        width: $fly-checkbox-width;
+        height: $fly-checkbox-height;
+        background-color: $fly-common-white;
+        box-sizing:border-box;
+        position: relative;
+        font-family: 'fly-icons';
+        border-radius: $fly-checkbox-border-radius;
+        cursor: pointer;
+        &:hover,&:focus{
+            border-color:$fly-primary-color;
+        }
+        &::after {
+            content: '';
+            font-size:18px;
+            display:block;
+            position: absolute;
+            z-index:1;
+        }
+        @include state("checked") {
+            &::after {
+                content: '\e917';
+            }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
+        }
+        @include state("disabled"){
+            color:$font-color-placeholder;
+            background:$fly-color-border;
+            border-color:$fly-color-border;
+            cursor:not-allowed;
+        }
+        @include state("indeterminate"){
+            &::after{
+                content:'\e932'
+            }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
+        }
+    }
+    @include e("label"){
+        padding-left:$fly-default-padding;
+        @include state(disabled){
+            cursor: not-allowed;
+        }
+    }
+}

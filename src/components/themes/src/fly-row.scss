@@ -1,0 +1,14 @@
+
+@import "./base/index.scss";
+@include b('row'){
+  display:block;
+  box-sizing:border-box;
+  @include m('flex'){
+    display:flex;
+  }
+  &:after{
+    content:'';
+    clear:both;
+    display:block;
+  }
+}

@@ -1,0 +1,20 @@
+@import "./base/index.scss";
+$span:24;
+@mixin col($i){
+  width:percentage($i / $span);
+  float:left;
+  box-sizing:border-box;
+}
+@mixin offset($i){
+  margin-left:percentage($i / $span);
+  float:left;
+  box-sizing:border-box;
+}
+@for $i from 1 through $span {
+  @include b(#{'col-'+$i}){
+    @include col($i);
+  }
+  @include b(#{'col-offset-'+$i}){
+    @include offset($i);
+  }
+}

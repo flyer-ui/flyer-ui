@@ -1,0 +1,132 @@
+@import "./base/index.scss";
+@include b("color-card") {
+  position: relative;
+  display: inline-block;
+  width: 240px;
+
+  @include e('main'){
+    display: block;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: left;
+    color: $fly-common-white;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    border:0px;
+    flex-direction: row;
+    align-content: space-between;
+  }
+  ul li {
+    flex: 1;
+    height: 20px;
+    position: relative;
+    @include state('change'){
+      &:first-child {
+        border-bottom-left-radius: $fly-round-default-size;
+      }
+      &:last-child {
+        border-bottom-right-radius: $fly-round-default-size;
+      }
+    }
+  }
+  @include state("border") {
+    > ul {
+      display: none;
+    }
+  }
+}
+
+.fly-color-card-border{
+  border-top-right-radius:$fly-round-default-size;
+  border-top-left-radius:$fly-round-default-size;
+}
+
+@include b("color-primary") {
+  background-color:$fly-primary-active-color;
+  @extend .fly-color-card-border;
+
+  @include m('default'){
+    background-color:$fly-primary-color;
+  }
+  @include m('hover'){
+    background-color:$fly-primary-hover-color;
+  }
+}
+
+@include b("color-success") {
+  background-color:$fly-success-active-color;
+  @extend .fly-color-card-border;
+
+  @include m('default'){
+    background-color:$fly-success-color;
+  }
+  @include m('hover'){
+    background-color:$fly-success-hover-color;
+  }
+}
+
+@include b("color-info") {
+  background-color:$fly-info-active-color;
+  @extend .fly-color-card-border;
+
+  @include m('default'){
+    background-color:$fly-info-color;
+  }
+  @include m('hover'){
+    background-color:$fly-info-hover-color;
+  }
+}
+
+@include b("color-warning") {
+  background-color:$fly-warning-active-color;
+  @extend .fly-color-card-border;
+
+  @include m('default'){
+    background-color:$fly-warning-color;
+  }
+  @include m('hover'){
+    background-color:$fly-warning-hover-color;
+  }
+}
+
+@include b("color-danger") {
+  background-color:$fly-danger-active-color;
+  @extend .fly-color-card-border;
+
+  @include m('default'){
+    background-color:$fly-danger-color;
+  }
+  @include m('hover'){
+    background-color:$fly-danger-hover-color;
+  }
+}
+
+@include b("color-title") {
+  background-color:$font-color-title;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-common") {
+  background-color:$font-color-common;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-secondary") {
+  background-color:$font-color-secondary;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-placeholder") {
+  background-color:$font-color-placeholder;
+  @extend .fly-color-card-border;
+}
+
+@include b("color-border") {
+  background-color:$fly-color-border;
+  @extend .fly-color-card-border;
+}

@@ -1,0 +1,30 @@
+
+@import "./base/index.scss";
+@include b('pagination'){
+    display: block;
+    position: relative;
+    @include e('pager'){
+        user-select: none;
+        list-style: none;
+        margin:0px;
+        padding:0px;
+        display: inline-table;
+    }
+    @include e('number'){
+        display:table-cell;
+        box-sizing: border-box;
+        padding:5px 10px;
+        font-weight:bold;
+        &:hover{
+            cursor: pointer;
+            color:$fly-primary-color;
+        }
+        @include state('active'){
+            color:$fly-primary-color;
+        }
+        @include state('disabled'){
+            cursor:not-allowed;
+            color:$font-color-placeholder;
+        }
+    }
+}

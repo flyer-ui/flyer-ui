@@ -1,0 +1,65 @@
+
+@import "./base/index.scss";
+
+$fly-radio-border-radius:50% !default;
+$fly-radio-width:20px !default;
+$fly-radio-height:20px !default;
+$fly-radio-point-area:8px;
+$fly-radio-padding-area:5px;
+@include b(radio) {
+    user-select: none;
+    display:inline-flex;
+    box-sizing:border-box;
+    line-height:$fly-radio-height ;
+    vertical-align:middle;
+    &+& {
+        margin-left: 10px;
+    }
+    @include e(input-native) {
+        display: none;
+    }
+    @include e(input) {
+        border: 1px solid $fly-color-border;
+        width: $fly-radio-width;
+        height: $fly-radio-height;
+        box-sizing:border-box;
+        background-color: $fly-common-white;
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+        font-family: 'fly-icons';
+        border-radius: $fly-radio-border-radius;
+        display: inline-block;
+        &:hover,&:focus{
+            border-color:$fly-primary-color;
+        }
+        @include state(checked) {
+            &::after {
+                content: '';
+                width:$fly-radio-point-area;
+                height:$fly-radio-point-area;
+                background-color: #fff;
+                position:absolute;
+                border-radius: $fly-radio-border-radius;
+                left:$fly-radio-padding-area;
+                top:$fly-radio-padding-area;
+                z-index:1;
+            }
+            color:$fly-common-white;
+            background: $fly-primary-color;
+            border-color:$fly-primary-color;
+        }
+        @include state(disabled){
+            color:$font-color-placeholder;
+            background:$fly-color-border;
+            border-color:$fly-color-border;
+            cursor:not-allowed;
+        }
+    }
+    @include e(label){
+        padding-left:$fly-default-padding;
+        @include state(disabled){
+            cursor: not-allowed;
+        }
+    }
+}

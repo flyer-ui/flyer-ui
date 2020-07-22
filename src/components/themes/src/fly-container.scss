@@ -1,0 +1,15 @@
+@import "./base/index.scss";
+@include b('container'){
+  display: flex;
+  flex:1;
+  flex-basis: auto;
+  box-sizing: border-box;
+  flex-direction: row;
+  min-width: 0px;
+  @include state('horizontal'){
+    flex-direction:column;
+  }
+  @include state('vertical'){
+    flex-direction:row;
+  }
+}

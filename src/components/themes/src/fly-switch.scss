@@ -1,0 +1,54 @@
+
+@import "./base/index.scss";
+@include b('switch'){
+    position: relative;
+    display:inline-flex;
+    vertical-align:middle;
+    border:1px solid $fly-color-border;
+    background: $fly-color-border;
+    padding:0px 10px;
+    box-sizing: border-box;
+    border-radius: 100px;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.5;
+    min-width:40px;
+    min-height:20px;
+    &:after{
+        content:'';
+        position: absolute;
+        z-index:99;
+        top:0px;
+        bottom:0px;
+        width:20px;
+        left:0px;
+        right:inherit;
+        background-color:#fff;
+        border-radius: 50%;
+    }
+    @include state('checked'){
+        background-color:$fly-primary-color;
+        border-color:$fly-primary-color;
+        &:after{
+            right:0px;
+            left:inherit;
+        }
+    }
+    @include state('disabled'){
+        opacity: .6;
+        cursor:not-allowed;
+    }
+    @include e('native'){
+        display:none;
+    }
+    @include e('active'){
+        color:#fff;
+        display: inline-block;
+        padding-right:20px;
+    }
+    @include e('inactive'){
+        padding-left:20px;
+        color:#fff;
+        display: inline-block;
+    }
+}

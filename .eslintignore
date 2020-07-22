@@ -1,0 +1,6 @@
+/config/
+/dist/
+/lib/
+/*.js
+src/mixins/popper.js
+/test/unit/coverage/
