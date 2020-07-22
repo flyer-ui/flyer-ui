@@ -32,7 +32,7 @@
     "build:demo": "npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
     "clean": "rm -rf lib",
     "build": "npm run clean && npm run build:scss && npm run build:icon && npm run build:component && npm run build:umd && npm run build:common",
-    "publish:patch": "npm run build && npm version patch && git push --follow-tags && npm publish"
+    "publish:patch": "git checkout master && git merge dev && npm run build && npm version patch && git push --follow-tags && npm publish"
   },
   "dependencies": {
     "@flyer-ui/commonality": "0.0.7",
