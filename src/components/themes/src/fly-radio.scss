@@ -2,9 +2,9 @@
 @import "./base/index.scss";
 
 $fly-radio-border-radius:50% !default;
-$fly-radio-width:20px !default;
-$fly-radio-height:20px !default;
-$fly-radio-point-area:8px;
+$fly-radio-width:16px !default;
+$fly-radio-height:16px !default;
+$fly-radio-point-area:4px;
 $fly-radio-padding-area:5px;
 @include b(radio) {
     user-select: none;
