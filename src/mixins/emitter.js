@@ -1,4 +1,4 @@
-import {findParentByName} from '@flyer-ui/commonality'
+import {findParentByName} from '~/utils'
 export default {
   methods: {
     dispatch (componentName, eventName, params) {

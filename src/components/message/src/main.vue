@@ -37,7 +37,7 @@ export default {
     }
   },
   created () {
-    if (this.duration > 0) {
+    if (this.duration >= 0) {
       this.startTimer()
     }
   },
