@@ -3,19 +3,13 @@
       "is-checked":isChecked,
       "is-disabled":disabled
     }'>
-        <input type='checkbox' v-if='activeValue || inactiveValue'
+        <input type='checkbox'
         :true-value='activeValue'
         :false-value='inactiveValue'
         :disabled='disabled'
         v-model="model"
         :name='name'
         @change="handleChange"
-        class='fly-switch__native'/>
-        <input type='checkbox' v-else
-        :disabled='disabled'
-        v-model="model"
-        @change="handleChange"
-        :name='name'
         class='fly-switch__native'/>
         <span class='fly-switch__active' v-if='isChecked'>
           <slot name='active'></slot>
@@ -26,28 +20,35 @@
     </label>
 </template>
 <script>
+
+/**
+ * 1、可以自定义开关值，默认开关值为：true|false
+ * 2、可以用v-model实现数据双向绑定
+ * 3、提供change事件，在组件状态发生变化时通知外部。
+ * 4、可以设置为禁用状态
+ */
+
 export default {
   name: 'FlySwitch',
   props: {
     value: [String, Boolean, Number],
     name: String,
-    checked: Boolean,
     disabled: Boolean,
-    activeValue: [String, Boolean, Number],
-    inactiveValue: [String, Boolean, Number]
-  },
-  data () {
-    return {
-      selfModel: ''
+    activeValue: {
+      type: [String, Boolean, Number],
+      default: true
+    },
+    inactiveValue: {
+      type: [String, Boolean, Number],
+      default: false
     }
   },
   computed: {
     model: {
       get () {
-        return this.selfModel || this.checked
+        return this.value
       },
       set (newValue) {
-        this.selfModel = newValue
         this.$emit('input', newValue)
       }
     },
@@ -55,10 +56,8 @@ export default {
       return typeof this.model === 'boolean' ? this.model : this.model === this.activeValue
     }
   },
-  created () {
-    this.model = this.value
-  },
   methods: {
+    /** 提供change事件，在组件状态发生变化时通知外部。 */
     handleChange ($event) {
       this.$nextTick(() => {
         this.$emit('change', this.model)

@@ -2,14 +2,18 @@
  module.exports =  {
         data(){
             return {
-                value:'',
+                 value:'',
                  disabled:true,
-                 value2:"1"
+                 value2:"1",
+                 value3:true
             }
         },
         methods:{
             handleClick($event){
                 this.disabled=!this.disabled
+            },
+            handleSetting(){
+              this.value2 = "1"
             },
             handleChange(value){
                 console.log(value)
@@ -26,7 +30,7 @@
 
 ```html
 <template>
-  <fly-switch v-model="value"></fly-switch>
+  <fly-switch v-model="value" @change='handleChange'></fly-switch>
 </template>
 <script>
   export default {
@@ -41,37 +45,9 @@
 
 :::
 
-### 禁用状态
-
-::: demo
-
-```html
-<template>
-  <fly-switch :disabled="disabled"></fly-switch>
-  <fly-checkbox @change="handleClick">Taggle disabled</fly-checkbox>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        disabled: true
-      };
-    },
-    methods: {
-      handleClick($event) {
-        this.disabled = !this.disabled;
-      }
-    }
-  };
-</script>
-```
-
-:::
-
 ### 绑定值及自定义显示文本
 
 ::: demo
-
 ```html
 <template>
   <fly-switch
@@ -83,18 +59,21 @@
     <span slot="active">开</span>
     <span slot="inactive">关</span>
   </fly-switch>
+  <fly-button type='primary' size='small' @click='handleSetting'>设置</fly-button>
 </template>
 <script>
   export default {
     data() {
       return {
-        disabled: true,
-        value2: ""
+        value2: "1"
       };
     },
     methods: {
       handleClick($event) {
         this.disabled = !this.disabled;
+      },
+      handleSetting(){
+        this.value2 = "1"
       },
       handleChange(value) {
         console.log(value);
@@ -103,15 +82,43 @@
   };
 </script>
 ```
+:::
+
+### 禁用状态
+
+::: demo
+
+```html
+<template>
+  <fly-switch v-model='value3' :disabled="disabled"></fly-switch>
+  <fly-checkbox @change="handleClick">Taggle disabled</fly-checkbox>
+</template>
+<script>
+  export default {
+    data() {
+      return {
+        disabled: true,
+        value3:true
+      };
+    },
+    methods: {
+      handleClick($event) {
+        this.disabled = !this.disabled;
+      }
+    }
+  };
+</script>
+```
 
 :::
+
 
 ### Switch - 可定制属性
 
 | 属性名称        | 类型                      | 默认值 | 可选值       | 说明             |
 | --------------- | ------------------------- | ------ | ------------ | ---------------- |
 | value / v-model | String / Number / Boolean | -      | -            | 绑定的值         |
-| checked         | Boolean                   | -      | -            | 设置为  选中状态 |
+| checked（废弃）         | Boolean                   | -      | -            | 设置为  选中状态 |
 | disabled        | Boolean                   | false  | true / false | 是否设置为禁用   |
 | name            | String                    | -      | -            | 原生 name 属性   |
 | active-value    | String / Number / Boolean | -      | -            | 选中的值         |

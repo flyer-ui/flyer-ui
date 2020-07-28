@@ -15,6 +15,9 @@ module.exports = {
             console.log(value)
             this.selectedValue = value
         },
+        handleSetting(){
+          this.value4 = '单选框1'
+        },
         handleChangeGroup(value){
             console.log(value)
             this.selectedGroupValue = value
@@ -91,20 +94,22 @@ module.exports = {
     @change="handleChange"
     v-model="value4"
     label="单选框2"
-    >单选框2</fly-radio
-  >
+    >单选框2</fly-radio>
+  <fly-button type='primary' size='small' @click='handleSetting'>设置</fly-button>
 </template>
 <script>
   export default {
       data(){
           return{
-              value5:''
-              selectedValue:''
+              value4:''
           }
       },
       methods:{
+          handleSetting(){
+            this.value4 = '单选框1'
+          },
           handleChange(value){
-              this.selectedValue = value
+            this.value4 = value
           }
       }
   }

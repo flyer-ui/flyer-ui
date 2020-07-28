@@ -1,8 +1,8 @@
 @import "./base/index.scss";
 
 $fly-checkbox-border-radius:$fly-round-default-size !default;
-$fly-checkbox-width:20px !default;
-$fly-checkbox-height:20px !default;
+$fly-checkbox-width:16px !default;
+$fly-checkbox-height:16px !default;
 
 @include b("checkbox") {
     user-select: none;
@@ -31,10 +31,12 @@ $fly-checkbox-height:20px !default;
         }
         &::after {
             content: '';
-            font-size:18px;
+            font-size:12px;
             display:block;
             position: absolute;
             z-index:1;
+            top:-1px;
+            left:1px;
         }
         @include state("checked") {
             &::after {
