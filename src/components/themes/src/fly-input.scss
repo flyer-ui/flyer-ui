@@ -5,7 +5,8 @@ $fly-input-clear-area:16px !default;
 @mixin fix-variant($padding,$fontSize){
     padding:$padding;
     i[class^='fly-icon-']{
-        font-size:$fontSize
+        font-size:$fontSize;
+        vertical-align: text-bottom;
     }
 }
 
@@ -27,6 +28,7 @@ $fly-input-clear-area:16px !default;
     position: relative;
     display: inline-flex;
     vertical-align: middle;
+    font-size:$fly-font-text-size;
     @include e('native'){
         outline: none;
         border:1px solid $fly-color-border;
