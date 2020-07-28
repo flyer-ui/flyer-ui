@@ -86,7 +86,7 @@ module.exports = {
   <fly-checkbox v-model="checked1" name="checked1">
     是否选中
   </fly-checkbox>
-  <fly-button type='primary' @click="handleChecked">控制</fly-button>
+  <fly-button type='primary' size='small' @click="handleChecked">控制</fly-button>
 </template>
 <script>
   export default {

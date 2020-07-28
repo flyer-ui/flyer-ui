@@ -16,13 +16,38 @@ const Popover = function (element, selector, options = {
 }) {
   this.$element = element
   this.$selector = selector
+  this.$options = options
+  this.init()
 }
 const fn = Popover.prototype
+
+Popover.mode = 'production'
+
+Popover.log = function (msg) {
+  Popover.mode === 'development' && console.log(msg)
+}
+
+fn.init = function () {
+  this.$rect = this.getRectbySelector()
+  this.$container = this.getContainer()
+  this.$scroll = this.getScroll()
+  this.checkElement()
+  const put = this.placements[this.$options.placement]
+  typeof put === 'function' && put.apply(this)
+}
 
 /** 得到依靠元素的上下左右值 */
 fn.getRectbySelector = function (selector) {
   selector = selector || this.$selector
   return selector.getBoundingClientRect()
+}
+
+/** 约束弹窗样式 */
+fn.checkElement = function () {
+  ['top', 'left', 'margin'].forEach((item) => {
+    this.$element.style[item] = '0px'
+  })
+  this.$element.style['position'] = 'absolute'
 }
 
 /** 得到页面可视容器大小 */
@@ -43,14 +68,6 @@ fn.getElementSize = function (element) {
   }
 }
 
-/** 得到选择器的大小 */
-fn.getSelectorSize = function (selector) {
-  return {
-    height: selector.offsetHeight,
-    width: selector.offsetWidth
-  }
-}
-
 /** 得到滚动条的高度和宽度 */
 fn.getScroll = function () {
   return {
@@ -59,99 +76,98 @@ fn.getScroll = function () {
   }
 }
 
-fn.getSpace = function () {
-  const rect = this.getRectbySelector(this.$selector)
-  const visualSize = this.getVisualSize()
-  const floor = function (value) {
-    return Math.floor(value)
-  }
-  return {
-    top: {
-      // 高度
-      h: floor(rect.top),
-      // 等比宽度
-      w: floor(rect.width),
-      // 左间距
-      l: floor(rect.left),
-      // 右间距
-      r: floor(rect.right),
-      // 左向最大宽度
-      wl: floor(rect.left + rect.width),
-      // 右向最大宽度
-      wr: floor(rect.right + rect.width)
-    },
-    bottom: {
-      // 高度
-      h: floor(visualSize.height - rect.bottom),
-      // 等比宽度
-      w: floor(rect.width),
-      // 左间距
-      l: floor(rect.left),
-      // 右间距
-      r: floor(rect.right),
-      // 左向最大宽度
-      wl: floor(rect.left + rect.width),
-      // 右向最大宽度
-      wr: floor(rect.right + rect.width)
-    },
-    left: {
-      // 高度
-      h: floor(rect.height),
-      // 等比宽度
-      w: floor(rect.left),
-      // 左上最大高度
-      hl: floor(rect.height + rect.top),
-      // 左下最大高度
-      hr: floor(rect.height + visualSize.height - rect.bottom)
-    },
-    right: {
-      // 高度
-      h: floor(rect.height),
-      // 等比宽度
-      w: floor(rect.right),
-      // 右上最大高度
-      hl: floor(rect.height + rect.top),
-      // 右下最大高度
-      hr: floor(rect.height + visualSize.height - rect.bottom)
+/** 得到当前的容器 */
+fn.getContainer = function () {
+  return document.body || document.documentElement
+}
+
+/** 设置弹层的位置 */
+fn.setTranslate = function (x, y) {
+  this.$element.style.transform = `translate(${x}px,${y}px)`
+}
+
+fn.placements = {
+  bottom: function () {
+    Popover.log('实行在下方')
+    const bottom = this.$container.offsetHeight - this.$rect.bottom
+    if (bottom >= this.$element.offsetHeight) {
+      this.setTranslate(this.$rect.left, this.$rect.bottom + this.$scroll.top)
+    } else {
+      Popover.log('下方空间不足')
+      this.placements.top.bind(this)()
+    }
+  },
+  top: function () {
+    Popover.log('实行在顶部')
+    if (this.$rect.top >= this.$element.offsetHeight) {
+      this.setTranslate(this.$rect.left, this.$rect.top - this.$element.offsetHeight + this.$scroll.top)
+    } else {
+      Popover.log('顶部空间不足')
+      this.placements.left.bind(this)()
+    }
+  },
+  left: function () {
+    Popover.log('实行在左方')
+    if (this.$rect.left >= this.$element.offsetWidth) {
+      // 判断默认下方的位置是否够放弹框
+      const bottom = this.$container.offsetHeight - this.$rect.bottom
+      // 得出溢出的高度
+      const overHeight = this.$element.offsetHeight - this.$rect.height - bottom
+      if (bottom >= this.$element.offsetHeight - this.$rect.height) {
+        this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + scroll.top)
+      } else {
+        Popover.log('检测到下方空间不足，默认跳到上方')
+        this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + this.$scroll.top - (
+          bottom + overHeight
+        ))
+      }
+    } else {
+      Popover.log('左方空间不足')
+      this.placements.right.bind(this)()
+    }
+  },
+  right: function () {
+    Popover.log('实行在右方')
+    const right = this.$container.offsetWidth - this.$rect.right
+    if (right >= this.$element.offsetWidth) {
+      // 判断默认下方的位置是否够放弹框
+      const bottom = this.$container.offsetHeight - this.$rect.bottom
+      // 得出溢出的高度
+      const overHeight = this.$element.offsetHeight - this.$rect.height - bottom
+      if (bottom >= this.$element.offsetHeight - this.$rect.height) {
+        this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top)
+      } else {
+        Popover.log('检测到下方空间不足，默认跳到上方')
+        this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top - (
+          bottom + overHeight
+        ))
+      }
+    } else {
+      Popover.log('右方空间不足')
+      this.placements.bottom.bind(this)()
     }
   }
 }
 
-// document.body.scrollTop || document.documentElement.scrollTop
+/** **************** 测试 ****************/
 
-const selector = document.querySelector('.flag')
-const element = document.querySelector('#test')
+function run () {
+  const selector = document.querySelector('.flag')
+  const element = document.querySelector('#test')
 
-const popover = new Popover(element, selector, {
+  const popover = new Popover(element, selector)
+
+  return popover
+}
+
+const _ = run()
+console.log(_)
+
+document.addEventListener('click', (e) => {
+  const selector = e.target
+  const element = document.querySelector('#test')
+
+  const popover = new Popover(element, selector)
+
+  return popover
 })
-
-const rect = popover.getRectbySelector()
-const scroll = popover.getScroll()
-
-setTimeout(() => {
-  console.log('实行在下方')
-  element.style.transform = `translate(${rect.left}px,${rect.bottom + scroll.top}px)`
-}, 1000 * 1)
-
-setTimeout(() => {
-  console.log('实行在左方')
-  element.style.transform = `translate(${rect.left - element.offsetWidth}px,${rect.top + scroll.top}px)`
-}, 1000 * 3)
-
-setTimeout(() => {
-  console.log('实行在右方')
-  element.style.transform = `translate(${rect.right}px,${rect.top + scroll.top}px)`
-}, 1000 * 6)
-
-setTimeout(() => {
-  console.log('实行在顶部')
-  element.style.transform = `translate(${rect.left}px,${rect.top - element.offsetHeight + scroll.top}px)`
-}, 1000 * 9)
-
-// setTimeout(() => {
-//   console.log('实行在顶部')
-//   element.style.transform = `translate(${rect.left}px,${rect.top - element.offsetHeight}px)`
-// }, 1000 * 6)
-
-console.log('rect', rect)
-// export default Popover

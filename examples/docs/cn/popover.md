@@ -15,17 +15,15 @@ module.exports = {
       console.log('body',e)
     })
     const div = document.createElement('div')
-    div.innerHTML = `<div id='test' style='position: absolute;
+    div.innerHTML = `<div id='test' style='
       z-index: 1;
       width: 100px;
-      margin:0px;
       padding:0px;
-      left:0px;
-      top:0px;
-      height: 100px;
+      height: 40px;
       background: #fafafa;
-      line-height: 48px;
+      line-height: 20px;
       padding: 10px;
+      border-bottom:2px solid #000;
       box-sizing: border-box;'>
         test
     </div>`
