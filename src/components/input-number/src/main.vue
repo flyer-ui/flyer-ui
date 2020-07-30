@@ -65,12 +65,6 @@ export default {
       },
       set (value) {
         if (typeof value === 'number') {
-          if (this.min > value) {
-            value = this.min
-          }
-          if (this.max < value) {
-            value = this.max
-          }
           this.$emit('input', value)
           this.$emit('change', value)
         }
@@ -98,7 +92,14 @@ export default {
       !this.disalbedMinus && (this.model = preciseReduce(this.model, this.step))
     },
     filterValue (value) {
-      return Number.parseFloat(String(value).replace(/[^\d\\.-]*/ig, '')) || 0
+      value = Number.parseFloat(String(value).replace(/[^\d\\.-]*/ig, '')) || 0
+      if (this.min > value) {
+        value = this.min
+      }
+      if (this.max < value) {
+        value = this.max
+      }
+      return value
     },
     precisionDisplay (value) {
       if (typeof value === 'undefined') {
