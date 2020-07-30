@@ -18,12 +18,12 @@
 @include b('tag') {
     position: relative;
     border: 1px solid $fly-color-border;
-    padding: $fly-default-padding;
+    padding: $fly-default-padding / 2;
     font-size: 12px;
     border-radius: $fly-round-default-size;
     user-select: none;
     display: inline-flex;
-    height: 32px;
+    // height: 32px;
     box-sizing: border-box;
     align-items: center;
 

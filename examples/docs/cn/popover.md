@@ -1,4 +1,5 @@
 <script>
+const popover = require('../../../src/components/popover/src/popover.js')
 module.exports = {
   data(){
     return {

@@ -149,25 +149,28 @@ fn.placements = {
   }
 }
 
-/** **************** 测试 ****************/
+/** ****************** 测试 ******************* */
 
-function run () {
-  const selector = document.querySelector('.flag')
-  const element = document.querySelector('#test')
+// function run () {
+//   const selector = document.querySelector('.flag')
+//   const element = document.querySelector('#test')
 
-  const popover = new Popover(element, selector)
-
-  return popover
-}
-
-const _ = run()
-console.log(_)
+//   const popover = new Popover(element, selector, {
+//     placement: 'top'
+//   })
+//   return popover
+// }
+// window.run = run
+// const _ = run()
+// console.log(_)
 
 document.addEventListener('click', (e) => {
   const selector = e.target
   const element = document.querySelector('#test')
 
-  const popover = new Popover(element, selector)
+  const popover = new Popover(element, selector, {
+    placement: 'top'
+  })
 
   return popover
 })

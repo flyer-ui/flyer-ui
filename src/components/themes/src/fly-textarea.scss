@@ -8,6 +8,7 @@
         border:1px solid $fly-color-border;
         border-radius: $fly-round-default-size;
         padding:$fly-default-padding;
+        box-sizing: border-box;
         @include state('disabled'){
             background: rgba($fly-color-border,0.5);
             cursor:not-allowed;
