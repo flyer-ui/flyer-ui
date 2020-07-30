@@ -4,6 +4,14 @@
             return {
                 value:''
             }
+        },
+        methods:{
+          handleClean(){
+            this.value = ''
+          },
+          handleChange(){
+            console.log('change',this.value)
+          }
         }
     }
 </script>
@@ -16,7 +24,8 @@
 
 ```html
 <template>
-  <fly-textarea placeholder="多行输入" v-model="value"></fly-textarea>
+  <fly-textarea placeholder="多行输入" @change='handleChange' v-model="value"></fly-textarea>
+  <fly-button size='small' type='primary' @click='handleClean'>清空</fly-button>
 </template>
 <script>
   export default {
@@ -24,6 +33,14 @@
       return {
         value: ""
       };
+    },
+    methods:{
+      handleClean(){
+        this.value = ''
+      },
+      handleChange(){
+        console.log('change',this.value)
+      }
     }
   };
 </script>

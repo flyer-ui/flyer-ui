@@ -29,18 +29,12 @@ export default {
     rows: Number,
     cols: Number
   },
-  data () {
-    return {
-      selfModel: ''
-    }
-  },
   computed: {
     model: {
       get () {
-        return this.selfModel
+        return this.value
       },
       set (value) {
-        this.selfModel = value
         this.$emit('input', value)
       }
     }
