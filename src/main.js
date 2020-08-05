@@ -21,8 +21,8 @@ import Transfer from './components/transfer/index'
 import Tree from './components/tree/index'
 import Rate from './components/rate/index'
 import Select from './components/select/index'
-import Option from './components/option/index'
-import OptionGroup from './components/option-group/index'
+// import Option from './components/option/index'
+// import OptionGroup from './components/option-group/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
 import Progress from './components/progress/index'
@@ -65,8 +65,8 @@ const components = [
   Transfer,
   Rate,
   Select,
-  Option,
-  OptionGroup,
+  // Option,
+  // OptionGroup,
   Upload,
   Slider,
   Progress,
@@ -123,8 +123,8 @@ export default {
   Transfer,
   Rate,
   Select,
-  Option,
-  OptionGroup,
+  // Option,
+  // OptionGroup,
   Upload,
   Slider,
   Progress,

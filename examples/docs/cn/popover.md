@@ -1,5 +1,5 @@
 <script>
-const popover = require('../../../src/components/popover/src/popover.js')
+const popover = require('../../../src/mixins/popover.js')
 module.exports = {
   data(){
     return {
