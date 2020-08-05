@@ -180,26 +180,30 @@ module.exports =  {
 
 ```html
 <template>
+  <p>
   <fly-rate
     icon="fly-icon-heart"
     size="small"
     v-model="value8"
     allow-half
   ></fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate
     icon="fly-icon-heart"
     size="medium"
     v-model="value9"
     allow-half
   ></fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate
     icon="fly-icon-heart"
     size="large"
     v-model="value10"
     allow-half
   ></fly-rate>
+  </p>
 </template>
 <script>
   export default {
@@ -222,17 +226,20 @@ module.exports =  {
 
 ```html
 <template>
+  <p>
   <fly-rate icon="fly-icon-heart" v-model="value8" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value}} 星
     </template>
   </fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate :max="10" v-model="value9" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value * 10 }} %
     </template>
   </fly-rate>
+  </p>
 </template>
 <script>
   export default {
