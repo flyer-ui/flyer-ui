@@ -113,7 +113,7 @@ module.exports =  {
   <div class="fly-demo-block__row">
     <label class="fly-demo-block__label">属性方式：</label>
     <fly-input type="text" prefix-icon="fly-icon-search"></fly-input>
-    <fly-input type="text" suffix-icon="fly-icon-edit-3"></fly-input>
+    <fly-input type="text" suffix-icon="fly-icon-edit"></fly-input>
     <fly-input type="text" round prefix-icon="fly-icon-search"></fly-input>
   </div>
   <div class="fly-demo-block__row">
@@ -122,10 +122,10 @@ module.exports =  {
       <fly-icon slot="prefix" name="search"></fly-icon>
     </fly-input>
     <fly-input type="text">
-      <fly-icon slot="suffix" name="edit-3"></fly-icon>
+      <fly-icon slot="suffix" name="edit"></fly-icon>
     </fly-input>
     <fly-input round type="text">
-      <fly-icon slot="suffix" name="edit-3"></fly-icon>
+      <fly-icon slot="suffix" name="edit"></fly-icon>
     </fly-input>
   </div>
 </template>
@@ -156,11 +156,11 @@ module.exports =  {
       <span slot="prepend"><fly-checkbox label="选中">选中</fly-checkbox></span>
     </fly-input>
     <fly-input>
-      <span slot="append"><fly-icon name="calendar"></fly-icon></span>
+      <span slot="append"><fly-icon name="edit"></fly-icon></span>
     </fly-input>
     <fly-input>
       <span slot="prepend"><fly-checkbox label="选中">选中</fly-checkbox></span>
-      <span slot="append"><fly-icon name="calendar"></fly-icon></span>
+      <span slot="append"><fly-icon name="edit"></fly-icon></span>
     </fly-input>
   </div>
 </template>

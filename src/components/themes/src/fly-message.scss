@@ -36,15 +36,9 @@
         }
         @include state('success'){
             color:$fly-success-color;
-            border:1px solid $fly-success-color;
-            border-radius: 100%;
-            font-size:12px !important;
         }
         @include state('error'){
             color:$fly-danger-color;
-            border:1px solid $fly-danger-color;
-            border-radius: 100%;
-            font-size:12px !important;
         }
     }
     @include e('close'){

@@ -49,15 +49,15 @@
 </p>
 <p>
   <fly-button type='primary' size="large" icon='fly-icon-upload' >上传</fly-button>
-  <fly-button type='warning' size="medium" icon='fly-icon-download' >下载</fly-button>
-  <fly-button type='success' size="small" icon='fly-icon-edit-3' >编辑</fly-button>
-  <fly-button type='info' size="mini" icon='fly-icon-edit-3' >编辑</fly-button>
+  <fly-button type='warning' size="medium" icon='fly-icon-down' >下载</fly-button>
+  <fly-button type='success' size="small" icon='fly-icon-edit' >编辑</fly-button>
+  <fly-button type='info' size="mini" icon='fly-icon-edit' >编辑</fly-button>
 </p>
 <p>
   <fly-button type='primary' size="large" icon='fly-icon-upload' round plain>上传</fly-button>
-  <fly-button type='warning' size="medium" icon='fly-icon-download' round plain>下载</fly-button>
-  <fly-button type='success' size="small" icon='fly-icon-edit-3' round plain>编辑</fly-button>
-  <fly-button type='info' size="mini" icon='fly-icon-edit-3' round plain>编辑</fly-button>
+  <fly-button type='warning' size="medium" icon='fly-icon-down' round plain>下载</fly-button>
+  <fly-button type='success' size="small" icon='fly-icon-edit' round plain>编辑</fly-button>
+  <fly-button type='info' size="mini" icon='fly-icon-edit' round plain>编辑</fly-button>
 <p>
 ```
 :::
@@ -68,8 +68,8 @@
 
 ```html
 <p>
-  <fly-button disabled icon='fly-icon-frown-o'>禁用</fly-button>
-  <fly-button type='primary' icon='fly-icon-frown-o' disabled>禁用</fly-button>
+  <fly-button disabled icon='fly-icon-edit'>禁用</fly-button>
+  <fly-button type='primary' icon='fly-icon-edit' disabled>禁用</fly-button>
   <fly-button type='primary' loading>Loading...</fly-button>
 </p>
 
@@ -82,14 +82,14 @@
 
 ```html
 <p>
-  <fly-button icon='fly-icon-mic' size='large' circle></fly-button>
-  <fly-button icon='fly-icon-mic' size='medium' circle></fly-button>
-  <fly-button icon='fly-icon-mic' size='small' circle></fly-button>
-  <fly-button icon='fly-icon-mic' size='mini' circle></fly-button>
-  <fly-button icon='fly-icon-thumbs-o-up' type='primary' size='large' circle></fly-button>
-  <fly-button icon='fly-icon-thumbs-o-up' type='warning' size='medium' circle></fly-button>
-  <fly-button icon='fly-icon-thumbs-o-up' type='success' size='small' circle></fly-button>
-  <fly-button icon='fly-icon-thumbs-o-up' type='danger' size='mini' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' size='large' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' size='medium' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' size='small' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' size='mini' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' type='primary' size='large' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' type='warning' size='medium' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' type='success' size='small' circle></fly-button>
+  <fly-button icon='fly-icon-connectdevice' type='danger' size='mini' circle></fly-button>
 </p>
 ```
 :::
@@ -114,10 +114,10 @@
     <fly-button type="warning">警告按钮</fly-button>
     <fly-button type="danger">危险按钮</fly-button>
     <fly-button type="success">成功按钮</fly-button>
-    <fly-button type="primary" icon="fly-icon-align-left"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-center"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-right"></fly-button>
-    <fly-button type="primary" icon="fly-icon-align-justify"></fly-button>
+    <fly-button type="primary" icon="fly-icon-back"></fly-button>
+    <fly-button type="primary" icon="fly-icon-next"></fly-button>
+    <fly-button type="primary" icon="fly-icon-upward"></fly-button>
+    <fly-button type="primary" icon="fly-icon-down"></fly-button>
   </fly-button-group>
 </p>
 ```

@@ -4,7 +4,7 @@ $fly-input-clear-area:16px !default;
 
 @mixin fix-variant($padding,$fontSize){
     padding:$padding;
-    i[class^='fly-icon-']{
+    i[class^='fly-icon']{
         font-size:$fontSize;
         vertical-align: text-bottom;
     }

@@ -7,7 +7,7 @@
        "fly-input__prefix",
        `fly-input__prefix--${size}`]' v-if='isShowPrefix'>
           <slot name='prefix'>
-            <i :class='prefixIcon'></i>
+            <i class='fly-icon' :class='prefixIcon'></i>
           </slot>
        </span>
        <input
@@ -37,7 +37,7 @@
           "fly-input__suffix",
           `fly-input__suffix--${size}`]' v-if='isShowSuffix'>
           <slot name='suffix'>
-            <i :class='suffixIcon'></i>
+            <i class='fly-icon' :class='suffixIcon'></i>
           </slot>
        </span>
        <span class='fly-input__append' v-if='$slots.append'>

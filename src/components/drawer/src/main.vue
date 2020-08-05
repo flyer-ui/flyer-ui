@@ -4,7 +4,7 @@
         <div class='fly-drawer__content'>
             <div class='fly-drawer__header'>
                 <slot name='header'></slot>
-                <i class='fly-drawer__close fly-icon-x' v-if='showClose' @click='handleClose'></i>
+                <i class='fly-icon fly-drawer__close fly-icon-close' v-if='showClose' @click='handleClose'></i>
             </div>
             <div class='fly-drawer__body'>
                 <slot name='default'></slot>

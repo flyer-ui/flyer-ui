@@ -2,8 +2,8 @@
   <transition name='fly-message-fade'>
     <div class='fly-message__notice' v-if='value'>
         <div class='fly-message__content'>
-          <i :class='["fly-message__icon",iconName,`is-${type}`]'></i>{{content}}
-          <i v-if='closable || duration===0' @click='handleClose' class='fly-message__close fly-icon-x'></i>
+          <i :class='["fly-icon fly-message__icon",iconName,`is-${type}`]'></i>{{content}}
+          <i v-if='closable || duration===0' @click='handleClose' class='fly-icon fly-message__close fly-icon-close'></i>
         </div>
     </div>
   </transition>
@@ -48,11 +48,11 @@ export default {
         case 'warning':
           return 'fly-icon-info'
         case 'success':
-          return 'fly-icon-check'
+          return 'fly-icon-success'
         case 'error':
-          return 'fly-icon-x'
+          return 'fly-icon-error'
         case 'loading':
-          return 'fly-icon-loader'
+          return 'fly-icon-loading'
       }
     }
   },

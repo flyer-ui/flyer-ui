@@ -21,7 +21,7 @@ export default {
         {'is-closable': this.closable},
         {'is-disabled': this.disabled}]}>
         {this.pane.$slots.label || this.pane.label}
-        {this.closable ? <i class='fly-tab__close fly-icon-x' on-click={this.handleRemove}></i> : ''}
+        {this.closable ? <i class='fly-tab__close fly-icon-close' on-click={this.handleRemove}></i> : ''}
       </div>
     )
   },
