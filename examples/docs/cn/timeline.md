@@ -30,7 +30,7 @@
 <template>
   <fly-timeline>
     <fly-timeline-item
-      icon="fly-icon-activity"
+      icon="fly-icon-history"
       type="success"
       timestamp="2019-02-15"
       hide-timestamp
@@ -52,7 +52,7 @@
       <div class="fly-demo-block__row">日期:2019-03-04 （周一）</div>
     </fly-timeline-item>
     <fly-timeline-item timestamp="2019-03-04" type="danger" placement="bottom">
-      <i slot="dot" class="fly-icon-clock"></i>
+      <i slot="dot" class="fly-icon fly-icon-history"></i>
       <div class="fly-demo-block__row">上证指数 3102.10 (周三)</div>
     </fly-timeline-item>
   </fly-timeline>

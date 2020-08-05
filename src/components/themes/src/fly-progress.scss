@@ -57,11 +57,9 @@
         }
         @include state('error'){
             color:$fly-danger-color;
-            border:1px solid $fly-danger-color;
         }
         @include state('success'){
             color:$fly-success-color;
-            border:1px solid $fly-success-color;
         }
     }
 }
