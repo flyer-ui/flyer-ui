@@ -20,11 +20,10 @@
     "url": "https://github.com/flyer-ui/flyer-ui.git"
   },
   "scripts": {
-    "dev": "npm run build:icon && webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",
-    "build:icon": "node examples/generator.icon.js",
     "build:component": "webpack --config build/webpack.component.config.js",
     "build:umd": "webpack --config build/webpack.umd.config.js",
     "build:scss": "gulp build --gulpfile ./src/components/themes/gulpfile.js",
