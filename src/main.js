@@ -38,8 +38,13 @@ import Main from './components/main/index'
 import Aside from './components/aside/index'
 import Footer from './components/footer/index'
 import ColorCard from './components/color-card'
+import Menu from './components/menu/index'
+import MenuItem from './components/menu-item/index'
+import MenuGroup from './components/menu-group/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
+
+import Package from '../package.json'
 
 const components = [
   Button,
@@ -81,7 +86,10 @@ const components = [
   Main,
   Footer,
   Aside,
-  ColorCard
+  ColorCard,
+  Menu,
+  MenuItem,
+  MenuGroup
 ]
 
 const install = function (Vue) {
@@ -98,48 +106,9 @@ if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
 export default {
-  Version: '1.2.1',
+  Version: Package.version,
   install,
-  Button,
-  ButtonGroup,
-  Icon,
-  Input,
-  Checkbox,
-  CheckboxGroup,
-  Radio,
-  RadioGroup,
-  Modal,
-  Switch,
-  Textarea,
-  Tag,
-  InputNumber,
-  Card,
-  Alert,
-  TimeLine,
-  TimeLineItem,
-  Tree,
-  Tabs,
-  TabPane,
-  Transfer,
-  Rate,
-  Select,
-  Option,
-  OptionGroup,
-  Upload,
-  Slider,
-  Progress,
-  Pagination,
-  Popover,
-  Tooltip,
-  Drawer,
-  Row,
-  Col,
-  Container,
-  Header,
-  Main,
-  Footer,
-  Aside,
-  ColorCard,
   $message,
-  $modal
+  $modal,
+  ...components
 }
