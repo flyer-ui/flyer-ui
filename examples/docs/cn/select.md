@@ -84,9 +84,9 @@ module.exports = {
 ```html
 <template>
   <fly-select
-    @on-change="handleChange"
-    @on-blur="handleBlur"
-    @on-focus="handleFocus"
+    @change="handleChange"
+    @blur="handleBlur"
+    @focus="handleFocus"
     v-model="selected1"
     placeholder="请选择"
   >
@@ -188,7 +188,7 @@ module.exports = {
     ref="select"
     v-model="selected4"
     clearable
-    @on-clear="handleClear"
+    @clear="handleClear"
     placeholder="请选择"
   >
     <fly-option label="深圳" value="SZ"> </fly-option>
@@ -198,8 +198,8 @@ module.exports = {
     <fly-option label="清远" value="QY"> </fly-option>
     <fly-option label="河源" value="HY"> </fly-option>
   </fly-select>
-  <fly-button type='info' @on-click="setFocus">设置焦点</fly-button>
-  <fly-button type='warning' @on-click="setBlur">去除焦点</fly-button>
+  <fly-button type='info' @click="setFocus">设置焦点</fly-button>
+  <fly-button type='warning' @click="setBlur">去除焦点</fly-button>
 </template>
 <script>
   export default {
@@ -398,10 +398,10 @@ module.exports = {
 
 | 事件名称  | 返回值                           | 说明                           |
 | --------- | -------------------------------- | ------------------------------ |
-| on-change | 更新后的值[object:{value,label}] | 在点击选项状态变更时触发。     |
-| on-blur   | (event:Event)                    | 当 input 失去焦点时触发        |
-| on-focus  | (event:Event)                    | 当 input 获得焦点时触发        |
-| on-clear  | (event:Event)                    | 当单选模式下，点击清空按钮触发 |
+| change | 更新后的值[object:{value,label}] | 在点击选项状态变更时触发。     |
+| blur   | (event:Event)                    | 当 input 失去焦点时触发        |
+| focus  | (event:Event)                    | 当 input 获得焦点时触发        |
+| clear  | (event:Event)                    | 当单选模式下，点击清空按钮触发 |
 
 ### Select - 可定制方法
 

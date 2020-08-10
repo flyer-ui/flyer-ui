@@ -20,9 +20,9 @@
       readonly
       :suffix-icon='suffixIcon'
       @mouseup.native='showMenu'
-      @on-blur='handleBlur'
-      @on-focus='handleFocus'
-      @on-clear='handleClear'
+      @blur='handleBlur'
+      @focus='handleFocus'
+      @clear='handleClear'
       ref='reference'
       ></fly-input>
       <fly-select-dropdowns
@@ -67,7 +67,7 @@ export default {
   },
   computed: {
     suffixIcon () {
-      return this.visible ? 'fly-icon-chevron-up' : 'fly-icon-chevron-down'
+      return this.visible ? 'fly-icon-upward' : 'fly-icon-down'
     },
     singleValue () {
       return this.multiple ? '' : this.selected
@@ -118,7 +118,7 @@ export default {
         this.selected = label
         this.showMenu($event)
         this.$emit('input', value)
-        this.$emit('on-change', {value: value, label: label})
+        this.$emit('change', {value: value, label: label})
       } else {
         if (!Array.isArray(this.selected)) {
           this.selected = []

@@ -6,7 +6,7 @@
         `is-${size}`]'
         v-for='(item,index) in max' :key='index'>
         <i v-if='allowHalf'
-          :class='["fly-rate__half",
+          :class='["fly-icon fly-rate__half",
           iconName,
           {"is-active":isActive(getHalfValue(item))}]'
           @click='handleClick(getHalfValue(item))'
@@ -15,7 +15,7 @@
           {{character}}
         </i>
         <i
-          :class='["fly-rate__full",
+          :class='["fly-icon fly-rate__full",
           iconName,{"is-active":isActive(item)}]'
           @click='handleClick(item)'
           @mouseout='handleFullOut($event,item)'

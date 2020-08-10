@@ -2,7 +2,7 @@
     <div class='fly-tab'>
       <div :class='["fly-tab__header",{"is-scrollable":scrollable}]'>
          <span v-if='scrollable' class='fly-tab__left'>
-           <i class='fly-icon-chevron-left' @click='handlePrev'></i>
+           <i class='fly-icon fly-icon-back' @click='handlePrev'></i>
          </span>
          <div ref='scrollBar' class='fly-tab__scroll'>
           <div ref='navs' class='fly-tab__navs' :style='{"transform":`translate(-${movingWidth}px)`}'>
@@ -19,7 +19,7 @@
           </div>
         </div>
         <span class='fly-tab__right'>
-          <i class='fly-icon-chevron-right' v-if='scrollable' @click='handleNext'></i>
+          <i class='fly-icon fly-icon-next' v-if='scrollable' @click='handleNext'></i>
          </span>
       </div>
       <div class='fly-tab__content'>

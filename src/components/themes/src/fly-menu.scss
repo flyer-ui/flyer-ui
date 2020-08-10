@@ -1,0 +1,32 @@
+@include b('menu'){
+    display: flex;
+    position: relative;
+    line-height: 28px;
+    @include e('group'){
+        display: flex;
+        position: relative;
+    }
+    @include e('item'){
+        padding: 5px 15px;
+        display: inline-block;
+        font-weight: bold;
+        font-size: 15px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border-bottom:3px solid transparent;
+        cursor: pointer;
+        &:hover{
+            color:$warning;
+            border-bottom:3px solid $warning;
+        }
+        @include state('active'){
+            color:$warning;
+            border-bottom:3px solid $warning;
+        }
+    }
+    @include e('sub-item'){
+        display: none;
+    }
+}

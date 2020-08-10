@@ -3,11 +3,11 @@
       <div class='fly-modal__content' :style='{"width":width,"height":height}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>
-            <i :class='["fly-modal__icon",icon]'></i>
+            <i :class='["fly-icon fly-modal__icon",icon]'></i>
             {{title}}
             </slot>
         </div>
-        <i v-if='closable' class='fly-icon-x fly-modal__close' @click='handleClose'></i>
+        <i v-if='closable' class='fly-icon fly-icon-close fly-modal__close' @click='handleClose'></i>
         <div class='fly-modal__body'>
           <slot name='default'>{{content}}</slot>
         </div>

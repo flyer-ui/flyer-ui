@@ -7,9 +7,9 @@
             <slot name='code'></slot>
         </div>
         <div class='fly-demo-block__buttons'>
-            <i :class='{
-                "fly-icon-chevron-down":!isOpen,
-                "fly-icon-chevron-up":isOpen
+            <i class='fly-icon' :class='{
+                "fly-icon-down":!isOpen,
+                "fly-icon-upward":isOpen
             }' @click='handleOpenCode'></i>
         </div>
     </div>

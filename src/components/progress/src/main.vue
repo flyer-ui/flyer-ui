@@ -42,9 +42,9 @@ export default {
       get () {
         switch (this.status) {
           case 'success':
-            return 'check'
+            return 'success'
           case 'error':
-            return 'x'
+            return 'error'
         }
       }
     },

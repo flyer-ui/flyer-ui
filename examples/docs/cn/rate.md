@@ -117,16 +117,14 @@ module.exports =  {
 
 ```html
 <template>
-  <fly-rate icon="fly-icon-heart1" v-model="value5"></fly-rate>
+  <fly-rate icon="fly-icon-heart" v-model="value5"></fly-rate>
   <br />
   <fly-rate
-    icon="fly-icon-heart-o"
+    icon="fly-icon-heart"
     @on-change="handleChange"
     v-model="value7"
     allow-half
   ></fly-rate>
-  <br />
-  <fly-rate icon="fly-icon-thumbs-o-up" v-model="value6"></fly-rate>
 </template>
 <script>
   export default {
@@ -154,9 +152,12 @@ module.exports =  {
 
 ```html
 <template>
-  <fly-rate icon="fly-icon-heart1" v-model="value11" character="A"></fly-rate>
-  <br />
-  <fly-rate icon="fly-icon-heart1" v-model="value12" character="好"></fly-rate>
+  <p>
+  <fly-rate icon="fly-icon-heart" v-model="value11" character="A"></fly-rate>
+  </p>
+  <p>
+  <fly-rate icon="fly-icon-heart" v-model="value12" character="好"></fly-rate>
+  </p>
 </template>
 <script>
   export default {
@@ -179,26 +180,30 @@ module.exports =  {
 
 ```html
 <template>
+  <p>
   <fly-rate
-    icon="fly-icon-heart1"
+    icon="fly-icon-heart"
     size="small"
     v-model="value8"
     allow-half
   ></fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate
-    icon="fly-icon-heart1"
+    icon="fly-icon-heart"
     size="medium"
     v-model="value9"
     allow-half
   ></fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate
-    icon="fly-icon-heart1"
+    icon="fly-icon-heart"
     size="large"
     v-model="value10"
     allow-half
   ></fly-rate>
+  </p>
 </template>
 <script>
   export default {
@@ -215,48 +220,26 @@ module.exports =  {
 
 :::
 
-### 文字代替图标
-
-::: demo
-
-```html
-<template>
-  <fly-rate icon="fly-icon-heart1" v-model="value11" character="A"></fly-rate>
-  <br />
-  <fly-rate icon="fly-icon-heart1" v-model="value12" character="好"></fly-rate>
-</template>
-<script>
-  export default {
-    data() {
-      return {
-        value11: 2,
-        value12: 2,
-        value13: 2
-      };
-    }
-  };
-</script>
-```
-
-:::
-
 ### 显示文字
 
 ::: demo
 
 ```html
 <template>
-  <fly-rate icon="fly-icon-heart1" v-model="value8" show-text allow-half>
+  <p>
+  <fly-rate icon="fly-icon-heart" v-model="value8" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value}} 星
     </template>
   </fly-rate>
-  <br />
+  </p>
+  <p>
   <fly-rate :max="10" v-model="value9" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value * 10 }} %
     </template>
   </fly-rate>
+  </p>
 </template>
 <script>
   export default {

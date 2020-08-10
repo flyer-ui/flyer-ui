@@ -203,6 +203,12 @@
             "pending":false
         },
         {
+            "text": "Menu 导航条",
+            "type": "item",
+            "path": "menu",
+            "pending":false
+        },
+        {
             "text": "其它",
             "type": "notice",
             "path": "font",

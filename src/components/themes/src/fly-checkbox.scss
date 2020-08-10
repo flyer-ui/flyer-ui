@@ -40,8 +40,9 @@ $fly-checkbox-height:16px !default;
         }
         @include state("checked") {
             &::after {
-                content: '\e917';
+                content: '\e644';
             }
+            font-weight: bold;
             color:$fly-common-white;
             background: $fly-primary-color;
             border-color:$fly-primary-color;
@@ -54,8 +55,9 @@ $fly-checkbox-height:16px !default;
         }
         @include state("indeterminate"){
             &::after{
-                content:'\e932'
+                content:'\e696'
             }
+            font-weight: bold;
             color:$fly-common-white;
             background: $fly-primary-color;
             border-color:$fly-primary-color;

@@ -153,8 +153,6 @@ $fly-modal-padding:10px;
         }
         @include component('icon'){
             color:$fly-success-color;
-            border:1px solid $fly-success-color;
-            border-radius: 100%;
             font-size: 16px !important;
         }
     }

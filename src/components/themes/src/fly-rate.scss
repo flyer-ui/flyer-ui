@@ -18,13 +18,13 @@
             cursor:not-allowed;
         }
         @include state('small'){
-            i{font-size:10px;height:10px;}
+            i{font-size:10px;}
         }
         @include state('medium'){
-            i{font-size:20px;height:20px;}
+            i{font-size:20px;}
         }
         @include state('large'){
-            i{font-size:30px;height:30px;}
+            i{font-size:30px;}
         }
         @include state('full'){
             .fly-rate__full{

@@ -4,7 +4,7 @@
         "fly-timeline__dot",
         `fly-timeline__dot--${size}`,
         `is-${type}`]'>
-          <slot name='dot'><i :class='[icon]'></i></slot>
+          <slot name='dot'><i class='fly-icon' :class='[icon]'></i></slot>
         </div>
         <div class='fly-timeline__body'>
           <div v-if='placement==="top" && !hideTimestamp'

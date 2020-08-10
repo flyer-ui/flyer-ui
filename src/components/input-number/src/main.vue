@@ -4,7 +4,7 @@
           "is-disabled":disabledPlus
         }]' @click='handlePlus'>
           <slot name='plus'>
-            <i class='fly-icon-chevron-up'></i>
+            <i class='fly-icon fly-icon-upward'></i>
           </slot>
         </label>
         <input
@@ -18,7 +18,7 @@
           "is-disabled":disalbedMinus
         }]' @click='handleMinus'>
           <slot name='minus'>
-            <i class='fly-icon-chevron-down'></i>
+            <i class='fly-icon fly-icon-down'></i>
           </slot>
         </label>
     </div>

@@ -1,6 +1,6 @@
 <template>
   <span class='fly-icon'>
-    <i :class='`fly-icon-${name}`' @click='handleClick'></i><span><slot name='default'></slot></span>
+    <i :class='`fly-icon fly-icon-${name}`' @click='handleClick'></i><span><slot name='default'></slot></span>
   </span>
 </template>
 <script>

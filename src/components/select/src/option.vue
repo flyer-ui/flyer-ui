@@ -8,7 +8,7 @@
     </li>
 </template>
 <script>
-import {findParentByName} from '@flyer-ui/commonality'
+import {findParentByName} from '~/utils'
 export default {
   name: 'FlyOption',
   inject: ['select'],

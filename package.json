@@ -20,11 +20,10 @@
     "url": "https://github.com/flyer-ui/flyer-ui.git"
   },
   "scripts": {
-    "dev": "npm run build:icon && webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
+    "dev": "webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",
-    "build:icon": "node examples/generator.icon.js",
     "build:component": "webpack --config build/webpack.component.config.js",
     "build:umd": "webpack --config build/webpack.umd.config.js",
     "build:scss": "gulp build --gulpfile ./src/components/themes/gulpfile.js",
@@ -32,7 +31,8 @@
     "build:demo": "npm run build:icon && cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
     "clean": "rm -rf lib",
     "build": "npm run clean && npm run build:scss && npm run build:icon && npm run build:component && npm run build:umd && npm run build:common",
-    "publish:patch": "git checkout master && git merge dev && npm run build && npm version patch && git push --follow-tags && npm publish"
+    "publish:patch": "git checkout master && git merge dev && npm run build && npm version patch && git push --follow-tags && npm publish && git checkout master",
+    "publish:major": "git checkout master && git merge dev && npm run build && npm version major && git push --follow-tags && npm publish && git checkout master"
   },
   "dependencies": {
     "@flyer-ui/commonality": "0.0.7",

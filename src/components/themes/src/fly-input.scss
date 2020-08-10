@@ -4,7 +4,7 @@ $fly-input-clear-area:16px !default;
 
 @mixin fix-variant($padding,$fontSize){
     padding:$padding;
-    i[class^='fly-icon-']{
+    i[class^='fly-icon']{
         font-size:$fontSize;
         vertical-align: text-bottom;
     }
@@ -91,9 +91,6 @@ $fly-input-clear-area:16px !default;
         text-align: center;
         opacity: .6;
         pointer-events:all;
-        &:after{
-            content:'\e941'
-        }
         &:hover{
             opacity: 1;
         }

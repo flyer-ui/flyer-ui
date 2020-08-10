@@ -28,7 +28,7 @@ let $Modal = {
   confirm (options) {
     Instance(Object.assign({}, {
       type: 'confirm',
-      icon: 'fly-icon-help-circle'
+      icon: 'fly-icon-help'
     }, options))
   },
   info (options) {
@@ -40,19 +40,19 @@ let $Modal = {
   success (options) {
     Instance(Object.assign({}, {
       type: 'success',
-      icon: 'fly-icon-check'
+      icon: 'fly-icon-success'
     }, options))
   },
   warning (options) {
     Instance(Object.assign({}, {
       type: 'warning',
-      icon: 'fly-icon-alert-circle'
+      icon: 'fly-icon-warning'
     }, options))
   },
   danger (options) {
     Instance(Object.assign({}, {
       type: 'danger',
-      icon: 'fly-icon-x-circle'
+      icon: 'fly-icon-error'
     }, options))
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <label class='fly-checkbox'>
-        <span :class='["fly-checkbox__input",{
+        <span :class='["fly-icon fly-checkbox__input",{
           "is-checked":isChecked,
           "is-disabled":disabled,
           "is-indeterminate":indeterminate

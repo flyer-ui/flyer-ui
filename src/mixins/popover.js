@@ -149,28 +149,4 @@ fn.placements = {
   }
 }
 
-/** ****************** 测试 ******************* */
-
-// function run () {
-//   const selector = document.querySelector('.flag')
-//   const element = document.querySelector('#test')
-
-//   const popover = new Popover(element, selector, {
-//     placement: 'top'
-//   })
-//   return popover
-// }
-// window.run = run
-// const _ = run()
-// console.log(_)
-
-document.addEventListener('click', (e) => {
-  const selector = e.target
-  const element = document.querySelector('#test')
-
-  const popover = new Popover(element, selector, {
-    placement: 'top'
-  })
-
-  return popover
-})
+export default Popover

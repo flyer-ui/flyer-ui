@@ -15,8 +15,8 @@
       "is-round":round
     }
     ]'>
-      <i v-if='icon' :class="['fly-button__icon',icon]"></i>
-      <i v-if='loading' class='fly-button__icon fly-icon-loader'></i>
+      <i v-if='icon' :class="['fly-icon fly-button__icon',icon]"></i>
+      <i v-if='loading' class='fly-icon fly-button__icon fly-icon-loading'></i>
       <span><slot name='default'></slot></span>
     </button>
 </template>

@@ -61,6 +61,9 @@
                 display: block;
             }
         }
+        .fly-button__icon{
+            font-size:18px;
+        }
     }
 
     @include m('medium'){
@@ -68,6 +71,9 @@
         @include state('round'){
             border-radius:$fly-round-default-size * 6;
         }
+        // .fly-button__icon{
+        //     font-size:14px;
+        // }
         @include state('circle'){
             padding:$fly-default-padding * 1.5;
             border-radius:50%;
@@ -83,6 +89,9 @@
     @include m('small'){
         padding:$fly-default-padding / 2 $fly-default-padding / 1;
         font-size:12px;
+        .fly-button__icon{
+            font-size:12px;
+        }
         @include state('round'){
             border-radius:$fly-round-default-size * 4;
         }
@@ -101,6 +110,9 @@
     @include m('mini'){
         padding:$fly-default-padding / 4 $fly-default-padding / 2;
         font-size:12px;
+        .fly-button__icon{
+            font-size:12px;
+        }
         @include state('round'){
             border-radius:$fly-round-default-size * 3;
         }
