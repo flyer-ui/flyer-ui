@@ -29,5 +29,6 @@
   "tag":"./src/components/tag/index.js",
   "textarea":"./src/components/textarea/index.js",
   "timeline":"./src/components/timeline/index.js",
-  "timeline-item":"./src/components/timeline-item/index.js"
+  "timeline-item":"./src/components/timeline-item/index.js",
+  "menu":"./src/components/menu/index.js"
 }
