@@ -27,8 +27,28 @@
             color:$warning;
             border-bottom:3px solid $warning;
         }
+        @include state('has-child'){
+            &:hover{
+                color:inherit;
+                border-bottom:3px solid transparent;
+            }
+        }
     }
     @include e('sub-item'){
-        display: none;
+        box-shadow:1px 1px 10px rgba(228, 234, 236, 0.5);
+        background-color: #fff;
+        text-align: left;
+        min-width: 150px;
+        .fly-menu__group{
+            flex-direction:column;
+        }
+        .fly-menu__item{
+            font-weight: initial;
+            border-bottom:1px solid transparent;
+            &:hover{
+                color:inherit;
+                border-bottom:1px solid $warning;
+            }
+        }
     }
 }

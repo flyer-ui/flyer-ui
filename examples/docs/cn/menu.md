@@ -77,7 +77,52 @@ export default {
 }
 ```
 ::: 
-### 
+
+
+### 静态写法
+:::demo
+```html
+<template>
+    <fly-menu v-model='current'>
+        <fly-menu-item>
+            首页
+        </fly-menu-item>
+        <fly-menu-group>
+            <fly-menu-item>
+                商品
+            </fly-menu-item>
+            <fly-menu-item>
+                行情
+                <fly-menu-group slot='sub-menu'>
+                    <fly-menu-item>
+                        价格分析
+                    </fly-menu-item>
+                    <fly-menu-item>
+                        卖家趋势
+                    </fly-menu-item>
+                    <fly-menu-item>
+                        买家趋势
+                    </fly-menu-item>
+                </fly-menu-group>
+            </fly-menu-item>
+        </fly-menu-group>
+        <fly-menu-item title='设置'>
+            <fly-menu-group slot='sub-menu'>
+                <fly-menu-item>
+                    API管理
+                </fly-menu-item>
+                <fly-menu-item>
+                    用户管理
+                </fly-menu-item>
+                <fly-menu-item>
+                    API管理
+                </fly-menu-item>
+            </fly-menu-group>
+        </fly-menu-item>
+    </fly-menu>
+</template>
+```
+:::
 
 ### Menu - 可定制的属性
 
