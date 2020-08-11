@@ -1,5 +1,5 @@
 <template>
-    <div clas='fly-menu'>
+    <div class='fly-menu'>
         <slot name='default'></slot>
     </div>
 </template>

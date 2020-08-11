@@ -3,6 +3,7 @@
     display: flex;
     position: relative;
     line-height: 28px;
+    
     @include e('group'){
         display: flex;
         position: relative;
