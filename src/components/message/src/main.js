@@ -14,7 +14,7 @@ let Instance = (content, type, duration, options) => {
 
   if (isPlainObject(duration)) {
     options = duration
-    duration = 0
+    duration = -1
   }
 
   let Comp = Vue.extend(tmpl)

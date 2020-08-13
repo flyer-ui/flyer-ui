@@ -2,16 +2,16 @@
  module.exports =  {
         methods:{
             openNormal(){
-                this.$message.info('这是一个常用的消息',3)
+                this.$message.info('这是一个常用的消息')
             },
             openSuccess(){
-                this.$message.success('这是一个成功的消息',3)
+                this.$message.success('这是一个成功的消息')
             },
             openWarning(){
-                this.$message.warning('这是一个警告的消息',3)
+                this.$message.warning('这是一个警告的消息')
             },
             openError(){
-                this.$message.error('这是一个异常的消息',3)
+                this.$message.error('这是一个异常的消息')
             },
             openLoading(){
                 this.$message.loading('loading..',10)
@@ -19,8 +19,9 @@
             openClosable(){
                 this.$message.info('打开了我，啦 啦 啦 ，我就不自动关闭，嘿嘿嘿～～～',{
                     closable:true,
+                    duration:10,
                     onClosed(){
-                        this.$message.success('成功的关闭了我',2)
+                        this.$message.success('成功的关闭了我')
                     }
                 })
             }
@@ -47,16 +48,16 @@
   export default {
     methods: {
       openNormal() {
-        this.$message.info("这是一个常用的消息", 3);
+        this.$message.info("这是一个常用的消息");
       },
       openSuccess() {
-        this.$message.success("这是一个成功的消息", 3);
+        this.$message.success("这是一个成功的消息");
       },
       openWarning() {
-        this.$message.warning("这是一个警告的消息", 3);
+        this.$message.warning("这是一个警告的消息");
       },
       openError() {
-        this.$message.error("这是一个异常的消息", 3);
+        this.$message.error("这是一个异常的消息");
       },
       openLoading() {
         this.$message.loading("loading..", 10);
@@ -66,8 +67,9 @@
           "打开了我，啦 啦 啦 ，我就不自动关闭，嘿嘿嘿～～～",
           {
             closable: true,
+            duration:10,
             onClosed() {
-              this.$message.success("成功的关闭了我", 2);
+              this.$message.success("成功的关闭了我");
             }
           }
         );
@@ -84,7 +86,7 @@
 | 属性名称 | 类型    | 默认值 | 可选值       | 说明                                              |
 | -------- | ------- | ------ | ------------ | ------------------------------------------------- |
 | content  | String  | -      | -            | 显示的内容                                        |
-| duration | Number  | 0      | -            | 显示的持续时间，单位为秒，设置为 0 则为不默认关闭 |
+| duration | Number  | 3      | -            | 显示的持续时间，单位为秒 |
 | closable | Boolean | false  | true / false | 是否显示关闭按钮                                  |
 
 ### Message - 可定制的事件

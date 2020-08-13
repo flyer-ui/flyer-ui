@@ -17,7 +17,7 @@ export default {
     icon: String,
     duration: {
       type: Number,
-      default: 0
+      default: 3
     },
     closable: {
       type: Boolean,
