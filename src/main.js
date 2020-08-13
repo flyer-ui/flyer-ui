@@ -41,6 +41,7 @@ import ColorCard from './components/color-card'
 import Menu from './components/menu/index'
 import MenuItem from './components/menu-item/index'
 import MenuGroup from './components/menu-group/index'
+import SubMenu from './components/sub-menu/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -89,7 +90,8 @@ const components = [
   ColorCard,
   Menu,
   MenuItem,
-  MenuGroup
+  MenuGroup,
+  SubMenu
 ]
 
 const install = function (Vue) {
