@@ -26,6 +26,8 @@ import OptionGroup from './components/option-group/index'
 import Upload from './components/upload/index'
 import Slider from './components/slider/index'
 import Progress from './components/progress/index'
+import ProgressGroup from './components/progress-group/index'
+import ProgressItem from './components/progress-item/index'
 import Pagination from './components/pagination/index'
 import Popover from './components/popover/index'
 import Tooltip from './components/tooltip/index'
@@ -76,6 +78,8 @@ const components = [
   Upload,
   Slider,
   Progress,
+  ProgressGroup,
+  ProgressItem,
   Pagination,
   Popover,
   Tooltip,

@@ -21,7 +21,7 @@ export default {
   name: 'FlyProgress',
   props: {
     percentage: {
-      type: Number,
+      type: Number | String,
       required: true,
       default: 0
     },
