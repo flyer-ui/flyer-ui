@@ -9,7 +9,7 @@
 export default {
   name: 'FlyMenu',
   props: {
-    value: {
+    defaultActive: {
       type: [String, Number, Boolean]
     }
   }
