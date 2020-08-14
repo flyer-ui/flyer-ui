@@ -20,7 +20,7 @@ gulp.task('compile', gulp.series(function () {
 
 gulp.task('copyfont', gulp.series(function () {
   return gulp.src('./src/fonts/**')
-    // .pipe(cssmin())
+    .pipe(cssmin())
     .pipe(gulp.dest(path.resolve(libPath, 'themes/fonts')))
 }))
 
