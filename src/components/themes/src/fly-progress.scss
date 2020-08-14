@@ -20,13 +20,13 @@
         position: relative;
         background: $fly-color-border;
         border-radius:5px;
-        display:inline-block;
+        display:flex;
+        box-sizing: border-box;
         width:100%;
     }
     @include e('inner'){
         min-height: 10px;
         top: 0px;
-        border-radius:5px;
         z-index: 1;
         background: $fly-primary-color;
         color:$fly-primary-color;
@@ -42,6 +42,14 @@
         @include state('success'){
             background: $fly-success-color;
             color:$fly-success-color;
+        }
+        &:first-child{
+            border-top-left-radius:5px;
+            border-bottom-left-radius: 5px;
+        }
+        &:last-child{
+            border-top-right-radius:5px;
+            border-bottom-right-radius: 5px;
         }
     }
     @include e('text'){

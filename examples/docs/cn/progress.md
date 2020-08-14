@@ -62,7 +62,6 @@ module.exports =  {
   };
 </script>
 ```
-
 :::
 
 ### 显示状态及文本
@@ -144,11 +143,37 @@ module.exports =  {
 
 :::
 
+### 进度条组
+::: demo
+```html
+<template>
+  <fly-progress-group>
+    <fly-progress-item :percentage="10"></fly-progress-item>
+    <fly-progress-item :percentage="30" class='green'></fly-progress-item>
+    <fly-progress-item :percentage="40" class='red'></fly-progress-item>
+    <fly-progress-item :percentage="20" class='default'></fly-progress-item>
+  </fly-progress-group>
+</template>
+<style scoped>
+  .green{
+    background-color:#3eb058;
+  }
+  .red{
+    background-color:#e93939;
+  }
+  .default{
+    background-color:#ccc;
+  }
+</style>
+```
+:::
+
+
 ### Progress - 可定制属性
 
 | 属性名称   | 类型    | 默认值 | 可选值                   | 说明                             |
 | ---------- | ------- | ------ | ------------------------ | -------------------------------- |
-| percentage | Number  | 0      | -                        | 百分比值，对应的是进度条的进度   |
+| percentage | Number / String  | 0      | -                        | 百分比值，对应的是进度条的进度   |
 | showText   | Boolean | false  | -                        | 是否显示文本                     |
 | status     | String  | -      | normal / error / success | 进度条的状态，正常 / 错误 / 成功 |
 
@@ -158,3 +183,9 @@ module.exports =  {
 | -------- | -------------- |
 | text     | 自定义文本     |
 | status   | 自定义状态图标 |
+
+### Progress Item - 可定制属性
+
+| 属性名称   | 类型    | 默认值 | 可选值                   | 说明                             |
+| ---------- | ------- | ------ | ------------------------ | -------------------------------- |
+| percentage | Number / String  | 0      | -                        | 百分比值，对应的是进度条的进度   |

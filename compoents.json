@@ -30,5 +30,7 @@
   "textarea":"./src/components/textarea/index.js",
   "timeline":"./src/components/timeline/index.js",
   "timeline-item":"./src/components/timeline-item/index.js",
-  "menu":"./src/components/menu/index.js"
+  "menu":"./src/components/menu/index.js",
+  "progress-group":"./src/components/progress-group/index.js",
+  "progress-item":"./src/components/progress-item/index.js"
 }

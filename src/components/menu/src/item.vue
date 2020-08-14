@@ -1,8 +1,7 @@
 <template>
     <div class='fly-menu__item' :class='{"is-active":active}'>
-        <div @click="handleClick"><slot name='default'>{{title}}</slot></div>
-        <div class='fly-menu__sub-item'>
-            <slot name='sub-menu'></slot>
+        <div @click="handleClick" ref='menu'>
+          <slot name='default'>{{title}}</slot>
         </div>
     </div>
 </template>
@@ -21,14 +20,21 @@ export default {
     parent () {
       return findParentByName('FlyMenu', this)
     },
+    subParent () {
+      return findParentByName('FlySubMenu', this)
+    },
     active () {
-      return this.parent.value === this.index
+      return this.parent.defaultActive === this.index
     }
   },
   methods: {
     handleClick ($event) {
+      if (this.hasChild) {
+        return false
+      }
       this.$emit('click', this.index, $event)
-      this.parent.$emit('click', this.index)
+      this.parent.$emit('click', this.index, $event)
+      this.subParent && this.subParent.setActive()
     }
   }
 }
