@@ -1,9 +1,8 @@
 <template>
-    <div class='fly-progress'>
+    <div :class='["fly-progress",`fly-progress--${size}`]'>
         <div :class='["fly-progress__bar",{"is-show-text":isShowStatus}]'>
             <div class='fly-progress__outer'>
-                <div :class='["fly-progress__inner",`is-${status}`]' :style='{"width":`${percentage}%`}'>
-                </div>
+                <slot name='default'><progress-item :status='status' :percentage='percentage'></progress-item></slot>
             </div>
         </div>
         <span v-if='isShowText' class='fly-progress__text'>
@@ -17,12 +16,15 @@
     </div>
 </template>
 <script>
+import ProgressItem from './item'
 export default {
   name: 'FlyProgress',
+  components: {
+    ProgressItem
+  },
   props: {
     percentage: {
       type: Number | String,
-      required: true,
       default: 0
     },
     showText: {
@@ -35,6 +37,13 @@ export default {
         return ['normal', 'success', 'error'].indexOf(value) > -1
       },
       default: 'normal'
+    },
+    size: {
+      type: String,
+      validator (value) {
+        return ['large', 'medium', 'small'].indexOf(value) > -1
+      },
+      default: 'medium'
     }
   },
   computed: {

@@ -1,2 +1,2 @@
-import ProgressItem from '../progress-group/src/item.vue'
+import ProgressItem from '../progress/src/item.vue'
 export default ProgressItem
