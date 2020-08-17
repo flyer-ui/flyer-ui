@@ -21,7 +21,7 @@
 export default {
   name: 'FlyTextarea',
   props: {
-    value: [String, Number, Boolean],
+    value: [String, Number],
     placeholder: String,
     disabled: Boolean,
     maxLength: Number,
