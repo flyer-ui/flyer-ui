@@ -71,11 +71,16 @@ module.exports =  {
 ```html
 <template>
   <div style="width:400px">
-    <fly-progress :percentage="value7" show-text></fly-progress>
-    <fly-progress :percentage="value8" show-text status="error"></fly-progress>
+    <div style='width:200px'>
+      <fly-progress :percentage="value7" size='small' show-text></fly-progress>
+    </div>
+    <div style='width:300px'>
+      <fly-progress :percentage="value8" show-text status="error"></fly-progress>
+    </div>
     <fly-progress
       :percentage="value9"
       show-text
+      size='large'
       status="success"
     ></fly-progress>
   </div>
@@ -102,8 +107,25 @@ module.exports =  {
 ```html
 <template>
   <div style="width:400px">
+    <div style='width:200px'>
+      <fly-progress
+        :status="status"
+        size='small'
+        :percentage="value4"
+        show-text
+      ></fly-progress>
+    </div>
+    <div style='width:300px'>
+      <fly-progress
+        :status="status"
+        size='medium'
+        :percentage="value4"
+        show-text
+      ></fly-progress>
+    </div>
     <fly-progress
       :status="status"
+      size='large'
       :percentage="value4"
       show-text
     ></fly-progress>
@@ -147,12 +169,12 @@ module.exports =  {
 ::: demo
 ```html
 <template>
-  <fly-progress-group>
+  <fly-progress>
     <fly-progress-item :percentage="10"></fly-progress-item>
     <fly-progress-item :percentage="30" class='green'></fly-progress-item>
     <fly-progress-item :percentage="40" class='red'></fly-progress-item>
     <fly-progress-item :percentage="20" class='default'></fly-progress-item>
-  </fly-progress-group>
+  </fly-progress>
 </template>
 <style scoped>
   .green{
@@ -176,6 +198,8 @@ module.exports =  {
 | percentage | Number / String  | 0      | -                        | 百分比值，对应的是进度条的进度   |
 | showText   | Boolean | false  | -                        | 是否显示文本                     |
 | status     | String  | -      | normal / error / success | 进度条的状态，正常 / 错误 / 成功 |
+| size     | String  | medium     | large / medium / small | 进度条的三种大小属性 |
+| height     | String / Number  | 10px      |  | 指定进度条的高度，数字的单位是px|
 
 ### Modal - Slot
 
@@ -189,3 +213,4 @@ module.exports =  {
 | 属性名称   | 类型    | 默认值 | 可选值                   | 说明                             |
 | ---------- | ------- | ------ | ------------------------ | -------------------------------- |
 | percentage | Number / String  | 0      | -                        | 百分比值，对应的是进度条的进度   |
+| status     | String  | -      | normal / error / success | 进度条的状态，正常 / 错误 / 成功 （优先级高于progress组件）|
