@@ -85,18 +85,18 @@ export default {
   },
   methods: {
     handleBlur ($event) {
-      this.$emit('on-blur', $event)
+      this.$emit('blur', $event)
     },
     handleFocus ($event) {
-      this.$emit('on-focus', $event)
+      this.$emit('focus', $event)
     },
     handleClear ($event) {
       stop($event)
       this.selected = ''
       this.visible = false
       this.$emit('input', '')
-      this.$emit('on-clear', $event)
-      this.$emit('on-change', {})
+      this.$emit('clear', $event)
+      this.$emit('change', {})
     },
     handleRemoveTag (index) {
       this.selected.splice(index, 1)

@@ -73,7 +73,7 @@
 @include b('select-dropdowns'){
     display: block;
     border:1px solid $fly-color-border;
-    z-index: 999;
+    box-sizing: border-box;
     background:#fff;
     @include e('list'){
         list-style:none;
