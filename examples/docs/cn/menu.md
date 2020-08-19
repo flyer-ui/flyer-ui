@@ -3,30 +3,39 @@
         data(){
             return {
                 current:'001',
-                current2:2,
+                current2:'3.4.4.5.3',
                 items:[
                     {
-                        text:'菜单一',
+                        text:'首页',
                         value:'001'
                     },
                     {
-                        text:'菜单二',
+                        text:'商品',
                         value:'002'
                     },
                     {
-                        text:'菜单三',
+                        text:'行情',
                         value:'003'
+                    },
+                    {
+                        text:'数据',
+                        value:'004'
+                    },
+                    {
+                        text:'设置',
+                        value:'005'
                     }
                 ]
             }
         },
         methods:{
-            handleClick(index,$event){
+            handleClick(index,paths,$event){
                 this.current = index
-                console.log(index,$event,this.current)
+                console.log('current',index,this.current,paths,$event)
             },
-            handleClick2(index){
+            handleClick2(index,paths,$event){
                 this.current2 = index
+                console.log('current2',index,this.current2,paths,$event)
             }
         }
     }
@@ -39,14 +48,12 @@
 ```html
 <template>
     <fly-menu :default-active='current' @click='handleClick'>
-        <fly-menu-group>
-            <fly-menu-item  
-                v-for='(item,index) in items' 
-                :index='item.value'
-                :key='index'>
-                {{item.text}}
-            </fly-menu-item>
-        </fly-menu-group>
+        <fly-menu-item  
+            v-for='(item,index) in items' 
+            :index='item.value'
+            :key='index'>
+            {{item.text}}
+        </fly-menu-item>
     </fly-menu>
 </template>
 ```
@@ -55,26 +62,35 @@ export default {
     data(){
         return {
             current:'001',
+            current2:2,
             items:[
                 {
-                    text:'菜单一',
+                    text:'首页',
                     value:'001'
                 },
                 {
-                    text:'菜单二',
+                    text:'商品',
                     value:'002'
                 },
                 {
-                    text:'菜单三',
+                    text:'行情',
                     value:'003'
+                },
+                {
+                    text:'数据',
+                    value:'004'
+                },
+                {
+                    text:'设置',
+                    value:'005'
                 }
             ]
         }
     },
     methods:{
-        handleClick(index,$event){
+        handleClick(index,paths,$event){
             this.current = index
-            console.log(index,$event,this.current)
+            console.log(index,paths,this.current,$event)
         }
     }
 }
@@ -87,45 +103,65 @@ export default {
 ```html
 <template>
     <fly-menu :default-active='current2' @click='handleClick2'>
-        <fly-menu-item :index='1'>
+        <fly-menu-item index='1'>
             首页
         </fly-menu-item>
-        <fly-menu-group>
-            <fly-menu-item :index='2'>
-                商品
+        <fly-menu-item index='2'>
+            商品
+        </fly-menu-item>
+        <fly-sub-menu title='行情' index='3'>
+            <fly-menu-item index='3.1'>
+                3.1
             </fly-menu-item>
-            <fly-sub-menu title='行情' :index='3'>
-                <fly-menu-item :index='3.1'>
-                    价格分析
-                </fly-menu-item>
-                <fly-menu-item :index='3.2'>
-                    卖家趋势
-                </fly-menu-item>
-                <fly-menu-item :index='3.3'>
-                    买家趋势
-                </fly-menu-item>
-            </fly-sub-menu>
-        </fly-menu-group>
-        <fly-sub-menu title='设置' :index='4'>
-            <fly-menu-item :index='4.1'>
-                API管理
+            <fly-menu-item index='3.2'>
+                3.2
             </fly-menu-item>
-            <fly-menu-item :index='4.2'>
-                用户管理
+            <fly-menu-item index='3.3'>
+                3.3
             </fly-menu-item>
-            <fly-menu-item :index='4.3'>
-                API管理
-            </fly-menu-item>
-            <fly-sub-menu title='含二级菜单' :index='4.4'>
-                <fly-menu-item index='4.4.1'>
-                    菜单一
+            <fly-sub-menu title='3.4' index='3.4'>
+                <fly-menu-item index='3.4.1'>
+                    3.4.1
                 </fly-menu-item>
-                <fly-menu-item index='4.4.2'>
-                    菜单二
+                <fly-menu-item index='3.4.2'>
+                    3.4.2
                 </fly-menu-item>
-                <fly-menu-item index='4.4.3'>
-                    菜单三
+                <fly-sub-menu title='3.4.3' index='3.4.3'>
+                    <fly-menu-item index='3.4.3.1'>
+                        3.4.3.1
+                    </fly-menu-item>
+                    <fly-menu-item index='3.4.3.2'>
+                        3.4.3.2
+                    </fly-menu-item>
+                    <fly-menu-item index='3.4.3.3'>
+                        3.4.3.3
+                    </fly-menu-item>
+                </fly-sub-menu>
+                <fly-menu-item index='3.4.4'>
+                    3.4.4
                 </fly-menu-item>
+                <fly-sub-menu title='3.4.5' index='3.4.5'>
+                    <fly-menu-item index='3.4.5.1'>
+                        3.4.5.1
+                    </fly-menu-item>
+                    <fly-menu-item index='3.4.5.2'>
+                        3.4.5.2
+                    </fly-menu-item>
+                    <fly-menu-item index='3.4.5.3'>
+                        3.4.5.3
+                    </fly-menu-item>
+                    <fly-sub-menu title='3.4.5.4' index='3.4.5.4'>
+                        <fly-menu-item index='3.4.4.5.1'>
+                            3.4.4.5.1
+                        </fly-menu-item>
+                        <fly-menu-item index='3.4.4.5.2'>
+                            3.4.4.5.2
+                        </fly-menu-item>
+                        <fly-menu-item index='3.4.4.5.3'>
+                            3.4.4.5.3
+                        </fly-menu-item>
+                    </fly-sub-menu>
+                </fly-sub-menu>
             </fly-sub-menu>
         </fly-sub-menu>
     </fly-menu>
@@ -146,12 +182,6 @@ export default {
 | index | String / Number / Boolean | -      | -            | 唯一标识符      |
 
 ### Menu - 可定制的事件
-
-| 事件名称  | 返回值                   | 说明                                        |
-| --------- | ------------------------ | ------------------------------------------- |
-| click   | (index,Event)           | 点击菜单时触发                     |
-
-### Menu-Item - 可定制的事件
 
 | 事件名称  | 返回值                   | 说明                                        |
 | --------- | ------------------------ | ------------------------------------------- |

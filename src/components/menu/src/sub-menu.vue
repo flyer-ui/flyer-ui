@@ -1,6 +1,6 @@
 <template>
-    <div class='fly-sub-menu'>
-         <fly-menu-item @mousemove.native="temp" :index='index' ref='menu'>
+    <div class='fly-sub-menu' @mousemove='handleMouseOver' @mouseout="handleMouseOut" ref='container'>
+         <fly-menu-item hasChildren :index='index' ref='menu' :class='{"is-active":highlight}'>
             <slot name='title'>{{title}}</slot>
             <fly-icon :name='icon'></fly-icon>
         </fly-menu-item>
@@ -11,10 +11,12 @@
 </template>
 
 <script>
+
 import zIndexManage from '~/mixins/zIndexManage'
 import Popover from '~/mixins/popover'
-import {stop, debounce} from '@flyer-ui/commonality'
+import {on} from '@flyer-ui/commonality'
 import FlyMenuItem from './item'
+import {findParentByName} from '~/utils/index'
 
 export default {
   name: 'FlySubMenu',
@@ -24,12 +26,19 @@ export default {
   data () {
     return {
       showChild: false,
-      icon: 'down'
+      highlight: false,
+      icon: 'down',
+      childrenIndex: []
     }
   },
   computed: {
-    hasChild () {
-      return !!this.$slots.default
+    parent () {
+      return findParentByName('FlyMenu', this)
+    }
+  },
+  watch: {
+    'parent.defaultActive' () {
+      this.highlight = false
     }
   },
   props: {
@@ -39,59 +48,51 @@ export default {
     index: String | Number | Boolean
   },
   methods: {
-    setActive () {
-      console.log('The component is set to active state.')
+    setActive (index, paths, $event) {
+      const name = this.$parent.$options.name
+      if (name === 'FlySubMenu') {
+        this.$parent.setActive(index, [this.index, ...paths], $event)
+      } else if (name === 'FlyMenu') {
+        this.parent.$emit('click', index, [this.index, ...paths], $event)
+      }
     },
-    temp () {
-      return debounce(() => {
-        if (this.hasChild) {
-          const menu = this.$refs.menu.$el
-          const subMenu = this.$refs.subMenu
-          const popover = new Popover(subMenu, menu)
-          let timeout = null
-
-          popover.$element.style.zIndex = zIndexManage.get()
-          console.log('menu', menu)
-          console.log('subMenu', subMenu)
-          menu.addEventListener('mouseover', (e) => {
-            stop(e)
-            this.showChild = true
-            this.icon = 'upward'
-            clearTimeout(timeout)
-          })
-          subMenu.addEventListener('mouseover', (e) => {
-            stop(e)
-            clearTimeout(timeout)
-            this.showChild = true
-            this.icon = 'upward'
-          })
-          menu.addEventListener('mouseout', (e) => {
-            stop(e)
-            // this.showChild = false
-            timeout = setTimeout(() => {
-              this.showChild = false
-              this.icon = 'down'
-            }, 100)
-          })
-          subMenu.addEventListener('mouseout', (e) => {
-            stop(e)
-            // this.showChild = false
-            timeout = setTimeout(() => {
-              this.showChild = false
-              this.icon = 'down'
-            }, 100)
-          })
-          // if (this.index === 4.4) {
-          //   console.log('This is a special one.', subMenu.$parent)
-          //   debugger
-          //   subMenu.parentNode.appendChild(popover.$element)
-          // } else {
-          //   document.body.appendChild(popover.$element)
-          // }
-          document.body.appendChild(popover.$element)
-        }
-      }, 10)()
+    setHighlight () {
+      this.highlight = true
+      const name = this.$parent.$options.name
+      if (name === 'FlySubMenu') {
+        this.$parent.setHighlight()
+      }
+    },
+    handleMouseOver ($event) {
+      if (this.timeout) {
+        clearTimeout(this.timeout)
+      }
+      this.showChild = true
+      if (this.$parent.$options.name === 'FlySubMenu') {
+        this.$refs.subMenu.style.left = `${this.$refs.container.offsetWidth + 20}px`
+      }
+    },
+    handleMouseOut ($event) {
+      this.timeout = setTimeout(() => {
+        this.showChild = false
+      }, 500)
     }
+  },
+  mounted () {
+    if (this.$parent.$options.name === 'FlyMenu') {
+      const element = this.$refs.subMenu
+      const selector = this.$refs.container
+      this.popover = new Popover(element, selector)
+      this.popover.$element.style.zIndex = zIndexManage.get()
+      on(element, 'mouseover', this.handleMouseOver)
+      on(element, 'mouseout', this.handleMouseOut)
+      document.body.appendChild(this.popover.$element)
+    }
+    this.$slots.default.forEach(node => {
+      if (node.componentInstance) {
+        this.childrenIndex.push(node.componentInstance.index)
+      }
+    })
   }
 }
 </script>

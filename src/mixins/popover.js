@@ -9,19 +9,25 @@
 
 // 得到所有的父窗体
 // element 要弹出来的元素
+// offset 要低消的间距
 // placement = bottom | top | left | right
 // selector 指定的位置
+
 const Popover = function (element, selector, options = {
   placement: 'bottom'
 }) {
   this.$element = element
   this.$selector = selector
-  this.$options = options
+  this.$options = Object.assign({}, Popover.DEFAULT_OPTIONS, options)
   this.init()
 }
 const fn = Popover.prototype
 
-Popover.mode = 'production'
+Popover.mode = 'development'
+Popover.DEFAULT_OPTIONS = {
+  placement: 'bottom',
+  offset: [0, 0]
+}
 
 Popover.log = function (msg) {
   Popover.mode === 'development' && console.log(msg)
@@ -32,8 +38,7 @@ fn.init = function () {
   this.$container = this.getContainer()
   this.$scroll = this.getScroll()
   this.checkElement()
-  const put = this.placements[this.$options.placement]
-  typeof put === 'function' && put.apply(this)
+  this.put('bottom')
 }
 
 /** 得到依靠元素的上下左右值 */
@@ -83,6 +88,8 @@ fn.getContainer = function () {
 
 /** 设置弹层的位置 */
 fn.setTranslate = function (x, y) {
+  x = x + this.$options.offset[0] || 0
+  y = y + this.$options.offset[1] || 0
   this.$element.style.transform = `translate(${x}px,${y}px)`
 }
 
@@ -147,6 +154,17 @@ fn.placements = {
       this.placements.bottom.bind(this)()
     }
   }
+}
+
+/** 放置弹层 */
+fn.put = function (placement) {
+  const put = this.placements[placement || this.$options.placement]
+  typeof put === 'function' && put.apply(this)
+}
+
+/** 更新弹屏的位置 */
+fn.update = function () {
+  this.put()
 }
 
 export default Popover

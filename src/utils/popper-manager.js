@@ -2,14 +2,14 @@ import { on } from '@flyer-ui/commonality'
 
 const NODE_LIST = []
 
-on(document, 'mouseup', $event =>
+on(document, 'mouseup', $event => {
   NODE_LIST.forEach(node => {
     const target = $event.target
     if (!node || !node.$el) { return false }
     if (target === node.$el || node.$el.contains(target)) { return false }
     node.visible = false
   })
-)
+})
 
 export default {
   push (node) {
