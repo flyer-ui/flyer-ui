@@ -20,7 +20,7 @@
     "url": "https://github.com/flyer-ui/flyer-ui.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
+    "dev": "NODE_ENV=development webpack-dev-server --inline --progress --config build/webpack.demo.dev.config.js",
     "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",

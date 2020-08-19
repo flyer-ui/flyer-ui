@@ -23,7 +23,7 @@ const Popover = function (element, selector, options = {
 }
 const fn = Popover.prototype
 
-Popover.mode = 'development'
+Popover.mode = process.env.NODE_ENV
 Popover.DEFAULT_OPTIONS = {
   placement: 'bottom',
   offset: [0, 0]
