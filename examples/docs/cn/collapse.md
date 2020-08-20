@@ -117,7 +117,7 @@ export default = {
             </template>
             “我每天多次反省自己：替别人办事是不是尽心竭力了呢？同朋友交往是不是诚实可信了呢？老师传授的知识是不是复习了呢？”
         </fly-collapse-item>
-        <fly-collapse-item title='孔子说' name='name3'> 
+        <fly-collapse-item disabled title='孔子说' name='name3'> 
             “我十五岁开始有志于做学问，三十岁便小有所成，四十岁能（通达事理）不被外物所迷惑，五十岁能知道上天的意旨，
             六十岁能听得进不同的意见，到七十岁才做事能随心所欲，不会超过规矩。”
         </fly-collapse-item>

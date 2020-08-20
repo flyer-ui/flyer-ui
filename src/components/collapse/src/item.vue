@@ -1,6 +1,6 @@
 <template>
     <div class='fly-collapse__item'>
-        <div class='fly-collapse__title' @click='handleClick'>
+        <div :class='["fly-collapse__title",{"is-disabled":disabled}]' @click='handleClick'>
             <slot name='title'>
                 {{title}}
             </slot>
@@ -20,7 +20,12 @@ export default {
     // 面板标题
     title: String,
     // 唯一标识名称
-    name: String | Number
+    name: String | Number,
+    // 是否禁用
+    disabled: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {
@@ -43,9 +48,11 @@ export default {
   },
   methods: {
     handleClick () {
-      this.model = !this.model
-      this.parent.$emit('input', this.name)
-      this.parent.$emit('change', this.name)
+      if (!this.disabled) {
+        this.model = !this.model
+        this.parent.$emit('input', this.name)
+        this.parent.$emit('change', this.name)
+      }
     }
   }
 }
