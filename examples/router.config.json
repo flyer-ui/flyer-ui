@@ -233,6 +233,12 @@
             "pending":false
         },
         {
+            "text": "Collapse 折叠面板",
+            "type": "item",
+            "path": "collapse",
+            "pending":false
+        },
+        {
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",

@@ -43,6 +43,8 @@ import Menu from './components/menu/index'
 import MenuItem from './components/menu-item/index'
 import MenuGroup from './components/menu-group/index'
 import SubMenu from './components/sub-menu/index'
+import Collapse from './components/collapse/index'
+import CollapseItem from './components/collapse-item/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -93,7 +95,9 @@ const components = [
   Menu,
   MenuItem,
   MenuGroup,
-  SubMenu
+  SubMenu,
+  Collapse,
+  CollapseItem
 ]
 
 const install = function (Vue) {

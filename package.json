@@ -36,8 +36,7 @@
     "publish:minor": "git checkout master && git merge dev -m 'chore: Merge branch ”dev“' && npm run build && npm version minor && git push --follow-tags && npm publish && git checkout dev"
   },
   "dependencies": {
-    "@flyer-ui/commonality": "0.0.7",
-    "popper.js": "^1.15.0"
+    "@flyer-ui/commonality": "0.0.7"
   },
   "peerDependencies": {
     "vue": ">=2.5.2"
