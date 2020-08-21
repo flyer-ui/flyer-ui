@@ -70,6 +70,8 @@ export default {
       this.showChild = true
       if (this.$parent.$options.name === 'FlySubMenu') {
         this.$refs.subMenu.style.left = `${this.$refs.container.offsetWidth + 20}px`
+      } else {
+        this.popover.update()
       }
     },
     handleMouseOut ($event) {
