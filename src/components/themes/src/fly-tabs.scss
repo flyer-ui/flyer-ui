@@ -4,90 +4,14 @@ $fly-tab-nav-padding:10px;
 $fly-tab-nav-lineHeight:24px;
 $fly-bottom-border-size:2px;
 
-@include b('tab'){
+@include b('tabs'){
     position: relative;
-
-    .icon-pull{
-        position: absolute;
-        cursor: pointer;
-        top:0px;
-        user-select: none;
-        border-bottom:2px solid $fly-color-border;
-        box-sizing: border-box;
-        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
-        padding:calc((#{$fly-tab-nav-padding} * 2 + #{$fly-tab-nav-lineHeight} - 16px - 2px) / 2) 2px;
-    }
-    .icon-hover{
-        [class^="fly-icon-"], [class*=" fly-icon-"] {
-            border-radius: 100%;
-            &:hover{
-                background: rgba($fly-color-border,0.5);
-            }
-        }
-    }
-    .icon-opacity{
-        width:$fly-tab-nav-padding;
-        background: #fff;
-        opacity:0.9;
-    }
-
-    @include e('header'){
-        position: relative;
-        width:100%;
-        box-sizing: border-box;
-        border-bottom:2px solid $fly-color-border;
-        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
-        @include state ('scrollable'){
-            padding-right:calc(#{$fly-tab-nav-padding} * 2);
-            padding-left:calc(#{$fly-tab-nav-padding} * 2);
-        }
-        @include state('show-list'){
-            padding-right:calc(#{$fly-tab-nav-padding} * 6)
-        }
-    }
-    @include e('left'){
-        @extend .icon-pull;
-        @extend .icon-hover;
-        left:2px;
-        background-color: #fff;
-        &:after{
-            content:'';
-            @extend .icon-pull;
-            @extend .icon-opacity;
-            right:calc(#{-$fly-tab-nav-padding} / 2);
-        }
-    }
-    @include e('right'){
-        @extend .icon-pull;
-        @extend .icon-hover;
-        right:2px;
-        background-color: #fff;
-        &:before{
-            content:'';
-            @extend .icon-pull;
-            @extend .icon-opacity;
-            left:calc(#{-$fly-tab-nav-padding} / 1.2);
-        }
-    }
-    @include e('scroll'){
-        overflow: hidden;
-        white-space: nowrap;
-    }
+    box-sizing: border-box;
     @include e('navs'){
-        // width:100%;
-        float:left;
-        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
+        position: relative;
         box-sizing: border-box;
-        transition:transform 0.3s;
-    }
-    @include e('tab-list'){
-        position: absolute;
-        padding:$fly-tab-nav-padding $fly-tab-nav-padding * 2;
-        line-height: $fly-tab-nav-lineHeight;
-        background-color: #fff;
-        box-shadow: 1px 1px 2px rgba($font-color-common,0.7);
-        z-index: 99;
-        border-radius: $fly-round-default-size;
+        border-bottom:$fly-bottom-border-size solid $fly-color-border;
+        padding-right:2*$fly-tab-nav-padding;
     }
     @include e('content'){
         position: relative;
@@ -105,8 +29,9 @@ $fly-bottom-border-size:2px;
         display: inline-flex;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         padding:$fly-tab-nav-padding;
+        margin-bottom:-$fly-bottom-border-size;
         box-sizing: border-box;
-        cursor: default;
+        cursor: pointer;
         line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
         @include state('active'){
             color:$fly-primary-color;
@@ -128,6 +53,19 @@ $fly-bottom-border-size:2px;
                 display: inline-block !important;
             }
         }
+    }
+    @include e('more-icon'){
+        position:absolute;
+        z-index:1;
+        right:0px;
+        top:10px;
+        cursor:pointer;
+    }
+    @include e('more'){
+        padding:10px;
+        background-color:$fly-common-white;
+        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+
     }
     @include e('close'){
         position: absolute;

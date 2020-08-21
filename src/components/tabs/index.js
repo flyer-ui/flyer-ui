@@ -1,2 +1,2 @@
-import Tab from './src/main.vue'
-export default Tab
+import Tabs from './src/main.vue'
+export default Tabs

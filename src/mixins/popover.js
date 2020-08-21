@@ -21,17 +21,16 @@ const Popover = function (element, selector, options = {
   this.$options = Object.assign({}, Popover.DEFAULT_OPTIONS, options)
   this.init()
 }
-const fn = Popover.prototype
-
 Popover.mode = process.env.NODE_ENV
 Popover.DEFAULT_OPTIONS = {
   placement: 'bottom',
   offset: [0, 0]
 }
-
-Popover.log = function (msg) {
+const log = function (msg) {
   Popover.mode === 'development' && console.log(msg)
 }
+
+const fn = Popover.prototype
 
 fn.init = function () {
   this.$rect = this.getRectbySelector()
@@ -53,24 +52,6 @@ fn.checkElement = function () {
     this.$element.style[item] = '0px'
   })
   this.$element.style['position'] = 'absolute'
-}
-
-/** 得到页面可视容器大小 */
-fn.getVisualSize = function () {
-  const visual = document.body
-  return {
-    height: visual.offsetWidth,
-    width: visual.offsetWidth
-  }
-}
-
-/** 得到弹出元素的大小 */
-fn.getElementSize = function (element) {
-  element = element || this.$element
-  return {
-    height: element.offsetHeight,
-    width: element.offsetWidth
-  }
 }
 
 /** 得到滚动条的高度和宽度 */
@@ -95,26 +76,26 @@ fn.setTranslate = function (x, y) {
 
 fn.placements = {
   bottom: function () {
-    Popover.log('实行在下方')
+    log('实行在下方')
     const bottom = this.$container.offsetHeight - this.$rect.bottom
     if (bottom >= this.$element.offsetHeight) {
       this.setTranslate(this.$rect.left, this.$rect.bottom + this.$scroll.top)
     } else {
-      Popover.log('下方空间不足')
+      log('下方空间不足')
       this.placements.top.bind(this)()
     }
   },
   top: function () {
-    Popover.log('实行在顶部')
+    log('实行在顶部')
     if (this.$rect.top >= this.$element.offsetHeight) {
       this.setTranslate(this.$rect.left, this.$rect.top - this.$element.offsetHeight + this.$scroll.top)
     } else {
-      Popover.log('顶部空间不足')
+      log('顶部空间不足')
       this.placements.left.bind(this)()
     }
   },
   left: function () {
-    Popover.log('实行在左方')
+    log('实行在左方')
     if (this.$rect.left >= this.$element.offsetWidth) {
       // 判断默认下方的位置是否够放弹框
       const bottom = this.$container.offsetHeight - this.$rect.bottom
@@ -123,18 +104,18 @@ fn.placements = {
       if (bottom >= this.$element.offsetHeight - this.$rect.height) {
         this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + scroll.top)
       } else {
-        Popover.log('检测到下方空间不足，默认跳到上方')
+        log('检测到下方空间不足，默认跳到上方')
         this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + this.$scroll.top - (
           bottom + overHeight
         ))
       }
     } else {
-      Popover.log('左方空间不足')
+      log('左方空间不足')
       this.placements.right.bind(this)()
     }
   },
   right: function () {
-    Popover.log('实行在右方')
+    log('实行在右方')
     const right = this.$container.offsetWidth - this.$rect.right
     if (right >= this.$element.offsetWidth) {
       // 判断默认下方的位置是否够放弹框
@@ -144,13 +125,13 @@ fn.placements = {
       if (bottom >= this.$element.offsetHeight - this.$rect.height) {
         this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top)
       } else {
-        Popover.log('检测到下方空间不足，默认跳到上方')
+        log('检测到下方空间不足，默认跳到上方')
         this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top - (
           bottom + overHeight
         ))
       }
     } else {
-      Popover.log('右方空间不足')
+      log('右方空间不足')
       this.placements.bottom.bind(this)()
     }
   }
@@ -164,7 +145,7 @@ fn.put = function (placement) {
 
 /** 更新弹屏的位置 */
 fn.update = function () {
-  this.put()
+  this.init()
 }
 
 export default Popover
