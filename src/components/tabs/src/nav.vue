@@ -10,7 +10,6 @@ export default {
       require: true
     },
     name: String | Number,
-    value: String | Number,
     disabled: {
       type: Boolean,
       default: false
@@ -20,10 +19,15 @@ export default {
       default: false
     }
   },
+  computed: {
+    active () {
+      return this.$parent.value === this.name
+    }
+  },
   render (h) {
     return (
       <div on-click={this.handleClick} class={['fly-tabs__nav',
-        {'is-active': this.value === this.name},
+        {'is-active': this.active},
         {'is-closable': this.closable},
         {'is-disabled': this.disabled}]}>
         {this.pane.$slots.label || this.pane.label}
@@ -36,8 +40,7 @@ export default {
       if (this.disabled) {
         return false
       }
-      this.$emit('input', this.name)
-      this.$parent.$emit('input', this.name)
+      this.$parent.handleChange(this.name)
     },
     handleRemove ($event) {
       if (this.disabled) {

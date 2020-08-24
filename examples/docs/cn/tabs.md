@@ -29,6 +29,9 @@
                 const nextTab = this.tabs[index+1]||this.tabs[index-1]
                 this.tabs.splice(index,1)
                 this.activeName = nextTab.name
+            },
+            handleChange(name){
+              console.log(`Executing event of change and this value is ${name}`)
             }
         }
     }
@@ -176,9 +179,11 @@
     <fly-tabs
       ref="tabs"
       closable
+      closable
       v-model="activeName"
       @remove="handleRemove"
       @addition="handleAddition"
+      @change='handleChange'
     >
       <fly-tab-pane
         :key="index"
@@ -217,7 +222,6 @@
           disabled: this.index % 2 === 0 ? true : false,
           content: `tab content ${tabName}`
         });
-        this.activeName = tabName;
       },
       handleRemove(name) {
         const index = this.tabs.findIndex(tab => {
@@ -248,7 +252,7 @@
 | ---------- | ------ | -------------------------------------- |
 | added   | -      | 添加 tab 事件之后                      |
 | remove  | -      | 删除 tag 事件，一般用于动态生成的 tabs |
-| changed | -      | 切换了 tab 之后                        |
+| change | -      | 切换了 tab 之后                        |
 
 ### Tab-pane - 可定制属性
 

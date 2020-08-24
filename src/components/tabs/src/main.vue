@@ -2,24 +2,30 @@
     <div class='fly-tabs'>
         <div class='fly-tabs__navs' ref='selector'>
           <tab-nav
-              v-model='model'
               :pane='pane'
               :closable='closable'
               :disabled='pane.disabled'
               :name='pane.name || index'
+              @remove='handleRemove'
               v-for='(pane,index) in visiblePanes'
               :key='index'>
           </tab-nav>
           <fly-icon
             v-show='showMore'
             @mouseover.native="handleMouseOverIcon"
-            name='checkmore'
-            class='fly-tabs__more-icon'
-            font-size='18px'>
+            @mouseout.native="handleMouseOutIcon"
+            :name='iconName'
+            class='fly-tabs__more-icon'>
           </fly-icon>
         </div>
         <slot name='default'></slot>
-        <tab-more ref='element'></tab-more>
+        <tab-more
+        ref='element'
+        :panes='panes'
+        @mouseover.native="handleMouseOverIcon"
+        @mouseout.native="handleMouseOutIcon"
+        @remove='handleRemove'
+        v-show="showMorePane"></tab-more>
     </div>
 </template>
 
@@ -42,19 +48,23 @@ export default {
     // 显示页签的长度
     visibleTabs: {
       type: Number,
-      default: 1
+      default: 10
     }
   },
   computed: {
     showMore () {
       return this.visiblePanes.length < this.panes.length
+    },
+    iconName () {
+      return this.showMorePane ? 'upward' : 'down'
     }
   },
   data () {
     return {
       model: '',
       panes: [],
-      visiblePanes: []
+      visiblePanes: [],
+      showMorePane: false
     }
   },
   methods: {
@@ -67,6 +77,7 @@ export default {
       }
       this.panes = []
       this.visiblePanes = []
+      this.morePanes = []
       slots.forEach((slot, index) => {
         this.panes.push(slot.componentInstance)
         if (this.visibleTabs > index) {
@@ -75,7 +86,7 @@ export default {
       })
     },
     handlePopover () {
-      Popover.mode = 'development'
+      // Popover.mode = 'development'
       const element = this.$refs.element.$el
       const selector = this.$refs.selector
       this.popover = new Popover(
@@ -86,7 +97,41 @@ export default {
       document.body.appendChild(this.popover.$element)
     },
     handleMouseOverIcon () {
-      this.popover.update()
+      if (this.timeout) {
+        clearTimeout(this.timeout)
+      }
+      this.showMorePane = true
+      this.$nextTick(() => {
+        const element = this.$refs.element.$el
+        const selector = this.$refs.selector
+        this.popover.update({
+          offset: [
+            (selector.offsetWidth - element.offsetWidth), 0
+          ]
+        })
+      })
+    },
+    handleMouseOutIcon () {
+      this.timeout = setTimeout(() => {
+        this.showMorePane = false
+      }, 500)
+    },
+    handleUpdateVisiblePane (pane) {
+      if (this.visiblePanes.findIndex(visiblePane => {
+        return pane.name === visiblePane.name
+      }) < 0) {
+        this.visiblePanes.pop()
+        this.visiblePanes.push(pane)
+      }
+    },
+    handleRemove (name) {
+      if (name) {
+        this.$emit('remove', name)
+      }
+    },
+    handleChange (name) {
+      this.$emit('input', name)
+      this.$emit('change', name)
     }
   },
   created () {

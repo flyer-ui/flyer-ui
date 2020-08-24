@@ -144,7 +144,8 @@ fn.put = function (placement) {
 }
 
 /** 更新弹屏的位置 */
-fn.update = function () {
+fn.update = function (options) {
+  this.$options = Object.assign({}, this.$options, options)
   this.init()
 }
 

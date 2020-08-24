@@ -10,6 +10,7 @@ $fly-bottom-border-size:2px;
     @include e('navs'){
         position: relative;
         box-sizing: border-box;
+        display:flex;
         border-bottom:$fly-bottom-border-size solid $fly-color-border;
         padding-right:2*$fly-tab-nav-padding;
     }
@@ -26,7 +27,6 @@ $fly-bottom-border-size:2px;
     }
     @include e('nav'){
         position: relative;
-        display: inline-flex;
         height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
         padding:$fly-tab-nav-padding;
         margin-bottom:-$fly-bottom-border-size;
@@ -35,11 +35,7 @@ $fly-bottom-border-size:2px;
         line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
         @include state('active'){
             color:$fly-primary-color;
-            font-weight: 500;
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;
-            .fly-tab__close{
-                display: inline-block !important;
-            }
         }
         @include state('closable'){
             padding-right:24px;
@@ -52,6 +48,7 @@ $fly-bottom-border-size:2px;
             .fly-tab__close{
                 display: inline-block !important;
             }
+            border-bottom:$fly-bottom-border-size solid $fly-primary-color;
         }
     }
     @include e('more-icon'){
@@ -62,10 +59,12 @@ $fly-bottom-border-size:2px;
         cursor:pointer;
     }
     @include e('more'){
-        padding:10px;
+        padding:5px 0px;
         background-color:$fly-common-white;
         box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
-
+        min-width:100px;
+        max-height:400px;
+        overflow-y:auto;
     }
     @include e('close'){
         position: absolute;
@@ -75,9 +74,10 @@ $fly-bottom-border-size:2px;
         font-size:12px !important;
         width:12px;
         height:12px;
+        line-height: 12px;
         border-radius: 100%;
-        cursor: pointer;
         display:none !important;
+        cursor: pointer;
         &:hover{
             background: rgba($fly-color-border,0.5);
         }
