@@ -1,17 +1,4 @@
-<template>
-    <div class='fly-tabs__more'>
-        <div @click="handleClick(pane)"
-          :class='["fly-tabs__nav",{"is-active": handleActive(pane)}]'
-          v-for='(pane,index) in panes'
-          :key='index'>
-          {{pane.label||pane.$slot.label}}
-          <i class='fly-icon fly-icon-close fly-tabs__close' @click="($event)=>{handleRemove(pane.name,$event)}"></i>
-        </div>
-    </div>
-</template>
-
 <script>
-
 export default {
   name: 'FlyTabMore',
   props: {
@@ -36,6 +23,26 @@ export default {
       $event.stopPropagation()
       this.$emit('remove', name)
     }
+  },
+  render (h) {
+    return (
+      <div class='fly-tabs__more'>
+        {
+          this._l(this.panes, (pane, index) => {
+            return (
+              <div on-click={($event) => this.handleClick(pane, $event)}
+                key={index}
+                class={['fly-tabs__nav', {'is-active': this.handleActive(pane)}]}>
+                {pane.$slots.label || pane.label }
+                <i class='fly-icon fly-icon-close fly-tabs__close'
+                  on-click={($event) => { this.handleRemove(pane.name, $event) }}>
+                </i>
+              </div>
+            )
+          })
+        }
+      </div>
+    )
   }
 }
 </script>

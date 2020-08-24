@@ -12,7 +12,7 @@
 
 <script>
 
-import zIndexManage from '~/mixins/zIndexManage'
+import zIndexManage from '~/mixins/zIndex-manage'
 import Popover from '~/mixins/popover'
 import {on} from '@flyer-ui/commonality'
 import FlyMenuItem from './item'

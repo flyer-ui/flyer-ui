@@ -45,7 +45,7 @@ $fly-bottom-border-size:2px;
             cursor:not-allowed;
         }
         &:hover{
-            .fly-tab__close{
+            .fly-tabs__close{
                 display: inline-block !important;
             }
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;

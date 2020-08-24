@@ -33,6 +33,7 @@
 import TabNav from './nav'
 import TabMore from './more'
 import Popover from '~/mixins/popover.js'
+import zIndexManage from '~/mixins/zIndex-manage.js'
 export default {
   name: 'FlyTabs',
   components: {
@@ -94,6 +95,7 @@ export default {
         selector,
         {placement: 'bottom'}
       )
+      this.popover.$element.style.zIndex = zIndexManage.get()
       document.body.appendChild(this.popover.$element)
     },
     handleMouseOverIcon () {

@@ -179,7 +179,6 @@
     <fly-tabs
       ref="tabs"
       closable
-      closable
       v-model="activeName"
       @remove="handleRemove"
       @addition="handleAddition"

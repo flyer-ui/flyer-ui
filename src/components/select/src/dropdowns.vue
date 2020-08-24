@@ -7,7 +7,7 @@
 </template>
 <script>
 import Popover from '~/mixins/popover'
-import zIndexManager from '~/mixins/zIndexManage'
+import zIndexManager from '~/mixins/zIndex-manage'
 export default {
   name: 'FlySelectDropdowns',
   mounted () {
