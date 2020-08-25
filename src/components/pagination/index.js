@@ -1,2 +1,2 @@
-import Pagination from './src/main.vue'
+import Pagination from './src/main.js'
 export default Pagination

@@ -1,0 +1,31 @@
+@import "./base/index.scss";
+@include b('collapse'){
+    position: relative;
+    box-sizing:border-box;
+    @include e('item'){
+        position: relative;
+        box-sizing:border-box;
+        border-top:1px solid $fly-color-border;
+        transition:all 0.3s;
+        &:last-child{
+            border-bottom:1px solid $fly-color-border;
+        }
+    }
+    @include e('title'){
+        padding:10px 0px;
+        font-weight: bold;
+        cursor:pointer;
+        @include state('disabled'){
+            color:$font-color-secondary;
+            cursor:not-allowed;
+        }
+    }
+    @include e('content'){
+        padding:10px 0px;
+    }
+    @include e('icon'){
+        position:absolute;
+        z-index:1;
+        right:0px;
+    }
+}

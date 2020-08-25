@@ -1,9 +1,11 @@
 <template>
-    <div :class='["fly-tab__pane",{"is-active":value === name}]'>
+    <div :class='["fly-tabs__pane",{"is-active":active}]'>
         <slot name='default'></slot>
     </div>
 </template>
+
 <script>
+import {findParentByName} from '~/utils/index'
 export default {
   name: 'FlyTabPane',
   props: {
@@ -12,20 +14,18 @@ export default {
       type: Boolean,
       default: false
     },
-    name: [String, Number],
     closable: {
       type: Boolean,
       default: false
-    }
+    },
+    name: String | Number
   },
-  data () {
-    return {
-      value: ''
-    }
-  },
-  methods: {
-    setActive (value) {
-      this.value = value
+  computed: {
+    parent () {
+      return findParentByName('FlyTabs', this)
+    },
+    active () {
+      return this.name === this.parent.value
     }
   }
 }

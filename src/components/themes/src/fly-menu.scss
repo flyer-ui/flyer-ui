@@ -11,6 +11,7 @@
         padding: 5px 15px;
         display: inline-block;
         font-weight: inherit;
+        white-space: nowrap;
         -webkit-user-select: none;
         -moz-user-select: none;
         -ms-user-select: none;
@@ -24,6 +25,9 @@
         @include state('active'){
             color:$warning;
             border-bottom:1px solid $warning;
+        }
+        @include state('highlight'){
+            font-weight: bold;
         }
         @include state('has-child'){
             &:hover{
@@ -44,6 +48,8 @@
         box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
         border-radius: $fly-round-default-size;
         padding:5px;
+        position: absolute;
+        padding:0px 10px;
         .fly-menu__item{
             border-bottom:1px solid transparent;
             font-weight: inherit;

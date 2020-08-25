@@ -20,7 +20,7 @@ module.exports = {
     <i class="fly-icon fly-icon-github"></i>
     <i class="fly-icon fly-icon-history"></i>
     <i class="fly-icon fly-icon-search"></i>
-    <fly-icon name="edit"></fly-icon>
+    <fly-icon name="edit" font-size='14px'></fly-icon>
   </div>
 </template>
 ```
@@ -47,3 +47,9 @@ module.exports = {
         }
     }
 </style>
+
+### Icon 可定制属性
+
+| 属性名称 | 类型    | 默认值 | 可选值       | 说明                                              |
+| -------- | ------- | ------ | ------------ | ------------------------------------------------- |
+| font-size  | String  | -      | -            | 字体图标大小                                        |

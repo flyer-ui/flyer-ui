@@ -7,6 +7,11 @@ module.exports = {
           currentPage2:1,
           currentPage3:1
         }
+    },
+    methods:{
+      handleChange(value){
+        console.log('value',value)
+      }
     }
 }
 </script>
@@ -19,10 +24,12 @@ module.exports = {
 
 ```html
 <template>
-  <fly-pagination
+ 长度为5的页码器： <fly-pagination
     v-model="currentPage"
+    :pager-count='5'
     :page-size="10"
-    :total="188"
+    :total="89"
+    @change='handleChange'
   ></fly-pagination>
 </template>
 <script>
@@ -44,22 +51,22 @@ module.exports = {
 
 ```html
 <template>
-  <fly-pagination
+  长度为7的页码器：<fly-pagination
     v-model="currentPage1"
-    :page-size="10"
-    :page-count="15"
-    :total="1898"
+    :page-size="20"
+    :pager-count="7"
+    :total="179"
   ></fly-pagination>
-  <fly-pagination
+  长度为3的页码器：<fly-pagination
     v-model="currentPage2"
     :page-size="10"
-    :page-count="3"
+    :pager-count="3"
     :total="1898"
   ></fly-pagination>
-  <fly-pagination
+  长度为4的页码器：<fly-pagination
     v-model="currentPage3"
     :page-size="10"
-    :page-count="4"
+    :pager-count="4"
     :total="1898"
   ></fly-pagination>
 </template>
@@ -85,13 +92,13 @@ module.exports = {
 | value / v-model | String / Number | -      | -      | 当前页码                                 |
 | page-size       | Number          | -      | 0      | -                                        |
 | page-start      | Number          | 1      | -      | 分页组件初始的起始页码                   |
-| page-count      | Number          | 7      | -      | 页码按钮的数量，当总页数超过该值时会折叠 |
+| pager-count      | Number          | 7      | -      | 页码按钮的数量，当总页数超过该值时会折叠 |
 | total           | Number          | 0      | -      | 总条目数                                 |
 
 ### Input - 可定制的事件
 
 | 事件名称  | 返回值 | 说明               |
 | --------- | ------ | ------------------ |
-| on-change | 当前页 | 当前页面改变时触发 |
-| on-prev   | 当前页 | 点击上一页时触发   |
-| on-next   | 当前页 | 点击下一页时触发   |
+| change | 当前页 | 当前页面改变时触发 |
+| prev   | 当前页 | 点击上一页时触发   |
+| next   | 当前页 | 点击下一页时触发   |

@@ -1,127 +1,152 @@
 <template>
-    <div class='fly-tab'>
-      <div :class='["fly-tab__header",{"is-scrollable":scrollable}]'>
-         <span v-if='scrollable' class='fly-tab__left'>
-           <i class='fly-icon fly-icon-back' @click='handlePrev'></i>
-         </span>
-         <div ref='scrollBar' class='fly-tab__scroll'>
-          <div ref='navs' class='fly-tab__navs' :style='{"transform":`translate(-${movingWidth}px)`}'>
-            <fly-tab-nav
-              v-model='model'
+    <div class='fly-tabs'>
+        <div class='fly-tabs__navs' ref='selector'>
+          <tab-nav
               :pane='pane'
               :closable='closable'
               :disabled='pane.disabled'
-              @on-remove='handleRemove'
               :name='pane.name || index'
-              v-for='(pane,index) in panes'
+              @remove='handleRemove'
+              v-for='(pane,index) in visiblePanes'
               :key='index'>
-            </fly-tab-nav>
-          </div>
+          </tab-nav>
+          <fly-icon
+            v-show='showMore'
+            @mouseover.native="handleMouseOverIcon"
+            @mouseout.native="handleMouseOutIcon"
+            :name='iconName'
+            class='fly-tabs__more-icon'>
+          </fly-icon>
         </div>
-        <span class='fly-tab__right'>
-          <i class='fly-icon fly-icon-next' v-if='scrollable' @click='handleNext'></i>
-         </span>
-      </div>
-      <div class='fly-tab__content'>
         <slot name='default'></slot>
-      </div>
+        <tab-more
+        ref='element'
+        :panes='panes'
+        @mouseover.native="handleMouseOverIcon"
+        @mouseout.native="handleMouseOutIcon"
+        @remove='handleRemove'
+        v-show="showMorePane"></tab-more>
     </div>
 </template>
+
 <script>
-import pager from '~/mixins/pager'
-import FlyTabNav from './nav'
-import FlyTabPane from './pane'
+import TabNav from './nav'
+import TabMore from './more'
+import Popover from '~/mixins/popover.js'
+import zIndexManage from '~/mixins/zIndex-manage.js'
 export default {
   name: 'FlyTabs',
-  mixins: [pager],
   components: {
-    FlyTabNav,
-    FlyTabPane
+    TabNav,
+    TabMore
   },
   props: {
-    value: [String, Number],
-    type: {
-      type: String,
-      validator (value) {
-        return ['simple'].indexOf(value) > -1
-      }
-    },
+    value: String | Number,
     closable: {
       type: Boolean,
       default: false
+    },
+    // 显示页签的长度
+    visibleTabs: {
+      type: Number,
+      default: 10
+    }
+  },
+  computed: {
+    showMore () {
+      return this.visiblePanes.length < this.panes.length
+    },
+    iconName () {
+      return this.showMorePane ? 'upward' : 'down'
     }
   },
   data () {
     return {
-      showList: false,
-      scrollable: false,
-      selfModel: '',
-      panes: []
-    }
-  },
-  computed: {
-    model: {
-      get () {
-        return this.selfModel || this.value || 0
-      },
-      set (value) {
-        this.selfModel = value
-        this.updatePaneName()
-        this.$emit('input', value)
-      }
+      model: '',
+      panes: [],
+      visiblePanes: [],
+      showMorePane: false
     }
   },
   methods: {
-    // 收集分析子组件
-    calcPaneInstances (isLabelUpdated = false) {
-      if (this.$slots.default) {
-        const paneSlots = this.$slots.default.filter((VNode) => {
-          return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
-        })
-        const panes = paneSlots.map(({ componentInstance }) => componentInstance)
-        const panesChanged = !(panes.length === this.panes.length && panes.every((pane, index) => pane === this.panes[index]))
-        if (isLabelUpdated || panesChanged) {
-          this.panes = panes
-          this.$nextTick(() => {
-            this.currentPage = this.calcScrollBar().totalPage
-            this.calcBalanceWidth()
-            this.scrollable = this.currentPage > 0
-          })
-        }
-      } else if (this.panes.length !== 0) {
-        this.panes = []
+    handlePanes () {
+      const slots = this.$slots.default.filter(VNode => {
+        return VNode.tag && VNode.componentInstance && (VNode.componentOptions.tag === 'fly-tab-pane')
+      })
+      if (this.panes.length === slots.length) {
+        return false
       }
-      // this.scrollable = true
-    },
-    updatePaneName () {
-      this.panes.map((pane) => {
-        pane.setActive(this.model)
+      this.panes = []
+      this.visiblePanes = []
+      this.morePanes = []
+      slots.forEach((slot, index) => {
+        this.panes.push(slot.componentInstance)
+        if (this.visibleTabs > index) {
+          this.visiblePanes.push(slot.componentInstance)
+        }
       })
     },
-    handleAddition () {
-      this.$emit('on-addition')
+    handlePopover () {
+      // Popover.mode = 'development'
+      const element = this.$refs.element.$el
+      const selector = this.$refs.selector
+      this.popover = new Popover(
+        element,
+        selector,
+        {placement: 'bottom'}
+      )
+      this.popover.$element.style.zIndex = zIndexManage.get()
+      document.body.appendChild(this.popover.$element)
     },
-    handleShowList () {
-      this.showList = !this.showList
+    handleMouseOverIcon () {
+      if (this.timeout) {
+        clearTimeout(this.timeout)
+      }
+      this.showMorePane = true
+      this.$nextTick(() => {
+        const element = this.$refs.element.$el
+        const selector = this.$refs.selector
+        this.popover.update({
+          offset: [
+            (selector.offsetWidth - element.offsetWidth), 0
+          ]
+        })
+      })
+    },
+    handleMouseOutIcon () {
+      this.timeout = setTimeout(() => {
+        this.showMorePane = false
+      }, 500)
+    },
+    handleUpdateVisiblePane (pane) {
+      if (this.visiblePanes.findIndex(visiblePane => {
+        return pane.name === visiblePane.name
+      }) < 0) {
+        this.visiblePanes.pop()
+        this.visiblePanes.push(pane)
+      }
     },
     handleRemove (name) {
       if (name) {
-        this.$emit('on-remove', name)
+        this.$emit('remove', name)
       }
+    },
+    handleChange (name) {
+      this.$emit('input', name)
+      this.$emit('change', name)
     }
   },
-  mounted () {
-    this.calcPaneInstances()
-    this.updatePaneName()
-    this.referenceScroll = this.$refs.scrollBar
-    this.referenceNavs = this.$refs.navs
+  created () {
+    this.model = this.value
   },
   updated () {
-    this.calcPaneInstances()
-    this.updatePaneName()
-    this.referenceScroll = this.$refs.scrollBar
-    this.referenceNavs = this.$refs.navs
-    this.model = this.value
+    this.handlePanes()
+  },
+  mounted () {
+    this.handlePanes()
+    this.$nextTick(() => {
+      this.handlePopover()
+    })
   }
 }
 </script>
