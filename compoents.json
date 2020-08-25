@@ -21,6 +21,7 @@
   "option-group":"./src/components/option-group/index.js",
   "pagination":"./src/components/pagination/index.js",
   "progress":"./src/components/progress/index.js",
+  "progress-item":"./src/components/progress-item/index.js",
   "radio":"./src/components/radio/index.js",
   "radio-group":"./src/components/radio-group/index.js",
   "rate":"./src/components/rate/index.js",
@@ -31,5 +32,8 @@
   "timeline":"./src/components/timeline/index.js",
   "timeline-item":"./src/components/timeline-item/index.js",
   "menu":"./src/components/menu/index.js",
-  "progress-item":"./src/components/progress-item/index.js"
+  "menu-item":"./src/components/menu-item/index.js",
+  "menu-group":"./src/components/menu-group/index.js",
+  "collapse":"./src/components/collapse/index.js",
+  "collapse-item":"./src/components/collapse-item/index.js"
 }
