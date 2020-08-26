@@ -29,13 +29,13 @@
             }
         },
         methods:{
-            handleClick(index,paths,$event){
+            handleClick(index,paths,nodeData,$event){
                 this.current = index
-                console.log('current',index,this.current,paths,$event)
+                console.log('current',index,this.current,paths,nodeData,$event)
             },
-            handleClick2(index,paths,$event){
+            handleClick2(index,paths,nodeData,$event){
                 this.current2 = index
-                console.log('current2',index,this.current2,paths,$event)
+                console.log('current2',index,this.current2,paths,nodeData,$event)
             }
         }
     }
@@ -50,6 +50,7 @@
     <fly-menu :default-active='current' @click='handleClick'>
         <fly-menu-item  
             v-for='(item,index) in items' 
+            :nodeData="item"
             :index='item.value'
             :key='index'>
             {{item.text}}
@@ -88,9 +89,9 @@ export default {
         }
     },
     methods:{
-        handleClick(index,paths,$event){
+        handleClick(index,paths,nodeData,$event){
             this.current = index
-            console.log(index,paths,this.current,$event)
+            console.log(index,paths,this.current,nodeData,$event)
         }
     }
 }
@@ -106,10 +107,11 @@ export default {
         <fly-menu-item index='1'>
             首页
         </fly-menu-item>
-        <fly-menu-item index='2'>
-            商品
-        </fly-menu-item>
-        <fly-sub-menu title='行情' index='3'>
+        <fly-menu-group>
+            <fly-menu-item index='2'>
+                商品
+            </fly-menu-item>
+            <fly-sub-menu title='行情' index='3'>
             <fly-menu-item index='3.1'>
                 3.1
             </fly-menu-item>
@@ -130,7 +132,7 @@ export default {
                     <fly-menu-item index='3.4.3.1'>
                         3.4.3.1
                     </fly-menu-item>
-                    <fly-menu-item index='3.4.3.2'>
+                    <fly-menu-item :nodeData="{item:'This is node data for menu item.'}" index='3.4.3.2'>
                         3.4.3.2
                     </fly-menu-item>
                     <fly-menu-item index='3.4.3.3'>
@@ -164,8 +166,19 @@ export default {
                 </fly-sub-menu>
             </fly-sub-menu>
         </fly-sub-menu>
+        </fly-menu-group>
     </fly-menu>
 </template>
+<script>
+    export default {
+        methods:{
+            handleClick2(index,paths,nodeData,$event){
+                this.current = index
+                console.log(index,paths,this.current,nodeData,$event)
+            }
+        }
+    }
+</script>
 ```
 :::
 
@@ -180,6 +193,8 @@ export default {
 | 属性名称        | 类型            | 默认值 | 可选值       | 说明                  |
 | --------------- | --------------- | ------ | ------------ | --------------------- |
 | index | String / Number / Boolean | -      | -            | 唯一标识符      |
+| title | String | -      | -            | 菜单标题      |
+| node-data | Object | -      | -            | 节点附加的数据      |
 
 ### Menu - 可定制的事件
 
