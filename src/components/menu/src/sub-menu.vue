@@ -48,12 +48,12 @@ export default {
     index: String | Number | Boolean
   },
   methods: {
-    setActive (index, paths, $event) {
+    setActive (index, paths, nodeData, $event) {
       const name = this.$parent.$options.name
       if (name === 'FlySubMenu') {
-        this.$parent.setActive(index, [this.index, ...paths], $event)
-      } else if (name === 'FlyMenu') {
-        this.parent.$emit('click', index, [this.index, ...paths], $event)
+        this.$parent.setActive(index, [this.index, ...paths], nodeData, $event)
+      } else if (name === 'FlyMenu' || name === 'FlyMenuGroup') {
+        this.parent.$emit('click', index, [this.index, ...paths], nodeData, $event)
       }
     },
     setHighlight () {
@@ -81,7 +81,7 @@ export default {
     }
   },
   mounted () {
-    if (this.$parent.$options.name === 'FlyMenu') {
+    if (['FlyMenu', 'FlyMenuGroup'].indexOf(this.$parent.$options.name) > -1) {
       const element = this.$refs.subMenu
       const selector = this.$refs.container
       this.popover = new Popover(element, selector)

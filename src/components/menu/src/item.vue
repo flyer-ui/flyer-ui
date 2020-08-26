@@ -14,7 +14,11 @@ export default {
     // 索引值
     index: String | Number | Boolean,
     // 含子节点
-    hasChildren: Boolean
+    hasChildren: Boolean,
+    // 节点数据
+    nodeData: {
+      type: Object
+    }
   },
   computed: {
     parent () {
@@ -41,9 +45,9 @@ export default {
     notify ($event) {
       const name = this.$parent.$options.name
       if (name === 'FlySubMenu') {
-        this.$parent.setActive(this.index, [this.index], $event)
-      } else if (name === 'FlyMenu') {
-        this.parent.$emit('click', this.index, [this.index], $event)
+        this.$parent.setActive(this.index, [this.index], this.nodeData, $event)
+      } else if (name === 'FlyMenu' || name === 'FlyMenuGroup') {
+        this.parent.$emit('click', this.index, [this.index], this.nodeData, $event)
       }
     }
   }
