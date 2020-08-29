@@ -11,7 +11,8 @@ export default {
     return h('header', {
       class: ['fly-header'],
       style: {
-        height: this.height
+        // 设置最小高度为60px
+        minHeight: this.height
       }
     }, this.$slots.default)
   }

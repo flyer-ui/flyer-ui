@@ -1,0 +1,34 @@
+@include b('scrollbar'){
+    position: relative;
+    overflow: hidden;
+    @include e('content'){
+        overflow: scroll;
+        height:100%;
+        &:after{
+            content:' ';
+            clear:both;
+        }
+    }
+    @include e('slider'){
+        widht:8px;
+        background-color: mixColor($default,30%);
+        border-radius: $fly-round-default-size;
+        cursor: pointer;
+        &:hover{
+            background-color: mixColor($default,50%);
+        }
+    }
+    @include e('rail'){
+        width:8px;
+        background-color:$fly-color-border;
+        position:absolute;
+        z-index:1;
+        top:0px;
+        right:0px;
+        bottom:0px;
+        border-radius: $fly-round-default-size;
+    }
+}
+.fly-scrollbar__content::-webkit-scrollbar{
+    width: 0px;
+}

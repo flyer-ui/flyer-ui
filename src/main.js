@@ -45,6 +45,7 @@ import MenuGroup from './components/menu-group/index'
 import SubMenu from './components/sub-menu/index'
 import Collapse from './components/collapse/index'
 import CollapseItem from './components/collapse-item/index'
+import Scrollbar from './components/scrollbar/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -97,7 +98,8 @@ const components = [
   MenuGroup,
   SubMenu,
   Collapse,
-  CollapseItem
+  CollapseItem,
+  Scrollbar
 ]
 
 const install = function (Vue) {
