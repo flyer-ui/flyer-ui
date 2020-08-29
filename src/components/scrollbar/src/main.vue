@@ -42,8 +42,7 @@ export default {
     handleSliderMove ($event) {
       if (this.state === true) {
         const offsetY = $event.pageY - this.lastPageY
-        // this.lastPageY = $event.pageY
-        this.$flyContent.scrollTop = (parseInt(offsetY) * this.$flyRail.offsetHeight) / 100
+        this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100) / this.rate
         setTimeout(this.calcSliderMove, 0)
         console.log($event.pageY - this.lastPageY)
       }
@@ -55,7 +54,6 @@ export default {
       const railHeight = this.$flyRail.offsetHeight
       const wrapHeight = this.$flyContent.scrollHeight
       const sliderHeight = this.rate = Math.ceil((railHeight / wrapHeight) * 100)
-      console.log('rate', this.rate)
       this.$refs.slider.style.height = `${sliderHeight}%`
     },
     calcSliderMove () {
