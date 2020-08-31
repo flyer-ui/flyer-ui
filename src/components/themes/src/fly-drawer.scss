@@ -3,28 +3,28 @@
     position:relative;
     @include e('mask'){
         position:fixed;
-        top:0px;
-        left:0px;
-        right:0px;
-        bottom:0px;
+        top:rem(0px);
+        left:rem(0px);
+        right:rem(0px);
+        bottom:rem(0px);
         background:#000;
         opacity: 0.5;
         z-index:9998;
     }
     @include e('header'){
         position:relative;
-        padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
+        padding:rem(15px) rem(20px);
         box-sizing:border-box;
-        box-shadow:1px 1px 1px rgba($fly-color-border,0.5);
+        box-shadow:rem(1px) rem(1px) rem(1px) rgba($fly-color-border,0.5);
     }
     @include e('body'){
-        padding:$fly-default-padding * 1.5 $fly-default-padding * 2;
+        padding:rem(15px) rem(20px);
     }
     @include e('close'){
         position:absolute;
         z-index: 1;
-        top:$fly-default-padding * 1.5;
-        right:$fly-default-padding * 2;
+        top:rem(15px);
+        right:rem(20px);
         cursor: default;
         border-radius: 100%;
         cursor: pointer;
@@ -33,15 +33,13 @@
         }
     }
     @include e('content'){
-        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+        box-shadow:rem(1px) rem(1px) 10px rgba($fly-color-border,0.5);
         position:fixed;
-        top:0px;
-        right:0px;
+        top:rem(0px);
+        right:rem(0px);
         z-index:9999;
-        bottom:0px;
+        bottom:rem(0px);
         background: #fff;
-        min-width:300px;
-        // border-left:1px solid $fly-color-border;
-        // border-top:1px solid $fly-color-border;
+        min-width:rem(300px);
     }
 }

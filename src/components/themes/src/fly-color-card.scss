@@ -2,28 +2,28 @@
 @include b("color-card") {
   position: relative;
   display: inline-block;
-  width: 240px;
+  width: rem(240px);
 
   @include e('main'){
     display: block;
     width: 100%;
-    padding: 15px;
+    padding: rem(15px);
     box-sizing: border-box;
     text-align: left;
     color: $fly-common-white;
   }
   ul {
     list-style-type: none;
-    margin: 0px;
-    padding: 0px;
+    margin: rem(0px);
+    padding: rem(0px);
     display: flex;
-    border:0px;
+    border:rem(0px);
     flex-direction: row;
     align-content: space-between;
   }
   ul li {
     flex: 1;
-    height: 20px;
+    height: rem(20px);
     position: relative;
     @include state('change'){
       &:first-child {

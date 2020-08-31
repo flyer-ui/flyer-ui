@@ -52,8 +52,8 @@ $fly-modal-padding:10px;
     @include e('close'){
         position: absolute;
         z-index: 1;
-        right:$fly-default-padding * 1 ;
-        top:$fly-default-padding * 1 ;
+        right:rem(10px);
+        top:rem(10px);
         width:16px;
         height:16px;
         line-height:16px;
@@ -65,14 +65,14 @@ $fly-modal-padding:10px;
         }
     }
     @include e('body'){
-        padding:$fly-default-padding * 1;
+        padding:rem(10px);
         overflow: auto;
         min-height:80px;
         padding-bottom: 60px;
         box-sizing: border-box;
     }
     @include e('footer'){
-        padding:$fly-default-padding * 1;
+        padding:rem(10px);
         text-align:right;
         border-bottom-right-radius: $fly-round-default-size;
         border-bottom-left-radius: $fly-round-default-size;

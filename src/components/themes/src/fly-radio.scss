@@ -2,10 +2,10 @@
 @import "./base/index.scss";
 
 $fly-radio-border-radius:50% !default;
-$fly-radio-width:16px !default;
-$fly-radio-height:16px !default;
-$fly-radio-point-area:4px;
-$fly-radio-padding-area:5px;
+$fly-radio-width:rem(16px) !default;
+$fly-radio-height:rem(16px) !default;
+$fly-radio-point-area:rem(4px);
+$fly-radio-padding-area:rem(5px);
 @include b(radio) {
     user-select: none;
     display:inline-flex;
@@ -13,13 +13,13 @@ $fly-radio-padding-area:5px;
     line-height:$fly-radio-height ;
     vertical-align:middle;
     &+& {
-        margin-left: 10px;
+        margin-left: rem(10px);
     }
     @include e(input-native) {
         display: none;
     }
     @include e(input) {
-        border: 1px solid $fly-color-border;
+        border: rem(1px) solid $fly-color-border;
         width: $fly-radio-width;
         height: $fly-radio-height;
         box-sizing:border-box;

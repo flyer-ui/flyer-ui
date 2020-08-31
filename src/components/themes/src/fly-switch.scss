@@ -4,24 +4,24 @@
     position: relative;
     display:inline-flex;
     vertical-align:middle;
-    border:1px solid $fly-color-border;
+    border:rem(1px) solid $fly-color-border;
     background: $fly-color-border;
-    padding:0px 10px;
+    padding:rem(0px) rem(10px);
     box-sizing: border-box;
-    border-radius: 100px;
+    border-radius: rem(100px);
     cursor: pointer;
     user-select: none;
     line-height: 1.5;
-    min-width:40px;
-    min-height:20px;
+    min-width:rem(40px);
+    min-height:rem(20px);
     &:after{
         content:'';
         position: absolute;
         z-index:99;
-        top:0px;
-        bottom:0px;
-        width:20px;
-        left:0px;
+        top:rem(0px);
+        bottom:rem(0px);
+        width:rem(20px);
+        left:rem(0px);
         right:inherit;
         background-color:#fff;
         border-radius: 50%;
@@ -30,7 +30,7 @@
         background-color:$fly-primary-color;
         border-color:$fly-primary-color;
         &:after{
-            right:0px;
+            right:rem(0px);
             left:inherit;
         }
     }
@@ -44,10 +44,10 @@
     @include e('active'){
         color:#fff;
         display: inline-block;
-        padding-right:20px;
+        padding-right:rem(20px);
     }
     @include e('inactive'){
-        padding-left:20px;
+        padding-left:rem(20px);
         color:#fff;
         display: inline-block;
     }

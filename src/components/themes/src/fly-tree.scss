@@ -2,27 +2,27 @@
 @import "./base/index.scss";
 @include b('tree'){
     position: relative;
-    margin:0px;
-    padding:0px;
+    margin:rem(0px);
+    padding:rem(0px);
     box-sizing: border-box;
     @include e('box'){
         position: relative;
         list-style:none;
-        margin:0px;
-        padding:0px;
-        margin-left:16px;
+        margin:rem(0px);
+        padding:rem(0px);
+        margin-left:rem(16px);
         box-sizing: border-box;
     }
     @include e('node'){
         position: relative;
         box-sizing: border-box;
         box-sizing: border-box;
-        padding:5px;
+        padding:rem(5px);
     }
     @include e('root'){
-        padding:0px;
-        margin:0px;
-        border:0px;
+        padding:rem(0px);
+        margin:rem(0px);
+        border:rem(0px);
     }
     @include e('icon'){
         cursor:pointer;

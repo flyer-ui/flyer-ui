@@ -14,7 +14,7 @@
     @include state('clearable'){
         .fly-input__clear{
             display: none;
-            right:30px;
+            right:rem(30px);
         }
         &:hover{
             .fly-input__clear{
@@ -24,7 +24,7 @@
         }
     }
     @include e('option'){
-        padding:5px 10px;
+        padding:rem(5px) rem(10px);
         box-sizing:border-box;
         cursor: pointer;
         &:hover{
@@ -52,13 +52,13 @@
         flex-wrap:wrap;
         position: absolute;
         z-index:2;
-        margin-right:40px;
+        margin-right:rem(40px);
         align-items:center;
         top:50%;
         transform:translateY(-50%);
         .fly-select__tag{
             display:inline-block;
-            margin:2px 5px;
+            margin:rem(2px) rem(5px);
             background-color:rgba($fly-color-border,0.5)
         }
     }
@@ -72,50 +72,50 @@
 }
 @include b('select-dropdowns'){
     display: block;
-    border:1px solid $fly-color-border;
+    border:rem(1px) solid $fly-color-border;
     box-sizing: border-box;
     background:#fff;
     @include e('list'){
         list-style:none;
-        padding:0px;
-        margin:0px;
+        padding:rem(0px);
+        margin:rem(0px);
     }
     &[x-placement="bottom"]{
-        margin-top:10px;
+        margin-top:rem(10px);
         .popper__arrow{
-            border: 8px solid $fly-color-border;
+            border: rem(8px) solid $fly-color-border;
             display: inline-block;
             border-top-color: transparent;
             border-right-color: transparent;
             border-left-color: transparent;
             position: absolute;
-            width: 0px;
-            height: 0px;
-            top: -16px;
+            width: rem(0px);
+            height: rem(0px);
+            top: rem(-16px);
             left: calc(100%/2);
             &:after{
                 content:'';
-                border: 6px solid #fff;
+                border: rem(6px) solid #fff;
                 display: inline-block;
                 border-top-color: transparent;
                 border-right-color: transparent;
                 border-left-color: transparent;
                 position: absolute;
-                width: 0px;
-                height: 0px;
-                top: -4px;
-                left: calc(100%/2 - 6px);
+                width: rem(0px);
+                height: rem(0px);
+                top: rem(-4px);
+                left: calc(100%/2 - rem(6px));
             }
         }
     }
 }
 @include b('select-group'){
     list-style:none;
-    padding:0px;
-    margin:0px;
+    padding:rem(0px);
+    margin:rem(0px);
     @include e('title'){
         font-weight: bold;
-        padding:5px 10px;
+        padding:rem(5px) rem(10px);
         box-sizing:border-box;
     }
 }

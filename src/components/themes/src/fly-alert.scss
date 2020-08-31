@@ -1,14 +1,14 @@
 @import "./base/index.scss";
 @include b('alert'){
     position: relative;
-    padding:10px;
+    padding:rem(10px);
     border-radius: $fly-round-default-size;
     @include e('close'){
         position: absolute;
         z-index: 1;
         top:$fly-default-padding;
         right:$fly-default-padding;
-        border-radius: 100px;
+        border-radius: rem(100px);
         cursor: pointer;
     }
     @include m('success'){

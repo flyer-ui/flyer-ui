@@ -1,8 +1,8 @@
 @import "./base/index.scss";
 
 $fly-checkbox-border-radius:$fly-round-default-size !default;
-$fly-checkbox-width:16px !default;
-$fly-checkbox-height:16px !default;
+$fly-checkbox-width:rem(16px) !default;
+$fly-checkbox-height:rem(16px) !default;
 
 @include b("checkbox") {
     user-select: none;
@@ -11,13 +11,13 @@ $fly-checkbox-height:16px !default;
     line-height:$fly-checkbox-height ;
     vertical-align:middle;
     &+& {
-        margin-left: 10px;
+        margin-left: rem(10px);
     }
     @include e("input-native") {
         display: none;
     }
     @include e("input") {
-        border: 1px solid $fly-color-border;
+        border: rem(1px) solid $fly-color-border;
         width: $fly-checkbox-width;
         height: $fly-checkbox-height;
         background-color: $fly-common-white;
@@ -31,12 +31,12 @@ $fly-checkbox-height:16px !default;
         }
         &::after {
             content: '';
-            font-size:12px;
+            font-size:rem(12px);
             display:block;
             position: absolute;
             z-index:1;
-            top:-1px;
-            left:1px;
+            top:-rem(1px);
+            left:rem(1px);
         }
         @include state("checked") {
             &::after {

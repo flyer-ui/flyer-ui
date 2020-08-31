@@ -6,14 +6,14 @@
     @include e('pager'){
         user-select: none;
         list-style: none;
-        margin:0px;
-        padding:0px;
+        margin:rem(0px);
+        padding:rem(0px);
         display: inline-table;
     }
     @include e('number'){
         display:table-cell;
         box-sizing: border-box;
-        padding:5px 10px;
+        padding:rem(5px) rem(10px);
         font-weight:bold;
         &:hover{
             cursor: pointer;
