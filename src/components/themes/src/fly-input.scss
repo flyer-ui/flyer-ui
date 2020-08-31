@@ -53,25 +53,25 @@ $fly-input-clear-area:16px !default;
         }
         
         @include m('large'){
-            @include native-variant($fly-default-padding * 1.5, 
+            @include native-variant(rem(15px), 
                                     $fly-font-title-size,
-                                    $fly-round-default-size * 8 ,
-                                    $fly-default-padding * 3 + 16px , 
-                                    $fly-default-padding * 3 + 16px)
+                                    rem(24px) ,
+                                    rem(46px) , 
+                                    rem(46px))
         }
         @include m('medium'){
             @include native-variant($fly-default-padding, 
                                     $fly-font-text-size,
-                                    $fly-round-default-size * 6 ,
-                                    $fly-default-padding * 1.5 + 16px , 
-                                    $fly-default-padding * 1.5 + 16px)
+                                    rem(18px) ,
+                                    rem(31px) , 
+                                    rem(31px))
         }
         @include m('small'){
-            @include native-variant($fly-default-padding * 0.5, 
+            @include native-variant(rem(5px), 
                                     $fly-font-assist_text-size,
-                                    $fly-round-default-size * 4 ,
-                                    $fly-default-padding * 0.5 + 16px , 
-                                    $fly-default-padding * 0.5 + 16px)
+                                    rem(12px) ,
+                                    rem(21px) , 
+                                    rem(21px))
         }
     }
     @include e('clear'){
@@ -81,8 +81,8 @@ $fly-input-clear-area:16px !default;
         border-radius: 50%;
         width: $fly-input-clear-area;
         height: $fly-input-clear-area;
-        right: $fly-default-padding * 1.2;
-        top: $fly-default-padding * 1.2;
+        right:rem(12px);
+        top: rem(12px);
         cursor: pointer;
         font-family: 'fly-icons';
         font-style:inherit;
@@ -99,26 +99,26 @@ $fly-input-clear-area:16px !default;
         @extend .fix;
         left:0px;
         @include m('small'){
-            @include fix-variant($fly-default-padding * 0.2 $fly-default-padding * 0.8,$fly-font-text-size * 0.8)
+            @include fix-variant(rem(2px) rem(8px),rem(11px))
         }
         @include m('medium'){
-            @include fix-variant($fly-default-padding * 1,$fly-font-text-size * 1.3)
+            @include fix-variant(rem(10px),rem(18px))
         }
         @include m('large'){
-            @include fix-variant($fly-default-padding * 1.5,$fly-font-text-size * 1.5)
+            @include fix-variant(rem(15px),rem(21px))
         }
     }
     @include e('suffix'){
         @extend .fix;
         right:0px;
         @include m('small'){
-            @include fix-variant($fly-default-padding * 0.2 $fly-default-padding * 0.8,$fly-font-text-size * 0.8)
+            @include fix-variant(rem(2px) rem(8px),rem(11px))
         }
         @include m('medium'){
-            @include fix-variant($fly-default-padding * 1,$fly-font-text-size * 1.3)
+            @include fix-variant(rem(10px),rem(18px))
         }
         @include m('large'){
-            @include fix-variant($fly-default-padding * 1.5,$fly-font-text-size * 1.5)
+            @include fix-variant(rem(15px),rem(21px))
         }
     }
     @include e('prepend'){

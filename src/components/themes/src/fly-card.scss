@@ -2,19 +2,19 @@
 @include b('card'){
     position: relative;
     border-radius: $fly-round-default-size;
-    padding:10px;
+    padding:rem(10px);
     box-sizing: border-box;
-    box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+    box-shadow:rem(1px) rem(1px) rem(10px) rgba($fly-color-border,0.5);
     background-color:$fly-common-white;
     @include e('header'){
-        border-bottom: 1px solid $fly-color-border;
+        border-bottom: rem(1px) solid $fly-color-border;
         padding:$fly-default-padding;
     }
     @include e('body'){
         padding:$fly-default-padding;
     }
     @include e('footer'){
-        border-top: 1px solid $fly-color-border;
+        border-top: rem(1px) solid $fly-color-border;
         padding:$fly-default-padding;
     }
 }

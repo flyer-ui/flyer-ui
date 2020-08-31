@@ -2,7 +2,7 @@
 @import "./base/index.scss";
 @include b('progress'){
     position: relative;
-    padding: 5px 0px;
+    padding: rem(5px) rem(0px);
     box-sizing: border-box;
     width:100%;
     @include e('bar'){
@@ -11,36 +11,36 @@
         width:100%;
         box-sizing: border-box;
         @include state('show-text'){
-            margin-right:calc(-3em - 10px);
-            padding-right:calc(3em + 10px);
+            margin-right:calc(rem(-42px) - rem(10px));
+            padding-right:calc(rem(42px) + rem(10px));
         }
 
     }
     @include e('outer'){
         position: relative;
         background: $fly-color-border;
-        border-radius:5px;
+        border-radius:rem(5px);
         display:flex;
         box-sizing: border-box;
         width:100%;
     }
     @include e('inner'){
-        min-height: 10px;
-        top: 0px;
+        min-height: rem(10px);
+        top: rem(0px);
         z-index: 1;
         background: $fly-primary-color;
         color:$fly-primary-color;
         transition:0.5s 0.3s all;
         &:first-child{
-            border-top-left-radius:5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius:rem(5px);
+            border-bottom-left-radius: rem(5px);
         }
         &:last-child{
-            border-top-right-radius:5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius:rem(5px);
+            border-bottom-right-radius: rem(5px);
         }
         @include m('medium'){
-            min-height: 10px;
+            min-height: rem(10px);
         }
         @include state('normal'){
             background: $fly-primary-color;
@@ -60,10 +60,10 @@
     }
     @include e('status'){
         display: inline-block;
-        font-size:12px;
+        font-size:rem(12px);
         border-radius: 100%;
         i[class^="fly-icon-"]{
-            font-size:14px;
+            font-size:rem(14px);
             display: block;
         }
         @include state('error'){
@@ -75,27 +75,27 @@
     }
     @include m('large'){
         .fly-progress__inner{
-            min-height: 15px;
+            min-height: rem(15px);
             &:first-child{
-                border-top-left-radius:10px;
-                border-bottom-left-radius: 10px;
+                border-top-left-radius:rem(10px);
+                border-bottom-left-radius: rem(10px);
             }
             &:last-child{
-                border-top-right-radius:10px;
-                border-bottom-right-radius: 10px;
+                border-top-right-radius:rem(10px);
+                border-bottom-right-radius: rem(10px);
             }
         }
     }
     @include m('small'){
         .fly-progress__inner{
-            min-height: 5px;
+            min-height: rem(5px);
             &:first-child{
-                border-top-left-radius:2.5px;
-                border-bottom-left-radius: 2.5px;
+                border-top-left-radius:rem(2.5px);
+                border-bottom-left-radius: rem(2.5px);
             }
             &:last-child{
-                border-top-right-radius:2.5px;
-                border-bottom-right-radius: 2.5px;
+                border-top-right-radius:rem(2.5px);
+                border-bottom-right-radius: rem(2.5px);
             }
         }
     }

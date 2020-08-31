@@ -1,16 +1,16 @@
 
 @import "./base/index.scss";
-$fly-time-line-size-normal:16px;
-$fly-time-line-size-large:20px;
+$fly-time-line-size-normal:rem(16px);
+$fly-time-line-size-large:rem(20px);
 @include b('timeline'){
     position: relative;
     
     @include e('item'){
         position: relative;
-        padding:0px 0px 20px 20px;
-        border-left: 1px solid $fly-color-border;
+        padding:rem(0px) rem(0px) rem(20px) rem(20px);
+        border-left: rem(1px) solid $fly-color-border;
         &:last-child{
-            border-left:0px;
+            border-left:rem(0px);
         }
         
     }
@@ -41,7 +41,7 @@ $fly-time-line-size-large:20px;
         }
 
         @include m('normal'){
-            left:-8px;
+            left:rem(-8px);
             width:$fly-time-line-size-normal;
             height:$fly-time-line-size-normal;
             i{
@@ -50,7 +50,7 @@ $fly-time-line-size-large:20px;
             }
         }
         @include m('large'){
-            left:-10px;
+            left:rem(-10px);
             width:$fly-time-line-size-large;
             height:$fly-time-line-size-large;
             i{font-size: $fly-time-line-size-large - 2;}
@@ -60,11 +60,11 @@ $fly-time-line-size-large:20px;
         
     }
     @include e('timestamp'){
-        font-size:12px;
+        font-size:rem(12px);
         color:rgba($font-color-common,0.5);
         @include state('top'){
            box-sizing: border-box;
-           padding-bottom: 5px;
+           padding-bottom: rem(5px);
         }
     }
 }

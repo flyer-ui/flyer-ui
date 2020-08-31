@@ -1,8 +1,8 @@
 
 @import "./base/index.scss";
-$fly-tab-nav-padding:10px;
-$fly-tab-nav-lineHeight:24px;
-$fly-bottom-border-size:2px;
+$fly-tab-nav-padding:rem(10px);
+$fly-tab-nav-lineHeight:rem(24px);
+$fly-bottom-border-size:rem(2px);
 
 @include b('tabs'){
     position: relative;
@@ -12,7 +12,7 @@ $fly-bottom-border-size:2px;
         box-sizing: border-box;
         display:flex;
         border-bottom:$fly-bottom-border-size solid $fly-color-border;
-        padding-right:2*$fly-tab-nav-padding;
+        padding-right:rem(20px);
     }
     @include e('content'){
         position: relative;
@@ -38,7 +38,7 @@ $fly-bottom-border-size:2px;
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;
         }
         @include state('closable'){
-            padding-right:24px;
+            padding-right:rem(24px);
         }
         @include state('disabled'){
             color:$fly-color-border;
@@ -54,27 +54,27 @@ $fly-bottom-border-size:2px;
     @include e('more-icon'){
         position:absolute;
         z-index:1;
-        right:0px;
-        top:10px;
+        right:rem(0px);
+        top:rem(10px);
         cursor:pointer;
     }
     @include e('more'){
-        padding:5px 0px;
+        padding:rem(5px) rem(0px);
         background-color:$fly-common-white;
-        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
-        min-width:100px;
-        max-height:400px;
+        box-shadow:rem(1px) rem(1px) rem(10px) rgba($fly-color-border,0.5);
+        min-width:rem(100px);
+        max-height:rem(400px);
         overflow-y:auto;
     }
     @include e('close'){
         position: absolute;
         z-index: 1;
-        right:5px;
-        top:15px;
-        font-size:12px !important;
-        width:12px;
-        height:12px;
-        line-height: 12px;
+        right:rem(5px);
+        top:rem(15px);
+        font-size:rem(12px) !important;
+        width:rem(12px);
+        height:rem(12px);
+        line-height: rem(12px);
         border-radius: 100%;
         display:none !important;
         cursor: pointer;

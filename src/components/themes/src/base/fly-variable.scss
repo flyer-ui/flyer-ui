@@ -52,21 +52,21 @@ $font-color-placeholder:#020202;
 $fly-color-border:#E4EAEC;
 
 //字体大小规格
-$fly-font-big-size:20px;
-$fly-font-title-size:18px;
-$fly-font-mini_title-size:16px;
-$fly-font-text-size:14px;
-$fly-font-mini_text-size:13px;
-$fly-font-assist_text-size:12px;
+$fly-font-big-size:rem(20px);
+$fly-font-title-size:rem(18px);
+$fly-font-mini_title-size:rem(16px);
+$fly-font-text-size:rem(14px);
+$fly-font-mini_text-size:rem(13px);
+$fly-font-assist_text-size:rem(12px);
 
 //通用白色
 $fly-common-white:#fff;
 
 //默认圆角大小
-$fly-round-default-size:3px;
+$fly-round-default-size:rem(3px);
 
 // 默认内填度
-$fly-default-padding:10px;
+$fly-default-padding:rem(10px);
 
 
 // 全局背景颜色

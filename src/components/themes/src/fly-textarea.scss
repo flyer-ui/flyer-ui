@@ -3,9 +3,9 @@
     display: inline-block;
     @include e('native'){
         outline:none;
-        border:0px;
+        border:rem(0px);
         overflow-y:auto;
-        border:1px solid $fly-color-border;
+        border:rem(1px) solid $fly-color-border;
         border-radius: $fly-round-default-size;
         padding:$fly-default-padding;
         box-sizing: border-box;

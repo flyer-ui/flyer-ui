@@ -11,7 +11,7 @@
         }
     }
     @include e('slider'){
-        widht:8px;
+        widht:rem(8px);
         background-color: mixColor($default,30%);
         border-radius: $fly-round-default-size;
         cursor: pointer;
@@ -20,16 +20,16 @@
         }
     }
     @include e('rail'){
-        width:8px;
+        width:rem(8px);
         background-color:$fly-color-border;
         position:absolute;
         z-index:1;
-        top:0px;
-        right:0px;
-        bottom:0px;
+        top:rem(0px);
+        right:rem(0px);
+        bottom:rem(0px);
         border-radius: $fly-round-default-size;
     }
 }
 .fly-scrollbar__content::-webkit-scrollbar{
-    width: 0px;
+    width: rem(0px);
 }

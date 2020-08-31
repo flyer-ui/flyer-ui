@@ -4,7 +4,7 @@
     display: inline-flex;
     vertical-align: middle;
     justify-content: center;
-    line-height:$fly-default-padding * 2;
+    line-height:rem(20px);
     @include e('item'){
         position: relative;
         color:$fly-color-border;

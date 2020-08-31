@@ -2,13 +2,13 @@
 @include b('menu'){
     display: flex;
     position: relative;
-    line-height: 28px;
+    line-height: rem(28px);
     @include e('group'){
         display: flex;
         position: relative;
     }
     @include e('item'){
-        padding: 5px 15px;
+        padding: rem(5px) rem(15px);
         display: inline-block;
         font-weight: inherit;
         white-space: nowrap;
@@ -16,15 +16,15 @@
         -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
-        border-bottom:1px solid transparent;
+        border-bottom:rem(1px) solid transparent;
         cursor: pointer;
         &:hover{
             color:$warning;
-            border-bottom:1px solid $warning;
+            border-bottom:rem(1px) solid $warning;
         }
         @include state('active'){
             color:$warning;
-            border-bottom:1px solid $warning;
+            border-bottom:rem(1px) solid $warning;
         }
         @include state('highlight'){
             font-weight: bold;
@@ -32,7 +32,7 @@
         @include state('has-child'){
             &:hover{
                 color:inherit;
-                border-bottom:1px solid transparent;
+                border-bottom:rem(1px) solid transparent;
             }
         }
     }
@@ -45,27 +45,27 @@
         display: flex;
         background-color: #fff;
         flex-direction: column;
-        box-shadow:1px 1px 10px rgba($fly-color-border,0.5);
+        box-shadow:rem(1px) rem(1px) rem(10px) rgba($fly-color-border,0.5);
         border-radius: $fly-round-default-size;
-        padding:5px;
+        padding:rem(5px);
         position: absolute;
-        padding:0px 10px;
+        padding:rem(0px) rem(10px);
         .fly-menu__item{
-            border-bottom:1px solid transparent;
+            border-bottom:rem(1px) solid transparent;
             font-weight: inherit;
             &:hover{
                 color:inherit;
-                border-bottom:1px solid $warning;
+                border-bottom:rem(1px) solid $warning;
             }
         }
     }
     .fly-menu__item{
         &:hover{
             color:inherit;
-            border-bottom:1px solid transparent;
+            border-bottom:rem(1px) solid transparent;
         }
     }
     .fly-icon{
-        font-size:10px;
+        font-size:rem(10px);
     }
 }
