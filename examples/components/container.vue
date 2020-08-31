@@ -27,13 +27,14 @@ export default {
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
+@import '~/components/themes/src/base/fly-util.scss';
 @include b('demo-container'){
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
     box-sizing: border-box;
     @include e('content'){
-        padding:10px;
+        padding:rem(10px);
         box-sizing: border-box;
         width: 95%;
     }

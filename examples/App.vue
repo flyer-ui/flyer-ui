@@ -51,7 +51,7 @@ html,body,#app{
     min-height:100%;
   }
 .fly-main{
-  padding:0px 10px;
+  padding:rem(0px) rem(10px);
 }
   @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
@@ -61,34 +61,34 @@ body,#app{
 }
 @include b('demo-table'){
     width:100%;
-    border:1px solid #dedede;
-    border-bottom:0px;
-    margin:0px;
-    padding:0px;
+    border:rem(1px) solid #dedede;
+    border-bottom:rem(0px);
+    margin:rem(0px);
+    padding:rem(0px);
     border-collapse:collapse;
     th{
         background-color:#fafafa;
     }
     td,th{
         text-align:left;
-        border:0px;
-        padding:10px 15px;
+        border:rem(0px);
+        padding:rem(10px) rem(15px);
         box-sizing:border-box;
-        border-spacing:0px;
-        border-bottom:1px solid #dedede;
+        border-spacing:rem(0px);
+        border-bottom:rem(1px) solid #dedede;
     }
 }
 @include b('demo-icon'){
     [class^="fly-icon-"]{
-        font-size:2em;
-        margin:0 15px;
+        font-size:rem(28px);
+        margin:0 rem(15px);
     }
     ul{
       list-style-type:none;
-      margin:0px;
-      padding:0px;
-      border-top:1px solid $fly-color-border;
-      border-left:1px solid $fly-color-border;
+      margin:rem(0px);
+      padding:rem(0px);
+      border-top:rem(1px) solid $fly-color-border;
+      border-left:rem(1px) solid $fly-color-border;
       &:after{
       content:'';
       display:block;
@@ -99,33 +99,33 @@ body,#app{
       float:left;
       width:16.66%;
       text-align:center;
-      padding:10px 0px;
+      padding:rem(10px) rem(0px);
       box-sizing:border-box;
-      border-right:1px solid $fly-color-border;
-      border-bottom:1px solid $fly-color-border;
+      border-right:rem(1px) solid $fly-color-border;
+      border-bottom:rem(1px) solid $fly-color-border;
       div{
         color:$font-color-common;
-        margin:10px 0px;
+        margin:rem(10px) rem(0px);
       }
     }
 }
 code{
     overflow: visible;
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    font-size: 14px;
+    font-size: rem(14px);
     color: #24292e;
     word-wrap: normal;
     white-space: pre;
 }
 pre{
   border-radius: $fly-round-default-size;
-  border:1px solid $fly-color-border;
+  border:rem(1px) solid $fly-color-border;
 }
 .fly-logs{
-    margin:10px;
+    margin:rem(10px);
 }
 .fly-logs__items{
-  margin:5px;
-  line-height:24px;
+  margin:rem(5px);
+  line-height:rem(24px);
 }
 </style>

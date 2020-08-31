@@ -23,7 +23,7 @@
 
 // px 转换 rem
 @function rem($px){
-    @return #{$px / 14px + 'rem'};
+    @return #{$px / 110.2px + 'rem'};
 }
 
 @function mixColor($color,$number){

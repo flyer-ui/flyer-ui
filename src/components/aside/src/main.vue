@@ -3,15 +3,14 @@ export default {
   name: 'FlyAside',
   props: {
     width: {
-      type: String,
-      default: '300px'
+      type: String
     }
   },
   render (h) {
     return h('aside', {
       class: ['fly-aside'],
       style: {
-        width: this.width
+        minWidth: this.width
       }
     }, this.$slots.default)
   }

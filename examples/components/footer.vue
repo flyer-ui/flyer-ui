@@ -14,18 +14,19 @@ export default {
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
+@import '~/components/themes/src/base/fly-util.scss';
 @include b('demo-footer'){
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
     justify-content: center;
-    height:60px;
+    height:rem(60px);
     background-color:#fafafa;
-    line-height:60px;
+    line-height:rem(60px);
     color:$font-color-placeholder;
     @include e('github'){
-      font-size: 24px;
-      padding: 18px;
+      font-size: rem(24px);
+      padding: rem(18px);
     }
 }
 </style>
