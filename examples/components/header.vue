@@ -20,21 +20,22 @@ export default {
 </script>
 <style lang='scss' scoped>
 @import '~/components/themes/src/base/fly-bem.scss';
+@import '~/components/themes/src/base/fly-util.scss';
 @include b('demo-header'){
-  border-bottom: 1px solid #e4eaec;
+  border-bottom: rem(1px) solid #e4eaec;
   @include e('logo'){
     position:relative;
     img{
-      width: 30px;
+      width: rem(30px);
       position: absolute;
       z-index: 1;
-      left: 20px;
-      top: 15px;
+      left: rem(20px);
+      top: rem(15px);
     }
     h2{
       position: absolute;
       z-index: 1;
-      left: 70px;
+      left: rem(70px);
       color: #3e8ef7;
     }
     &:after{
@@ -42,10 +43,10 @@ export default {
       position: absolute;
       z-index: 1;
       right: 0;
-      top: 10px;
-      height: 40px;
+      top: rem(10px);
+      height: rem(40px);
       vertical-align: middle;
-      border-right: 1px solid #e4eaec;
+      border-right: rem(1px) solid #e4eaec;
     }
   }
 }

@@ -41,6 +41,7 @@
     color: $font-color-common;
     background-color: $fly-common-white;
     line-height:1.3;
+    font-size:rem(14px);
     &+& {
         margin-left: rem(10px);
     }

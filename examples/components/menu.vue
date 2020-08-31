@@ -38,31 +38,31 @@ export default {
 <style lang="scss" scoped>
 @import '~/components/themes/src/base/fly-variable.scss';
 @import '~/components/themes/src/base/fly-bem.scss';
-
+@import '~/components/themes/src/base/fly-util.scss';
 @include b('demo-menus') {
-  min-width: 300px;
+  min-width: rem(200px);
   box-sizing: border-box;
-  padding: 10px;
+  padding: rem(10px);
   position: relative;
 
   &:after {
     content: '';
     position: absolute;
     z-index: 1;
-    top: 10px;
-    right: 1px;
-    bottom: 10px;
-    border-right: 1px solid $fly-color-border;
+    top: rem(10px);
+    right: rem(1px);
+    bottom: rem(10px);
+    border-right: rem(1px) solid $fly-color-border;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: rem(16px);
   }
 
   @include e('list') {
     list-style-type: none;
-    margin: 0px;
-    padding: 0px 10px;
+    margin: rem(0px);
+    padding: rem(0px) rem(10px);
     box-sizing: border-box;
   }
 
@@ -77,8 +77,8 @@ export default {
   }
 
   @include e('item') {
-    line-height: 36px;
-    padding-left: 10px;
+    line-height: rem(36px);
+    padding-left: rem(10px);
     cursor: pointer;
 
     a:hover {
@@ -96,7 +96,7 @@ export default {
   @include e('notice'){
     color:$font-color-placeholder;
     font-size:$fly-font-assist_text-size;
-    line-height: 36px;
+    line-height: rem(36px);
   }
 }
 </style>
