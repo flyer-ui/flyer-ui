@@ -239,6 +239,12 @@
             "pending":false
         },
         {
+            "text": "Scrollbar 虚拟滚动条",
+            "type": "item",
+            "path": "scrollbar",
+            "pending":false
+        },
+        {
             "text": "Upload 上传",
             "type": "item",
             "path": "upload",

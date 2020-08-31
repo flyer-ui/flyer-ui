@@ -22,7 +22,7 @@
 }
 
 // px 转换 rem
-@function pxtorem($px){
+@function rem($px){
     @return #{$px / 14px + 'rem'};
 }
 
