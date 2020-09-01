@@ -146,7 +146,7 @@ export default {
       <div class='fly-pagination'>
         <ul class='fly-pagination__pager'>
           <li class={['fly-pagination__number', {'is-disabled': this.isFirstPage}]} on-click={this.handlePrev}>
-            <i class='fly-icon fly-icon-back'></i>
+            <i class='fly-icon fly-icon-back fly-pagination__back'></i>
           </li>
           <li class={['fly-pagination__number',
             {'is-active': this.start === this.currentPage}]} on-click={() => { this.handleClick(this.start) }}>
@@ -165,7 +165,7 @@ export default {
             {this.end}
           </li>
           <li class={['fly-pagination__number', {'is-disabled': this.isLastPage}]} on-click={this.handleNext}>
-            <i class='fly-icon fly-icon-next'></i>
+            <i class='fly-icon fly-icon-next fly-pagination__next'></i>
           </li>
         </ul>
       </div>)

@@ -38,9 +38,9 @@ $fly-input-clear-area:16px !default;
             border-color:$fly-primary-color;
         }
         @include state("disabled"){
-            color:$font-color-common;
+            color:$font-color-secondary;
             background: mix($fly-color-border,$white,50%);
-            border-color:$font-color-placeholder;
+            border-color:mix($fly-color-border,$white,50%);
             cursor:not-allowed;
         }
         @include state("prepend"){

@@ -15,6 +15,7 @@
         box-sizing: border-box;
         padding:rem(5px) rem(10px);
         font-weight:bold;
+        background-color: #fafafa;
         &:hover{
             cursor: pointer;
             color:$fly-primary-color;
@@ -26,5 +27,11 @@
             cursor:not-allowed;
             color:$font-color-placeholder;
         }
+    }
+    @include e('back'){
+        font-size:rem(12px);
+    }
+    @include e('next'){
+        font-size:rem(12px);
     }
 }
