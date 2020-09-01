@@ -8,13 +8,13 @@ import VueRouter from 'vue-router'
 import 'babel-polyfill'
 import '../src/components/themes/src/index.scss'
 import FlyDemoBlock from '@/components/demo-block'
-import flexible from 'amfe-flexible'
+// import flexible from 'amfe-flexible'
 
 Vue.config.productionTip = false
 Vue.use(FlyerUI)
 Vue.use(VueRouter)
 Vue.component('fly-demo-block', FlyDemoBlock)
-console.log(flexible)
+// console.log(flexible)
 
 const router = new VueRouter({
   // mode: 'history',
