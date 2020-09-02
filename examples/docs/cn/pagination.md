@@ -24,7 +24,7 @@ module.exports = {
 
 ```html
 <template>
- 长度为5的页码器： <fly-pagination
+ <fly-pagination
     v-model="currentPage"
     :pager-count='5'
     :page-size="10"
@@ -51,24 +51,30 @@ module.exports = {
 
 ```html
 <template>
-  长度为7的页码器：<fly-pagination
+  <p>
+    <fly-pagination
     v-model="currentPage1"
     :page-size="20"
     :pager-count="7"
     :total="179"
-  ></fly-pagination>
-  长度为3的页码器：<fly-pagination
-    v-model="currentPage2"
-    :page-size="10"
-    :pager-count="3"
-    :total="1898"
-  ></fly-pagination>
-  长度为4的页码器：<fly-pagination
-    v-model="currentPage3"
-    :page-size="10"
-    :pager-count="4"
-    :total="1898"
-  ></fly-pagination>
+    ></fly-pagination>
+  </p>
+  <p>
+    <fly-pagination
+      v-model="currentPage2"
+      :page-size="10"
+      :pager-count="3"
+      :total="1898"
+    ></fly-pagination>
+  </p>
+  <p>
+    <fly-pagination
+      v-model="currentPage3"
+      :page-size="10"
+      :pager-count="4"
+      :total="1898"
+    ></fly-pagination>
+  </p>
 </template>
 <script>
   export default {

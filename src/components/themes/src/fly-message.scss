@@ -21,6 +21,8 @@
         position: relative;
         min-width: rem(300px);
         text-align:left;
+        align-items:center;
+        display:inline-flex;
     }
     @include e('icon'){
         position: absolute;

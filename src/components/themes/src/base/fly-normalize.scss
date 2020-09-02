@@ -12,7 +12,7 @@
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   font-weight: 400;
-  font-size:rem(14px);
+  font-size:14px; /*不可以删除及修改，如果有修改需要同步更新rem函数中的转换比率。*/
   color:$font-color-common;
   font-family:Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif;
 }
@@ -26,6 +26,7 @@
 
 body {
   margin: 0;
+  font-size:rem(14px);
 }
 
 /**

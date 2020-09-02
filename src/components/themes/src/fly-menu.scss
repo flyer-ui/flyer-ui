@@ -19,12 +19,12 @@
         border-bottom:rem(1px) solid transparent;
         cursor: pointer;
         &:hover{
-            color:$warning;
-            border-bottom:rem(1px) solid $warning;
+            color:$primary;
+            border-bottom:rem(1px) solid $primary;
         }
         @include state('active'){
-            color:$warning;
-            border-bottom:rem(1px) solid $warning;
+            color:$primary;
+            border-bottom:rem(1px) solid $primary
         }
         @include state('highlight'){
             font-weight: bold;

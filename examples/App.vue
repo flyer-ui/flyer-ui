@@ -44,6 +44,10 @@ export default {
 </script>
 
 <style lang='scss'>
+@import '~/components/themes/src/base/fly-variable.scss';
+@import '~/components/themes/src/base/fly-bem.scss';
+@import '~/components/themes/src/base/fly-util.scss';
+@import url('assets/css/common.scss');
 html,body,#app{
   height:100%;
 }
@@ -53,9 +57,6 @@ html,body,#app{
 .fly-main{
   padding:rem(0px) rem(10px);
 }
-  @import '~/components/themes/src/base/fly-variable.scss';
-@import '~/components/themes/src/base/fly-bem.scss';
-@import url('assets/css/common.scss');
 body,#app{
   color:$font-color-common;
 }

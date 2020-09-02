@@ -20,7 +20,8 @@ $fly-time-line-size-large:rem(20px);
         border-radius:100%;
         color:#fff;
         text-align: center;
-        vertical-align: baseline;
+        display:flex;
+        align-items:center;
         @include state('default'){
             background:rgba($fly-color-border,1);
         }

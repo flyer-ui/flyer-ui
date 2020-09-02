@@ -27,12 +27,12 @@ $fly-bottom-border-size:rem(2px);
     }
     @include e('nav'){
         position: relative;
-        height: calc(#{$fly-tab-nav-padding}* 2 + #{$fly-tab-nav-lineHeight});
+        height:rem(44px);
         padding:$fly-tab-nav-padding;
         margin-bottom:-$fly-bottom-border-size;
         box-sizing: border-box;
         cursor: pointer;
-        line-height: $fly-tab-nav-lineHeight - $fly-bottom-border-size;
+        line-height: rem(22px);
         @include state('active'){
             color:$fly-primary-color;
             border-bottom:$fly-bottom-border-size solid $fly-primary-color;
