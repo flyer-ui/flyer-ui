@@ -3,7 +3,7 @@
     position: relative;
     overflow: hidden;
     @include e('content'){
-        overflow: scroll;
+        overflow-y: scroll;
         height:100%;
         &:after{
             content:' ';

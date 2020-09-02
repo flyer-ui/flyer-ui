@@ -41,10 +41,19 @@ export default {
     },
     handleSliderMove ($event) {
       if (this.state === true) {
-        const offsetY = $event.pageY - this.lastPageY
-        this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100) / this.rate
-        setTimeout(this.calcSliderMove, 0)
-        console.log($event.pageY - this.lastPageY)
+        let offsetY = $event.pageY - this.lastPageY
+        // this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100)
+        // console.log(Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100), this.$flyContent.scrollTop)
+        // setTimeout(this.calcSliderMove, 0)
+        // this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100) / this.rate
+        console.log(offsetY, this.$refs.slider.offsetHeight, offsetY + this.$refs.slider.offsetHeight, this.$flyRail.offsetHeight)
+        if (offsetY + this.$refs.slider.offsetHeight >= this.$flyRail.offsetHeight) {
+          offsetY = this.$flyRail.offsetHeight - this.$refs.slider.offsetHeight
+        } else if (offsetY <= 0) {
+          offsetY = 0
+        }
+        this.$refs.slider.style.transform = `translateY(${offsetY}px)`
+        // console.log('offsetY', offsetY, Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100))
       }
     },
     /** 计算滚动条的高度 */
@@ -58,10 +67,8 @@ export default {
     },
     calcSliderMove () {
       const contentTop = this.$flyContent.scrollTop
+      console.log('contentTop', contentTop)
       let sliderTop = Math.ceil((contentTop / this.$flyRail.offsetHeight) * 100)
-      if (sliderTop + this.$refs.slider.offsetHeight >= this.$flyRail.offsetHeight) {
-        sliderTop = this.$flyRail.offsetHeight - this.$refs.slider.offsetHeight
-      }
       this.$refs.slider.style.transform = `translateY(${sliderTop}px)`
     }
   },

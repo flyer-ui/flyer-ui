@@ -36,12 +36,8 @@ module.exports = {
 ```html
 <template>
   <fly-scrollbar class='fly-scrollbar-demo'>
-      <div>
-          <ul>
-              <li v-for="(item,index) in list" :key='index'>
-                  {{item}}
-              </li>
-          </ul>
+      <div v-for="(item,index) in list" :key='index'>
+          {{item}}
       </div>
   </fly-scrollbar>
 </template>
@@ -57,6 +53,7 @@ module.exports = {
 <style scoped>
     .fly-scrollbar-demo{
         height:400px;
+        border:1px solid #ccc;
     }
 </style>
 ```
