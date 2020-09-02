@@ -34,6 +34,7 @@ $fly-input-clear-area:16px !default;
         border:1px solid $fly-color-border;
         border-radius: $fly-round-default-size;
         box-sizing: border-box;
+        color:$default;
         &:focus{
             border-color:$fly-primary-color;
         }

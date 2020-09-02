@@ -23,57 +23,53 @@ export default {
   },
   methods: {
     handleWheel () {
-      if (this.$flyContent) {
+      if (this.content) {
         this.calcSliderMove()
+        this.$emit('mousewheel')
       }
     },
     handleSliderDown ($event) {
-      console.log('开始')
       this.state = true
       this.lastPageY = $event.pageY
-      this.$flyContent.style.userSelect = 'none'
-      console.log($event.pageY)
+      this.content.style.userSelect = 'none'
     },
     handleSliderUp () {
-      console.log('结束')
       this.state = false
-      this.$flyContent.style.userSelect = 'inherit'
+      this.content.style.userSelect = 'inherit'
     },
     handleSliderMove ($event) {
       if (this.state === true) {
         let offsetY = $event.pageY - this.lastPageY
-        // this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100)
-        // console.log(Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100), this.$flyContent.scrollTop)
-        // setTimeout(this.calcSliderMove, 0)
-        // this.$flyContent.scrollTop += Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100) / this.rate
-        console.log(offsetY, this.$refs.slider.offsetHeight, offsetY + this.$refs.slider.offsetHeight, this.$flyRail.offsetHeight)
-        if (offsetY + this.$refs.slider.offsetHeight >= this.$flyRail.offsetHeight) {
-          offsetY = this.$flyRail.offsetHeight - this.$refs.slider.offsetHeight
-        } else if (offsetY <= 0) {
-          offsetY = 0
-        }
-        this.$refs.slider.style.transform = `translateY(${offsetY}px)`
-        // console.log('offsetY', offsetY, Math.ceil((offsetY * this.$flyRail.offsetHeight) / 100))
+        this.content.scrollTop += this.wrapHeight * (offsetY / (this.railHeight - this.slider.offsetHeight))
+        this.lastPageY = $event.pageY
+        setTimeout(this.calcSliderMove, 1)
+        this.$emit('scroll')
       }
     },
     /** 计算滚动条的高度 */
     calcSliderHeight () {
-      this.$flyRail = this.$refs.rail
-      this.$flyContent = this.$refs.content
-      const railHeight = this.$flyRail.offsetHeight
-      const wrapHeight = this.$flyContent.scrollHeight
-      const sliderHeight = this.rate = Math.ceil((railHeight / wrapHeight) * 100)
-      this.$refs.slider.style.height = `${sliderHeight}%`
+      this.$refs.slider.style.height = `${this.rate * 100}%`
     },
     calcSliderMove () {
-      const contentTop = this.$flyContent.scrollTop
-      console.log('contentTop', contentTop)
-      let sliderTop = Math.ceil((contentTop / this.$flyRail.offsetHeight) * 100)
-      this.$refs.slider.style.transform = `translateY(${sliderTop}px)`
+      const contentTop = this.content.scrollTop
+      let sliderTop = contentTop * this.rate
+      this.handleTranslate(sliderTop)
+    },
+    init () {
+      this.rail = this.$refs.rail
+      this.slider = this.$refs.slider
+      this.content = this.$refs.content
+      this.railHeight = this.rail.offsetHeight
+      this.wrapHeight = this.content.scrollHeight
+      this.rate = this.railHeight / this.wrapHeight
+    },
+    handleTranslate (value) {
+      this.slider.style.transform = `translateY(${value}px)`
     }
   },
   mounted () {
     this.$nextTick(() => {
+      this.init()
       this.calcSliderHeight()
     })
     document.body.addEventListener('mouseup', (e) => {

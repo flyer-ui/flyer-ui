@@ -15,13 +15,14 @@
         background-color: mixColor($default,30%);
         border-radius: $fly-round-default-size;
         cursor: pointer;
+        transition:all .1s;
         &:hover{
             background-color: mixColor($default,50%);
         }
     }
     @include e('rail'){
         width:rem(8px);
-        background-color:$fly-color-border;
+        // background-color:$fly-color-border;
         position:absolute;
         z-index:1;
         top:rem(0px);
