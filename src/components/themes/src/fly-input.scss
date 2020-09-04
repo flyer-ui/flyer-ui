@@ -132,8 +132,9 @@ $fly-input-clear-area:16px !default;
     .fix{
         position: absolute;
         z-index:99;
-        top:0px;
-        bottom: 0px;
+        top:rem(0px);
+        bottom: rem(0px);
+        line-height:rem(20px)
     }
     .adorn{
         background: $fly-color-border;
