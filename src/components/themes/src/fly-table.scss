@@ -1,0 +1,13 @@
+
+@import "./base/index.scss";
+@include b('table'){
+    display:table;
+    @include e('th'){
+        text-align: left;
+        padding:rem(10px);
+    }
+    @include e('td'){
+        text-align: left;
+        padding:rem(10px);
+    }
+}

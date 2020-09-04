@@ -131,17 +131,19 @@
     }
 
     @include m('default'){
-        @include button-variant($default,$fly-default-color,$fly-default-color,$fly-default-hover-color,$fly-default-active-color);
+        $mixDefault:mix($fly-color-border,$white,90%);
+        $mixBG:mix($fly-color-border,$white,50%);
+        @include button-variant($default,$mixBG,$mixDefault,$mixDefault,$mixDefault);
         @include state('plain'){
-            @include button-plain($default,$white,$fly-default-active-color,$fly-default-active-color);
+            @include button-plain($default,$white,$mixBG,$mixDefault);
             &:hover{
-                background-color:$fly-default-hover-color;
-                border-color:$fly-default-hover-color;
+                background-color:mix($fly-color-border,$white,90%);
+                border-color:mix($fly-color-border,$white,90%);
                 color:$default;
             }
             &:active,&:focus {
-                background-color:$fly-default-active-color;
-                border-color:$fly-default-active-color;
+                background-color:mix($fly-color-border,$white,90%);
+                border-color:mix($fly-color-border,$white,90%);
                 color:$default;
             }
         }
