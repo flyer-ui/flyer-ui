@@ -16,9 +16,9 @@ $fly-primary-hover-color:mixColor($primary,80%);
 $fly-primary-bg-color:mixColor($primary,10%);
 
 //辅助色
-$fly-default-color:mixColor($default,10%);
-$fly-default-active-color:mixColor($default,15%);
-$fly-default-hover-color:mixColor($default,5%);
+$fly-default-color:mixColor($default,90%);
+$fly-default-active-color:$default;
+$fly-default-hover-color:mixColor($default,80%);
 $fly-default-bg-color:mixColor($default,10%);
 
 $fly-success-color:mixColor($success,90%);

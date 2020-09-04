@@ -2,6 +2,11 @@
 @include b('scrollbar'){
     position: relative;
     overflow: hidden;
+    &:hover{
+        .fly-scrollbar__slider{
+            display:block;
+        }
+    }
     @include e('content'){
         overflow-y: scroll;
         height:100%;
@@ -15,13 +20,15 @@
         background-color: mixColor($default,30%);
         border-radius: $fly-round-default-size;
         cursor: pointer;
+        display:none;
+        transition:all .1s;
         &:hover{
             background-color: mixColor($default,50%);
         }
     }
     @include e('rail'){
         width:rem(8px);
-        background-color:$fly-color-border;
+        // background-color:$fly-color-border;
         position:absolute;
         z-index:1;
         top:rem(0px);

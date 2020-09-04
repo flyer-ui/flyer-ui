@@ -83,6 +83,12 @@
             "pending":false
         },
         {
+            "text": "Form 表单验证",
+            "type": "item",
+            "path": "form",
+            "pending":false
+        },
+        {
             "text": "Checkbox 多选框",
             "type": "item",
             "path": "checkbox",
@@ -158,12 +164,18 @@
             "text": "Tree 树菜单",
             "type": "item",
             "path": "tree",
-            "pending":true
+            "pending":false
         },
         {
             "text": "Timeline 时间轴",
             "type": "item",
             "path": "timeline",
+            "pending":false
+        },
+        {
+            "text": "Table 表格",
+            "type": "item",
+            "path": "table",
             "pending":false
         },
         {
@@ -227,12 +239,6 @@
             "pending":false
         },
         {
-            "text": "Popover 弹出层",
-            "type": "item",
-            "path": "popover",
-            "pending":false
-        },
-        {
             "text": "Collapse 折叠面板",
             "type": "item",
             "path": "collapse",
@@ -263,18 +269,6 @@
             "pending":true
         },
         {
-            "text": "Table 表格",
-            "type": "item",
-            "path": "table",
-            "pending":true
-        },
-        {
-            "text": "Form 表单验证",
-            "type": "item",
-            "path": "form",
-            "pending":true
-        },
-        {
             "text": "Tooltip 文字提示",
             "type": "item",
             "path": "tooltip",
@@ -285,6 +279,12 @@
             "type": "item",
             "path": "popover",
             "pending":true
+        },
+        {
+            "text": "Link 超链接",
+            "type": "item",
+            "path": "link",
+            "pending":false
         }
     ]
 }

@@ -1,0 +1,45 @@
+
+
+@import "./base/index.scss";
+@mixin button-variant($color,$hover-color,$active-color){
+    color:$color;
+    &:hover{
+        color:$hover-color;
+    }
+    &:active,&:focus {
+        color:$active-color;
+    }
+}
+@include b('link'){
+    background-color: transparent; 
+    text-decoration: none;
+    color:$default; 
+    cursor:pointer;
+    &+& {
+        margin-left: rem(10px);
+    }
+    @include state('disabled'){
+        opacity: 0.65;
+        cursor: not-allowed;
+    }
+
+    @include m('default'){
+        @include button-variant($fly-default-color,$fly-default-hover-color,$fly-default-active-color);
+    }
+
+    @include m('primary'){
+        @include button-variant($fly-primary-color,$fly-primary-hover-color,$fly-primary-active-color);
+    }
+    @include m('success'){
+        @include button-variant($fly-success-color,$fly-success-hover-color,$fly-success-active-color);
+    }
+    @include m('info'){
+        @include button-variant($fly-info-color,$fly-info-hover-color,$fly-info-active-color);
+    }
+    @include m('warning'){
+        @include button-variant($fly-warning-color,$fly-warning-hover-color,$fly-warning-active-color);
+    }
+    @include m('danger'){
+        @include button-variant($fly-danger-color,$fly-danger-hover-color,$fly-danger-active-color);
+    }
+}

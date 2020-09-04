@@ -36,5 +36,7 @@
   "menu-group":"./src/components/menu-group/index.js",
   "collapse":"./src/components/collapse/index.js",
   "collapse-item":"./src/components/collapse-item/index.js",
-  "scrollbar":"./src/components/scrollbar/index.js"
+  "scrollbar":"./src/components/scrollbar/index.js",
+  "table-column":"./src/components/table-column/index.js",
+  "table":"./src/components/table/index.js"
 }
