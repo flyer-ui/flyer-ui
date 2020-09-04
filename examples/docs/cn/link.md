@@ -1,3 +1,13 @@
+<script>
+    module.exports = {
+        methods:{
+            handleClick(){
+               console.log('click')
+            }
+        }
+    }
+</script>
+
 ## Link 超链接
 
 ### 基本使用
@@ -9,7 +19,7 @@
     <fly-link type="primary">主要链接</fly-link>
     <fly-link type="warning">警告链接</fly-link>
     <fly-link type="danger">危险链接</fly-link>
-    <fly-link type="success">成功链接</fly-link>
+    <fly-link @click.native='handleClick' type="success">成功链接</fly-link>
     <fly-link href='https://www.baidu.com' target='_blank' type="info">信息链接</fly-link>
 </template>
 ```

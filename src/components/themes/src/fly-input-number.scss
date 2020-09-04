@@ -25,6 +25,7 @@
         box-sizing:border-box;
         border-left:rem(1px) solid $fly-color-border;
         user-select: none;
+        line-height:rem(20px);
         &:hover{
             background: $fly-color-border;
         }
