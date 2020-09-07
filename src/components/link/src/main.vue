@@ -1,6 +1,7 @@
 <template>
     <a :class='["fly-link",
-        `fly-link--${type}`
+        `fly-link--${type}`,
+        {"is-disabled":disabled}
     ]' :href='href'>
         <slot name='default'></slot>
     </a>
@@ -14,7 +15,8 @@ export default {
     type: {
       type: String,
       default: 'default'
-    }
+    },
+    disabled: Boolean
   }
 }
 </script>
