@@ -46,6 +46,9 @@
         <fly-table-column
             prop="address"
             label="地址">
+            <template slot-scope='row'>
+                address:{{row.address}}
+            </template>
         </fly-table-column>
     </fly-table>
 </template>
@@ -76,3 +79,17 @@ export default {
 }
 ```
 :::
+
+### Table - 可定制属性
+
+| 属性名称        | 类型                      | 默认值 | 可选值       | 说明             |
+| --------------- | ------------------------- | ------ | ------------ | ---------------- |
+| data | array | -      | -            | 显示的数据         |
+
+### Table-Column - 可定制的事件
+
+| 事件名称  | 返回值     | 说明                       |
+| --------- | ---------- | -------------------------- |
+| prop |  | 对应列内容的字段名，也可以使用 property 属性 |
+| label |  | 显示的标题 |
+| width |  | 对应列的宽度 |
