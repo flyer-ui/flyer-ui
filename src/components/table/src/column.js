@@ -3,5 +3,8 @@ export default {
   props: {
     prop: String,
     label: String
+  },
+  render (h) {
+    return ('')
   }
 }

@@ -11,21 +11,24 @@ export default {
   methods: {
     getColumns () {
       const columnInstances = this.$slots.default.filter(
-        component => component.componentOptions
+        component => component.componentInstance &&
+        component.componentInstance.$options.name === 'FlyTableColumn'
       )
-      return columnInstances.map(instance => instance.componentOptions.propsData)
+      return columnInstances.map(instance => instance.componentInstance)
     },
     renderTh (h) {
       return (this._l(this.columns, (column) => {
-        return (<th class='fly-table__th'>{column.label}</th>)
+        return (<th class='fly-table__th'
+          style={{'width': `${column.$attrs.width}px`}}>{column.label}</th>)
       }))
     },
     renderTd (h, row) {
       return (
         this._l(this.columns, (column) => {
+          console.log(column)
           return (
             <td class='fly-table__td'>
-              {row[column.prop]}
+              {(column.$scopedSlots.default && column.$scopedSlots.default(row)) || row[column.prop]}
             </td>
           )
         })
@@ -39,6 +42,7 @@ export default {
     return (
       <table class='fly-table'>
         <thead>
+          {this.$slots.default}
           <tr>
             {this.renderTh(h)}
           </tr>
