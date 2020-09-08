@@ -54,6 +54,14 @@ module.exports = {
   <p>
     <fly-pagination
     v-model="currentPage1"
+    :page-size="10"
+    :pager-count="5"
+    :total="19"
+    ></fly-pagination>
+  </p>
+  <p>
+    <fly-pagination
+    v-model="currentPage1"
     :page-size="20"
     :pager-count="7"
     :total="179"
