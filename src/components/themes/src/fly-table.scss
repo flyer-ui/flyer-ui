@@ -2,12 +2,25 @@
 @import "./base/index.scss";
 @include b('table'){
     display:table;
+    box-sizing:border-box;
     @include e('th'){
         text-align: left;
         padding:rem(10px);
+        box-sizing:border-box;
     }
     @include e('td'){
         text-align: left;
         padding:rem(10px);
+        box-sizing:border-box;
+    }
+    @include e('icon'){
+        font-size:rem(12px);
+        cursor:pointer;
+        @include state('active'){
+            color:$primary;
+        }
+    }
+    .fly-checkbox__label{
+        padding-left:rem(0px);
     }
 }

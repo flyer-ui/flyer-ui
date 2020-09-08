@@ -3,22 +3,26 @@
         data(){
             return {
                 data:[{
-                    date: '2016-05-02',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1518 弄'
-                }, {
-                    date: '2016-05-04',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1517 弄'
-                }, {
-                    date: '2016-05-01',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1519 弄'
-                }, {
-                    date: '2016-05-03',
-                    name: '王小虎',
-                    address: '上海市普陀区金沙江路 1516 弄'
-                }]
+                    id:10000,
+                    date: '2020-09-08',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 601 室'
+                },{
+                    id:10001,
+                    date: '2020-09-09',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 602 室'
+                },{
+                    id:10002,
+                    date: '2020-09-10',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 603 室'
+                },{
+                    id:10003,
+                    date: '2020-09-11',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 604 室'
+                } ]
             }
         }
     }
@@ -34,20 +38,28 @@
         :data="data"
         style="width: 100%">
         <fly-table-column
+            type='checkbox'
+            width="30">
+        </fly-table-column>
+        <fly-table-column
             prop="date"
             label="日期"
+            sortable
             width="180">
         </fly-table-column>
         <fly-table-column
             prop="name"
             label="姓名"
+            filterable
             width="180">
         </fly-table-column>
         <fly-table-column
             prop="address"
+            sortable
+            filterable
             label="地址">
             <template slot-scope='row'>
-                address:{{row.address}}
+                <fly-icon name='nickname'></fly-icon>:{{row.address}}
             </template>
         </fly-table-column>
     </fly-table>
@@ -58,22 +70,26 @@ export default {
     data(){
         return {
             data:[{
-                date: '2016-05-02',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1518 弄'
-            }, {
-                date: '2016-05-04',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1517 弄'
-            }, {
-                date: '2016-05-01',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1519 弄'
-            }, {
-                date: '2016-05-03',
-                name: '王小虎',
-                address: '上海市普陀区金沙江路 1516 弄'
-            }]
+                id:10000,
+                date: '2020-09-08',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 601 室'
+            },{
+                id:10001,
+                date: '2020-09-09',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 602 室'
+            },{
+                id:10002,
+                date: '2020-09-10',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 603 室'
+            },{
+                id:10003,
+                date: '2020-09-11',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 604 室'
+            } ]
         }
     }
 }
@@ -86,10 +102,12 @@ export default {
 | --------------- | ------------------------- | ------ | ------------ | ---------------- |
 | data | array | -      | -            | 显示的数据         |
 
-### Table-Column - 可定制的事件
+### Table-Column - 可定制属性
 
-| 事件名称  | 返回值     | 说明                       |
-| --------- | ---------- | -------------------------- |
-| prop |  | 对应列内容的字段名，也可以使用 property 属性 |
-| label |  | 显示的标题 |
-| width |  | 对应列的宽度 |
+| 属性名称        | 类型                      | 默认值 | 可选值       | 说明             |
+| --------------- | ------------------------- | ------ | ------------ | ---------------- |
+| type | checkbox | -      | -            |  指定列的类型，目前可定制checkbox       |
+| prop | array | -      | -            |  对应列内容的字段名，也可以使用 property 属性        |
+| label | array | -      | -            | 显示的标题         |
+| width | array | -      | -            | 对应列的宽度       |
+
