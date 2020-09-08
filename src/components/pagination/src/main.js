@@ -57,10 +57,10 @@ export default {
       return Math.trunc(this.rest / 2)
     },
     isFirstPage () {
-      return this.currentPage === this.mini
+      return this.currentPage === this.start
     },
     isLastPage () {
-      return this.currentPage === this.max
+      return this.currentPage === this.end
     }
   },
   methods: {
