@@ -48,6 +48,9 @@ export default {
     rest () {
       // 减去最大值与最小值
       const pagerCount = this.pagerCount > this.end ? this.end : this.pagerCount
+      if (pagerCount <= 0) {
+        return 0
+      }
       return pagerCount - 2
     },
     extendValue () {
