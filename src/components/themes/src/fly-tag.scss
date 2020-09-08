@@ -25,7 +25,7 @@
     display: inline-flex;
     box-sizing: border-box;
     align-items: center;
-
+    line-height:1.1;
     &+& {
         margin-left: rem(10px);
     }
