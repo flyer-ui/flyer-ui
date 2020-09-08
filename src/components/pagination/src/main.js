@@ -48,16 +48,19 @@ export default {
     rest () {
       // 减去最大值与最小值
       const pagerCount = this.pagerCount > this.end ? this.end : this.pagerCount
+      if (pagerCount <= 0) {
+        return 0
+      }
       return pagerCount - 2
     },
     extendValue () {
       return Math.trunc(this.rest / 2)
     },
     isFirstPage () {
-      return this.currentPage === this.mini
+      return this.currentPage === this.start
     },
     isLastPage () {
-      return this.currentPage === this.max
+      return this.currentPage === this.end
     }
   },
   methods: {
