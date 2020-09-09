@@ -55,12 +55,6 @@ export default {
     },
     extendValue () {
       return Math.trunc(this.rest / 2)
-    },
-    isFirstPage () {
-      return this.currentPage === this.start
-    },
-    isLastPage () {
-      return this.currentPage === this.end
     }
   },
   methods: {
@@ -70,7 +64,7 @@ export default {
       this.$emit('change', this.currentPage)
     },
     handlePrev () {
-      if (this.isFirstPage) {
+      if (this.isFirstPage()) {
         return false
       }
       this.currentPage--
@@ -79,7 +73,7 @@ export default {
       this.$emit('prev', this.currentPage)
     },
     handleNext () {
-      if (this.isLastPage) {
+      if (this.isLastPage()) {
         return false
       }
       this.currentPage++
@@ -119,6 +113,12 @@ export default {
       let value = this.currentPage - this.extendValue
       value = value < this.start ? this.start : value
       return value
+    },
+    isFirstPage () {
+      return this.currentPage === this.start
+    },
+    isLastPage () {
+      return this.currentPage === this.end
     }
   },
   created () {
@@ -149,7 +149,7 @@ export default {
     return (
       <div class='fly-pagination'>
         <ul class='fly-pagination__pager'>
-          <li class={['fly-pagination__number', {'is-disabled': this.isFirstPage}]} on-click={this.handlePrev}>
+          <li class={['fly-pagination__number', {'is-disabled': this.isFirstPage()}]} on-click={this.handlePrev}>
             <i class='fly-icon fly-icon-back fly-pagination__back'></i>
           </li>
           <li class={['fly-pagination__number',
@@ -168,7 +168,7 @@ export default {
           <li class={['fly-pagination__number', {'is-active': this.end === this.currentPage}]} on-click={$event => { this.handleClick(this.end) }}>
             {this.end}
           </li>
-          <li class={['fly-pagination__number', {'is-disabled': this.isLastPage}]} on-click={this.handleNext}>
+          <li class={['fly-pagination__number', {'is-disabled': this.isLastPage()}]} on-click={this.handleNext}>
             <i class='fly-icon fly-icon-next fly-pagination__next'></i>
           </li>
         </ul>
