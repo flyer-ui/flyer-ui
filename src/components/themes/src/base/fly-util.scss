@@ -24,7 +24,7 @@
 
 // px 转换 rem
 @function rem($px){
-    @return #{$px / 14px + 'rem'};
+    @return #{$px / 144px + 'rem'};
     // @return $px
 }
 
