@@ -11,6 +11,10 @@ export default {
       type: Number,
       default: 0
     },
+    align: {
+      type: String,
+      default: 'left'
+    },
     tagName: {
       type: String,
       default: 'div'
@@ -19,8 +23,8 @@ export default {
   computed: {
     style () {
       return {
-        'padding-left': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2}px` : '',
-        'padding-right': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2}px` : ''
+        'padding-left': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 14}rem` : '',
+        'padding-right': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 14}rem` : ''
       }
     }
   },
