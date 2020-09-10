@@ -79,13 +79,13 @@
 <template>
   <fly-row class="bg-row" :gutter="20">
     <fly-col :span="4">
-      <div class="bg-col-first"></div>
+      <div class="bg-col-first" algin='left'>内容居左</div>
     </fly-col>
     <fly-col :span="4">
-      <div class="bg-col-second"></div>
+      <div class="bg-col-second" align='center'>内容居中</div>
     </fly-col>
     <fly-col :span="4">
-      <div class="bg-col-first"></div>
+      <div class="bg-col-first" align='right'>内容居右</div>
     </fly-col>
     <fly-col :span="4">
       <div class="bg-col-second"></div>
@@ -104,6 +104,7 @@
     line-height: 32px;
     height: 32px;
     margin-bottom: 10px;
+    color:#fff;
   }
   .bg-col-first {
     background: #526069;
