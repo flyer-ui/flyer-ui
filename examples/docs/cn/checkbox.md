@@ -3,7 +3,7 @@ let allCityValue=[0,1,2,3]
 module.exports = {
     data(){
         return{
-            checked:true,
+            checked:false,
             checked1:true,
             city:'',
             value:'',
@@ -29,6 +29,10 @@ module.exports = {
     methods:{
         handleChange(value){
             console.log('handleChange',value)
+            console.log(this.checked,
+            this.checked1,
+            this.city,
+            this.value)
         },
         handleChangeGroup(value){
             console.log('handleChangeGroup',value)
@@ -60,7 +64,8 @@ module.exports = {
 
 ```html
 <template>
-  <fly-checkbox v-model="checked" name="checked">
+  <fly-checkbox checked></fly-checkbox>
+  <fly-checkbox v-model="checked" @change='handleChange' name="checked">
     是否选中
   </fly-checkbox>
 </template>
@@ -70,6 +75,11 @@ module.exports = {
       return {
         checked: true
       };
+    },
+    methods:{
+        handleChange(value){
+            console.log('handleChange',value)
+        }
     }
   };
 </script>
@@ -125,7 +135,7 @@ module.exports = {
 
 ```html
 <template>
-  <fly-checkbox v-model="city" true-value="深圳" false-value=""
+  <fly-checkbox v-model="city" @change='handleChange' true-value="深圳" false-value=""
     >深圳</fly-checkbox
   >
 </template>
@@ -280,8 +290,8 @@ module.exports = {
 | value / v-model | String / Number / Boolean | -      | -            | 绑定的值                                                           |
 | label           | String / Number / Boolean | -      | -            | 选中状态的值（只有在 checkbox-group 或者绑定对象类型为数组时有效） |
 | disabled        | Boolean                   | false  | true / false | 是否设置为禁用                                                     |
-| true-label      | String / Number           | -      | -            | 选中时的值                                                         |
-| false-label     | String / Number           | -      | -            | 没有选中时的值                                                     |
+| true-label      | String / Number / Boolean     | -      | -            | 选中时的值                                                         |
+| false-label     | String / Number / Boolean     | -      | -            | 没有选中时的值                                                     |
 | name            | String                    | -      | -            | 原生 name 属性                                                     |
 | checked         | Boolean                   | false  | true / false | 当前是否勾选(只有在单独使用 checkbox 时有效)                       |
 | indeterminate   | Boolean                   | false  | true / false | 设置 indeterminate 状态，只负责样式控制                            |

@@ -9,21 +9,14 @@
         <span class='fly-checkbox__label'>
           <slot></slot>
         </span>
-        <input class='fly-checkbox__input-native' v-if="trueValue || falseValue"
+        <input class='fly-checkbox__input-native'
           v-model="model"
           :disabled="disabled"
           :value="label"
           :name='name'
           :true-value="trueValue"
           :false-value="falseValue"
-          v-on:change='handleChange'
-          type="checkbox" />
-        <input class='fly-checkbox__input-native' v-else
-          v-model="model"
-          :disabled="disabled"
-          :value="label"
-          :name='name'
-          v-on:change='handleChange'
+          @change='handleChange'
           type="checkbox" />
     </label>
 </template>
@@ -48,10 +41,12 @@ export default{
       default: false
     },
     trueValue: {
-      type: [String, Number]
+      type: [String, Number, Boolean],
+      default: true
     },
     falseValue: {
-      type: [String, Number]
+      type: [String, Number, Boolean],
+      default: false
     },
     indeterminate: {
       type: Boolean,
@@ -67,10 +62,13 @@ export default{
       selfModel: undefined
     }
   },
+  created () {
+    this.selfModel = this.value || this.checked
+  },
   computed: {
     model: {
       get () {
-        return this.isGroup ? this.parent.value : this.value || this.selfModel || this.checked
+        return this.isGroup ? this.parent.value : this.selfModel
       },
       set (newValue) {
         if (this.isGroup) {
