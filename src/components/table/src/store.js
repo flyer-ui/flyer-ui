@@ -1,13 +1,10 @@
-function Sort () {
-  let current = null
-  return {
-    setCurrentField (value) {
-      current = value
-    },
-    getCurrentField () {
-      return current
-    }
-  }
+export const selections = {}
+export const addSelection = function (key, item) {
+  selections[key] = item
 }
-
-export const sort = Sort()
+export const removeSelection = function (key) {
+  delete selections[key]
+}
+export const getSelectionKeys = function () {
+  return Object.keys(selections)
+}
