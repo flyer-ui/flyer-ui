@@ -165,7 +165,7 @@ export default {
             </li>)
           })}
           {this.showLimt(showMaxLimit)}
-          <li class={['fly-pagination__number', {'is-active': this.end === this.currentPage}]} on-click={$event => { this.handleClick(this.end) }}>
+          <li v-show={this.end > this.start} class={['fly-pagination__number', {'is-active': this.end === this.currentPage}]} on-click={$event => { this.handleClick(this.end) }}>
             {this.end}
           </li>
           <li class={['fly-pagination__number', {'is-disabled': this.isLastPage()}]} on-click={this.handleNext}>

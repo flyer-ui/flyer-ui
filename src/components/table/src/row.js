@@ -5,10 +5,13 @@ export default {
     columns: Array
   },
   methods: {
+    handleSelection () {
+
+    },
     renderContent (h, column) {
       return (
         column.type === 'checkbox'
-          ? <fly-checkbox ></fly-checkbox>
+          ? <fly-checkbox change={this.handleSelection}></fly-checkbox>
           : ((column.$scopedSlots.default &&
           column.$scopedSlots.default(this.rowData)) ||
           this.rowData[column.prop])
