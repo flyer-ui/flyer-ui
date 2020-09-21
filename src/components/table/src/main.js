@@ -1,3 +1,4 @@
+import Store from './store'
 import TableHeader from './header'
 import TableRow from './row'
 
@@ -23,6 +24,13 @@ export default {
       )
       return columnInstances.map(instance => instance.componentInstance)
     }
+  },
+  created () {
+    this.$store = new Store()
+    this.$store.setData(this.data)
+    this.$store.addObserver((keys, selections) => {
+      this.$emit('selection-change', keys, selections)
+    })
   },
   mounted () {
     this.columns = this.getColumns()
