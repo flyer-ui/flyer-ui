@@ -1,3 +1,4 @@
+import Store from './store'
 import TableHeader from './header'
 import TableRow from './row'
 
@@ -22,7 +23,20 @@ export default {
         component.componentInstance.$options.name === 'FlyTableColumn'
       )
       return columnInstances.map(instance => instance.componentInstance)
+    },
+    initStore () {
+      this.$store = new Store()
+      this.$store.setData(this.data)
+      this.$store.subscribe('selection', (keys, selections) => {
+        this.$emit('selection-change', keys, selections)
+      })
+      this.$store.subscribe('sort', () => {
+        this.$emit('sort-change')
+      })
     }
+  },
+  created () {
+    this.initStore()
   },
   mounted () {
     this.columns = this.getColumns()
