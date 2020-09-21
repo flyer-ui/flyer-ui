@@ -14,7 +14,11 @@ export default {
     }
   },
   props: {
-    data: Array
+    data: Array,
+    emptyText: {
+      type: String,
+      default: '暂无数据'
+    }
   },
   methods: {
     getColumns () {
@@ -33,6 +37,20 @@ export default {
       this.$store.subscribe('sort', () => {
         this.$emit('sort-change')
       })
+    },
+    renderContent () {
+      return this._l(this.data, (rowData) => {
+        return (
+          <table-row rowData={rowData} columns={this.columns}></table-row>
+        )
+      })
+    },
+    renderEmpty () {
+      return <tr>
+        <td class='fly-table__empty-text' colspan={this.columns.length}>
+          {this.emptyText}
+        </td>
+      </tr>
     }
   },
   created () {
@@ -50,11 +68,7 @@ export default {
         </thead>
         <tbody>
           {
-            this._l(this.data, (rowData) => {
-              return (
-                <table-row rowData={rowData} columns={this.columns}></table-row>
-              )
-            })
+            this.data.length > 0 ? this.renderContent() : this.renderEmpty()
           }
         </tbody>
       </table>

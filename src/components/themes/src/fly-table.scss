@@ -3,6 +3,7 @@
 @include b('table'){
     display:table;
     box-sizing:border-box;
+    background-color:$fly-common-white;
     @include e('th'){
         text-align: left;
         padding:rem(10px);
@@ -19,6 +20,10 @@
         @include state('active'){
             color:$primary;
         }
+    }
+    @include e('empty-text'){
+        font-size:rem(12px);
+        text-align:center;
     }
     .fly-checkbox__label{
         padding-left:rem(0px);
