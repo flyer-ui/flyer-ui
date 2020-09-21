@@ -23,14 +23,20 @@ export default {
         component.componentInstance.$options.name === 'FlyTableColumn'
       )
       return columnInstances.map(instance => instance.componentInstance)
+    },
+    initStore () {
+      this.$store = new Store()
+      this.$store.setData(this.data)
+      this.$store.subscribe('selection', (keys, selections) => {
+        this.$emit('selection-change', keys, selections)
+      })
+      this.$store.subscribe('sort', () => {
+        this.$emit('sort-change')
+      })
     }
   },
   created () {
-    this.$store = new Store()
-    this.$store.setData(this.data)
-    this.$store.addObserver((keys, selections) => {
-      this.$emit('selection-change', keys, selections)
-    })
+    this.initStore()
   },
   mounted () {
     this.columns = this.getColumns()

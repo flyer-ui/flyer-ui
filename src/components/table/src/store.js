@@ -1,13 +1,14 @@
+import {Broadcaster} from '@flyer-ui/commonality'
 class Store {
   constructor () {
     this.selections = {}
     this.data = []
-    this.observers = []
+    this.broadcaster = new Broadcaster()
     this.srotField = null
   }
   addSelection (key, item) {
     this.selections[key] = item
-    this.notify()
+    this.publish('selection')
   }
   addAllSelection (prop, value) {
     if (value) {
@@ -17,12 +18,11 @@ class Store {
     } else {
       this.selections = {}
     }
-
-    this.notify()
+    this.publish('selection')
   }
   removeSelection (key) {
     delete this.selections[key]
-    this.notify()
+    this.publish('selection')
   }
   getSelectionKeys () {
     return Object.keys(this.selections)
@@ -36,6 +36,7 @@ class Store {
   setSortField (fieldName, explain) {
     this.srotField = fieldName
     this.sortbyField(fieldName, explain)
+    this.publish('sort')
   }
   sortbyField (fieldName, explain) {
     this.data.sort((prov, next) => {
@@ -48,14 +49,26 @@ class Store {
       }
     })
   }
-  addObserver (observer) {
-    this.observers.push(observer)
+  subscribe (channel, event) {
+    this.broadcaster.subscribe(channel, event)
   }
-  notify () {
-    this.observers.forEach(observer => {
-      const args = [this.getSelectionKeys(), this.selections]
-      typeof observer === 'function' && observer.apply(null, args)
-    })
+  publish (channel) {
+    let args = []
+    switch (channel) {
+      case 'selection': {
+        args = [this.getSelectionKeys(), this.selections]
+        break
+      }
+      case 'sort': {
+        args = []
+        break
+      }
+      case 'filter': {
+        args = []
+        break
+      }
+    }
+    this.broadcaster.publish(channel, ...args)
   }
 }
 export default Store

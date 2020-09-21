@@ -2,6 +2,27 @@
  module.exports =  {
         data(){
             return {
+                data1:[{
+                    id:10001,
+                    date: '2020-09-08',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 601 室'
+                },{
+                    id:10002,
+                    date: '2020-09-09',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 602 室'
+                },{
+                    id:10000,
+                    date: '2020-09-10',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 603 室'
+                },{
+                    id:10003,
+                    date: '2020-09-11',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 604 室'
+                } ],
                 data:[{
                     id:10001,
                     date: '2020-09-08',
@@ -28,6 +49,9 @@
         methods:{
             handleSelectionChange(keys,data){
                 console.log('selection-change',keys,data)
+            },
+            handleSortChange(){
+                console.log('sort-change')
             }
         }
     }
@@ -42,6 +66,7 @@
     <fly-table
         :data="data"
         @selection-change='handleSelectionChange'
+        @sort-change='handleSortChange'
         style="width: 100%">
         <fly-table-column
             prop='id'
@@ -119,7 +144,7 @@ export default {
 ```html
 <template>
     <fly-table
-        :data="data"
+        :data="data1"
         style="width: 100%">
         <fly-table-column
             prop='id'

@@ -34,7 +34,7 @@ export default {
       this.$parent.handleSort(column.prop, this.sortExplain)
     },
     renderCheckbox (h, column) {
-      this.parent.$store.addObserver((keys = []) => {
+      this.parent.$store.subscribe('selection', (keys = []) => {
         const data = this.parent.$store.getData()
         this.indeterminate = keys.length > 0 && keys.length < data.length
         this.value = keys.length === data.length
