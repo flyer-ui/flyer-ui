@@ -24,6 +24,9 @@
     @include e('empty-text'){
         font-size:rem(12px);
         text-align:center;
+        padding:rem(10px);
+        box-sizing:border-box;
+        line-height: rem(32px);
     }
     .fly-checkbox__label{
         padding-left:rem(0px);
