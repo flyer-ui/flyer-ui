@@ -2,6 +2,7 @@ import {Broadcaster} from '@flyer-ui/commonality'
 class Store {
   constructor () {
     this.selections = {}
+    this.filtered = {}
     this.data = []
     this.broadcaster = new Broadcaster()
     this.srotField = null
@@ -49,6 +50,10 @@ class Store {
       }
     })
   }
+  setFilterd (key, filtered) {
+    this.filtered[key] = filtered
+    this.publish('filter')
+  }
   subscribe (channel, event) {
     this.broadcaster.subscribe(channel, event)
   }
@@ -64,7 +69,7 @@ class Store {
         break
       }
       case 'filter': {
-        args = []
+        args = [this.filtered]
         break
       }
     }

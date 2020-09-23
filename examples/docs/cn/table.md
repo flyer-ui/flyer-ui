@@ -44,7 +44,23 @@
                     name: '曾阿牛',
                     address: '深圳市南山区迈科龙大厦 604 室'
                 } ],
-                data2:[]
+                data2:[],
+                filters:[
+                    {text:'深圳市',value:'深圳市'},
+                    {text:'东莞市',value:'东莞市'}
+                ],
+                filterNo:[
+                    {text:'10000',value:'10000'},
+                    {text:'10001',value:'10001'},
+                    {text:'10002',value:'10002'},
+                    {text:'10003',value:'10003'}
+                ],
+                filterName:[
+                    {text:'张三丰',value:'张三丰'},
+                    {text:'曾阿牛',value:'曾阿牛'},
+                    {text:'张无忌',value:'张无忌'},
+                    {text:'金毛狮王',value:'金毛狮王'}
+                ]
             }
         },
         methods:{
@@ -53,6 +69,9 @@
             },
             handleSortChange(){
                 console.log('sort-change')
+            },
+            handleFilterChange(filtered){
+                console.log('filter-change',filtered)
             }
         }
     }
@@ -68,6 +87,7 @@
         :data="data"
         @selection-change='handleSelectionChange'
         @sort-change='handleSortChange'
+        @filter-change='handleFilterChange'
         style="width: 100%">
         <fly-table-column
             prop='id'
@@ -78,6 +98,8 @@
             prop="id"
             label="编号"
             sortable
+            filterable
+            :filters="filterNo"
             width="80">
         </fly-table-column>
         <fly-table-column
@@ -90,10 +112,13 @@
             prop="name"
             label="姓名"
             filterable
+            :filterMultiple='false'
+            :filters="filterName"
             width="180">
         </fly-table-column>
         <fly-table-column
             prop="address"
+            :filters="filters"
             sortable
             filterable
             label="地址">
@@ -140,7 +165,7 @@ export default {
 ```
 :::
 
-### 自定义模板
+<!-- ### 自定义模板
 ::: demo
 ```html
 <template>
@@ -205,7 +230,7 @@ export default {
     }
 }
 ```
-:::
+::: -->
 
 ### Table - 可定制属性
 

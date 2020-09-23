@@ -37,6 +37,9 @@ export default {
       this.$store.subscribe('sort', () => {
         this.$emit('sort-change')
       })
+      this.$store.subscribe('filter', (filtered) => {
+        this.$emit('filter-change', filtered)
+      })
     },
     renderContent () {
       return this._l(this.data, (rowData) => {

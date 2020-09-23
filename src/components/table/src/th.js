@@ -1,15 +1,19 @@
 import FlyCheckbox from '../../checkbox/index'
 import {findParentByName} from '~/utils/index'
+import FilterPanel from './filter-panel.vue'
+
 export default {
   name: 'FlyTableTh',
   components: {
-    FlyCheckbox
+    FlyCheckbox,
+    FilterPanel
   },
   data () {
     return {
       sortExplain: 'desc',
       indeterminate: false,
-      value: false
+      value: false,
+      filtered: []
     }
   },
   props: {
@@ -19,6 +23,13 @@ export default {
   computed: {
     parent () {
       return findParentByName('FlyTable', this)
+    },
+    iconActive () {
+      if (Array.isArray(this.filtered)) {
+        return this.filtered.length > 0
+      } else {
+        return this.filtered !== '-1'
+      }
     }
   },
   methods: {
@@ -33,13 +44,24 @@ export default {
       }
       this.$parent.handleSort(column.prop, this.sortExplain)
     },
+    handleFilter () {
+      this.$refs.element.visible = !this.$refs.element.visible
+    },
+    handleFiltered (filtered) {
+      this.filtered = filtered
+      this.parent.$store.setFilterd(this.column.prop, filtered)
+    },
     renderCheckbox (h, column) {
       this.parent.$store.subscribe('selection', (keys = []) => {
         const data = this.parent.$store.getData()
         this.indeterminate = keys.length > 0 && keys.length < data.length
         this.value = keys.length === data.length
       })
-      return <fly-checkbox value={this.value} indeterminate={this.indeterminate} onChange={this.handleCheckboxAll}></fly-checkbox>
+      return <fly-checkbox
+        value={this.value}
+        indeterminate={this.indeterminate}
+        onChange={this.handleCheckboxAll}>
+      </fly-checkbox>
     },
     renderContent (h, column) {
       return (column.type === 'checkbox'
@@ -59,10 +81,16 @@ export default {
     renderFilter (h, column) {
       return (
         column.filterable
-          ? <fly-icon
-            onClick={() => this.handleFilter}
-            class='fly-table__icon' name='filter'>
-          </fly-icon>
+          ? (<fly-icon
+            onClick={() => this.handleFilter()}
+            class={['fly-table__icon', {'is-active': this.iconActive}]} name='filter'>
+            <FilterPanel
+              on-filtered={this.handleFiltered}
+              filters={column.filters}
+              filterMultiple={column.filterMultiple}
+              filteredValue={column.filteredValue}
+              ref='element'></FilterPanel>
+          </fly-icon>)
           : ''
       )
     }
