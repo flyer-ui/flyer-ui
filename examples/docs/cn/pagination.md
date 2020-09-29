@@ -11,6 +11,10 @@ module.exports = {
     methods:{
       handleChange(value){
         console.log('value',value)
+      },
+      handleTransfer(){
+        debugger
+        this.currentPage = 3
       }
     }
 }
@@ -30,7 +34,7 @@ module.exports = {
     :page-size="10"
     :total="89"
     @change='handleChange'
-  ></fly-pagination>
+  ></fly-pagination><fly-button @click='handleTransfer' size='small'>指定第3页</fly-button>
 </template>
 <script>
   export default {
@@ -38,6 +42,11 @@ module.exports = {
       return {
         currentPage: 1
       };
+    },
+    methods:{
+      handleTransfer(){
+        this.currentPage = 3
+      }
     }
   };
 </script>
