@@ -9,7 +9,23 @@ export default {
     prop: String,
     label: String,
     sortable: Boolean,
-    filterable: Boolean
+    filterable: Boolean,
+    filters: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
+    filterMultiple: {
+      type: Boolean,
+      default: true
+    },
+    filteredValue: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
   },
   render (h) {
     return ('')

@@ -35,7 +35,13 @@ export default {
   },
   data () {
     return {
-      currentPage: 0
+      currentPage: this.value
+    }
+  },
+  watch: {
+    value () {
+      this.currentPage = this.value
+      this.$forceUpdate()
     }
   },
   computed: {
@@ -120,9 +126,6 @@ export default {
     isLastPage () {
       return this.currentPage === this.end
     }
-  },
-  created () {
-    this.currentPage = this.value
   },
   render () {
     let dynamicEnd = this.getDynamicEnd()

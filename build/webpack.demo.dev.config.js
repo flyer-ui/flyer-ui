@@ -115,6 +115,7 @@ module.exports = {
     clientLogLevel: 'warning',
     compress: true,
     progress: true,
+    port: '8080',
     publicPath: '/'
   },
   plugins: [
