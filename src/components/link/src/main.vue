@@ -1,5 +1,5 @@
 <template>
-    <a :class='["fly-link",
+    <a @click="handleClick" :class='["fly-link",
         `fly-link--${type}`,
         {"is-disabled":disabled}
     ]' :href='href'>
@@ -17,6 +17,11 @@ export default {
       default: 'default'
     },
     disabled: Boolean
+  },
+  methods: {
+    handleClick (event) {
+      this.$emit('click', event)
+    }
   }
 }
 </script>
