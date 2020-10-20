@@ -11,8 +11,11 @@
   
   .fly-icon {
     font-family: "fly-icon" !important;
-    font-size: rem(16px);
+    font-size: inherit;
     font-style: normal;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
