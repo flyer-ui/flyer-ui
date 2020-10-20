@@ -1,13 +1,12 @@
 
 @import "./base/index.scss";
 $fly-modal-zindex:9999999;
-$fly-modal-padding:10px;
 
 @include b('modal'){
-    top:0px;
-    right:0px;
-    bottom:0px;
-    left:0px;
+    top:rem(0px);
+    right:rem(0px);
+    bottom:rem(0px);
+    left:rem(0px);
     z-index: $fly-modal-zindex;
     position:fixed;
     background: rgba($font-color-common,0.5);   
@@ -19,10 +18,10 @@ $fly-modal-padding:10px;
         color:$font-color-common;
     }
     .cover{
-        top:0px;
-        right:0px;
-        bottom:0px;
-        left:0px;
+        top:rem(0px);
+        right:rem(0px);
+        bottom:rem(0px);
+        left:rem(0px);
         z-index: $fly-modal-zindex;
         position:fixed;
     }
@@ -30,7 +29,7 @@ $fly-modal-padding:10px;
     @include e('content'){  
         z-index: $fly-modal-zindex + 1;
         border-radius:$fly-round-default-size;
-        margin:0px auto;
+        margin:rem(0px) auto;
         margin-top: 5vh;
         position: relative;
         text-align: left;
@@ -54,11 +53,12 @@ $fly-modal-padding:10px;
         z-index: 1;
         right:rem(10px);
         top:rem(10px);
-        width:16px;
-        height:16px;
-        line-height:16px;
-        font-size:16px;
+        width:rem(16px);
+        height:rem(16px);
+        line-height:rem(16px);
+        font-size:rem(16px);
         border-radius: 100%;
+        text-align: center;
         cursor: pointer;
         &:hover{
             background: rgba($fly-color-border,0.5);
@@ -67,8 +67,8 @@ $fly-modal-padding:10px;
     @include e('body'){
         padding:rem(10px);
         overflow: auto;
-        min-height:80px;
-        padding-bottom: 60px;
+        min-height:rem(80px);
+        padding-bottom: rem(60px);
         box-sizing: border-box;
     }
     @include e('footer'){
@@ -81,7 +81,7 @@ $fly-modal-padding:10px;
         text-align: right;
         width:100%;
         box-sizing:border-box;
-        bottom:0px;
+        bottom:rem(0px);
     }
     @include e('icon'){
         vertical-align: inherit;
@@ -93,10 +93,10 @@ $fly-modal-padding:10px;
             box-sizing:border-box;
         }
         @include component('header'){
-          border:0px;
+          border:rem(0px);
         }
         @include component('footer'){
-            border:0px;
+            border:rem(0px);
         }
     }
     @include state('info'){
@@ -104,10 +104,10 @@ $fly-modal-padding:10px;
             box-sizing:border-box;
         }
         @include component('header'){
-          border:0px;
+          border:rem(0px);
         }
         @include component('footer'){
-            border:0px;
+            border:rem(0px);
         }
         @include component('icon'){
             color:$fly-info-color;
@@ -118,10 +118,10 @@ $fly-modal-padding:10px;
             box-sizing:border-box;
         }
         @include component('header'){
-          border:0px;
+          border:rem(0px);
         }
         @include component('footer'){
-            border:0px;
+            border:rem(0px);
         }
         @include component('icon'){
             color:$fly-warning-color;
@@ -132,10 +132,10 @@ $fly-modal-padding:10px;
             box-sizing:border-box;
         }
         @include component('header'){
-          border:0px;
+          border:rem(0px);
         }
         @include component('footer'){
-            border:0px;
+            border:rem(0px);
         }
         @include component('icon'){
             color:$fly-danger-color;
@@ -146,14 +146,14 @@ $fly-modal-padding:10px;
             box-sizing:border-box;
         }
         @include component('header'){
-          border:0px;
+          border:rem(0px);
         }
         @include component('footer'){
-            border:0px;
+            border:rem(0px);
         }
         @include component('icon'){
             color:$fly-success-color;
-            font-size: 16px !important;
+            font-size: rem(16px) !important;
         }
     }
 }

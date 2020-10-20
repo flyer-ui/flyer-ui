@@ -6,11 +6,25 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "887866",
+      "icon_id": "16863462",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "830334",
+      "name": "资质认证",
+      "font_class": "zizhirenzheng",
+      "unicode": "e7da",
+      "unicode_decimal": 59354
+    },
+    {
+      "icon_id": "4472537",
       "name": "filter",
       "font_class": "filter",
-      "unicode": "e6b2",
-      "unicode_decimal": 59058
+      "unicode": "e731",
+      "unicode_decimal": 59185
     },
     {
       "icon_id": "1207861",

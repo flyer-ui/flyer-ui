@@ -1,5 +1,5 @@
 <template>
-    <span v-show="selfShow" :class='["fly-tag",`fly-tag--${type}`]'>
+    <span :class='["fly-tag",`fly-tag--${type}`]'>
         <slot></slot>
         <span class='fly-tag__close' v-if='closable'>
             <i class='fly-icon fly-icon-close fly-tag__close' @click='handleClose'></i>
@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     handleClose () {
-      this.selfShow = false
       this.$emit('close')
     }
   }

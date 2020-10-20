@@ -4,11 +4,11 @@ export default {
   name: 'FlyCol',
   props: {
     span: {
-      type: Number,
+      type: Number | String,
       default: 24
     },
     offset: {
-      type: Number,
+      type: Number | String,
       default: 0
     },
     align: {
