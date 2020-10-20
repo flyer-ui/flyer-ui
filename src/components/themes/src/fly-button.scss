@@ -37,7 +37,7 @@
     border-radius: $fly-round-default-size;
     cursor: pointer;
     box-sizing: border-box;
-    display: inline-table;
+    display: inline-flex;
     color: $font-color-common;
     background-color: $fly-common-white;
     line-height:1.3;
@@ -55,11 +55,17 @@
         @include state('circle'){
             padding:rem(20px);
             border-radius:50%;
-            font-size:rem(24px);
+            width:rem(64px);
+            height:rem(64px);
+            justify-content: center;
+            align-items:center;
             >i{
-                width:rem(24px);
-                height:rem(24px);
-                display: block;
+                width:rem(30px);
+                height:rem(30px);
+                font-size:rem(30px);
+                display: inline-flex;
+                justify-content: center;
+                align-items:center;
             }
         }
         .fly-button__icon{
@@ -75,11 +81,17 @@
         @include state('circle'){
             padding:rem(15px);
             border-radius:50%;
-            font-size:rem(18px);
+            width:rem(48px);
+            height:rem(48px);
+            justify-content: center;
+            align-items:center;
             >i{
-                width:rem(18px);
-                height:rem(18px);
-                display: block;
+                width:rem(22px);
+                height:rem(22px);
+                font-size:rem(22px);
+                display: inline-flex;
+                justify-content: center;
+                align-items:center;
             }
         }
     }
@@ -96,11 +108,18 @@
         @include state('circle'){
             padding:rem(10px);
             border-radius:50%;
-            font-size:rem(14px);
+            width:rem(32px);
+            height:rem(32px);
+            justify-content: center;
+            align-items:center;
+
             >i{
-                width:rem(14px);
-                height:rem(14px);
-                display: block;
+                width:rem(16px);
+                height:rem(16px);
+                font-size:rem(16px);
+                display: inline-flex;
+                justify-content: center;
+                align-items:center;
             }
         }
     }
@@ -117,11 +136,17 @@
         @include state('circle'){
             padding:rem(9px);
             border-radius:50%;
-            font-size:rem(12px);
+            width:rem(16px);
+            height:rem(16px);
+            justify-content: center;
+            align-items:center;
             >i{
                 width:rem(12px);
                 height:rem(12px);
-                display: block;
+                font-size:rem(12px);
+                display: inline-flex;
+                justify-content: center;
+                align-items:center;
             }
         }
     }
