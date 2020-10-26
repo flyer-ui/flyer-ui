@@ -29,6 +29,7 @@ $fly-input-clear-area:16px !default;
     display: inline-flex;
     vertical-align: middle;
     font-size:$fly-font-text-size;
+    line-height: 1.3;
     @include e('native'){
         outline: none;
         border:1px solid $fly-color-border;
