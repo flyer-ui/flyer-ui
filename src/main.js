@@ -49,6 +49,8 @@ import Scrollbar from './components/scrollbar/index'
 import Table from './components/table/index'
 import TableColumn from './components/table-column/index'
 import Link from './components/link/index'
+import Form from './components/form/index'
+import FormItem from './components/form/src/item.vue'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -105,7 +107,9 @@ const components = [
   Scrollbar,
   Table,
   TableColumn,
-  Link
+  Link,
+  Form,
+  FormItem
 ]
 
 const install = function (Vue) {

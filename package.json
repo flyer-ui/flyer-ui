@@ -36,7 +36,7 @@
     "publish:minor": "git checkout master && git merge dev -m 'chore: Merge branch ”dev“' && npm run build && npm version minor && git push --follow-tags && npm publish && git checkout dev"
   },
   "dependencies": {
-    "@flyer-ui/commonality": "0.0.7",
+    "@flyer-ui/commonality": "0.0.24",
     "amfe-flexible": "^2.2.1"
   },
   "peerDependencies": {

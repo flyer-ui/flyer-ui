@@ -1,0 +1,28 @@
+@import "./base/index.scss";
+@include b('form'){
+  position:relative;
+  width:100%;
+  @include e('item'){
+      position: relative;
+      display:flex;
+      line-height:rem(42px);
+      margin-bottom:rem(24px);
+  }
+  @include e('item-label'){
+      width:rem(80px);
+  }
+  @include e('item-content'){
+
+  }
+  @include e('item-required'){
+      font-style: inherit;
+      color:$fly-danger-color;
+  }
+  @include e('item-error'){
+    position: absolute;
+    top: 42px;
+    line-height: 24px;
+    font-size: 12px;
+    color:$fly-danger-color;
+  }
+}
