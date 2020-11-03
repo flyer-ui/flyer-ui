@@ -40,7 +40,7 @@ export default {
         column.type === 'checkbox'
           ? this.renderCheckbox(h, column)
           : ((column.$scopedSlots.default &&
-            column.$scopedSlots.default(this.rowData)) ||
+            column.$scopedSlots.default({row: this.rowData})) ||
             this.rowData[column.prop])
       )
     }
