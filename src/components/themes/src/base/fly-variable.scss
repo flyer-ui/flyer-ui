@@ -2,7 +2,7 @@
 $primary:#007BFF;
 $success:#28A745;
 $warning:#FFD836;
-$danger:#E72323;
+$danger:#EC6A6F;
 $info:#17A2B8;
 $default:#444444;
 
@@ -42,10 +42,10 @@ $fly-danger-hover-color:mixColor($danger,80%);
 $fly-danger-bg-color:mixColor($danger,10%);
 
 //中性色(文本颜色)
-$font-color-title:#333333;
-$font-color-common:#444444;
-$font-color-secondary:#999999;
-$font-color-placeholder:#999999;
+$font-color-title:mixColor($default,90%);
+$font-color-common:mixColor($default,70%);
+$font-color-secondary:mixColor($default,50%);;
+$font-color-placeholder:mixColor($default,30%);;
 
 
 //主要边框颜色
@@ -71,3 +71,6 @@ $fly-default-padding:rem(10px);
 
 // 全局背景颜色
 $fly-global-background-color:#F7FAFD;
+
+// 默认阴影
+$fly-default-box-shadow:rem(1px) rem(1px) rem(10px) rgba($fly-color-border,0.5);

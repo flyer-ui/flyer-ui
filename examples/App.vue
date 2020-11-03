@@ -57,18 +57,15 @@ html,body,#app{
 .fly-main{
   padding:rem(0px) rem(10px);
 }
-body,#app{
-  color:$font-color-common;
-}
 @include b('demo-table'){
     width:100%;
-    border:rem(1px) solid #dedede;
+    border:rem(1px) solid $fly-color-border;
     border-bottom:rem(0px);
     margin:rem(0px);
     padding:rem(0px);
     border-collapse:collapse;
     th{
-        background-color:#fafafa;
+        background-color:$fly-global-background-color;
     }
     td,th{
         text-align:left;
@@ -76,7 +73,7 @@ body,#app{
         padding:rem(10px) rem(15px);
         box-sizing:border-box;
         border-spacing:rem(0px);
-        border-bottom:rem(1px) solid #dedede;
+        border-bottom:rem(1px) solid $fly-color-border;;
     }
 }
 @include b('demo-icon'){

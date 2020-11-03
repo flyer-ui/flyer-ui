@@ -48,10 +48,11 @@
     :key="index"
     >{{item}}</fly-tag
   >
-  <fly-button v-show="!showInput" @click="handleAdd">New Tag</fly-button>
+  <fly-button v-show="!showInput" size='small' @click="handleAdd">New Tag</fly-button>
   <fly-input
     @blur="handleBlur"
     v-show="showInput"
+    size='small'
     v-model="newValue"
   ></fly-input>
 </template>

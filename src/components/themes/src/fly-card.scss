@@ -4,7 +4,7 @@
     border-radius: $fly-round-default-size;
     padding:rem(10px);
     box-sizing: border-box;
-    box-shadow:rem(1px) rem(1px) rem(10px) rgba($fly-color-border,0.5);
+    box-shadow:$fly-default-box-shadow;
     background-color:$fly-common-white;
     @include e('header'){
         border-bottom: rem(1px) solid $fly-color-border;

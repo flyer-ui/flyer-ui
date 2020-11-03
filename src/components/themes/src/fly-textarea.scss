@@ -1,6 +1,6 @@
 @import "./base/index.scss";
 @include b('textarea'){
-    display: inline-block;
+    position:relative;
     @include e('native'){
         outline:none;
         border:rem(0px);
