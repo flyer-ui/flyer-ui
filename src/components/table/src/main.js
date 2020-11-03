@@ -13,6 +13,11 @@ export default {
       columns: []
     }
   },
+  watch: {
+    data () {
+      this.$store && this.$store.setData(this.data)
+    }
+  },
   props: {
     data: Array,
     emptyText: {
