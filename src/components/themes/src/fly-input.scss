@@ -44,7 +44,7 @@ $fly-input-clear-area:16px !default;
         @include state("disabled"){
             color:$font-color-secondary;
             background: mix($fly-color-border,$white,50%);
-            border-color:mix($fly-color-border,$white,50%);
+            border-color:mix($fly-color-border,$white,90%);
             cursor:not-allowed;
         }
         @include state("prepend"){

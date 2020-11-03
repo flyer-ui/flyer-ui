@@ -44,6 +44,9 @@
             }
         },
         methods:{
+            handleRowClick(args){
+                console.log(args)
+            },
             handleSelectionChange(keys,data){
                 console.log('selection-change',keys,data)
             },
@@ -102,6 +105,7 @@
 <template>
     <fly-table
         :data="data"
+        @row-click='handleRowClick'
         @selection-change='handleSelectionChange'
         @sort-change='handleSortChange'
         @filter-change='handleFilterChange'
@@ -175,6 +179,9 @@ export default {
         }
     },
     methods:{
+        handleRowClick(args){
+            console.log(args)
+        },
         handleSelectionChange(keys,data){
             console.log('selection-change',keys,data)
         },
@@ -310,6 +317,7 @@ export default {
 | --------- | ---------- | -------------------------- |
 | selection-change | 选中的所有值 | 表格列为checkbox时，选中后触发的事件。 |
 | sort-change | - | 表格排序后触发的事件。 |
+| row-click | - | 点击行时触发的事件 |
 
 ### Table-Column - 可定制属性
 
