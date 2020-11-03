@@ -10,6 +10,7 @@
         padding:rem(10px) rem(20px) rem(10px) rem(10px);
         border:rem(1px) solid $fly-color-border;
         box-sizing: border-box;
+        height:rem(40px);
         border-radius: $fly-round-default-size;
         @include state('disabled'){
             background: rgba($fly-color-border,0.5);

@@ -46,7 +46,7 @@ $fly-time-line-size-large:rem(20px);
             width:$fly-time-line-size-normal;
             height:$fly-time-line-size-normal;
             i{
-                font-size: $fly-time-line-size-normal - 6;
+                font-size: $fly-time-line-size-normal;
                 vertical-align:baseline;
             }
         }
@@ -54,7 +54,7 @@ $fly-time-line-size-large:rem(20px);
             left:rem(-10px);
             width:$fly-time-line-size-large;
             height:$fly-time-line-size-large;
-            i{font-size: $fly-time-line-size-large - 2;}
+            i{font-size: $fly-time-line-size-large;}
         }
     }
     @include e('body'){

@@ -6,6 +6,11 @@
     .fly-input__native{
         cursor: pointer;
     }
+    .fly-input__suffix{
+        >i{
+            font-size:rem(12px);
+        }
+    }
     @include state('disabled'){
         .fly-input__native{
             cursor: not-allowed;
@@ -24,11 +29,11 @@
         }
     }
     @include e('option'){
-        padding:rem(5px) rem(10px);
+        padding:rem(10px);
         box-sizing:border-box;
         cursor: pointer;
         &:hover{
-            background:#fafafa;
+            background:rgba($fly-color-border,0.5);
         }
         @include state('disabled'){
             color:$fly-color-border;
@@ -74,7 +79,8 @@
     display: block;
     border:rem(1px) solid $fly-color-border;
     box-sizing: border-box;
-    background:#fff;
+    box-shadow:$fly-default-box-shadow;
+    background:$fly-common-white;
     @include e('list'){
         list-style:none;
         padding:rem(0px);
@@ -95,7 +101,7 @@
             left: calc(100%/2);
             &:after{
                 content:'';
-                border: rem(6px) solid #fff;
+                border: rem(6px) solid $fly-common-white;;
                 display: inline-block;
                 border-top-color: transparent;
                 border-right-color: transparent;

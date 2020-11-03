@@ -4,8 +4,8 @@ module.exports =  {
             return {
                 value1:0,
                 value2:3,
-                value3:2,
-                value4:2.5,
+                value3:2.5,
+                value4:2,
                 value5:2,
                 value6:3,
                 value7:3.5,
@@ -75,13 +75,13 @@ module.exports =  {
 
 ```html
 <template>
-  <fly-rate allow-half v-model="value4"></fly-rate>
+  <fly-rate allow-half v-model="value3"></fly-rate>
 </template>
 <script>
   export default {
     data() {
       return {
-        value4: 2.5
+        value3: 2.5
       };
     }
   };
@@ -96,13 +96,13 @@ module.exports =  {
 
 ```html
 <template>
-  <fly-rate disabled v-model="value3"></fly-rate>
+  <fly-rate disabled v-model="value4"></fly-rate>
 </template>
 <script>
   export default {
     data() {
       return {
-        value3: 2
+        value4: 2
       };
     }
   };
@@ -122,7 +122,7 @@ module.exports =  {
   <fly-rate
     icon="fly-icon-heart"
     @on-change="handleChange"
-    v-model="value7"
+    v-model="value6"
     allow-half
   ></fly-rate>
 </template>
@@ -130,9 +130,8 @@ module.exports =  {
   export default {
     data() {
       return {
-        value5: 2,
-        value6: 3,
-        value7: 3.5
+        value5: 3,
+        value6: 2,
       };
     },
     methods: {
@@ -153,19 +152,18 @@ module.exports =  {
 ```html
 <template>
   <p>
-  <fly-rate icon="fly-icon-heart" v-model="value11" character="A"></fly-rate>
+  <fly-rate icon="fly-icon-heart" v-model="value7" character="A"></fly-rate>
   </p>
   <p>
-  <fly-rate icon="fly-icon-heart" v-model="value12" character="好"></fly-rate>
+  <fly-rate icon="fly-icon-heart" v-model="value8" character="好"></fly-rate>
   </p>
 </template>
 <script>
   export default {
     data() {
       return {
-        value11: 2,
-        value12: 2,
-        value13: 2
+        value7: 2,
+        value8: 2
       };
     }
   };
@@ -184,14 +182,6 @@ module.exports =  {
   <fly-rate
     icon="fly-icon-heart"
     size="small"
-    v-model="value8"
-    allow-half
-  ></fly-rate>
-  </p>
-  <p>
-  <fly-rate
-    icon="fly-icon-heart"
-    size="medium"
     v-model="value9"
     allow-half
   ></fly-rate>
@@ -199,8 +189,16 @@ module.exports =  {
   <p>
   <fly-rate
     icon="fly-icon-heart"
-    size="large"
+    size="medium"
     v-model="value10"
+    allow-half
+  ></fly-rate>
+  </p>
+  <p>
+  <fly-rate
+    icon="fly-icon-heart"
+    size="large"
+    v-model="value11"
     allow-half
   ></fly-rate>
   </p>
@@ -209,9 +207,9 @@ module.exports =  {
   export default {
     data() {
       return {
-        value8: 2,
         value9: 2,
-        value10: 2
+        value10: 2,
+        value11: 2
       };
     }
   };
@@ -227,14 +225,14 @@ module.exports =  {
 ```html
 <template>
   <p>
-  <fly-rate icon="fly-icon-heart" v-model="value8" show-text allow-half>
+  <fly-rate icon="fly-icon-heart" v-model="value12" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value}} 星
     </template>
   </fly-rate>
   </p>
   <p>
-  <fly-rate :max="10" v-model="value9" show-text allow-half>
+  <fly-rate :max="10" v-model="value13" show-text allow-half>
     <template slot-scope="prop">
       {{prop.value * 10 }} %
     </template>
@@ -245,9 +243,8 @@ module.exports =  {
   export default {
     data() {
       return {
-        value8: 2,
-        value9: 2,
-        value10: 2
+        value12: 2,
+        value13: 2
       };
     }
   };
