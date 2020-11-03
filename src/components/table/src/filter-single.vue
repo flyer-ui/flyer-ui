@@ -36,7 +36,7 @@ export default {
   computed: {
     Filters () {
       const filters = this.filters
-      if (filters.length > 0) {
+      if (filters.length > 0 && filters.findIndex(filter => filter.value === '-1') === 0) {
         filters.unshift({
           text: '全部',
           value: '-1'

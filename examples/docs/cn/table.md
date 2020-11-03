@@ -2,27 +2,7 @@
  module.exports =  {
         data(){
             return {
-                data1:[{
-                    id:10001,
-                    date: '2020-09-08',
-                    name: '曾阿牛',
-                    address: '深圳市南山区迈科龙大厦 601 室'
-                },{
-                    id:10002,
-                    date: '2020-09-09',
-                    name: '曾阿牛',
-                    address: '深圳市南山区迈科龙大厦 602 室'
-                },{
-                    id:10000,
-                    date: '2020-09-10',
-                    name: '曾阿牛',
-                    address: '深圳市南山区迈科龙大厦 603 室'
-                },{
-                    id:10003,
-                    date: '2020-09-11',
-                    name: '曾阿牛',
-                    address: '深圳市南山区迈科龙大厦 604 室'
-                } ],
+                data1:[],
                 data:[{
                     id:10001,
                     date: '2020-09-08',
@@ -81,6 +61,34 @@
                 }else{
                     return 0
                 }
+            }
+        },
+        mounted(){
+            if(this.data1.length===0){
+                setTimeout(()=>{
+                    console.log('执行赋值操作')
+                    this.data1 = [{
+                        id:10001,
+                        date: '2020-09-08',
+                        name: '曾阿牛',
+                        address: '深圳市南山区迈科龙大厦 601 室'
+                    },{
+                        id:10002,
+                        date: '2020-09-09',
+                        name: '曾阿牛',
+                        address: '深圳市南山区迈科龙大厦 602 室'
+                    },{
+                        id:10000,
+                        date: '2020-09-10',
+                        name: '曾阿牛',
+                        address: '深圳市南山区迈科龙大厦 603 室'
+                    },{
+                        id:10003,
+                        date: '2020-09-11',
+                        name: '曾阿牛',
+                        address: '深圳市南山区迈科龙大厦 604 室'
+                    }]
+                },1000*2)
             }
         }
     }
@@ -184,17 +192,29 @@ export default {
 ```
 :::
 
-<!-- ### 自定义模板
+### 异步加载模板
+
 ::: demo
 ```html
 <template>
     <fly-table
         :data="data1"
+        @selection-change='handleSelectionChange'
+        @sort-change='handleSortChange'
+        @filter-change='handleFilterChange'
         style="width: 100%">
         <fly-table-column
             prop='id'
             type='checkbox'
             width="30">
+        </fly-table-column>
+        <fly-table-column
+            prop="id"
+            label="编号"
+            sortable
+            filterable
+            :filters="filterNo"
+            width="80">
         </fly-table-column>
         <fly-table-column
             prop="date"
@@ -206,15 +226,19 @@ export default {
             prop="name"
             label="姓名"
             filterable
+            :filterMultiple='false'
+            :filters="filterName"
             width="180">
         </fly-table-column>
         <fly-table-column
             prop="address"
+            :filters="filters"
             sortable
+            :sort-method='handleSort'
             filterable
             label="地址">
-            <template slot-scope='row'>
-                <fly-icon name='nickname'></fly-icon>:{{row.address}}
+            <template slot-scope='scope'>
+                <fly-icon name='nickname'></fly-icon>:{{scope.row.address}}
             </template>
         </fly-table-column>
     </fly-table>
@@ -224,32 +248,54 @@ export default {
 export default {
     data(){
         return {
-            data:[{
-                id:10000,
-                date: '2020-09-08',
-                name: '曾阿牛',
-                address: '深圳市南山区迈科龙大厦 601 室'
-            },{
-                id:10001,
-                date: '2020-09-09',
-                name: '曾阿牛',
-                address: '深圳市南山区迈科龙大厦 602 室'
-            },{
-                id:10002,
-                date: '2020-09-10',
-                name: '曾阿牛',
-                address: '深圳市南山区迈科龙大厦 603 室'
-            },{
-                id:10003,
-                date: '2020-09-11',
-                name: '曾阿牛',
-                address: '深圳市南山区迈科龙大厦 604 室'
-            } ]
+            data:[]
+        }
+    },
+    methods:{
+        handleSelectionChange(keys,data){
+            console.log('selection-change',keys,data)
+        },
+        handleSort(prov,next){
+            if(prov.id>next.id){
+                return 1
+            }else if(prov.id<next.id){
+                return -1
+            }else{
+                return 0
+            }
+        }
+    },
+    mounted(){
+        if(this.data1.length===0){
+            setTimeout(()=>{
+                console.log('执行赋值操作')
+                this.data1 = [{
+                    id:10001,
+                    date: '2020-09-08',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 601 室'
+                },{
+                    id:10002,
+                    date: '2020-09-09',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 602 室'
+                },{
+                    id:10000,
+                    date: '2020-09-10',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 603 室'
+                },{
+                    id:10003,
+                    date: '2020-09-11',
+                    name: '曾阿牛',
+                    address: '深圳市南山区迈科龙大厦 604 室'
+                }]
+            },1000*2)
         }
     }
 }
 ```
-::: -->
+:::
 
 ### Table - 可定制属性
 
