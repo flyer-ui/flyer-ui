@@ -122,8 +122,8 @@
             sortable
             filterable
             label="地址">
-            <template slot-scope='row'>
-                <fly-icon name='nickname'></fly-icon>:{{row.address}}
+            <template slot-scope='scope'>
+                <fly-icon name='nickname'></fly-icon>:{{scope.row.address}}
             </template>
         </fly-table-column>
     </fly-table>
