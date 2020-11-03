@@ -35,6 +35,9 @@ export default {
   methods: {
     showError (message) {
       this.errorText = message
+    },
+    hideError () {
+      this.errorText = ''
     }
   }
 }

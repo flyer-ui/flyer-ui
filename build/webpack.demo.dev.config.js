@@ -110,6 +110,7 @@ module.exports = {
     ]
   },
   devServer: {
+    // host: '192.168.66.127',
     host: 'localhost',
     hot: true,
     clientLogLevel: 'warning',

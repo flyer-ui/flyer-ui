@@ -88,6 +88,12 @@ export default {
           callback.call(null, true)
         }
       }
+    },
+    resetForm () {
+      this.errors = {}
+      this.items.forEach(item => {
+        item && item.hideError()
+      })
     }
   },
   mounted () {

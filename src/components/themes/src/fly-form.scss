@@ -5,8 +5,9 @@
   @include e('item'){
       position: relative;
       display:flex;
-      line-height:rem(42px);
-      margin-bottom:rem(24px);
+      line-height:rem(40px);
+      margin:rem(22px);
+      box-sizing: border-box;
   }
   @include e('item-label'){
       width:rem(80px);
@@ -20,9 +21,9 @@
   }
   @include e('item-error'){
     position: absolute;
-    top: 42px;
-    line-height: 24px;
-    font-size: 12px;
+    top: rem(44px);
+    line-height:1;
+    font-size: rem(12px);
     color:$fly-danger-color;
   }
 }
