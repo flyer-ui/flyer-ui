@@ -9,6 +9,7 @@ export default {
     prop: String,
     label: String,
     sortable: Boolean,
+    sortMethod: Function,
     filterable: Boolean,
     filters: {
       type: Array,

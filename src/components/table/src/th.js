@@ -42,7 +42,7 @@ export default {
       } else {
         this.sortExplain = 'asc'
       }
-      this.$parent.handleSort(column.prop, this.sortExplain)
+      this.$parent.handleSort(column, this.sortExplain)
     },
     handleFilter () {
       this.$refs.element.visible = !this.$refs.element.visible

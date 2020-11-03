@@ -19,9 +19,9 @@ export default {
     }
   },
   methods: {
-    handleSort (fieldName, explain) {
-      this.sortProp = fieldName
-      this.parent.$store.setSortField(fieldName, explain)
+    handleSort (column, explain) {
+      this.sortProp = column.prop
+      this.parent.$store.setSortField(column, explain)
     }
   },
   render (h) {
