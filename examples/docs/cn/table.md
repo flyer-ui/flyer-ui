@@ -72,6 +72,15 @@
             },
             handleFilterChange(filtered){
                 console.log('filter-change',filtered)
+            },
+            handleSort(prov,next){
+                if(prov.id>next.id){
+                    return 1
+                }else if(prov.id<next.id){
+                    return -1
+                }else{
+                    return 0
+                }
             }
         }
     }
@@ -120,6 +129,7 @@
             prop="address"
             :filters="filters"
             sortable
+            :sort-method='handleSort'
             filterable
             label="地址">
             <template slot-scope='scope'>
@@ -159,6 +169,15 @@ export default {
     methods:{
         handleSelectionChange(keys,data){
             console.log('selection-change',keys,data)
+        },
+        handleSort(prov,next){
+            if(prov.id>next.id){
+                return 1
+            }else if(prov.id<next.id){
+                return -1
+            }else{
+                return 0
+            }
         }
     }
 }

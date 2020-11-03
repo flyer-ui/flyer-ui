@@ -34,19 +34,31 @@ class Store {
   getData () {
     return this.data
   }
-  setSortField (fieldName, explain) {
-    this.srotField = fieldName
-    this.sortbyField(fieldName, explain)
+  setSortField (column, explain) {
+    this.srotField = column.prop
+    this.sortbyField(column.prop, explain, column.sortMethod)
     this.publish('sort')
   }
-  sortbyField (fieldName, explain) {
+  sortbyField (fieldName, explain, sortMehtod) {
+    if (typeof sortMehtod === 'function') {}
     this.data.sort((prov, next) => {
-      if (prov[fieldName] > next[fieldName]) {
-        return explain === 'asc' ? -1 : 1
-      } else if (prov[fieldName] < next[fieldName]) {
-        return explain === 'asc' ? 1 : -1
+      let result = 0
+      if (typeof sortMehtod === 'function') {
+        // eslint-disable-next-line no-useless-call
+        result = sortMehtod.call(null, prov, next)
       } else {
-        return 0
+        if (prov[fieldName] > next[fieldName]) {
+          result = 1
+        } else if (prov[fieldName] < next[fieldName]) {
+          result = -1
+        } else {
+          return 0
+        }
+      }
+      if (result === 1) {
+        return explain === 'asc' ? -1 : 1
+      } else if (result === -1) {
+        return explain === 'asc' ? 1 : -1
       }
     })
   }
