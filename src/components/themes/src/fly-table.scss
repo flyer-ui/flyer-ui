@@ -4,6 +4,9 @@
     display:table;
     box-sizing:border-box;
     background-color:$fly-common-white;
+    margin:0px;
+    padding:0px;
+    border-spacing: 0px;
     @include e('th'){
         text-align: left;
         padding:rem(10px);

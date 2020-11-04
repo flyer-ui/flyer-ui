@@ -36,11 +36,11 @@
     "publish:minor": "git checkout master && git merge dev -m 'chore: Merge branch ”dev“' && npm run build && npm version minor && git push --follow-tags && npm publish && git checkout dev"
   },
   "dependencies": {
-    "@flyer-ui/commonality": "0.0.24",
-    "amfe-flexible": "^2.2.1"
+    "@flyer-ui/commonality": "0.0.24"
   },
   "peerDependencies": {
-    "vue": ">=2.5.2"
+    "vue": ">=2.5.2",
+    "@flyer-ui/commonality": ">=0.0.24"
   },
   "devDependencies": {
     "autoprefixer": "9.6.0",
@@ -108,7 +108,7 @@
     "sinon": "4.5.0",
     "sinon-chai": "2.14.0",
     "style-loader": "0.23.1",
-    "uglifyjs-webpack-plugin": "1.3.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "0.5.9",
     "vue": "2.5.2",
     "vue-loader": "14.2.4",
@@ -117,7 +117,7 @@
     "vue-style-loader": "3.1.2",
     "vue-template-compiler": "2.5.2",
     "webpack": "4.30.0",
-    "webpack-bundle-analyzer": "3.3.2",
+    "webpack-bundle-analyzer": "^3.9.0",
     "webpack-cli": "3.3.4",
     "webpack-dev-server": "3.3.1",
     "webpack-merge": "4.1.4"
