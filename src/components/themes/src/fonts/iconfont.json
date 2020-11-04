@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "7241464",
+      "name": "filter",
+      "font_class": "filter",
+      "unicode": "e660",
+      "unicode_decimal": 58976
+    },
+    {
+      "icon_id": "348780",
+      "name": "sort-asc",
+      "font_class": "sortasc",
+      "unicode": "ebec",
+      "unicode_decimal": 60396
+    },
+    {
+      "icon_id": "348781",
+      "name": "sort-desc",
+      "font_class": "sortdesc",
+      "unicode": "ebed",
+      "unicode_decimal": 60397
+    },
+    {
       "icon_id": "16863462",
       "name": "add",
       "font_class": "add",
@@ -18,13 +39,6 @@
       "font_class": "zizhirenzheng",
       "unicode": "e7da",
       "unicode_decimal": 59354
-    },
-    {
-      "icon_id": "4472537",
-      "name": "filter",
-      "font_class": "filter",
-      "unicode": "e731",
-      "unicode_decimal": 59185
     },
     {
       "icon_id": "1207861",
@@ -134,7 +148,7 @@
     {
       "icon_id": "392069",
       "name": "DOWNLOAD",
-      "font_class": "download1",
+      "font_class": "download",
       "unicode": "e65e",
       "unicode_decimal": 58974
     },
@@ -193,13 +207,6 @@
       "font_class": "checkmore",
       "unicode": "e6a9",
       "unicode_decimal": 59049
-    },
-    {
-      "icon_id": "12865680",
-      "name": "menu",
-      "font_class": "menu1",
-      "unicode": "e6ec",
-      "unicode_decimal": 59116
     },
     {
       "icon_id": "8106219",
