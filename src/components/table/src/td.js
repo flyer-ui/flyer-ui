@@ -12,7 +12,8 @@ export default {
   },
   props: {
     rowData: Object,
-    column: Object
+    column: Object,
+    rowIndex: Number
   },
   computed: {
     parent () {
@@ -35,14 +36,24 @@ export default {
       })
       return <fly-checkbox value={this.selected} onChange={this.handleSelection}>{this.checked}</fly-checkbox>
     },
-    renderContent (h, column, index) {
-      return (
-        column.type === 'checkbox'
-          ? this.renderCheckbox(h, column)
-          : ((column.$scopedSlots.default &&
+    renderIndex (h, column) {
+      const index = column.index + this.rowIndex
+      return typeof column.formatIndex === 'function' ? column.formatIndex.call(null, index) : index
+    },
+    renderContent (h, column) {
+      switch (column.type) {
+        case 'checkbox': {
+          return this.renderCheckbox(h, column)
+        }
+        case 'index': {
+          return this.renderIndex(h, column)
+        }
+        default: {
+          return ((column.$scopedSlots.default &&
             column.$scopedSlots.default({row: this.rowData})) ||
             this.rowData[column.prop])
-      )
+        }
+      }
     }
   },
   render (h) {
