@@ -36,12 +36,8 @@ export default {
     handleCheckboxAll (value) {
       this.parent.$store.addAllSelection(this.column.prop, value)
     },
-    handleSort (column) {
-      if (this.sortExplain === 'asc') {
-        this.sortExplain = 'desc'
-      } else {
-        this.sortExplain = 'asc'
-      }
+    handleSort (column, sortExplain) {
+      this.sortExplain = sortExplain
       this.$parent.handleSort(column, this.sortExplain)
     },
     handleFilter () {
@@ -71,11 +67,20 @@ export default {
     renderSort (h, column) {
       return (
         column.sortable
-          ? <fly-icon
-            onClick={() => this.handleSort(column)}
-            class={['fly-table__icon', {'is-active': this.sortProp === column.prop}]}
-            name='sorting'>
-          </fly-icon> : ''
+          ? (<div class='fly-table__icon-sort'>
+            <fly-icon
+              onClick={() => this.handleSort(column, 'asc')}
+              class={['fly-table__icon is-ascing',
+                {'is-active': this.sortProp === column.prop && this.sortExplain === 'asc'}]}
+              name='sortasc'>
+            </fly-icon>
+            <fly-icon
+              onClick={() => this.handleSort(column, 'desc')}
+              class={['fly-table__icon is-descending',
+                {'is-active': this.sortProp === column.prop && this.sortExplain === 'desc'}]}
+              name='sortdesc'>
+            </fly-icon>
+          </div>) : ''
       )
     },
     renderFilter (h, column) {

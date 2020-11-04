@@ -56,9 +56,9 @@ class Store {
         }
       }
       if (result === 1) {
-        return explain === 'asc' ? -1 : 1
-      } else if (result === -1) {
         return explain === 'asc' ? 1 : -1
+      } else if (result === -1) {
+        return explain === 'asc' ? -1 : 1
       }
     })
   }

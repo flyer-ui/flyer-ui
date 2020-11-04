@@ -12,6 +12,7 @@
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   font-size:144px; /*不可以删除及修改，如果有修改需要同步更新rem函数中的转换比率。*/
   color:$font-color-common;

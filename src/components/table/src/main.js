@@ -49,7 +49,9 @@ export default {
     renderContent () {
       return this._l(this.data, (rowData) => {
         return (
-          <table-row rowData={rowData} columns={this.columns}></table-row>
+          <table-row on-row-click={this.handleRowClick}
+            rowData={rowData}
+            columns={this.columns}></table-row>
         )
       })
     },
@@ -59,6 +61,9 @@ export default {
           {this.emptyText}
         </td>
       </tr>
+    },
+    handleRowClick (args) {
+      this.$emit('row-click', args)
     }
   },
   created () {
