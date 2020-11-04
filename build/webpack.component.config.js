@@ -15,6 +15,9 @@ module.exports = {
     chunkFilename: '[id].js',
     libraryTarget: 'commonjs2'
   },
+  externals: {
+    vue: 'Vue'
+  },
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

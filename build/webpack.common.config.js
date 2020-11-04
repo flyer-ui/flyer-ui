@@ -23,6 +23,9 @@ module.exports = {
       '~': utils.resolve('src')
     }
   },
+  externals: {
+    vue: 'Vue'
+  },
   module: {
     rules: [
       {
