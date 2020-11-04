@@ -50,7 +50,7 @@ const config = {
   optimization: {
     minimizer: [
       new UglifyjsWebpackPlugin({
-        extractComments: true
+        extractComments: false
       })
     ]
   },

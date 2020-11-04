@@ -14,6 +14,6 @@ module.exports = merge(webpackBase, {
     chunkFilename: '[id].js',
     library: 'flyer-ui',
     libraryTarget: 'umd',
-    umdNamedDefine: false
+    umdNamedDefine: true
   }
 })
