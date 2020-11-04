@@ -64,6 +64,9 @@
                 }else{
                     return 0
                 }
+            },
+            handleFormatIndex(index){
+                return index * 2
             }
         },
         mounted(){
@@ -110,10 +113,16 @@
         @sort-change='handleSortChange'
         @filter-change='handleFilterChange'
         style="width: 100%">
+        <fly-table-column 
+        width="50" 
+        type='index' 
+        :index='1'
+        label='排序'>
+        </fly-table-column>
         <fly-table-column
             prop='id'
             type='checkbox'
-            width="30">
+            width="40">
         </fly-table-column>
         <fly-table-column
             prop="id"
@@ -193,13 +202,16 @@ export default {
             }else{
                 return 0
             }
+        },
+        handleFormatIndex(index){
+            return index * 2
         }
     }
 }
 ```
 :::
 
-### 异步加载模板
+### 异步加载模板并自定义序列号
 
 ::: demo
 ```html
@@ -210,6 +222,13 @@ export default {
         @sort-change='handleSortChange'
         @filter-change='handleFilterChange'
         style="width: 100%">
+        <fly-table-column 
+            width="50" 
+            type='index' 
+            :index='1'
+            :formatIndex='handleFormatIndex'
+            label='排序'>
+        </fly-table-column>
         <fly-table-column
             prop='id'
             type='checkbox'
@@ -323,7 +342,9 @@ export default {
 
 | 属性名称        | 类型                      | 默认值 | 可选值       | 说明             |
 | --------------- | ------------------------- | ------ | ------------ | ---------------- |
-| type | checkbox | -      | -            |  指定列的类型，目前可定制checkbox       |
+| type | checkbox,index | -      | -            |  指定列的类型，目前可定制checkbox       |
+| index | Number | 0 | - | 类型为index时，指定的起始页，默认从0开始 |
+| formatIndex | Function | - | - | 类型为index时，自定义显示的格式|
 | prop | array | -      | -            |  对应列内容的字段名，也可以使用 property 属性        |
 | label | array | -      | -            | 显示的标题         |
 | width | array | -      | -            | 对应列的宽度       |

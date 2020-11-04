@@ -7,6 +7,7 @@ export default {
   },
   props: {
     rowData: Object,
+    rowIndex: Number,
     columns: Array
   },
   methods: {
@@ -24,8 +25,8 @@ export default {
     return (
       <tr onClick={this.handleRowClick}>
         {
-          this._l(this.columns, (column, index) => {
-            return (<FlyTableTd rowData={this.rowData} column={column}></FlyTableTd>)
+          this._l(this.columns, (column) => {
+            return (<FlyTableTd rowData={this.rowData} column={column} rowIndex={this.rowIndex}></FlyTableTd>)
           })
         }
       </tr>

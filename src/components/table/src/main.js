@@ -47,10 +47,11 @@ export default {
       })
     },
     renderContent () {
-      return this._l(this.data, (rowData) => {
+      return this._l(this.data, (rowData, index) => {
         return (
           <table-row on-row-click={this.handleRowClick}
             rowData={rowData}
+            rowIndex={index}
             columns={this.columns}></table-row>
         )
       })
