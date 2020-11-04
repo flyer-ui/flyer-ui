@@ -23,7 +23,7 @@ export default {
   },
   render (h) {
     return (
-      <tr onClick={this.handleRowClick}>
+      <tr class='fly-table__tr' onClick={this.handleRowClick}>
         {
           this._l(this.columns, (column) => {
             return (<FlyTableTd rowData={this.rowData} column={column} rowIndex={this.rowIndex}></FlyTableTd>)
