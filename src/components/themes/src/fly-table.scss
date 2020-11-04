@@ -15,11 +15,39 @@
         box-sizing:border-box;
         font-size:rem(14px)
     }
+    @include e('icon-sort'){
+        display: inline-flex;
+        position: relative;
+        width: rem(16px);
+        height: rem(16px);
+        vertical-align: text-bottom;
+        text-align: center;
+        justify-content: center;
+    }
     @include e('icon'){
         font-size:rem(12px);
         cursor:pointer;
+        color:$font-color-placeholder;
         @include state('active'){
             color:$primary;
+        }
+        @include state('ascing'){
+            position: absolute;
+            top: rem(0px);
+            z-index: 1;
+            height: rem(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+            // border:1px solid #ccc;
+        }
+        @include state('descending'){
+            position: absolute;
+            bottom: rem(0px);
+            z-index: 1;
+            height: rem(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+            // border:1px solid #ccc;
         }
     }
     @include e('empty-text'){

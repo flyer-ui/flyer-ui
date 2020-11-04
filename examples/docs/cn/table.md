@@ -317,7 +317,7 @@ export default {
 | --------- | ---------- | -------------------------- |
 | selection-change | 选中的所有值 | 表格列为checkbox时，选中后触发的事件。 |
 | sort-change | - | 表格排序后触发的事件。 |
-| row-click | - | 点击行时触发的事件 |
+| row-click | - | 点击行时触发的事件,带一个Object类型的参数：{row:object,column:object,event:MouseEvent} |
 
 ### Table-Column - 可定制属性
 
