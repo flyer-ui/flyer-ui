@@ -50,7 +50,7 @@ import Table from './components/table/index'
 import TableColumn from './components/table-column/index'
 import Link from './components/link/index'
 import Form from './components/form/index'
-import FormItem from './components/form/src/item.vue'
+import FormItem from './components/form-item/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 

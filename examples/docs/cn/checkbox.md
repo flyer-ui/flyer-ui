@@ -269,8 +269,8 @@ module.exports = {
           }，
           handleSelectAll(newValue){
               this.indeterminate = newValue
-              this.selectedItems = allCityValue
-              this.selectAll = true
+              this.selectedItems = value ? allCityValue : []
+              this.indeterminate = false
           },
           handleChangeCheckboxGroup(values){
               this.selectAll = values.length === this.options.length && values.length > 0

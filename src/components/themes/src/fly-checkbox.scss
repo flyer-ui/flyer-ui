@@ -9,7 +9,6 @@ $fly-checkbox-height:rem(16px) !default;
     display:inline-flex;
     box-sizing:border-box;
     line-height:$fly-checkbox-height ;
-    vertical-align:middle;
     &+& {
         margin-left: rem(10px);
     }

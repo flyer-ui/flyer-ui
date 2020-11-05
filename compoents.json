@@ -38,5 +38,6 @@
   "collapse-item":"./src/components/collapse-item/index.js",
   "scrollbar":"./src/components/scrollbar/index.js",
   "table-column":"./src/components/table-column/index.js",
-  "table":"./src/components/table/index.js"
+  "table":"./src/components/table/index.js",
+  "form":"./src/components/form/index.js"
 }
