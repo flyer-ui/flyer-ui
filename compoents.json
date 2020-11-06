@@ -39,5 +39,7 @@
   "scrollbar":"./src/components/scrollbar/index.js",
   "table-column":"./src/components/table-column/index.js",
   "table":"./src/components/table/index.js",
-  "form":"./src/components/form/index.js"
+  "form":"./src/components/form/index.js",
+  "form-item":"./src/compoents/form-item/index.js",
+  "transfer":"./src/components/transfer/index.js."
 }

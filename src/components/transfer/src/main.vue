@@ -55,6 +55,12 @@ export default {
     hasSelectAll: {
       type: Boolean,
       default: true
+    },
+    targetsDefault: {
+      type: Array,
+      default () {
+        return []
+      }
     }
   },
   data () {
@@ -67,6 +73,7 @@ export default {
   },
   created () {
     this.sources = this.data.slice(0)
+    this.handleDefault()
   },
   methods: {
     handleToTargets () {
@@ -92,6 +99,10 @@ export default {
     handleEmitValue () {
       this.$emit('input', this.targets.map(target => target.value))
       this.$emit('change', this.targets)
+    },
+    handleDefault () {
+      this.sourcesKeys = this.targetsDefault.slice(0)
+      this.handleToTargets()
     }
   }
 }
