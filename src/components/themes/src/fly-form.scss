@@ -6,14 +6,14 @@
       position: relative;
       display:flex;
       line-height:rem(40px);
-      margin:rem(22px);
+      margin:rem(22px) rem(0px);
       box-sizing: border-box;
   }
   @include e('item-label'){
       width:rem(80px);
   }
   @include e('item-content'){
-
+      width: 100%;
   }
   @include e('item-required'){
       font-style: inherit;

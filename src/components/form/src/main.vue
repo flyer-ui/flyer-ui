@@ -32,10 +32,6 @@ export default {
         message: val.message
       })
     },
-    /** 清空错误表 */
-    clearErrors () {
-      this.errors = {}
-    },
     /** 判断是否为空 */
     isRequired (rule, val) {
       if (hasOwn(val, 'required') && val.required) {
@@ -64,7 +60,7 @@ export default {
     },
     /** 验证表单 */
     validate (callback) {
-      this.clearErrors()
+      this.resetForm()
       for (const rule in this.rules) {
         if (Array.isArray(this.rules[rule])) {
           this.rules[rule].forEach(val => {
