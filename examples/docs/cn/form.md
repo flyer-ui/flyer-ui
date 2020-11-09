@@ -3,37 +3,39 @@ module.exports = {
     data(){
         return {
             userInfo:{
-                name:'',
-                sex:'',
-                address:'',
+                account:'',
+                password:''
+            },
+            rules:{
+                account:[
+                    {
+                        required:true,
+                        message:'请输入登录账号',
+                        trigger:'blur'
+                    },
+                    {
+                        validator(rule,value,callback){
+                            if(/^1[3456789]\d{9}$/.test(value)){
+                                callback()
+                            }else{
+                                callback(new Error('账号必须是一个正确的手机号码'))
+                            }
+                        },
+                        trigger:'blur'
+                    }
+                ],
+                password:[
+                    {
+                        required:true,
+                        message:'请输入登录密码',
+                        trigger:'blur'
+                    }
+                ]
             },
             userInfo1:{
                 name:'',
                 sex:'',
                 address:'',
-            },
-            rules:{
-                name:[
-                    {
-                        required:true,
-                        message:'请输入姓名',
-                        trigger:'blur'
-                    }
-                ],
-                address:[
-                    {
-                        required:true,
-                        message:'请输入地址',
-                        trigger:'blur'
-                    }
-                ],
-                sex:[
-                    {
-                        required:true,
-                        message:'请选择一个性别',
-                        trigger:'blur'
-                    }
-                ]
             },
             rules1:{
                 name:[
@@ -97,12 +99,11 @@ module.exports = {
 ```html
 <template>
     <fly-form v-model='userInfo' :rules="rules" ref='form'>
-        <fly-form-item label='姓名：' prop='name'>
-            <fly-input v-model='userInfo.name'/>
+        <fly-form-item label='账号：' prop='account'>
+            <fly-input v-model='userInfo.account'/>
         </fly-form-item>
-        <fly-form-item label='性别：' prop='sex'>
-            <fly-radio v-model='userInfo.sex' label='1'>男</fly-radio>
-            <fly-radio v-model='userInfo.sex' label='0'>女</fly-radio>
+        <fly-form-item label='密码：' prop='password'>
+            <fly-input type='password' v-model='userInfo.password'/>
         </fly-form-item>
         <fly-form-item>
             <fly-button type='primary' @click='submit'>提交</fly-button>
@@ -116,29 +117,31 @@ export default {
     data(){
         return {
             userInfo:{
-                name:'',
-                sex:'',
-                address:'',
+                account:'',
+                password:''
             },
             rules:{
-                name:[
+                account:[
                     {
                         required:true,
-                        message:'请输入姓名',
+                        message:'请输入登录账号',
+                        trigger:'blur'
+                    },
+                    {
+                        validator(rule,value,callback){
+                            if(/^1[3456789]\d{9}$/.test(str)){
+                                callback()
+                            }else{
+                                new Error('账号必须是一个正确的手机号码')
+                            }
+                        },
                         trigger:'blur'
                     }
                 ],
-                address:[
+                password:[
                     {
                         required:true,
-                        message:'请输入地址',
-                        trigger:'blur'
-                    }
-                ],
-                sex:[
-                    {
-                        required:true,
-                        message:'请选择一个性别',
+                        message:'请输入登录密码',
                         trigger:'blur'
                     }
                 ]
