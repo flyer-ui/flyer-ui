@@ -7,6 +7,11 @@ module.exports = {
                 sex:'',
                 address:'',
             },
+            userInfo1:{
+                name:'',
+                sex:'',
+                address:'',
+            },
             rules:{
                 name:[
                     {
@@ -29,18 +34,57 @@ module.exports = {
                         trigger:'blur'
                     }
                 ]
+            },
+            rules1:{
+                name:[
+                    {
+                        required:true,
+                        message:'请输入姓名',
+                        trigger:'blur'
+                    },
+                    {
+                        validator(rule,value,callback){
+                            if(value.length<6){
+                                callback(new Error('姓名的长度不能小于6'))
+                            }else{
+                                callback()
+                            }
+                        }
+                    }
+                ],
+                address:[
+                    {
+                        required:true,
+                        message:'请输入地址',
+                        trigger:'blur'
+                    }
+                ],
+                sex:[
+                    {
+                        required:true,
+                        message:'请选择一个性别',
+                        trigger:'blur'
+                    }
+                ]
             }
         }
     },
     methods:{
         submit(){
             this.$refs.form.validate((valid)=>{
-                // debugger
+                console.log(valid)
+            })
+        },
+        submit1(){
+            this.$refs.form1.validate((valid)=>{
                 console.log(valid)
             })
         },
         reset(){
             this.$refs.form.resetForm()
+        },
+        reset1(){
+            this.$refs.form1.resetForm()
         }
     }
 }
@@ -114,6 +158,83 @@ export default {
 }
 ```
 :::
+
+### 自定义表单验证
+:::demo
+```html
+<template>
+    <fly-form v-model='userInfo1' :rules="rules1" ref='form1'>
+        <fly-form-item label='姓名：' prop='name'>
+            <fly-input v-model='userInfo1.name'/>
+        </fly-form-item>
+        <fly-form-item label='性别：' prop='sex'>
+            <fly-radio v-model='userInfo1.sex' label='1'>男</fly-radio>
+            <fly-radio v-model='userInfo1.sex' label='0'>女</fly-radio>
+        </fly-form-item>
+        <fly-form-item>
+            <fly-button type='primary' @click='submit1'>提交</fly-button>
+            <fly-button type='default' @click='reset1'>重置</fly-button>
+        </fly-form-item>
+    </fly-form>
+</template>
+```
+```JS
+export default {
+    data(){
+        return {
+            userInfo1:{
+                name:'',
+                sex:'',
+                address:'',
+            },
+            rules1:{
+                name:[
+                    {
+                        required:true,
+                        message:'请输入姓名',
+                        trigger:'blur'
+                    },
+                    {
+                        validator(rule,value,callback){
+                            if(value.length<6){
+                                callback(new Error('姓名的长度不能小于6'))
+                            }else{
+                                callback()
+                            }
+                        }
+                    }
+                ],
+                address:[
+                    {
+                        required:true,
+                        message:'请输入地址',
+                        trigger:'blur'
+                    }
+                ],
+                sex:[
+                    {
+                        required:true,
+                        message:'请选择一个性别',
+                        trigger:'blur'
+                    }
+                ]
+            }
+        }
+    },
+    methods:{
+        submit1(){
+            this.$refs.form1.validate((valid)=>{
+                console.log(valid)
+            })
+        },
+        reset1(){
+            this.$refs.form.resetForm()
+        }
+    }
+}
+```
+:::
+### 
 
 ### 表单 - 可定制属性
 
