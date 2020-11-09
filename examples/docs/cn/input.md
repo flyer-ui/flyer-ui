@@ -5,7 +5,8 @@ module.exports =  {
             value:'',
             value2:'不可输入',
             value3:'',
-            value4:''
+            value4:'',
+            value5:''
         }
     }
 }
@@ -101,8 +102,20 @@ module.exports =  {
   };
 </script>
 ```
-
 :::
+
+### 密码输入框
+
+:::demo
+```html
+<template>
+  <fly-input type='password' v-model='value5' show-password></fly-input>
+</template>
+```
+```JS
+```
+:::
+
 
 ### 带 icon 图标的输入框
 

@@ -11,7 +11,7 @@
           </slot>
        </span>
        <input
-       :type='type'
+       :type='selfType'
        ref='input'
        :class='["fly-input__native",
          `fly-input__native--${size}`,
@@ -43,6 +43,7 @@
        <span class='fly-input__append' v-if='$slots.append'>
          <slot name='append'></slot>
        </span>
+       <i v-if='showPassword' @click="handleShowPassword" class='fly-icon fly-icon-eye_protection fly-input__eye'></i>
        <i v-if='clearable' v-show="isShowClear" @click="handleClear" class='fly-icon fly-icon-close fly-input__clear'></i>
     </div>
 </template>
@@ -82,12 +83,17 @@ export default {
     maxLength: Number,
     minLength: Number,
     prefixIcon: String,
-    suffixIcon: String
+    suffixIcon: String,
+    showPassword: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {
       focused: false,
-      hovering: false
+      hovering: false,
+      selfType: this.type
     }
   },
   computed: {
@@ -133,11 +139,25 @@ export default {
     handleChange ($event) {
       this.$emit('change', $event.target.value)
     },
+    handleShowPassword () {
+      if (this.clearCode) {
+        this.clearCode = false
+        this.selfType = 'password'
+      } else {
+        this.clearCode = true
+        this.selfType = 'input'
+      }
+    },
     focus () {
       this.$refs.input.focus()
     },
     blur () {
       this.$refs.input.blur()
+    }
+  },
+  created () {
+    if (this.showPassword) {
+      this.clearCode = false
     }
   }
 }
