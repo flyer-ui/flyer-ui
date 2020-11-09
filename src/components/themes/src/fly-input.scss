@@ -91,13 +91,33 @@ $fly-input-clear-area:16px !default;
         right:rem(12px);
         top: rem(12px);
         cursor: pointer;
-        font-family: 'fly-icons';
         font-style:inherit;
         color:$font-color-placeholder;
         background-color:$fly-color-border;
         text-align: center;
         opacity: .6;
         font-size:rem(12px);
+        pointer-events:all;
+        &:hover{
+            opacity: 1;
+        }
+    }
+    @include e('eye'){
+        position: absolute;
+        display: flex;
+        z-index: 1;
+        border-radius: 50%;
+        width: $fly-input-clear-area;
+        height: $fly-input-clear-area;
+        right:rem(11px);
+        top: rem(11px);
+        cursor: pointer;
+        font-style:inherit;
+        color:$font-color-placeholder;
+        justify-content: center;
+        align-items: center;
+        opacity: .6;
+        font-size:rem(16px);
         pointer-events:all;
         &:hover{
             opacity: 1;
