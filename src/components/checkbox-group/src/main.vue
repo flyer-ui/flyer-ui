@@ -7,7 +7,12 @@
 export default {
   name: 'FlyCheckboxGroup',
   props: {
-    value: Array
+    value: {
+      type: Array,
+      default () {
+        return []
+      }
+    }
   }
 }
 </script>

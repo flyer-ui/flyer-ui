@@ -1,5 +1,46 @@
 
 @import "./base/index.scss";
 @include b('transfer'){
-    
+    position:relative;
+    box-sizing:border-box;
+    width:rem(500px);
+    @include e('sources'){
+        width: rem(200px);
+        background-color: $fly-global-background-color;
+        padding:rem(10px);
+        box-sizing: border-box;
+        border-radius:$fly-round-default-size;
+    }
+    @include e('header'){
+        font-weight:700;
+        line-height: rem(32px);
+    }
+    @include e('targets'){
+        width: rem(200px);
+        background-color: $fly-global-background-color;
+        padding:rem(10px);
+        box-sizing: border-box;
+        border-radius:$fly-round-default-size;
+    }
+    @include e('operation'){
+        width:rem(100px);
+        font-size:rem(20px);
+        font-weight: 700;
+        line-height:rem(40px);
+        cursor: pointer;
+        text-align: center;
+        margin-top: rem(150px);
+    }
+    @include e('body'){
+        overflow-y:auto;
+        height:rem(360px);
+    }
+    @include e('item'){
+        line-height:rem(30px);
+        box-sizing: border-box;
+        height:rem(30px);
+    }
+    @include e('total'){
+        line-height: rem(24px);
+    }
 }
