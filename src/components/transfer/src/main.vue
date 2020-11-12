@@ -4,6 +4,7 @@
           <panel ref='sources' v-model="sourcesKeys"
           :hasSelectAll='hasSelectAll'
           :title='titles[0]'
+          :disabled='sourcesDisabled'
           :items="sources">
             <slot name='source-bottom'></slot>
           </panel>
@@ -20,6 +21,7 @@
         <panel ref='targets' v-model="targetsKeys"
         :hasSelectAll='hasSelectAll'
         :title='titles[1]'
+        :disabled='targetsDisabled'
         :items="targets">
           <slot name='target-bottom'></slot>
         </panel>
@@ -61,6 +63,14 @@ export default {
       default () {
         return []
       }
+    },
+    sourcesDisabled: {
+      type: Boolean,
+      default: false
+    },
+    targetsDisabled: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -68,7 +78,8 @@ export default {
       targets: [],
       sources: [],
       sourcesKeys: [],
-      targetsKeys: []
+      targetsKeys: [],
+      changeItems: []
     }
   },
   created () {
@@ -77,9 +88,12 @@ export default {
   },
   methods: {
     handleToTargets () {
+      this.changeItems = []
       this.sourcesKeys.forEach(key => {
         const index = this.sources.findIndex(val => val.value === key)
-        this.targets.push(this.sources[index])
+        const item = this.sources[index]
+        this.targets.push(item)
+        this.changeItems.push(item)
         this.sources.splice(index, 1)
       })
       this.sourcesKeys.length = 0
@@ -87,9 +101,12 @@ export default {
       this.handleEmitValue()
     },
     handleToSources () {
+      this.changeItems = []
       this.targetsKeys.forEach(key => {
         const index = this.targets.findIndex(val => val.value === key)
-        this.sources.push(this.targets[index])
+        const item = this.targets[index]
+        this.sources.push(item)
+        this.changeItems.push(item)
         this.targets.splice(index, 1)
       })
       this.$refs['sources'] && this.$refs['targets'].resetState()
@@ -98,11 +115,14 @@ export default {
     },
     handleEmitValue () {
       this.$emit('input', this.targets.map(target => target.value))
-      this.$emit('change', this.targets)
+      this.$emit('change', this.targets, this.changeItems)
     },
     handleDefault () {
       this.sourcesKeys = this.targetsDefault.slice(0)
       this.handleToTargets()
+    },
+    setTargets (items) {
+      this.targets = items
     }
   }
 }
