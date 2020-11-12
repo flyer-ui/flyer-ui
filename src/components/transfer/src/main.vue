@@ -83,7 +83,7 @@ export default {
         this.sources.splice(index, 1)
       })
       this.sourcesKeys.length = 0
-      this.$refs['sources'].resetState()
+      this.$refs['sources'] && this.$refs['sources'].resetState()
       this.handleEmitValue()
     },
     handleToSources () {
@@ -92,7 +92,7 @@ export default {
         this.sources.push(this.targets[index])
         this.targets.splice(index, 1)
       })
-      this.$refs['targets'].resetState()
+      this.$refs['sources'] && this.$refs['targets'].resetState()
       this.handleEmitValue()
       this.targetsKeys.length = 0
     },
