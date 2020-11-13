@@ -119,7 +119,6 @@ export default {
     },
     handleDefault () {
       this.sourcesKeys = this.targetsDefault.slice(0)
-      this.handleToTargets()
     },
     setTargets (items) {
       this.targets = items
