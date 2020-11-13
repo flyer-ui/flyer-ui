@@ -87,31 +87,25 @@ export default {
     this.handleDefault()
   },
   methods: {
-    handleToTargets () {
+    handleTransfer (keys, to, from, panelName) {
       this.changeItems = []
-      this.sourcesKeys.forEach(key => {
-        const index = this.sources.findIndex(val => val.value === key)
-        const item = this.sources[index]
-        this.targets.push(item)
+      keys.forEach(key => {
+        const index = from.findIndex(val => val.value === key)
+        const item = from[index]
+        to.push(item)
         this.changeItems.push(item)
-        this.sources.splice(index, 1)
+        from.splice(index, 1)
       })
-      this.sourcesKeys.length = 0
-      this.$refs['sources'] && this.$refs['sources'].resetState()
+      keys.length = 0
+      this.$refs[panelName] && this.$refs[panelName].resetState()
+    },
+    handleToTargets () {
+      this.handleTransfer(this.sourcesKeys, this.targets, this.sources, 'sources')
       this.handleEmitValue()
     },
     handleToSources () {
-      this.changeItems = []
-      this.targetsKeys.forEach(key => {
-        const index = this.targets.findIndex(val => val.value === key)
-        const item = this.targets[index]
-        this.sources.push(item)
-        this.changeItems.push(item)
-        this.targets.splice(index, 1)
-      })
-      this.$refs['sources'] && this.$refs['targets'].resetState()
+      this.handleTransfer(this.targetsKeys, this.sources, this.targets, 'targets')
       this.handleEmitValue()
-      this.targetsKeys.length = 0
     },
     handleEmitValue () {
       this.$emit('input', this.targets.map(target => target.value))
@@ -119,6 +113,7 @@ export default {
     },
     handleDefault () {
       this.sourcesKeys = this.targetsDefault.slice(0)
+      this.handleTransfer(this.sourcesKeys, this.targets, this.sources, 'sources')
     },
     setTargets (items) {
       this.targets = items
