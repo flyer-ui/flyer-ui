@@ -81,6 +81,13 @@ export default {
   render (h) {
     return (
       <table class='fly-table'>
+        <colgroup>
+          {
+            this._l(this.columns, column => {
+              return <col width={column.width}></col>
+            })
+          }
+        </colgroup>
         <thead>
           {this.$slots.default}
           <table-header columns={this.columns}></table-header>

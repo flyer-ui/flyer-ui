@@ -101,8 +101,7 @@ export default {
     }
   },
   render (h) {
-    return (<th class='fly-table__th'
-      style={{'width': `${this.column.width}px`}}>
+    return (<th class='fly-table__th'>
       {this.renderContent(h, this.column)}
       {this.renderSort(h, this.column)}
       {this.renderFilter(h, this.column)}
