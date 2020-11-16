@@ -19,7 +19,12 @@ export default {
     }
   },
   props: {
-    data: Array,
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
     emptyText: {
       type: String,
       default: '暂无数据'
