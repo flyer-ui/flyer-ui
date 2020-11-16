@@ -19,6 +19,7 @@ const Popover = function (element, selector, options = {
   this.$element = element
   this.$selector = selector
   this.$options = Object.assign({}, Popover.DEFAULT_OPTIONS, options)
+  document.body.appendChild(this.$element)
   this.init()
 }
 Popover.mode = process.env.NODE_ENV
@@ -34,7 +35,7 @@ fn.init = function () {
   this.$container = this.getContainer()
   this.$scroll = this.getScroll()
   this.checkElement()
-  this.put('bottom')
+  this.put(this.$options.placement || 'bottom')
 }
 
 /** 得到依靠元素的上下左右值 */

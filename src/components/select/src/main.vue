@@ -11,7 +11,7 @@
         @close='handleRemoveTag(index)'
         class='fly-select__tag'
         >{{item}}</fly-tag>
-        <fly-icon class='fly-select__tags-more' name='checkmore'></fly-icon>
+        <fly-icon v-if='tagMore' @click="handleVisibleTags" class='fly-select__tags-more' name='checkmore'></fly-icon>
       </div>
       <fly-input
       :value='singleValue'
@@ -31,6 +31,8 @@
         ref='popper'>
         <slot name='default'></slot>
       </fly-select-dropdowns>
+      <fly-tags-detail :tags='selected' :visible='visibleTagMore'
+        ref='tagsDetail'></fly-tags-detail>
     </div>
 </template>
 <script>
@@ -38,6 +40,7 @@ import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
 import PopperManager from '~/utils/popper-manager'
 import {stop} from '@flyer-ui/commonality'
+import FlyTagsDetail from './tag-detail'
 
 export default {
   name: 'FlySelect',
@@ -48,7 +51,8 @@ export default {
   },
   components: {
     FlyInput,
-    FlySelectDropdowns
+    FlySelectDropdowns,
+    FlyTagsDetail
   },
   props: {
     value: [Number, String, Array],
@@ -77,11 +81,20 @@ export default {
       return this.multiple && this.selectedValues.length > 0 ? '' : this.placeholder
     }
   },
+  watch: {
+    selected () {
+      if (this.selected.length === 0) {
+        this.visibleTagMore = false
+      }
+    }
+  },
   data () {
     return {
       visible: false,
       selected: '',
-      selectedValues: []
+      selectedValues: [],
+      tagMore: false,
+      visibleTagMore: false
     }
   },
   methods: {
@@ -102,6 +115,12 @@ export default {
     handleRemoveTag (index) {
       this.selected.splice(index, 1)
       this.selectedValues.splice(index, 1)
+      this.$nextTick(() => {
+        this.calcTagsHeight()
+      })
+    },
+    handleVisibleTags () {
+      this.visibleTagMore = !this.visibleTagMore
     },
     showMenu ($event) {
       stop($event)
@@ -110,6 +129,11 @@ export default {
     },
     calcTagsHeight () {
       const eleTags = this.$refs.tags
+      if (eleTags.scrollHeight > 30) {
+        this.tagMore = true
+      } else {
+        this.tagMore = false
+      }
       console.log(eleTags.scrollHeight)
     },
     executeSelected ({label, value}, $event) {

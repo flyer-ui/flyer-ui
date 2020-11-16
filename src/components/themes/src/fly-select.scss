@@ -67,6 +67,7 @@
         line-height:rem(28px);
         overflow: hidden;
         padding-right:rem(30px);
+        box-sizing: border-box;
         .fly-select__tag{
             display:inline-block;
             margin:rem(1px) rem(3px);
@@ -138,5 +139,17 @@
         font-weight: bold;
         padding:rem(5px) rem(10px);
         box-sizing:border-box;
+    }
+}
+@include b('select-tag-detail'){
+    display: block;
+    background-color: $fly-common-white;
+    border:rem(1px) solid $fly-color-border;
+    box-shadow:$fly-default-box-shadow;
+    border-radius: $fly-round-default-size;
+    padding:rem(5px);
+    .fly-select__tag{
+        display:inline-block;
+        margin:rem(1px) rem(3px);
     }
 }
