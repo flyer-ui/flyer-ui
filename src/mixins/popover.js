@@ -19,15 +19,13 @@ const Popover = function (element, selector, options = {
   this.$element = element
   this.$selector = selector
   this.$options = Object.assign({}, Popover.DEFAULT_OPTIONS, options)
+  document.body.appendChild(this.$element)
   this.init()
 }
 Popover.mode = process.env.NODE_ENV
 Popover.DEFAULT_OPTIONS = {
   placement: 'bottom',
   offset: [0, 0]
-}
-const log = function (msg) {
-  Popover.mode === 'development' && console.log(msg)
 }
 
 const fn = Popover.prototype
@@ -37,7 +35,7 @@ fn.init = function () {
   this.$container = this.getContainer()
   this.$scroll = this.getScroll()
   this.checkElement()
-  this.put('bottom')
+  this.put(this.$options.placement || 'bottom')
 }
 
 /** 得到依靠元素的上下左右值 */
@@ -76,26 +74,21 @@ fn.setTranslate = function (x, y) {
 
 fn.placements = {
   bottom: function () {
-    log('实行在下方')
     const bottom = this.$container.offsetHeight - this.$rect.bottom
     if (bottom >= this.$element.offsetHeight) {
       this.setTranslate(this.$rect.left, this.$rect.bottom + this.$scroll.top)
     } else {
-      log('下方空间不足')
       this.placements.top.bind(this)()
     }
   },
   top: function () {
-    log('实行在顶部')
     if (this.$rect.top >= this.$element.offsetHeight) {
       this.setTranslate(this.$rect.left, this.$rect.top - this.$element.offsetHeight + this.$scroll.top)
     } else {
-      log('顶部空间不足')
       this.placements.left.bind(this)()
     }
   },
   left: function () {
-    log('实行在左方')
     if (this.$rect.left >= this.$element.offsetWidth) {
       // 判断默认下方的位置是否够放弹框
       const bottom = this.$container.offsetHeight - this.$rect.bottom
@@ -104,18 +97,15 @@ fn.placements = {
       if (bottom >= this.$element.offsetHeight - this.$rect.height) {
         this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + scroll.top)
       } else {
-        log('检测到下方空间不足，默认跳到上方')
         this.setTranslate(this.$rect.left - this.$element.offsetWidth, this.$rect.top + this.$scroll.top - (
           bottom + overHeight
         ))
       }
     } else {
-      log('左方空间不足')
       this.placements.right.bind(this)()
     }
   },
   right: function () {
-    log('实行在右方')
     const right = this.$container.offsetWidth - this.$rect.right
     if (right >= this.$element.offsetWidth) {
       // 判断默认下方的位置是否够放弹框
@@ -125,13 +115,11 @@ fn.placements = {
       if (bottom >= this.$element.offsetHeight - this.$rect.height) {
         this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top)
       } else {
-        log('检测到下方空间不足，默认跳到上方')
         this.setTranslate(this.$rect.right, this.$rect.top + this.$scroll.top - (
           bottom + overHeight
         ))
       }
     } else {
-      log('右方空间不足')
       this.placements.bottom.bind(this)()
     }
   }
