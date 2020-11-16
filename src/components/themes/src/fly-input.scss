@@ -127,7 +127,7 @@ $fly-input-clear-area:16px !default;
         @extend .fix;
         left:0px;
         @include m('small'){
-            @include fix-variant(rem(2px) rem(8px),rem(11px))
+            @include fix-variant(rem(2px)  rem(8px),rem(11px))
         }
         @include m('medium'){
             @include fix-variant(rem(10px),rem(18px))

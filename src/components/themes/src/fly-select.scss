@@ -33,7 +33,7 @@
         box-sizing:border-box;
         cursor: pointer;
         &:hover{
-            background:rgba($fly-color-border,0.5);
+            background:$fly-global-background-color;
         }
         @include state('disabled'){
             color:$fly-color-border;
@@ -53,19 +53,36 @@
         }
     }
     @include e('tags'){
-        display:flex;
+        display:inline-flex;
         flex-wrap:wrap;
         position: absolute;
         z-index:2;
-        margin-right:rem(40px);
+        margin-right:rem(30px);
         align-items:center;
         top:50%;
+        right:rem(0px);
+        left:rem(0px);
         transform:translateY(-50%);
+        height:rem(28px);
+        line-height:rem(28px);
+        overflow: hidden;
+        padding-right:rem(30px);
         .fly-select__tag{
             display:inline-block;
-            margin:rem(2px) rem(5px);
+            margin:rem(1px) rem(3px);
             background-color:rgba($fly-color-border,0.5)
         }
+    }
+    @include e('tags-more'){
+        position: absolute;
+        z-index:2;
+        border:rem(1px) solid $fly-color-border;
+        right: rem(0px);
+        height:rem(24px);
+        width:rem(24px);
+        border-radius: $fly-round-default-size;
+        font-weight:700;
+        cursor: pointer;
     }
     @include e('tag'){
     }
@@ -81,37 +98,35 @@
     box-sizing: border-box;
     box-shadow:$fly-default-box-shadow;
     background:$fly-common-white;
+    border-radius: $fly-round-default-size;
     @include e('list'){
         list-style:none;
-        padding:rem(0px);
+        padding:rem(5px) rem(0px);
         margin:rem(0px);
     }
-    &[x-placement="bottom"]{
-        margin-top:rem(10px);
-        .popper__arrow{
-            border: rem(8px) solid $fly-color-border;
-            display: inline-block;
+    @include e('arrow'){
+        border: rem(6px) solid $fly-color-border;
+        display: flex;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+        position: absolute;
+        width: rem(0px);
+        height: rem(0px);
+        top: rem(-12px);
+        right: rem(10px);
+        &:after{
+            content:'';
+            border: rem(6px) solid $fly-common-white;;
+            display: flex;
             border-top-color: transparent;
             border-right-color: transparent;
             border-left-color: transparent;
             position: absolute;
             width: rem(0px);
             height: rem(0px);
-            top: rem(-16px);
-            left: calc(100%/2);
-            &:after{
-                content:'';
-                border: rem(6px) solid $fly-common-white;;
-                display: inline-block;
-                border-top-color: transparent;
-                border-right-color: transparent;
-                border-left-color: transparent;
-                position: absolute;
-                width: rem(0px);
-                height: rem(0px);
-                top: rem(-4px);
-                left: calc(100%/2 - rem(6px));
-            }
+            top: rem(-5px);
+            left: rem(-6px);
         }
     }
 }

@@ -8,9 +8,10 @@
         v-for='(item,index) in selected'
         :key='item'
         closable
-        @on-close='handleRemoveTag(index)'
+        @close='handleRemoveTag(index)'
         class='fly-select__tag'
         >{{item}}</fly-tag>
+        <fly-icon class='fly-select__tags-more' name='checkmore'></fly-icon>
       </div>
       <fly-input
       :value='singleValue'
@@ -26,7 +27,7 @@
       ref='reference'
       ></fly-input>
       <fly-select-dropdowns
-       v-show='visible'
+        :visible='visible'
         ref='popper'>
         <slot name='default'></slot>
       </fly-select-dropdowns>
@@ -101,17 +102,15 @@ export default {
     handleRemoveTag (index) {
       this.selected.splice(index, 1)
       this.selectedValues.splice(index, 1)
-      this.$nextTick(() => {
-        this.calcInputHeight()
-      })
     },
     showMenu ($event) {
       stop($event)
       if (this.disabled) return
       this.visible = !this.visible
-      if (this.visible) {
-        this.$refs.popper.$emit('updatePopper')
-      }
+    },
+    calcTagsHeight () {
+      const eleTags = this.$refs.tags
+      console.log(eleTags.scrollHeight)
     },
     executeSelected ({label, value}, $event) {
       if (!this.multiple) {
@@ -132,7 +131,7 @@ export default {
         }
         this.$emit('input', this.selectedValues)
         this.$nextTick(() => {
-          this.calcInputHeight()
+          this.calcTagsHeight()
         })
       }
     },
@@ -154,18 +153,6 @@ export default {
     },
     removeLabel (label) {
       this.selected.splice(this.findByLabel(label), 1)
-    },
-    calcInputHeight () {
-      const th = this.$refs.tags.offsetHeight
-      const input = this.$refs.reference.$el.querySelector('.fly-input__native')
-      if (!this.nativeHeight) {
-        this.nativeHeight = input.offsetHeight
-      }
-      if (this.nativeHeight < th) {
-        input.style.height = th + 'px'
-      } else {
-        input.style.height = this.nativeHeight + 'px'
-      }
     },
     focus () {
       this.$refs.reference.focus()
