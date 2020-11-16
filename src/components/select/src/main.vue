@@ -8,9 +8,10 @@
         v-for='(item,index) in selected'
         :key='item'
         closable
-        @on-close='handleRemoveTag(index)'
+        @close='handleRemoveTag(index)'
         class='fly-select__tag'
         >{{item}}</fly-tag>
+        <fly-icon v-if='tagMore' @click="handleVisibleTags" class='fly-select__tags-more' name='checkmore'></fly-icon>
       </div>
       <fly-input
       :value='singleValue'
@@ -26,10 +27,12 @@
       ref='reference'
       ></fly-input>
       <fly-select-dropdowns
-       v-show='visible'
+        :visible='visible'
         ref='popper'>
         <slot name='default'></slot>
       </fly-select-dropdowns>
+      <fly-tags-detail :tags='selected' :visible='visibleTagMore'
+        ref='tagsDetail'></fly-tags-detail>
     </div>
 </template>
 <script>
@@ -37,6 +40,7 @@ import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
 import PopperManager from '~/utils/popper-manager'
 import {stop} from '@flyer-ui/commonality'
+import FlyTagsDetail from './tag-detail'
 
 export default {
   name: 'FlySelect',
@@ -47,7 +51,8 @@ export default {
   },
   components: {
     FlyInput,
-    FlySelectDropdowns
+    FlySelectDropdowns,
+    FlyTagsDetail
   },
   props: {
     value: [Number, String, Array],
@@ -76,11 +81,20 @@ export default {
       return this.multiple && this.selectedValues.length > 0 ? '' : this.placeholder
     }
   },
+  watch: {
+    selected () {
+      if (this.selected.length === 0) {
+        this.visibleTagMore = false
+      }
+    }
+  },
   data () {
     return {
       visible: false,
       selected: '',
-      selectedValues: []
+      selectedValues: [],
+      tagMore: false,
+      visibleTagMore: false
     }
   },
   methods: {
@@ -102,16 +116,25 @@ export default {
       this.selected.splice(index, 1)
       this.selectedValues.splice(index, 1)
       this.$nextTick(() => {
-        this.calcInputHeight()
+        this.calcTagsHeight()
       })
+    },
+    handleVisibleTags () {
+      this.visibleTagMore = !this.visibleTagMore
     },
     showMenu ($event) {
       stop($event)
       if (this.disabled) return
       this.visible = !this.visible
-      if (this.visible) {
-        this.$refs.popper.$emit('updatePopper')
+    },
+    calcTagsHeight () {
+      const eleTags = this.$refs.tags
+      if (eleTags.scrollHeight > 30) {
+        this.tagMore = true
+      } else {
+        this.tagMore = false
       }
+      console.log(eleTags.scrollHeight)
     },
     executeSelected ({label, value}, $event) {
       if (!this.multiple) {
@@ -132,7 +155,7 @@ export default {
         }
         this.$emit('input', this.selectedValues)
         this.$nextTick(() => {
-          this.calcInputHeight()
+          this.calcTagsHeight()
         })
       }
     },
@@ -154,18 +177,6 @@ export default {
     },
     removeLabel (label) {
       this.selected.splice(this.findByLabel(label), 1)
-    },
-    calcInputHeight () {
-      const th = this.$refs.tags.offsetHeight
-      const input = this.$refs.reference.$el.querySelector('.fly-input__native')
-      if (!this.nativeHeight) {
-        this.nativeHeight = input.offsetHeight
-      }
-      if (this.nativeHeight < th) {
-        input.style.height = th + 'px'
-      } else {
-        input.style.height = this.nativeHeight + 'px'
-      }
     },
     focus () {
       this.$refs.reference.focus()

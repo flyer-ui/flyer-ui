@@ -13,11 +13,19 @@
     font-family: "fly-icon" !important;
     font-size: inherit;
     font-style: normal;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    display:inline-block;
+    text-align: center;
+    font-size:inherit;
+    opacity: 0.9;
+    font-weight:inherit;
+    &:hover{
+        opacity: 0.8;
+    }
+    &:active{
+        opacity: 1;
+    }
   }
   
   .fly-icon-left:before {

@@ -8,7 +8,7 @@ $fly-checkbox-height:rem(16px) !default;
     user-select: none;
     display:inline-flex;
     box-sizing:border-box;
-    line-height:$fly-checkbox-height ;
+    line-height:1.2;
     &+& {
         margin-left: rem(10px);
     }
