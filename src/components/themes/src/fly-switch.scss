@@ -3,7 +3,6 @@
 @include b('switch'){
     position: relative;
     display:inline-flex;
-    vertical-align:middle;
     border:rem(1px) solid $fly-color-border;
     background: $fly-color-border;
     padding:rem(0px) rem(10px);

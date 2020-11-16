@@ -19,7 +19,12 @@ export default {
     }
   },
   props: {
-    data: Array,
+    data: {
+      type: Array,
+      default () {
+        return []
+      }
+    },
     emptyText: {
       type: String,
       default: '暂无数据'
@@ -76,6 +81,13 @@ export default {
   render (h) {
     return (
       <table class='fly-table'>
+        <colgroup>
+          {
+            this._l(this.columns, column => {
+              return <col width={column.width}></col>
+            })
+          }
+        </colgroup>
         <thead>
           {this.$slots.default}
           <table-header columns={this.columns}></table-header>
