@@ -32,7 +32,6 @@
         margin-top: rem(150px);
     }
     @include e('body'){
-        overflow-y:auto;
         height:rem(360px);
     }
     @include e('item'){
