@@ -72,13 +72,13 @@ export default {
               onClick={() => this.handleSort(column, 'asc')}
               class={['fly-table__icon is-ascing',
                 {'is-active': this.sortProp === column.prop && this.sortExplain === 'asc'}]}
-              name='sortasc'>
+              name='arrow-up'>
             </fly-icon>
             <fly-icon
               onClick={() => this.handleSort(column, 'desc')}
               class={['fly-table__icon is-descending',
                 {'is-active': this.sortProp === column.prop && this.sortExplain === 'desc'}]}
-              name='sortdesc'>
+              name='arrow-down'>
             </fly-icon>
           </div>) : ''
       )

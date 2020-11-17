@@ -1,7 +1,12 @@
 <template>
 <div class='fly-tree'>
     <ul class='fly-tree__box fly-tree__root'>
-        <fly-tree-node v-for="(item,index) in data" :key='index' @on-node-click='handleNodeClick' :data='item' :props='props' :show-checkbox='showCheckbox'>
+        <fly-tree-node v-for="(item,index) in data"
+          :key='index'
+          @node-click='handleNodeClick'
+          :data='item'
+          :props='props'
+          :show-checkbox='showCheckbox'>
         </fly-tree-node>
     </ul>
 </div>
@@ -31,7 +36,7 @@ export default {
   },
   methods: {
     handleNodeClick (label) {
-      this.$emit('on-node-click', label)
+      this.$emit('nodeClick', label)
     }
   }
 }
