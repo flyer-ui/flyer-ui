@@ -29,13 +29,17 @@ export default {
       }
     },
     renderCheckbox (h, column) {
-      this.parent.$store.subscribe('selection', (keys) => {
-        this.selected = false
+      const setSelected = (keys)=>{
         this.selected = !!keys.find((key) => {
           return key === String(this.rowData[column.prop])
         })
+      }
+      this.parent.$store.subscribe('selection', (keys) => {
+        setSelected(keys)
       })
-      return <fly-checkbox value={this.selected} onChange={this.handleSelection}>{this.checked}</fly-checkbox>
+      const keys = this.parent.$store.getSelectionKeys()
+      setSelected(keys)
+      return <fly-checkbox value={this.selected} onChange={this.handleSelection}></fly-checkbox>
     },
     renderIndex (h, column) {
       const index = column.index + this.rowIndex

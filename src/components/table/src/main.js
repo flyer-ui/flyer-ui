@@ -18,10 +18,8 @@ export default {
       if (this.$store) {
         this.$store.selections = {}
         this.$store.setData(this.data)
+        this.$store.publish('selection')
       }
-      this.$nextTick(() => {
-        this.columns = this.getColumns()
-      })
     }
   },
   props: {
