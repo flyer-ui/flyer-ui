@@ -19,6 +19,9 @@ export default {
         this.$store.selections = {}
         this.$store.setData(this.data)
       }
+      this.$nextTick(() => {
+        this.columns = this.getColumns()
+      })
     }
   },
   props: {
