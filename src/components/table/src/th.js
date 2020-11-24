@@ -48,11 +48,16 @@ export default {
       this.parent.$store.setFilterd(this.column.prop, filtered)
     },
     renderCheckbox (h, column) {
-      this.parent.$store.subscribe('selection', (keys = []) => {
+      const setSelected = (keys)=>{
         const data = this.parent.$store.getData()
         this.indeterminate = keys.length > 0 && keys.length < data.length
-        this.value = keys.length === data.length
+        this.value = keys.length === data.length && keys.length > 0
+      }
+      this.parent.$store.subscribe('selection', (keys = []) => {
+        setSelected(keys)
       })
+      const keys = this.parent.$store.getSelectionKeys()
+      setSelected(keys)
       return <fly-checkbox
         value={this.value}
         indeterminate={this.indeterminate}
