@@ -15,7 +15,10 @@ export default {
   },
   watch: {
     data () {
-      this.$store && this.$store.setData(this.data)
+      if (this.$store) {
+        this.$store.selections = {}
+        this.$store.setData(this.data)
+      }
     }
   },
   props: {
