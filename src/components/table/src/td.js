@@ -30,6 +30,7 @@ export default {
     },
     renderCheckbox (h, column) {
       this.parent.$store.subscribe('selection', (keys) => {
+        this.selected = false
         this.selected = !!keys.find((key) => {
           return key === String(this.rowData[column.prop])
         })
