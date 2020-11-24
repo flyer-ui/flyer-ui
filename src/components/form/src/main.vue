@@ -35,8 +35,11 @@ export default {
     /** 判断是否为空 */
     isRequired (rule, val) {
       if (hasOwn(val, 'required') && val.required) {
-        if (this.value[rule].length === 0) {
+        const value = this.value[rule]
+        if (['string','number','boolean'].indexOf(typeof value)>-1 && !value) {
           this.addError(rule, val)
+        }else{
+          this.addError(rule,val)
         }
       }
     },
