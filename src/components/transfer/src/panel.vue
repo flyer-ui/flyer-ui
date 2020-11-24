@@ -13,15 +13,17 @@
                 {{selectedKeys.length}} / {{items.length}}
             </fly-col>
         </fly-row>
-        <fly-checkbox-group v-model="selectedKeys" @change="handleSelectedItem" class='fly-transfer__body'>
-            <div class='fly-transfer__item' v-for="(item,index) in items" :key="index">
-                <fly-checkbox
-                    :disabled="item.disabled || disabled"
-                    :label='item.value'>
-                    {{item.name}}
-                </fly-checkbox>
-            </div>
-        </fly-checkbox-group>
+        <fly-scrollbar>
+          <fly-checkbox-group v-model="selectedKeys" @change="handleSelectedItem" class='fly-transfer__body'>
+              <div class='fly-transfer__item' v-for="(item,index) in items" :key="index">
+                  <fly-checkbox
+                      :disabled="item.disabled || disabled"
+                      :label='item.value'>
+                      {{item.name}}
+                  </fly-checkbox>
+              </div>
+          </fly-checkbox-group>
+        </fly-scrollbar>
         <div class='fly-transfer__footer'>
             <slot name='default'></slot>
         </div>

@@ -1,13 +1,14 @@
 <template>
     <div class='fly-scrollbar'>
         <div class='fly-scrollbar__content' ref='content'
+        @mouseover="handleOver"
         @mousewheel="handleWheel">
           <slot name='default'></slot>
         </div>
         <div class='fly-scrollbar__rail'
         @mousedown="handleSliderDown"
         ref='rail'>
-          <div class='fly-scrollbar__slider'
+          <div v-show='visible' class='fly-scrollbar__slider'
             ref='slider'>
           </div>
         </div>
@@ -18,7 +19,8 @@ export default {
   name: 'FlyScrollbar',
   data () {
     return {
-      state: false
+      state: false,
+      visible: false
     }
   },
   methods: {
@@ -65,6 +67,13 @@ export default {
     },
     handleTranslate (value) {
       this.slider.style.transform = `translateY(${value}px)`
+    },
+    handleOver () {
+      if (this.content.scrollHeight > this.content.offsetHeight) {
+        this.visible = true
+      } else {
+        this.visible = false
+      }
     }
   },
   mounted () {

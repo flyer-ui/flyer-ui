@@ -32,6 +32,12 @@
         font-size:rem(12px);
         cursor:pointer;
         color:$font-color-placeholder;
+        display: inline-flex;
+        justify-content:center;
+        align-items: center;
+        height:rem(10px);
+        overflow: hidden;
+        box-sizing: border-box;
         @include state('active'){
             color:$primary;
         }
@@ -39,18 +45,12 @@
             position: absolute;
             top: rem(0px);
             z-index: 1;
-            height: rem(10px);
-            overflow: hidden;
-            box-sizing: border-box;
             // border:1px solid #ccc;
         }
         @include state('descending'){
             position: absolute;
             bottom: rem(0px);
             z-index: 1;
-            height: rem(10px);
-            overflow: hidden;
-            box-sizing: border-box;
             // border:1px solid #ccc;
         }
     }

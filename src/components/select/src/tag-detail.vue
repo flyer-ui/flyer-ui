@@ -17,7 +17,7 @@ export default {
   name: 'FlySelectTagDetail',
   props: {
     tags: {
-      type: Array,
+      type: [Array, String],
       default () {
         return []
       }
