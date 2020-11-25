@@ -29,7 +29,7 @@ export default {
       }
     },
     renderCheckbox (h, column) {
-      const setSelected = (keys)=>{
+      const setSelected = (keys) => {
         this.selected = !!keys.find((key) => {
           return key === String(this.rowData[column.prop])
         })
