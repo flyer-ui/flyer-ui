@@ -48,7 +48,7 @@ export default {
       this.parent.$store.setFilterd(this.column.prop, filtered)
     },
     renderCheckbox (h, column) {
-      const setSelected = (keys)=>{
+      const setSelected = (keys) => {
         const data = this.parent.$store.getData()
         this.indeterminate = keys.length > 0 && keys.length < data.length
         this.value = keys.length === data.length && keys.length > 0
