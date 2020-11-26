@@ -91,7 +91,7 @@ export default {
   data () {
     return {
       visible: false,
-      selected: '',
+      selected: this.value,
       selectedValues: [],
       tagMore: false,
       visibleTagMore: false
@@ -134,14 +134,15 @@ export default {
       } else {
         this.tagMore = false
       }
-      console.log(eleTags.scrollHeight)
     },
     executeSelected ({label, value}, $event) {
       if (!this.multiple) {
         this.selected = label
-        this.showMenu($event)
-        this.$emit('input', value)
-        this.$emit('change', {value: value, label: label})
+        if ($event) {
+          this.showMenu($event)
+          this.$emit('input', value)
+          this.$emit('change', {value: value, label: label})
+        }
       } else {
         if (!Array.isArray(this.selected)) {
           this.selected = []

@@ -2,7 +2,7 @@
 module.exports = {
     data(){
         return {
-            selected1:'',
+            selected1:'GZ',
             selected2:'',
             selected3:'',
             selected4:'',

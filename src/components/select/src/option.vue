@@ -39,6 +39,11 @@ export default {
       }
       this.parent.executeSelected({label: this.label, value: this.value}, $event)
     }
+  },
+  created () {
+    if (this.hasSeleted) {
+      this.parent.executeSelected({label: this.label, value: this.value})
+    }
   }
 }
 </script>
