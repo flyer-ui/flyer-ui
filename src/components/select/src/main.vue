@@ -91,7 +91,7 @@ export default {
   data () {
     return {
       visible: false,
-      selected: this.value,
+      selected: this.multiple ? '' : this.value,
       selectedValues: [],
       tagMore: false,
       visibleTagMore: false

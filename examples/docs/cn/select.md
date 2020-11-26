@@ -8,7 +8,7 @@ module.exports = {
             selected4:'',
             selected5:'',
             selected6:'',
-            selectedItems:[],
+            selectedItems:['GZ','SZ'],
             citys:[{
                     label:'广州',
                     value:'GZ'
@@ -102,7 +102,7 @@ module.exports = {
   export default {
     data() {
       return {
-        selected1: ""
+        selected1:'GZ',
       };
     },
     methods: {
@@ -366,7 +366,7 @@ module.exports = {
   export default {
     data() {
       return {
-        selectedItems: []
+        selectedItems:['GZ','SZ']
       };
     }
   };
