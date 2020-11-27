@@ -23,8 +23,8 @@ export default {
   computed: {
     style () {
       return {
-        'padding-left': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 144}rem` : '',
-        'padding-right': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 144}rem` : '',
+        'padding-left': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 14}rem` : '',
+        'padding-right': this.$parent.gutter > 0 ? `${this.$parent.gutter / 2 / 14}rem` : '',
         'text-align': this.align
       }
     }

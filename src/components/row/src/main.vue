@@ -33,8 +33,8 @@ export default {
   computed: {
     style () {
       return {
-        'margin-left': this.gutter > 0 ? `-${this.gutter / 2 / 144}px` : '',
-        'margin-right': this.gutter > 0 ? `-${this.gutter / 2 / 144}px` : '',
+        'margin-left': this.gutter > 0 ? `-${this.gutter / 2 / 14}rem` : '',
+        'margin-right': this.gutter > 0 ? `-${this.gutter / 2 / 14}rem` : '',
         'justify-content': this.justifyContent,
         'align-items': this.alignItems
       }
