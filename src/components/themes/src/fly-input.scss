@@ -38,6 +38,7 @@ $fly-input-clear-area:16px !default;
         box-sizing: border-box;
         color:$font-color-common;
         font-weight:400;
+        width:100%;
         &:focus{
             border-color:$fly-primary-color;
         }
