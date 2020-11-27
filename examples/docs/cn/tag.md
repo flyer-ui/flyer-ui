@@ -70,7 +70,7 @@
         console.log(arg);
         const index = this.items.findIndex(item=>item===arg)
         if(index>-1){
-          this.items = this.items.splice(index,1)
+          this.items.splice(index,1)
         }
       },
       handleAdd() {

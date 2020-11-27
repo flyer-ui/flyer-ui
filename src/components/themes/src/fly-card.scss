@@ -9,6 +9,7 @@
     @include e('header'){
         border-bottom: rem(1px) solid $fly-color-border;
         padding:$fly-default-padding;
+        font-size:$fly-font-title-size;
     }
     @include e('body'){
         padding:$fly-default-padding;

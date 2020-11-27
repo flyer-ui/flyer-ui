@@ -96,7 +96,6 @@ export default {
         {placement: 'bottom'}
       )
       this.popover.$element.style.zIndex = zIndexManage.get()
-      document.body.appendChild(this.popover.$element)
     },
     handleMouseOverIcon () {
       if (this.timeout) {
