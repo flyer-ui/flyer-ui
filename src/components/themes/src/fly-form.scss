@@ -21,7 +21,7 @@
   }
   @include e('item-error'){
     position: absolute;
-    top: rem(44px);
+    bottom: rem(-16px);
     line-height:1;
     font-size: rem(12px);
     color:$fly-danger-color;
