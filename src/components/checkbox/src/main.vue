@@ -81,7 +81,8 @@ export default{
     },
     isChecked: {
       get () {
-        return this.isGroup ? this.parent.value.indexOf(this.label) > -1 : typeof this.model === 'boolean' ? this.model : this.model === this.trueValue
+        return this.isGroup ? this.parent.value.indexOf(this.label) > -1
+          : typeof this.model === 'boolean' ? this.model : this.model === this.trueValue
       }
     },
     isGroup: {

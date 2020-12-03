@@ -86,6 +86,9 @@
         cursor: pointer;
     }
     @include e('tag'){
+        .fly-tag__close{
+            margin-left:rem(0px);
+        }
     }
     &:after{
         content:'';

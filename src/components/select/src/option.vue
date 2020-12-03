@@ -2,16 +2,15 @@
     <li :class='[
     "fly-select__option",
     {"is-disabled":disabled},
-    {"is-selected":hasSeleted}
+    {"is-selected":selected}
     ]' @mouseup.stop='handleClick'>
         <slot name='default'>{{label}}</slot>
     </li>
 </template>
 <script>
-import {findParentByName} from '~/utils'
 export default {
   name: 'FlyOption',
-  inject: ['select'],
+  inject: ['parent'],
   props: {
     disabled: {
       type: Boolean,
@@ -23,26 +22,30 @@ export default {
     }
   },
   computed: {
-    parent () {
-      return findParentByName('FlySelect', this)
-    },
-    hasSeleted () {
-      return Array.isArray(this.select.value) ? this.select.value.findIndex((value) => {
-        return value === this.value
-      }) > -1 : this.select.value === this.value
+    selected () {
+      if (this.parent.multiple && Array.isArray(this.parent.value)) {
+        const has = this.parent.value.findIndex((value) => {
+          return value === this.value
+        }) > -1
+        if (has) {
+          this.parent.handleMultiple({label: this.label, value: this.value})
+        }
+        return has
+      } else {
+        if (this.parent.value === this.value) {
+          this.parent.handleSelected({label: this.label, value: this.value})
+          return true
+        } else {
+          return false
+        }
+      }
     }
   },
   methods: {
     handleClick ($event) {
-      if (this.disabled) {
-        return
+      if (!this.disabled) {
+        this.parent.handleSelected({label: this.label, value: this.value}, $event)
       }
-      this.parent.executeSelected({label: this.label, value: this.value}, $event)
-    }
-  },
-  created () {
-    if (this.hasSeleted) {
-      this.parent.executeSelected({label: this.label, value: this.value})
     }
   }
 }

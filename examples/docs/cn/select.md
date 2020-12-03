@@ -70,6 +70,9 @@ module.exports = {
         },
         setBlur(){
             this.$refs.select.blur()
+        },
+        setValue(){
+          this.selected4 = 'GZ'
         }
     }
 }
@@ -156,14 +159,14 @@ module.exports = {
 
 ```html
 <template>
-  <fly-select v-model="selected3" placeholder="请选择">
+  <!-- <fly-select v-model="selected3" placeholder="请选择">
     <fly-option label="深圳" value="SZ"> </fly-option>
     <fly-option label="东莞" disabled value="DG"> </fly-option>
     <fly-option label="广州" disabled value="GZ"> </fly-option>
     <fly-option label="佛山" value="FS"> </fly-option>
     <fly-option label="清远" value="QY"> </fly-option>
     <fly-option label="河源" value="HY"> </fly-option>
-  </fly-select>
+  </fly-select> -->
 </template>
 <script>
   export default {
@@ -200,6 +203,7 @@ module.exports = {
   </fly-select>
   <fly-button type='info' @click="setFocus">设置焦点</fly-button>
   <fly-button type='warning' @click="setBlur">去除焦点</fly-button>
+  <fly-button type='primary' @click="setValue">设置值</fly-button>
 </template>
 <script>
   export default {
@@ -217,6 +221,9 @@ module.exports = {
       },
       setBlur() {
         this.$refs.select.blur();
+      },
+      setValue(){
+        this.selected4 = 'GZ'
       }
     }
   };
