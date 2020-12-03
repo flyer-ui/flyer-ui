@@ -99,7 +99,7 @@ export default {
   computed: {
     isShowClear: {
       get () {
-        return this.value.length > 0 && (this.focused || this.hovering)
+        return (this.value && this.value.length > 0) && (this.focused || this.hovering)
       }
     },
     isShowPrefix: {

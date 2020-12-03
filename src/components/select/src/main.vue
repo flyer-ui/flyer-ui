@@ -5,21 +5,25 @@
     ref='select'>
       <div class='fly-select__tags' ref='tags' v-if='multiple'>
         <fly-tag
-        v-for='(item,index) in selected'
-        :key='item'
+        v-for='(item,index) in selectedList'
+        :key='index'
         closable
-        @close='handleRemoveTag(index)'
+        @close='handleRemoveTag(item)'
         class='fly-select__tag'
-        >{{item}}</fly-tag>
-        <fly-icon v-if='tagMore' @click="handleVisibleTags" class='fly-select__tags-more' name='checkmore'></fly-icon>
+        >{{item.label}}</fly-tag>
+        <fly-icon v-if='tagMore'
+          @click="handleVisibleTags"
+          class='fly-select__tags-more'
+          name='checkmore'>
+        </fly-icon>
       </div>
       <fly-input
       :value='singleValue'
-      :placeholder='usablePlaceHolder'
+      :placeholder='innerPlaceholder'
       :clearable='clearable'
       :disabled='disabled'
       readonly
-      :suffix-icon='suffixIcon'
+      :suffix-icon='`fly-icon-${suffixIcon}`'
       @mouseup.native='showMenu'
       @blur='handleBlur'
       @focus='handleFocus'
@@ -31,8 +35,8 @@
         ref='popper'>
         <slot name='default'></slot>
       </fly-select-dropdowns>
-      <fly-tags-detail :tags='selected' :visible='visibleTagMore'
-        ref='tagsDetail'></fly-tags-detail>
+      <tag-panel :tags='selectedList' :visible='visibleTagMore'
+        ref='tagsDetail'></tag-panel>
     </div>
 </template>
 <script>
@@ -40,19 +44,19 @@ import FlyInput from '~/components/input'
 import FlySelectDropdowns from './dropdowns'
 import PopperManager from '~/utils/popper-manager'
 import {stop} from '@flyer-ui/commonality'
-import FlyTagsDetail from './tag-detail'
+import TagPanel from './tag-panel'
 
 export default {
   name: 'FlySelect',
   provide () {
     return {
-      select: this
+      parent: this
     }
   },
   components: {
     FlyInput,
     FlySelectDropdowns,
-    FlyTagsDetail
+    TagPanel
   },
   props: {
     value: [Number, String, Array],
@@ -75,49 +79,45 @@ export default {
   },
   computed: {
     suffixIcon () {
-      return this.visible ? 'fly-icon-upward' : 'fly-icon-down'
+      return this.visible ? 'upward' : 'down'
     },
     singleValue () {
-      return this.multiple ? '' : this.selected
+      if (this.multiple) {
+        return ''
+      }
+      return Array.isArray(this.selectedList) && this.selectedList.length > 0
+        ? this.selectedList[0].label : ''
     },
-    usablePlaceHolder () {
-      return this.multiple && this.selectedValues.length > 0 ? '' : this.placeholder
+    innerPlaceholder () {
+      return this.multiple ? '' : this.placeholder
     }
   },
   watch: {
-    selected () {
-      if (this.selected.length === 0) {
+    selectedList () {
+      if (Array.isArray(this.selectedList) && this.selectedList.length === 0) {
         this.visibleTagMore = false
       }
     }
   },
   data () {
     return {
+      selectedList: [],
       visible: false,
-      selected: this.multiple ? '' : this.value,
-      selectedValues: [],
-      tagMore: false,
+      tagMore: true,
       visibleTagMore: false
     }
   },
   methods: {
-    handleBlur ($event) {
-      this.$emit('blur', $event)
-    },
-    handleFocus ($event) {
-      this.$emit('focus', $event)
-    },
     handleClear ($event) {
       stop($event)
-      this.selected = ''
+      this.selectedList = []
       this.visible = false
       this.$emit('input', '')
       this.$emit('clear', $event)
       this.$emit('change', {})
     },
-    handleRemoveTag (index) {
-      this.selected.splice(index, 1)
-      this.selectedValues.splice(index, 1)
+    handleRemoveTag (item) {
+      this.removeSelectedItem(item)
       this.$nextTick(() => {
         this.calcTagsHeight()
       })
@@ -138,49 +138,55 @@ export default {
         this.tagMore = false
       }
     },
-    executeSelected ({label, value}, $event) {
+    handleSelected (data, $event) {
       if (!this.multiple) {
-        this.selected = label
+        this.selectedList = [data]
         if ($event) {
           this.showMenu($event)
-          this.$emit('input', value)
-          this.$emit('change', {value: value, label: label})
+          this.$emit('input', data.value)
+          this.$emit('change', data.value, data)
         }
       } else {
-        if (!Array.isArray(this.selected)) {
-          this.selected = []
-        }
-        if (this.hasValue(value)) {
-          this.removeValue(value)
-          this.removeLabel(label)
+        if (this.isSelected(data)) {
+          this.removeSelectedItem(data)
         } else {
-          this.selected.push(label)
-          this.selectedValues.push(value)
+          this.selectedList.push(data)
         }
-        this.$emit('input', this.selectedValues)
+        if ($event) {
+          this.emitMutipleEvent()
+        }
         this.$nextTick(() => {
           this.calcTagsHeight()
         })
       }
     },
+    handleMultiple (data) {
+      if (!this.isSelected(data)) {
+        this.selectedList.push(data)
+      }
+    },
+    handleBlur ($event) {
+      this.$emit('blur', $event)
+    },
+    handleFocus ($event) {
+      this.$emit('focus', $event)
+    },
     findByValue (value) {
-      return this.selectedValues.findIndex(_ => {
-        return _ === value
+      return this.selectedList.findIndex(item => {
+        return item.value === value
       })
     },
-    findByLabel (label) {
-      return this.selected.findIndex(_ => {
-        return _ === label
-      })
+    isSelected (data) {
+      return this.findByValue(data.value) > -1
     },
-    hasValue (value) {
-      return this.findByValue(value) > -1
+    removeSelectedItem (item) {
+      const index = this.findByValue(item.value)
+      this.selectedList.splice(index, 1)
+      this.emitMutipleEvent()
     },
-    removeValue (value) {
-      this.selectedValues.splice(this.findByValue(value), 1)
-    },
-    removeLabel (label) {
-      this.selected.splice(this.findByLabel(label), 1)
+    emitMutipleEvent () {
+      this.$emit('input', this.selectedList.map(item => item.value))
+      this.$emit('change', this.selectedList.map(item => item.value), this.selectedList)
     },
     focus () {
       this.$refs.reference.focus()

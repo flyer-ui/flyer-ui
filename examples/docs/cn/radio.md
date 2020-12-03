@@ -21,6 +21,9 @@ module.exports = {
         handleChangeGroup(value){
             console.log(value)
             this.selectedGroupValue = value
+        },
+        handleSetting3(){
+          this.value3 = 'B';
         }
     }
 }
@@ -95,7 +98,7 @@ module.exports = {
     v-model="value4"
     label="单选框2"
     >单选框2</fly-radio>
-  <fly-button type='primary' size='small' @click='handleSetting'>设置</fly-button>
+  <fly-button type='primary' size='small' @click='handleSetting'>设值</fly-button>
 </template>
 <script>
   export default {
@@ -138,19 +141,21 @@ module.exports = {
       杭州
     </fly-radio>
   </fly-radio-group>
+  <fly-button type='primary' size='small' @click='handleSetting3'>设值</fly-button>
 </template>
 <script>
   export default {
     data() {
       return {
-        value3: "",
-        selectedGroupValue: ""
+        value3: ""
       };
     },
     methods: {
       handleChangeGroup(value) {
         console.log(value);
-        this.selectedGroupValue = value;
+      },
+      handleSetting3(){
+        this.value3 = 'B';
       }
     }
   };

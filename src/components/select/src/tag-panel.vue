@@ -2,11 +2,11 @@
     <div class='fly-select-tag-detail' ref='tagDetail' v-show="visible">
         <fly-tag
         v-for='(tag,index) in tags'
-        :key='tag'
+        :key='index'
         closable
-        @close='handleRemoveTag(index)'
+        @close='handleRemoveTag(tag)'
         class='fly-select__tag'
-        >{{tag}}</fly-tag>
+        >{{tag.label}}</fly-tag>
     </div>
 </template>
 
@@ -15,9 +15,10 @@ import Popover from '~/mixins/popover'
 import zIndexManager from '~/mixins/zIndex-manage'
 export default {
   name: 'FlySelectTagDetail',
+  inject: ['parent'],
   props: {
     tags: {
-      type: [Array, String],
+      type: [Array],
       default () {
         return []
       }
@@ -38,8 +39,8 @@ export default {
   },
   methods: {
     init () {
-      this.referenceElm = this.$parent.$refs.select
-      this.popperElm = this.$parent.$refs.tagsDetail.$el
+      this.referenceElm = this.parent.$refs.select
+      this.popperElm = this.parent.$refs.tagsDetail.$el
       setTimeout(() => {
         this.popover = new Popover(this.popperElm, this.referenceElm, {
           offset: [10, 0],
@@ -49,8 +50,8 @@ export default {
         this.popover.$element.style.zIndex = zIndexManager.get()
       }, 0)
     },
-    handleRemoveTag (index) {
-      this.$parent.handleRemoveTag(index)
+    handleRemoveTag (item) {
+      this.parent.handleRemoveTag(item)
     }
   }
 }
