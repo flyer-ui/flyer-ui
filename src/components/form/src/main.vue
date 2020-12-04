@@ -36,7 +36,7 @@ export default {
     isRequired (rule, val) {
       if (hasOwn(val, 'required') && val.required) {
         const value = this.value[rule]
-        if (['string', 'number', 'boolean'].indexOf(typeof value) > -1 && !value) {
+        if (['string', 'number', 'boolean'].indexOf(typeof value) > -1 && value.toString().length === 0) {
           this.addError(rule, val)
         } else if (['undefined', 'null'].indexOf(typeof value) > -1) {
           this.addError(rule, val)
