@@ -323,12 +323,123 @@ export default {
 ```
 :::
 
+### 带斑纹的表格
+
+::: demo
+```html
+<template>
+    <fly-table
+        :data="data"
+        @row-click='handleRowClick'
+        @selection-change='handleSelectionChange'
+        @sort-change='handleSortChange'
+        @filter-change='handleFilterChange'
+        stripe
+        style="width: 100%">
+        <fly-table-column 
+        width="50" 
+        type='index' 
+        :index='1'
+        label='排序'>
+        </fly-table-column>
+        <fly-table-column
+            prop='id'
+            type='checkbox'
+            width="40">
+        </fly-table-column>
+        <fly-table-column
+            prop="id"
+            label="编号"
+            sortable
+            filterable
+            :filters="filterNo"
+            width="80">
+        </fly-table-column>
+        <fly-table-column
+            prop="date"
+            label="日期"
+            sortable
+            width="180">
+        </fly-table-column>
+        <fly-table-column
+            prop="name"
+            label="姓名"
+            filterable
+            :filterMultiple='false'
+            :filters="filterName"
+            width="180">
+        </fly-table-column>
+        <fly-table-column
+            prop="address"
+            :filters="filters"
+            sortable
+            :sort-method='handleSort'
+            filterable
+            label="地址">
+            <template slot-scope='scope'>
+                <fly-icon name='nickname'></fly-icon>:{{scope.row.address}}
+            </template>
+        </fly-table-column>
+    </fly-table>
+</template>
+```
+```js
+export default {
+    data(){
+        return {
+            data:[{
+                id:10000,
+                date: '2020-09-08',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 601 室'
+            },{
+                id:10001,
+                date: '2020-09-09',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 602 室'
+            },{
+                id:10002,
+                date: '2020-09-10',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 603 室'
+            },{
+                id:10003,
+                date: '2020-09-11',
+                name: '曾阿牛',
+                address: '深圳市南山区迈科龙大厦 604 室'
+            } ]
+        }
+    },
+    methods:{
+        handleRowClick(args){
+            console.log(args)
+        },
+        handleSelectionChange(keys,data){
+            console.log('selection-change',keys,data)
+        },
+        handleSort(prov,next){
+            if(prov.id>next.id){
+                return 1
+            }else if(prov.id<next.id){
+                return -1
+            }else{
+                return 0
+            }
+        },
+        handleFormatIndex(index){
+            return index * 2
+        }
+    }
+}
+```
+:::
 ### Table - 可定制属性
 
 | 属性名称        | 类型                      | 默认值 | 可选值       | 说明             |
 | --------------- | ------------------------- | ------ | ------------ | ---------------- |
 | data | array | -      | -            | 显示的数据         |
 | empty-text | string | -      | -            | 没有数据时显示的文本         |
+| stripe | Boolean | false      | true / false           | 是否带有斑纹         |
 
 ### Table - 可定制的事件
 

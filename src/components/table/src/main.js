@@ -32,6 +32,10 @@ export default {
     emptyText: {
       type: String,
       default: '暂无数据'
+    },
+    stripe: {
+      type: Boolean,
+      default: false
     }
   },
   methods: {
@@ -58,7 +62,9 @@ export default {
     renderContent () {
       return this._l(this.data, (rowData, index) => {
         return (
-          <table-row on-row-click={this.handleRowClick}
+          <table-row
+            class={this.stripe ? ({'is-stripe': index % 2 === 0}) : ''}
+            on-row-click={this.handleRowClick}
             rowData={rowData}
             rowIndex={index}
             columns={this.columns}></table-row>
