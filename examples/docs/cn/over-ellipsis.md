@@ -24,7 +24,7 @@
 </template>
 <br/>
 <template>
-    <fly-over-ellipsis :lines="4" :width='300' :line-height='18'>
+    <fly-over-ellipsis :lines="4" auto :width='300' :line-height='18'>
         Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略
     </fly-over-ellipsis>
 </template>

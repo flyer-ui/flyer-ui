@@ -17,7 +17,7 @@ export default {
       default: 3
     },
     width: {
-      type: Number,
+      type: [Number, String],
       default: 300
     },
     auto: {
@@ -33,9 +33,9 @@ export default {
   computed: {
     classes () {
       return {
-        lineHeight: this.lineHeight + 'px',
-        height: this.auto ? '' : (this.lineHeight * this.lines) + 'px',
-        width: this.width + 'px'
+        lineHeight: (this.lineHeight / 14) + 'rem',
+        height: (this.auto && !this.isOver) ? '' : ((this.lineHeight * this.lines) / 14) + 'rem',
+        width: this.width === 'auto' ? '100%' : ((parseInt(this.width) / 14) + 'rem')
       }
     },
     title () {
