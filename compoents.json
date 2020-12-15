@@ -41,5 +41,6 @@
   "table":"./src/components/table/index.js",
   "form":"./src/components/form/index.js",
   "form-item":"./src/components/form-item/index.js",
-  "transfer":"./src/components/transfer/index.js"
+  "transfer":"./src/components/transfer/index.js",
+  "over-ellipsis":"./src/components/over-ellpsis/index.js"
 }

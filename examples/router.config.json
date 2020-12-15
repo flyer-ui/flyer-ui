@@ -285,6 +285,12 @@
             "type": "item",
             "path": "link",
             "pending":false
+        },
+        {
+            "text": "Over Ellipsis 文本省略",
+            "type": "item",
+            "path": "over-ellipsis",
+            "pending":false
         }
     ]
 }
