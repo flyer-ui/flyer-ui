@@ -1,0 +1,23 @@
+
+@import "./base/index.scss";
+@include b('over-ellipsis'){
+  display: block;
+  overflow: hidden;
+  border:1px solid $fly-color-border;
+  border-radius: $fly-round-default-size;
+  position: relative;
+  @include state('over'){
+      &:after{
+          content:"...";
+          position: absolute;
+          z-index: 1;
+          bottom:rem(0px);
+          right:rem(0px);
+          background: linear-gradient(90deg,rgba(255,255,255,0) 0,#fff 27%);
+          word-break: normal;
+          vertical-align: baseline;
+          padding:rem(0px) rem(5px) rem(0px) rem(10px);
+          font-weight: 500;
+      }
+  }
+}

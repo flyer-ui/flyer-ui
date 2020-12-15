@@ -51,6 +51,7 @@ import TableColumn from './components/table-column/index'
 import Link from './components/link/index'
 import Form from './components/form/index'
 import FormItem from './components/form-item/index'
+import OverEllipsis from './components/over-ellipsis/index'
 import $message from './components/message/index'
 import $modal from './components/modal/src/main.js'
 
@@ -109,7 +110,8 @@ const components = [
   TableColumn,
   Link,
   Form,
-  FormItem
+  FormItem,
+  OverEllipsis
 ]
 
 const install = function (Vue) {
