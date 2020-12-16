@@ -27,7 +27,8 @@ export default {
   },
   data () {
     return {
-      isOver: false
+      isOver: false,
+      title: ''
     }
   },
   computed: {
@@ -37,14 +38,20 @@ export default {
         height: (this.auto && !this.isOver) ? '' : ((this.lineHeight * this.lines) / 14) + 'rem',
         width: this.width === 'auto' ? '100%' : ((parseInt(this.width) / 14) + 'rem')
       }
-    },
-    title () {
-      const nodes = this.$slots.default
-      return this.isOver ? (nodes.length > 0 ? nodes[0].text : '') : ''
     }
   },
+  methods: {
+    refresh () {
+      this.isOver = this.$refs.ele.scrollHeight > this.lineHeight * this.lines
+      const nodes = this.$slots.default
+      this.title = this.isOver ? (nodes.length > 0 ? nodes[0].text : '') : ''
+    }
+  },
+  updated () {
+    this.refresh()
+  },
   mounted () {
-    this.isOver = this.$refs.ele.scrollHeight > this.lineHeight * this.lines
+    this.refresh()
   }
 }
 </script>

@@ -1,3 +1,17 @@
+<script>
+    module.exports = {
+        data(){
+            return {
+                text:'Over Ellipsis 文本溢出省略'
+            }
+        },
+        methods:{
+            setContent(){
+                this.text = 'Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略';
+            }
+        }
+    }
+</script>
 ## Over Ellipsis 文本溢出省略
 
 ### 基本用法
@@ -37,9 +51,24 @@
 <br/>
 <template>
     <fly-over-ellipsis :lines="3" :width='300' auto :line-height='18'>
-        Over Ellipsis 文本溢出省略
+        {{text}}
     </fly-over-ellipsis>
+    <fly-button size='small' @click='setContent' type='primary'>更新</fly-button>
 </template>
+```
+```JS
+export default {
+    data(){
+        return {
+            text:'Over Ellipsis 文本溢出省略'
+        }
+    },
+    methods:{
+        setContent(){
+            this.text = 'Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略Over Ellipsis 文本溢出省略';
+        }
+    }
+}
 ```
 :::
 
