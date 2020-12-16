@@ -405,7 +405,7 @@ module.exports = {
 
 | 事件名称  | 返回值                           | 说明                           |
 | --------- | -------------------------------- | ------------------------------ |
-| change | 更新后的值[object:{value,label}] | 在点击选项状态变更时触发。     |
+| change | 更新后的值[value,object:{value,label}] | 在点击选项状态变更时触发。     |
 | blur   | (event:Event)                    | 当 input 失去焦点时触发        |
 | focus  | (event:Event)                    | 当 input 获得焦点时触发        |
 | clear  | (event:Event)                    | 当单选模式下，点击清空按钮触发 |
