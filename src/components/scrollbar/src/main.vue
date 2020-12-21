@@ -69,6 +69,9 @@ export default {
       this.slider.style.transform = `translateY(${value}px)`
     },
     handleOver () {
+      if (!this.content) {
+        return
+      }
       if (this.content.scrollHeight > this.content.offsetHeight) {
         this.visible = true
       } else {
