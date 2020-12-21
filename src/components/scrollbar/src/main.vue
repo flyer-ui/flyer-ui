@@ -74,19 +74,23 @@ export default {
       } else {
         this.visible = false
       }
+    },
+    layout () {
+      this.$nextTick(() => {
+        this.init()
+        this.calcSliderHeight()
+      })
     }
   },
   updated () {
-    this.$nextTick(() => {
-      this.init()
-      this.calcSliderHeight()
-    })
+    setTimeout(() => {
+      this.layout()
+    }, 1000 * 3)
   },
   mounted () {
-    this.$nextTick(() => {
-      this.init()
-      this.calcSliderHeight()
-    })
+    setTimeout(() => {
+      this.layout()
+    }, 1000 * 3)
     document.body.addEventListener('mouseup', (e) => {
       this.handleSliderUp(e)
     })
