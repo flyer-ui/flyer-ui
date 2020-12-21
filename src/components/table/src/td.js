@@ -56,7 +56,7 @@ export default {
         default: {
           return ((column.$scopedSlots.default &&
             column.$scopedSlots.default({row: this.rowData})) ||
-            this.rowData[column.prop])
+            this.rowData[column.prop]) || ''
         }
       }
     }

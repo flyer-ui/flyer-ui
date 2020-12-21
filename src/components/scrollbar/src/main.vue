@@ -44,7 +44,7 @@ export default {
         let offsetY = $event.pageY - this.lastPageY
         this.content.scrollTop += this.wrapHeight * (offsetY / (this.railHeight - this.slider.offsetHeight))
         this.lastPageY = $event.pageY
-        setTimeout(this.calcSliderMove, 1)
+        setTimeout(this.calcSliderMove, 0)
         this.$emit('scroll')
       }
     },
@@ -75,6 +75,12 @@ export default {
         this.visible = false
       }
     }
+  },
+  updated () {
+    this.$nextTick(() => {
+      this.init()
+      this.calcSliderHeight()
+    })
   },
   mounted () {
     this.$nextTick(() => {
