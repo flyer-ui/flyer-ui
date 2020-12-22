@@ -28,7 +28,7 @@
     "build:umd": "webpack --config build/webpack.umd.config.js",
     "build:scss": "gulp build --gulpfile ./src/components/themes/gulpfile.js",
     "build:common": "webpack --config build/webpack.common.config.js",
-    "build:demo": "cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
+    "build:demo": "rm -rf dist && cross-env NODE_ENV=production  webpack --config build/webpack.demo.prod.config.js",
     "clean": "rm -rf lib",
     "build": "npm run clean && npm run build:scss && npm run build:component && npm run build:umd && npm run build:common",
     "publish:patch": "git checkout master && git merge dev -m 'chore: Merge branch ”dev“' && npm run build && npm version patch && git push --follow-tags && npm publish && git checkout dev",
