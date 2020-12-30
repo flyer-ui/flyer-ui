@@ -52,8 +52,8 @@ export default {
       this.$store.subscribe('selection', (keys, selections) => {
         this.$emit('selection-change', keys, selections)
       })
-      this.$store.subscribe('sort', () => {
-        this.$emit('sort-change')
+      this.$store.subscribe('sort', (sortField) => {
+        this.$emit('sort-change', sortField)
       })
       this.$store.subscribe('filter', (filtered) => {
         this.$emit('filter-change', filtered)

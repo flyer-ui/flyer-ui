@@ -50,8 +50,8 @@
             handleSelectionChange(keys,data){
                 console.log('selection-change',keys,data)
             },
-            handleSortChange(){
-                console.log('sort-change')
+            handleSortChange(sortField){
+                console.log('sort-change',sortField)
             },
             handleFilterChange(filtered){
                 console.log('filter-change',filtered)
