@@ -35,7 +35,10 @@ class Store {
     return this.data
   }
   setSortField (column, explain) {
-    this.srotField = column.prop
+    this.srotField = {
+      field: column.prop,
+      explain: explain
+    }
     this.sortbyField(column.prop, explain, column.sortMethod)
     this.publish('sort')
   }
@@ -77,7 +80,7 @@ class Store {
         break
       }
       case 'sort': {
-        args = []
+        args = [this.srotField]
         break
       }
       case 'filter': {
