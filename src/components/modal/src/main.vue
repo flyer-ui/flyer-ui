@@ -3,7 +3,7 @@
       <div class='fly-modal__content' :style='{"width":width,"height":height}'>
         <div class='fly-modal__header' v-if='$slots.header || title'>
           <slot name='header'>
-            <i :class='["fly-icon fly-modal__icon",icon]'></i>
+            <i v-if='icon' :class='["fly-icon fly-modal__icon",icon]'></i>
             {{title}}
             </slot>
         </div>
