@@ -1,7 +1,8 @@
 <template>
     <a @click="handleClick" :class='["fly-link",
         `fly-link--${type}`,
-        {"is-disabled":disabled}
+        {"is-disabled":disabled},
+        {"is-underline":underline}
     ]' :href='href'>
         <slot name='default'></slot>
     </a>
@@ -16,7 +17,11 @@ export default {
       type: String,
       default: 'default'
     },
-    disabled: Boolean
+    disabled: Boolean,
+    underline: {
+      type: Boolean,
+      default: false
+    }
   },
   methods: {
     handleClick (event) {

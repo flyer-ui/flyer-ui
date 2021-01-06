@@ -9,11 +9,22 @@
     &:active,&:focus {
         color:$active-color;
     }
+    @include state('underline'){
+        padding-bottom: rem(3px);
+        border-bottom: rem(1px) solid $color;
+        &:hover{
+            border-bottom: rem(1px) solid $hover-color;
+        }
+        &:active,&:focus {
+            border-bottom: rem(1px) solid $active-color;
+        }
+    }
 }
 @include b('link'){
     background-color: transparent; 
     text-decoration: none;
     color:$default; 
+    box-sizing: border-box;
     cursor:pointer;
     &+& {
         margin-left: rem(10px);
