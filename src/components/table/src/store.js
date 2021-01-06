@@ -88,7 +88,7 @@ class Store {
         break
       }
     }
-    this.broadcaster.publish(channel, ...args)
+    this.broadcaster.publish(channel, args)
   }
 }
 export default Store
