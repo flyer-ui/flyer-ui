@@ -14,7 +14,7 @@ class Store {
   addAllSelection (prop, value) {
     if (value) {
       this.data.forEach(val => {
-        this.selections[val[prop]] = value
+        this.selections[val[prop]] = val
       })
     } else {
       this.selections = {}
