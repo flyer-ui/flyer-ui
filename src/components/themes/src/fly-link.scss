@@ -10,7 +10,7 @@
         color:$active-color;
     }
     @include state('underline'){
-        padding-bottom: rem(3px);
+        padding-bottom: rem(2px);
         border-bottom: rem(1px) solid $color;
         &:hover{
             border-bottom: rem(1px) solid $hover-color;
