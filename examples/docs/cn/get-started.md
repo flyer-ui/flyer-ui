@@ -10,9 +10,11 @@ import App from './App'
 import FlyerUI from 'flyer-ui'
 import 'flyer-ui/lib/themes/index.css'
 
+Vue.use(Flyer)
+
 new Vue({
-el: '#app',
-render: h=>h(App)
+    el: '#app',
+    render: h=>h(App)
 })
 
 ```
