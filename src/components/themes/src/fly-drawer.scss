@@ -7,8 +7,7 @@
         left:rem(0px);
         right:rem(0px);
         bottom:rem(0px);
-        background:#000;
-        opacity: 0.5;
+        background: rgba($font-color-common,0.5);  
         z-index:9998;
     }
     @include e('header'){
