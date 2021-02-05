@@ -15,7 +15,7 @@ module.exports = {
                     },
                     {
                         validator(rule,value,callback){
-                            if(value.match(/^1[3456789]\d{11}$/)){
+                            if(value.match(/^1[3456789]\d{9}$/)){
                                 callback()
                             }else{
                                 callback(new Error('账号必须是一个正确的手机号码'))
