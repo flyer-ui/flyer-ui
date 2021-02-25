@@ -19,6 +19,13 @@
     @include e('body'){
         padding:rem(15px) rem(20px);
     }
+    @include e('footer'){
+        padding:rem(15px) rem(20px);
+        position: fixed;
+        bottom:0px;
+        left:0px;
+        right:0px;
+    }
     @include e('close'){
         position:absolute;
         z-index: 1;

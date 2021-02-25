@@ -2,12 +2,15 @@
     <div class='fly-drawer' v-show='model' :style='{"width":width}'>
         <div class='fly-drawer__mask' v-if='showMask' @click='handleClickMask'></div>
         <div class='fly-drawer__content'>
-            <div class='fly-drawer__header'>
+            <div class='fly-drawer__header' v-if='$slots.header'>
                 <slot name='header'></slot>
                 <i class='fly-icon fly-drawer__close fly-icon-close' v-if='showClose' @click='handleClose'></i>
             </div>
             <div class='fly-drawer__body'>
                 <slot name='default'></slot>
+            </div>
+            <div class='fly-drawer__footer' v-if='$slots.footer'>
+                <slot name='footer'></slot>
             </div>
         </div>
     </div>
