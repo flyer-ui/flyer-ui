@@ -13,7 +13,6 @@ module.exports = {
         console.log('value',value)
       },
       handleTransfer(){
-        debugger
         this.currentPage = 3
       }
     }
