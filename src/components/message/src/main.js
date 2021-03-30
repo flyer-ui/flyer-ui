@@ -29,6 +29,13 @@ let Instance = (content, type, duration, options) => {
   vm.$on('closed', () => {
     vm.$set(vm.$props, 'value', false)
     typeof options.onClosed === 'function' && options.onClosed.apply(vm)
+
+    // fix: https://github.com/flyer-ui/flyer-ui/issues/37
+    vm.$destroy()
+    if (vm.$el) {
+      vm.$el.remove()
+    }
+    vm = null
   })
   container.appendChild(vm.$el)
 }

@@ -10,18 +10,33 @@ let Instance = (options) => {
   let Comp = Vue.extend(tmplModal)
   let vm = new Comp({propsData: options}).$mount(document.createElement('div'))
   vm.$on('confirm', () => {
-    vm.$set(vm.$props, 'value', false)
-    typeof options.onConfirm === 'function' && options.onConfirm.apply(vm)
+    callback(vm, options.confirm)
+    destroy(vm)
   })
   vm.$on('cancel', () => {
-    vm.$set(vm.$props, 'value', false)
-    typeof options.onCancel === 'function' && options.onCancel.apply(vm)
+    callback(vm, options.cancel)
+    destroy(vm)
   })
   vm.$on('closed', () => {
-    vm.$set(vm.$props, 'value', false)
-    typeof options.onClosed === 'function' && options.onClosed.apply(vm)
+    callback(vm, options.closed)
+    destroy(vm)
   })
   document.body.appendChild(vm.$el)
+}
+
+/** 事件回调模板 */
+const callback = function (vm, fn) {
+  vm.$set(vm.$props, 'value', false)
+  typeof fn === 'function' && fn.apply(vm)
+}
+
+/** 回收内存 */
+const destroy = function (vm) {
+  vm.$destroy()
+  if (vm.$el) {
+    vm.$el.remove()
+  }
+  vm = null
 }
 
 let $Modal = {
